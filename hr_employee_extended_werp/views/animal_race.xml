@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Animal Race Form View -->
+   <record id="animal_race_view_form" model="ir.ui.view">
+        <field name="name">animal.race.form</field>
+        <field name="model">animal.race</field>
+        <field name="arch" type="xml">
+            <form string="Animal Race">
+                <sheet>
+                    <group colspan="4" col="4">
+                        <field name="name" required="1"/>
+                        <field name="animal_type_id"/>
+                        <field name="description"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Animal Race Tree View -->
+    <record id="animal_race_view_tree" model="ir.ui.view">
+        <field name="name">animal.race.list</field>
+        <field name="model">animal.race</field>
+        <field name="arch" type="xml">
+            <tree string="Animal Race">
+                <field name="name"/>
+                <field name="animal_type_id"/>
+                <field name="description"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Animal Race Action -->
+    <record id="animal_race_action" model="ir.actions.act_window">
+        <field name="name">Animal Race</field>
+        <field name="res_model">animal.race</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Animal Race Menuitem -->
+    <menuitem
+        id="animal_race_menu_action"
+        name="Animal Race"
+        groups="hr.group_hr_user"
+        action="animal_race_action"
+        parent="hr_employee_extended_werp.hr_curriculum_vitae_menu"/>
+
+</odoo>

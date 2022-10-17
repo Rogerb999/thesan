@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2020-TODAY WSuite Products <wsuite-products@wsuite.com>
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html). -->
+<odoo>
+
+    <!-- Hr Employee Flextime Tree View -->
+    <record id="hr_employee_flextime_view_tree" model="ir.ui.view">
+        <field name="name">hr.employee.flextime.list</field>
+        <field name="model">hr.employee.flextime</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Hr Employee Flextime Form View -->
+   <record id="hr_employee_flextime_view_form" model="ir.ui.view">
+        <field name="name">hr.employee.flextime.form</field>
+        <field name="model">hr.employee.flextime</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <div class="oe_title">
+                        <h3>
+                            <field name="name"/>
+                        </h3>
+                    </div>
+                    <group>
+                        <group>
+                            <label for="hour_start"/>
+                            <div class="o_row">
+                                <field name="hour_start" widget="float_time"
+                                       required="1"/>
+                                <field name="hour_start_type"
+                                       required="1"/>
+                            </div>
+                            <label for="hour_end"/>
+                            <div class="o_row">
+                                <field name="hour_end" widget="float_time"
+                                       required="1"/>
+                                <field name="hour_end_type"
+                                       required="1"/>
+                            </div>
+                        </group>
+                    </group>
+                    <group>
+                        <field name="description"/>
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids"
+                           widget="mail_followers"/>
+                    <field name="activity_ids" widget="mail_activity"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <!-- Hr Employee Flextime Action -->
+    <record id="hr_employee_flextime_action" model="ir.actions.act_window">
+        <field name="name">Hr Employee Flextime</field>
+        <field name="res_model">hr.employee.flextime</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Hr Employee Flextime Menuitem -->
+    <menuitem
+        id="hr_employee_flextime_menu_action"
+        name="Hr Employee Flextime"
+        action="hr_employee_flextime_action"
+        parent="hr.menu_human_resources_configuration"/>
+
+</odoo>

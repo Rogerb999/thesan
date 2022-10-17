@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="view_tree_res_partner_inherited" model="ir.ui.view">
+        <field name="name">Partner – User extension</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_tree"/>
+        <field name="arch" type="xml">
+            <field name="phone" position="before">
+                <field name="vat_num" string="Identification" />
+            </field>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="res_partner_kanban_view_extened">
+        <field name="name">res.partner.kanban.view.extened</field>
+        <field name="inherit_id" ref="base.res_partner_kanban_view"/>
+        <field name="model">res.partner</field>
+        <field name="arch" type="xml">
+            <xpath expr="//t/div/div//div[1]" position="after">
+            <div t-if="!record.vat.raw_value or record.l10n_co_document_type == false "
+                 style="margin: 0px; padding:3px 3px 10px 3px; color:#F77171; background-color: #FFF3F3;">
+                <b>¡La información está incompleta!</b><br/> ¡Actualice pronto!
+            </div>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_search_res_partner_inherited" model="ir.ui.view">
+        <field name="name">Search - extension</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_res_partner_filter"/>
+        <field name="arch" type="xml">
+            <field name="name" position="replace">
+                <field name="name" filter_domain="['|',('display_name','ilike',self), ('vat_num','ilike',self)]" />
+            </field>
+        </field>
+    </record>
+</odoo>

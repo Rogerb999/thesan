@@ -1,0 +1,436 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* hr_contract_completion
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-12-13 04:12+0000\n"
+"PO-Revision-Date: 2019-12-13 18:43-0500\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: es\n"
+"X-Generator: Poedit 1.8.8\n"
+
+#. module: hr_contract_completion
+#: code:addons/hr_contract_completion/models/hr_novelty.py:35
+#, python-format
+msgid "A new Contract Completion has been created"
+msgstr "Una nueva Terminación de Contrato ha sido creada"
+
+#. module: hr_contract_completion
+#: model:ir.model.fields,field_description:hr_contract_completion.field_hr_contract_completion__message_needaction
+msgid "Action Needed"
+msgstr "Acción Necesaria"
+
+#. module: hr_contract_completion
+#: model:ir.model.fields,field_description:hr_contract_completion.field_hr_contract_completion__activity_ids
+msgid "Activities"
+msgstr "Actividades"
+
+#. module: hr_contract_completion
+#: model:ir.model.fields,field_description:hr_contract_completion.field_hr_contract_completion__activity_state
+msgid "Activity State"
+msgstr "Estado de la actividad"
+
+#. module: hr_contract_completion
+#: model_terms:ir.ui.view,arch_db:hr_contract_completion.view_hr_contract_completion_form
+msgid "Approve"
+msgstr "Aprobar"
+
+#. module: hr_contract_completion
+#: selection:hr.contract.completion,state:0
+msgid "Approved"
+msgstr "Aprobado"
+
+#. module: hr_contract_completion
+#: model:ir.model.fields,field_description:hr_contract_completion.field_hr_contract_completion__message_attachment_count
+msgid "Attachment Count"
+msgstr "Conteo de archivos adjuntos"
+
+#. module: hr_contract_completion
+#: model_terms:ir.ui.view,arch_db:hr_contract_completion.reverse_wizard_form
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: hr_contract_completion
+#: model_terms:ir.ui.view,arch_db:hr_contract_completion.reverse_wizard_form
+msgid "Confirm"
+msgstr "Confirmar"
+
+#. module: hr_contract_completion
+#: model:ir.actions.act_window,name:hr_contract_completion.action_conctract_completion
+#: model:ir.model.fields,field_description:hr_contract_completion.field_hr_contract__contract_completion_id
+#: model:ir.model.fields,field_description:hr_contract_completion.field_hr_payslip__contract_completion_id
+#: model:ir.ui.menu,name:hr_contract_completion.menu_hr_contract_completion
+#: model_terms:ir.ui.view,arch_db:hr_contract_completion.view_hr_payslip_form
+msgid "Contract Completion"
+msgstr "Terminación de Contrato"
+
+#. module: hr_contract_completion
+#: model:ir.model,name:hr_contract_completion.model_hr_contract_completion_reverse_wizard
+msgid "Contract Completion Reverse Wizard"
+msgstr "Asistente de Reverso de Terminación de Contrato"
+
+#. module: hr_contract_completion
+#: model:ir.model,name:hr_contract_completion.model_hr_contract_completion_withdrawal_reason
+msgid "Contract Completion Withdrawal Reason"
+msgstr "Razón de Retiro"
+
+#. module: hr_contract_completion
+#: model:ir.model.fields,field_description:hr_contract_completion.field_hr_contract_completion__create_uid
+#: model:ir.model.fields,field_description:hr_contract_completion.field_hr_contract_completion_reverse_wizard__create_uid
+#: model:ir.model.fields,field_description:hr_contract_completion.field_hr_contract_completion_withdrawal_reason__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: hr_contract_completion
+#: model:ir.model.fields,field_description:hr_contract_completion.field_hr_contract_completion__create_date
+#: model:ir.model.fields,field_description:hr_contract_completion.field_hr_contract_completion_reverse_wizard__create_date
+#: model:ir.model.fields,field_description:hr_contract_completion.field_hr_contract_completion_withdrawal_reason__create_date
+msgid "Created on"
+msgstr "Creado el"
+
+#. module: hr_contract_completion
+#: model:ir.model.fields,field_description:hr_contract_completion.field_hr_contract_completion__date
+msgid "Date"
+msgstr "Fecha"
+
+#. module: hr_contract_completion
+#: model:ir.model.fields,field_description:hr_contract_completion.field_hr_contract_completion_withdrawal_reason__description
+msgid "Description"
+msgstr "Descripción"
+
+#. module: hr_contract_completion
+#: model:ir.model.fields,field_description:hr_contract_completion.field_hr_contract_completion__display_name
+#: model:ir.model.fields,field_description:hr_contract_completion.field_hr_contract_completion_reverse_wizard__display_name
+#: model:ir.model.fields,field_description:hr_contract_completion.field_hr_contract_completion_withdrawal_reason__display_name
+msgid "Display Name"
+msgstr "Nombre a mostrar"
+
+#. module: hr_contract_completion
+#: selection:hr.contract.completion,state:0
+msgid "Draft"
+msgstr "Borrador"
+
+#. module: hr_contract_completion
+#: model:ir.model.fields,field_description:hr_contract_completion.field_hr_contract_completion__employee_id
+msgid "Employee"
+msgstr "Empleado"
+
+#. module: hr_contract_completion
+#: model:ir.model,name:hr_contract_completion.model_hr_contract
+msgid "Employee Contract"
+msgstr "Contrato de empleado"
+
+#. module: hr_contract_completion
+#: model:ir.model.fields,field_description:hr_contract_completion.field_hr_contract_completion__message_follower_ids
+msgid "Followers"
+msgstr "Seguidores"
+
+#. module: hr_contract_completion
+#: model:ir.model.fields,field_description:hr_contract_completion.field_hr_contract_completion__message_channel_ids
+msgid "Followers (Channels)"
+msgstr "Seguidores (Canales)"
+
+#. module: hr_contract_completion
+#: model:ir.model.fields,field_description:hr_contract_completion.field_hr_contract_completion__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "Seguidores (Empresas)"
+
+#. module: hr_contract_completion
+#: model:ir.model,name:hr_contract_completion.model_hr_contract_completion
+msgid "HR Contract Completion"
+msgstr "Terminación de Contrato"
+
+#. module: hr_contract_completion
+#: model:ir.model.fields,field_description:hr_contract_completion.field_hr_contract_completion__id
+#: model:ir.model.fields,field_description:hr_contract_completion.field_hr_contract_completion_reverse_wizard__id
+#: model:ir.model.fields,field_description:hr_contract_completion.field_hr_contract_completion_withdrawal_reason__id
+msgid "ID"
+msgstr "ID"
+
+#. module: hr_contract_completion
+#: model:ir.model.fields,help:hr_contract_completion.field_hr_contract_completion__message_unread
+msgid "If checked new messages require your attention."
+msgstr "Si está marcado, hay nuevos mensajes que requieren su atención"
+
+#. module: hr_contract_completion
+#: model:ir.model.fields,help:hr_contract_completion.field_hr_contract_completion__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "Si está marcado, hay nuevos mensajes que requieren su atención."
+
+#. module: hr_contract_completion
+#: model:ir.model.fields,help:hr_contract_completion.field_hr_contract_completion__message_has_error
+msgid "If checked, some messages have a delivery error."
+msgstr "Si se encuentra marcado, algunos mensajes tienen error de envío."
+
+#. module: hr_contract_completion
+#: model:ir.model.fields,field_description:hr_contract_completion.field_hr_contract_completion__message_is_follower
+msgid "Is Follower"
+msgstr "Es un seguidor"
+
+#. module: hr_contract_completion
+#: model:ir.model.fields,field_description:hr_contract_completion.field_hr_contract_completion____last_update
+#: model:ir.model.fields,field_description:hr_contract_completion.field_hr_contract_completion_reverse_wizard____last_update
+#: model:ir.model.fields,field_description:hr_contract_completion.field_hr_contract_completion_withdrawal_reason____last_update
+msgid "Last Modified on"
+msgstr "Última modificación en"
+
+#. module: hr_contract_completion
+#: model:ir.model.fields,field_description:hr_contract_completion.field_hr_contract_completion__write_uid
+#: model:ir.model.fields,field_description:hr_contract_completion.field_hr_contract_completion_reverse_wizard__write_uid
+#: model:ir.model.fields,field_description:hr_contract_completion.field_hr_contract_completion_withdrawal_reason__write_uid
+msgid "Last Updated by"
+msgstr "Última actualización por"
+
+#. module: hr_contract_completion
+#: model:ir.model.fields,field_description:hr_contract_completion.field_hr_contract_completion__write_date
+#: model:ir.model.fields,field_description:hr_contract_completion.field_hr_contract_completion_reverse_wizard__write_date
+#: model:ir.model.fields,field_description:hr_contract_completion.field_hr_contract_completion_withdrawal_reason__write_date
+msgid "Last Updated on"
+msgstr "Última actualización el"
+
+#. module: hr_contract_completion
+#: model:ir.model.fields,field_description:hr_contract_completion.field_hr_contract_completion__message_main_attachment_id
+msgid "Main Attachment"
+msgstr "Adjuntos principales"
+
+#. module: hr_contract_completion
+#: model:ir.model.fields,field_description:hr_contract_completion.field_hr_contract_completion__message_has_error
+msgid "Message Delivery error"
+msgstr "Error de Envío de Mensaje"
+
+#. module: hr_contract_completion
+#: model:ir.model.fields,field_description:hr_contract_completion.field_hr_contract_completion__message_ids
+msgid "Messages"
+msgstr "Mensajes"
+
+#. module: hr_contract_completion
+#: model:ir.model.fields,field_description:hr_contract_completion.field_hr_novelty__motivo_nomina_id
+#: model:ir.model.fields,field_description:hr_contract_completion.field_hr_novelty__reason_talent_id
+msgid "Motivo Nomina"
+msgstr "Motivo Nomina"
+
+#. module: hr_contract_completion
+#: model:ir.model.fields,field_description:hr_contract_completion.field_hr_contract_completion_withdrawal_reason__name
+msgid "Name"
+msgstr "Nombre"
+
+#. module: hr_contract_completion
+#: model:ir.model.fields,field_description:hr_contract_completion.field_hr_contract_completion__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "Siguiente plazo de actividad"
+
+#. module: hr_contract_completion
+#: model:ir.model.fields,field_description:hr_contract_completion.field_hr_contract_completion__activity_summary
+msgid "Next Activity Summary"
+msgstr "Resumen de la siguiente actividad"
+
+#. module: hr_contract_completion
+#: model:ir.model.fields,field_description:hr_contract_completion.field_hr_contract_completion__activity_type_id
+msgid "Next Activity Type"
+msgstr "Siguiente tipo de actividad"
+
+#. module: hr_contract_completion
+#: model:ir.model.fields,field_description:hr_contract_completion.field_hr_contract_completion__no_debts_proof
+msgid "No debts proof"
+msgstr "Paz y Salvo"
+
+#. module: hr_contract_completion
+#: model:ir.model.fields,field_description:hr_contract_completion.field_hr_contract_completion__no_debts_proof_filename
+msgid "No debts proof filename"
+msgstr "Nombre de Archivo Paz y Salvo"
+
+#. module: hr_contract_completion
+#: model:ir.model,name:hr_contract_completion.model_hr_novelty
+msgid "Novelty"
+msgstr "Novedad"
+
+#. module: hr_contract_completion
+#: model:ir.model.fields,field_description:hr_contract_completion.field_hr_contract_completion__message_needaction_counter
+msgid "Number of Actions"
+msgstr "Número de acciones"
+
+#. module: hr_contract_completion
+#: model:ir.model.fields,field_description:hr_contract_completion.field_hr_contract_completion__message_has_error_counter
+msgid "Number of error"
+msgstr "Número de error"
+
+#. module: hr_contract_completion
+#: model:ir.model.fields,help:hr_contract_completion.field_hr_contract_completion__message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr "Número de mensajes que requieren una acción"
+
+#. module: hr_contract_completion
+#: model:ir.model.fields,help:hr_contract_completion.field_hr_contract_completion__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "Número de mensajes con error de envío"
+
+#. module: hr_contract_completion
+#: model:ir.model.fields,help:hr_contract_completion.field_hr_contract_completion__message_unread_counter
+msgid "Number of unread messages"
+msgstr "Número de mensajes no leidos"
+
+#. module: hr_contract_completion
+#: selection:hr.contract.completion,activity_state:0
+msgid "Overdue"
+msgstr "Atrasado"
+
+#. module: hr_contract_completion
+#: selection:hr.contract.completion,state:0
+msgid "Paid"
+msgstr "Pagado"
+
+#. module: hr_contract_completion
+#: model:ir.model,name:hr_contract_completion.model_hr_payslip
+msgid "Pay Slip"
+msgstr "Nómina"
+
+#. module: hr_contract_completion
+#: model:ir.model.fields,field_description:hr_contract_completion.field_hr_contract_completion__payslip_ids
+#: model_terms:ir.ui.view,arch_db:hr_contract_completion.view_hr_contract_completion_form
+msgid "Payslips"
+msgstr "Nóminas"
+
+#. module: hr_contract_completion
+#: selection:hr.contract.completion,activity_state:0
+msgid "Planned"
+msgstr "Planficado"
+
+#. module: hr_contract_completion
+#: model:ir.model.fields,field_description:hr_contract_completion.field_hr_contract__hr_contract_completion_withdrawal_reason_id
+msgid "Reason for Payroll Withdrawal"
+msgstr "Motivo de la retirada de nómina"
+
+#. module: hr_contract_completion
+#: model:ir.model.fields,field_description:hr_contract_completion.field_hr_contract__motivo_talento_id
+msgid "Reason for Talent withdrawal"
+msgstr "Motivo de la retirada de talento"
+
+#. module: hr_contract_completion
+#: selection:hr.contract.completion,state:0
+msgid "Rejected"
+msgstr "Rechazado"
+
+#. module: hr_contract_completion
+#: model_terms:ir.ui.view,arch_db:hr_contract_completion.view_hr_contract_completion_form
+msgid "Request Approval"
+msgstr "Solicitar Aprobación"
+
+#. module: hr_contract_completion
+#: model:ir.model.fields,field_description:hr_contract_completion.field_hr_contract_completion__activity_user_id
+msgid "Responsible User"
+msgstr "Usuario responsable"
+
+#. module: hr_contract_completion
+#: model_terms:ir.ui.view,arch_db:hr_contract_completion.view_hr_contract_completion_form
+msgid "Return to Draft"
+msgstr "Volver a Borrador"
+
+#. module: hr_contract_completion
+#: model_terms:ir.ui.view,arch_db:hr_contract_completion.view_hr_contract_completion_form
+msgid "Reverse"
+msgstr "Reversar"
+
+#. module: hr_contract_completion
+#: model:ir.model.fields,field_description:hr_contract_completion.field_hr_contract_completion__reverse_reason
+#: model:ir.model.fields,field_description:hr_contract_completion.field_hr_contract_completion_reverse_wizard__reverse_reason
+msgid "Reverse Reason"
+msgstr "Razón de Reverso"
+
+#. module: hr_contract_completion
+#: selection:hr.contract.completion,state:0
+msgid "Reversed"
+msgstr "Reversado"
+
+#. module: hr_contract_completion
+#: model:ir.model.fields,field_description:hr_contract_completion.field_hr_contract_completion__state
+msgid "State"
+msgstr "Estado"
+
+#. module: hr_contract_completion
+#: model:ir.model.fields,help:hr_contract_completion.field_hr_contract_completion__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"Estado basado en actividades\n"
+"Vencida: la fecha tope ya ha pasado\n"
+"Hoy: La fecha tope es hoy\n"
+"Planificada: futuras actividades."
+
+#. module: hr_contract_completion
+#: selection:hr.contract.completion,activity_state:0
+msgid "Today"
+msgstr "Hoy"
+
+#. module: hr_contract_completion
+#: model:ir.model.fields,field_description:hr_contract_completion.field_hr_contract_completion__unjustified
+msgid "Unjustified"
+msgstr "Sin causa justa"
+
+#. module: hr_contract_completion
+#: model:ir.model.fields,field_description:hr_contract_completion.field_hr_contract_completion__message_unread
+msgid "Unread Messages"
+msgstr "Mensajes por leer"
+
+#. module: hr_contract_completion
+#: model:ir.model.fields,field_description:hr_contract_completion.field_hr_contract_completion__message_unread_counter
+msgid "Unread Messages Counter"
+msgstr "Contador de mensajes sin leer"
+
+#. module: hr_contract_completion
+#: selection:hr.contract.completion,state:0
+msgid "Wait"
+msgstr "En espera"
+
+#. module: hr_contract_completion
+#: model:ir.model.fields,field_description:hr_contract_completion.field_hr_contract_completion__website_message_ids
+msgid "Website Messages"
+msgstr "Mensajes del sitio web"
+
+#. module: hr_contract_completion
+#: model:ir.model.fields,help:hr_contract_completion.field_hr_contract_completion__website_message_ids
+msgid "Website communication history"
+msgstr "Historial de comunicaciones del sitio web"
+
+#. module: hr_contract_completion
+#: model:ir.actions.act_window,name:hr_contract_completion.action_withdrawal_reason
+#: model:ir.model.fields,field_description:hr_contract_completion.field_hr_contract_completion__withdrawal_reason_id
+#: model:ir.ui.menu,name:hr_contract_completion.menu_withdrawal_reason
+msgid "Withdrawal Reason"
+msgstr "Razón de Retiro"
+
+#. module: hr_contract_completion
+#: code:addons/hr_contract_completion/models/hr_contract_completion.py:57
+#, python-format
+msgid "_NoDebtsProof.pdf"
+msgstr "_PazySalvo.pdf"
+
+#. module: hr_contract_completion
+#: model_terms:ir.ui.view,arch_db:hr_contract_completion.reverse_wizard_form
+msgid "hr.contract.completion.reverse.wizard.form"
+msgstr "hr.contract.completion.reverse.wizard.form"
+
+#. module: hr_contract_completion
+#: model_terms:ir.ui.view,arch_db:hr_contract_completion.contract_completion_withdrawal_reason_form
+msgid "hr.contract.completion.withdrawal_reason.form"
+msgstr "hr.contract.completion.withdrawal_reason.form"
+
+#. module: hr_contract_completion
+#: model_terms:ir.ui.view,arch_db:hr_contract_completion.contract_completion_withdrawal_reason_tree
+msgid "hr.contract.completion.withdrawal_reason.tree"
+msgstr "hr.contract.completion.withdrawal_reason.tree"
+
+#. module: hr_contract_completion
+#: model_terms:ir.ui.view,arch_db:hr_contract_completion.view_hr_contract_completion_form
+msgid "view_hr_contract_completion_form"
+msgstr "view_hr_contract_completion_form"

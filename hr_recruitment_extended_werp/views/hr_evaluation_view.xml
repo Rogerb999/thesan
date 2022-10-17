@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Add Evaluation -->
+        <record id="add_evaluation_form_view" model="ir.ui.view">
+            <field name="name">Add Evaluation Form</field>
+            <field name="model">hr.evaluation</field>
+            <field name="arch" type="xml">
+                <form string="Add Evaluation">
+                    <header>
+                        <field name="PcaEst" widget="statusbar" nolabel="1"/>
+                        <button name="send_mail" type="object" string="Send Mail Again" class="btn-primary"
+                                attrs="{'invisible':[('PcaEst', '=', '7')]}"/>
+                    </header>
+                    <sheet>
+                        <group col="4" string="Input Parameters">
+                            <field name="PerNom" required="1" attrs="{'readonly':[('PerNom', '!=', False)]}"/>
+                            <field name="PerApe" required="1" attrs="{'readonly':[('PerApe', '!=', False)]}"/>
+                            <field name="PerNumIde" required="1" attrs="{'readonly': [('PcaEst', '=', '7')]}"/>
+                            <field name="PerGen" required="1" attrs="{'readonly': [('PcaEst', '=', '7')]}"/>
+                            <field name="PerMail" required="1" attrs="{'readonly':[('PerMail', '!=', False)]}"/>
+                            <field name="PcaTip" required="1" attrs="{'readonly': [('PcaEst', '=', '7')]}"/>
+                            <field name="CoKey" invisible="1"/>
+                            <field name="PerCodExt" invisible="1"/>
+                            <field name="CoRegCod" invisible="1"/>
+                            <field name="CoMailNot" invisible="1"/>
+                            <field name="hr_applicant_id" invisible="1"/>
+                        </group>
+                        <notebook>
+                            <page string="Output Parameters Details" attrs="{'invisible':['|', ('PcaLink', '=', False), ('PcaCod', '=', False)]}">
+                                <group>
+                                    <field name="PcaLink" widget="url" attrs="{'readonly': [('id', '!=', False)]}"/>
+                                    <field name="PcaCod" invisible="1"/>
+                                </group>
+                                <group attrs="{'invisible':[('PcaFec', '=', False)]}">
+                                    <group string="Retake Evaluation Details">
+                                        <field name="PcaFec" attrs="{'readonly': [('PcaEst', '=', '7')]}"/>
+                                    </group>
+                                </group>
+                            </page>
+                            <page string="PCA Result" attrs="{'invisible':[('PcaEst', '=', '6')]}">
+                                <div>
+                                    <button name="get_result_pca_details"
+                                        class="btn btn-primary" type="object"
+                                        string="Get Result PCA Details">
+                                    </button>
+                                </div>
+                                <group>
+                                    <field name="PcaImg" widget="url" attrs="{'readonly': [('PcaEst', '=', '7')]}"/>
+                                </group>
+                            </page>
+                            <page string="Get PCA Result Vs JCA" attrs="{'invisible':[('PcaFec', '=', False)]}">
+                                <group>
+                                    <group>
+                                        <field name="jca_details_id" options="{'no_create': True}" context="{'application_id': hr_applicant_id}"/>
+                                    </group>
+                                    <div name="percentage" attrs="{'invisible':[('jca_details_id', '=', False)], 'readonly': [('jca_details_id', '!=', False)]}">
+                                         <h1 style="margin-left: 120px;margin-top: 10px;"><field name="percentage" class="oe_inline" attrs="{'readonly': [('jca_details_id', '!=', False)]}"/> %%</h1>
+                                     </div>
+                                </group>
+                                <group>
+                                    <field name="document_link" widget="url"  attrs="{'invisible':[('jca_details_id', '=', False)], 'readonly': [('jca_details_id', '!=', False)]}"/>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="activity_ids" widget="mail_activity"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_add_evaluation" model="ir.actions.act_window">
+            <field name="name">Add Evaluation</field>
+            <field name="res_model">hr.evaluation</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="add_evaluation_form_view"/>
+            <field name="target">new</field>
+        </record>
+
+    </data>
+</odoo>

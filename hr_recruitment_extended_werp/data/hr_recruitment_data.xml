@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<odoo>
+<data noupdate="1">
+
+    <record model="hr.recruitment.stage" id="stage_job6">
+        <field name="name">DISC</field>
+        <field name="sequence">6</field>
+    </record>
+    <record model="hr.recruitment.stage" id="stage_job7">
+        <field name="name">Competition</field>
+        <field name="sequence">7</field>
+    </record>
+    <record model="hr.recruitment.stage" id="stage_job8">
+        <field name="name">Vector</field>
+        <field name="sequence">8</field>
+    </record>
+    <record model="hr.recruitment.stage" id="stage_job9">
+        <field name="name">Case</field>
+        <field name="sequence">9</field>
+    </record>
+    <record model="hr.recruitment.stage" id="stage_job10">
+        <field name="name">Challenge</field>
+        <field name="sequence">10</field>
+    </record>
+    <record model="hr.recruitment.stage" id="stage_job11">
+        <field name="name">Cerrado por fin del proceso</field>
+        <field name="sequence">11</field>
+    </record>
+
+</data>
+</odoo>

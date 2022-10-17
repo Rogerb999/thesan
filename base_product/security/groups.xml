@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="group_bp" model="res.groups">
+        <field name="name">BP</field>
+        <field name="category_id" ref="base.module_category_usability"/>
+    </record>
+
+    <record id="group_daf" model="res.groups">
+        <field name="name">DAF</field>
+        <field name="category_id" ref="base.module_category_usability"/>
+    </record>
+
+    <record id="group_sst" model="res.groups">
+        <field name="name">SST</field>
+        <field name="category_id" ref="base.module_category_usability"/>
+    </record>
+
+</odoo>

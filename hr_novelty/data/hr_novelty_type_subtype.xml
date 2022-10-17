@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2020-TODAY WSuite Products <wsuite-products@wsuite.com>
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html). -->
+<odoo>
+    <data noupdate="1">
+
+        <record id="novelty_subtype_AUS" model="hr.novelty.type.subtype">
+            <field name="name">Ausencia</field>
+            <field name="type_id" ref="hr_novelty.novelty_type_TIE"/>
+        </record>
+        <record id="novelty_subtype_FIJ" model="hr.novelty.type.subtype">
+            <field name="name">Fija</field>
+            <field name="type_id" ref="hr_novelty.novelty_type_ECO"/>
+        </record>
+        <record id="novelty_subtype_OCA" model="hr.novelty.type.subtype">
+            <field name="name">Ocasional</field>
+            <field name="type_id" ref="hr_novelty.novelty_type_ECO"/>
+        </record>
+        <record id="novelty_subtype_PRO" model="hr.novelty.type.subtype">
+            <field name="name">Procedimiento</field>
+            <field name="type_id" ref="hr_novelty.novelty_type_PRO"/>
+        </record>
+        <record id="novelty_subtype_TERM_CONTR"
+                model="hr.novelty.type.subtype">
+            <field name="name">Terminación de Contrato</field>
+            <field name="type_id" ref="hr_novelty.novelty_type_PRO"/>
+        </record>
+
+    </data>
+
+</odoo>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2020-TODAY WSuite Products <wsuite-products@wsuite.com>
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html). -->
+<odoo>
+
+    <record id="hr_group_values_view_tree" model="ir.ui.view">
+        <field name="name">hr.group.values.view.tree</field>
+        <field name="model">hr.group.values</field>
+        <field name="arch" type="xml">
+            <tree editable="bottom">
+                <field name="module_id"
+                       options="{'no_create': True, 'no_create_edit': True, 'no_open': True}"
+                       required="1"/>
+                <field name="field_id"
+                       options="{'no_create': True, 'no_create_edit': True, 'no_open': True}"
+                       required="1"/>
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="hr_group_values_action" model="ir.actions.act_window">
+        <field name="name">Group Values</field>
+        <field name="res_model">hr.group.values</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree</field>
+        <field name="context">{}</field>
+    </record>
+
+    <menuitem
+        id="payroll_report_menu"
+        name="Report"
+        parent="hr_payroll.menu_hr_payroll_configuration"/>
+
+    <menuitem
+        id="hr_group_values_menu_action"
+        name="Group Values"
+        action="hr_group_values_action"
+        parent="payroll_report_menu"/>
+
+</odoo>

@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_contract_section_all,contract_section_all,model_contract_section,,1,0,0,0
+access_contract_section_user,contract_section_user,model_contract_section,hr.group_hr_user,1,1,1,1
+access_contract_format_all,contract_format_all,model_contract_format,,1,0,0,0
+access_contract_format_user,contract_format_user,model_contract_format,hr.group_hr_user,1,1,1,1

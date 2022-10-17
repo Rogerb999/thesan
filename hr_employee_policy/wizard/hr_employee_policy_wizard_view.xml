@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<odoo>
+
+    <record id="hr_employee_policy_wizard_form" model="ir.ui.view">
+        <field name="name">wizard.hr.employee.policy.wizard.form</field>
+        <field name="model">hr.employee.policy.wizard</field>
+        <field name="arch" type="xml">
+            <form string="HR Employee Policy Wizard">
+                <group string="Select Employee for Policy">
+                    <field name="employee_ids"
+                           options="{'no_create': True, 'no_create_edit': True}"/>
+                </group>
+                <footer>
+                    <button name="generate_hr_policy"
+                            type="object" string="Generate Policy"
+                            class="oe_right oe_highlight"/>
+                    <button string="Cancel" class="oe_right"
+                            special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_hr_employee_policy_wizard"
+            model="ir.actions.act_window">
+        <field name="name">Employee Policy</field>
+        <field name="res_model">hr.employee.policy.wizard</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+</odoo>

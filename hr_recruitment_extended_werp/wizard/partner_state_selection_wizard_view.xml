@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2019-TODAY WSuite Products <wsuite-products@wsuite.com>
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html). -->
+<odoo>
+
+    <record id="partner_state_selection_wizard_form_view" model="ir.ui.view">
+        <field name="name">partner.state.selection.wizard.form.view</field>
+        <field name="model">partner.state.selection.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Partner State Selection">
+                <group>
+                    <field name="state_selection"/>
+                </group>
+                <footer>
+                    <button name="action_select_state" type="object" string="Select" class="oe_highlight"/>
+                    Or
+                    <button string="Cancel" class="oe_link" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_partner_state_selection_wizard" model="ir.actions.act_window">
+        <field name="name">Partner State Selection</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">partner.state.selection.wizard</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="partner_state_selection_wizard_form_view"/>
+        <field name="target">new</field>
+    </record>
+
+</odoo>

@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="hr_salary_rule_form_inherit" model="ir.ui.view">
+        <field name="name">HR Salary Rule Form Inherit</field>
+        <field name="model">hr.salary.rule</field>
+        <field name="inherit_id" ref="hr_payroll.hr_salary_rule_form"/>
+        <field name="arch" type="xml">
+
+            <field name="appears_on_payslip" position="after">
+                <field name="fixed"/>
+                <field name="is_flex"/>
+                <field name="autocomplete_flex"/>
+                <field name="accumulate"/>
+                <field name="print_payslip"/>
+                <field name="total_cost"/>
+                <field name="projection_exempt"/>
+                <field name="work_days_value"/>
+                <field name="calculate_base"/>
+                <field name="asigned_base"/>
+                <field name="value"
+                       attrs="{'required': [('asigned_base', '=', 'value')],'invisible': [('asigned_base', '!=', 'value')]}"/>
+                <field name="categ"
+                       attrs="{'required': [('asigned_base', '=', 'categ')],'invisible': [('asigned_base', '!=', 'categ')]}"/>
+                <field name="model"
+                       attrs="{'required': [('asigned_base', '=', 'model')],'invisible': [('asigned_base', '!=', 'model')]}"
+                       options="{'no_open':'False', 'no_create': True, 'no_create_edit': True, 'no_quick_create': True}"/>
+                <field name="field"
+                       attrs="{'required': [('asigned_base', '=', 'model')], 'invisible': [('asigned_base', '!=', 'model')]}"
+                       options="{'no_open':'False', 'no_create': True, 'no_create_edit': True, 'no_quick_create': True}"/>
+            </field>
+            <xpath expr="//notebook" position="inside">
+                <page string="Entities" name="entities">
+                    <group>
+                        <group>
+                            <field name="prepaid_medicine_id"
+                                   options="{'no_create': True, 'no_create_edit': True}"/>
+                        </group>
+                    </group>
+                </page>
+            </xpath>
+            <xpath expr="//form[1]" position="inside">
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="activity_ids" widget="mail_activity"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_hr_salary_structure_form" model="ir.ui.view">
+        <field name="name">hr.salary.structure.form.inherit</field>
+        <field name="model">hr.payroll.structure</field>
+        <field name="inherit_id"
+               ref="hr_payroll.view_hr_employee_grade_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//group" position="before">
+                <div class="oe_button_box" name="button_box">
+                    <button string="Check Rule"
+                            class="oe_stat_button"
+                            icon="fa-check"
+                            name="check_duplicate_hr_rule"
+                            type="object"/>
+                </div>
+            </xpath>
+            <field name="code" position="after">
+                <field name="type_id"/>
+            </field>
+        </field>
+    </record>
+
+     <record id="view_hr_payroll_structure_tree" model="ir.ui.view">
+        <field name="name">hr.payroll.structure.type.tree</field>
+        <field name="model">hr.payroll.structure.type</field>
+        <field name="arch" type="xml">
+            <tree string="Salary Structure Type">
+                <field name="name"/>
+                <field name="description"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_hr_payroll_structure_form" model="ir.ui.view">
+        <field name="name">hr.payroll.structure.type.form</field>
+        <field name="model">hr.payroll.structure.type</field>
+        <field name="arch" type="xml">
+            <form string="Salary Structure Type">
+                <group col="4">
+                    <field name="name"/>
+                    <field name="description"/>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_view_hr_payroll_structure_type"
+            model="ir.actions.act_window">
+        <field name="name">Salary Structures Type</field>
+        <field name="res_model">hr.payroll.structure.type</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem
+        id="menu_hr_payroll_structure_type_menu"
+        action="action_view_hr_payroll_structure_type"
+        parent="hr_payroll.menu_hr_payroll_configuration"
+        sequence="9"
+    />
+
+    <menuitem action="account.action_account_form"
+              id="menu_action_account_form"
+              parent="hr_payroll.menu_hr_payroll_configuration"
+              groups="hr_payroll.group_hr_payroll_user"
+              sequence="50"/>
+
+</odoo>

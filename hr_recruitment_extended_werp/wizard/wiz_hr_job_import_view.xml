@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_wiz_hr_job_import" model="ir.ui.view">
+        <field name="name">Hr Job Import</field>
+        <field name="model">wiz.hr.job.import</field>
+        <field name="arch" type="xml">
+            <form string="Hr Job">
+                <group col="2" colspan="4">
+                    <field name="excel_file" string="Hr Job Excel Data"/>
+                </group>
+                <footer>
+                    <button name="data_import" string="Import" type="object" default_focus="1" class="oe_highlight"/>
+                    or
+                    <button string="Cancel" class="oe_link" special="cancel" />
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_wiz_hr_job_import" model="ir.actions.act_window">
+        <field name="name">Hr Job Import</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">wiz.hr.job.import</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="view_wiz_hr_job_import"/>
+        <field name="target">new</field>
+    </record>
+
+    <menuitem action="action_wiz_hr_job_import"
+        id="menu_hr_job_import"
+        name="Hr Job Import"
+        parent="hr_recruitment.menu_hr_recruitment_configuration"/>
+
+</odoo>

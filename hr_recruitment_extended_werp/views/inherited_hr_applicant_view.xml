@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2019-TODAY WSuite Products <wsuite-products@wsuite.com>
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html). -->
+<odoo>
+
+    <record model="ir.ui.view" id="crm_case_form_view_job_applicant">
+        <field name="name">Jobs - Recruitment Form</field>
+        <field name="model">hr.applicant</field>
+        <field name="inherit_id" ref="hr_recruitment.crm_case_form_view_job"/>
+        <field name="arch" type="xml">
+            <field name="type_id" position="after">
+                <field name="reason_id" attrs="{'required': [('active', '=', False)]}"/>
+                <field name="level_academic"/>
+                <field name="is_working"/>
+                <field name="working_witn_group"/>
+                <field name="company_group_id" domain="[('is_company', '=', True)]" attrs="{'invisible': [('working_witn_group', '=', False)]}"/>
+                <field name="reason_renounce_id" attrs="{'invisible': [('working_witn_group', '=', False)]}"/>
+            </field>
+            <field name="source_id" position="after">
+                <field name="other_recruitment_group"/>
+                <field name="hr_application_id" attrs="{'invisible': [('other_recruitment_group', '=', False)]}"/>
+                <field name="date_application" attrs="{'invisible': [('other_recruitment_group', '=', False)]}"/>
+                <field name="salary_present"/>
+                <field name="group_experience_age"/>
+                <field name="experience_age"/>
+                <field name="check_evaluation" invisible="1"/>
+            </field>
+
+            <xpath expr="//button[@name='action_makeMeeting']" position="before">
+                <button name="create_and_get_data"
+                    class="oe_stat_button"
+                    type="object" icon="fa-book"
+                    string="Add Evaluation" attrs="{'invisible':[('check_evaluation', '=', False)]}" >
+                </button>
+            </xpath>
+
+            <xpath expr="//field[@name='job_id']" position="attributes">
+                <attribute name="required">1</attribute>
+            </xpath>
+
+            <xpath expr="//field[@name='partner_id']" position="attributes">
+                <attribute name="domain">[('postulant', '=', True)]</attribute>
+            </xpath>
+
+            <xpath expr="//field[@name='description']" position="after">
+                <div class="float-right">
+                    <button name="retake_evaluation_data"
+                        class="btn btn-primary" type="object"
+                        string="Retake Evaluation" attrs="{'invisible':[('check_evaluation', '=', False)]}">
+                    </button>
+                </div>
+                <notebook attrs="{'invisible':[('check_evaluation', '=', False)]}">
+                    <page string="Add Evaluation Details">
+                        <field name="evaluation_ids">
+                            <tree string="Add Evaluation Details" create="false" delete="false">
+                                <field name="PerCodExt"/>
+                                <field name="PerNom"/>
+                                <field name="PerApe"/>
+                                <field name="PerGen"/>
+                                <field name="PerMail"/>
+                                <field name="PcaTip"/>
+                                <field name="PcaEst"/>
+                                <field name="PcaFec"/>
+                                <button name="open_view" string="Open" type="object"/>
+                            </tree>
+                        </field>
+                    </page>
+                </notebook>
+            </xpath>
+            <xpath expr="//h2[@class='o_row']" position="replace">
+                <h2 class="o_row">
+                    <div>
+                        <label for="categ_ids" class="oe_edit_only"/>
+                        <field name="categ_ids" widget="many2many_tags" options="{'color_field': 'color', 'no_create_edit': True}"/>
+                    </div>
+                    <div>
+                        <label for="partner_name" class="oe_edit_only" invisible="1"/>
+                        <field name="partner_name" invisible="1"/>
+                    </div>
+                </h2>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_crm_case_jobs_filter_inherit" model="ir.ui.view">
+        <field name="name">crm.case.jobs.filter.inherit</field>
+        <field name="model">hr.applicant</field>
+        <field name="inherit_id" ref="hr_recruitment.view_crm_case_jobs_filter"/>
+        <field name="arch" type="xml">
+            <field name="partner_name" position="after">
+                <field name="reason_id"/>
+                <field name="level_academic"/>
+                <field name="working_witn_group"/>
+                <field name="company_group_id"/>
+                <field name="reason_renounce_id"/>
+                <field name="other_recruitment_group"/>
+                <field name="hr_application_id"/>
+                <field name="date_application"/>
+                <field name="salary_present"/>
+                <field name="group_experience_age"/>
+                <field name="experience_age"/>
+            </field>
+            <xpath expr="//filter[@name='responsible']" position="after">
+                <filter name="reason_id" string="Reason"
+                        context="{'group_by':'reason_id'}"/>
+                <filter name="level_academic" string="Level Academic"
+                        context="{'group_by':'level_academic'}"/>
+                <filter name="working_witn_group" string="Working Witn Group"
+                        context="{'group_by':'working_witn_group'}"/>
+                <filter name="company_group_id" string="Company Group"
+                        context="{'group_by':'company_group_id'}"/>
+                <filter name="reason_renounce_id" string="Reason Renounce"
+                        context="{'group_by':'reason_renounce_id'}"/>
+                <filter name="other_recruitment_group" string="Other Recruitment Group"
+                        context="{'group_by':'other_recruitment_group'}"/>
+                <filter name="hr_application_id" string="Hr Application"
+                        context="{'group_by':'hr_application_id'}"/>
+                <filter name="date_application" string="Date Application"
+                        context="{'group_by':'date_application'}"/>
+                <filter name="salary_present" string="Salary Present"
+                        context="{'group_by':'salary_present'}"/>
+                <filter name="group_experience_age" string="Group Experience Age"
+                        context="{'group_by':'group_experience_age'}"/>
+                <filter name="experience_age" string="Experience Age"
+                        context="{'group_by':'experience_age'}"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

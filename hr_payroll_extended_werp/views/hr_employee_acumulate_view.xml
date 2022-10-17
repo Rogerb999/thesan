@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2019-TODAY WSuite Products <wsuite-products@wsuite.com>
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html). -->
+<odoo>
+
+    <record id="hr_employee_acumulate_view_tree" model="ir.ui.view">
+        <field name="name">hr.employee.acumulate.view.tree</field>
+        <field name="model">hr.employee.acumulate</field>
+        <field name="arch" type="xml">
+            <tree edit="false" create="false" delete="false">
+                <field name="name"/>
+                <field name="employee_id"/>
+                <field name="hr_rules_acumulate_id"/>
+                <field name="total_acumulate"
+                       sum="Total Acumulate"/>
+                <field name="pay_slip_id"/>
+                <field name="description"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="hr_employee_acumulate_view_form" model="ir.ui.view">
+        <field name="name">hr.employee.acumulate.view.form</field>
+        <field name="model">hr.employee.acumulate</field>
+        <field name="arch" type="xml">
+            <form edit="false" create="false" delete="false">
+                <sheet>
+                    <group colspan="4" col="4">
+                        <field name="name"/>
+                        <field name="employee_id"/>
+                        <field name="hr_rules_acumulate_id"/>
+                        <field name="total_acumulate"
+                               sum="Total Acumulate"/>
+                        <field name="pay_slip_id"/>
+                        <field name="description"/>
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids"
+                           widget="mail_followers"/>
+                    <field name="activity_ids"
+                           widget="mail_activity"/>
+                    <field name="message_ids"
+                           widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record id="hr_employee_acumulate_view_tree_inherit" model="ir.ui.view">
+        <field name="name">hr.employee.acumulate.view.tree.inherit</field>
+        <field name="model">hr.employee.acumulate</field>
+        <field name="inherit_id"
+               ref="hr_payroll_extended_werp.hr_employee_acumulate_view_tree"/>
+        <field name="groups_id"
+               eval="[(4, ref('base.group_system'))]"/>
+        <field name="arch" type="xml">
+            <xpath expr="//tree" position="attributes">
+                <attribute name="edit">true</attribute>
+                <attribute name="create">true</attribute>
+                <attribute name="delete">true</attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="hr_employee_acumulate_view_form_inherit" model="ir.ui.view">
+        <field name="name">hr.employee.acumulate.view.form.inherit</field>
+        <field name="model">hr.employee.acumulate</field>
+        <field name="inherit_id"
+               ref="hr_payroll_extended_werp.hr_employee_acumulate_view_form"/>
+        <field name="groups_id"
+               eval="[(4, ref('base.group_system'))]"/>
+        <field name="arch" type="xml">
+            <xpath expr="//form" position="attributes">
+                <attribute name="edit">true</attribute>
+                <attribute name="create">true</attribute>
+                <attribute name="delete">true</attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="hr_employee_acumulate_view_search" model="ir.ui.view">
+        <field name="name">hr.employee.acumulate.view.search</field>
+        <field name="model">hr.employee.acumulate</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="employee_id"/>
+                <field name="hr_rules_acumulate_id"/>
+                <field name="total_acumulate"/>
+                <field name="pay_slip_id"/>
+                <group string="Group By"
+                       name="grp_hr_employee_acumulate">
+                  <filter string="Name" name="grp_name"
+                          context="{'group_by':'name'}"/>
+                  <filter string="Total Acumulate" name="grp_total_acumulate"
+                          context="{'group_by':'total_acumulate'}"/>
+                  <filter string="Employees" name="grp_employee_id"
+                          context="{'group_by':'employee_id'}"/>
+                  <filter string="Acumulate Rules"
+                          name="grp_hr_rules_acumulate_id"
+                          context="{'group_by':'hr_rules_acumulate_id'}"/>
+                  <filter string="Payslip" name="grp_pay_slip_id"
+                          context="{'group_by':'pay_slip_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="hr_employee_acumulate_action" model="ir.actions.act_window">
+        <field name="name">Employee Acumulate</field>
+        <field name="res_model">hr.employee.acumulate</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="context">{}</field>
+    </record>
+
+    <menuitem
+        id="hr_employee_acumulate_menu_action"
+        name="Employee Acumulate"
+        action="hr_employee_acumulate_action"
+        parent="hr_payroll.menu_hr_payroll_configuration"/>
+
+</odoo>

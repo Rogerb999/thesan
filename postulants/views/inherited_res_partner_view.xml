@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2019-TODAY WSuite Products <wsuite-products@wsuite.com>
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html). -->
+<odoo>
+
+    <record id="view_partner_form_inherit" model="ir.ui.view">
+        <field name="name">res.partner.form.inherit</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <field name="type" position="before">
+                <field name="first_name" attrs="{'invisible': [('postulant', '!=', True)]}"/>
+                <field name="second_name" attrs="{'invisible': [('postulant', '!=', True)]}"/>
+                <field name="surname" attrs="{'invisible': [('postulant', '!=', True)]}"/>
+                <field name="second_surname" attrs="{'invisible': [('postulant', '!=', True)]}"/>
+                <field name="gender"/>
+            </field>
+            <xpath expr="//notebook[1]" position="inside">
+                <page string="Postulants" name="postulants">
+                    <group>
+                        <group>
+                            <field name="postulant"/>
+                            <field name="hr_cv_employee_id"
+                                attrs="{'invisible': [('postulant', '!=', True)]}"
+                                options="{'no_create': True, 'no_create_edit': True}"/>
+                            <field name="state_selection"
+                                attrs="{'invisible': [('postulant', '!=', True)]}"/>
+                            <field name="referred_by_partner_id"/>
+                            <field name="referred_channel_id"/>
+                        </group>
+                    </group>
+                    <field name="hr_applicant_ids" nolabel="1" readonly="1"
+                           attrs="{'invisible': [('postulant', '!=', True)]}"/>
+                </page>
+            </xpath>
+            <xpath expr="//sheet[1]" position="before">
+                <header>
+                    <button string="Sync" name="sync" type="object"/>
+                </header>
+            </xpath>
+            <field name="postulant" position="after">
+                <field name="link" widget="url"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="res_partner_action" model="ir.actions.act_window">
+        <field name="name">Postulant</field>
+        <field name="res_model">res.partner</field>
+        <field name="view_mode">tree,form,kanban</field>
+        <field name="domain">[('postulant','=', True)]</field>
+        <field name="context">{'default_postulant': True}</field>
+    </record>
+
+    <menuitem
+        id="res_partner_menu_action"
+        name="Postulant"
+        parent="hr_recruitment.menu_hr_recruitment_root"
+        action="res_partner_action"
+        groups="hr.group_hr_user"
+    />
+
+</odoo>

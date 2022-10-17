@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+<odoo>
+
+    <record id="view_hr_payslip_line_inherit" model="ir.ui.view">
+        <field name="name">hr.payslip.line.form.view.inherit</field>
+        <field name="model">hr.payslip.line</field>
+        <field name="inherit_id" ref="hr_payroll.view_hr_payslip_line_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//tree[1]" position="attributes">
+                <attribute name="create">false</attribute>
+            </xpath>
+            <xpath expr="//tree[1]" position="attributes">
+                <attribute name="edit">false</attribute>
+            </xpath>
+            <xpath expr="//tree[1]" position="attributes">
+                <attribute name="duplicate">false</attribute>
+            </xpath>
+            <xpath expr="//tree[1]" position="attributes">
+                <attribute name="delete">false</attribute>
+            </xpath>
+            <xpath expr="//tree[1]" position="attributes">
+                <attribute name="editable"/>
+            </xpath>
+            <field name="employee_id" position="attributes">
+                <attribute name="invisible">0</attribute>
+            </field>
+            <field name="employee_id" position="after">
+                <field name="slip_id"/>
+                <field name="contract_id"/>
+            </field>
+        </field>
+    </record>
+
+     <record id="view_hr_payslip_line_filter_search" model="ir.ui.view">
+        <field name="name">hr.payslip.line.search.view.inherit</field>
+        <field name="model">hr.payslip.line</field>
+        <field name="inherit_id" ref="hr_payroll.view_hr_payslip_line_filter"/>
+        <field name="arch" type="xml">
+            <field name="slip_id" position="after">
+                <field name="contract_id"/>
+                <field name="employee_id"/>
+                <field name="category_id"/>
+                <field name="sequence"/>
+                <field name="name"/>
+                <field name="code"/>
+                <field name="quantity"/>
+                <field name="rate"/>
+                <field name="amount"/>
+                <field name="total"/>
+            </field>
+            <field name="slip_id" position="attributes">
+                <attribute name="invisible">0</attribute>
+            </field>
+            <filter name="employee_id" position="after">
+                <filter string="Parent Salary Rule" name="parent_rule_id" context="{'group_by':'parent_rule_id'}"/>
+                <filter string="Pay Slip" name="slip_id" context="{'group_by':'slip_id'}"/>
+                <filter string="Contract" name="contract_id" context="{'group_by':'contract_id'}"/>
+                <filter string="Sequence" name="sequence" context="{'group_by':'sequence'}"/>
+                <filter string="Quantity" name="quantity" context="{'group_by':'quantity'}"/>
+                <filter string="Rate" name="rate" context="{'group_by':'rate'}"/>
+                <filter string="Amount" name="amount" context="{'group_by':'amount'}"/>
+                <filter string="Total" name="total" context="{'group_by':'total'}"/>
+            </filter>
+        </field>
+    </record>
+
+    <record id="hr_payslip_line_action" model="ir.actions.act_window">
+        <field name="name">Payslip Line</field>
+        <field name="res_model">hr.payslip.line</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree</field>
+        <field name="context">{}</field>
+    </record>
+
+    <menuitem
+        id="hr_payslip_line_menu_action"
+        name="Payslip Line"
+        action="hr_payslip_line_action"
+        parent="hr_payroll.menu_hr_payroll_root"/>
+
+</odoo>

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+        <!-- webhook_werp Form View -->
+        <record id="view_webhook_werp_form" model="ir.ui.view">
+            <field name="name">webhook_werps</field>
+            <field name="model">webhook_werp</field>
+            <field name="mode">primary</field>
+            <field name="inherit_id" ref="base.view_server_action_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//button[@name='create_action']" position="replace">
+                </xpath>
+                <xpath expr="//button[@name='unlink_action']" position="replace">
+                </xpath>
+                <div class="oe_title" position="before">
+                    <div class="oe_button_box" name="button_box">
+                        <button name="toggle_active" type="object" class="oe_stat_button" icon="fa-archive">
+                            <field name="active" widget="boolean_button"/>
+                        </button>
+                    </div>
+                </div>
+                <xpath expr="//group[@name='action_content']" position="inside">
+                    <field name="trigger"/>
+
+<!--                    <field name="filter_pre_domain" widget="domain" options="{'model': 'model_name', 'in_dialog': True}" attrs="{'invisible': [('trigger', 'not in', ['on_write','on_create_or_write'])]}"/>-->
+
+
+                    <field name="on_change_fields"
+                        attrs="{'invisible': [('trigger', '!=', 'on_change')], 'required': [('trigger', '=', 'on_change')]}"/>
+                    <field name="trg_date_id"
+                        attrs="{'invisible': [('trigger', '!=', 'on_time')], 'required': [('trigger', '=', 'on_time')]}"/>
+                    <label for="trg_date_range"
+                        attrs="{'invisible': [('trigger', '!=', 'on_time')]}"/>
+                    <div class="o_row" attrs="{'invisible': [('trigger', '!=', 'on_time')]}">
+                        <field name="trg_date_range" attrs="{'required': [('trigger','=','on_time')]}"/>
+                        <field name="trg_date_range_type" attrs="{'required': [('trigger','=','on_time')]}"/>
+                    </div>
+                    <field name="trg_date_calendar_id"
+                        attrs="{'invisible': ['|', ('trg_date_id','=',False), ('trg_date_range_type', '!=', 'day')]}"/>
+                    <field name="url" required="1"/>
+                    <field name="url_type" required="1"/>
+                    <field name="check_active_deactive"/>
+                    <field name="filter_domain" widget="domain" options="{'model': 'model_name', 'in_dialog': True}"/>
+                </xpath>
+<!--                string="Data to Write"-->
+                <xpath expr="//notebook[last()]" position="inside">
+                    <page name="default_json_page" string="Default Json">
+                        <field name="default_json"/>
+                    </page>
+                </xpath>
+                <xpath expr="//form" position="inside">
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="activity_ids" widget="mail_activity"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </xpath>
+                <field name="state" position="after">
+                    <field name="object_confg_id"
+                           options="{'no_create': True, 'no_create_edit': True, 'no_open': True}"/>
+                </field>
+            </field>
+        </record>
+
+        <!-- webhook_werp Tree View -->
+        <record id="view_webhook_werp_tree" model="ir.ui.view">
+            <field name="name">webhook_werp.tree</field>
+            <field name="model">webhook_werp</field>
+            <field name="arch" type="xml">
+                <tree string="webhook_werp">
+                    <field name="sequence" widget="handle"/>
+                    <field name="name"/>
+                    <field name="trigger"/>
+                    <field name="model_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_webhook_werp_search" model="ir.ui.view">
+            <field name="name">webhook_werp.search</field>
+            <field name="model">webhook_werp</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name"/>
+                    <field name="model_id"/>
+                    <filter string="Active" name="active" domain="[('active','=', True)]"/>
+                    <filter string="Inactive" name="Inactive" domain="[('active','=', False)]"/>
+                </search>
+            </field>
+        </record>
+
+
+        <!-- webhook_werp Action -->
+        <record id="webhook_werp_act" model="ir.actions.act_window">
+            <field name="name">webhook_werps</field>
+            <field name="res_model">webhook_werp</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="view_webhook_werp_tree"/>
+            <field name="help" type="html">
+              <p class="o_view_nocontent_smiling_face">
+                Setup a new automated webhook_werp
+              </p><p>
+                Use automated actions to automatically trigger actions for
+                various screens. Example: a lead created by a specific user may
+                be automatically set to a specific Sales Team, or an
+                opportunity which still has status pending after 14 days might
+                trigger an automatic reminder email.
+              </p>
+            </field>
+        </record>
+
+        <menuitem id="menu_webhook_werp_form"
+            parent="base.menu_automation" action="webhook_werp_act" sequence="1"/>
+
+</odoo>

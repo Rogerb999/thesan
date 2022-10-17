@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="view_partner_form">
+            <field name="name">res.partner.form.inherit</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                 <field name="name" position="attributes">
+                    <attribute name="attrs">{'invisible': [('company_type', '=', 'person')]}</attribute>
+                </field>
+                <h1 position="after">
+                    <group  attrs="{'invisible': [('company_type', '=', 'company')]}">
+                        <field class="mr-2" name="firstname" nolabel="1" attrs="{'required': [('company_type', '=', 'person')]}"
+                               placeholder="Primer Nombre"/>
+                        <field class="mr-2" name="other_name" nolabel="1" placeholder="Segundo Nombre"/>
+                        <field class="mr-2" name="lastname" nolabel="1" attrs="{'required': [('company_type', '=', 'person')]}"
+                               placeholder="Primer Apellido"/>
+                        <field name="other_lastname" nolabel="1" placeholder="Segundo Apellido"/>
+                    </group>
+				</h1>
+                <field name="phone" position="before">
+                    <field name="vat_type" required="1" />
+                </field>
+
+                <field name="vat" position="after">
+                    <field name="vat_num" placeholder="No. ej. 900301230" nolabel="0"
+                           attrs="{'required': [('vat_type','!=','43')], 'readonly': [('parent_id','!=',False)]}" />
+                    <field name="vat_vd" string="Digito de Verificación" nolabel="0" placeholder="dv" class="o_address_zip"
+                           attrs="{'required':[('vat_type','=','31')],'invisible':['|', ('vat_type','!=','31'), ('vat_type','=','')]}"
+                           help="Dígito de Verificación"/>
+                </field>
+                <field name="type" position="before">
+                    <field name="companyBrandName"
+                           attrs="{'invisible':[('company_type', '!=', 'company')]}" />
+                    <field name="xbirthday" attrs="{'invisible':[('company_type', '=', 'company')]}" />
+                    <field name="x_pn_retri" attrs="{'invisible':[('type', '=', 'delivery')]}" invisible="1"/>
+                    <field name="ciiu" attrs="{'invisible':[('type', '=', 'delivery')]}"  domain="[('type', '=', 'other')]" />
+                </field>
+                <xpath expr="(//field[@name='zip'])[4]" position="after">
+                    <field name="change_country" class="oe_edit_only"
+                           attrs="{'invisible':[('change_country', '=', True)]}"/>
+                </xpath>
+                <field name="website" position="before">
+                    <field name="change_country" class="oe_edit_only"
+                           attrs="{'invisible':[('change_country', '=', True)]}"/>
+                </field>
+                <xpath expr="//field[@name='vat']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="res_partner_kanban_view">
+            <field name="name">res.partner.kanban</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.res_partner_kanban_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//templates//ul//li" position="before">
+                    <li t-if="record.vat.raw_value and !record.function.raw_value">
+                        <field name="vat"/>
+                    </li>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>
+

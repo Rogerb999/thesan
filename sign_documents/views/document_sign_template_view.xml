@@ -1,0 +1,108 @@
+<?xml version="1.0"?>
+<odoo>
+
+    <!-- Document Sign Template tree view-->
+    <record id="document_sign_template_view_tree" model="ir.ui.view">
+        <field name="name">document.sign.template.view.tree</field>
+        <field name="model">document.sign.template</field>
+        <field name="arch" type="xml">
+            <tree string="Document Sign Templates" create="false">
+                <field name="file_name"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Document Sign Template from view-->
+    <record id="document_sign_template_view_form" model="ir.ui.view">
+        <field name="name">document.sign.template.view.form</field>
+        <field name="model">document.sign.template</field>
+        <field name="arch" type="xml">
+            <form string="Document Sign Template" create="false" edit="false">
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button string="Edit Document" context="{'edit': True}"  class="oe_stat_button" icon="fa-pencil-square-o"  name="edit_template" type="object"/>
+                    </div>
+                    <group>
+                        <h1><field name="file_name"/></h1>
+                    </group>
+                    <group>
+                        <field name="attachment_id"/>
+                    </group>
+                    <notebook>
+                        <page string="Document">
+                            <field name="datas" widget="pdf_viewer"/>
+                            <field name="file_name" invisible="1"/>
+                        </page>
+                        <page string="Sign Field Items">
+                            <field name="sign_document_item_ids">
+                                <tree>
+                                    <field name="sign_field_type_id"/>
+                                    <field name="page"/>
+                                    <field name="item_width"/>
+                                    <field name="item_height"/>
+                                    <field name="pos_X"/>
+                                    <field name="pos_Y"/>
+                                    <field name="signature"/>
+                                    <field name="value"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="activity_ids" widget="mail_activity"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="document_sign_template_view_kanban">
+        <field name="name">document.sign.template.view.kanban</field>
+        <field name="model">document.sign.template</field>
+        <field name="arch" type="xml">
+            <kanban create="true" delete="true">
+                <field name="file_name"/>
+                <field name="attachment_id"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div t-attf-class="oe_kanban_card oe_kanban_global_click">
+                            <div class="o_dropdown_kanban dropdown" groups="base.group_user">
+                                <a class="dropdown-toggle o-no-caret btn" role="button" data-toggle="dropdown" href="#" aria-label="Dropdown menu" title="Dropdown menu">
+                                    <span class="fa fa-ellipsis-v"/>
+                                </a>
+                                <div class="dropdown-menu" role="menu">
+                                    <t t-if="widget.editable"><a role="menuitem" type="edit" class="dropdown-item">Edit Template</a></t>
+                                    <t t-if="widget.deletable"><a role="menuitem" type="delete" class="dropdown-item">Delete</a></t>
+                                </div>
+                            </div>
+                            <div class="o_kanban_record_top">
+                                <div class="o_kanban_record_headings">
+                                    <strong class="o_kanban_record_title"><span><t t-esc="record.file_name.value"/></span></strong>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <!-- Document Sign Template Action-->
+    <record model="ir.actions.act_window" id="document_sign_template_action">
+        <field name="name">Templates</field>
+        <field name="res_model">document.sign.template</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">kanban,tree,form</field>
+    </record>
+
+    <menuitem id="document_templates_menu"
+        name="Templates"
+        parent="sign_documents_main_menu" groups="sign_documents.sign_document_manager"/>
+    <menuitem
+        id="document_sign_template_menu"
+        action="document_sign_template_action"
+        parent="sign_documents.document_templates_menu"/>
+
+</odoo>

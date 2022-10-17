@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2020-TODAY WSuite Products <wsuite-products@wsuite.com>
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html). -->
+<odoo>
+
+    <record id="act_hr_employee_hr_recalc_lines"
+            model="ir.actions.act_window">
+        <field name="name">Contracts</field>
+        <field name="res_model">hr.recalc.lines</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[('employee_id','=', active_id)]</field>
+        <field name="context">{}</field>
+    </record>
+
+    <record id="view_employee_form_inherit" model="ir.ui.view">
+        <field name="name">view.employee.form.inherit</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//button[@name='toggle_active']" position="before">
+                <button name="%(act_hr_employee_hr_recalc_lines)d"
+                    class="oe_stat_button"
+                    icon="fa-book"
+                    type="action">
+                    <field name="hr_recalc_lines_count" widget="statinfo"
+                           string="Recalc Lines"/>
+                </button>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

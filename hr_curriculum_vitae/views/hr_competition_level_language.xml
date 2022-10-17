@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- HR Competition Level Language Form View -->
+   <record id="hr_competition_level_language_view_form" model="ir.ui.view">
+        <field name="name">hr.competition.level.language.form</field>
+        <field name="model">hr.competition.level.language</field>
+        <field name="arch" type="xml">
+            <form string="HR Competition Level Language">
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="toggle_active" type="object" class="oe_stat_button" icon="fa-archive">
+                            <field name="active" widget="boolean_button"/>
+                        </button>
+                    </div>
+                    <group colspan="4" col="4">
+                        <field name="name" required="1"/>
+                        <field name="description"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- HR Competition Level Language Tree View -->
+    <record id="hr_competition_level_language_view_tree" model="ir.ui.view">
+        <field name="name">hr.competition.level.language.list</field>
+        <field name="model">hr.competition.level.language</field>
+        <field name="arch" type="xml">
+            <tree string="HR Competition Level Language">
+                <field name="name"/>
+                <field name="description"/>
+                <field name="active"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- HR Competition Level Language Action -->
+    <record id="hr_competition_level_language_action" model="ir.actions.act_window">
+        <field name="name">HR Competition Level Language</field>
+        <field name="res_model">hr.competition.level.language</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- HR Competition Level Language Menuitem -->
+    <menuitem
+        id="hr_competition_level_language_menu_action"
+        name="HR Competition Level Language"
+        groups="hr.group_hr_user"
+        action="hr_competition_level_language_action"
+        parent="hr_employee_extended_werp.hr_curriculum_vitae_menu"/>
+
+</odoo>

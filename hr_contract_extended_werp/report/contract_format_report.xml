@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <report 
+            id="action_report_apprenticeship_contract"
+            string="CONTRATO APRENDIZ"
+            model="hr.contract" 
+            report_type="qweb-pdf"
+            file="hr_contract_extended_werp.apprenticeship_contract" 
+            name="hr_contract_extended_werp.apprenticeship_contract"
+        />
+
+        <report 
+            id="action_report_contract_fijo"
+            string="CONTRATO FIJO"
+            model="hr.contract" 
+            report_type="qweb-pdf"
+            file="hr_contract_extended_werp.contract_fijo" 
+            name="hr_contract_extended_werp.contract_fijo"
+        />
+
+        <report
+            id="action_report_contrato_indefibido_integral"
+            string="CONTRATO INDEFINIDO INTEGRAL"
+            model="hr.contract"
+            report_type="qweb-pdf"
+            file="hr_contract_extended_werp.contrato_indefibido_integral"
+            name="hr_contract_extended_werp.contrato_indefibido_integral"
+        />
+
+        <report
+            id="action_report_contrato_indefibido"
+            string="CONTRATO INDEFINIDO"
+            model="hr.contract"
+            report_type="qweb-pdf"
+            file="hr_contract_extended_werp.contrato_indefibido"
+            name="hr_contract_extended_werp.contrato_indefibido"
+        />
+
+        <report
+            id="action_report_contrato_practicante"
+            string="CONTRATO PRACTICANTE"
+            model="hr.contract"
+            report_type="qweb-pdf"
+            file="hr_contract_extended_werp.contrato_practicante"
+            name="hr_contract_extended_werp.contrato_practicante"
+        />
+
+        <report
+            id="action_report_contrato_practicas"
+            string="CONVENIO PRACTICAS"
+            model="hr.contract"
+            report_type="qweb-pdf"
+            file="hr_contract_extended_werp.contrato_practicas"
+            name="hr_contract_extended_werp.contrato_practicas"
+        />
+
+    </data>
+</odoo>

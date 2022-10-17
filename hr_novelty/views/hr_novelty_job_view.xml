@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2019-TODAY WSuite Products <wsuite-products@wsuite.com>
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html). -->
+<odoo>
+
+    <record id="hr_novelty_job_view_tree" model="ir.ui.view">
+        <field name="name">hr.novelty.job.view.tree</field>
+        <field name="model">hr.novelty.job</field>
+        <field name="arch" type="xml">
+            <tree editable="bottom">
+                <field name="novelty_id" readonly="1" required="1"/>
+                <field name="job_id"/>
+                <field name="state"/>
+                <field name="recruitment_reason_id"/>
+                <field name="employee_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="hr_novelty_job_action" model="ir.actions.act_window">
+        <field name="name">Novelty Job</field>
+        <field name="res_model">hr.novelty.job</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree</field>
+        <field name="context">{}</field>
+    </record>
+
+    <menuitem
+        id="hr_novelty_job_menu_action"
+        name="Novelty Job"
+        action="hr_novelty_job_action"
+        parent="hr_novelty.menu_hr_config_novelty"
+        sequence="12"/>
+
+</odoo>

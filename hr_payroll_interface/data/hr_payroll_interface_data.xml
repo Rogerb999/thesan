@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2019-TODAY WSuite Products <wsuite-products@wsuite.com>
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html). -->
+<odoo>
+    <data noupdate="1">
+
+        <record id="hr_payroll_interface_seq" model="ir.sequence">
+            <field name="name">hr_payroll_interface_sequence</field>
+            <field name="code">hr.payroll.interface</field>
+            <field name="prefix">PI-</field>
+            <field eval="1" name="number_next"/>
+            <field eval="1" name="number_increment"/>
+            <field name="padding">4</field>
+        </record>
+
+    </data>
+</odoo>

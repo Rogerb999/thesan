@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2019-TODAY WSuite Products <wsuite-products@wsuite.com>
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html). -->
+<odoo>
+    <template id="concepts_period_template">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.basic_layout">
+                    <div class="header">
+                        <center>
+                            <h4><span t-field="o.company_id"/></h4>
+                            <span t-esc="o.company_id.vat"/>
+                        </center>
+                        <div class="col-xs-12 text-right">
+                            NOMINAGI
+                            <br/>
+                            <span t-esc="current_datetime"/>
+                        </div>
+                    </div>
+                    <div class="page">
+                        <style type="text/css">
+                        </style>
+                        <div class="oe_structure"/>
+                        <br/>
+                        <h6 align="center">
+                            <b>CMT - SUMMARY BY CONCEPTS - PERIOD</b>
+                        </h6>
+                        <br/>
+                        <table style="font-size: 14px;" width="100%">
+                            <tr>
+                                <td width="25%">
+                                    <b>Period:</b>
+                                </td>
+                                <td width="25%">
+                                    <t t-esc="get_first_date(o.start_date)"/>
+                                </td>
+                                <td width="25%">
+                                    <b>Type Period:</b>
+                                </td>
+                                <td width="25%">
+                                    <t t-esc="get_second_date(o.start_date)"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="25%">
+                                    <b>Rank Date:</b>
+                                </td>
+                                <td width="25%">
+                                    <span t-field="o.start_date"/> - 
+                                    <span t-field="o.end_date"/>
+                                </td>
+                            </tr>
+                        </table>
+                        <br/>
+                        <table width="100%">
+                            <tr>
+                                <td width="50%"
+                                    style="background-color:#DCDCDC;padding: 10px;border-top-left-radius: 15px;border-bottom-left-radius: 15px;">
+                                    <center>Concept</center>
+                                </td>
+                                <td width="17%" style="background-color:#DCDCDC">
+                                    Quantity
+                                </td>
+                                <td width="17%" style="background-color:#DCDCDC">
+                                    <center>Accruals</center>
+                                </td>
+                                <td width="17%"
+                                    style="background-color:#DCDCDC;padding: 10px;border-top-right-radius: 15px;border-bottom-right-radius: 15px;">
+                                    <center>Deductions</center>
+                                </td>
+                            </tr>
+                        </table>
+                        <table width="100%">
+                            <t t-set="accruals" t-value="0"/>
+                            <t t-set="deductions" t-value="0"/>
+                            <tr t-foreach="get_detail(o)" t-as="b">
+                                <t t-set="accruals"
+                                   t-value="accruals + b.get('accruals')"/>
+                                <t t-set="deductions"
+                                   t-value="deductions + b.get('deductions')"/>
+                                <td width="50%">
+                                    <t t-if="b.get('name')">
+                                        &#160;&#160;&#160;&#160;&#160;
+                                        <span t-esc="b.get('name')"/>
+                                    </t>
+                                    <t t-if="not b.get('name')">
+                                        &#160;&#160;&#160;&#160;&#160;
+                                        -
+                                    </t>
+                                </td>
+                                <td width="17%">
+                                    <span t-esc="b.get('quantity')"/>
+                                </td>
+                                <td width="17%" class="text-center">
+                                    <span t-esc="b.get('accruals')"/>
+                                </td>
+                                <td width="17%" class="text-center">
+                                    <span t-esc="b.get('deductions')"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                </td>
+                                <td class="text-center">
+                                    <hr color="black"/>
+                                    <span t-esc="accruals"/>
+                                </td>
+                                <td class="text-center">
+                                    <hr color="black"/>
+                                    <span t-esc="deductions"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    &#160;&#160;&#160;&#160;&#160;<b>Quantity People</b> &#160;&#160;&#160;&#160;&#160;<t t-esc="len(o.payslip_ids)"/>
+                                </td>
+                                <td class="text-center">
+                                    <b>Grandson</b>
+                                </td>
+                                <td class="text-center">
+                                    <span t-esc="accruals - deductions"/>
+                                </td>
+                            </tr>
+                        </table>
+                        CMT - SUMMARY OF CONCEPTS PER PERIOD (PAID)
+                    </div>
+                    <div class="footer">
+                        <div class="col-xs-12 text-right">
+                            Page: <span class="page"/> of <span class="topage"/>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>

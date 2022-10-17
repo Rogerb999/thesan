@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!--  Report PaperFormat -->
+    <record id="paperformat_export_payslip" model="report.paperformat">
+        <field name="name">Employee Payslip</field>
+        <field name="default" eval="True"/>
+        <field name="format">A4</field>
+        <field name="orientation">Portrait</field>
+        <field name="margin_top">15</field>
+        <field name="margin_bottom">15</field>
+        <field name="margin_left">5</field>
+        <field name="margin_right">5</field>
+        <field name="header_line" eval="False"/>
+        <field name="header_spacing">35</field>
+        <field name="dpi">90</field>
+    </record>
+
+    <!-- Customer Sale Analysis Report -->
+    <report
+        id="action_report_export_emp_payslip"
+        string="Export Payslip Report"
+        model="hr.payslip"
+        report_type="qweb-pdf"
+        name="bi_employee_payslip_report.report_emp_payslip"
+        file="bi_employee_payslip_report.report_emp_payslip"
+        menu="False"
+        />
+
+    <record id="action_report_export_emp_payslip" model="ir.actions.report">
+        <field name="paperformat_id" ref="paperformat_export_payslip"/>
+    </record>
+
+</odoo>

@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<odoo>
+
+    <!-- Add Related Employee in User form view-->
+    <record id="view_users_form_inherit_ac" model="ir.ui.view">
+        <field name="name">res.users.form.inherit.ac</field>
+        <field name="model">res.users</field>
+        <field name="inherit_id" ref="base.view_users_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[hasclass('oe_title')]/group" position="inside">
+                <field name="auto_creation"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

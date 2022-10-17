@@ -1,0 +1,11 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_hr_payroll_structure_type,hr.payroll.structure.type,model_hr_payroll_structure_type,hr_payroll.group_hr_payroll_user,1,0,0,0
+access_hr_payroll_structure_type_manager,hr.payroll.structure.type,model_hr_payroll_structure_type,hr_payroll.group_hr_payroll_manager,1,1,1,0
+access_hr_leaves_generate,access_hr_leaves_generate,model_hr_leaves_generate,base.group_user,1,1,1,1
+access_hr_acumulated_rules,access_hr_acumulated_rules,model_hr_acumulated_rules,,1,1,1,1
+access_hr_conf_acumulated,access_hr_conf_acumulated,model_hr_conf_acumulated,,1,1,1,1
+access_hr_employee_acumulate,access_hr_employee_acumulate,model_hr_employee_acumulate,,1,1,1,1
+access_days_calculate,access_days_calculate,model_days_calculate,base.group_user,1,1,1,1
+access_hr_payroll_config_parameters,access_hr_payroll_config_parameters,model_hr_payroll_config_parameters,,1,1,1,1
+access_hr_payroll_config,access_hr_payroll_config,model_hr_payroll_config,,1,1,1,1
+access_hr_payroll_config_lines,access_hr_payroll_config_lines,model_hr_payroll_config_lines,,1,1,1,1

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <record id="job_order_start_stop_view_tree" model="ir.ui.view">
+            <field name="name">record.start.stop.timer.form</field>
+            <field name="model">record.start.stop.timer</field>
+            <field name="arch" type="xml">
+                <tree string="Start Stop Timer">
+                    <field name="start_time"/>
+                    <field name="stop_timer"/>
+                    <field name="start_user_id"/>
+                    <field name="stop_user_id"/>
+                    <field name="total_duration" widget="float_time"/>
+                    <field name="duration_str"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="job_order_start_stop_view_form" model="ir.ui.view">
+            <field name="name">record.start.stop.timer.tree</field>
+            <field name="model">record.start.stop.timer</field>
+            <field name="arch" type="xml">
+                <form string="Start Stop Timer">
+                    <group>
+                        <group>
+                            <field name="start_time"/>
+                            <field name="start_user_id"/>
+                            <field name="stop_user_id"/>
+                        </group>
+                        <group>
+                            <field name="stop_timer"/>
+                            <field name="duration_str"/>
+                        </group>
+                    </group>
+                    <field name="start_stop_line_ids" nolabel="1">
+                        <tree editable='bottom'>
+                            <field name="start_time"/>
+                            <field name="stop_time"/>
+                            <field name="pause_user_id"/>
+                            <field name="restart_user_id"/>
+                            <field name="duration" widget="float_time"/>
+                        </tree>
+                    </field>
+                </form>
+            </field>
+        </record>
+
+    </data>
+</odoo>

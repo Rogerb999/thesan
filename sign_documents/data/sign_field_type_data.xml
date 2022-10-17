@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<odoo>
+
+    <record id="sign_field_type_1" model="sign.field.type">
+        <field name="name">Signature</field>
+        <field name="sign_type">signature</field>
+        <field name="height">0.06</field>
+        <field name="width">0.25</field>
+    </record>
+
+    <record id="sign_field_type_2" model="sign.field.type">
+        <field name="name">Name</field>
+        <field name="sign_type">name</field>
+        <field name="height">0.02</field>
+        <field name="width">0.22</field>
+    </record>
+
+    <record id="sign_field_type_3" model="sign.field.type">
+        <field name="name">Text</field>
+        <field name="sign_type">text</field>
+        <field name="height">0.06</field>
+        <field name="width">0.22</field>
+    </record>
+
+    <record id="sign_field_type_4" model="sign.field.type">
+        <field name="name">Initial</field>
+        <field name="sign_type">initial</field>
+        <field name="height">0.06</field>
+        <field name="width">0.25</field>
+    </record>
+
+</odoo>

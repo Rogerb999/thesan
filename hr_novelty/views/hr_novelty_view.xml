@@ -1,0 +1,1093 @@
+<?xml version="1.0"?>
+<odoo>
+    <record model="ir.ui.view" id="view_hr_novelty_form">
+        <field name="name">hr.novelty.form</field>
+        <field name="model">hr.novelty</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="hr.novelty">
+                <header>
+                    <button name="action_wait" type="object"
+                            string="Wait" states="draft"/>
+                    <button name="action_wait_comments" type="object"
+                            string="Wait for Comments " states="wait"/>
+                    <button name="action_second_approval" type="object"
+                        string="Second Approve"
+                        attrs="{'invisible': ['!','&amp;',('is_sec_appr_user','=',True),
+                                                          ('state','in',('wait_second_approval'))]}"/>
+                    <button name="action_approve" type="object"
+                        string="Approve"
+                        attrs="{'invisible': ['!','&amp;',('is_user_appr','=',True),
+                                                          ('state','in',('wait','wait_comments'))]}"/>
+                    <button name="action_reject" type="object"
+                        string="Reject"
+                        attrs="{'invisible': ['!','&amp;',('state','in',('wait','wait_comments','wait_second_approval')),'|',('is_user_appr','=',True),('is_sec_appr_user','=',True)
+                                                          ]}"/>
+                    <button name="action_process" type="object"
+                            string="Process" states="approved"
+                            groups="hr_novelty.group_novelty_process"/>
+                    <button name="action_set_to_approve" type="object"
+                            string="Set to Approve" states="processed"
+                            groups="hr_novelty.group_novelty_process"/>
+                    <button name="action_draft" type="object" string="Draft"
+                        attrs="{'invisible': [('state','not in',('wait','wait_comments','wait_second_approval','approved'))]}"/>
+                    <button name="action_draft" type="object" string="Set to Draft"
+                            groups="hr_novelty.group_novelty_reject_to_draft"
+                            attrs="{'invisible': [('state','!=',('rejected'))]}"/>
+                    <button name="action_cancel" type="object" string="Cancel"
+                        attrs="{'invisible': [('state','not in',('wait','wait_comments','wait_second_approval','approved'))]}"/>
+                    <button name="action_recruitment" class="btn-primary" type="object" string="Create Recruitment" attrs="{'invisible': ['!', '&amp;','&amp;',('hr_job_id','=',False),
+                                                          ('is_recruitment','=',True),
+                                                          ('state','=','approved'),
+                                                          ('hr_novelty_job_id','=',False)]}"/>
+                    <button name="%(action_novelty_create_contact)d" type="action"
+                        string="Create Contact"
+                        attrs="{'invisible': ['|','|',('state','not in',['wait_second_approval','processed']), ('contact_id','!=',False),('is_recruitment','=',False)]}"/>
+                    <button name="%(action_novelty_create_employee)d" type="action"
+                            string="Create Employee"
+                            attrs="{'invisible': ['|','|','|',('state','not in',['wait_second_approval','processed']),('employee_id','!=',False),('contact_id','=',False),('is_recruitment','=',False)]}"/>
+                    <button name="%(action_novelty_create_contract)d" type="action"
+                            string="Create Contract"
+                            attrs="{'invisible': ['|','|','|',('state','not in',['wait_second_approval','processed']),('contract_id','!=',False),('employee_id','=',False),('is_recruitment','=',False)]}"/>
+                    <button name="novelty_create_subcontract" type="object"
+                            string="Create Subcontract"
+                        attrs="{'invisible': ['|','|','|',('contract_id','=',False),('subcontract','!=',False),('increase_salary','=',False),('state','not in',['wait_second_approval','processed'])]}"/>
+                    <field name="state" widget="statusbar"
+                           statusbar_visible="wait,approved,processed"/>
+                </header>
+                <sheet>
+                    <label for="name" class="oe_read_only"/>
+                    <h1>
+                        <field name="name"/>
+                    </h1>
+                    <group col="4" colspan="2">
+                        <field name="type_id" required="1"
+                               class="oe_read_only"/>
+                        <field name="subtype_id" required="1"
+                               class="oe_read_only"/>
+                        <field name="event_id" required="1"/>
+                        <field name="employee_id"
+                               options="{'no_create': True, 'no_create_edit': True}"
+                               attrs="{'required': [('is_recruitment','=',False)]}"/>
+                        <field name="identification_id"
+                               attrs="{'invisible': [('company_only','=',True)]}"/>
+                        <label for="start_date" string="Date"/>
+                        <div>
+                            <div class="o_row o_row_readonly">
+                                <field name="start_date" class="oe_inline"/>
+                                <span class="oe_inline"
+                                attrs="{'invisible': ['|',('is_aplica_fecha_final','!=',True),('unit_half', '=', True)]}"> Hasta </span>
+                                <field name="end_date" class="oe_inline"
+                                       attrs="{'invisible': ['|',('is_aplica_fecha_final','!=',True),
+                                        ('unit_half', '=', True)]}"/>
+                                <field name="approved_date" class="oe_read_only"/>
+                            </div>
+                            <div class="o_row o_row_readonly"
+                                 attrs="{'invisible': [('type_id','!=', %(hr_novelty.novelty_type_TIE)d)]}">
+                                <label for="unit_half"/>
+                                <field name="unit_half"/>
+                                <field name="start_date_period" class="oe_inline"
+                                       string="In"
+                                       options="{'horizontal': True}"
+                                       attrs="{'required': [('unit_half', '=', True)], 'invisible': [('unit_half', '=', False)]}"/>
+                            </div>
+                        </div>
+                        <field name="total_days"/>
+                        <field name="total_hours"
+                               attrs="{'invisible':[('is_horas_fijas','!=',False)]}"/>
+                        <field name="total_fix_hours"
+                               attrs="{'invisible':[('is_horas_fijas','=',False)]}"/>
+                        <field name="h_e_procedimiento"
+                               attrs="{'invisible':[('is_h_e_procedimiento','=',False)]}"/>
+                        <field name="responsible_id" attrs="{'invisible': [('responsible_required','=',False)],
+                        'required': [('responsible_required','=',True)]}"/>
+                        <field name="leave_id" readonly="1" attrs="{'invisible': [('subtype_id','!=',%(novelty_subtype_AUS)d)]}"/>
+                        <field name="is_arl"
+                               attrs="{'invisible': [('is_tipo_de_incapacidad', '=', False)]}"/>
+                        <field name="is_eps"
+                               attrs="{'invisible': [('is_tipo_de_incapacidad', '=', False)]}"/>
+                        <field name="amount"/>
+                        <field name="approved_by" attrs="{'invisible':[('approved_by', '=', False)], 'readonly':[('approved_by', '!=', False)]}"/>
+                        <field name="end_business_day"
+                               attrs="{'invisible': [('is_end_business_day', '=', False)]}"/>
+                        <field name="description" colspan="4"/>
+                        <field name="leave_message"
+                               attrs="{'invisible': [('leave_message','=', False)], 'readonly':[('leave_message', '!=', False)]}"/>
+                    </group>
+                    <group string="Sección de reclutamiento" attrs="{'invisible': [('is_recruitment','=',False)]}" col="4" colspan="2">
+                        <field name="recruitment_reason_id"
+                               attrs="{'required': [('is_recruitment','!=',False)],'readonly':[('state', 'in', ('approved','processed','cancel'))]}"/>
+                        <field name="hr_job_id"
+                               attrs="{'readonly':[('state', 'in', ('approved','processed','cancel'))]}"/>
+                        <field name="currency_id"
+                               attrs="{'readonly':[('state', 'in', ('approved','processed','cancel'))]}"/>
+                        <field name="experience_id"
+                               attrs="{'readonly':[('state', 'in', ('approved','processed','cancel'))]}"/>
+                        <field name="hr_novelty_job_id"
+                               attrs="{'readonly':[('state', 'in', ('approved','processed','cancel'))]}"/>
+                        <field name="hr_novelty_job_id_state"
+                               attrs="{'invisible': [('hr_novelty_job_id','=',False)],'readonly':[('state', 'in', ('approved','processed','cancel'))]}" string="Recruitment State"/>
+                        <field name="hiring_type"
+                               attrs="{'readonly':[('state', 'in', ('approved','processed','cancel'))]}"/>
+                        <field name="work_group_id"
+                               attrs="{'readonly':[('state', 'in', ('approved','processed','cancel'))]}"/>
+                        <field name="observation_recruitment"
+                               attrs="{'readonly':[('state', 'in', ('approved','processed','cancel'))]}"/>
+                        <field name="project_type"
+                               attrs="{'readonly':[('state', 'in', ('approved','processed','cancel'))]}"/>
+                        <field name="contact_id" readonly="1"/>
+                        <field name="contract_id" readonly="1"/>
+                        <field name="wage_assign"
+                               attrs="{'readonly':[('state', 'in', ('approved','processed','cancel'))]}"/>
+                        <field name="Fix_wage_assing"
+                               attrs="{'readonly':[('state', 'in', ('approved','processed','cancel'))]}"/>
+                        <field name="subcontract" invisible="1"/>
+                    </group>
+                    <notebook attrs="{'invisible': [('is_recruitment','=',False)]}">
+                        <page string="Language/Level Details">
+                            <field name="language_level_ids"
+                                   nolabel="1"
+                                   attrs="{'readonly':[('state', 'in', ('approved','processed','cancel'))]}">
+                                <tree editable="bottom">
+                                    <field name="language_id"/>
+                                    <field name="level_id"/>
+                                </tree>
+                                <form string="Language/Level Details">
+                                    <sheet>
+                                        <group col="4">
+                                            <field name="language_id"/>
+                                            <field name="level_id"/>
+                                        </group>
+                                    </sheet>
+                                </form>
+                            </field>
+                        </page>
+                    </notebook>
+
+                    <group string="Contract Completion Section"
+                           attrs="{'invisible': [('is_motivo_de_retiro','=',False)]}"
+                           col="4" colspan="2">
+                        <field name="motivo_talento_id"
+                               attrs="{'invisible':[('is_motivo_de_retiro','=',False)]}"
+                               options="{'no_create': True, 'no_create_edit': True}"/>
+                    </group>
+                    <group string="Increase Salary"
+                           attrs="{'invisible': [('increase_salary','=',False)]}"
+                           col="4" colspan="2">
+                        <field name="wage"/>
+                        <field name="fix_wage_amount"/>
+                        <field name="flex_wage_amount"/>
+                        <field name="confidential"/>
+                        <field name="observation_increase"/>
+                    </group>
+                    <group string="License Attachment"
+                           attrs="{'invisible': [('requered_attachment_lic','=',False)]}"
+                           col="4" colspan="2">
+                        <field name="birth_certificate"/>
+                        <field name="certificate_born_alive"/>
+                        <field name="certificate_week_of_gestation"/>
+                        <field name="original_maternity_leave"/>
+                        <field name="relationship_id"
+                                options="{'no_create': True, 'no_create_edit': True}"/>
+                        <field name="leave_code_id"
+                                options="{'no_create': True, 'no_create_edit': True}"/>
+                    </group>
+                    <group name="contribution" string="Contribution"
+                           attrs="{'invisible': [('requered_account','=',False)]}">
+                        <group>
+                            <field name="bank_account_id"/>
+                            <field name="partner_id"/>
+                        </group>
+                    </group>
+                    <group string="Documents Section"
+                           attrs="{'invisible': [('is_requiere_adjunto','=',False)]}"
+                           col="4" colspan="2">
+                        <field name="support" filename="file_name"
+                               attrs="{'required': [('is_adjunto_obligatorio', '!=', False)]}"/>
+                        <field name="support_name"/>
+                        <field name="support_size"/>
+                        <field name="support_attachment_url"
+                               widget="url"
+                               attrs="{'readonly':[('id', '!=', False)]}"/>
+                        <field name="file_name" invisible="1"/>
+                    </group>
+                    <group groups="base.group_system">
+                        <group string="Data Sign">
+                            <field name="date" readonly="1"/>
+                            <field name="location" readonly="1"/>
+                            <field name="ip_from" readonly="1"/>
+                        </group>
+                        <group string="Approved Data Sign"
+                               attrs="{'invisible':[('state', 'not in', ('approved','processed'))]}">
+                            <field name="approved_ip_date" readonly="1"
+                                   string="Date"/>
+                            <field name="approved_location" readonly="1"
+                                   string="Location"/>
+                            <field name="approved_ip_from" readonly="1"
+                                   string="IP From"/>
+                        </group>
+                    </group>
+                    <group>
+                        <field name="reject_reason" colspan="4"
+                               attrs="{'invisible': [('state','!=','rejected')]}"/>
+                        <field name="responsible_required" invisible="1"/>
+                        <field name="company_only" invisible="1"/>
+                        <field name="is_aplica_fecha_final" invisible="1"/>
+                        <field name="is_requiere_adjunto" invisible="1"/>
+                        <field name="is_recruitment" invisible="1"/>
+                        <field name="is_user_appr" invisible="True"/>
+                        <field name="is_sec_appr_user" invisible="1"/>
+                        <field name="is_motivo_de_retiro" invisible="1"/>
+                        <field name="is_h_e_procedimiento" invisible="1"/>
+                        <field name="is_horas_fijas" invisible="1"/>
+                        <field name="is_tipo_de_incapacidad" invisible="1"/>
+                        <field name="is_adjunto_obligatorio" invisible="1"/>
+                        <field name="requered_account" invisible="1"/>
+                        <field name="increase_salary" invisible="1"/>
+                        <field name="requered_attachment_lic" invisible="1"/>
+                        <field name="show_you" invisible="1"/>
+                        <field name="is_end_business_day" invisible="1"/>
+                        <field name="upc" invisible="1"/>
+                    </group>
+                    <group attrs="{'invisible': [('upc', '=', False)]}">
+                        <group string="UPC" name="upc">
+                            <field name="family_id"
+                                   context="{'default_employee_id': employee_id}"/>
+                        </group>
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids"
+                           widget="mail_followers"/>
+                    <field name="activity_ids" widget="mail_activity"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+
+    <record model="ir.ui.view" id="view_hr_novelty_tree">
+        <field name="name">hr.novelty.tree</field>
+        <field name="model">hr.novelty</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="hr.novelty">
+                <field name="name"/>
+                <field name="type_id"/>
+                <field name="subtype_id"/>
+                <field name="event_id"/>
+                <field name="employee_id"/>
+                <field name="start_date"/>
+                <field name="end_date"/>
+                <field name="total_days"/>
+                <field name="state"/>
+
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_hr_novelty_search" model="ir.ui.view">
+        <field name="name">hr.novelty.search</field>
+        <field name="model">hr.novelty</field>
+        <field name="arch" type="xml">
+            <search string="Hr Novelty">
+                <field name="name"/>
+                <field name="type_id"/>
+                <field name="subtype_id"/>
+                <field name="event_id"/>
+                <field name="employee_id"/>
+                <field name="state"/>
+                <field name="start_date"/>
+                <field name="end_date"/>
+                <filter string="Draft" name="draft"
+                        domain="[('state','=','draft')]"/>
+                <filter string="Wait" name="wait"
+                        domain="[('state','=','wait')]"/>
+                <filter string="Wait for comments" name="wait_comments"
+                        domain="[('state','=','wait_comments')]"/>
+                <filter string="Waiting Second Approval"
+                        name="wait_second_approval"
+                        domain="[('state','=','wait_second_approval')]"/>
+                <filter string="Approved" name="approved"
+                        domain="[('state','=','approved')]"/>
+                <filter string="Processed" name="processed"
+                        domain="[('state','=','processed')]"/>
+                <filter string="Cancel" name="cancel"
+                        domain="[('state','=','cancel')]"/>
+                <filter string="Rejected" name="rejected"
+                        domain="[('state','=','rejected')]"/>
+                <group string="Group By">
+                    <filter string="Type" name="grp_type_id"
+                            context="{'group_by':'type_id'}"/>
+                    <filter string="Subtype" name="grp_subtype_id"
+                            context="{'group_by':'subtype_id'}"/>
+                    <filter string="Event" name="grp_event_id"
+                            context="{'group_by':'event_id'}"/>
+                    <filter string="Employee" name="grp_employee_id"
+                            context="{'group_by':'employee_id'}"/>
+                    <filter string="Status" name="grp_state"
+                            context="{'group_by':'state'}"/>
+                    <filter string="Identification No"
+                            name="identification_id"
+                            context="{'group_by':'identification_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_hr_novelty">
+        <field name="name">Novelty</field>
+        <field name="res_model">hr.novelty</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="search_view_id" ref="view_hr_novelty_search"/>
+    </record>
+
+    <record model="ir.ui.view" id="view_hr_novelty_event_form">
+        <field name="name">hr.novelty.event.form</field>
+        <field name="model">hr.novelty.event</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="hr.novelty.event">
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button class="oe_stat_button" type="object"
+                                name="toggle_active" icon="fa-archive">
+                            <field name="active" widget="boolean_button"
+                                   options='{"terminology": "archive"}'/>
+                        </button>
+                    </div>
+                    <group col="4">
+                        <group colspan="2" name="general"
+                               string="General Configuration">
+                            <field name="name"/>
+                            <field name="type_id" required="1"/>
+                            <field name="subtype_id"
+                                   domain="[('type_id','in',[type_id])]"
+                                   required="1"/>
+                            <field name="affectation" widget="radio"/>
+                        </group>
+                        <group name="time" string="Time Configuration"
+                               colspan="2"
+                               attrs="{'invisible': [('type_id','!=',%(novelty_type_TIE)d)]}">
+                            <field name="leave_type_id"
+                                   attrs="{'invisible': [('subtype_id','!=',%(novelty_subtype_AUS)d)]}"/>
+                            <field name="restriction_day"/>
+                            <field name="min_days"/>
+                            <field name="max_days"/>
+                            <field name="calendar_type"/>
+                            <field name="limit_advance"/>
+                            <field name="advance_holidays"/>
+                            <field name="projection_vacation"/>
+                        </group>
+                        <group colspan="2">
+                            <field name="is_recruitment"/>
+                            <field name="new_recruitment"
+                                  attrs="{'invisible': [('is_recruitment', '=', False)]}"/>
+                            <field name="is_aplica_fecha_final"/>
+                            <field name="is_requiere_adjunto"/>
+                            <field name="is_motivo_de_retiro"/>
+                            <field name="unjustified"/>
+                            <field name="transfer_employee"/>
+                        </group>
+                        <group colspan="2">
+                            <field name="is_h_e_procedimiento"/>
+                            <field name="is_horas_fijas"/>
+                            <field name="is_tipo_de_incapacidad"/>
+                            <field name="is_adjunto_obligatorio"/>
+                            <field name="requered_account"/>
+                            <field name="increase_salary"/>
+                            <field name="requered_attachment_lic"/>
+                            <field name="show_you"/>
+                            <field name="is_end_business_day"/>
+                            <field name="upc"/>
+                        </group>
+                    </group>
+
+                    <notebook>
+                        <page name="details" string="Details">
+                            <group col="4">
+                                <field name="sara"/>
+                                <field name="description"/>
+                            </group>
+                        </page>
+                        <page name="approval" string="Approval">
+                            <group col="4">
+                                <field name="approver" widget="radio"/>
+                                <label for="second_approver_required"
+                                       string="Second Approver Required"/>
+                                <div class="o_row o_row_readonly">
+                                    <field name="second_approver_required"
+                                           class="oe_inline"/>
+                                    <field name="second_approver_group_id"
+                                           attrs="{'invisible':[('second_approver_required','=',False)]}"
+                                           class="oe_inline"/>
+                                </div>
+                                <label for="is_optional_approver"/>
+                                <div class="o_row o_row_readonly">
+                                    <field name="is_optional_approver" class="oe_inline"/>
+                                    <field name="optional_approver_group_id"
+                                           attrs="{'invisible':[('is_optional_approver','=',False)]}"
+                                           class="oe_inline"
+                                           options="{'no_create': True, 'no_create_edit': True}"/>
+                                </div>
+                                <label for="is_optional_approver_2"/>
+                                <div class="o_row o_row_readonly">
+                                    <field name="is_optional_approver_2"
+                                           class="oe_inline"/>
+                                    <field name="optional_approver2_group_id"
+                                           attrs="{'invisible':[('is_optional_approver_2','=',False)]}"
+                                           class="oe_inline"
+                                           options="{'no_create': True, 'no_create_edit': True}"/>
+                                </div>
+                            </group>
+                        </page>
+
+                        <page name="extra" string="Extra">
+                            <group col="4" colspan="4">
+                                <group colspan="2">
+                                    <field name="responsible_required"/>
+                                    <field name="attachment_required"/>
+                                    <field name="company_only"/>
+                                </group>
+                                <group colspan="2">
+                                    <group string="Groups Allowed for Creation">
+                                        <field name="group_ids" nolabel="1"
+                                               widget="many2many_tags"/>
+                                    </group>
+                                    <group string="Grupo de seguidores" colspan="2">
+                                        <field name="grupo_de_seguidores_ids"
+                                               nolabel="1" widget="many2many_tags"/>
+                                    </group>
+                                </group>
+                            </group>
+                        </page>
+                        <page name="entities" string="Entities">
+                            <group>
+                                <group>
+                                    <field name="prepaid_medicine_id"
+                                           options="{'no_create': True, 'no_create_edit': True}"/>
+                                </group>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_hr_novelty_event_tree">
+        <field name="name">hr.novelty.event.tree</field>
+        <field name="model">hr.novelty.event</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="hr.novelty.event">
+                <field name="name"/>
+                <field name="type_id"/>
+                <field name="subtype_id"/>
+                <field name="restriction_day"/>
+                <field name="min_days"/>
+                <field name="max_days"/>
+                <field name="calendar_type"/>
+                <field name="description"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_hr_novelty_event">
+        <field name="name">Novelty Event</field>
+        <field name="res_model">hr.novelty.event</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.ui.view" id="view_hr_novelty_type_form">
+        <field name="name">hr.novelty.type.form</field>
+        <field name="model">hr.novelty.type</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="hr.novelty.type">
+                <group col="6">
+                    <field name="name" colspan="2"/>
+                    <field name="description" colspan="4"/>
+                </group>
+                <div class="oe_chatter">
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_hr_novelty_type_tree">
+        <field name="name">hr.novelty.type.tree</field>
+        <field name="model">hr.novelty.type</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="hr.novelty.type">
+                <field name="name"/>
+                <field name="description"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_hr_novelty_type">
+        <field name="name">Novelty Type</field>
+        <field name="res_model">hr.novelty.type</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.ui.view" id="view_hr_novelty_subtype_form">
+        <field name="name">hr.novelty.type.subtype.form</field>
+        <field name="model">hr.novelty.type.subtype</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="hr.novelty.subtype">
+                <group col="6">
+                    <field name="name" colspan="2"/>
+                    <field name="type_id" colspan="2"/>
+                    <field name="description" colspan="4"/>
+                </group>
+                <div class="oe_chatter">
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_hr_novelty_subtype_tree">
+        <field name="name">hr.novelty.type.subtype.tree</field>
+        <field name="model">hr.novelty.type.subtype</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="hr.novelty.type.subtype">
+                <field name="name"/>
+                <field name="type_id"/>
+                <field name="description"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_hr_novelty_subtype">
+        <field name="name">Novelty Subtype</field>
+        <field name="res_model">hr.novelty.type.subtype</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+
+
+    <record model="ir.ui.view" id="stage_followers_form">
+        <field name="name">hr.novelty.stage_followers.form</field>
+        <field name="model">hr.novelty.stage_followers</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <field name="partner_id" />
+                    <field name="stage" />
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="stage_followers_list">
+        <field name="name">hr.novelty.stage_followers.tree</field>
+        <field name="model">hr.novelty.stage_followers</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="partner_id"/>
+                <field name="stage"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_view_stage_followers">
+        <field name="name">Novelty Stage Followers</field>
+        <field name="res_model">hr.novelty.stage_followers</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <menuitem name="Novelty"
+              id="menu_hr_novelty"
+              action="action_hr_novelty"
+              parent="hr.menu_hr_root"
+              sequence="10"
+              groups="base_product.group_daf"/>
+
+    <menuitem name="Novelty"
+              id="menu_hr_config_novelty"
+              parent="hr.menu_human_resources_configuration"
+              sequence="9"/>
+
+
+    <menuitem name="Event"
+              id="menu_hr_config_novelty_event"
+              action="action_hr_novelty_event"
+              parent="menu_hr_config_novelty"
+              sequence="10"/>
+
+    <menuitem name="Type"
+              id="menu_hr_config_novelty_type"
+              action="action_hr_novelty_type"
+              parent="menu_hr_config_novelty"
+              sequence="20"/>
+
+    <menuitem name="Sub-Type"
+              id="menu_hr_config_novelty_subtype"
+              action="action_hr_novelty_subtype"
+              parent="menu_hr_config_novelty"
+              sequence="30"/>
+
+    <menuitem name="Stage Followers"
+              id="menu_hr_config_novelty_stage_followers"
+              parent="menu_hr_config_novelty"
+              action="action_view_stage_followers"
+              sequence="40"/>
+
+    <!-- HR Experience Time Menuitem -->
+    <!-- <menuitem
+        id="hr_experience_time_menu_novelty_action"
+        groups="hr.group_hr_user"
+        sequence="13"
+        action="hr_curriculum_vitae.hr_experience_time_action"
+        parent="menu_hr_config_novelty"/> -->
+
+    <record id="action_massive_approval" model="ir.actions.server">
+        <field name="name">Massive Approval</field>
+        <field name="model_id" ref="hr_novelty.model_hr_novelty"/>
+        <field name="binding_model_id" ref="hr_novelty.model_hr_novelty"/>
+        <field name="state">code</field>
+        <field name="code">action = records.action_massive_approval()</field>
+    </record>
+
+    <record id="action_process" model="ir.actions.server">
+        <field name="name">Process</field>
+        <field name="model_id" ref="hr_novelty.model_hr_novelty"/>
+        <field name="binding_model_id" ref="hr_novelty.model_hr_novelty"/>
+        <field name="state">code</field>
+        <field name="code">
+for rec in records:
+    if rec.state == 'approved' and rec.is_user_appr:
+        rec.action_process()
+        </field>
+    </record>
+
+    <!-- Novelty Notifications Form View-->
+
+    <record model="ir.ui.view" id="view_hr_novelty_form_notifications">
+        <field name="name">hr.novelty.form.custom</field>
+        <field name="model">hr.novelty</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="hr.novelty">
+                <header>
+                    <button name="action_wait" type="object"
+                            string="Wait" states="draft"/>
+                    <button name="action_wait_comments" type="object"
+                            string="Wait for Comments " states="wait"/>
+                    <button name="action_second_approval" type="object"
+                            string="Second Approve"
+                        attrs="{'invisible': ['!','&amp;',('is_sec_appr_user','=',True),
+                                                          ('state','in',('wait_second_approval'))]}"/>
+                    <button name="action_approve" type="object"
+                            string="Approve"
+                        attrs="{'invisible': ['!','&amp;',('is_user_appr','=',True),
+                                                          ('state','in',('wait','wait_comments'))]}"/>
+                    <button name="action_reject" type="object"
+                            string="Reject"
+                        attrs="{'invisible': ['!','&amp;',('state','in',('wait','wait_comments','wait_second_approval')),'|',('is_user_appr','=',True),('is_sec_appr_user','=',True)
+                                                          ]}"/>
+                    <button name="action_process" type="object" string="Process"
+                            states="approved"
+                            groups="hr_novelty.group_novelty_process"/>
+                    <button name="action_set_to_approve" type="object"
+                            string="Set to Approve" states="processed"
+                            groups="hr_novelty.group_novelty_process"/>
+                    <button name="action_draft" type="object" string="Draft"
+                        attrs="{'invisible': [('state','not in',('wait','wait_comments','wait_second_approval','approved'))]}"/>
+                    <!--button name="action_cancel" type="object" string="Cancel"
+                        attrs="{'invisible': [('state','not in',('wait','wait_comments','wait_second_approval','approved'))]}"/-->
+                    <button name="action_recruitment" class="btn-primary" type="object" string="Create Recruitment" attrs="{'invisible': ['!', '&amp;','&amp;',('hr_job_id','=',False),
+                                                          ('is_recruitment','=',True),
+                                                          ('state','=','approved'),
+                                                          ('hr_novelty_job_id','=',False)]}"/>
+                    <field name="state" widget="statusbar"
+                           statusbar_visible="wait,approved,processed"/>
+                </header>
+                <sheet>
+                    <label for="name" class="oe_read_only"/>
+                    <h1>
+                        <field name="name"/>
+                    </h1>
+                    <group col="4" colspan="2">
+                        <field name="type_id" required="1"
+                               class="oe_read_only"/>
+                        <field name="subtype_id"
+                               required="1" class="oe_read_only"/>
+                        <field name="event_id" required="1"/>
+                        <field name="employee_id"
+                               options="{'no_create': True, 'no_create_edit': True}"
+                               attrs="{'required': [('is_recruitment','=',False)]}"/>
+                        <field name="identification_id"
+                               attrs="{'invisible': [('company_only','=',True)]}"/>
+                        <label for="start_date" string="Date"/>
+                        <div>
+                            <div class="o_row o_row_readonly">
+                                <field name="start_date" class="oe_inline"/>
+                                <span class="oe_inline"
+                                attrs="{'invisible': ['|',('is_aplica_fecha_final','!=',True),('unit_half', '=', True)]}"> Hasta </span>
+                                <field name="end_date" class="oe_inline"
+                                       attrs="{'invisible': ['|',('is_aplica_fecha_final','!=',True),
+                                        ('unit_half', '=', True)]}"/>
+                                <field name="approved_date" class="oe_read_only"/>
+                            </div>
+                            <div class="o_row o_row_readonly"
+                                 attrs="{'invisible': [('type_id','!=', %(hr_novelty.novelty_type_TIE)d)]}">
+                                <label for="unit_half"/>
+                                <field name="unit_half"/>
+                                <field name="start_date_period"
+                                       class="oe_inline" string="In"
+                                       options="{'horizontal': True}"
+                                       attrs="{'required': [('unit_half', '=', True)], 'invisible': [('unit_half', '=', False)]}"/>
+                            </div>
+                        </div>
+                        <field name="total_days"/>
+                        <field name="total_hours"
+                               attrs="{'invisible':[('is_horas_fijas','!=',False)]}"/>
+                        <field name="total_fix_hours"
+                               attrs="{'invisible':[('is_horas_fijas','=',False)]}"/>
+                        <field name="h_e_procedimiento"
+                               attrs="{'invisible':[('is_h_e_procedimiento','=',False)]}"/>
+                        <field name="responsible_id"
+                               attrs="{'invisible': [('responsible_required','=',False)],
+                        'required': [('responsible_required','=',True)]}"/>
+                        <field name="leave_id" readonly="1"
+                               attrs="{'invisible': [('subtype_id','!=',%(novelty_subtype_AUS)d)]}"/>
+                        <field name="is_arl"
+                               attrs="{'invisible': [('is_tipo_de_incapacidad', '=', False)]}"/>
+                        <field name="is_eps"
+                               attrs="{'invisible': [('is_tipo_de_incapacidad', '=', False)]}"/>
+                        <field name="amount"/>
+                        <field name="end_business_day"
+                               attrs="{'invisible': [('is_end_business_day', '=', False)]}"/>
+                        <field name="description" colspan="4"/>
+                        <field name="leave_message"
+                               attrs="{'invisible': [('leave_message','=', False)], 'readonly':[('leave_message', '!=', False)]}"/>
+                    </group>
+                    <group string="Sección de reclutamiento"
+                           attrs="{'invisible': [('is_recruitment','=',False)]}"
+                           col="4" colspan="2">
+                        <field name="recruitment_reason_id"
+                               attrs="{'required': [('is_recruitment','!=',False)]}"/>
+                        <field name="hr_job_id"/>
+                        <field name="currency_id"/>
+                        <field name="experience_id"/>
+                        <field name="hr_novelty_job_id"/>
+                        <field name="hr_novelty_job_id_state"
+                               attrs="{'invisible': [('hr_novelty_job_id','=',False)]}"
+                               string="Recruitment State"/>
+                        <field name="hiring_type"/>
+                        <field name="work_group_id"/>
+                        <field name="observation_recruitment"/>
+                        <field name="project_type"/>
+                    </group>
+                    <notebook attrs="{'invisible': [('is_recruitment','=',False)]}">
+                        <page string="Language/Level Details">
+                            <field name="language_level_ids" nolabel="1">
+                                <tree editable="bottom">
+                                    <field name="language_id"/>
+                                    <field name="level_id"/>
+                                </tree>
+                                <form string="Language/Level Details">
+                                    <sheet>
+                                        <group col="4">
+                                            <field name="language_id"/>
+                                            <field name="level_id"/>
+                                        </group>
+                                    </sheet>
+                                </form>
+                            </field>
+                        </page>
+                    </notebook>
+
+                    <group string="Contract Completion Section"
+                           attrs="{'invisible': [('is_motivo_de_retiro','=',False)]}"
+                           col="4" colspan="2">
+                        <field name="motivo_talento_id"
+                               attrs="{'invisible':[('is_motivo_de_retiro','=',False)]}"
+                               options="{'no_create': True, 'no_create_edit': True}"/>
+                    </group>
+                    <group string="Increase Salary"
+                           attrs="{'invisible': [('increase_salary','=',False)]}"
+                           col="4" colspan="2">
+                        <field name="wage"/>
+                        <field name="fix_wage_amount"/>
+                        <field name="flex_wage_amount"/>
+                        <field name="confidential"/>
+                        <field name="observation_increase"/>
+                    </group>
+                    <group string="License Attachment"
+                           attrs="{'invisible': [('requered_attachment_lic','=',False)]}"
+                           col="4" colspan="2">
+                        <field name="birth_certificate"/>
+                        <field name="certificate_born_alive"/>
+                        <field name="certificate_week_of_gestation"/>
+                        <field name="original_maternity_leave"/>
+                        <field name="relationship_id"
+                                options="{'no_create': True, 'no_create_edit': True}"/>
+                        <field name="leave_code_id"
+                                options="{'no_create': True, 'no_create_edit': True}"/>
+                    </group>
+                    <group name="contribution" string="Contribution"
+                           attrs="{'invisible': [('requered_account','=',False)]}">
+                        <group>
+                            <field name="bank_account_id"
+                                   options="{'no_create': True, 'no_create_edit': True}"/>
+                            <field name="partner_id"
+                                   options="{'no_create': True, 'no_create_edit': True}"/>
+                        </group>
+                    </group>
+                    <group string="Documents Section"
+                           attrs="{'invisible': [('is_requiere_adjunto','=',False)]}"
+                           col="4" colspan="2">
+                        <field name="support" filename="file_name"
+                               attrs="{'required': [('is_adjunto_obligatorio', '!=', False)]}"/>
+                        <field name="support_name"/>
+                        <field name="support_size"/>
+                        <field name="support_attachment_url" widget="url"
+                               attrs="{'readonly':[('id', '!=', False)]}"/>
+                        <field name="file_name" invisible="1"/>
+                    </group>
+                    <group>
+                        <field name="reject_reason" colspan="4"
+                               attrs="{'invisible': [('state','!=','rejected')]}"/>
+                        <field name="responsible_required" invisible="1"/>
+                        <field name="company_only" invisible="1"/>
+                        <field name="is_aplica_fecha_final" invisible="1"/>
+                        <field name="is_requiere_adjunto" invisible="1"/>
+                        <field name="is_recruitment" invisible="1"/>
+                        <field name="is_user_appr" invisible="True"/>
+                        <field name="is_sec_appr_user" invisible="1"/>
+                        <field name="is_motivo_de_retiro" invisible="1"/>
+                        <field name="is_h_e_procedimiento" invisible="1"/>
+                        <field name="is_horas_fijas" invisible="1"/>
+                        <field name="transfer_employee" invisible="1"/>
+                        <field name="is_tipo_de_incapacidad" invisible="1"/>
+                        <field name="is_adjunto_obligatorio" invisible="1"/>
+                        <field name="requered_account" invisible="1"/>
+                        <field name="increase_salary" invisible="1"/>
+                        <field name="requered_attachment_lic" invisible="1"/>
+                        <field name="show_you" invisible="1"/>
+                        <field name="is_end_business_day" invisible="1"/>
+                        <field name="upc" invisible="1"/>
+                    </group>
+                    <group attrs="{'invisible': [('upc', '=', False)]}">
+                        <group string="UPC" name="upc">
+                            <field name="family_id"
+                                   context="{'default_employee_id': employee_id}"/>
+                        </group>
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids"
+                           widget="mail_followers"/>
+                    <field name="activity_ids" widget="mail_activity"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+
+    <!-- Novelty Notifications To Approve Part -->
+
+    <record model="ir.ui.view"
+            id="view_hr_novelty_tree_notifications_to_approve">
+        <field name="name">hr.novelty.tree.to.approve</field>
+        <field name="model">hr.novelty</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="hr.novelty">
+                <button name="action_approve" class="fa fa-check-circle"
+                        type="object" string="  Approve"/>
+                <button name="action_reject" class="fa fa-times-circle"
+                        type="object" string="  Reject"/>
+                <field name="name"/>
+                <field name="event_id"/>
+                <field name="employee_id"/>
+                <field name="description"/>
+                <field name="start_date"/>
+                <field name="end_date"/>
+                <field name="amount"/>
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_hr_novelty_notifications_to_approve"
+            model="ir.actions.act_window">
+        <field name="name">To Approve</field>
+        <field name="res_model">hr.novelty</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="context">{'novelty_approve': True}</field>
+        <field name="domain">[('state','in', ['draft', 'wait', 'wait_comments'])]</field>
+    </record>
+
+    <record id="action_hr_novelty_notifications_to_approve_tree"
+            model="ir.actions.act_window.view">
+        <field eval="1" name="sequence"/>
+        <field name="view_mode">tree</field>
+        <field name="view_id"
+               ref="view_hr_novelty_tree_notifications_to_approve"/>
+        <field name="act_window_id"
+               ref="action_hr_novelty_notifications_to_approve"/>
+    </record>
+
+    <record id="action_hr_novelty_notifications_to_approve_form"
+            model="ir.actions.act_window.view">
+        <field eval="2" name="sequence"/>
+        <field name="view_mode">form</field>
+        <field name="view_id"
+               ref="view_hr_novelty_form_notifications"/>
+        <field name="act_window_id"
+               ref="action_hr_novelty_notifications_to_approve"/>
+    </record>
+
+    <!-- Novelty Notifications Approved Part-->
+
+    <record model="ir.ui.view"
+            id="view_hr_novelty_tree_notifications_approved">
+        <field name="name">hr.novelty.tree.approved</field>
+        <field name="model">hr.novelty</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="hr.novelty">
+                <field name="name"/>
+                <field name="event_id"/>
+                <field name="employee_id"/>
+                <field name="description"/>
+                <field name="start_date"/>
+                <field name="end_date"/>
+                <field name="amount"/>
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_hr_novelty_notifications_approved"
+            model="ir.actions.act_window">
+        <field name="name">Approved</field>
+        <field name="res_model">hr.novelty</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[('state', '=', 'approved')]</field>
+        <field name="context">{'novelty_approve': True}</field>
+    </record>
+
+    <record id="action_hr_novelty_notifications_approved_tree"
+            model="ir.actions.act_window.view">
+        <field eval="1" name="sequence"/>
+        <field name="view_mode">tree</field>
+        <field name="view_id"
+               ref="view_hr_novelty_tree_notifications_approved"/>
+        <field name="act_window_id"
+               ref="action_hr_novelty_notifications_approved"/>
+    </record>
+
+    <record id="action_hr_novelty_notifications_approved_form"
+            model="ir.actions.act_window.view">
+        <field eval="2" name="sequence"/>
+        <field name="view_mode">form</field>
+        <field name="view_id"
+               ref="view_hr_novelty_form_notifications"/>
+        <field name="act_window_id"
+               ref="action_hr_novelty_notifications_approved"/>
+    </record>
+
+
+    <!-- Novelty Notifications All-->
+
+    <record model="ir.ui.view"
+            id="view_hr_novelty_tree_notifications_all">
+        <field name="name">hr.novelty.tree.all</field>
+        <field name="model">hr.novelty</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="hr.novelty">
+                <field name="name"/>
+                <field name="event_id"/>
+                <field name="employee_id"/>
+                <field name="description"/>
+                <field name="start_date"/>
+                <field name="end_date"/>
+                <field name="amount"/>
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_hr_novelty_notifications_all"
+            model="ir.actions.act_window">
+        <field name="name">Notifications</field>
+        <field name="res_model">hr.novelty</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="action_hr_novelty_notifications_all_tree"
+            model="ir.actions.act_window.view">
+        <field eval="1" name="sequence"/>
+        <field name="view_mode">tree</field>
+        <field name="view_id"
+               ref="view_hr_novelty_tree_notifications_all"/>
+        <field name="act_window_id"
+               ref="action_hr_novelty_notifications_all"/>
+    </record>
+
+    <record id="action_hr_novelty_notifications_all_form"
+            model="ir.actions.act_window.view">
+        <field eval="2" name="sequence"/>
+        <field name="view_mode">form</field>
+        <field name="view_id"
+               ref="view_hr_novelty_form_notifications"/>
+        <field name="act_window_id"
+               ref="action_hr_novelty_notifications_all"/>
+    </record>
+
+
+
+    <!-- Novelty Notifications Menus-->
+
+    <menuitem name="Novelty Notifications"
+          id="menu_hr_novelty_notifications"
+          sequence="-1"
+          groups="base_product.group_daf"/>
+
+    <menuitem name="To Approve"
+          id="menu_hr_novelty_notifications_to_approve"
+          parent="menu_hr_novelty_notifications"
+          action="action_hr_novelty_notifications_to_approve"
+          sequence="1"
+          groups="base_product.group_daf"/>
+
+    <menuitem name="Approved"
+          id="menu_hr_novelty_notifications_approved"
+          parent="menu_hr_novelty_notifications"
+          action="action_hr_novelty_notifications_approved"
+          sequence="3"
+          groups="base_product.group_daf"/>
+
+    <menuitem name="Notifications"
+          id="menu_hr_novelty_notifications_all"
+          parent="menu_hr_novelty_notifications"
+          action="action_hr_novelty_notifications_all"
+          sequence="5"
+          groups="base_product.group_daf"/>
+
+</odoo>

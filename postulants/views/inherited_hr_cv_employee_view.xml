@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="hr_cv_employee_view_form_inherit" model="ir.ui.view">
+        <field name="name">hr.cv.employee.view.form.inherit</field>
+        <field name="model">hr.cv.employee</field>
+        <field name="inherit_id" ref="hr_curriculum_vitae.hr_cv_employee_view_form"/>
+        <field name="arch" type="xml">
+            <field name="employee_id" position="after">
+                <field name="partner_id" domain="[('postulant', '=', True)]"
+                       context="{'default_postulant':True}"/>
+            </field>
+        </field>
+    </record>
+
+</odoo>

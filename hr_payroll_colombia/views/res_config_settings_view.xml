@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="res_config_settings_form_inh" model="ir.ui.view">
+            <field name="name">res.config.settings.form.inh</field>
+            <field name="model">res.config.settings</field>
+            <field name="priority" eval="40"/>
+            <!--<field name="inherit_id" ref="base.res_config_settings_view_form"/>-->
+            <field name="inherit_id" ref="hr.res_config_settings_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//div[@data-string='Employees']" position="inside">
+                <!--<xpath expr="//div[hasclass('settings')]/div[1]" position="inside">-->
+                    <h2>Fechas por defecto</h2>
+                    <div class="row mt16 o_settings_container" id="default_dates">
+                        
+                        <div class="col-md-6 col-xs-12 o_setting_box" id="dpago_cesantias">
+                            <div class="o_setting_left_pane"/>
+                            <div class="o_setting_right_pane">
+                                <label for="pago_cesantias"/>
+                                <div class="row">
+                                    <div class="text-muted col-lg-8">
+                                        Fecha por defecto para el pago de cesantias
+                                    </div>
+                                </div>
+                                <div class="content-group">
+                                    <div class="mt16">
+                                        <field name="pago_cesantias" class="o_light_label"/>
+                                    </div>
+                                </div>
+                                <label for="alerta_pago_cesantias"/>
+                                <div class="content-group">
+                                    <div class="mt16">
+                                        <field name="alerta_pago_cesantias" class="o_light_label"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-xs-12 o_setting_box" id="pago_interes_cesantias">
+                            <div class="o_setting_left_pane"/>
+                            <div class="o_setting_right_pane">
+                                <label for="pago_interes_cesantias"/>
+                                <div class="row">
+                                    <div class="text-muted col-lg-8">
+                                        Fecha por defecto para el pago de intereses sobre cesantias
+                                    </div>
+                                </div>
+                                <div class="content-group">
+                                    <div class="mt16">
+                                        <field name="pago_interes_cesantias" class="o_light_label"/>
+                                    </div>
+                                </div>
+                                <label for="alerta_pago_interes_cesantias"/>
+                                <div class="content-group">
+                                    <div class="mt16">
+                                        <field name="alerta_pago_interes_cesantias" class="o_light_label"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-xs-12 o_setting_box" id="pago_prima1">
+                            <div class="o_setting_left_pane"/>
+                            <div class="o_setting_right_pane">
+                                <label for="pago_prima1"/>
+                                <div class="row">
+                                    <div class="text-muted col-lg-8">
+                                        Fecha por defecto para el pago de prima No 1
+                                    </div>
+                                </div>
+                                <div class="content-group">
+                                    <div class="mt16">
+                                        <field name="pago_prima1" class="o_light_label"/>
+                                    </div>
+                                </div>
+                                <label for="alerta_pago_prima1"/>
+                                <div class="content-group">
+                                    <div class="mt16">
+                                        <field name="alerta_pago_prima1" class="o_light_label"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-xs-12 o_setting_box" id="pago_prima2">
+                            <div class="o_setting_left_pane"/>
+                            <div class="o_setting_right_pane">
+                                <label for="pago_prima2"/>
+                                <div class="row">
+                                    <div class="text-muted col-lg-8">
+                                        Fecha por defecto para el pago de prima No 1
+                                    </div>
+                                </div>
+                                <div class="content-group">
+                                    <div class="mt16">
+                                        <field name="pago_prima2" class="o_light_label"/>
+                                    </div>
+                                </div>
+                                <label for="alerta_pago_prima2"/>
+                                <div class="content-group">
+                                    <div class="mt16">
+                                        <field name="alerta_pago_prima2" class="o_light_label"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-xs-12 o_setting_box" id="salario_minimo">
+                            <div class="o_setting_left_pane"/>
+                            <div class="o_setting_right_pane">
+                                <label for="salario_minimo"/>
+                                <div class="row">
+                                    <div class="text-muted col-lg-8">
+                                        Salario mínimo
+                                    </div>
+                                </div>
+                                <div class="content-group">
+                                    <div class="mt16">
+                                        <field name="salario_minimo" class="o_light_label"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-xs-12 o_setting_box" id="manual_payroll">
+                            <div class="o_setting_left_pane">
+                                <field name="manual_payroll"/>
+                            </div>
+                            <div class="o_setting_right_pane">
+                                <label for="manual_payroll"/>
+                                <!--<div class="row">
+                                    <div class="text-muted">
+                                        Nómina Manual
+                                    </div>
+                                </div>-->
+                            </div>
+                        </div>
+                    </div>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2019-TODAY WSuite Products <wsuite-products@wsuite.com>
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html). -->
+<odoo>
+
+    <record id="interfaz_seguridad_social_wizard_form_view"
+            model="ir.ui.view">
+        <field name="name">interfaz.seguridad.social.wizard.form.view</field>
+        <field name="model">interfaz.seguridad.social.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Interfaz Seguridad Social">
+                <group>
+                    <field name="file" invisible="1"/>
+                    <field name="document" filename="file"
+                           attrs="{'invisible': [['file', '==', False]]}"
+                           readonly="1"/>
+                </group>
+                <footer attrs="{'invisible': [['file', '!=', False]]}">
+                    <button name="report_excel" type="object"
+                            string="Print" class="oe_highlight"/>
+                    Or
+                    <button string="Cancel" class="oe_link"
+                            special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_interfaz_seguridad_social_wizard"
+            model="ir.actions.act_window">
+        <field name="name">Interfaz Seguridad Social</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">interfaz.seguridad.social.wizard</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+        <field name="binding_model_id"
+               ref="hr_payroll_interface.model_hr_payroll_interface"/>
+    </record>
+
+</odoo>

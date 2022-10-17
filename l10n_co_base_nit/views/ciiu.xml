@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <!-- CIIU Related info-->
+
+    <!--CIIU List View-->
+    <record id="view_ciiu_transaction_tree" model="ir.ui.view">
+        <field name="name">ciiu.tree</field>
+        <field name="model">ciiu</field>
+        <field name="arch" type="xml">
+            <tree string="CIIU" create="0" delete="0" edit="0">
+                <field name="code"/>
+                <field name="description"/>
+                <field name="type" invisible="1" />
+            </tree>
+        </field>
+    </record>
+
+    <!-- CIIU Form View-->
+    <record id="view_ciiu_transaction_form" model="ir.ui.view">
+        <field name="name">ciiu.view</field>
+        <field name="model">ciiu</field>
+        <field name="arch" type="xml">
+            <form string="CIIU" create="0" delete="0" edit="0">
+                <group>
+                    <field name="code"/> 
+                    <field name="description"/> 
+                    <field name="has_parent" attrs="{'invisible':['|',('has_division', '=', True),('has_section', '=', True)]}" />
+                    <field name="parent" attrs="{'invisible':[('has_parent', '=', False)]}"/> 
+                    <field name="has_division" attrs="{'invisible':['|',('has_parent', '=', True),('has_section', '=', True)]}" />
+                    <field name="division" attrs="{'invisible':[('has_division', '=', False)]}"/> 
+                    <field name="has_section" attrs="{'invisible':['|',('has_division', '=', True),('has_parent', '=', True)]}" />
+                    <field name="section" attrs="{'invisible':[('has_section', '=', False)]}"/> 
+                    <field name="type"/>
+                    <field name="name" />
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_ciiu_transaction" model="ir.actions.act_window">
+        <field name="name">CIIU</field>
+        <field name="res_model">ciiu</field>
+        <field name="view_mode">tree,form</field>
+        <field name="search_view_id"  eval="False"/>
+        <field name="context">{}</field>
+        <field name="help">CIIU</field>
+    </record>
+
+    <menuitem action="action_ciiu_transaction"
+        id="menu_action_ciiu_transaction"
+        parent="account.account_account_menu" sequence="11"/>
+
+</odoo>

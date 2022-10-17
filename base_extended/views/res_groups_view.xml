@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_res_group_inherit_user_count" model="ir.ui.view">
+        <field name="model">res.groups</field>
+        <field name="inherit_id" ref="base.view_groups_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='share']" position="after">
+                <field name="qty_users"/>
+                <field name="permission_json"/>
+                <field name="cost_per_hour"/>
+                <field name="active_group"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

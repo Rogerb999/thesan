@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!--Eliminar Básico, Prima, Bruto, Neto, COMP
+        <delete id="hr_category_Básico" model="hr.salary.rule.BASIC"/>
+        <delete id="hr_category_Prima" model="hr.salary.rule.ALW"/>
+        <delete id="hr_category_Bruto" model="hr.salary.rule.GROSS"/>
+        <delete id="hr_category_Neto" model="hr.salary.rule.NET"/>
+        <delete id="hr_category_Contribución compañía" model="hr.salary.rule.COMP"/>
+        -->
+        <record id="hr_category_deducciones" model="hr.salary.rule.category">
+            <field name="name">Deducciones</field>
+            <field name="code">Deducciones</field>
+        </record>
+
+        <record id="hr_category_seguridad_social" model="hr.salary.rule.category">
+            <field name="name">Seguridad Social</field>
+            <field name="code">Seguridad_Social</field>
+        </record>
+
+        <record id="hr_category_parametro" model="hr.salary.rule.category">
+            <field name="name">Parámetro</field>
+            <field name="code">Parámetro</field>
+        </record>
+
+        <record id="hr_category_devengado" model="hr.salary.rule.category">
+            <field name="name">Devengado</field>
+            <field name="code">Devengado</field>
+        </record>
+
+        <record id="hr_category_aportaciones_parafiscales" model="hr.salary.rule.category">
+            <field name="name">Aportaciones Parafiscales</field>
+            <field name="code">Aportaciones_Parafiscales</field>
+        </record>
+
+        <record id="hr_category_prestaciones_sociales" model="hr.salary.rule.category">
+            <field name="name">Prestaciones Sociales</field>
+            <field name="code">Prestaciones_Sociales</field>
+        </record>
+
+        <record id="hr_category_total_costo_empresa" model="hr.salary.rule.category">
+            <field name="name">Total Costo Empresa</field>
+            <field name="code">Total_Costo_Empresa</field>
+        </record>
+
+        <record id="hr_category_totales" model="hr.salary.rule.category">
+            <field name="name">Totales</field>
+            <field name="code">Totales</field>
+        </record>
+
+        <record id="hr_category_retencion" model="hr.salary.rule.category">
+            <field name="name">Retención al Sueldo</field>
+            <field name="code">Retención</field>
+        </record>
+
+        <record id="hr_category_aux_economico" model="hr.salary.rule.category">
+            <field name="name">Aux_Economico</field>
+            <field name="code">Aux_Economico</field>
+        </record>
+        
+        <record id="hr_category_novedades" model="hr.salary.rule.category">
+            <field name="name">Novedades</field>
+            <field name="code">Novedades</field>
+        </record>
+    </data>
+</odoo>

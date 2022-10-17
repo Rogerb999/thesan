@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="report_employee_wizard_view" model="ir.ui.view">
+        <field name="name">Report Employee Wizard</field>
+        <field name="model">report.employee.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Report Employee Wizard">
+                <group>
+                    <field name="model_id" required="1"
+                           options="{'no_create_edit': True}"/>
+                    <field name="field_ids"
+                           domain="[('model_id', '=', original_model_id)]"
+                           required="1">
+                        <tree editable="bottom">
+                            <field name="name"/>
+                            <field name="field_description"/>
+                            <field name="ttype"/>
+                        </tree>
+                    </field>
+                    <field name="employee_ids"
+                           options="{'no_create': True, 'no_create_edit': True}"
+                           attrs="{'invisible':[('model_name', '!=', 'hr.employee')]}"/>
+                    <field name="contact_ids"
+                           attrs="{'invisible':[('model_name', '!=', 'res.partner')]}"/>
+                    <field name="report_type"
+                           invisible="1"/>
+                    <field name="model_name"
+                           invisible="1"/>
+                    <field name="original_model_id"
+                           invisible="1"/>
+                </group>
+                <footer>
+                    <button string="Export Data"
+                            name="action_export_data" type="object"
+                            class="btn-primary"/>
+                    <button string="Cancel" class="btn-secondary"
+                            special="cancel" />
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="report_employee_wizard_action" model="ir.actions.act_window">
+        <field name="name">Report Employee Wizard</field>
+        <field name="res_model">report.employee.wizard</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+</odoo>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="base_view_company_form_inherit_extended" model="ir.ui.view">
+        <field name="model">res.company</field>
+        <field name="inherit_id" ref="base.view_company_form"/>
+        <field name="arch" type="xml">
+            <field name="sequence" position="after">
+                <field name="company_slug"/>
+                <field name="profit_percentage"/>
+                <field name="can_be_modified"/>
+                <field name="stripe_company_id"/>
+                <field name="code_reference"/>
+                <field name="auto_creation"/>
+                <field name="client_label"/>
+                <field name="brand_label"/>
+                <field name="final_subject"/>
+            </field>
+        </field>
+    </record>
+</odoo>

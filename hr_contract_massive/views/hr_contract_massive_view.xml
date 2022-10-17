@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2020-TODAY WSuite Products <wsuite-products@wsuite.com>
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html). -->
+<odoo>
+
+    <record id="hr_contract_massive_tree" model="ir.ui.view">
+        <field name="name">hr.contract.massive.tree</field>
+        <field name="model">hr.contract.massive</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="hr_contract_massive_form" model="ir.ui.view">
+        <field name="name">hr.contract.massive.form</field>
+        <field name="model">hr.contract.massive</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="move_imported"
+                            string="Imported"
+                            type="object"
+                            states="draft"/>
+                    <button name="move_validate"
+                            string="Validate"
+                            type="object"
+                            states="imported"/>
+                    <button name="move_done"
+                            string="Done"
+                            type="object"
+                            attrs="{'invisible': ['|',('state','!=','validate')]}"/>
+                    <button name="move_draft"
+                            string="Draft"
+                            type="object"
+                            states="done"/>
+                    <!--button name="create_subcontract"
+                            string="Create Subcontract"
+                            type="object"
+                            attrs="{'invisible': [('state', '!=', 'validate')]}"/-->
+                    <field name="state" widget="statusbar"/>
+                </header>
+                <sheet>
+                    <h1>
+                        <field name="name" readonly="1" force_save="1"/>
+                    </h1>
+                    <group>
+                        <group colspan="4" col="4">
+                            <field name="date"/>
+                            <field name="file"
+                                   attrs="{'required': [('state','=','draft')]}"/>
+                            <field name="is_all_done" invisible="1"/>
+                        </group>
+                    </group>
+                    <group>
+                        <field name="hr_contract_massive_lines_ids" nolabel="1">
+                            <tree editable="bottom">
+                                <field name="employee_id"
+                                       options="{'no_open':'True', 'no_create': True, 'no_create_edit': True, 'no_quick_create': True}"/>
+                                <field name="wage"/>
+                                <field name="fix_wage_amount"/>
+                                <field name="flex_wage_amount"/>
+                                <field name="date_start"/>
+                                <field name="date_end"/>
+                                <field name="state"/>
+                                <field name="comment"/>
+                                <field name="hr_contract_id"
+                                       invisible="1"/>
+                                <field name="job_id"
+                                       invisible="1"/>
+                                <field name="department_id"
+                                       invisible="1"/>
+                                <field name="struct_id"
+                                       invisible="1"/>
+                                <field name="reason_change_id"
+                                       invisible="1"/>
+                                <button name="create_subcontract"
+                                        string="Create Subcontract"
+                                        type="object"
+                                        attrs="{'column_invisible': [('parent.state', '!=', 'validate')]}"/>
+                            </tree>
+                        </field>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="hr_contract_massive_action" model="ir.actions.act_window">
+        <field name="name">Child Contract Batch</field>
+        <field name="res_model">hr.contract.massive</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem
+        id="hr_contract_massive_menu"
+        action="hr_contract_massive_action"
+        string="Child Contract Batch"
+        parent="hr.menu_hr_root"/>
+
+</odoo>

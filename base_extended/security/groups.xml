@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="group_import_files" model="res.groups">
+        <field name="name">Import all kinds of files</field>
+        <field name="category_id" ref="base.module_category_usability"/>
+    </record>
+
+    <record id="group_pcd" model="res.groups">
+        <field name="name">Product Category Delete Rights</field>
+        <field name="category_id" ref="base.module_category_usability"/>
+    </record>
+
+</odoo>

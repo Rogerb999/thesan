@@ -1,0 +1,1032 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* hr_curriculum_vitae
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-12-13 04:13+0000\n"
+"PO-Revision-Date: 2019-12-15 15:28-0500\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: es\n"
+"X-Generator: Poedit 1.8.8\n"
+
+#. module: hr_curriculum_vitae
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_cv_academic_studies__academic_area_id
+msgid "Academic Area"
+msgstr "Area Académica"
+
+#. module: hr_curriculum_vitae
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_cv_academic_studies__academic_institution_id
+msgid "Academic Institution"
+msgstr "Institución académica"
+
+#. module: hr_curriculum_vitae
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_cv_academic_studies__state
+msgid "Academic State"
+msgstr "Estado academico"
+
+#. module: hr_curriculum_vitae
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_cv_employee__academic_studies_ids
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_employee__academic_studies_ids
+#: model_terms:ir.ui.view,arch_db:hr_curriculum_vitae.hr_cv_employee_view_form
+#: model_terms:ir.ui.view,arch_db:hr_curriculum_vitae.view_hr_employee_form
+msgid "Academic Studies"
+msgstr "Estudios académicos"
+
+#. module: hr_curriculum_vitae
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_cv_family_employee__age
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_cv_pets__age
+msgid "Age in Years"
+msgstr "Edad en años"
+
+#. module: hr_curriculum_vitae
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_cv_employee__animal_pets_ids
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_employee__animal_pets_ids
+#: model_terms:ir.ui.view,arch_db:hr_curriculum_vitae.hr_cv_employee_view_form
+#: model_terms:ir.ui.view,arch_db:hr_curriculum_vitae.view_hr_employee_form
+msgid "Animal Pets"
+msgstr "Animales domésticos"
+
+#. module: hr_curriculum_vitae
+#: selection:hr.cv.laboral.experience,position_range:0
+msgid "Assistant"
+msgstr "Asistente"
+
+#. module: hr_curriculum_vitae
+#: selection:hr.cv.laboral.experience,position_range:0
+msgid "Chief"
+msgstr "Jefe"
+
+#. module: hr_curriculum_vitae
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_cv_academic_studies__city_id
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_cv_laboral_experience__city_id
+msgid "City"
+msgstr "Ciudad"
+
+#. module: hr_curriculum_vitae
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_cv_laboral_experience__company_id
+msgid "Company"
+msgstr "Compañía"
+
+#. module: hr_curriculum_vitae
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_cv_language_employee__competition_id
+msgid "Competition Language"
+msgstr "Lenguaje de competencia"
+
+#. module: hr_curriculum_vitae
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_cv_language_employee__level_id
+msgid "Competition Level Language"
+msgstr "Idioma de nivel de competencia"
+
+#. module: hr_curriculum_vitae
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_cv_family_employee__contact_emergency
+msgid "Contact Emergency"
+msgstr "Contacto de emergencia"
+
+#. module: hr_curriculum_vitae
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_cv_laboral_experience__contract_type_id
+msgid "Contract Type"
+msgstr "Tipo de contrato"
+
+#. module: hr_curriculum_vitae
+#: selection:hr.cv.laboral.experience,position_range:0
+msgid "Coordinator"
+msgstr "Coordinador"
+
+#. module: hr_curriculum_vitae
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_cv_academic_studies__country_id
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_cv_laboral_experience__country_id
+msgid "Country"
+msgstr "País"
+
+#. module: hr_curriculum_vitae
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_academic_area__create_uid
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_academic_institution__create_uid
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_academic_level__create_uid
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_category_hobbies__create_uid
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_competition_language__create_uid
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_competition_level_language__create_uid
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_cv_academic_studies__create_uid
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_cv_employee__create_uid
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_cv_family_employee__create_uid
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_cv_hobbies_employee__create_uid
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_cv_holding_employee__create_uid
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_cv_laboral_experience__create_uid
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_cv_language_employee__create_uid
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_cv_personal_employee__create_uid
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_cv_personal_employee_type__create_uid
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_cv_pets__create_uid
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_cv_sports_employee__create_uid
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_experience_area__create_uid
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_experience_time__create_uid
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_external_job_position__create_uid
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_family_relationship__create_uid
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_hobbies__create_uid
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_holding__create_uid
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_language__create_uid
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_occupations__create_uid
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_sports__create_uid
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_type_contract__create_uid
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_tools_managment__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: hr_curriculum_vitae
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_academic_area__create_date
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_academic_institution__create_date
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_academic_level__create_date
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_category_hobbies__create_date
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_competition_language__create_date
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_competition_level_language__create_date
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_cv_academic_studies__create_date
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_cv_employee__create_date
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_cv_family_employee__create_date
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_cv_hobbies_employee__create_date
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_cv_holding_employee__create_date
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_cv_laboral_experience__create_date
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_cv_language_employee__create_date
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_cv_personal_employee__create_date
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_cv_personal_employee_type__create_date
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_cv_pets__create_date
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_cv_sports_employee__create_date
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_experience_area__create_date
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_experience_time__create_date
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_external_job_position__create_date
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_family_relationship__create_date
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_hobbies__create_date
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_holding__create_date
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_language__create_date
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_occupations__create_date
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_sports__create_date
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_type_contract__create_date
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_tools_managment__create_date
+msgid "Created on"
+msgstr "Creado el"
+
+#. module: hr_curriculum_vitae
+#: model_terms:ir.ui.view,arch_db:hr_curriculum_vitae.view_hr_employee_form
+msgid "Curriculum Vitae"
+msgstr "Curriculum vitae"
+
+#. module: hr_curriculum_vitae
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_cv_family_employee__birthdate
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_cv_pets__dob
+msgid "Date of birth"
+msgstr "Fecha de nacimiento"
+
+#. module: hr_curriculum_vitae
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_academic_area__description
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_academic_institution__description
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_academic_level__description
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_category_hobbies__description
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_competition_language__description
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_competition_level_language__description
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_cv_personal_employee_type__description
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_experience_area__description
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_experience_time__description
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_external_job_position__description
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_family_relationship__description
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_holding__description
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_language__description
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_occupations__description
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_sports__description
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_type_contract__description
+msgid "Description"
+msgstr "Descripción"
+
+#. module: hr_curriculum_vitae
+#: selection:hr.cv.laboral.experience,position_range:0
+msgid "Director"
+msgstr "Director"
+
+#. module: hr_curriculum_vitae
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_academic_area__display_name
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_academic_institution__display_name
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_academic_level__display_name
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_category_hobbies__display_name
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_competition_language__display_name
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_competition_level_language__display_name
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_cv_academic_studies__display_name
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_cv_employee__display_name
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_cv_family_employee__display_name
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_cv_hobbies_employee__display_name
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_cv_holding_employee__display_name
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_cv_laboral_experience__display_name
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_cv_language_employee__display_name
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_cv_personal_employee__display_name
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_cv_personal_employee_type__display_name
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_cv_pets__display_name
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_cv_sports_employee__display_name
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_experience_area__display_name
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_experience_time__display_name
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_external_job_position__display_name
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_family_relationship__display_name
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_hobbies__display_name
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_holding__display_name
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_language__display_name
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_occupations__display_name
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_sports__display_name
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_type_contract__display_name
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_tools_managment__display_name
+msgid "Display Name"
+msgstr "Nombre mostrado"
+
+#. module: hr_curriculum_vitae
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_cv_academic_studies__employee_id
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_cv_employee__employee_id
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_cv_family_employee__employee_id
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_cv_hobbies_employee__employee_id
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_cv_holding_employee__employee_id
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_cv_laboral_experience__employee_id
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_cv_language_employee__employee_id
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_cv_personal_employee__employee_id
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_cv_pets__employee_id
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_cv_sports_employee__employee_id
+msgid "Employee"
+msgstr "Empleado"
+
+#. module: hr_curriculum_vitae
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_cv_employee__family_group_ids
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_employee__family_group_ids
+msgid "Employee Family Group"
+msgstr "Grupo familiar de empleados"
+
+#. module: hr_curriculum_vitae
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_cv_employee__hobbies_ids
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_employee__hobbies_ids
+msgid "Employee Hobbies"
+msgstr "Hobbies de empleados"
+
+#. module: hr_curriculum_vitae
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_cv_employee__holding_ids
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_employee__holding_ids
+msgid "Employee Holdings"
+msgstr "Empleados"
+
+#. module: hr_curriculum_vitae
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_cv_employee__language_ids
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_employee__language_ids
+msgid "Employee Languages"
+msgstr "Idiomas del empleado"
+
+#. module: hr_curriculum_vitae
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_cv_employee__sport_ids
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_employee__sport_ids
+msgid "Employee Sports"
+msgstr "Deportes para empleados"
+
+#. module: hr_curriculum_vitae
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_cv_academic_studies__end_date
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_cv_laboral_experience__end_date
+msgid "End Date"
+msgstr "Fecha finalización"
+
+#. module: hr_curriculum_vitae
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_cv_laboral_experience__experience_area_id
+msgid "Experience Area"
+msgstr "Área de experiencia"
+
+#. module: hr_curriculum_vitae
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_cv_laboral_experience__ext_job_position_id
+msgid "Ext Job Position"
+msgstr "Ext Puesto de trabajo"
+
+#. module: hr_curriculum_vitae
+#: model_terms:ir.ui.view,arch_db:hr_curriculum_vitae.hr_cv_laboral_experience_form
+msgid "External Job Position"
+msgstr "Puesto de trabajo externo"
+
+#. module: hr_curriculum_vitae
+#: model_terms:ir.ui.view,arch_db:hr_curriculum_vitae.hr_cv_employee_view_form
+#: model_terms:ir.ui.view,arch_db:hr_curriculum_vitae.view_hr_employee_form
+msgid "Family Group"
+msgstr "Grupo familiar"
+
+#. module: hr_curriculum_vitae
+#: selection:hr.cv.family.employee,gender:0
+#: selection:hr.cv.personal.employee,gender:0
+msgid "Female"
+msgstr "Hembra"
+
+#. module: hr_curriculum_vitae
+#: selection:hr.cv.academic.studies,type_education:0
+msgid "Formal"
+msgstr "Formal"
+
+#. module: hr_curriculum_vitae
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_cv_laboral_experience__function_summary
+msgid "Function Summary"
+msgstr "Resumen de funciones"
+
+#. module: hr_curriculum_vitae
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_cv_family_employee__gender
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_cv_personal_employee__gender
+msgid "Gender"
+msgstr "Sexo"
+
+#. module: hr_curriculum_vitae
+#: model:ir.model,name:hr_curriculum_vitae.model_hr_academic_area
+msgid "HR Academic Area"
+msgstr "HR Area Académica"
+
+#. module: hr_curriculum_vitae
+#: model:ir.actions.act_window,name:hr_curriculum_vitae.hr_academic_institution_action
+#: model:ir.model,name:hr_curriculum_vitae.model_hr_academic_institution
+#: model:ir.ui.menu,name:hr_curriculum_vitae.hr_academic_institution_menu_action
+#: model_terms:ir.ui.view,arch_db:hr_curriculum_vitae.hr_academic_institution_view_form
+#: model_terms:ir.ui.view,arch_db:hr_curriculum_vitae.hr_academic_institution_view_tree
+msgid "HR Academic Institution"
+msgstr "HR Institución académica"
+
+#. module: hr_curriculum_vitae
+#: model:ir.actions.act_window,name:hr_curriculum_vitae.hr_academic_level_action
+#: model:ir.model,name:hr_curriculum_vitae.model_hr_academic_level
+#: model:ir.ui.menu,name:hr_curriculum_vitae.hr_academic_level_menu_action
+#: model_terms:ir.ui.view,arch_db:hr_curriculum_vitae.hr_academic_level_view_form
+#: model_terms:ir.ui.view,arch_db:hr_curriculum_vitae.hr_academic_level_view_tree
+msgid "HR Academic Level"
+msgstr "HR Nivel académico"
+
+#. module: hr_curriculum_vitae
+#: model:ir.actions.act_window,name:hr_curriculum_vitae.hr_cv_academic_studies_action
+#: model:ir.model,name:hr_curriculum_vitae.model_hr_cv_academic_studies
+#: model:ir.ui.menu,name:hr_curriculum_vitae.hr_cv_academic_studies_menu_action
+#: model_terms:ir.ui.view,arch_db:hr_curriculum_vitae.hr_cv_academic_studies_view_form
+#: model_terms:ir.ui.view,arch_db:hr_curriculum_vitae.hr_cv_academic_studies_view_tree
+msgid "HR CV Academic Studies"
+msgstr "HR CV Estudios académicos"
+
+#. module: hr_curriculum_vitae
+#: model:ir.actions.act_window,name:hr_curriculum_vitae.hr_cv_employee_action
+#: model:ir.model,name:hr_curriculum_vitae.model_hr_cv_employee
+msgid "HR CV Employee"
+msgstr "HR CV Empleado"
+
+#. module: hr_curriculum_vitae
+#: model:ir.ui.menu,name:hr_curriculum_vitae.hr_cv_employee_menu_action
+#: model_terms:ir.ui.view,arch_db:hr_curriculum_vitae.hr_cv_employee_view_form
+#: model_terms:ir.ui.view,arch_db:hr_curriculum_vitae.hr_cv_employee_view_tree
+msgid "HR CV Employees"
+msgstr "HR CV Empleados"
+
+#. module: hr_curriculum_vitae
+#: model:ir.actions.act_window,name:hr_curriculum_vitae.hr_cv_family_employee_action
+#: model:ir.model,name:hr_curriculum_vitae.model_hr_cv_family_employee
+#: model:ir.ui.menu,name:hr_curriculum_vitae.hr_cv_family_employee_menu_action
+#: model_terms:ir.ui.view,arch_db:hr_curriculum_vitae.hr_cv_family_employee_view_form
+#: model_terms:ir.ui.view,arch_db:hr_curriculum_vitae.hr_cv_family_employee_view_tree
+msgid "HR CV Family Group Employee"
+msgstr "HR CV Empleado del grupo familiar"
+
+#. module: hr_curriculum_vitae
+#: model:ir.actions.act_window,name:hr_curriculum_vitae.hr_cv_hobbies_employee_action
+#: model:ir.model,name:hr_curriculum_vitae.model_hr_cv_hobbies_employee
+msgid "HR CV Hobbies Employee"
+msgstr "HR CV Aficiones Empleado"
+
+#. module: hr_curriculum_vitae
+#: model:ir.ui.menu,name:hr_curriculum_vitae.hr_cv_hobbies_employee_menu_action
+#: model_terms:ir.ui.view,arch_db:hr_curriculum_vitae.hr_cv_hobbies_employee_view_form
+#: model_terms:ir.ui.view,arch_db:hr_curriculum_vitae.hr_cv_hobbies_employee_view_tree
+msgid "HR CV Hobbies Employees"
+msgstr "HR CV Aficiones Empleados"
+
+#. module: hr_curriculum_vitae
+#: model:ir.actions.act_window,name:hr_curriculum_vitae.hr_cv_holding_employee_action
+#: model:ir.model,name:hr_curriculum_vitae.model_hr_cv_holding_employee
+msgid "HR CV Holding Employee"
+msgstr "HR CV Empleado de retención"
+
+#. module: hr_curriculum_vitae
+#: model:ir.ui.menu,name:hr_curriculum_vitae.hr_cv_holding_employee_menu_action
+#: model_terms:ir.ui.view,arch_db:hr_curriculum_vitae.hr_cv_holding_employee_view_form
+#: model_terms:ir.ui.view,arch_db:hr_curriculum_vitae.hr_cv_holding_employee_view_tree
+msgid "HR CV Holding Employees"
+msgstr "HR CV Retención de empleados"
+
+#. module: hr_curriculum_vitae
+#: model:ir.actions.act_window,name:hr_curriculum_vitae.hr_cv_laboral_experience_action
+#: model:ir.model,name:hr_curriculum_vitae.model_hr_cv_laboral_experience
+#: model:ir.ui.menu,name:hr_curriculum_vitae.hr_cv_laboral_experience_menu_action
+#: model_terms:ir.ui.view,arch_db:hr_curriculum_vitae.hr_cv_laboral_experience_form
+#: model_terms:ir.ui.view,arch_db:hr_curriculum_vitae.hr_cv_laboral_experience_view_tree
+msgid "HR CV Laboral Experience"
+msgstr "HR CV Experiencia Laboral"
+
+#. module: hr_curriculum_vitae
+#: model:ir.actions.act_window,name:hr_curriculum_vitae.hr_cv_language_employee_action
+#: model:ir.model,name:hr_curriculum_vitae.model_hr_cv_language_employee
+msgid "HR CV Language Employee"
+msgstr "HR CV Lenguaje de Emplado"
+
+#. module: hr_curriculum_vitae
+#: model:ir.ui.menu,name:hr_curriculum_vitae.hr_cv_language_employee_menu_action
+#: model_terms:ir.ui.view,arch_db:hr_curriculum_vitae.hr_cv_language_employee_view_form
+#: model_terms:ir.ui.view,arch_db:hr_curriculum_vitae.hr_cv_language_employee_view_tree
+msgid "HR CV Language Employees"
+msgstr "HR CV Idiomas de Empleados"
+
+#. module: hr_curriculum_vitae
+#: model:ir.actions.act_window,name:hr_curriculum_vitae.hr_cv_personal_employee_type_action
+#: model:ir.model,name:hr_curriculum_vitae.model_hr_cv_personal_employee_type
+#: model:ir.ui.menu,name:hr_curriculum_vitae.hr_cv_personal_employee_type_menu_action
+#: model_terms:ir.ui.view,arch_db:hr_curriculum_vitae.hr_cv_personal_employee_type_view_form
+#: model_terms:ir.ui.view,arch_db:hr_curriculum_vitae.hr_cv_personal_employee_type_view_tree
+msgid "HR CV Personal Employee Type"
+msgstr "HR CV Tipo de empleado personal"
+
+#. module: hr_curriculum_vitae
+#: model:ir.actions.act_window,name:hr_curriculum_vitae.hr_cv_personal_reference_employee_action
+#: model:ir.model,name:hr_curriculum_vitae.model_hr_cv_personal_employee
+#: model:ir.ui.menu,name:hr_curriculum_vitae.hr_cv_personal_reference_employee_menu_action
+#: model_terms:ir.ui.view,arch_db:hr_curriculum_vitae.hr_cv_personal_reference_employee_view_form
+#: model_terms:ir.ui.view,arch_db:hr_curriculum_vitae.hr_cv_personal_reference_employee_view_tree
+msgid "HR CV Personal Reference Employee"
+msgstr "HR CV referencia personal de Empleado "
+
+#. module: hr_curriculum_vitae
+#: model:ir.actions.act_window,name:hr_curriculum_vitae.hr_cv_pets_action
+#: model:ir.ui.menu,name:hr_curriculum_vitae.hr_cv_pets_menu_action
+#: model_terms:ir.ui.view,arch_db:hr_curriculum_vitae.hr_cv_pets_view_form
+#: model_terms:ir.ui.view,arch_db:hr_curriculum_vitae.hr_cv_pets_view_tree
+msgid "HR CV Pets"
+msgstr "HR CV Mascotas"
+
+#. module: hr_curriculum_vitae
+#: model:ir.model,name:hr_curriculum_vitae.model_hr_cv_pets
+msgid "HR CV Pets Employee"
+msgstr "HR CV Mascotas del Empleado"
+
+#. module: hr_curriculum_vitae
+#: model:ir.actions.act_window,name:hr_curriculum_vitae.hr_cv_sports_employee_action
+#: model:ir.model,name:hr_curriculum_vitae.model_hr_cv_sports_employee
+msgid "HR CV Sports Employee"
+msgstr "HR CV Empleado deportivo"
+
+#. module: hr_curriculum_vitae
+#: model:ir.ui.menu,name:hr_curriculum_vitae.hr_cv_sports_employee_menu_action
+#: model_terms:ir.ui.view,arch_db:hr_curriculum_vitae.hr_cv_sports_employee_view_form
+#: model_terms:ir.ui.view,arch_db:hr_curriculum_vitae.hr_cv_sports_employee_view_tree
+msgid "HR CV Sports Employees"
+msgstr "HR CV Empleado deportivo"
+
+#. module: hr_curriculum_vitae
+#: model:ir.actions.act_window,name:hr_curriculum_vitae.hr_category_hobbies_action
+#: model:ir.model,name:hr_curriculum_vitae.model_hr_category_hobbies
+#: model:ir.ui.menu,name:hr_curriculum_vitae.hr_category_hobbies_menu_action
+#: model_terms:ir.ui.view,arch_db:hr_curriculum_vitae.hr_category_hobbies_view_form
+#: model_terms:ir.ui.view,arch_db:hr_curriculum_vitae.hr_category_hobbies_view_tree
+msgid "HR Category Hobbies"
+msgstr "HR Categoría Hobbies"
+
+#. module: hr_curriculum_vitae
+#: model:ir.actions.act_window,name:hr_curriculum_vitae.hr_competition_language_action
+#: model:ir.model,name:hr_curriculum_vitae.model_hr_competition_language
+#: model:ir.ui.menu,name:hr_curriculum_vitae.hr_competition_language_menu_action
+#: model_terms:ir.ui.view,arch_db:hr_curriculum_vitae.hr_competition_language_view_form
+#: model_terms:ir.ui.view,arch_db:hr_curriculum_vitae.hr_competition_language_view_tree
+msgid "HR Competition Language"
+msgstr "HR Lenguaje de competencia"
+
+#. module: hr_curriculum_vitae
+#: model:ir.actions.act_window,name:hr_curriculum_vitae.hr_competition_level_language_action
+#: model:ir.model,name:hr_curriculum_vitae.model_hr_competition_level_language
+#: model:ir.ui.menu,name:hr_curriculum_vitae.hr_competition_level_language_menu_action
+#: model_terms:ir.ui.view,arch_db:hr_curriculum_vitae.hr_competition_level_language_view_form
+#: model_terms:ir.ui.view,arch_db:hr_curriculum_vitae.hr_competition_level_language_view_tree
+msgid "HR Competition Level Language"
+msgstr "HR Idioma de nivel de competencia"
+
+#. module: hr_curriculum_vitae
+#: model:ir.model,name:hr_curriculum_vitae.model_hr_employee
+msgid "HR Employee"
+msgstr "HR Empleado"
+
+#. module: hr_curriculum_vitae
+#: model:ir.actions.act_window,name:hr_curriculum_vitae.hr_experience_area_action
+#: model:ir.model,name:hr_curriculum_vitae.model_hr_experience_area
+#: model:ir.ui.menu,name:hr_curriculum_vitae.hr_experience_area_menu_action
+#: model_terms:ir.ui.view,arch_db:hr_curriculum_vitae.hr_experience_area_view_form
+#: model_terms:ir.ui.view,arch_db:hr_curriculum_vitae.hr_experience_area_view_tree
+msgid "HR Experience Area"
+msgstr "HR Area de Experiencia"
+
+#. module: hr_curriculum_vitae
+#: model:ir.actions.act_window,name:hr_curriculum_vitae.hr_experience_time_action
+#: model:ir.model,name:hr_curriculum_vitae.model_hr_experience_time
+#: model:ir.ui.menu,name:hr_curriculum_vitae.hr_experience_time_menu_action
+#: model_terms:ir.ui.view,arch_db:hr_curriculum_vitae.hr_experience_time_view_form
+#: model_terms:ir.ui.view,arch_db:hr_curriculum_vitae.hr_experience_time_view_tree
+msgid "HR Experience Time"
+msgstr "HR Tiempo de Experiencia"
+
+#. module: hr_curriculum_vitae
+#: model:ir.actions.act_window,name:hr_curriculum_vitae.hr_external_job_position_action
+#: model:ir.model,name:hr_curriculum_vitae.model_hr_external_job_position
+#: model:ir.ui.menu,name:hr_curriculum_vitae.hr_external_job_position_menu_action
+#: model_terms:ir.ui.view,arch_db:hr_curriculum_vitae.hr_external_job_position_view_form
+#: model_terms:ir.ui.view,arch_db:hr_curriculum_vitae.hr_external_job_position_view_tree
+msgid "HR External Job Position"
+msgstr "HR Puesto de trabajo externo"
+
+#. module: hr_curriculum_vitae
+#: model:ir.actions.act_window,name:hr_curriculum_vitae.hr_family_relationship_action
+#: model:ir.model,name:hr_curriculum_vitae.model_hr_family_relationship
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_cv_family_employee__family_rel_id
+#: model:ir.ui.menu,name:hr_curriculum_vitae.hr_family_relationship_menu_action
+#: model_terms:ir.ui.view,arch_db:hr_curriculum_vitae.hr_family_relationship_view_form
+#: model_terms:ir.ui.view,arch_db:hr_curriculum_vitae.hr_family_relationship_view_tree
+msgid "HR Family Relationship"
+msgstr "HR Relacion familiar"
+
+#. module: hr_curriculum_vitae
+#: model:ir.actions.act_window,name:hr_curriculum_vitae.hr_hobbies_action
+#: model:ir.model,name:hr_curriculum_vitae.model_hr_hobbies
+#: model:ir.ui.menu,name:hr_curriculum_vitae.hr_hobbies_menu_action
+#: model_terms:ir.ui.view,arch_db:hr_curriculum_vitae.hr_hobbies_view_form
+#: model_terms:ir.ui.view,arch_db:hr_curriculum_vitae.hr_hobbies_view_tree
+msgid "HR Hobbies"
+msgstr "HR Aficiones"
+
+#. module: hr_curriculum_vitae
+#: model:ir.actions.act_window,name:hr_curriculum_vitae.hr_holding_action
+#: model:ir.model,name:hr_curriculum_vitae.model_hr_holding
+#: model:ir.ui.menu,name:hr_curriculum_vitae.hr_holding_menu_action
+#: model_terms:ir.ui.view,arch_db:hr_curriculum_vitae.hr_holding_view_form
+#: model_terms:ir.ui.view,arch_db:hr_curriculum_vitae.hr_holding_view_tree
+msgid "HR Holding"
+msgstr "HR Participación"
+
+#. module: hr_curriculum_vitae
+#: model:ir.actions.act_window,name:hr_curriculum_vitae.hr_language_action
+#: model:ir.model,name:hr_curriculum_vitae.model_hr_language
+#: model:ir.ui.menu,name:hr_curriculum_vitae.hr_language_menu_action
+#: model_terms:ir.ui.view,arch_db:hr_curriculum_vitae.hr_language_view_form
+#: model_terms:ir.ui.view,arch_db:hr_curriculum_vitae.hr_language_view_tree
+msgid "HR Language"
+msgstr "HR idioma"
+
+#. module: hr_curriculum_vitae
+#: model:ir.actions.act_window,name:hr_curriculum_vitae.hr_occupations_action
+#: model:ir.ui.menu,name:hr_curriculum_vitae.hr_occupations_menu_action
+#: model_terms:ir.ui.view,arch_db:hr_curriculum_vitae.hr_occupations_view_form
+#: model_terms:ir.ui.view,arch_db:hr_curriculum_vitae.hr_occupations_view_tree
+msgid "HR Occupation"
+msgstr "HR Ocupación"
+
+#. module: hr_curriculum_vitae
+#: model:ir.model,name:hr_curriculum_vitae.model_hr_occupations
+msgid "HR Occupations"
+msgstr "HR Ocupaciones"
+
+#. module: hr_curriculum_vitae
+#: model:ir.actions.act_window,name:hr_curriculum_vitae.hr_sports_action
+#: model:ir.model,name:hr_curriculum_vitae.model_hr_sports
+#: model:ir.ui.menu,name:hr_curriculum_vitae.hr_sports_menu_action
+#: model_terms:ir.ui.view,arch_db:hr_curriculum_vitae.hr_sports_view_form
+#: model_terms:ir.ui.view,arch_db:hr_curriculum_vitae.hr_sports_view_tree
+msgid "HR Sports"
+msgstr "HR Deportes"
+
+#. module: hr_curriculum_vitae
+#: model:ir.actions.act_window,name:hr_curriculum_vitae.hr_type_contract_action
+#: model:ir.model,name:hr_curriculum_vitae.model_hr_type_contract
+#: model:ir.ui.menu,name:hr_curriculum_vitae.hr_type_contract_menu_action
+#: model_terms:ir.ui.view,arch_db:hr_curriculum_vitae.hr_type_contract_view_form
+#: model_terms:ir.ui.view,arch_db:hr_curriculum_vitae.hr_type_contract_view_tree
+msgid "HR Type Contract"
+msgstr "HR Tipo de contrato"
+
+#. module: hr_curriculum_vitae
+#: model:ir.actions.act_window,name:hr_curriculum_vitae.hr_academic_area_action
+#: model:ir.ui.menu,name:hr_curriculum_vitae.hr_academic_area_menu_action
+#: model_terms:ir.ui.view,arch_db:hr_curriculum_vitae.hr_academic_area_view_form
+#: model_terms:ir.ui.view,arch_db:hr_curriculum_vitae.hr_academic_area_view_tree
+msgid "HR academic Area"
+msgstr "HR Area Academica"
+
+#. module: hr_curriculum_vitae
+#: selection:tools.managment,level:0
+msgid "High"
+msgstr "Alto"
+
+#. module: hr_curriculum_vitae
+#: model_terms:ir.ui.view,arch_db:hr_curriculum_vitae.hr_cv_employee_view_form
+#: model_terms:ir.ui.view,arch_db:hr_curriculum_vitae.view_hr_employee_form
+msgid "Hobbies"
+msgstr "Aficiones"
+
+#. module: hr_curriculum_vitae
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_cv_hobbies_employee__hobby_id
+msgid "Hobby"
+msgstr "Hobby"
+
+#. module: hr_curriculum_vitae
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_hobbies__hobby_categ_id
+msgid "Hobby Category"
+msgstr "Categoría de hobby"
+
+#. module: hr_curriculum_vitae
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_cv_holding_employee__holding_id
+msgid "Holding"
+msgstr "Holding"
+
+#. module: hr_curriculum_vitae
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_holding__land_type
+msgid "Holding Type"
+msgstr "Tipo de espera"
+
+#. module: hr_curriculum_vitae
+#: model_terms:ir.ui.view,arch_db:hr_curriculum_vitae.hr_cv_employee_view_form
+#: model_terms:ir.ui.view,arch_db:hr_curriculum_vitae.view_hr_employee_form
+msgid "Holdings"
+msgstr "Valores en cartera"
+
+#. module: hr_curriculum_vitae
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_cv_academic_studies__hr_cv_employee_id
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_cv_family_employee__hr_cv_employee_id
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_cv_hobbies_employee__hr_cv_employee_id
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_cv_holding_employee__hr_cv_employee_id
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_cv_laboral_experience__hr_cv_employee_id
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_cv_language_employee__hr_cv_employee_id
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_cv_personal_employee__hr_cv_employee_id
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_cv_pets__hr_cv_employee_id
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_cv_sports_employee__hr_cv_employee_id
+msgid "Hr Cv Employee"
+msgstr "HR CV Empleado"
+
+#. module: hr_curriculum_vitae
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_academic_area__id
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_academic_institution__id
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_academic_level__id
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_category_hobbies__id
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_competition_language__id
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_competition_level_language__id
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_cv_academic_studies__id
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_cv_employee__id
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_cv_family_employee__id
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_cv_hobbies_employee__id
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_cv_holding_employee__id
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_cv_laboral_experience__id
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_cv_language_employee__id
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_cv_personal_employee__id
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_cv_personal_employee_type__id
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_cv_pets__id
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_cv_sports_employee__id
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_experience_area__id
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_experience_time__id
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_external_job_position__id
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_family_relationship__id
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_hobbies__id
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_holding__id
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_language__id
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_occupations__id
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_sports__id
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_type_contract__id
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_tools_managment__id
+msgid "ID"
+msgstr "ID"
+
+#. module: hr_curriculum_vitae
+#: selection:hr.cv.academic.studies,state:0
+msgid "In progress"
+msgstr "En progreso"
+
+#. module: hr_curriculum_vitae
+#: selection:tools.managment,level:0
+msgid "Intermediate"
+msgstr "Intermedio"
+
+#. module: hr_curriculum_vitae
+#: selection:hr.cv.laboral.experience,position_range:0
+msgid "Intern"
+msgstr "Interno"
+
+#. module: hr_curriculum_vitae
+#: selection:hr.cv.laboral.experience,position_range:0
+msgid "Junior Professional"
+msgstr "Junior profesional"
+
+#. module: hr_curriculum_vitae
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_cv_employee__laboral_experience_ids
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_employee__laboral_experience_ids
+#: model_terms:ir.ui.view,arch_db:hr_curriculum_vitae.hr_cv_employee_view_form
+#: model_terms:ir.ui.view,arch_db:hr_curriculum_vitae.view_hr_employee_form
+msgid "Laboral Experience"
+msgstr "Experiencia Laboral"
+
+#. module: hr_curriculum_vitae
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_cv_language_employee__language_id
+msgid "Language"
+msgstr "Idioma"
+
+#. module: hr_curriculum_vitae
+#: model_terms:ir.ui.view,arch_db:hr_curriculum_vitae.hr_cv_employee_view_form
+#: model_terms:ir.ui.view,arch_db:hr_curriculum_vitae.view_hr_employee_form
+msgid "Languages"
+msgstr "Idiomas"
+
+#. module: hr_curriculum_vitae
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_academic_area____last_update
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_academic_institution____last_update
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_academic_level____last_update
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_category_hobbies____last_update
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_competition_language____last_update
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_competition_level_language____last_update
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_cv_academic_studies____last_update
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_cv_employee____last_update
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_cv_family_employee____last_update
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_cv_hobbies_employee____last_update
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_cv_holding_employee____last_update
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_cv_laboral_experience____last_update
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_cv_language_employee____last_update
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_cv_personal_employee____last_update
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_cv_personal_employee_type____last_update
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_cv_pets____last_update
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_cv_sports_employee____last_update
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_experience_area____last_update
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_experience_time____last_update
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_external_job_position____last_update
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_family_relationship____last_update
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_hobbies____last_update
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_holding____last_update
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_language____last_update
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_occupations____last_update
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_sports____last_update
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_type_contract____last_update
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_tools_managment____last_update
+msgid "Last Modified on"
+msgstr "Última modificación en"
+
+#. module: hr_curriculum_vitae
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_academic_area__write_uid
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_academic_institution__write_uid
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_academic_level__write_uid
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_category_hobbies__write_uid
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_competition_language__write_uid
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_competition_level_language__write_uid
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_cv_academic_studies__write_uid
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_cv_employee__write_uid
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_cv_family_employee__write_uid
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_cv_hobbies_employee__write_uid
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_cv_holding_employee__write_uid
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_cv_laboral_experience__write_uid
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_cv_language_employee__write_uid
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_cv_personal_employee__write_uid
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_cv_personal_employee_type__write_uid
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_cv_pets__write_uid
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_cv_sports_employee__write_uid
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_experience_area__write_uid
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_experience_time__write_uid
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_external_job_position__write_uid
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_family_relationship__write_uid
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_hobbies__write_uid
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_holding__write_uid
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_language__write_uid
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_occupations__write_uid
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_sports__write_uid
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_type_contract__write_uid
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_tools_managment__write_uid
+msgid "Last Updated by"
+msgstr "Última actualización por"
+
+#. module: hr_curriculum_vitae
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_academic_area__write_date
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_academic_institution__write_date
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_academic_level__write_date
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_category_hobbies__write_date
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_competition_language__write_date
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_competition_level_language__write_date
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_cv_academic_studies__write_date
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_cv_employee__write_date
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_cv_family_employee__write_date
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_cv_hobbies_employee__write_date
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_cv_holding_employee__write_date
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_cv_laboral_experience__write_date
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_cv_language_employee__write_date
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_cv_personal_employee__write_date
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_cv_personal_employee_type__write_date
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_cv_pets__write_date
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_cv_sports_employee__write_date
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_experience_area__write_date
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_experience_time__write_date
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_external_job_position__write_date
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_family_relationship__write_date
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_hobbies__write_date
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_holding__write_date
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_language__write_date
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_occupations__write_date
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_sports__write_date
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_type_contract__write_date
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_tools_managment__write_date
+msgid "Last Updated on"
+msgstr "Última actualización el"
+
+#. module: hr_curriculum_vitae
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_tools_managment__level
+msgid "Level"
+msgstr "Nivel"
+
+#. module: hr_curriculum_vitae
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_cv_academic_studies__level_academic_id
+msgid "Level Academic"
+msgstr "Nivel Académico"
+
+#. module: hr_curriculum_vitae
+#: selection:tools.managment,level:0
+msgid "Low"
+msgstr "Bajo"
+
+#. module: hr_curriculum_vitae
+#: selection:hr.cv.family.employee,gender:0
+#: selection:hr.cv.personal.employee,gender:0
+msgid "Male"
+msgstr "Masculino"
+
+#. module: hr_curriculum_vitae
+#: selection:hr.cv.laboral.experience,position_range:0
+msgid "Manager"
+msgstr "Gerente"
+
+#. module: hr_curriculum_vitae
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_academic_area__name
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_academic_institution__name
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_academic_level__name
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_category_hobbies__name
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_competition_language__name
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_competition_level_language__name
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_cv_academic_studies__name
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_cv_employee__name
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_cv_family_employee__name
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_cv_personal_employee__name
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_cv_personal_employee_type__name
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_cv_pets__name
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_experience_area__name
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_experience_time__name
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_external_job_position__name
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_family_relationship__name
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_hobbies__name
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_holding__name
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_language__name
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_occupations__name
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_sports__name
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_type_contract__name
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_tools_managment__name
+msgid "Name"
+msgstr "Nombre"
+
+#. module: hr_curriculum_vitae
+#: selection:hr.cv.academic.studies,type_education:0
+msgid "Not Formal"
+msgstr "No formal"
+
+#. module: hr_curriculum_vitae
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_cv_family_employee__occupation_id
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_cv_personal_employee__occupation_id
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_cv_personal_employee__occupation_name
+msgid "Occupation"
+msgstr "Ocupación"
+
+#. module: hr_curriculum_vitae
+#: selection:hr.cv.family.employee,gender:0
+#: selection:hr.cv.personal.employee,gender:0
+msgid "Other"
+msgstr "Otros"
+
+#. module: hr_curriculum_vitae
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_cv_laboral_experience__outstanding_achievements
+msgid "Outstanding Achievements"
+msgstr "Logros sobresalientes"
+
+#. module: hr_curriculum_vitae
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_cv_family_employee__partner_id
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_cv_personal_employee__partner_id
+msgid "Partner"
+msgstr "Empresa"
+
+#. module: hr_curriculum_vitae
+#: model_terms:ir.ui.view,arch_db:hr_curriculum_vitae.view_hr_employee_form
+msgid "Personal Employee"
+msgstr "Empleado personal"
+
+#. module: hr_curriculum_vitae
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_cv_employee__personal_employee_ids
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_employee__personal_employee_ids
+#: model_terms:ir.ui.view,arch_db:hr_curriculum_vitae.hr_cv_employee_view_form
+msgid "Personal Employees"
+msgstr "Empleados personales"
+
+#. module: hr_curriculum_vitae
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_cv_laboral_experience__position_range
+msgid "Position Range"
+msgstr "Rango de posición"
+
+#. module: hr_curriculum_vitae
+#: selection:hr.cv.laboral.experience,position_range:0
+msgid "President"
+msgstr "Presidente"
+
+#. module: hr_curriculum_vitae
+#: selection:hr.holding,land_type:0
+msgid "Property"
+msgstr "Propiedad"
+
+#. module: hr_curriculum_vitae
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_cv_pets__animal_race_id
+msgid "Race"
+msgstr "Raza"
+
+#. module: hr_curriculum_vitae
+#: selection:hr.holding,land_type:0
+msgid "Realstate"
+msgstr "Bienes raíces"
+
+#. module: hr_curriculum_vitae
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_cv_family_employee__same_home
+msgid "Same Home"
+msgstr "Misma casa"
+
+#. module: hr_curriculum_vitae
+#: selection:hr.cv.laboral.experience,position_range:0
+msgid "Senior Professional"
+msgstr "rofesional Senior"
+
+#. module: hr_curriculum_vitae
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_cv_sports_employee__sport_id
+msgid "Sport"
+msgstr "Deporte"
+
+#. module: hr_curriculum_vitae
+#: model_terms:ir.ui.view,arch_db:hr_curriculum_vitae.hr_cv_employee_view_form
+#: model_terms:ir.ui.view,arch_db:hr_curriculum_vitae.view_hr_employee_form
+msgid "Sports"
+msgstr "Deportes"
+
+#. module: hr_curriculum_vitae
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_cv_academic_studies__start_date
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_cv_laboral_experience__start_date
+msgid "Start Date"
+msgstr "Fecha de inicio"
+
+#. module: hr_curriculum_vitae
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_cv_academic_studies__state_id
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_cv_laboral_experience__state_id
+msgid "State"
+msgstr "Estado"
+
+#. module: hr_curriculum_vitae
+#: selection:hr.cv.laboral.experience,position_range:0
+msgid "Supervisor"
+msgstr "Supervisor"
+
+#. module: hr_curriculum_vitae
+#: selection:hr.cv.academic.studies,state:0
+msgid "Terminated"
+msgstr "Terminado"
+
+#. module: hr_curriculum_vitae
+#: model:ir.model,name:hr_curriculum_vitae.model_tools_managment
+msgid "Tools Managment"
+msgstr "Manejo de herramientas"
+
+#. module: hr_curriculum_vitae
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_cv_personal_employee__type_id
+msgid "Type"
+msgstr "Tipo"
+
+#. module: hr_curriculum_vitae
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_cv_academic_studies__type_education
+msgid "Type Education"
+msgstr "Tipo de Educación"
+
+#. module: hr_curriculum_vitae
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_cv_pets__animal_type_id
+msgid "Type of Animal"
+msgstr "Tipo de animal"
+
+#. module: hr_curriculum_vitae
+#: selection:hr.cv.laboral.experience,position_range:0
+msgid "Vice President"
+msgstr "Vicepresidente"
+
+#. module: hr_curriculum_vitae
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_cv_laboral_experience__wage
+msgid "Wage"
+msgstr "Salario"
+
+#. module: hr_curriculum_vitae
+#: model:ir.model.fields,field_description:hr_curriculum_vitae.field_hr_cv_laboral_experience__withdrawal_reason
+msgid "Withdrawal Reason"
+msgstr "Razón de Retiro"
+
+#. module: hr_curriculum_vitae
+#: selection:hr.cv.academic.studies,state:0
+msgid "postpone"
+msgstr "posponer"

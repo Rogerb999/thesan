@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_hr_employee_form" model="ir.ui.view">
+        <field name="name">hr.employee.form.inherit</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_form"/>
+        <field name="arch" type="xml">
+            <page name="hr_settings" position="after">
+                <page name="cv_pages" string="Curriculum Vitae">
+                    <notebook name="cv_group">
+                        <page name="hobby" string="Hobbies">
+                            <field name="hobbies_ids">
+                                <tree>
+                                    <field name="hobby_id"/>
+                                </tree>
+                                <form>
+                                    <group colspan="4" col="2">
+                                        <field name="hobby_id"/>
+                                    </group>
+                                </form>
+                            </field>
+                        </page>
+                        <page name="sports" string="Sports">
+                            <field name="sport_ids">
+                                <tree>
+                                    <field name="sport_id"/>
+                                </tree>
+                                <form>
+                                    <group colspan="4" col="2">
+                                        <field name="sport_id"/>
+                                    </group>
+                                </form>
+                            </field>
+                        </page>
+                        <page name="language" string="Languages">
+                            <field name="language_ids">
+                                <tree>
+                                    <field name="language_id"/>
+                                    <field name="level_id"/>
+                                    <field name="competition_id"/>
+                                </tree>
+                                <form>
+                                    <group colspan="4" col="4">
+                                        <field name="language_id"/>
+                                        <field name="level_id"/>
+                                        <field name="competition_id"/>
+                                        <field name="name_support" readonly="1" force_save="1"/>
+                                        <field name="support" filename="name_support"/>
+                                        <field name="support_attachment_url"
+                                               readonly="1" force_save="1"/>
+                                    </group>
+                                </form>
+                            </field>
+                        </page>
+                        <page name="holding" string="Holdings">
+                            <field name="holding_ids">
+                                <tree>
+                                    <field name="holding_id"/>
+                                </tree>
+                                <form>
+                                    <group colspan="4" col="2">
+                                        <field name="holding_id"/>
+                                    </group>
+                                </form>
+                            </field>
+                        </page>
+                        <page name="family" string="Family Group">
+                            <field name="family_group_ids">
+                                <tree>
+                                    <field name="name" required="1"/>
+                                    <field name="same_home"/>
+                                    <field name="contact_emergency"/>
+                                    <field name="gender"/>
+                                    <field name="birthdate"/>
+                                    <field name="occupation_id"/>
+                                    <field name="age"/>
+                                    <field name="family_rel_id"/>
+                                </tree>
+                                <form>
+                                    <group colspan="4" col="4">
+                                        <field name="partner_id"/>
+                                        <field name="name" required="1" readonly="1" force_save="1"/>
+                                        <field name="same_home"/>
+                                        <field name="contact_emergency"/>
+                                        <field name="gender"/>
+                                        <field name="birthdate"/>
+                                        <field name="occupation_id"/>
+                                        <field name="age"/>
+                                        <field name="family_rel_id"/>
+                                    </group>
+                                </form>
+                            </field>
+                        </page>
+                        <page name="laboral_exp" string="Laboral Experience">
+                            <field name="laboral_experience_ids"/>
+                        </page>
+                        <page name="academic_studies" string="Academic Studies">
+                            <field name="academic_studies_ids"/>
+                        </page>
+                        <page name="animal_pets" string="Animal Pets">
+                            <field name="animal_pets_ids">
+                                <tree>
+                                    <field name="name" required="1"/>
+                                    <field name="animal_type_id"/>
+                                    <field name="animal_race_id"/>
+                                    <field name="dob"/>
+                                    <field name="age"/>
+                                </tree>
+                                <form>
+                                    <group colspan="4" col="4">
+                                        <field name="name" required="1"/>
+                                        <field name="animal_type_id"/>
+                                        <field name="animal_race_id"/>
+                                        <field name="dob"/>
+                                        <field name="age"/>
+                                    </group>
+                                </form>
+                            </field>
+                        </page>
+                        <page name="personal_employee" string="Personal Employee">
+                            <field name="personal_employee_ids">
+                                <tree>
+                                    <field name="name" required="1"/>
+                                    <field name="partner_id" required="1"/>
+                                    <field name="occupation_id"/>
+                                    <field name="gender"/>
+                                    <field name="type_id"/>
+                                </tree>
+                                <form>
+                                    <group colspan="4" col="4">
+                                        <field name="name" required="1"/>
+                                        <field name="partner_id" required="1"/>
+                                        <field name="occupation_id"/>
+                                        <field name="gender"/>
+                                        <field name="type_id"/>
+                                    </group>
+                                </form>
+                            </field>
+                        </page>
+                    </notebook>
+                </page>
+            </page>
+
+        </field>
+    </record>
+
+    <record id="view_hr_employee_form_employee_extended_inherit_inherit" model="ir.ui.view">
+        <field name="name">hr.employee.form.employee.extended.inherit.inherit</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr_employee_extended_werp.view_hr_employee_form_employee_extended_inherit"/>
+        <field name="arch" type="xml">
+            <field name="Interface_salary_type" position="before">
+                <field name="academic_level_id"
+                       options="{'no_open':'False', 'no_create': True, 'no_create_edit': True, 'no_quick_create': True}"/>
+            </field>
+        </field>
+    </record>
+
+</odoo>

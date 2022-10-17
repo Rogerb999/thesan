@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_close_event_manager,close event manager,model_close_event,hr_payroll.group_hr_payroll_manager,1,1,1,0
+access_close_event_date_manager,close event date manager,model_close_event_date,hr_payroll.group_hr_payroll_manager,1,1,1,0
+access_close_event_officer,close event officer,model_close_event,hr.group_hr_user,1,0,0,0
+access_close_event_date_officer,close event date officer,model_close_event_date,hr.group_hr_user,1,0,0,0

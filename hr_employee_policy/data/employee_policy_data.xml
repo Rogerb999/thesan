@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="email_template_oath_severity" model="mail.template">
+            <field name="name">Gravedad de Juramento</field>
+            <field name="model_id" ref="hr_employee_policy.model_hr_policy"/>
+            <field name="email_from">${user.email_formatted |safe}</field>
+            <field name="subject">Gravedad de Juramento</field>
+            <field name="body_html" type="html">
+                <div style="margin: 0px; padding: 0px;">
+                    <p style="margin: 0px; padding: 0px; font-size: 13px;">
+                        Bajo la gravedad de juramento manifiesto que la información consignada
+                        en el presente documento es verídica, por lo cual, lo datos aquí
+                        contenidos corresponden a la realidad y están acordes a mis calidades,
+                        estudios, experiencia laboral y aptitudes como trabajador.
+                    </p><br/>
+                    <p style="margin: 0px; padding: 0px; font-size: 13px;">
+                        En cumplimiento de las políticas corporativas del GRUPO SANCHO, por la presente
+                        requerimos a que nos informe sí actualmente se presentan una o más de las siguientes
+                        situaciones en la relación comercial entre el GRUPO SANCHO y algún
+                        Cliente y/o Proveedor de las Empresas:
+                        <ol>
+                            <li>Existe algún parentesco hasta cuarto grado de consanguinidad entre cualquier empleado actual
+                            de uno más de las siguientes sociedades (SANCHO BBDO, SISTOLE S.A.S., OMD COLOMBIA S.A.S.,
+                            MEDIAWISE SOLUTIONS S.A.S., PHD COLOMBIA S.A.S., PROXIMITY COLOMBIA S.A., SEÑOR LOPEZ S.A.S.,
+                            COMMON SENSE S.A.S., WSuite S.A.S.) (en adelante “Compañías del Grupo Sancho”)
+                                y algún Cliente y/o Proveedor de las Empresas.
+                            </li><br/>
+                            <li>Existe alguna relación hasta segundo grado de afinidad entre cualquier empleado actual de
+                                una o más las Compañías del Grupo Sancho y algún Cliente y/o Proveedor de las Empresas.
+                            </li><br/>
+
+                            <li>Existe algún nexo comercial entre cualquier empleado actual de una o más de las Compañías
+                                del Grupo Sancho y algún Cliente y/o Proveedor de las Empresas.
+                            </li><br/>
+                        </ol>
+                        <br/>
+                        En caso de no dar respuesta a este requerimiento dentro de los primeros 10 días calendario
+                        siguientes a esta comunicación, entendemos que su respuesta es que no se presenta ninguna de
+                        las situaciones anteriores, no obstante si a futuro se definiera o se conociera que sí se
+                        presentaron una o más de las situaciones consultadas, se considera como una falta e
+                        incumplimiento del empleado frente al GRUPO SANCHO. En consecuencia, el GRUPO SANCHO se
+                        reserva cualquier acción legal que hubiere lugar para la reparación de los daños y perjuicios
+                        ocasionados por esta falta.
+                    </p>
+                </div>
+            </field>
+            <field name="report_name">Gravedad de Juramento</field>
+            <field name="lang">${user.partner_id.lang}</field>
+            <field name="user_signature" eval="False"/>
+            <field name="auto_delete" eval="True"/>
+        </record>
+    </data>
+</odoo>

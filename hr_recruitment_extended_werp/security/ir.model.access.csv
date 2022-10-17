@@ -1,0 +1,13 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_reason_disqualification_hr_user,reason.disqualification.hr.user,model_reason_disqualification,hr.group_hr_user,1,1,1,1
+access_hr_stage_perc,access_hr_stage_perc,model_hr_stage_perc,base.group_user,1,0,0,0
+access_hr_stage_perc_hr_user,access_hr_stage_perc_hr_user,model_hr_stage_perc,hr.group_hr_user,1,1,1,1
+access_hr_evaluation,access_hr_evaluation,model_hr_evaluation,base.group_user,1,0,0,0
+access_hr_evaluation_user,access_hr_evaluation_user,model_hr_evaluation,hr.group_hr_user,1,1,1,1
+access_jca_details,access_jca_details,model_jca_details,base.group_user,1,0,0,0
+access_jca_details_user,access_jca_details_user,model_jca_details,hr.group_hr_user,1,1,1,1
+access_macro_area_id,access_macro_area_user,model_macro_area,hr.group_hr_user,1,1,1,1
+access_work_group_id,access_work_group_user,model_work_group,hr.group_hr_user,1,1,1,1
+access_function_executed_id,access_function_executed_user,model_function_executed,hr.group_hr_user,1,1,1,1
+access_types_of_charges_id,access_types_of_charges_user,model_types_of_charges,hr.group_hr_user,1,1,1,1
+access_hr_employee_work_group,access_hr_employee_work_group,model_hr_employee_work_group,,1,1,1,1

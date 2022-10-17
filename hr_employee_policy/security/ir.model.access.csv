@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_hr_policy,access_hr_policy,model_hr_policy,base.group_user,1,0,0,0
+access_hr_policy_manager,access_hr_policy_manager,model_hr_policy,hr.group_hr_manager,1,1,1,1
+access_hr_employee_policy,access_hr_employee_policy,model_hr_employee_policy,base.group_user,1,0,0,0
+access_hr_employee_policy_manager,access_hr_employee_policy_manager,model_hr_employee_policy,hr.group_hr_manager,1,1,1,1
+access_contact_reference,access_contact_reference,model_contact_reference,base.group_user,1,0,0,0
+access_contact_reference_manager,access_contact_reference_manager,model_contact_reference,hr.group_hr_manager,1,1,1,1

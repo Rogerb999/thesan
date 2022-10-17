@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2020-TODAY WSuite Products <wsuite-products@wsuite.com>
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html). -->
+<odoo>
+
+    <record id="hr_payroll_config_view_tree" model="ir.ui.view">
+        <field name="name">hr.payroll.config.view.tree</field>
+        <field name="model">hr.payroll.config</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="start_date"/>
+                <field name="end_date"/>
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="hr_payroll_config_view_form" model="ir.ui.view">
+        <field name="name">hr.payroll.config.view.form</field>
+        <field name="model">hr.payroll.config</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <field name="state" widget="statusbar"
+                           statusbar_visible="draft,done"/>
+                    <button
+                         type="object"
+                         states="draft"
+                         name="move_to_done"
+                         string="Move to Done"/>
+                    <button
+                         type="object"
+                         states="done"
+                         name="move_to_reject"
+                         string="Move to Reject"/>
+                    <button
+                         type="object"
+                         states="reject"
+                         name="move_to_draft"
+                         string="Move to Draft"
+                         groups="hr_payroll_extended_werp.group_payroll_draft"/>
+                </header>
+                <sheet>
+                    <group>
+                        <group colspan="4" col="4">
+                            <field name="name" required="1"
+                                   attrs="{'readonly':[('state', '=', 'done')]}"/>
+                            <field name="start_date" required="1"
+                                   attrs="{'readonly':[('state', '=', 'done')]}"/>
+                            <field name="end_date" required="1"
+                                   attrs="{'readonly':[('state', '=', 'done')]}"/>
+                            <field name="reason_reject" readonly="1"
+                                   force_save="1"
+                                   attrs="{'invisible':[('state', '!=', 'reject')]}"/>
+                        </group>
+                    </group>
+                    <group string="Config Line">
+                        <field name="config_line_ids" nolabel="1"
+                               attrs="{'readonly':[('state', '=', 'done')]}">
+                            <tree editable="bottom">
+                                <field name="variable" required="1"
+                                       options="{'no_create': True, 'no_create_edit': True, 'no_open': True}"/>
+                                <field name="name" required="1"/>
+                                <field name="value" required="1"/>
+                            </tree>
+                        </field>
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids"
+                           widget="mail_followers"/>
+                    <field name="activity_ids" widget="mail_activity"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_hr_payroll_config_search" model="ir.ui.view">
+        <field name="name">hr.payroll.config.search</field>
+        <field name="model">hr.payroll.config</field>
+        <field name="arch" type="xml">
+            <search string="Hr Payroll Config">
+                <field name="name"/>
+                <field name="start_date"/>
+                <field name="end_date"/>
+                <group string="Group By">
+                    <filter string="Name" name="name"
+                            context="{'group_by':'name'}"/>
+                    <filter string="Start Date" name="start_date"
+                            context="{'group_by':'start_date'}"/>
+                    <filter string="End Date" name="end_date"
+                            context="{'group_by':'end_date'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="hr_payroll_config_action" model="ir.actions.act_window">
+        <field name="name">Config</field>
+        <field name="res_model">hr.payroll.config</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="search_view_id" ref="view_hr_payroll_config_search"/>
+        <field name="context">{}</field>
+    </record>
+
+    <menuitem
+        id="hr_payroll_config_menu_action"
+        name="Config"
+        action="hr_payroll_config_action"
+        parent="hr_payroll.menu_hr_payroll_configuration"/>
+
+</odoo>

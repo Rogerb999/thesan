@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- HR Job Form View -->
+    <record id="hr_job_form_view_inherit_extended" model="ir.ui.view">
+        <field name="name">hr.job.form.view.inherit.extended</field>
+        <field name="model">hr.job</field>
+        <field name="inherit_id" ref="hr_recruitment.hr_job_survey"/>
+        <field name="arch" type="xml">
+            <xpath expr="//group[@name='offer']" position="after">
+                <group colspan="8">
+                    <notebook>
+                        <page string="Application's">
+                            <field name="application_ids" context="{'default_job_id': active_id}">
+                                <tree>
+                                    <field name="partner_name"/>
+                                    <field name="stage_id"/>
+                                    <field name="name"/>
+                                    <field name="job_id"/>
+                                    <field name="user_id"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page string="Stage Percentage" name="stage_per">
+                            <field name="hr_stage_perc_ids">
+                                <tree editable="bottom">
+                                    <field name="stage_id"/>
+                                    <field name="state"/>
+                                    <field name="percentage"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </group>
+            </xpath>
+            <xpath expr="//field[@name='no_of_recruitment']" position="after">
+                <field name="default"/>
+                <field name="jca_details_id" options="{'no_create': True}" required="1"/>
+                <field name="level" required="1"/>
+                <field name="fte" required="1"/>
+                <field name="hour_value"/>
+                <field name="group_id"/>
+                <field name="color_code"/>
+            </xpath>
+            <xpath expr="//field[@name='hr_responsible_id']" position="after">
+                <field name="function_executed_id"
+                       options="{'no_create': True, 'no_create_edit': True, 'no_open': True}"/>
+                <field name="work_group_id"
+                       attrs="{'invisible':[('function_executed_id', '=', False)]}"
+                       options="{'no_create': True, 'no_create_edit': True, 'no_open': True}"/>
+                <field name="macro_area_id"
+                       attrs="{'invisible':[('work_group_id', '=', False)]}"
+                       options="{'no_create': True, 'no_create_edit': True, 'no_open': True}"/>
+                <field name="holding" required="1"/>
+                <field name="codigo_holding" required="1"/>
+                <field name="holding_principal" required="1"/>
+                <field name="codigo_holding_principal" required="1"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="hr_job_form_view_inherit_active_inactive" model="ir.ui.view">
+        <field name="name">hr.job.form.view.inherit.active.inactive</field>
+        <field name="model">hr.job</field>
+        <field name="inherit_id" ref="hr.view_hr_job_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@name='button_box']" position="inside">
+                <button name="toggle_active" type="object" class="oe_stat_button" icon="fa-archive">
+                    <field name="active" widget="boolean_button" options='{"terminology": "archive"}'/>
+                </button>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="hr_job_form_view_inherit_active_inactive_search" model="ir.ui.view">
+        <field name="name">hr.job.form.view.inherit.active.inactive.search</field>
+        <field name="model">hr.job</field>
+        <field name="inherit_id" ref="hr.view_job_filter"/>
+        <field name="arch" type="xml">
+            <xpath expr="//filter[@name='in_position']" position="before">
+                <filter string="Active" name="active" domain="[('active','=', True)]"/>
+                <filter string="Inactive" name="inactive" domain="[('active','=', False)]"/>
+            </xpath>
+            <xpath expr="//filter[@name='department']" position="before">
+                <filter string="Active/Inactive" name="active_inactive" domain="[]" context="{'group_by':'active'}"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

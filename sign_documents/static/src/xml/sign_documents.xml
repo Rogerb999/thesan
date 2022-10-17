@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+
+    <t t-extend="FormView.buttons">
+        <t t-jquery="button.o_form_button_create" t-operation="after">
+            <button t-if='widget.modelName == "hr.contract" and widget.initialState.data.state == "draft"'
+                    type="button"
+                    class="btn btn-secondary"
+                    id="buttonUploadDocument">
+                Upload Document
+            </button>
+        </t>
+    </t>
+
+    <div t-name="sign_documents.signature_dialog">
+        <header>
+            <div class="float-right">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">&amp;times;</button>
+            </div>
+            <strong><h2>Signature</h2></strong>
+        </header>
+        <div class="card mt16 mb0" id="o_portal_sign_draw">
+            <div class="card-header">
+                <div class="float-right">
+                    <a role="button" id="o_portal_sign_clear" class="btn btn-mb">Clear</a>
+                </div>
+            </div>
+            <div class="o_portal_signature card-body"/>
+        </div>
+        <div class="mt16 clearfix">
+          <button type="submit" class="btn btn-primary o_portal_sign_submit float-right">Submit</button>
+        </div>
+   </div>
+
+    <t t-name="sign_documents.sign_item" name="Field Type">
+        <t t-if="!editable">
+            <input t-if="sign_type === 'text'" type="text" class="o_field_type" t-att-placeholder="display_name"/>
+            <input t-if="sign_type === 'name'" type="text" class="o_field_type" t-att-placeholder="display_name"/>
+            <button t-if="sign_type == 'signature' || sign_type == 'initial'" class="o_field_type text-center">
+                <t t-esc="display_name"/>
+                <span class="fa fa-edit pull-right" style="margin-left: .3em; margin-top: 3px;margin-right: 5px;"></span>
+            </button>
+        </t>
+        <t t-if="editable">
+            <div t-if="sign_type === 'text' || sign_type === 'name'" style="text-align: center;" class="o_field_type text-center">
+                <t t-if="!field_value">
+                    <t t-esc="display_name"/>
+                </t>
+                <t t-else="">
+                    <t t-esc="field_value"/>
+                </t>
+                <t t-if="emode">
+                    <span class="fa fa-arrows pull-left"/>
+                    <span class="fa fa-trash pull-right" style="margin-left: .3em; margin-top: 3px;margin-right: 5px;"></span>
+                </t>
+            </div>
+            <div t-if="sign_type == 'signature' || sign_type == 'initial'" style="text-align: center;" class="o_field_type text-center">
+                <t t-if="!signature">
+                    <t t-esc="display_name"/>
+                </t>
+                <img t-if="signature" t-att-src="signature" alt="Signature" style="width:100%; height:100%;"/>
+                <t t-if="emode">
+                    <span class="fa fa-arrows pull-left" aria-label="Signature" role="img" title="Signature"/>
+                    <span class="fa fa-trash pull-right" style="margin-left: .3em; margin-top: 3px;margin-right: 5px;"></span>
+                 </t>
+            </div>
+        </t>
+    </t>
+
+    <t t-name="sign_documents.sign_field_type">
+        <t t-foreach="sign_field_types" t-as="field_type">
+            <button type="button"
+                    id="signature_button"
+                    style="height: 32px; width:120px; margin:5px; cursor: grab;cursor: -moz-grab;cursor: -webkit-grab;"
+                    t-att-data-field-type-id="field_type.id"
+                    title="Drag &amp; Drop">
+                <t t-esc="field_type.name"/>
+            </button>
+        </t>
+    </t>
+
+    <t t-name="document.sign.template">
+        <iframe class="pdf_iframe"/>
+    </t>
+
+</templates>

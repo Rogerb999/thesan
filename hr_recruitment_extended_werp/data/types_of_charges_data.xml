@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<odoo>
+<data noupdate="1">
+
+    <record model="types.of.charges" id="charge_type1">
+        <field name="name">Estratégico</field>
+        <field name="nivel">1</field>
+    </record>
+    <record model="types.of.charges" id="charge_type2">
+        <field name="name">Estratégico</field>
+        <field name="nivel">2</field>
+    </record>
+    <record model="types.of.charges" id="charge_type3">
+        <field name="name">Estratégico</field>
+        <field name="nivel">3</field>
+    </record>
+    <record model="types.of.charges" id="charge_type3">
+        <field name="name">Estratégico</field>
+        <field name="nivel">4</field>
+    </record>
+    <record model="types.of.charges" id="charge_type4">
+        <field name="name">Tactico</field>
+        <field name="nivel">5</field>
+    </record>
+    <record model="types.of.charges" id="charge_type5">
+        <field name="name">Tactico</field>
+        <field name="nivel">6</field>
+    </record>
+    <record model="types.of.charges" id="charge_type6">
+        <field name="name">Base</field>
+        <field name="nivel">7</field>
+    </record>
+    <record model="types.of.charges" id="charge_type7">
+        <field name="name">Base</field>
+        <field name="nivel">8</field>
+    </record>
+    <record model="types.of.charges" id="charge_type8">
+        <field name="name">Base</field>
+        <field name="nivel">9</field>
+    </record>
+    <record model="types.of.charges" id="charge_type9">
+        <field name="name">Base</field>
+        <field name="nivel">10</field>
+    </record>
+    <record model="types.of.charges" id="charge_type10">
+        <field name="name">Base</field>
+        <field name="nivel">11</field>
+    </record>
+    <record model="types.of.charges" id="charge_type11">
+        <field name="name">Base</field>
+        <field name="nivel">12</field>
+    </record>
+    <record model="types.of.charges" id="charge_type12">
+        <field name="name">Base</field>
+        <field name="nivel">13</field>
+    </record>
+    <record model="types.of.charges" id="charge_type13">
+        <field name="name">Base</field>
+        <field name="nivel">14</field>
+    </record>
+
+</data>
+</odoo>

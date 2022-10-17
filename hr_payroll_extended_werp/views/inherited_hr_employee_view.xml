@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2019-TODAY WSuite Products <wsuite-products@wsuite.com>
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html). -->
+<odoo>
+
+    <record id="view_employee_form_inherit" model="ir.ui.view">
+        <field name="name">view.employee.form.inherit</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_form"/>
+        <field name="arch" type="xml">
+            <page name="personal_information" position="after">
+                <page name="hr_acumulate" string="Hr Acumulate">
+                    <group>
+                        <field name="hr_employee_acumulate_ids"
+                               readonly="1" nolabel="1"
+                               context="{'default_employee_id': active_id}"/>
+                    </group>
+                </page>
+            </page>
+        </field>
+    </record>
+
+    <record id="view_employee_form_inherit_inherit" model="ir.ui.view">
+        <field name="name">view.employee.form.inherit.inherit</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id"
+               ref="hr_payroll_extended_werp.view_employee_form_inherit"/>
+        <field name="groups_id"
+               eval="[(4, ref('base.group_system'))]"/>
+        <field name="arch" type="xml">
+            <field name="hr_employee_acumulate_ids"
+                   position="attributes">
+                <attribute name="readonly">0</attribute>
+            </field>
+        </field>
+    </record>
+
+    <record id="view_employee_form_inherit_leaves_calculate"
+            model="ir.ui.view">
+        <field name="name">view.employee.form.inherit.leaves.calculate</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//group[@name='active_group']" position="after">
+                <group string="Leaves Status" name="leaves_status">
+                    <label for="allocation_leaves_count"/>
+                    <div>
+                        <field name="allocation_leaves_count"
+                               attrs="{'readonly': [('id', '!=', False)], 'invisible': [('id', '=', False)]}"
+                               class="oe_inline"/> days
+                    </div>
+                    <label for="leave_days_count"/>
+                    <div>
+                        <field name="leave_days_count"
+                               attrs="{'readonly': [('id', '!=', False)], 'invisible': [('id', '=', False)]}"
+                               class="oe_inline"/> days
+                    </div>
+                    <label for="remaining_leaves_count"/>
+                    <div>
+                        <field name="remaining_leaves_count"
+                               attrs="{'readonly': [('id', '!=', False)], 'invisible': [('id', '=', False)]}"
+                               class="oe_inline"/> days
+                    </div>
+                </group>
+            </xpath>
+            <field name="resource_calendar_id" position="after">
+                <field name="compensation_company_id"
+                       options="{'no_create': True, 'no_create_edit': True,'no_open': True}"/>
+            </field>
+        </field>
+    </record>
+
+    <act_window
+        id="update_leaves_details"
+        name="Update Leaves Details"
+        res_model="update.leaves.details.wizard"
+        src_model="hr.employee"
+        view_mode="form"
+        multi="True"
+        target="new"
+        key2="client_action_multi"
+    />
+
+</odoo>

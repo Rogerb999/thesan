@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="hr_payroll_structure_nomina" model="hr.payroll.structure">
+			<field name="name">Nómina Solo</field>
+			<field name="code">nomina</field>
+			<field name="parent_id" eval="None"/>
+			<field name="rule_ids" eval="[(6, 0, [
+				ref('hr_salary_rule_smlv'),
+				ref('hr_salary_rule_aux'),
+                ref('hr_salary_rule_uvt'),
+                ref('hr_salary_rule_salario_basico'),
+                ref('hr_salary_rule_sueldo'),
+                ref('hr_salary_rule_hora_extra_diurna'),
+                ref('hr_salary_rule_hora_extra_nocturna'),
+                ref('hr_salary_rule_hora_recargo_nocturno'),
+                ref('hr_salary_rule_hora_extra_diurna_dominical_festivo'),
+                ref('hr_salary_rule_hora_recargo_diurno_dominical_festivo'),
+                ref('hr_salary_rule_hora_extra_nocturno_dominical_festivo'),
+                ref('hr_salary_rule_hora_recargo_nocturno_dominical_festivo'),
+                ref('hr_salary_rule_total_horas_extras'),
+                ref('hr_salary_rule_comision'),
+                ref('hr_salary_rule_recargo'),
+                ref('hr_salary_rule_retencion_fuente'),
+                ref('hr_salary_rule_pago_no_contitutivo'),
+                ref('hr_salary_rule_pago_contitutivo'),
+                ref('hr_salary_rule_vacaciones'),
+                ref('hr_salary_rule_total_novedades'),
+                ref('hr_salary_rule_ibc'),
+                ref('hr_salary_rule_auxilio_transporte'),
+                ref('hr_salary_rule_incapacidad_comun'),
+                ref('hr_salary_rule_incapacidad_laboral'),
+                ref('hr_salary_rule_total_devengado'),
+                ref('hr_salary_rule_pension_empleado'),
+                ref('hr_salary_rule_pension_alto_riesgo_empleador'),
+                ref('hr_salary_rule_salud_empleado'),
+                ref('hr_salary_rule_ausencia_no_remunerada'),
+                ref('hr_salary_rule_prestamo'),
+                ref('hr_salary_rule_total_deducciones'),
+                ref('hr_salary_rule_pension_empleador'),
+                ref('hr_salary_rule_salud_empleador'),
+                ref('hr_salary_rule_arl_I'),
+                ref('hr_salary_rule_arl_II'),
+                ref('hr_salary_rule_arl_III'),
+                ref('hr_salary_rule_arl_IV'),
+                ref('hr_salary_rule_arl_V'),
+                ref('hr_salary_rule_total_seguridad_social'),
+                ref('hr_salary_rule_caja_compensacion_familiar'),
+                ref('hr_salary_rule_icbf'),
+                ref('hr_salary_rule_sena'),
+                ref('hr_salary_rule_aportaciones_parafiscales'),
+                ref('hr_salary_rule_cesantias_mensual'),
+                ref('hr_salary_rule_prima_servicio'),
+                ref('hr_salary_rule_int_cesantias'),
+                ref('hr_salary_rule_total_prestaciones_sociales'),
+                ref('hr_salary_rule_fondo_solidaridad_pensional'),
+                ref('hr_salary_rule_fondo_subsistencia_pensional'),
+                ref('hr_salary_rule_total_pagar'),
+                ref('hr_salary_total_costo_empresa'),
+			])]"/>
+		</record>
+    </data>
+</odoo>

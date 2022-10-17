@@ -1,0 +1,6 @@
+.o_field_type {
+    position: absolute;
+    z-index: 100;
+    box-shadow: 1px 1px 6px 1px #000000;
+}
+

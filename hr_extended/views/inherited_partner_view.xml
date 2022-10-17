@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2019-TODAY WSuite Products <wsuite-products@wsuite.com>
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html). -->
+<odoo>
+
+    <record id="view_partner_form_inherit" model="ir.ui.view">
+        <field name="name">res.partner.form.view.inherit</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <field name="vat" position="attributes">
+                <attribute name="string">Document Number</attribute>
+                <attribute name="required">1</attribute>
+            </field>
+            <field name="l10n_co_document_type" position="attributes">
+                <attribute name="required">1</attribute>
+            </field>
+            <field name="vat" position="attributes">
+                <attribute name="required">1</attribute>
+            </field>
+            <field name="state_id" position="attributes">
+                <attribute name="required">1</attribute>
+            </field>
+            <field name="mobile" position="attributes">
+                <attribute name="required">1</attribute>
+            </field>
+            <field name="email" position="attributes">
+                <attribute name="required">1</attribute>
+            </field>
+            <field name="mobile" position="before">
+                <field name="mobile_country_code"/>
+            </field>
+            <field name="phone" position="before">
+                <field name="phone_country_code"/>
+            </field>
+            <field name="vat" position="after">
+                <field name="client_reference"/>
+            </field>
+            <xpath expr="//notebook" position="inside">
+                <page name="features" string="Features">
+                    <group col="4">
+                        <field name="is_found_layoffs"/>
+                        <field name="is_compensation_box"/>
+                        <field name="is_eps"/>
+                        <field name="is_unemployee_fund"/>
+                        <field name="is_arl"/>
+                        <field name="is_prepaid_medicine"/>
+                        <field name="is_afc"/>
+                        <field name="is_afp"/>
+                        <field name="is_voluntary_contribution"/>
+                    </group>
+                </page>
+                <page string="File Details">
+                    <group col="4">
+                        <field name="file_cv"/>
+                        <field name="file_cv_name"/>
+                        <field name="file_cv_size"/>
+                        <field name="attachment_url" widget="url"/>
+                    </group>
+                </page>
+            </xpath>
+            <xpath expr="//group[1]/group[2]/field[@name='function']" position="replace">
+                <field name="function_id" placeholder="e.g. Sales Director"
+                    attrs="{'invisible': [('is_company','=', True)]}"/>
+            </xpath>
+            <xpath expr="//field[@name='child_ids']/kanban/field[@name='function']" position="replace">
+                <field name="function_id"
+                       options="{'no_create': True, 'no_create_edit': True, 'no_open': True}"/>
+            </xpath>
+            <xpath expr="//div[@t-if='record.function.raw_value']" position="replace">
+                <div t-if="record.function_id.raw_value"><field name="function_id"/></div>
+            </xpath>
+            <xpath expr="//notebook/page/field/form/sheet/group[1]/group[2]/field[@name='function']" position="replace">
+                <field name="function_id" placeholder="e.g. Sales Director"
+                    attrs="{'invisible': [('type','!=', 'contact')]}"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_res_partner_filter_inherit" model="ir.ui.view">
+        <field name="name">view.res.partner.filter.inherit</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_res_partner_filter"/>
+        <field name="arch" type="xml">
+            <filter name="inactive" position="after">
+                <filter string="Found Layoffs" name="is_found_layoffs"
+                        domain="[('is_found_layoffs','!=',False)]"/>
+                <filter string="Compensation Box" name="is_compensation_box"
+                        domain="[('is_compensation_box','!=',False)]"/>
+                <filter string="EPS" name="is_eps"
+                        domain="[('is_eps','!=',False)]"/>
+                <filter string="Unemployee Fund" name="is_unemployee_fund"
+                        domain="[('is_unemployee_fund','!=',False)]"/>
+                <filter string="ARL" name="is_arl"
+                        domain="[('is_arl','!=',False)]"/>
+                <filter string="Prepaid Medicine" name="is_prepaid_medicine"
+                        domain="[('is_prepaid_medicine','!=',False)]"/>
+                <filter string="AFC" name="is_afc"
+                        domain="[('is_afc','!=',False)]"/>
+                <filter string="AFP" name="is_afp"
+                        domain="[('is_afp','!=',False)]"/>
+                <filter string="Voluntary Contribution" name="is_voluntary_contribution"
+                        domain="[('is_voluntary_contribution','!=',False)]"/>
+            </filter>
+        </field>
+    </record>
+
+    <record id="view_res_users_form_inherit_token" model="ir.ui.view">
+        <field name="name">res.users.form.view.inherit.token</field>
+        <field name="model">res.users</field>
+        <field name="inherit_id" ref="base.view_users_form"/>
+        <field name="arch" type="xml">
+            <field name="action_id" position="after">
+                <field name="birthdate"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="res_partner_kanban_view_inherit" model="ir.ui.view">
+        <field name="name">res.partner.kanban.view.inherit</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.res_partner_kanban_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//kanban[1]/field[@name='function']" position="replace">
+                <field name="function_id"/>
+            </xpath>
+            <xpath expr="//div[hasclass('oe_kanban_details')]/ul" position="replace">
+                <ul>
+                    <li t-if="record.parent_id.raw_value and !record.function_id.raw_value"><field name="parent_id"/></li>
+                    <li t-if="!record.parent_id.raw_value and record.function_id.raw_value"><field name="function_id"/></li>
+                    <li t-if="record.parent_id.raw_value and record.function_id.raw_value"><field name="function_id"/> at <field name="parent_id"/></li>
+                    <li t-if="record.city.raw_value and !record.country_id.raw_value"><field name="city"/></li>
+                    <li t-if="!record.city.raw_value and record.country_id.raw_value"><field name="country_id"/></li>
+                    <li t-if="record.city.raw_value and record.country_id.raw_value"><field name="city"/>, <field name="country_id"/></li>
+                    <li t-if="record.email.raw_value" class="o_text_overflow"><field name="email"/></li>
+                </ul>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_partner_simple_form_inherit" model="ir.ui.view">
+        <field name="name">view.partner.simple.form.inherit</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_simple_form"/>
+        <field name="arch" type="xml">
+            <field name="function" position="replace">
+                <field name="function_id" placeholder="e.g. Sales Director" attrs="{'invisible': [('is_company','=', True)]}"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="view_partner_short_form_inherit" model="ir.ui.view">
+        <field name="name">view.partner.short.form.inherit</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_short_form"/>
+        <field name="arch" type="xml">
+            <field name="function" position="replace">
+                <field name="function_id" placeholder="e.g. Sales Director" attrs="{'invisible': [('is_company','=', True)]}"/>
+            </field>
+        </field>
+    </record>
+
+</odoo>

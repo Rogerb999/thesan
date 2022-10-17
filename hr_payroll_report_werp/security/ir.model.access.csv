@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_hr_payroll_bancos,access_hr_payroll_bancos,model_hr_payroll_bancos,base.group_user,1,1,1,1
+access_pago_nomina_report,access_pago_nomina_report,model_pago_nomina_report,base.group_user,1,1,1,1

@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+	<record id="paperformat_contract_termination" model="report.paperformat">
+        <field name="name">Contract Termination - Landscape Custom</field>
+        <field name="default" eval="True"/>
+        <field name="format">A4</field>
+        <field name="page_height">0</field>
+        <field name="page_width">0</field>
+        <field name="orientation">Portrait</field>
+        <field name="margin_top">50</field>
+        <field name="margin_bottom">30</field>
+        <field name="margin_left">40</field>
+        <field name="margin_right">20</field>
+        <field name="header_line" eval="False"/>
+        <field name="header_spacing">35</field>
+        <field name="dpi">110</field>
+    </record>
+
+	<report 
+        id="action_report_main"
+        string="All Contract Pages"
+        model="hr.contract.completion"
+        report_type="qweb-pdf"
+        file="hr_contract_termination_report.report_all_contract"
+        name="hr_contract_termination_report.report_all_contract"
+    />
+
+    <record id="action_report_main" model="ir.actions.report">
+        <field name="paperformat_id" ref="paperformat_contract_termination"/>
+    </record>
+
+    <report 
+        id="action_report_laboral_certification"
+        string="Laboral Certification"
+        model="hr.contract.completion"
+        report_type="qweb-pdf"
+        file="hr_contract_termination_report.report_laboral_certification"
+        name="hr_contract_termination_report.report_laboral_certification"
+    />
+
+    <record id="action_report_laboral_certification"
+            model="ir.actions.report">
+        <field name="paperformat_id" ref="paperformat_contract_termination"/>
+    </record>
+
+    <report 
+        id="action_report_entities_certification"
+        string="Entities Certification"
+        model="hr.contract.completion"
+        report_type="qweb-pdf"
+        file="hr_contract_termination_report.report_entities_certification"
+        name="hr_contract_termination_report.report_entities_certification"
+    />
+
+    <record id="action_report_entities_certification"
+            model="ir.actions.report">
+        <field name="paperformat_id" ref="paperformat_contract_termination"/>
+    </record>
+
+    <report 
+        id="action_report_medical_certification"
+        string="Medical Certification"
+        model="hr.contract.completion"
+        report_type="qweb-pdf"
+        file="hr_contract_termination_report.report_medical_certification"
+        name="hr_contract_termination_report.report_medical_certification"
+    />
+
+    <record id="action_report_medical_certification"
+            model="ir.actions.report">
+        <field name="paperformat_id" ref="paperformat_contract_termination"/>
+    </record>
+
+    <report 
+        id="action_report_layoffs_certification"
+        string="Layoffs Certification"
+        model="hr.contract.completion"
+        report_type="qweb-pdf"
+        file="hr_contract_termination_report.report_layoffs_certification"
+        name="hr_contract_termination_report.report_layoffs_certification"
+    />
+
+    <record id="action_report_layoffs_certification"
+            model="ir.actions.report">
+        <field name="paperformat_id" ref="paperformat_contract_termination"/>
+    </record>
+
+    <report 
+        id="action_report_answer_employee"
+        string="Answer Employee"
+        model="hr.contract.completion"
+        report_type="qweb-pdf"
+        file="hr_contract_termination_report.report_answer_employee"
+        name="hr_contract_termination_report.report_answer_employee"
+    />
+
+    <record id="action_report_answer_employee" model="ir.actions.report">
+        <field name="paperformat_id" ref="paperformat_contract_termination"/>
+    </record>
+
+    <report 
+        id="action_report_confidentiality_agreement"
+        string="Confidentiality Agreement"
+        model="hr.contract.completion"
+        report_type="qweb-pdf"
+        file="hr_contract_termination_report.report_confidentiality_agreement"
+        name="hr_contract_termination_report.report_confidentiality_agreement"
+    />
+
+    <record id="action_report_confidentiality_agreement"
+            model="ir.actions.report">
+        <field name="paperformat_id" ref="paperformat_contract_termination"/>
+    </record>
+
+    <report 
+        id="action_report_hr_payslip_format"
+        string="Payslip"
+        model="hr.contract.completion" 
+        report_type="qweb-pdf"
+        file="hr_contract_termination_report.report_hr_payslip_format"
+        name="hr_contract_termination_report.report_hr_payslip_format"
+    />
+
+</odoo>

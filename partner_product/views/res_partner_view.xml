@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="res_partner_bank_form" model="ir.ui.view">
+        <field name="name">res.partner.bank.form.inherit</field>
+        <field name="model">res.partner.bank</field>
+        <field name="inherit_id" ref="base.view_partner_bank_form"/>
+        <field name="arch" type="xml">
+
+            <field name="acc_number" position="before">
+                <field name="type" widget="radio" required="1" string="Type"/>
+                <field name="description"/>
+            </field>
+
+        </field>
+    </record>
+
+    <record id="res_partner_form" model="ir.ui.view">
+       <field name="name">res.partner.form.inherit</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <group name="purchase" position="after">
+                <group name="company" string="Company" priority="3">
+                    <field name="company"/>
+                    <field name="agency_type"/>
+                </group>
+            </group>
+        </field>
+    </record>
+
+    <record id="res_partner_action_company" model="ir.actions.act_window">
+        <field name="name">Company</field>
+        <field name="res_model">res.partner</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[('company','=', True)]</field>
+        <field name="context">{'default_company': True}</field>
+        <field name="search_view_id" ref="base.view_res_partner_filter"/>
+        <field name="help" type="html">
+          <p class="o_view_nocontent_smiling_face">
+            Create a Company.
+          </p>
+        </field>
+    </record>
+
+    <menuitem id="res_partner_menu_company"
+        name="Company"
+        action="res_partner_action_company"
+        parent="base.menu_custom"
+        sequence="0"
+        groups="base.group_erp_manager"/>
+
+</odoo>

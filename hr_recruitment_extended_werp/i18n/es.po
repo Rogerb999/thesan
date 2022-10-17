@@ -1,0 +1,1385 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* hr_recruitment_extended_werp
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-12-09 12:20+0000\n"
+"PO-Revision-Date: 2019-12-12 21:36-0500\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: es\n"
+"X-Generator: Poedit 1.8.8\n"
+
+#. module: hr_recruitment_extended_werp
+#: model:mail.template,body_html:hr_recruitment_extended_werp.email_template_evaluation
+msgid ""
+"<div style=\"margin: 0px; padding: 0px; font-size: 14px;\">\n"
+"                    <p style=\"margin: 0px; padding: 0px;\">\n"
+"                        Dear ${object.hr_applicant_id.partner_id.name},\n"
+"                        <br/><br/>\n"
+"                        Here we are providing the link for the <b>Personal Competences Analysis</b>.\n"
+"                        Please complete this test first.\n"
+"                        <br/><br/>\n"
+"                        <a href=\"${object.PcaLink}\">Click for start </a>\n"
+"                        <br/><br/>\n"
+"                        from ${object.hr_applicant_id.company_id.name}.\n"
+"                        If you have any questions, please do not hesitate to contact us.\n"
+"                        <br/><br/>\n"
+"                        Best regards,\n"
+"                    </p>\n"
+"                </div>\n"
+"            "
+msgstr ""
+"<div style=\"margin: 0px; padding: 0px; font-size: 14px;\">\n"
+"                    <p style=\"margin: 0px; padding: 0px;\">\n"
+"                        Dear ${object.hr_applicant_id.partner_id.name},\n"
+"                        <br/><br/>\n"
+"                        Here we are providing the link for the <b>Personal Competences Analysis</b>.\n"
+"                        Please complete this test first.\n"
+"                        <br/><br/>\n"
+"                        <a href=\"${object.PcaLink}\">Click for start </a>\n"
+"                        <br/><br/>\n"
+"                        from ${object.hr_applicant_id.company_id.name}.\n"
+"                        If you have any questions, please do not hesitate to contact us.\n"
+"                        <br/><br/>\n"
+"                        Best regards,\n"
+"                    </p>\n"
+"                </div>\n"
+"            "
+
+#. module: hr_recruitment_extended_werp
+#: selection:hr.job,holding:0 selection:hr.job,holding_principal:0
+msgid "ACCOUNT PLANNING"
+msgstr "PLANIFICACION DE CUENTAS"
+
+#. module: hr_recruitment_extended_werp
+#: selection:hr.job,holding:0 selection:hr.job,holding_principal:0
+msgid "ACCOUNT SERVICE"
+msgstr "SERVICIO DE CUENTA"
+
+#. module: hr_recruitment_extended_werp
+#: selection:hr.job,holding:0
+msgid "ACCOUNTING O ACCOUNTS PAYABLE"
+msgstr "CONTABILIDAD O CUENTAS POR PAGAR"
+
+#. module: hr_recruitment_extended_werp
+#: selection:hr.job,holding:0
+msgid "ACCOUNTS RECEIVABLE"
+msgstr "CUENTAS POR COBRAR"
+
+#. module: hr_recruitment_extended_werp
+#: selection:hr.job,codigo_holding_principal:0
+msgid "AD"
+msgstr "AD"
+
+#. module: hr_recruitment_extended_werp
+#: selection:hr.job,codigo_holding:0
+msgid "AD."
+msgstr "AD."
+
+#. module: hr_recruitment_extended_werp
+#: selection:hr.job,holding:0 selection:hr.job,holding_principal:0
+msgid "ADMINISTRATIVE AND SECRETARIAL SUPPORT"
+msgstr "APOYO ADMINISTRATIVO Y SECRETARIAL"
+
+#. module: hr_recruitment_extended_werp
+#: selection:hr.job,codigo_holding_principal:0
+msgid "AP"
+msgstr "AP"
+
+#. module: hr_recruitment_extended_werp
+#: selection:hr.job,codigo_holding:0
+msgid "AP."
+msgstr "AP."
+
+#. module: hr_recruitment_extended_werp
+#: selection:hr.job,codigo_holding_principal:0
+msgid "AS"
+msgstr "AS"
+
+#. module: hr_recruitment_extended_werp
+#: selection:hr.job,codigo_holding:0
+msgid "AS."
+msgstr "AS."
+
+#. module: hr_recruitment_extended_werp
+#: selection:hr.job,holding:0
+msgid "ASSET AND SOFTWARE MANAGEMENT"
+msgstr "GESTIÓN DE ACTIVOS Y SOFTWARE"
+
+#. module: hr_recruitment_extended_werp
+#: model:ir.model.fields,field_description:hr_recruitment_extended_werp.field_hr_evaluation__message_needaction
+msgid "Action Needed"
+msgstr "Acción Necesaria"
+
+#. module: hr_recruitment_extended_werp
+#: model:ir.model.fields,field_description:hr_recruitment_extended_werp.field_hr_evaluation__activity_ids
+msgid "Activities"
+msgstr "Actividades"
+
+#. module: hr_recruitment_extended_werp
+#: model:ir.model.fields,field_description:hr_recruitment_extended_werp.field_hr_evaluation__activity_state
+msgid "Activity State"
+msgstr "Estado de la actividad"
+
+#. module: hr_recruitment_extended_werp
+#: model:ir.actions.act_window,name:hr_recruitment_extended_werp.action_add_evaluation
+#: model_terms:ir.ui.view,arch_db:hr_recruitment_extended_werp.add_evaluation_form_view
+#: model_terms:ir.ui.view,arch_db:hr_recruitment_extended_werp.crm_case_form_view_job_applicant
+msgid "Add Evaluation"
+msgstr "Agregar evaluación"
+
+#. module: hr_recruitment_extended_werp
+#: model_terms:ir.ui.view,arch_db:hr_recruitment_extended_werp.crm_case_form_view_job_applicant
+msgid "Add Evaluation Details"
+msgstr "Agregar detalles de evaluación"
+
+#. module: hr_recruitment_extended_werp
+#: model:ir.model.fields,field_description:hr_recruitment_extended_werp.field_hr_recruitment_stage__add_evaluation
+msgid "Add Evaluation?"
+msgstr "Añadir evaluación?"
+
+#. module: hr_recruitment_extended_werp
+#: selection:hr.evaluation,PcaTip:0
+msgid "Adjectives"
+msgstr "Adjetivos"
+
+#. module: hr_recruitment_extended_werp
+#: model:ir.model,name:hr_recruitment_extended_werp.model_hr_applicant
+#: model:ir.model.fields,field_description:hr_recruitment_extended_werp.field_hr_evaluation__hr_applicant_id
+msgid "Applicant"
+msgstr "Candidato"
+
+#. module: hr_recruitment_extended_werp
+#: model:ir.model.fields,field_description:hr_recruitment_extended_werp.field_hr_applicant__date_application
+msgid "Application Date"
+msgstr "Fecha de aplicacion"
+
+#. module: hr_recruitment_extended_werp
+#: model_terms:ir.ui.view,arch_db:hr_recruitment_extended_werp.hr_job_form_view_inherit_extended
+msgid "Application's"
+msgstr "Aplicación"
+
+#. module: hr_recruitment_extended_werp
+#: model:ir.model.fields,field_description:hr_recruitment_extended_werp.field_hr_evaluation__message_attachment_count
+msgid "Attachment Count"
+msgstr "Conteo de archivos adjuntos"
+
+#. module: hr_recruitment_extended_werp
+#: selection:hr.job,holding:0
+msgid "BILLABLE CLIENT HR SERVICES"
+msgstr "SERVICIOS DE CLIENTES FACTURABLES"
+
+#. module: hr_recruitment_extended_werp
+#: selection:hr.job,holding:0
+msgid "BILLABLE CLIENT IT SERVICES"
+msgstr "SERVICIOS DE CLIENTES FACTURABLES"
+
+#. module: hr_recruitment_extended_werp
+#: selection:hr.job,codigo_holding:0
+#: selection:hr.job,codigo_holding_principal:0
+msgid "BP"
+msgstr "BP"
+
+#. module: hr_recruitment_extended_werp
+#: selection:hr.applicant,level_academic:0
+msgid "Bachelor"
+msgstr "Soltero"
+
+#. module: hr_recruitment_extended_werp
+#: selection:jca.details,type_of_level:0
+msgid "Base"
+msgstr "Base"
+
+#. module: hr_recruitment_extended_werp
+#: model:hr.recruitment.stage,legend_blocked:hr_recruitment_extended_werp.stage_job10
+#: model:hr.recruitment.stage,legend_blocked:hr_recruitment_extended_werp.stage_job11
+#: model:hr.recruitment.stage,legend_blocked:hr_recruitment_extended_werp.stage_job6
+#: model:hr.recruitment.stage,legend_blocked:hr_recruitment_extended_werp.stage_job7
+#: model:hr.recruitment.stage,legend_blocked:hr_recruitment_extended_werp.stage_job8
+#: model:hr.recruitment.stage,legend_blocked:hr_recruitment_extended_werp.stage_job9
+msgid "Bloqueado"
+msgstr "Bloqueado"
+
+#. module: hr_recruitment_extended_werp
+#: selection:hr.job,holding:0 selection:hr.job,holding_principal:0
+msgid "Broadcast Production"
+msgstr "Producción de difusión"
+
+#. module: hr_recruitment_extended_werp
+#: selection:hr.job,codigo_holding_principal:0
+msgid "CR"
+msgstr "CR"
+
+#. module: hr_recruitment_extended_werp
+#: selection:hr.job,codigo_holding:0
+msgid "CR."
+msgstr "CR."
+
+#. module: hr_recruitment_extended_werp
+#: selection:hr.job,holding:0 selection:hr.job,holding_principal:0
+msgid "CREATIVE"
+msgstr "CREATIVO"
+
+#. module: hr_recruitment_extended_werp
+#: selection:hr.job,holding:0 selection:hr.job,holding_principal:0
+msgid "CREATIVE SERVICE AND DESIGN GRAPHIC"
+msgstr "SERVICIO CREATIVO Y DISEÑO GRÁFICO"
+
+#. module: hr_recruitment_extended_werp
+#: selection:hr.job,codigo_holding_principal:0
+msgid "CS"
+msgstr "CS"
+
+#. module: hr_recruitment_extended_werp
+#: selection:hr.job,codigo_holding:0
+msgid "CS."
+msgstr "CS."
+
+#. module: hr_recruitment_extended_werp
+#: model_terms:ir.ui.view,arch_db:hr_recruitment_extended_werp.partner_state_selection_wizard_form_view
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: hr_recruitment_extended_werp
+#: model:hr.recruitment.stage,name:hr_recruitment_extended_werp.stage_job9
+msgid "Case"
+msgstr "Caso"
+
+#. module: hr_recruitment_extended_werp
+#: model:hr.recruitment.stage,name:hr_recruitment_extended_werp.stage_job11
+msgid "Cerrado por fin del proceso"
+msgstr "Cerrado por fin del proceso"
+
+#. module: hr_recruitment_extended_werp
+#: model:hr.recruitment.stage,name:hr_recruitment_extended_werp.stage_job10
+msgid "Challenge"
+msgstr "Reto"
+
+#. module: hr_recruitment_extended_werp
+#: model:ir.model.fields,field_description:hr_recruitment_extended_werp.field_hr_applicant__check_evaluation
+msgid "Check Evaluation"
+msgstr "Comprobar evaluación"
+
+#. module: hr_recruitment_extended_werp
+#: model:ir.model.fields,field_description:hr_recruitment_extended_werp.field_hr_evaluation__PcaCod
+#: model:ir.model.fields,field_description:hr_recruitment_extended_werp.field_jca_details__code
+msgid "Code"
+msgstr "Código"
+
+#. module: hr_recruitment_extended_werp
+#: code:addons/hr_recruitment_extended_werp/models/hr_evaluation.py:93
+#, python-format
+msgid "Code [%s] not matched in system. Please check it!"
+msgstr "El código [% s] no coincide en el sistema. ¡Compruébelo por favor!"
+
+#. module: hr_recruitment_extended_werp
+#: model:ir.model.fields,field_description:hr_recruitment_extended_werp.field_hr_job__codigo_holding
+msgid "Codigo Holding"
+msgstr "Codigo Holding"
+
+#. module: hr_recruitment_extended_werp
+#: model:ir.model.fields,field_description:hr_recruitment_extended_werp.field_hr_job__codigo_holding_principal
+msgid "Codigo Holding Principal"
+msgstr "Codigo Holding Principal"
+
+#. module: hr_recruitment_extended_werp
+#: model:ir.model.fields,field_description:hr_recruitment_extended_werp.field_hr_evaluation__CoKey
+msgid "Cokey"
+msgstr "Cokey"
+
+#. module: hr_recruitment_extended_werp
+#: model:ir.model.fields,field_description:hr_recruitment_extended_werp.field_jca_details__company_id
+msgid "Company"
+msgstr "Compañía"
+
+#. module: hr_recruitment_extended_werp
+#: model:ir.model.fields,field_description:hr_recruitment_extended_werp.field_hr_applicant__company_group_id
+msgid "Company Group"
+msgstr "Grupo de empresas"
+
+#. module: hr_recruitment_extended_werp
+#: model:hr.recruitment.stage,name:hr_recruitment_extended_werp.stage_job7
+msgid "Competition"
+msgstr "Competencia"
+
+#. module: hr_recruitment_extended_werp
+#: selection:hr.evaluation,PcaEst:0
+msgid "Complete"
+msgstr "Completar"
+
+#. module: hr_recruitment_extended_werp
+#: model:ir.model.fields,field_description:hr_recruitment_extended_werp.field_partner_state_selection_wizard__state_selection
+msgid "Contact State Selection"
+msgstr "Seleccionar estado de contacto"
+
+#. module: hr_recruitment_extended_werp
+#: model:ir.model.fields,field_description:hr_recruitment_extended_werp.field_hr_evaluation__CoRegCod
+msgid "Coregcod"
+msgstr "Coregcod"
+
+#. module: hr_recruitment_extended_werp
+#: model:ir.model.fields,field_description:hr_recruitment_extended_werp.field_function_executed__create_uid
+#: model:ir.model.fields,field_description:hr_recruitment_extended_werp.field_hr_evaluation__create_uid
+#: model:ir.model.fields,field_description:hr_recruitment_extended_werp.field_hr_stage_perc__create_uid
+#: model:ir.model.fields,field_description:hr_recruitment_extended_werp.field_jca_details__create_uid
+#: model:ir.model.fields,field_description:hr_recruitment_extended_werp.field_macro_area__create_uid
+#: model:ir.model.fields,field_description:hr_recruitment_extended_werp.field_partner_state_selection_wizard__create_uid
+#: model:ir.model.fields,field_description:hr_recruitment_extended_werp.field_reason_disqualification__create_uid
+#: model:ir.model.fields,field_description:hr_recruitment_extended_werp.field_types_of_charges__create_uid
+#: model:ir.model.fields,field_description:hr_recruitment_extended_werp.field_work_group__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: hr_recruitment_extended_werp
+#: model:ir.model.fields,field_description:hr_recruitment_extended_werp.field_function_executed__create_date
+#: model:ir.model.fields,field_description:hr_recruitment_extended_werp.field_hr_evaluation__create_date
+#: model:ir.model.fields,field_description:hr_recruitment_extended_werp.field_hr_stage_perc__create_date
+#: model:ir.model.fields,field_description:hr_recruitment_extended_werp.field_jca_details__create_date
+#: model:ir.model.fields,field_description:hr_recruitment_extended_werp.field_macro_area__create_date
+#: model:ir.model.fields,field_description:hr_recruitment_extended_werp.field_partner_state_selection_wizard__create_date
+#: model:ir.model.fields,field_description:hr_recruitment_extended_werp.field_reason_disqualification__create_date
+#: model:ir.model.fields,field_description:hr_recruitment_extended_werp.field_types_of_charges__create_date
+#: model:ir.model.fields,field_description:hr_recruitment_extended_werp.field_work_group__create_date
+msgid "Created on"
+msgstr "Creado el"
+
+#. module: hr_recruitment_extended_werp
+#: selection:hr.job,codigo_holding_principal:0
+msgid "DA"
+msgstr "DA"
+
+#. module: hr_recruitment_extended_werp
+#: selection:hr.job,codigo_holding:0
+msgid "DA."
+msgstr "DA."
+
+#. module: hr_recruitment_extended_werp
+#: selection:hr.job,holding:0 selection:hr.job,holding_principal:0
+msgid "DATA AND ANALYTICS"
+msgstr "DATOS Y ANÁLISIS"
+
+#. module: hr_recruitment_extended_werp
+#: selection:hr.job,holding:0
+msgid "DESKTOP SUPPORT"
+msgstr "SOPORTE DE ESCRITORIO"
+
+#. module: hr_recruitment_extended_werp
+#: model:hr.recruitment.stage,name:hr_recruitment_extended_werp.stage_job6
+msgid "DISC"
+msgstr "DISCO"
+
+#. module: hr_recruitment_extended_werp
+#: model:ir.model.fields,field_description:hr_recruitment_extended_werp.field_function_executed__description
+#: model:ir.model.fields,field_description:hr_recruitment_extended_werp.field_jca_details__description
+#: model:ir.model.fields,field_description:hr_recruitment_extended_werp.field_macro_area__description
+#: model:ir.model.fields,field_description:hr_recruitment_extended_werp.field_reason_disqualification__description
+#: model:ir.model.fields,field_description:hr_recruitment_extended_werp.field_work_group__description
+msgid "Description"
+msgstr "Descripción"
+
+#. module: hr_recruitment_extended_werp
+#: selection:hr.evaluation,PcaTip:0
+msgid "Descriptions"
+msgstr "Descripciones"
+
+#. module: hr_recruitment_extended_werp
+#: selection:hr.job,fte:0
+msgid "Direct"
+msgstr "Directo"
+
+#. module: hr_recruitment_extended_werp
+#: model:ir.model.fields,field_description:hr_recruitment_extended_werp.field_function_executed__display_name
+#: model:ir.model.fields,field_description:hr_recruitment_extended_werp.field_hr_evaluation__display_name
+#: model:ir.model.fields,field_description:hr_recruitment_extended_werp.field_hr_stage_perc__display_name
+#: model:ir.model.fields,field_description:hr_recruitment_extended_werp.field_jca_details__display_name
+#: model:ir.model.fields,field_description:hr_recruitment_extended_werp.field_macro_area__display_name
+#: model:ir.model.fields,field_description:hr_recruitment_extended_werp.field_partner_state_selection_wizard__display_name
+#: model:ir.model.fields,field_description:hr_recruitment_extended_werp.field_reason_disqualification__display_name
+#: model:ir.model.fields,field_description:hr_recruitment_extended_werp.field_types_of_charges__display_name
+#: model:ir.model.fields,field_description:hr_recruitment_extended_werp.field_work_group__display_name
+msgid "Display Name"
+msgstr "Nombre mostrado"
+
+#. module: hr_recruitment_extended_werp
+#: model:ir.model.fields,field_description:hr_recruitment_extended_werp.field_hr_applicant__reason_id
+msgid "Disqualification Reason"
+msgstr "Motivo de descalificación"
+
+#. module: hr_recruitment_extended_werp
+#: selection:hr.applicant,level_academic:0
+msgid "Doctorate"
+msgstr "Doctorado"
+
+#. module: hr_recruitment_extended_werp
+#: model:ir.model.fields,field_description:hr_recruitment_extended_werp.field_hr_evaluation__document_link
+msgid "Document Link"
+msgstr "Enlace de documento"
+
+#. module: hr_recruitment_extended_werp
+#: selection:hr.stage.perc,state:0
+msgid "Done"
+msgstr "Hecho"
+
+#. module: hr_recruitment_extended_werp
+#: selection:hr.stage.perc,state:0
+msgid "Draft"
+msgstr "Borrador"
+
+#. module: hr_recruitment_extended_werp
+#: selection:hr.job,codigo_holding_principal:0
+msgid "EX"
+msgstr "EX"
+
+#. module: hr_recruitment_extended_werp
+#: selection:hr.job,codigo_holding:0
+msgid "EX."
+msgstr "EX."
+
+#. module: hr_recruitment_extended_werp
+#: selection:hr.job,holding:0 selection:hr.job,holding_principal:0
+msgid "EXECUTIVE"
+msgstr "EJECUTIVO"
+
+#. module: hr_recruitment_extended_werp
+#: selection:partner.state.selection.wizard,state_selection:0
+msgid "Eligible"
+msgstr "Elegible"
+
+#. module: hr_recruitment_extended_werp
+#: model:ir.model.fields,field_description:hr_recruitment_extended_werp.field_hr_evaluation__PerMail
+msgid "Email"
+msgstr "Correo electrónico"
+
+#. module: hr_recruitment_extended_werp
+#: model:hr.recruitment.stage,legend_normal:hr_recruitment_extended_werp.stage_job10
+#: model:hr.recruitment.stage,legend_normal:hr_recruitment_extended_werp.stage_job11
+#: model:hr.recruitment.stage,legend_normal:hr_recruitment_extended_werp.stage_job6
+#: model:hr.recruitment.stage,legend_normal:hr_recruitment_extended_werp.stage_job7
+#: model:hr.recruitment.stage,legend_normal:hr_recruitment_extended_werp.stage_job8
+#: model:hr.recruitment.stage,legend_normal:hr_recruitment_extended_werp.stage_job9
+msgid "En Proceso"
+msgstr "En Proceso"
+
+#. module: hr_recruitment_extended_werp
+#: model:ir.model.fields,field_description:hr_recruitment_extended_werp.field_hr_applicant__experience_age
+msgid "Experience Age"
+msgstr "Años de Experiencia "
+
+#. module: hr_recruitment_extended_werp
+#: selection:hr.job,codigo_holding_principal:0
+msgid "FI"
+msgstr "FI"
+
+#. module: hr_recruitment_extended_werp
+#: selection:hr.job,codigo_holding:0
+msgid "FI."
+msgstr "FI."
+
+#. module: hr_recruitment_extended_werp
+#: selection:hr.job,holding:0 selection:hr.job,holding_principal:0
+msgid "FINANCE ACCOUNTING"
+msgstr "CONTABILIDAD FINANCIERA"
+
+#. module: hr_recruitment_extended_werp
+#: model:ir.model.fields,field_description:hr_recruitment_extended_werp.field_hr_job__fte
+msgid "FTE"
+msgstr "FTE"
+
+#. module: hr_recruitment_extended_werp
+#: selection:hr.job,codigo_holding:0
+msgid "FTEDFIacp"
+msgstr "FTEDFIacp"
+
+#. module: hr_recruitment_extended_werp
+#: selection:hr.job,codigo_holding:0
+msgid "FTEDFIacr"
+msgstr "FTEDFIacr"
+
+#. module: hr_recruitment_extended_werp
+#: selection:hr.job,codigo_holding:0
+msgid "FTEDFIbil"
+msgstr "FTEDFIbil"
+
+#. module: hr_recruitment_extended_werp
+#: selection:hr.job,codigo_holding:0
+msgid "FTEDFIglf"
+msgstr "FTEDFIglf"
+
+#. module: hr_recruitment_extended_werp
+#: selection:hr.job,codigo_holding:0
+msgid "FTEDFIoth"
+msgstr "FTEDFIoth"
+
+#. module: hr_recruitment_extended_werp
+#: selection:hr.job,codigo_holding:0
+msgid "FTEDHRben"
+msgstr "FTEDHRben"
+
+#. module: hr_recruitment_extended_werp
+#: selection:hr.job,codigo_holding:0
+msgid "FTEDHRbil"
+msgstr "FTEDHRbil"
+
+#. module: hr_recruitment_extended_werp
+#: selection:hr.job,codigo_holding:0
+msgid "FTEDHRhrm"
+msgstr "FTEDHRhrm"
+
+#. module: hr_recruitment_extended_werp
+#: selection:hr.job,codigo_holding:0
+msgid "FTEDHRoth"
+msgstr "FTEDHRoth"
+
+#. module: hr_recruitment_extended_werp
+#: selection:hr.job,codigo_holding:0
+msgid "FTEDHRpay"
+msgstr "FTEDHRpay"
+
+#. module: hr_recruitment_extended_werp
+#: selection:hr.job,codigo_holding:0
+msgid "FTEDITass"
+msgstr "FTEDITass"
+
+#. module: hr_recruitment_extended_werp
+#: selection:hr.job,codigo_holding:0
+msgid "FTEDITbil"
+msgstr "FTEDITbil"
+
+#. module: hr_recruitment_extended_werp
+#: selection:hr.job,codigo_holding:0
+msgid "FTEDITdes"
+msgstr "FTEDITdes"
+
+#. module: hr_recruitment_extended_werp
+#: selection:hr.job,codigo_holding:0
+msgid "FTEDITitm"
+msgstr "FTEDITitm"
+
+#. module: hr_recruitment_extended_werp
+#: selection:hr.job,codigo_holding:0
+msgid "FTEDITnet"
+msgstr "FTEDITnet"
+
+#. module: hr_recruitment_extended_werp
+#: selection:hr.job,codigo_holding:0
+msgid "FTEDIToth"
+msgstr "FTEDIToth"
+
+#. module: hr_recruitment_extended_werp
+#: selection:hr.evaluation,PerGen:0
+msgid "Female"
+msgstr "Mujer"
+
+#. module: hr_recruitment_extended_werp
+#: model:ir.model.fields,field_description:hr_recruitment_extended_werp.field_hr_evaluation__message_follower_ids
+msgid "Followers"
+msgstr "Seguidores"
+
+#. module: hr_recruitment_extended_werp
+#: model:ir.model.fields,field_description:hr_recruitment_extended_werp.field_hr_evaluation__message_channel_ids
+msgid "Followers (Channels)"
+msgstr "Seguidores (Canales)"
+
+#. module: hr_recruitment_extended_werp
+#: model:ir.model.fields,field_description:hr_recruitment_extended_werp.field_hr_evaluation__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "Seguidores (Empresas)"
+
+#. module: hr_recruitment_extended_werp
+#: model:ir.actions.act_window,name:hr_recruitment_extended_werp.function_executed_action
+#: model:ir.model,name:hr_recruitment_extended_werp.model_function_executed
+#: model:ir.model.fields,field_description:hr_recruitment_extended_werp.field_hr_employee__function_executed_id
+#: model:ir.model.fields,field_description:hr_recruitment_extended_werp.field_hr_job__function_executed_id
+#: model:ir.ui.menu,name:hr_recruitment_extended_werp.function_executed_menu_action
+msgid "Function Executed"
+msgstr "Función ejecutada"
+
+#. module: hr_recruitment_extended_werp
+#: selection:hr.job,holding:0
+msgid "GENERAL LEDGER / FINANCIAL REPORTING"
+msgstr "LIBRO MAYOR/ INFORMES FINANCIEROS"
+
+#. module: hr_recruitment_extended_werp
+#: model:ir.model.fields,field_description:hr_recruitment_extended_werp.field_hr_evaluation__PerGen
+msgid "Gender"
+msgstr "Sexo"
+
+#. module: hr_recruitment_extended_werp
+#: model_terms:ir.ui.view,arch_db:hr_recruitment_extended_werp.add_evaluation_form_view
+msgid "Get PCA Result Vs JCA"
+msgstr "Obtenga el resultado de PCA Vs JCA"
+
+#. module: hr_recruitment_extended_werp
+#: model_terms:ir.ui.view,arch_db:hr_recruitment_extended_werp.add_evaluation_form_view
+msgid "Get Result PCA Details"
+msgstr "Obtener resultado Detalles de PCA"
+
+#. module: hr_recruitment_extended_werp
+#: model:ir.model.fields,field_description:hr_recruitment_extended_werp.field_hr_applicant__group_experience_age
+msgid "Group Experience Age"
+msgstr "Años de Experiencia en Grupo"
+
+#. module: hr_recruitment_extended_werp
+#: selection:hr.job,codigo_holding_principal:0
+msgid "HR"
+msgstr "HR"
+
+#. module: hr_recruitment_extended_werp
+#: model:ir.model,name:hr_recruitment_extended_werp.model_hr_employee
+msgid "HR Employee"
+msgstr "Empleado de recursos humanos"
+
+#. module: hr_recruitment_extended_werp
+#: model:ir.model,name:hr_recruitment_extended_werp.model_hr_evaluation
+msgid "HR Evaluation"
+msgstr "Evaluación de recursos humanos"
+
+#. module: hr_recruitment_extended_werp
+#: model:ir.model.fields,field_description:hr_recruitment_extended_werp.field_hr_applicant__evaluation_ids
+msgid "HR Evaluation Details"
+msgstr "Detalles de evaluación de recursos humanos"
+
+#. module: hr_recruitment_extended_werp
+#: selection:hr.job,holding:0
+msgid "HR MANAGEMENT"
+msgstr "GESTIÓN DE RECURSOS HUMANOS"
+
+#. module: hr_recruitment_extended_werp
+#: model:ir.actions.act_window,name:hr_recruitment_extended_werp.hr_stage_perc_action
+#: model:ir.model,name:hr_recruitment_extended_werp.model_hr_stage_perc
+#: model:ir.ui.menu,name:hr_recruitment_extended_werp.hr_stage_perc_menu_action
+#: model_terms:ir.ui.view,arch_db:hr_recruitment_extended_werp.hr_stage_perc_view_form
+#: model_terms:ir.ui.view,arch_db:hr_recruitment_extended_werp.hr_stage_perc_view_tree
+msgid "HR Stage Percentage"
+msgstr "Porcentaje de etapa de recursos humanos"
+
+#. module: hr_recruitment_extended_werp
+#: selection:hr.job,codigo_holding:0
+msgid "HR."
+msgstr "HR."
+
+#. module: hr_recruitment_extended_werp
+#: selection:hr.job,holding:0 selection:hr.job,holding_principal:0
+msgid "HUMAN RESOURCES"
+msgstr "RECURSOS HUMANOS"
+
+#. module: hr_recruitment_extended_werp
+#: selection:hr.job,holding:0
+msgid "HUMAN RESOURCES O BENEFITS / HEALTHCARE"
+msgstr "RECURSOS HUMANOS O BENEFICIOS / SALUD"
+
+#. module: hr_recruitment_extended_werp
+#: selection:partner.state.selection.wizard,state_selection:0
+msgid "Hired"
+msgstr "Contratado"
+
+#. module: hr_recruitment_extended_werp
+#: model:ir.model.fields,field_description:hr_recruitment_extended_werp.field_hr_job__holding
+msgid "Holding"
+msgstr "Participación"
+
+#. module: hr_recruitment_extended_werp
+#: model:ir.model.fields,field_description:hr_recruitment_extended_werp.field_hr_job__holding_principal
+msgid "Holding Principal"
+msgstr "Principal titular"
+
+#. module: hr_recruitment_extended_werp
+#: model:ir.model.fields,field_description:hr_recruitment_extended_werp.field_hr_applicant__hr_application_id
+msgid "Hr Application"
+msgstr "Solicitud de hora"
+
+#. module: hr_recruitment_extended_werp
+#: model:ir.model.fields,field_description:hr_recruitment_extended_werp.field_function_executed__id
+#: model:ir.model.fields,field_description:hr_recruitment_extended_werp.field_hr_evaluation__id
+#: model:ir.model.fields,field_description:hr_recruitment_extended_werp.field_hr_stage_perc__id
+#: model:ir.model.fields,field_description:hr_recruitment_extended_werp.field_jca_details__id
+#: model:ir.model.fields,field_description:hr_recruitment_extended_werp.field_macro_area__id
+#: model:ir.model.fields,field_description:hr_recruitment_extended_werp.field_partner_state_selection_wizard__id
+#: model:ir.model.fields,field_description:hr_recruitment_extended_werp.field_reason_disqualification__id
+#: model:ir.model.fields,field_description:hr_recruitment_extended_werp.field_types_of_charges__id
+#: model:ir.model.fields,field_description:hr_recruitment_extended_werp.field_work_group__id
+msgid "ID"
+msgstr "ID"
+
+#. module: hr_recruitment_extended_werp
+#: selection:hr.job,codigo_holding_principal:0
+msgid "IT"
+msgstr "IT"
+
+#. module: hr_recruitment_extended_werp
+#: selection:hr.job,holding_principal:0
+msgid "IT / TECH"
+msgstr "TI / TECNOLOGÍA"
+
+#. module: hr_recruitment_extended_werp
+#: selection:hr.job,holding:0
+msgid "IT / TECHNOLOGY MANAGEMENT"
+msgstr "TI / GESTIÓN DE TECNOLOGÍA"
+
+#. module: hr_recruitment_extended_werp
+#: model:ir.model.fields,field_description:hr_recruitment_extended_werp.field_hr_evaluation__PerNumIde
+msgid "Identification Number"
+msgstr "Número de identificación"
+
+#. module: hr_recruitment_extended_werp
+#: model:ir.model.fields,help:hr_recruitment_extended_werp.field_hr_evaluation__message_unread
+msgid "If checked new messages require your attention."
+msgstr "Si está marcado, hay nuevos mensajes que requieren su atención"
+
+#. module: hr_recruitment_extended_werp
+#: model:ir.model.fields,help:hr_recruitment_extended_werp.field_hr_evaluation__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "Si está marcado, hay nuevos mensajes que requieren su atención."
+
+#. module: hr_recruitment_extended_werp
+#: model:ir.model.fields,help:hr_recruitment_extended_werp.field_hr_evaluation__message_has_error
+msgid "If checked, some messages have a delivery error."
+msgstr "Si se encuentra marcado, algunos mensajes tienen error de envío."
+
+#. module: hr_recruitment_extended_werp
+#: selection:hr.stage.perc,state:0
+msgid "In Pause"
+msgstr "En pausa"
+
+#. module: hr_recruitment_extended_werp
+#: selection:partner.state.selection.wizard,state_selection:0
+msgid "In Process"
+msgstr "En proceso"
+
+#. module: hr_recruitment_extended_werp
+#: selection:hr.stage.perc,state:0
+msgid "In Progress"
+msgstr "En progreso"
+
+#. module: hr_recruitment_extended_werp
+#: selection:hr.evaluation,PcaEst:0
+msgid "Incomplete"
+msgstr "Incompleto"
+
+#. module: hr_recruitment_extended_werp
+#: selection:hr.job,fte:0
+msgid "Indirect"
+msgstr "Indirecto"
+
+#. module: hr_recruitment_extended_werp
+#: model_terms:ir.ui.view,arch_db:hr_recruitment_extended_werp.add_evaluation_form_view
+msgid "Input Parameters"
+msgstr "Parámetros de entrada"
+
+#. module: hr_recruitment_extended_werp
+#: model:ir.model.fields,field_description:hr_recruitment_extended_werp.field_hr_evaluation__message_is_follower
+msgid "Is Follower"
+msgstr "Es un seguidor"
+
+#. module: hr_recruitment_extended_werp
+#: model:ir.model.fields,field_description:hr_recruitment_extended_werp.field_hr_applicant__is_working
+msgid "Is Working"
+msgstr "Es un trabajador"
+
+#. module: hr_recruitment_extended_werp
+#: model:ir.model.fields,field_description:hr_recruitment_extended_werp.field_hr_evaluation__jca_details_id
+#: model:ir.model.fields,field_description:hr_recruitment_extended_werp.field_hr_job__jca_details_id
+msgid "JCA"
+msgstr "JCA"
+
+#. module: hr_recruitment_extended_werp
+#: model:ir.actions.act_window,name:hr_recruitment_extended_werp.jca_details_action
+#: model:ir.model,name:hr_recruitment_extended_werp.model_jca_details
+#: model:ir.ui.menu,name:hr_recruitment_extended_werp.jca_details_menu_action
+#: model_terms:ir.ui.view,arch_db:hr_recruitment_extended_werp.jca_details_view_form
+#: model_terms:ir.ui.view,arch_db:hr_recruitment_extended_werp.jca_details_view_tree
+msgid "JCA Details"
+msgstr "Detalles de JCA"
+
+#. module: hr_recruitment_extended_werp
+#: model:ir.model.fields,field_description:hr_recruitment_extended_werp.field_hr_job__jca_details_type
+msgid "JCA Type of Level"
+msgstr "Tipo de nivel JCA"
+
+#. module: hr_recruitment_extended_werp
+#: model:ir.model.fields,field_description:hr_recruitment_extended_werp.field_hr_stage_perc__hr_job_id
+msgid "Job"
+msgstr "Trabajo"
+
+#. module: hr_recruitment_extended_werp
+#: model:ir.model,name:hr_recruitment_extended_werp.model_hr_job
+msgid "Job Position"
+msgstr "Puesto de trabajo"
+
+#. module: hr_recruitment_extended_werp
+#: model:ir.model.fields,field_description:hr_recruitment_extended_werp.field_function_executed____last_update
+#: model:ir.model.fields,field_description:hr_recruitment_extended_werp.field_hr_evaluation____last_update
+#: model:ir.model.fields,field_description:hr_recruitment_extended_werp.field_hr_stage_perc____last_update
+#: model:ir.model.fields,field_description:hr_recruitment_extended_werp.field_jca_details____last_update
+#: model:ir.model.fields,field_description:hr_recruitment_extended_werp.field_macro_area____last_update
+#: model:ir.model.fields,field_description:hr_recruitment_extended_werp.field_partner_state_selection_wizard____last_update
+#: model:ir.model.fields,field_description:hr_recruitment_extended_werp.field_reason_disqualification____last_update
+#: model:ir.model.fields,field_description:hr_recruitment_extended_werp.field_types_of_charges____last_update
+#: model:ir.model.fields,field_description:hr_recruitment_extended_werp.field_work_group____last_update
+msgid "Last Modified on"
+msgstr "Última modificación en"
+
+#. module: hr_recruitment_extended_werp
+#: model:ir.model.fields,field_description:hr_recruitment_extended_werp.field_function_executed__write_uid
+#: model:ir.model.fields,field_description:hr_recruitment_extended_werp.field_hr_evaluation__write_uid
+#: model:ir.model.fields,field_description:hr_recruitment_extended_werp.field_hr_stage_perc__write_uid
+#: model:ir.model.fields,field_description:hr_recruitment_extended_werp.field_jca_details__write_uid
+#: model:ir.model.fields,field_description:hr_recruitment_extended_werp.field_macro_area__write_uid
+#: model:ir.model.fields,field_description:hr_recruitment_extended_werp.field_partner_state_selection_wizard__write_uid
+#: model:ir.model.fields,field_description:hr_recruitment_extended_werp.field_reason_disqualification__write_uid
+#: model:ir.model.fields,field_description:hr_recruitment_extended_werp.field_types_of_charges__write_uid
+#: model:ir.model.fields,field_description:hr_recruitment_extended_werp.field_work_group__write_uid
+msgid "Last Updated by"
+msgstr "Última actualización por"
+
+#. module: hr_recruitment_extended_werp
+#: model:ir.model.fields,field_description:hr_recruitment_extended_werp.field_function_executed__write_date
+#: model:ir.model.fields,field_description:hr_recruitment_extended_werp.field_hr_evaluation__write_date
+#: model:ir.model.fields,field_description:hr_recruitment_extended_werp.field_hr_stage_perc__write_date
+#: model:ir.model.fields,field_description:hr_recruitment_extended_werp.field_jca_details__write_date
+#: model:ir.model.fields,field_description:hr_recruitment_extended_werp.field_macro_area__write_date
+#: model:ir.model.fields,field_description:hr_recruitment_extended_werp.field_partner_state_selection_wizard__write_date
+#: model:ir.model.fields,field_description:hr_recruitment_extended_werp.field_reason_disqualification__write_date
+#: model:ir.model.fields,field_description:hr_recruitment_extended_werp.field_types_of_charges__write_date
+#: model:ir.model.fields,field_description:hr_recruitment_extended_werp.field_work_group__write_date
+msgid "Last Updated on"
+msgstr "Última actualización el"
+
+#. module: hr_recruitment_extended_werp
+#: model:ir.model.fields,field_description:hr_recruitment_extended_werp.field_hr_job__level
+msgid "Level"
+msgstr "Nivel"
+
+#. module: hr_recruitment_extended_werp
+#: model:ir.model.fields,field_description:hr_recruitment_extended_werp.field_hr_applicant__level_academic
+msgid "Level Academic"
+msgstr "Nivel Academico"
+
+#. module: hr_recruitment_extended_werp
+#: model:hr.recruitment.stage,legend_done:hr_recruitment_extended_werp.stage_job10
+#: model:hr.recruitment.stage,legend_done:hr_recruitment_extended_werp.stage_job11
+#: model:hr.recruitment.stage,legend_done:hr_recruitment_extended_werp.stage_job6
+#: model:hr.recruitment.stage,legend_done:hr_recruitment_extended_werp.stage_job7
+#: model:hr.recruitment.stage,legend_done:hr_recruitment_extended_werp.stage_job8
+#: model:hr.recruitment.stage,legend_done:hr_recruitment_extended_werp.stage_job9
+msgid "Listo para la siguiente etapa"
+msgstr "Listo para la siguiente etapa"
+
+#. module: hr_recruitment_extended_werp
+#: selection:hr.job,holding:0 selection:hr.job,holding_principal:0
+msgid "MARKETING NEW BUSINESS"
+msgstr "MARKETING NUEVOS NEGOCIOS"
+
+#. module: hr_recruitment_extended_werp
+#: selection:hr.job,codigo_holding_principal:0
+msgid "MD"
+msgstr "MD"
+
+#. module: hr_recruitment_extended_werp
+#: selection:hr.job,codigo_holding:0 selection:hr.job,holding:0
+#: selection:hr.job,holding_principal:0
+msgid "MEDIA"
+msgstr "MEDIOS DE COMUNICACIÓN"
+
+#. module: hr_recruitment_extended_werp
+#: selection:hr.job,holding:0
+msgid "MEDIA BILLING AND RECONCILIATION"
+msgstr "FACTURACIÓN Y RECONCILIACIÓN DE MEDIOS"
+
+#. module: hr_recruitment_extended_werp
+#: selection:hr.job,codigo_holding_principal:0
+msgid "MK"
+msgstr "MK"
+
+#. module: hr_recruitment_extended_werp
+#: selection:hr.job,codigo_holding:0
+msgid "MK."
+msgstr "MK."
+
+#. module: hr_recruitment_extended_werp
+#: model:ir.actions.act_window,name:hr_recruitment_extended_werp.macro_area_action
+#: model:ir.model,name:hr_recruitment_extended_werp.model_macro_area
+#: model:ir.model.fields,field_description:hr_recruitment_extended_werp.field_hr_employee__macro_area_id
+#: model:ir.model.fields,field_description:hr_recruitment_extended_werp.field_hr_job__macro_area_id
+#: model:ir.ui.menu,name:hr_recruitment_extended_werp.macro_area_menu_action
+msgid "Macro Area"
+msgstr "Macro Area"
+
+#. module: hr_recruitment_extended_werp
+#: model:ir.model.fields,field_description:hr_recruitment_extended_werp.field_hr_evaluation__message_main_attachment_id
+msgid "Main Attachment"
+msgstr "Adjuntos principales"
+
+#. module: hr_recruitment_extended_werp
+#: selection:hr.evaluation,PerGen:0
+msgid "Male"
+msgstr "Masculino"
+
+#. module: hr_recruitment_extended_werp
+#: selection:hr.applicant,level_academic:0
+msgid "Master"
+msgstr "Dominar"
+
+#. module: hr_recruitment_extended_werp
+#: model:ir.model.fields,field_description:hr_recruitment_extended_werp.field_hr_evaluation__message_has_error
+msgid "Message Delivery error"
+msgstr "Error de Envío de Mensaje"
+
+#. module: hr_recruitment_extended_werp
+#: model:ir.model.fields,field_description:hr_recruitment_extended_werp.field_hr_evaluation__message_ids
+msgid "Messages"
+msgstr "Mensajes"
+
+#. module: hr_recruitment_extended_werp
+#: selection:hr.job,holding:0
+msgid "NETWORK / INFRASTRUCTURE"
+msgstr "INFRAESTRUCTURA DE RED"
+
+#. module: hr_recruitment_extended_werp
+#: model:ir.model.fields,field_description:hr_recruitment_extended_werp.field_function_executed__name
+#: model:ir.model.fields,field_description:hr_recruitment_extended_werp.field_hr_evaluation__PerNom
+#: model:ir.model.fields,field_description:hr_recruitment_extended_werp.field_jca_details__name
+#: model:ir.model.fields,field_description:hr_recruitment_extended_werp.field_macro_area__name
+#: model:ir.model.fields,field_description:hr_recruitment_extended_werp.field_reason_disqualification__name
+#: model:ir.model.fields,field_description:hr_recruitment_extended_werp.field_types_of_charges__name
+#: model:ir.model.fields,field_description:hr_recruitment_extended_werp.field_work_group__name
+msgid "Name"
+msgstr "Nombre"
+
+#. module: hr_recruitment_extended_werp
+#: model:ir.model.fields,field_description:hr_recruitment_extended_werp.field_hr_evaluation__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "Siguiente plazo de actividad"
+
+#. module: hr_recruitment_extended_werp
+#: model:ir.model.fields,field_description:hr_recruitment_extended_werp.field_hr_evaluation__activity_summary
+msgid "Next Activity Summary"
+msgstr "Resumen de la siguiente actividad"
+
+#. module: hr_recruitment_extended_werp
+#: model:ir.model.fields,field_description:hr_recruitment_extended_werp.field_hr_evaluation__activity_type_id
+msgid "Next Activity Type"
+msgstr "Siguiente tipo de actividad"
+
+#. module: hr_recruitment_extended_werp
+#: model:ir.model.fields,field_description:hr_recruitment_extended_werp.field_types_of_charges__nivel
+msgid "Nivel"
+msgstr "Nivel"
+
+#. module: hr_recruitment_extended_werp
+#: selection:partner.state.selection.wizard,state_selection:0
+msgid "Not Eligible"
+msgstr "No elegible"
+
+#. module: hr_recruitment_extended_werp
+#: model:ir.model.fields,field_description:hr_recruitment_extended_werp.field_hr_evaluation__message_needaction_counter
+msgid "Number of Actions"
+msgstr "Número de acciones"
+
+#. module: hr_recruitment_extended_werp
+#: model:ir.model.fields,field_description:hr_recruitment_extended_werp.field_hr_evaluation__message_has_error_counter
+msgid "Number of error"
+msgstr "Número de error"
+
+#. module: hr_recruitment_extended_werp
+#: model:ir.model.fields,help:hr_recruitment_extended_werp.field_hr_evaluation__message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr "Número de mensajes que requieren una acción"
+
+#. module: hr_recruitment_extended_werp
+#: model:ir.model.fields,help:hr_recruitment_extended_werp.field_hr_evaluation__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "Número de mensajes con error de envío"
+
+#. module: hr_recruitment_extended_werp
+#: model:ir.model.fields,help:hr_recruitment_extended_werp.field_hr_evaluation__message_unread_counter
+msgid "Number of unread messages"
+msgstr "Número de mensajes no leidos"
+
+#. module: hr_recruitment_extended_werp
+#: selection:hr.job,holding:0 selection:hr.job,holding_principal:0
+msgid "OFFICE SERVICES"
+msgstr "SERVICIOS DE OFICINA"
+
+#. module: hr_recruitment_extended_werp
+#: selection:hr.job,codigo_holding_principal:0
+msgid "OS"
+msgstr "OS"
+
+#. module: hr_recruitment_extended_werp
+#: selection:hr.job,codigo_holding:0
+msgid "OS."
+msgstr "OS."
+
+#. module: hr_recruitment_extended_werp
+#: selection:hr.job,codigo_holding_principal:0
+msgid "OTH"
+msgstr "OTH"
+
+#. module: hr_recruitment_extended_werp
+#: selection:hr.job,codigo_holding:0
+msgid "OTH."
+msgstr "OTH."
+
+#. module: hr_recruitment_extended_werp
+#: selection:hr.job,holding:0 selection:hr.job,holding_principal:0
+msgid "OTHER"
+msgstr "OTRO"
+
+#. module: hr_recruitment_extended_werp
+#: selection:hr.job,holding:0
+msgid "OTHER FINANCE / ACCOUNTING"
+msgstr "OTRAS FINANZAS / CONTABILIDAD"
+
+#. module: hr_recruitment_extended_werp
+#: selection:hr.job,holding:0
+msgid "OTHER HUMAN RESOURCES"
+msgstr "OTROS RECURSOS HUMANOS"
+
+#. module: hr_recruitment_extended_werp
+#: selection:hr.job,holding:0
+msgid "OTHER IT / TECHNOLOGY"
+msgstr "OTRAS TI / TECNOLOGÍA"
+
+#. module: hr_recruitment_extended_werp
+#: model_terms:ir.ui.view,arch_db:hr_recruitment_extended_werp.crm_case_form_view_job_applicant
+msgid "Open"
+msgstr "Abierto"
+
+#. module: hr_recruitment_extended_werp
+#: model_terms:ir.ui.view,arch_db:hr_recruitment_extended_werp.partner_state_selection_wizard_form_view
+msgid "Or"
+msgstr "Or"
+
+#. module: hr_recruitment_extended_werp
+#: selection:hr.applicant,level_academic:0
+msgid "Other"
+msgstr "Otro"
+
+#. module: hr_recruitment_extended_werp
+#: model:ir.model.fields,field_description:hr_recruitment_extended_werp.field_hr_applicant__other_recruitment_group
+msgid "Other Recruitment Group"
+msgstr "Otro grupo de reclutamiento"
+
+#. module: hr_recruitment_extended_werp
+#: model_terms:ir.ui.view,arch_db:hr_recruitment_extended_werp.add_evaluation_form_view
+msgid "Output Parameters Details"
+msgstr "Detalles de parámetros de salida"
+
+#. module: hr_recruitment_extended_werp
+#: selection:hr.evaluation,activity_state:0
+msgid "Overdue"
+msgstr "Atrasado"
+
+#. module: hr_recruitment_extended_werp
+#: selection:hr.job,holding:0
+msgid "PAYROLL"
+msgstr "NÓMINA DE SUELDOS"
+
+#. module: hr_recruitment_extended_werp
+#: model_terms:ir.ui.view,arch_db:hr_recruitment_extended_werp.add_evaluation_form_view
+msgid "PCA Result"
+msgstr "Resultado PCA"
+
+#. module: hr_recruitment_extended_werp
+#: selection:hr.job,codigo_holding:0
+#: selection:hr.job,codigo_holding_principal:0
+msgid "PP"
+msgstr "PP"
+
+#. module: hr_recruitment_extended_werp
+#: selection:hr.job,holding:0 selection:hr.job,holding_principal:0
+msgid "PRINT PRODUCTION"
+msgstr "PRODUCCIÓN DE IMPRESIÓN"
+
+#. module: hr_recruitment_extended_werp
+#: model:ir.actions.act_window,name:hr_recruitment_extended_werp.action_partner_state_selection_wizard
+#: model_terms:ir.ui.view,arch_db:hr_recruitment_extended_werp.partner_state_selection_wizard_form_view
+msgid "Partner State Selection"
+msgstr "Selección del estado del socio"
+
+#. module: hr_recruitment_extended_werp
+#: model:ir.model,name:hr_recruitment_extended_werp.model_partner_state_selection_wizard
+msgid "Partner State Selection Wizard"
+msgstr "Asistente de selección de estado de socio"
+
+#. module: hr_recruitment_extended_werp
+#: model:ir.model.fields,field_description:hr_recruitment_extended_werp.field_hr_evaluation__percentage
+#: model:ir.model.fields,field_description:hr_recruitment_extended_werp.field_hr_stage_perc__percentage
+msgid "Percentage"
+msgstr "Porcentaje"
+
+#. module: hr_recruitment_extended_werp
+#: model:ir.model.fields,field_description:hr_recruitment_extended_werp.field_hr_evaluation__PerCodExt
+msgid "Person Code"
+msgstr "Código de persona"
+
+#. module: hr_recruitment_extended_werp
+#: model:mail.template,subject:hr_recruitment_extended_werp.email_template_evaluation
+msgid "Personal Competences Analysis"
+msgstr "Análisis de competencias personales"
+
+#. module: hr_recruitment_extended_werp
+#: selection:hr.evaluation,activity_state:0
+msgid "Planned"
+msgstr "Planificado"
+
+#. module: hr_recruitment_extended_werp
+#: code:addons/hr_recruitment_extended_werp/models/inherited_hr_applicant.py:73
+#, python-format
+msgid "Please add Disqualification Reason."
+msgstr "Por favor, agregue el motivo de descalificación."
+
+#. module: hr_recruitment_extended_werp
+#: code:addons/hr_recruitment_extended_werp/models/hr_job.py:150
+#, python-format
+msgid "Please, change the stage, you should only have one record per stage (%s)!"
+msgstr "Por favor, cambie la etapa, ¡solo debe tener un registro por etapa (% s)!"
+
+#. module: hr_recruitment_extended_werp
+#: selection:hr.job,codigo_holding_principal:0
+msgid "RE"
+msgstr "RE"
+
+#. module: hr_recruitment_extended_werp
+#: selection:hr.job,codigo_holding:0
+msgid "RE."
+msgstr "RE."
+
+#. module: hr_recruitment_extended_werp
+#: selection:hr.job,holding:0 selection:hr.job,holding_principal:0
+msgid "RESEARCH"
+msgstr "INVESTIGACIÓN"
+
+#. module: hr_recruitment_extended_werp
+#: model:ir.actions.act_window,name:hr_recruitment_extended_werp.reason_disqualification_action
+#: model:ir.model,name:hr_recruitment_extended_werp.model_reason_disqualification
+#: model:ir.ui.menu,name:hr_recruitment_extended_werp.reason_disqualification_menu_action
+#: model_terms:ir.ui.view,arch_db:hr_recruitment_extended_werp.reason_disqualification_view_form
+#: model_terms:ir.ui.view,arch_db:hr_recruitment_extended_werp.reason_disqualification_view_tree
+msgid "Reason Disqualification"
+msgstr "Motivo Descalificación"
+
+#. module: hr_recruitment_extended_werp
+#: model:ir.model.fields,field_description:hr_recruitment_extended_werp.field_hr_applicant__reason_renounce_id
+msgid "Reason Renounce"
+msgstr "Motivo Renuncia"
+
+#. module: hr_recruitment_extended_werp
+#: model:ir.model,name:hr_recruitment_extended_werp.model_hr_recruitment_stage
+msgid "Recruitment Stages"
+msgstr "Etapas de reclutamiento"
+
+#. module: hr_recruitment_extended_werp
+#: model:ir.model.fields,field_description:hr_recruitment_extended_werp.field_hr_evaluation__activity_user_id
+msgid "Responsible User"
+msgstr "Usuario responsable"
+
+#. module: hr_recruitment_extended_werp
+#: model_terms:ir.ui.view,arch_db:hr_recruitment_extended_werp.crm_case_form_view_job_applicant
+msgid "Retake Evaluation"
+msgstr "Evaluación de retoma"
+
+#. module: hr_recruitment_extended_werp
+#: model_terms:ir.ui.view,arch_db:hr_recruitment_extended_werp.add_evaluation_form_view
+msgid "Retake Evaluation Details"
+msgstr "Volver a tomar los detalles de la evaluación"
+
+#. module: hr_recruitment_extended_werp
+#: model:ir.model.fields,field_description:hr_recruitment_extended_werp.field_hr_applicant__salary_present
+msgid "Salary"
+msgstr "Salario"
+
+#. module: hr_recruitment_extended_werp
+#: model_terms:ir.ui.view,arch_db:hr_recruitment_extended_werp.partner_state_selection_wizard_form_view
+msgid "Select"
+msgstr "Seleccionar"
+
+#. module: hr_recruitment_extended_werp
+#: model_terms:ir.ui.view,arch_db:hr_recruitment_extended_werp.add_evaluation_form_view
+msgid "Send Mail Again"
+msgstr "Enviar correo nuevamente"
+
+#. module: hr_recruitment_extended_werp
+#: selection:hr.evaluation,CoRegCod:0
+msgid "Spanish"
+msgstr "Español"
+
+#. module: hr_recruitment_extended_werp
+#: selection:hr.applicant,level_academic:0
+msgid "Specialization"
+msgstr "Especialización"
+
+#. module: hr_recruitment_extended_werp
+#: model:ir.model.fields,field_description:hr_recruitment_extended_werp.field_hr_stage_perc__stage_id
+msgid "Stage"
+msgstr "Etapa"
+
+#. module: hr_recruitment_extended_werp
+#: model:ir.model.fields,field_description:hr_recruitment_extended_werp.field_hr_job__hr_stage_perc_ids
+#: model_terms:ir.ui.view,arch_db:hr_recruitment_extended_werp.hr_job_form_view_inherit_extended
+msgid "Stage Percentage"
+msgstr "Porcentaje de etapa"
+
+#. module: hr_recruitment_extended_werp
+#: model:ir.model.fields,field_description:hr_recruitment_extended_werp.field_hr_stage_perc__state
+msgid "State"
+msgstr "Estado"
+
+#. module: hr_recruitment_extended_werp
+#: model:ir.model.fields,field_description:hr_recruitment_extended_werp.field_hr_evaluation__PcaEst
+msgid "Status"
+msgstr "Estado"
+
+#. module: hr_recruitment_extended_werp
+#: model:ir.model.fields,help:hr_recruitment_extended_werp.field_hr_evaluation__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"Estado basado en actividades\n"
+"Vencida: la fecha tope ya ha pasado\n"
+"Hoy: La fecha tope es hoy\n"
+"Planificada: futuras actividades."
+
+#. module: hr_recruitment_extended_werp
+#: selection:jca.details,type_of_level:0
+msgid "Strategic"
+msgstr "Estratégico"
+
+#. module: hr_recruitment_extended_werp
+#: model:ir.model.fields,field_description:hr_recruitment_extended_werp.field_hr_evaluation__PerApe
+msgid "Surname"
+msgstr "Primer Apellido"
+
+#. module: hr_recruitment_extended_werp
+#: selection:hr.job,codigo_holding_principal:0
+msgid "TR"
+msgstr "TR"
+
+#. module: hr_recruitment_extended_werp
+#: selection:hr.job,codigo_holding:0
+msgid "TR."
+msgstr "TR."
+
+#. module: hr_recruitment_extended_werp
+#: selection:hr.job,holding:0 selection:hr.job,holding_principal:0
+msgid "TRAFFIC"
+msgstr "TRÁFICO"
+
+#. module: hr_recruitment_extended_werp
+#: selection:jca.details,type_of_level:0
+msgid "Tactical"
+msgstr "Táctico"
+
+#. module: hr_recruitment_extended_werp
+#: selection:hr.applicant,level_academic:0
+msgid "Technical"
+msgstr "Técnico"
+
+#. module: hr_recruitment_extended_werp
+#: model:ir.model.fields,field_description:hr_recruitment_extended_werp.field_hr_evaluation__PcaFec
+msgid "Test Ended on"
+msgstr "Prueba terminada el"
+
+#. module: hr_recruitment_extended_werp
+#: selection:hr.evaluation,activity_state:0
+msgid "Today"
+msgstr "Hoy"
+
+#. module: hr_recruitment_extended_werp
+#: model:ir.model.fields,field_description:hr_recruitment_extended_werp.field_jca_details__type_of_level
+msgid "Type of Level"
+msgstr "Tipo de nivel"
+
+#. module: hr_recruitment_extended_werp
+#: model:ir.model.fields,field_description:hr_recruitment_extended_werp.field_hr_evaluation__PcaTip
+msgid "Type of PCA"
+msgstr "Tipo de PCA"
+
+#. module: hr_recruitment_extended_werp
+#: model:ir.actions.act_window,name:hr_recruitment_extended_werp.types_of_charges_action
+#: model:ir.ui.menu,name:hr_recruitment_extended_werp.types_of_charges_menu_action
+#: model_terms:ir.ui.view,arch_db:hr_recruitment_extended_werp.types_of_charges_view_form
+#: model_terms:ir.ui.view,arch_db:hr_recruitment_extended_werp.types_of_charges_view_tree
+msgid "Types Of Charges"
+msgstr "Tipos de cargos"
+
+#. module: hr_recruitment_extended_werp
+#: model:ir.model.fields,field_description:hr_recruitment_extended_werp.field_hr_evaluation__PcaLink
+msgid "URL for Presentation"
+msgstr "URL para la presentación"
+
+#. module: hr_recruitment_extended_werp
+#: model:ir.model.fields,field_description:hr_recruitment_extended_werp.field_hr_evaluation__PcaImg
+msgid "URL of Evaluation"
+msgstr "URL de evaluación"
+
+#. module: hr_recruitment_extended_werp
+#: selection:hr.applicant,level_academic:0
+msgid "Undergraduate"
+msgstr "De licenciatura"
+
+#. module: hr_recruitment_extended_werp
+#: model:ir.model.fields,field_description:hr_recruitment_extended_werp.field_hr_evaluation__message_unread
+msgid "Unread Messages"
+msgstr "Mensajes por leer"
+
+#. module: hr_recruitment_extended_werp
+#: model:ir.model.fields,field_description:hr_recruitment_extended_werp.field_hr_evaluation__message_unread_counter
+msgid "Unread Messages Counter"
+msgstr "Contador de mensajes sin leer"
+
+#. module: hr_recruitment_extended_werp
+#: model:ir.model.fields,field_description:hr_recruitment_extended_werp.field_hr_evaluation__CoMailNot
+msgid "User Email"
+msgstr "Email del usuario"
+
+#. module: hr_recruitment_extended_werp
+#: model:hr.recruitment.stage,name:hr_recruitment_extended_werp.stage_job8
+msgid "Vector"
+msgstr "Vector"
+
+#. module: hr_recruitment_extended_werp
+#: model:ir.model.fields,field_description:hr_recruitment_extended_werp.field_hr_evaluation__website_message_ids
+msgid "Website Messages"
+msgstr "Mensajes del sitio web"
+
+#. module: hr_recruitment_extended_werp
+#: model:ir.model.fields,help:hr_recruitment_extended_werp.field_hr_evaluation__website_message_ids
+msgid "Website communication history"
+msgstr "Historial de comunicaciones del sitio web"
+
+#. module: hr_recruitment_extended_werp
+#: model:ir.actions.act_window,name:hr_recruitment_extended_werp.work_group_action
+#: model:ir.model,name:hr_recruitment_extended_werp.model_work_group
+#: model:ir.model.fields,field_description:hr_recruitment_extended_werp.field_hr_employee__work_group_id
+#: model:ir.model.fields,field_description:hr_recruitment_extended_werp.field_hr_job__work_group_id
+#: model:ir.ui.menu,name:hr_recruitment_extended_werp.work_group_menu_action
+msgid "Work Group"
+msgstr "Grupo de trabajo"
+
+#. module: hr_recruitment_extended_werp
+#: model:ir.model.fields,field_description:hr_recruitment_extended_werp.field_hr_applicant__working_witn_group
+msgid "Working Witn Group"
+msgstr "Trabajando con grupo"
+
+#. module: hr_recruitment_extended_werp
+#: model:mail.template,report_name:hr_recruitment_extended_werp.email_template_evaluation
+msgid "personal_competences_analysis"
+msgstr "análisis_competencias personales"
+
+#. module: hr_recruitment_extended_werp
+#: model:ir.model,name:hr_recruitment_extended_werp.model_types_of_charges
+msgid "types.of.charges"
+msgstr "tipos.de.cargos"

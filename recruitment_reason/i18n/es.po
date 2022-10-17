@@ -1,0 +1,107 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* recruitment_reason
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-12-13 04:23+0000\n"
+"PO-Revision-Date: 2019-12-15 13:49-0500\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: es\n"
+"X-Generator: Poedit 1.8.8\n"
+
+#. module: recruitment_reason
+#: model:ir.model.fields,field_description:recruitment_reason.field_recruitment_reason__abbreviation
+msgid "Abbreviation"
+msgstr "Abreviatura"
+
+#. module: recruitment_reason
+#: model:ir.model.fields,field_description:recruitment_reason.field_recruitment_reason__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: recruitment_reason
+#: model:ir.model.fields,field_description:recruitment_reason.field_recruitment_reason__create_date
+msgid "Created on"
+msgstr "Creado el"
+
+#. module: recruitment_reason
+#: model:ir.model.fields,field_description:recruitment_reason.field_recruitment_reason__description
+msgid "Description"
+msgstr "Descripción"
+
+#. module: recruitment_reason
+#: model:ir.model.fields,field_description:recruitment_reason.field_recruitment_reason__display_name
+msgid "Display Name"
+msgstr "Nombre mostrado"
+
+#. module: recruitment_reason
+#: model:ir.model.fields,field_description:recruitment_reason.field_hr_job__experience
+msgid "Experience"
+msgstr "Experiencia"
+
+#. module: recruitment_reason
+#: model:ir.model.fields,field_description:recruitment_reason.field_recruitment_reason__id
+msgid "ID"
+msgstr "ID"
+
+#. module: recruitment_reason
+#: model:ir.model,name:recruitment_reason.model_hr_job
+msgid "Job Position"
+msgstr "Puesto de trabajo"
+
+#. module: recruitment_reason
+#: model:ir.model.fields,field_description:recruitment_reason.field_hr_job__lang_id
+msgid "Language"
+msgstr "Idioma"
+
+#. module: recruitment_reason
+#: model:ir.model.fields,field_description:recruitment_reason.field_recruitment_reason____last_update
+msgid "Last Modified on"
+msgstr "Última modificación en"
+
+#. module: recruitment_reason
+#: model:ir.model.fields,field_description:recruitment_reason.field_recruitment_reason__write_uid
+msgid "Last Updated by"
+msgstr "Última actualización por"
+
+#. module: recruitment_reason
+#: model:ir.model.fields,field_description:recruitment_reason.field_recruitment_reason__write_date
+msgid "Last Updated on"
+msgstr "Última actualización el"
+
+#. module: recruitment_reason
+#: model:ir.model.fields,field_description:recruitment_reason.field_recruitment_reason__name
+msgid "Name"
+msgstr "Nombre"
+
+#. module: recruitment_reason
+#: model:ir.model.fields,field_description:recruitment_reason.field_hr_job__observation
+msgid "Observation"
+msgstr "Observación"
+
+#. module: recruitment_reason
+#: model:ir.model,name:recruitment_reason.model_recruitment_reason
+#: model_terms:ir.ui.view,arch_db:recruitment_reason.recruitment_reason_view_form
+#: model_terms:ir.ui.view,arch_db:recruitment_reason.recruitment_reason_view_tree
+msgid "Recruitment Reason"
+msgstr "Motivo de reclutamiento"
+
+#. module: recruitment_reason
+#: model:ir.actions.act_window,name:recruitment_reason.recruitment_reason_action
+#: model:ir.model.fields,field_description:recruitment_reason.field_hr_job__recruitment_reason_id
+#: model:ir.ui.menu,name:recruitment_reason.recruitment_reason_menu_action
+msgid "Recruitment Reasons"
+msgstr "Razones de reclutamiento"
+
+#. module: recruitment_reason
+#: model:ir.model.fields,field_description:recruitment_reason.field_hr_job__salary
+msgid "Salary"
+msgstr "Salario"

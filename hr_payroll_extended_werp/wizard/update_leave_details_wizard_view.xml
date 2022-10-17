@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="update_leaves_details_wizard_form_view"
+            model="ir.ui.view">
+        <field name="name">update.leaves.details.wizard.form.view</field>
+        <field name="model">update.leaves.details.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Update Leaves Details">
+                <group>
+                    <p class="oe_grey">
+                        Once you click on Update Leaves button it will calculate the leaves details.
+                    </p>
+                </group>
+                <footer>
+                    <button name="update_leaves_details" type="object"
+                            string="Update Leaves" class="oe_highlight"/>
+                    Or
+                    <button string="Cancel" class="oe_link"
+                            special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+</odoo>

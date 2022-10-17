@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2020-TODAY WSuite Products <wsuite-products@wsuite.com>
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html). -->
+<odoo>
+
+    <data noupdate="1">
+
+        <record id="hr_employee_flextime_1" model="hr.employee.flextime">
+            <field name="hour_start">7.0</field>
+            <field name="hour_start_type">am</field>
+            <field name="hour_end">5.0</field>
+            <field name="hour_end_type">pm</field>
+        </record>
+        <record id="hr_employee_flextime_2" model="hr.employee.flextime">
+            <field name="hour_start">8.0</field>
+            <field name="hour_start_type">am</field>
+            <field name="hour_end">5.0</field>
+            <field name="hour_end_type">pm</field>
+        </record>
+        <record id="hr_employee_flextime_3" model="hr.employee.flextime">
+            <field name="hour_start">9.0</field>
+            <field name="hour_start_type">am</field>
+            <field name="hour_end">7.0</field>
+            <field name="hour_end_type">pm</field>
+        </record>
+
+    </data>
+
+</odoo>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <data>
+        <record model="ir.ui.view" id="contract_format_view_tree">
+            <field name="name">contract.format.tree</field>
+            <field name="model">contract.format</field>
+            <field name="arch" type="xml">
+                <tree string="Contract Format">
+                    <field name="name"/>
+                    <field name="report_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="contract_format_view_form">
+            <field name="name">contract.format.tree</field>
+            <field name="model">contract.format</field>
+            <field name="arch" type="xml">
+                <form string="Contract Format">
+                    <sheet>
+                        <group col="4">
+                            <field name="name"/>
+                            <field name="report_id"/>
+                        </group>
+                        <notebook>
+                            <page string="Contract Section Details">
+                                <field name="contract_section_ids">
+                                    <tree>
+                                        <field name="name"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+    
+    <record model="ir.actions.act_window" id="contract_format_action">
+        <field name="name">Contract Formats</field>
+        <field name="res_model">contract.format</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem
+        id="contract_format_menu"
+        action="contract_format_action"
+        parent="hr.menu_human_resources_configuration"
+        groups="hr.group_hr_user"/>
+
+    </data>
+</odoo>

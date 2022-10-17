@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- HR Family Relationship Form View -->
+   <record id="hr_family_relationship_view_form" model="ir.ui.view">
+        <field name="name">hr.family.relationship.form</field>
+        <field name="model">hr.family.relationship</field>
+        <field name="arch" type="xml">
+            <form string="HR Family Relationship">
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="toggle_active" type="object" class="oe_stat_button" icon="fa-archive">
+                            <field name="active" widget="boolean_button"/>
+                        </button>
+                    </div>
+                    <group colspan="4" col="4">
+                        <field name="name" required="1"/>
+                        <field name="description"/>
+                        <field name="hr_family_group_categ_id"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- HR Family Relationship Tree View -->
+    <record id="hr_family_relationship_view_tree" model="ir.ui.view">
+        <field name="name">hr.family.relationship.list</field>
+        <field name="model">hr.family.relationship</field>
+        <field name="arch" type="xml">
+            <tree string="HR Family Relationship">
+                <field name="name"/>
+                <field name="description"/>
+                <field name="hr_family_group_categ_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- HR Family Relationship Action -->
+    <record id="hr_family_relationship_action" model="ir.actions.act_window">
+        <field name="name">HR Family Relationship</field>
+        <field name="res_model">hr.family.relationship</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- HR Family Relationship Menuitem -->
+    <menuitem
+        id="hr_family_relationship_menu_action"
+        name="HR Family Relationship"
+        groups="hr.group_hr_user"
+        action="hr_family_relationship_action"
+        parent="hr_employee_extended_werp.hr_curriculum_vitae_menu"/>
+
+</odoo>

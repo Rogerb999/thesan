@@ -1,0 +1,1266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- 
+    		https://www.gerencie.com/salario-variable-es-diferente-a-variacion-del-salario.html
+        -->
+    
+        <!--Eliminar neto, bruto, basico-->
+        <!--<delete id="hr_payroll.hr_rule_net" model="hr.salary.rule"/>
+        <delete id="hr_payroll.hr_rule_taxable" model="hr.salary.rule"/>
+        <delete id="hr_payroll.hr_rule_basic" model="hr.salary.rule"/>-->
+
+        <record id="hr_salary_rule_smlv" model="hr.salary.rule">
+			<field name="name">Salario Minimo Legal Vigente 2021</field>
+			<field name="category_id" ref="hr_category_parametro"/>
+			<field name="code">SMLV_Parametro</field>
+			<field name="sequence">10</field>
+			<field name="appears_on_payslip" eval="False"/>
+			<field name="condition_select">none</field>
+            <field name="amount_select">fix</field>
+            <field name="quantity">1.0</field>
+            <field name="amount_fix">908526.00</field>
+			<field name="amount_python_compute"></field>
+			<field name="active" eval="True"/>
+        </record>
+        
+        <record id="hr_salary_rule_aux" model="hr.salary.rule">
+			<field name="name">Parámetro Auxilio de Transporte 2021</field>
+			<field name="category_id" ref="hr_category_parametro"/>
+			<field name="code">Aux_Transporte_Parametro</field>
+			<field name="sequence">20</field>
+			<field name="appears_on_payslip" eval="False"/>
+			<field name="condition_select">none</field>
+            <field name="amount_select">code</field>
+            <field name="quantity">1.0</field>
+            <field name="amount_fix">0</field>
+			<field name="amount_python_compute">
+result = 0 if contract.salario_integral else 106454.00
+            </field>
+			<field name="active" eval="True"/>
+        </record>
+        
+        <!-- 
+            https://www.gerencie.com/salario-integral.html
+            # Calculo de la Seguridad Social dentro de un salario-integral
+            https://www.gerencie.com/aportes-a-seguridad-social-en-el-salario-integral.html
+        -->
+
+        <record id="hr_salary_rule_salario_integral" model="hr.salary.rule">
+			<field name="name">Salario Integral</field>
+			<field name="category_id" ref="hr_category_parametro"/>
+			<field name="code">Salario_integral</field>
+			<field name="sequence">30</field>
+			<field name="appears_on_payslip" eval="False"/>
+            <field name="condition_select">python</field>
+            <field name="condition_python">
+result = contract.wage &gt;= (SMLV_Parametro * 13)
+            </field>
+            <field name="amount_select">code</field>
+            <field name="quantity">1.0</field>
+            <field name="amount_fix">0</field>
+			<field name="amount_python_compute">
+days = payslip.env['hr.contract'].get_worked_days(payslip, contract)
+result = ((contract.wage / 30) * days) * 0.7
+# result = contract.wage * 0.7
+            </field>
+			<field name="active" eval="True"/>
+        </record>
+        
+        <record id="hr_salary_rule_uvt" model="hr.salary.rule">
+			<field name="name">UVT</field>
+			<field name="category_id" ref="hr_category_parametro"/>
+			<field name="code">UVT_Valor</field>
+			<field name="sequence">40</field>
+			<field name="appears_on_payslip" eval="False"/>
+            <field name="condition_select">none</field>
+            <field name="condition_python">
+            </field>
+            <field name="amount_select">fix</field>
+            <field name="quantity">1.0</field>
+            <field name="amount_fix">36308.00</field>
+			<field name="amount_python_compute">
+            </field>
+			<field name="active" eval="False"/>
+        </record>
+
+        <!-- 
+            # Ajuste de Seguridad (Salario Básico) que no sea inferior al valor de la regla SMLV_Parametro
+        -->
+
+        <record id="hr_salary_rule_recargo" model="hr.salary.rule">
+			<field name="name">Recargo</field>
+			<field name="category_id" ref="hr_category_devengado"/>
+			<field name="code">Recargo</field>
+			<field name="sequence">41</field>
+			<field name="appears_on_payslip" eval="True"/>
+            <field name="condition_select">none</field>
+            <field name="condition_python">
+            </field>
+            <field name="amount_select">code</field>
+            <field name="quantity">1.0</field>
+            <field name="amount_fix">0</field>
+			<field name="amount_python_compute">
+if inputs.Recargo:
+    result = inputs.Recargo.amount
+else:
+    result = 0
+            </field>
+            <field name="active" eval="True"/>
+        </record>
+
+        <record id="hr_salary_rule_salario_basico" model="hr.salary.rule">
+            <field name="name">Salario Básico</field>
+            <field name="category_id" ref="hr_category_parametro"/>
+            <field name="code">Contrato</field>
+            <field name="sequence">50</field>
+            <field name="appears_on_payslip" eval="False"/>
+            <field name="condition_select">none</field>
+            <field name="condition_python">
+            </field>
+            <field name="amount_select">code</field>
+            <field name="quantity">1.0</field>
+            <field name="amount_fix">0</field>
+            <field name="amount_python_compute">
+result = round(contract.wage + Recargo, 0)
+            </field>
+            <field name="active" eval="True"/>
+        </record>
+        
+        <record id="hr_salary_rule_sueldo" model="hr.salary.rule">
+			<field name="name">Sueldo</field>
+			<field name="category_id" ref="hr_category_devengado"/>
+			<field name="code">Sueldo</field>
+			<field name="sequence">60</field>
+			<field name="appears_on_payslip" eval="True"/>
+            <field name="condition_select">none</field>
+            <field name="condition_python">
+            </field>
+            <field name="amount_select">code</field>
+            <field name="quantity">1.0</field>
+            <field name="amount_fix">0</field>
+			<field name="amount_python_compute">
+result = round(payslip.env['hr.contract'].get_minutos_trabajados(contract, payslip), 0)
+            </field>
+			<field name="active" eval="True"/>
+        </record>
+
+<!-- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+<!--Hora extra diuna 25%-->
+        <record id="hr_salary_rule_hora_extra_diurna" model="hr.salary.rule">
+			<field name="name">Hora Extra Diurnas</field>
+			<field name="category_id" ref="hr_category_devengado"/>
+			<field name="code">HE_DIURNA</field>
+			<field name="sequence">70</field>
+			<field name="appears_on_payslip" eval="True"/>
+            <field name="condition_select">none</field>
+            <field name="condition_python">
+            </field>
+            <field name="amount_select">code</field>
+            <field name="quantity">1.0</field>
+            <field name="amount_fix">0</field>
+			<field name="amount_python_compute">
+# subtotal = 0
+                
+# Horas extras diurnas
+#if worked_days.HED and worked_days.HED.number_of_hours > 0:
+#    subtotal += ((0.25) * (contract.wage) /240) * (worked_days.HED and worked_days.HED.number_of_hours)               
+#result = round(subtotal, 0)
+
+if inputs.HED:
+    result = inputs.HED
+else:
+    result = 0
+            </field>
+			<field name="active" eval="True"/>
+        </record>
+
+<!--Hora extra nocturna 75%-->
+ <record id="hr_salary_rule_hora_extra_nocturna" model="hr.salary.rule">
+			<field name="name">Hora Extra Nocturna</field>
+			<field name="category_id" ref="hr_category_devengado"/>
+			<field name="code">HE_NOCTURNA</field>
+			<field name="sequence">71</field>
+			<field name="appears_on_payslip" eval="True"/>
+            <field name="condition_select">none</field>
+            <field name="condition_python">
+            </field>
+            <field name="amount_select">code</field>
+            <field name="quantity">1.0</field>
+            <field name="amount_fix">0</field>
+			<field name="amount_python_compute">
+# subtotal = 0
+                
+# Horas extras NOCTURNAS
+# if worked_days.HEN and worked_days.HEN.number_of_hours > 0:
+#    subtotal += ((0.75) * (contract.wage) /240) * (worked_days.HEN and worked_days.HEN.number_of_hours)                
+# result = round(subtotal, 0)
+
+if inputs.HEN:
+    result = inputs.HEN
+else:
+    result = 0
+            </field>
+			<field name="active" eval="True"/>
+        </record>
+
+<!--Hora Recargo Nocturno 35%-->
+ <record id="hr_salary_rule_hora_recargo_nocturno" model="hr.salary.rule">
+			<field name="name">Hora Recargo Nocturno</field>
+			<field name="category_id" ref="hr_category_devengado"/>
+			<field name="code">HR_NOCTURNO</field>
+			<field name="sequence">72</field>
+			<field name="appears_on_payslip" eval="True"/>
+            <field name="condition_select">none</field>
+            <field name="condition_python">
+            </field>
+            <field name="amount_select">code</field>
+            <field name="quantity">1.0</field>
+            <field name="amount_fix">0</field>
+			<field name="amount_python_compute">
+# subtotal = 0
+                
+# Horas Recargo Nocturno
+# if worked_days.HRN and worked_days.HRN.number_of_hours > 0:
+#    subtotal += ((0.35) * (contract.wage) /240) * (worked_days.HRN and worked_days.HRN.number_of_hours)
+# result = round(subtotal, 0)
+
+if inputs.HRN:
+    result = inputs.HRN
+else:
+    result = 0
+            </field>
+			<field name="active" eval="True"/>
+        </record>
+
+<!--Hora Extra Diurna Dominical y Festivos 100%-->
+ <record id="hr_salary_rule_hora_extra_diurna_dominical_festivo" model="hr.salary.rule">
+			<field name="name">Hora Extra Diurna Dominical y Festivos</field>
+			<field name="category_id" ref="hr_category_devengado"/>
+			<field name="code">HE_DIURNO_DO_FEST</field>
+			<field name="sequence">73</field>
+			<field name="appears_on_payslip" eval="True"/>
+            <field name="condition_select">none</field>
+            <field name="condition_python">
+            </field>
+            <field name="amount_select">code</field>
+            <field name="quantity">1.0</field>
+            <field name="amount_fix">0</field>
+			<field name="amount_python_compute">
+# subtotal = 0
+                
+# Hora Extra Diurna Dominical y Festivos
+# if worked_days.HEDDF and worked_days.HEDDF.number_of_hours > 0:
+#    subtotal += ((1.0) * (contract.wage) /240) * (worked_days.HEDDF and worked_days.HEDDF.number_of_hours)
+# result = round(subtotal, 0)
+
+if inputs.HEDDF:
+    result = inputs.HEDDF
+else:
+    result = 0
+            </field>
+			<field name="active" eval="True"/>
+        </record>
+
+<!--Hora Recargo Diurno Dominical y Festivos 75%-->
+ <record id="hr_salary_rule_hora_recargo_diurno_dominical_festivo" model="hr.salary.rule">
+			<field name="name">Hora Recargo Diurno Dominical y Festivos</field>
+			<field name="category_id" ref="hr_category_devengado"/>
+			<field name="code">HR_DIURNO_DO_FEST</field>
+			<field name="sequence">74</field>
+			<field name="appears_on_payslip" eval="True"/>
+            <field name="condition_select">none</field>
+            <field name="condition_python">
+            </field>
+            <field name="amount_select">code</field>
+            <field name="quantity">1.0</field>
+            <field name="amount_fix">0</field>
+			<field name="amount_python_compute">
+# subtotal = 0
+                
+# Hora Recargo Diurno Dominical y Festivos
+# if worked_days.HRDDF and worked_days.HRDDF.number_of_hours > 0:
+#    subtotal += ((0.75) * (contract.wage) /240) * (worked_days.HRDDF and worked_days.HRDDF.number_of_hours)
+# result = round(subtotal, 0)
+
+if inputs.HRDDF:
+    result = inputs.HRDDF
+else:
+    result = 0
+            </field>
+			<field name="active" eval="True"/>
+        </record>
+
+<!--Hora Extra Nocturno Dominical y Festivos 150%-->
+ <record id="hr_salary_rule_hora_extra_nocturno_dominical_festivo" model="hr.salary.rule">
+			<field name="name">Hora Extra Nocturno Dominical y Festivos</field>
+			<field name="category_id" ref="hr_category_devengado"/>
+			<field name="code">HE_NOC_DO_FEST</field>
+			<field name="sequence">75</field>
+			<field name="appears_on_payslip" eval="True"/>
+            <field name="condition_select">none</field>
+            <field name="condition_python">
+            </field>
+            <field name="amount_select">code</field>
+            <field name="quantity">1.0</field>
+            <field name="amount_fix">0</field>
+			<field name="amount_python_compute">
+# subtotal = 0
+                
+# Hora Extra Nocturna Dominical y Festivos
+# if worked_days.HENDF and worked_days.HENDF.number_of_hours > 0:
+#    subtotal += ((1.5) * (contract.wage) /240) * (worked_days.HENDF and worked_days.HENDF.number_of_hours)
+# result = round(subtotal, 0)
+
+if inputs.HENDF:
+    result = inputs.HENDF
+else:
+    result = 0
+            </field>
+			<field name="active" eval="True"/>
+        </record>
+
+<!--Hora Recargo Nocturno Dominical y Festivos 110%-->
+ <record id="hr_salary_rule_hora_recargo_nocturno_dominical_festivo" model="hr.salary.rule">
+			<field name="name">Hora Recargo Nocturno Dominical y Festivos</field>
+			<field name="category_id" ref="hr_category_devengado"/>
+			<field name="code">HR_NOC_DO_FEST</field>
+			<field name="sequence">76</field>
+			<field name="appears_on_payslip" eval="True"/>
+            <field name="condition_select">none</field>
+            <field name="condition_python">
+            </field>
+            <field name="amount_select">code</field>
+            <field name="quantity">1.0</field>
+            <field name="amount_fix">0</field>
+			<field name="amount_python_compute">
+# subtotal = 0
+                
+# Hora Recargo Nocturno Dominical y Festivos
+# if worked_days.HENDF and worked_days.HENDF.number_of_hours > 0:
+#    subtotal += ((1.10) * (contract.wage) /240) * (worked_days.HENDF and worked_days.HENDF.number_of_hours)
+# result = round(subtotal, 0)
+
+if inputs.HRNDF:
+    result = inputs.HRNDF
+else:
+    result = 0
+            </field>
+			<field name="active" eval="True"/>
+        </record>
+
+        <record id="hr_salary_rule_total_horas_extras" model="hr.salary.rule">
+            <field name="name">Total Horas Extras</field>
+            <field name="category_id" ref="hr_category_totales"/>
+            <field name="code">HE</field>
+            <field name="sequence">77</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name="condition_select">none</field>
+            <field name="condition_python">
+            </field>
+            <field name="amount_select">code</field>
+            <field name="quantity">1.0</field>
+            <field name="amount_fix">0</field>
+            <field name="amount_python_compute">
+result = round((HE_DIURNA + HE_NOCTURNA + HR_NOCTURNO + HE_DIURNO_DO_FEST + HR_DIURNO_DO_FEST + HE_NOC_DO_FEST + HR_NOC_DO_FEST), 0)
+            </field>
+            <field name="active" eval="True"/>
+        </record>
+
+        <record id="hr_salary_rule_comision" model="hr.salary.rule">
+			<field name="name">Comisión</field>
+			<field name="category_id" ref="hr_category_devengado"/>
+			<field name="code">Comision</field>
+			<field name="sequence">80</field>
+			<field name="appears_on_payslip" eval="True"/>
+            <field name="condition_select">none</field>
+            <field name="condition_python">
+            </field>
+            <field name="amount_select">code</field>
+            <field name="quantity">1.0</field>
+            <field name="amount_fix">0</field>
+			<field name="amount_python_compute">
+result = payslip.env['hr.contract'].get_comision(payslip)
+            </field>
+			<field name="active" eval="True"/>
+        </record>
+
+        <record id="hr_salary_rule_retencion_fuente" model="hr.salary.rule">
+			<field name="name">Retención en la Fuente</field>
+			<field name="category_id" ref="hr_category_deducciones"/>
+			<field name="code">RetencionF</field>
+			<field name="sequence">81</field>
+			<field name="appears_on_payslip" eval="True"/>
+            <field name="condition_select">none</field>
+            <field name="condition_python">
+            </field>
+            <field name="amount_select">code</field>
+            <field name="quantity">1.0</field>
+            <field name="amount_fix">0</field>
+			<field name="amount_python_compute">
+if inputs.RetencionF:
+    result = inputs.RetencionF.amount * (-1)
+else:
+    result = 0
+            </field>
+            <field name="active" eval="True"/>
+        </record>
+
+        <record id="hr_salary_rule_bonificacion" model="hr.salary.rule">
+			<field name="name">Bonificación</field>
+			<field name="category_id" ref="hr_category_devengado"/>
+			<field name="code">Bonificacion</field>
+			<field name="sequence">82</field>
+			<field name="appears_on_payslip" eval="True"/>
+            <field name="condition_select">none</field>
+            <field name="condition_python">
+            </field>
+            <field name="amount_select">code</field>
+            <field name="quantity">1.0</field>
+            <field name="amount_fix">0</field>
+			<field name="amount_python_compute">
+if inputs.Bonificacion:
+    result = inputs.Bonificacion.amount
+else:
+    result = 0
+            </field>
+            <field name="active" eval="True"/>
+        </record>
+
+        <record id="hr_salary_rule_rodamiento" model="hr.salary.rule">
+			<field name="name">Rodamiento</field>
+			<field name="category_id" ref="hr_category_devengado"/>
+			<field name="code">Rodamiento</field>
+			<field name="sequence">83</field>
+			<field name="appears_on_payslip" eval="True"/>
+            <field name="condition_select">none</field>
+            <field name="condition_python">
+            </field>
+            <field name="amount_select">code</field>
+            <field name="quantity">1.0</field>
+            <field name="amount_fix">0</field>
+			<field name="amount_python_compute">
+if inputs.Rodamiento:
+    result = inputs.Rodamiento.amount
+else:
+    result = 0
+            </field>
+            <field name="active" eval="True"/>
+        </record>
+
+        <record id="hr_salary_rule_pago_no_contitutivo" model="hr.salary.rule">
+			<field name="name">Pago NO Constitutivo</field>
+			<field name="category_id" ref="hr_category_parametro"/>
+			<field name="code">Pago_no_constitutivo</field>
+			<field name="sequence">90</field>
+			<field name="appears_on_payslip" eval="False"/>
+            <field name="condition_select">none</field>
+            <field name="condition_python">
+            </field>
+            <field name="amount_select">code</field>
+            <field name="quantity">1.0</field>
+            <field name="amount_fix">0</field>
+			<field name="amount_python_compute">
+# result = rules.Bonificacion + rules.Rodamiento (15/09/2021)
+result = Bonificacion
+            </field>
+			<field name="active" eval="True"/>
+        </record>
+
+        <record id="hr_salary_rule_pago_contitutivo" model="hr.salary.rule">
+			<field name="name">Pago Constitutivo</field>
+			<field name="category_id" ref="hr_category_parametro"/>
+			<field name="code">Pago_constitutivo</field>
+			<field name="sequence">100</field>
+			<field name="appears_on_payslip" eval="False"/>
+            <field name="condition_select">none</field>
+            <field name="condition_python">
+            </field>
+            <field name="amount_select">code</field>
+            <field name="quantity">1.0</field>
+            <field name="amount_fix">0</field>
+			<field name="amount_python_compute">
+# result = round((Sueldo + Comision + HE + Recargo), 0) (15/09/2021)
+result = round((Sueldo + Comision + HE), 0)
+            </field>
+			<field name="active" eval="True"/>
+        </record>
+
+        <record id="hr_salary_rule_incapacidad_comun" model="hr.salary.rule">
+			<field name="name">Incapacidad Común</field>
+			<field name="category_id" ref="hr_category_novedades"/>
+			<field name="code">EPS</field>
+			<field name="sequence">110</field>
+			<field name="appears_on_payslip" eval="True"/>
+            <field name="condition_select">none</field>
+            <field name="condition_python">
+            </field>
+            <field name="amount_select">code</field>
+            <field name="quantity">1.0</field>
+            <field name="amount_fix">0</field>
+			<field name="amount_python_compute">
+result = round(payslip.env['hr.contract'].calcular_incapacidad_comun(payslip, contract, employee), 0)
+            </field>
+			<field name="active" eval="True"/>
+        </record>
+
+        <record id="hr_salary_rule_incapacidad_laboral" model="hr.salary.rule">
+			<field name="name">Incapacidad Laboral</field>
+			<field name="category_id" ref="hr_category_novedades"/>
+			<field name="code">Incapacidad_ARL</field>
+			<field name="sequence">120</field>
+			<field name="appears_on_payslip" eval="True"/>
+            <field name="condition_select">none</field>
+            <field name="condition_python">
+            </field>
+            <field name="amount_select">code</field>
+            <field name="quantity">1.0</field>
+            <field name="amount_fix">0</field>
+			<field name="amount_python_compute">
+result = payslip.env['hr.contract'].get_arl(contract, payslip, employee)
+            </field>
+			<field name="active" eval="True"/>
+        </record>
+
+        <record id="hr_salary_rule_total_novedades" model="hr.salary.rule">
+			<field name="name">Total Novedades</field>
+			<field name="category_id" ref="hr_category_totales"/>
+			<field name="code">NovedadesT</field>
+			<field name="sequence">130</field>
+			<field name="appears_on_payslip" eval="True"/>
+            <field name="condition_select">none</field>
+            <field name="condition_python">
+            </field>
+            <field name="amount_select">code</field>
+            <field name="quantity">1.0</field>
+            <field name="amount_fix">0</field>
+			<field name="amount_python_compute">
+result = round(categories.Novedades, 0)
+            </field>
+			<field name="active" eval="True"/>
+        </record>
+
+        <record id="hr_salary_rule_vacaciones" model="hr.salary.rule">
+			<field name="name">Vacaciones</field>
+			<field name="category_id" ref="hr_category_prestaciones_sociales"/>
+			<field name="code">Vacaciones</field>
+			<field name="sequence">135</field>
+			<field name="appears_on_payslip" eval="True"/>
+            <field name="condition_select">none</field>
+            <field name="condition_python">
+            </field>
+            <field name="amount_select">code</field>
+            <field name="quantity">1.0</field>
+            <field name="amount_fix">0</field>
+			<field name="amount_python_compute">
+# result = round(((Pago_constitutivo - HE) * 0.04166666666666666666666666666667), 0)
+result = round(((Pago_constitutivo + Recargo) * 0.04166666666666666666666666666667), 0)
+            </field>
+			<field name="active" eval="True"/>
+        </record>
+
+        <record id="hr_salary_rule_ibc" model="hr.salary.rule">
+			<field name="name">IBC</field>
+			<field name="category_id" ref="hr_category_parametro"/>
+			<field name="code">IBC</field>
+			<field name="sequence">140</field>
+			<field name="appears_on_payslip" eval="False"/>
+            <field name="condition_select">none</field>
+            <field name="condition_python">
+            </field>
+            <field name="amount_select">code</field>
+            <field name="quantity">1.0</field>
+            <field name="amount_fix">0</field>
+			<field name="amount_python_compute">
+# Nomina normal
+if not contract.salario_integral:
+    # IBC = Pago_constitutivo
+    IBC = Pago_constitutivo + Recargo
+    total_remuneracion = Pago_constitutivo + Pago_no_constitutivo
+    cuarenta_porciento = total_remuneracion * 0.4
+    excedente = Pago_no_constitutivo - cuarenta_porciento
+    if excedente > 0:
+        IBC += excedente
+else:
+    IBC = Salario_integral
+    total_remuneracion = Salario_integral + Pago_no_constitutivo
+    cuarenta_porciento = total_remuneracion * 0.4
+    excedente = Pago_no_constitutivo - cuarenta_porciento
+    if excedente > 0:
+        IBC += excedente
+
+# Necesitamos calcular cuantos días trabajo
+
+# Validar que no sea menor a un SMLV
+#if IBC &lt; SMLV_Parametro:
+#    IBC = SMLV_Parametro
+
+# Validar que no sea mayor a 25 SMLV
+if IBC > SMLV_Parametro * 25:
+    IBC = SMLV_Parametro * 25
+
+# Agregar novedades
+# IBC += NovedadesT + Vacaciones
+IBC += NovedadesT
+
+result = round(IBC, 0)
+            </field>
+			<field name="active" eval="True"/>
+        </record>
+
+        <record id="hr_salary_rule_auxilio_transporte" model="hr.salary.rule">
+			<field name="name">Auxilio de Transporte</field>
+			<field name="category_id" ref="hr_category_aux_economico"/>
+			<field name="code">Aux_Transporte</field>
+			<field name="sequence">150</field>
+			<field name="appears_on_payslip" eval="True"/>
+            <field name="condition_select">none</field>
+            <field name="condition_python">
+            </field>
+            <field name="amount_select">code</field>
+            <field name="quantity">1.0</field>
+            <field name="amount_fix">0</field>
+			<field name="amount_python_compute">
+# El Total Devengado No puede exceder de 2 salarios minimos
+# control = True if Pago_constitutivo &lt;= (2 * SMLV_Parametro) else False (15/09/2021)
+control = True if Contrato &lt;= (2 * SMLV_Parametro) else False
+
+if control and contract.pagar_auxilio_transporte:
+    result = round(((Aux_Transporte_Parametro / 30) * payslip.env['hr.contract'].get_worked_days(payslip, contract)), 0)
+else:
+    result = 0
+            </field>
+			<field name="active" eval="True"/>
+        </record>
+
+        <record id="hr_salary_rule_total_devengado" model="hr.salary.rule">
+			<field name="name">Total Devengado</field>
+			<field name="category_id" ref="hr_category_totales"/>
+			<field name="code">Total_Devengado</field>
+			<field name="sequence">160</field>
+			<field name="appears_on_payslip" eval="True"/>
+            <field name="condition_select">none</field>
+            <field name="condition_python">
+            </field>
+            <field name="amount_select">code</field>
+            <field name="quantity">1.0</field>
+            <field name="amount_fix">0</field>
+			<field name="amount_python_compute">
+# result = round((Pago_constitutivo + Pago_no_constitutivo + Aux_Transporte + NovedadesT), 0) (15/09/2021)
+result = round((Pago_constitutivo + Pago_no_constitutivo + Aux_Transporte + NovedadesT + Recargo), 0)
+            </field>
+			<field name="active" eval="True"/>
+        </record>
+
+        <record id="hr_salary_rule_pension_empleado" model="hr.salary.rule">
+			<field name="name">Pensión - Empleado</field>
+			<field name="category_id" ref="hr_category_deducciones"/>
+			<field name="code">Pension</field>
+			<field name="sequence">170</field>
+			<field name="appears_on_payslip" eval="True"/>
+            <field name="condition_select">none</field>
+            <field name="condition_python">
+            </field>
+            <field name="amount_select">code</field>
+            <field name="quantity">1.0</field>
+            <field name="amount_fix">0</field>
+			<field name="amount_python_compute">
+result = round((Salario_integral * -0.04), 0) if contract.salario_integral else round((IBC * -0.04), 0)
+            </field>
+			<field name="active" eval="True"/>
+        </record>
+
+        <!--<record id="hr_salary_rule_pension_alto_riesgo_empleado" model="hr.salary.rule">
+			<field name="name">Pensión Alto Riesgo - Empleado</field>
+			<field name="category_id" ref="hr_category_deducciones"/>
+			<field name="code">Pension_Alto_Riesgo</field>
+			<field name="sequence">180</field>
+			<field name="appears_on_payslip" eval="True"/>
+            <field name="condition_select">none</field>
+            <field name="condition_python">
+            </field>
+            <field name="amount_select">code</field>
+            <field name="quantity">1.0</field>
+            <field name="amount_fix">0</field>
+			<field name="amount_python_compute">
+result = round((Salario_integral * -0.04), 0) if contract.salario_integral else round((IBC * -0.04), 0)
+            </field>
+			<field name="active" eval="True"/>
+        </record>-->
+
+        <record id="hr_salary_rule_salud_empleado" model="hr.salary.rule">
+			<field name="name">Salud - Empleado</field>
+			<field name="category_id" ref="hr_category_deducciones"/>
+			<field name="code">Salud</field>
+			<field name="sequence">180</field>
+			<field name="appears_on_payslip" eval="True"/>
+            <field name="condition_select">none</field>
+            <field name="condition_python">
+            </field>
+            <field name="amount_select">code</field>
+            <field name="quantity">1.0</field>
+            <field name="amount_fix">0</field>
+			<field name="amount_python_compute">
+result = round((Salario_integral * -0.04), 0) if contract.salario_integral else round((IBC * -0.04), 0)
+            </field>
+			<field name="active" eval="True"/>
+        </record>
+
+        <record id="hr_salary_rule_ausencia_no_remunerada" model="hr.salary.rule">
+			<field name="name">Ausencias No Remunerada</field>
+			<field name="category_id" ref="hr_category_deducciones"/>
+			<field name="code">Ausencia_No_Remunerada</field>
+			<field name="sequence">190</field>
+			<field name="appears_on_payslip" eval="True"/>
+            <field name="condition_select">none</field>
+            <field name="condition_python">
+            </field>
+            <field name="amount_select">code</field>
+            <field name="quantity">1.0</field>
+            <field name="amount_fix">0</field>
+			<field name="amount_python_compute">
+ausencias = payslip.env['hr.leave'].search([('date_from', '&gt;=',
+payslip.date_from), ('date_to', '&lt;=', payslip.date_to),('employee_id',
+'=', employee.id)])
+if not ausencias:
+    result = 0
+
+dias = 0
+for item in ausencias:
+    if item.holiday_status_id.unpaid and item.holiday_status_id.leave_type == 'otro':
+        dias += item.number_of_days_display
+
+pago_x_dia = contract.wage / 30
+result = round((pago_x_dia * dias * (-1)), 0)
+            </field>
+			<field name="active" eval="True"/>
+        </record>
+
+        <record id="hr_salary_rule_prestamo" model="hr.salary.rule">
+			<field name="name">Prestamo</field>
+			<field name="category_id" ref="hr_category_deducciones"/>
+			<field name="code">Prestamo</field>
+			<field name="sequence">200</field>
+			<field name="appears_on_payslip" eval="True"/>
+            <field name="condition_select">python</field>
+            <field name="condition_python">
+result = inputs.DEUDA and inputs.DEUDA.amount &gt; 0
+            </field>
+            <field name="amount_select">code</field>
+            <field name="quantity">1.0</field>
+            <field name="amount_fix">0</field>
+			<field name="amount_python_compute">
+result = round((inputs.DEUDA.amount * (-1)), 0)
+            </field>
+			<field name="active" eval="True"/>
+        </record>
+
+        <record id="hr_salary_rule_fondo_solidaridad_pensional" model="hr.salary.rule">
+			<field name="name">Fondo de Solidaridad Pensional</field>
+			<field name="category_id" ref="hr_category_deducciones"/>
+			<field name="code">FSP</field>
+			<field name="sequence">203</field>
+			<field name="appears_on_payslip" eval="True"/>
+            <field name="condition_select">none</field>
+            <field name="condition_python">
+            </field>
+            <field name="amount_select">code</field>
+            <field name="quantity">1.0</field>
+            <field name="amount_fix">0</field>
+			<field name="amount_python_compute">
+porcentaje = 0.00
+# if IBC &gt;= (SMLV_Parametro * 4) and IBC &lt; (SMLV_Parametro * 20): (15/01/2021)
+if Contrato &gt;= (SMLV_Parametro * 4) and Contrato &lt; (SMLV_Parametro * 20):
+    porcentaje = 0.01
+else:
+    result = 0
+result = round((IBC * porcentaje), 0) * (-1)
+            </field>
+			<field name="active" eval="True"/>
+        </record>
+
+        <record id="hr_salary_rule_fondo_subsistencia_pensional" model="hr.salary.rule">
+			<field name="name">Fondo de Subsistema Pensional</field>
+			<field name="category_id" ref="hr_category_deducciones"/>
+			<field name="code">FSSP</field>
+			<field name="sequence">206</field>
+			<field name="appears_on_payslip" eval="True"/>
+            <field name="condition_select">none</field>
+            <field name="condition_python">
+            </field>
+            <field name="amount_select">code</field>
+            <field name="quantity">1.0</field>
+            <field name="amount_fix">0</field>
+			<field name="amount_python_compute">
+porcentaje = 0.00
+if IBC &gt;= (SMLV_Parametro * 16) and IBC &lt; (SMLV_Parametro * 17):
+    porcentaje = 0.002
+if IBC &gt; (SMLV_Parametro * 17) and IBC &lt; (SMLV_Parametro * 18):
+    porcentaje = 0.004
+if IBC &gt; (SMLV_Parametro * 18) and IBC &lt; (SMLV_Parametro * 19):
+    porcentaje = 0.006
+if IBC &gt; (SMLV_Parametro * 19) and IBC &lt; (SMLV_Parametro * 20):
+    porcentaje = 0.008
+if IBC &gt; (SMLV_Parametro * 20):
+    porcentaje = 0.01
+else:
+    result = 0
+result = round((IBC * porcentaje), 0) * (-1)
+            </field>
+			<field name="active" eval="True"/>
+        </record>
+
+        <record id="hr_salary_rule_total_deducciones" model="hr.salary.rule">
+			<field name="name">Total Deducciones</field>
+			<field name="category_id" ref="hr_category_totales"/>
+			<field name="code">Total_Deducciones</field>
+			<field name="sequence">210</field>
+			<field name="appears_on_payslip" eval="True"/>
+            <field name="condition_select">none</field>
+            <field name="condition_python">
+            </field>
+            <field name="amount_select">code</field>
+            <field name="quantity">1.0</field>
+            <field name="amount_fix">0</field>
+			<field name="amount_python_compute">
+result = round(categories.Deducciones, 0)
+            </field>
+			<field name="active" eval="True"/>
+        </record>
+
+        <record id="hr_salary_rule_pension_empleador" model="hr.salary.rule">
+			<field name="name">Pensión - Empleador</field>
+			<field name="category_id" ref="hr_category_seguridad_social"/>
+			<field name="code">Pensión_Empleador</field>
+			<field name="sequence">220</field>
+			<field name="appears_on_payslip" eval="False"/>
+            <field name="condition_select">none</field>
+            <field name="condition_python">
+            </field>
+            <field name="amount_select">code</field>
+            <field name="quantity">1.0</field>
+            <field name="amount_fix">0</field>
+			<field name="amount_python_compute">
+result = round((IBC * 0.12), 0)
+            </field>
+			<field name="active" eval="True"/>
+        </record>
+
+        <record id="hr_salary_rule_pension_alto_riesgo_empleador" model="hr.salary.rule">
+			<field name="name">Pensión Alto Riesgo- Empleador</field>
+			<field name="category_id" ref="hr_category_seguridad_social"/>
+			<field name="code">Pensión_Alto_Riesgo_Empleador</field>
+			<field name="sequence">230</field>
+			<field name="appears_on_payslip" eval="False"/>
+            <field name="condition_select">none</field>
+            <field name="condition_python">
+            </field>
+            <field name="amount_select">code</field>
+            <field name="quantity">1.0</field>
+            <field name="amount_fix">0</field>
+			<field name="amount_python_compute">
+if contract.actividad_alto_riesgo:
+    result = round((IBC * 0.10), 0)
+else:
+    result = 0
+            </field>
+			<field name="active" eval="True"/>
+        </record>
+
+        <record id="hr_salary_rule_salud_empleador" model="hr.salary.rule">
+			<field name="name">Salud - Empleador</field>
+			<field name="category_id" ref="hr_category_seguridad_social"/>
+			<field name="code">Salud_Empleador</field>
+			<field name="sequence">230</field>
+			<field name="appears_on_payslip" eval="False"/>
+            <field name="condition_select">none</field>
+            <field name="condition_python">
+            </field>
+            <field name="amount_select">code</field>
+            <field name="quantity">1.0</field>
+            <field name="amount_fix">0</field>
+			<field name="amount_python_compute">
+if contract.salario_integral:
+    result = round((IBC * 0.085), 0)
+else:
+    if IBC >= (SMLV_Parametro * 10):
+        result = round((IBC * 0.085), 0)
+    else:
+        result = 0
+            </field>
+			<field name="active" eval="True"/>
+        </record>
+
+        <record id="hr_salary_rule_arl_I" model="hr.salary.rule">
+			<field name="name">Aporte Riesgo Profesional (Riesgo I)</field>
+			<field name="category_id" ref="hr_category_seguridad_social"/>
+			<field name="code">ARL-I</field>
+			<field name="sequence">240</field>
+			<field name="appears_on_payslip" eval="False"/>
+            <field name="condition_select">none</field>
+            <field name="condition_python">
+            </field>
+            <field name="amount_select">code</field>
+            <field name="quantity">1.0</field>
+            <field name="amount_fix">0</field>
+			<field name="amount_python_compute">
+val = 0
+if employee.job_id and employee.job_id.riesgos_profesionales.name == 'Riesgo I':
+    val = IBC * 0.00522
+
+result = round(val, 0)
+            </field>
+			<field name="active" eval="True"/>
+        </record>
+
+        <!--RIESGO II-->
+            <record id="hr_salary_rule_arl_II" model="hr.salary.rule">
+			<field name="name">Aporte Riesgo Profesional (Riesgo II)</field>
+			<field name="category_id" ref="hr_category_seguridad_social"/>
+			<field name="code">ARL-II</field>
+			<field name="sequence">241</field>
+			<field name="appears_on_payslip" eval="False"/>
+            <field name="condition_select">none</field>
+            <field name="condition_python">
+            </field>
+            <field name="amount_select">code</field>
+            <field name="quantity">1.0</field>
+            <field name="amount_fix">0</field>
+			<field name="amount_python_compute">
+val = 0
+if  employee.job_id and employee.job_id.riesgos_profesionales.name == 'Riesgo II':
+    val = IBC * 0.01044
+
+result = round(val, 0)
+            </field>
+			<field name="active" eval="True"/>
+        </record>
+
+    <!--RIESGO III-->
+            <record id="hr_salary_rule_arl_III" model="hr.salary.rule">
+			<field name="name">Aporte Riesgo Profesional (Riesgo III)</field>
+			<field name="category_id" ref="hr_category_seguridad_social"/>
+			<field name="code">ARL-III</field>
+			<field name="sequence">242</field>
+			<field name="appears_on_payslip" eval="False"/>
+            <field name="condition_select">none</field>
+            <field name="condition_python">
+            </field>
+            <field name="amount_select">code</field>
+            <field name="quantity">1.0</field>
+            <field name="amount_fix">0</field>
+			<field name="amount_python_compute">
+val = 0
+if  employee.job_id and employee.job_id.riesgos_profesionales.name == 'Riesgo III':
+    val = IBC * 0.02436
+
+result = round(val, 0)
+            </field>
+			<field name="active" eval="True"/>
+        </record>
+
+ <!--RIESGO IV-->
+            <record id="hr_salary_rule_arl_IV" model="hr.salary.rule">
+			<field name="name">Aporte Riesgo Profesional (Riesgo IV)</field>
+			<field name="category_id" ref="hr_category_seguridad_social"/>
+			<field name="code">ARL-IV</field>
+			<field name="sequence">243</field>
+			<field name="appears_on_payslip" eval="False"/>
+            <field name="condition_select">none</field>
+            <field name="condition_python">
+            </field>
+            <field name="amount_select">code</field>
+            <field name="quantity">1.0</field>
+            <field name="amount_fix">0</field>
+			<field name="amount_python_compute">
+val = 0
+if  employee.job_id and employee.job_id.riesgos_profesionales.name == 'Riesgo IV':
+    val = IBC * 0.0435
+
+result = round(val, 0)
+            </field>
+			<field name="active" eval="True"/>
+        </record>
+        
+<!--RIESGO V-->
+            <record id="hr_salary_rule_arl_V" model="hr.salary.rule">
+			<field name="name">Aporte Riesgo Profesional (Riesgo V)</field>
+			<field name="category_id" ref="hr_category_seguridad_social"/>
+			<field name="code">ARL-V</field>
+			<field name="sequence">244</field>
+			<field name="appears_on_payslip" eval="False"/>
+            <field name="condition_select">none</field>
+            <field name="condition_python">
+            </field>
+            <field name="amount_select">code</field>
+            <field name="quantity">1.0</field>
+            <field name="amount_fix">0</field>
+			<field name="amount_python_compute">
+val = 0
+if  employee.job_id and employee.job_id.riesgos_profesionales.name == 'Riesgo V':
+    val = IBC * 0.0696
+
+result = round(val, 0)
+            </field>
+			<field name="active" eval="True"/>
+        </record>
+        
+        <record id="hr_salary_rule_total_seguridad_social" model="hr.salary.rule">
+			<field name="name">Total Seguridad Social Empresa</field>
+			<field name="category_id" ref="hr_category_totales"/>
+			<field name="code">Total_Seguridad_Social</field>
+			<field name="sequence">250</field>
+			<field name="appears_on_payslip" eval="True"/>
+            <field name="condition_select">none</field>
+            <field name="condition_python">
+            </field>
+            <field name="amount_select">code</field>
+            <field name="quantity">1.0</field>
+            <field name="amount_fix">0</field>
+			<field name="amount_python_compute">
+result = round(categories.Seguridad_Social, 0)
+            </field>
+			<field name="active" eval="True"/>
+        </record>
+
+        <record id="hr_salary_rule_caja_compensacion_familiar" model="hr.salary.rule">
+			<field name="name">Caja de Compensación Familiar</field>
+			<field name="category_id" ref="hr_category_aportaciones_parafiscales"/>
+			<field name="code">CCF</field>
+			<field name="sequence">260</field>
+			<field name="appears_on_payslip" eval="False"/>
+            <field name="condition_select">none</field>
+            <field name="condition_python">
+            </field>
+            <field name="amount_select">code</field>
+            <field name="quantity">1.0</field>
+            <field name="amount_fix">0</field>
+			<field name="amount_python_compute">
+result = round(((IBC - NovedadesT) * 0.0100), 0)
+# result = round(((IBC) * 0.0400), 0)
+            </field>
+			<field name="active" eval="True"/>
+        </record>
+
+        <record id="hr_salary_rule_icbf" model="hr.salary.rule">
+			<field name="name">Instituto Colombiano de Bienestar Familiar  ICBF</field>
+			<field name="category_id" ref="hr_category_aportaciones_parafiscales"/>
+			<field name="code">ICBF</field>
+			<field name="sequence">270</field>
+			<field name="appears_on_payslip" eval="False"/>
+            <field name="condition_select">none</field>
+            <field name="condition_python">
+result = (contract.wage) &lt;= (SMLV_Parametro * 10)
+            </field>
+            <field name="amount_select">code</field>
+            <field name="quantity">1.0</field>
+            <field name="amount_fix">0</field>
+			<field name="amount_python_compute">
+#if (IBC - NovedadesT) >= (SMLV_Parametro * 10):
+if (Contrato - NovedadesT) >= (SMLV_Parametro * 10):
+    result = round(((IBC - NovedadesT) * 0.0075), 0)
+#if (IBC) >= (SMLV_Parametro * 10):
+#    result = round(((IBC) * 0.03), 0)
+else:
+    result = 0
+            </field>
+			<field name="active" eval="True"/>
+        </record>
+
+        <record id="hr_salary_rule_sena" model="hr.salary.rule">
+			<field name="name">Servicio Nacional de Aprendizaje SENA</field>
+			<field name="category_id" ref="hr_category_aportaciones_parafiscales"/>
+			<field name="code">SENA</field>
+			<field name="sequence">280</field>
+			<field name="appears_on_payslip" eval="False"/>
+            <field name="condition_select">none</field>
+            <field name="condition_python">
+result = (contract.wage) &lt;= (SMLV_Parametro * 10)
+            </field>
+            <field name="amount_select">code</field>
+            <field name="quantity">1.0</field>
+            <field name="amount_fix">0</field>
+			<field name="amount_python_compute">
+# if (IBC - NovedadesT) >= (SMLV_Parametro * 10):
+if (Contrato - NovedadesT) >= (SMLV_Parametro * 10):
+    result = round(((IBC - NovedadesT) * 0.005), 0)
+#if (IBC) >= (SMLV_Parametro * 10):
+#    result = round(((IBC) * 0.02), 0)
+else:
+    result = 0
+            </field>
+			<field name="active" eval="True"/>
+        </record>
+
+        <record id="hr_salary_rule_aportaciones_parafiscales" model="hr.salary.rule">
+			<field name="name">Total Parafiscales</field>
+			<field name="category_id" ref="hr_category_totales"/>
+			<field name="code">Parafiscales</field>
+			<field name="sequence">290</field>
+			<field name="appears_on_payslip" eval="True"/>
+            <field name="condition_select">none</field>
+            <field name="condition_python">
+            </field>
+            <field name="amount_select">code</field>
+            <field name="quantity">1.0</field>
+            <field name="amount_fix">0</field>
+			<field name="amount_python_compute">
+result = round(categories.Aportaciones_Parafiscales, 0)
+            </field>
+			<field name="active" eval="True"/>
+        </record>
+        <!-- 
+            # La "Cesantía" se debe liquidar sobre todos los ingresos salariales del trabajador durante el año compleo o los meses laborados, razón por la que se deben promediar independientemente, si es salario variable o si es un salario fijo que sufrió alguna variación.
+        -->
+
+        <record id="hr_salary_rule_cesantias_mensual" model="hr.salary.rule">
+			<field name="name">Cesantias mensual</field>
+			<field name="category_id" ref="hr_category_prestaciones_sociales"/>
+			<field name="code">Cesantias_mensual</field>
+			<field name="sequence">310</field>
+			<field name="appears_on_payslip" eval="False"/>
+            <field name="condition_select">none</field>
+            <field name="condition_python">
+            </field>
+            <field name="amount_select">code</field>
+            <field name="quantity">1.0</field>
+            <field name="amount_fix">0</field>
+			<field name="amount_python_compute">
+if contract.salario_integral:
+    result = 0
+else:
+    # dias = payslip.env['hr.contract'].get_worked_days(payslip, contract)
+    # result = round((Total_Devengado * dias / 360), 0)
+    result = round(((Total_Devengado - Pago_no_constitutivo) * 0.0833333), 0)
+            </field>
+			<field name="active" eval="True"/>
+        </record>
+
+        <!-- 
+            # La "Prima" se debe liquidar sobre todos los ingresos salariales del trabajador durante esos 6 meses, razón por la que se deben promediar independientemente de si es salario variable o si es un salario fijo que sufrió alguna variación.
+        -->
+
+        <record id="hr_salary_rule_prima_servicio" model="hr.salary.rule">
+			<field name="name">Prima Servicio</field>
+			<field name="category_id" ref="hr_category_prestaciones_sociales"/>
+			<field name="code">Prima</field>
+			<field name="sequence">320</field>
+			<field name="appears_on_payslip" eval="True"/>
+            <field name="condition_select">none</field>
+            <field name="condition_python">
+            </field>
+            <field name="amount_select">code</field>
+            <field name="quantity">1.0</field>
+            <field name="amount_fix">0</field>
+			<field name="amount_python_compute">
+if contract.salario_integral:
+    result = 0
+else:
+    # result = round(((Total_Devengado - Pago_no_constitutivo) * dias / 360), 0)
+    result = round(((Total_Devengado - Pago_no_constitutivo) * 0.0833333), 0)
+            </field>
+			<field name="active" eval="True"/>
+        </record>
+
+        <!-- 
+            https://www.gerencie.com/remuneracion-en-periodo-de-vacaciones.html
+            # Existen 2 formas de liquidar vacaciones ( Por tiempo y por liquidación por finiquito de contrato)
+            https://www.gerencie.com/liquidacion-de-las-vacaciones.html
+        -->
+
+        <record id="hr_salary_rule_int_cesantias" model="hr.salary.rule">
+			<field name="name">Int / Cesantias</field>
+			<field name="category_id" ref="hr_category_prestaciones_sociales"/>
+			<field name="code">ISC</field>
+			<field name="sequence">340</field>
+			<field name="appears_on_payslip" eval="True"/>
+            <field name="condition_select">none</field>
+            <field name="condition_python">
+            </field>
+            <field name="amount_select">code</field>
+            <field name="quantity">1.0</field>
+            <field name="amount_fix">0</field>
+			<field name="amount_python_compute">
+if contract.salario_integral:
+    result = 0
+else:
+    result = round((Cesantias_mensual * 0.12), 0)
+            </field>
+			<field name="active" eval="True"/>
+        </record>
+
+        <record id="hr_salary_rule_total_prestaciones_sociales" model="hr.salary.rule">
+			<field name="name">Total Prestaciones Sociales</field>
+			<field name="category_id" ref="hr_category_totales"/>
+			<field name="code">Total_Prestaciones_Sociales</field>
+			<field name="sequence">350</field>
+			<field name="appears_on_payslip" eval="True"/>
+            <field name="condition_select">none</field>
+            <field name="condition_python">
+            </field>
+            <field name="amount_select">code</field>
+            <field name="quantity">1.0</field>
+            <field name="amount_fix">0</field>
+			<field name="amount_python_compute">
+result = round(categories.Prestaciones_Sociales, 0)
+            </field>
+			<field name="active" eval="True"/>
+        </record>
+
+        <record id="hr_salary_rule_total_pagar" model="hr.salary.rule">
+			<field name="name">Total a Pagar</field>
+			<field name="category_id" ref="hr_category_totales"/>
+			<field name="code">Total_Pagar</field>
+			<field name="sequence">370</field>
+			<field name="appears_on_payslip" eval="True"/>
+            <field name="condition_select">none</field>
+            <field name="condition_python">
+            </field>
+            <field name="amount_select">code</field>
+            <field name="quantity">1.0</field>
+            <field name="amount_fix">0</field>
+			<field name="amount_python_compute">
+total = Total_Devengado + Total_Deducciones
+
+result = round(total, 0)
+            </field>
+			<field name="active" eval="True"/>
+        </record>
+
+        <record id="hr_salary_rule_por_minuto" model="hr.salary.rule">
+			<field name="name">Trabajado por minuto</field>
+			<field name="category_id" ref="hr_category_parametro"/>
+			<field name="code">trabajo_x_dias</field>
+			<field name="sequence">400</field>
+			<field name="appears_on_payslip" eval="False"/>
+            <field name="condition_select">none</field>
+            <field name="condition_python">
+            </field>
+            <field name="amount_select">code</field>
+            <field name="quantity">1.0</field>
+            <field name="amount_fix">0</field>
+			<field name="amount_python_compute">
+result = payslip.env['hr.contract'].get_miuntos_trabajados(contract, payslip)
+            </field>
+			<field name="active" eval="True"/>
+        </record>
+
+        <record id="hr_salary_total_costo_empresa" model="hr.salary.rule">
+			<field name="name">Total Costo Empresa</field>
+			<field name="category_id" ref="hr_category_total_costo_empresa"/>
+			<field name="code">costo_empresa</field>
+			<field name="sequence">400</field>
+			<field name="appears_on_payslip" eval="False"/>
+            <field name="condition_select">none</field>
+            <field name="condition_python">
+            </field>
+            <field name="amount_select">code</field>
+            <field name="quantity">1.0</field>
+            <field name="amount_fix">0</field>
+			<field name="amount_python_compute">
+result = Total_Devengado + Total_Seguridad_Social + Parafiscales + Total_Prestaciones_Sociales
+            </field>
+			<field name="active" eval="True"/>
+        </record>
+    </data>
+</odoo>

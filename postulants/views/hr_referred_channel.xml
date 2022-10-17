@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- HR Referred Channel Form View -->
+   <record id="hr_referred_channel_view_form" model="ir.ui.view">
+        <field name="name">hr.referred.channel.form</field>
+        <field name="model">hr.referred.channel</field>
+        <field name="arch" type="xml">
+            <form string="HR Referred Channel">
+                <sheet>
+                    <group colspan="4" col="4">
+                        <field name="name" required="1"/>
+                        <field name="description"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- HR Referred Channel Tree View -->
+    <record id="hr_referred_channel_view_tree" model="ir.ui.view">
+        <field name="name">hr.referred.channel.list</field>
+        <field name="model">hr.referred.channel</field>
+        <field name="arch" type="xml">
+            <tree string="HR Referred Channel">
+                <field name="name"/>
+                <field name="description"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- HR Referred Channel Action -->
+    <record id="hr_referred_channel_action" model="ir.actions.act_window">
+        <field name="name">HR Referred Channel</field>
+        <field name="res_model">hr.referred.channel</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- HR Referred Channel Menuitem -->
+    <menuitem
+        id="hr_referred_channel_menu_action"
+        name="HR Referred Channel"
+        groups="hr.group_hr_user"
+        action="hr_referred_channel_action"
+        parent="hr_employee_extended_werp.hr_curriculum_vitae_menu"/>
+
+</odoo>

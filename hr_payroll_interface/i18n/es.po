@@ -1,0 +1,678 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* hr_payroll_interface
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-03-22 08:50+0000\n"
+"PO-Revision-Date: 2019-03-22 08:50+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: hr_payroll_interface
+#: model_terms:ir.ui.view,arch_db:hr_payroll_interface.concepts_period_template
+msgid "<b>CMT - SUMMARY BY CONCEPTS - PERIOD</b>"
+msgstr "<b>CMT - RESUMEN POR CONCEPTOS - PERIODO</b>"
+
+#. module: hr_payroll_interface
+#: model_terms:ir.ui.view,arch_db:hr_payroll_interface.entity_of_pay_template
+msgid "<b>Corte</b>"
+msgstr "<b>Corte</b>"
+
+#. module: hr_payroll_interface
+#: model_terms:ir.ui.view,arch_db:hr_payroll_interface.entity_of_pay_template
+msgid "<b>Date</b>"
+msgstr "<b>Fecha</b>"
+
+#. module: hr_payroll_interface
+#: model_terms:ir.ui.view,arch_db:hr_payroll_interface.entity_of_pay_template
+msgid "<b>Department</b>"
+msgstr "<b>Departamento</b>"
+
+#. module: hr_payroll_interface
+#: model_terms:ir.ui.view,arch_db:hr_payroll_interface.entity_of_pay_template
+msgid "<b>Fax</b>"
+msgstr "<b>Fax</b>"
+
+#. module: hr_payroll_interface
+#: model_terms:ir.ui.view,arch_db:hr_payroll_interface.concepts_period_template
+msgid "<b>Grandson</b>"
+msgstr "<b>Neto</b>"
+
+#. module: hr_payroll_interface
+#: model_terms:ir.ui.view,arch_db:hr_payroll_interface.entity_of_pay_template
+msgid "<b>NIT</b>"
+msgstr "<b>NIT</b>"
+
+#. module: hr_payroll_interface
+#: model_terms:ir.ui.view,arch_db:hr_payroll_interface.concepts_period_template
+msgid "<b>Period:</b>"
+msgstr "<b>Periodo:</b>"
+
+#. module: hr_payroll_interface
+#: model_terms:ir.ui.view,arch_db:hr_payroll_interface.concepts_period_template
+msgid "<b>Quantity People</b>"
+msgstr "<b>Cantidad Personas</b>"
+
+#. module: hr_payroll_interface
+#: model_terms:ir.ui.view,arch_db:hr_payroll_interface.concepts_period_template
+msgid "<b>Rank Date:</b>"
+msgstr "<b>Rango Fecha:</b>"
+
+#. module: hr_payroll_interface
+#: model_terms:ir.ui.view,arch_db:hr_payroll_interface.entity_of_pay_template
+msgid "<b>Totales</b>"
+msgstr "<b>Totales</b>"
+
+#. module: hr_payroll_interface
+#: model_terms:ir.ui.view,arch_db:hr_payroll_interface.concepts_period_template
+msgid "<b>Type Period:</b>"
+msgstr "<b>Tipo Periodo:</b>"
+
+#. module: hr_payroll_interface
+#: model_terms:ir.ui.view,arch_db:hr_payroll_interface.entity_of_pay_template
+msgid "<b>  Address</b>"
+msgstr "<b>  Dirección</b>"
+
+#. module: hr_payroll_interface
+#: model_terms:ir.ui.view,arch_db:hr_payroll_interface.entity_of_pay_template
+msgid "<b>  Entity</b>"
+msgstr "<b>  Entidad</b>"
+
+#. module: hr_payroll_interface
+#: model_terms:ir.ui.view,arch_db:hr_payroll_interface.entity_of_pay_template
+msgid "<b>  Phone</b>"
+msgstr "<b>  Teléfono</b>"
+
+#. module: hr_payroll_interface
+#: model_terms:ir.ui.view,arch_db:hr_payroll_interface.entity_of_pay_template
+msgid "<b>  Sucursal</b>"
+msgstr "<b>  Sucursal</b>"
+
+#. module: hr_payroll_interface
+#: model_terms:ir.ui.view,arch_db:hr_payroll_interface.entity_of_pay_template
+msgid "<b>  Total Records</b>"
+msgstr "<b>  Total registros</b>"
+
+#. module: hr_payroll_interface
+#: model:mail.template,body_html:hr_payroll_interface.email_template_concepts_period
+msgid "<div style=\"margin: 0px; padding: 0px;\">\n"
+"                <p style=\"margin: 0px; padding: 0px; font-size: 13px;\">\n"
+"                    Here is in attachment there is CMT - SUMMARY BY CONCEPTS - PERIOD\n"
+"                    <br/>\n"
+"                    Best regards,<br/>\n"
+"                    % if user and user.signature:\n"
+"                    ${user.signature | safe}\n"
+"                    % endif\n"
+"                </p>\n"
+"            </div>\n"
+"        "
+msgstr "<div style=\"margin: 0px; padding: 0px;\">\n"
+"                <p style=\"margin: 0px; padding: 0px; font-size: 13px;\">\n"
+"                    Aquí está adjunto hay CMT - RESUMEN POR CONCEPTOS - PERÍODO\n"
+"                    <br/>\n"
+"                    Saludos cordiales,<br/>\n"
+"                    % if user and user.signature:\n"
+"                    ${user.signature | safe}\n"
+"                    % endif\n"
+"                </p>\n"
+"            </div>\n"
+"        "
+
+#. module: hr_payroll_interface
+#: model_terms:ir.ui.view,arch_db:hr_payroll_interface.concepts_period_template
+msgid "Accruals"
+msgstr "Devengos"
+
+#. module: hr_payroll_interface
+#: model:ir.model.fields,field_description:hr_payroll_interface.field_hr_payroll_interface__message_needaction
+msgid "Action Needed"
+msgstr "Accion necesaria"
+
+#. module: hr_payroll_interface
+#: model:ir.model.fields,field_description:hr_payroll_interface.field_hr_payroll_interface__activity_ids
+msgid "Activities"
+msgstr "Ocupaciones"
+
+#. module: hr_payroll_interface
+#: model:ir.model.fields,field_description:hr_payroll_interface.field_hr_payroll_interface__activity_state
+msgid "Activity State"
+msgstr "Estado de actividad"
+
+#. module: hr_payroll_interface
+#: model:ir.model.fields,field_description:hr_payroll_interface.field_hr_payroll_interface__message_attachment_count
+msgid "Attachment Count"
+msgstr "Recuento de archivos adjuntos"
+
+#. module: hr_payroll_interface
+#: model:ir.actions.report,name:hr_payroll_interface.action_report_concepts_period
+#: model:mail.template,subject:hr_payroll_interface.email_template_concepts_period
+msgid "CMT - SUMMARY BY CONCEPTS - PERIOD"
+msgstr "CMT - RESUMEN POR CONCEPTOS - PERIODO"
+
+#. module: hr_payroll_interface
+#: model_terms:ir.ui.view,arch_db:hr_payroll_interface.concepts_period_template
+msgid "CMT - SUMMARY OF CONCEPTS PER PERIOD (PAID)"
+msgstr "CMT - RESUMEN DE CONCEPTOS POR PERIODO (PAGADO)"
+
+#. module: hr_payroll_interface
+#: selection:hr.payroll.interface,state:0
+#: model_terms:ir.ui.view,arch_db:hr_payroll_interface.hr_payroll_interface_view_form
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: hr_payroll_interface
+#: model:ir.model.fields,field_description:hr_payroll_interface.field_hr_payroll_interface__company_id
+msgid "Company"
+msgstr "Empresa"
+
+#. module: hr_payroll_interface
+#: model_terms:ir.ui.view,arch_db:hr_payroll_interface.concepts_period_template
+msgid "Concept"
+msgstr "Concepto"
+
+#. module: hr_payroll_interface
+#: model:ir.model.fields,field_description:hr_payroll_interface.field_hr_payroll_interface__create_uid
+#: model:ir.model.fields,field_description:hr_payroll_interface.field_hr_type_interface__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: hr_payroll_interface
+#: model:ir.model.fields,field_description:hr_payroll_interface.field_hr_payroll_interface__create_date
+#: model:ir.model.fields,field_description:hr_payroll_interface.field_hr_type_interface__create_date
+msgid "Created on"
+msgstr "Creado en"
+
+#. module: hr_payroll_interface
+#: model_terms:ir.ui.view,arch_db:hr_payroll_interface.concepts_period_template
+msgid "Deductions"
+msgstr "Deducciones"
+
+#. module: hr_payroll_interface
+#: model:ir.model.fields,field_description:hr_payroll_interface.field_hr_payroll_interface__display_name
+#: model:ir.model.fields,field_description:hr_payroll_interface.field_hr_type_interface__display_name
+#: model:ir.model.fields,field_description:hr_payroll_interface.field_report_hr_payroll_interface_concepts_period_template__display_name
+msgid "Display Name"
+msgstr "Nombre para mostrar"
+
+#. module: hr_payroll_interface
+#: selection:hr.payroll.interface,state:0
+#: model_terms:ir.ui.view,arch_db:hr_payroll_interface.hr_payroll_interface_view_form
+msgid "Done"
+msgstr "Hecho"
+
+#. module: hr_payroll_interface
+#: selection:hr.payroll.interface,state:0
+#: model_terms:ir.ui.view,arch_db:hr_payroll_interface.hr_payroll_interface_view_form
+msgid "Draft"
+msgstr "Borrador"
+
+#. module: hr_payroll_interface
+#: model:ir.model.fields,field_description:hr_payroll_interface.field_hr_payroll_interface__end_date
+msgid "End Date"
+msgstr "Fecha final"
+
+#. module: hr_payroll_interface
+#: model:ir.model.fields,field_description:hr_payroll_interface.field_hr_payroll_interface__message_follower_ids
+msgid "Followers"
+msgstr "Seguidores"
+
+#. module: hr_payroll_interface
+#: model:ir.model.fields,field_description:hr_payroll_interface.field_hr_payroll_interface__message_channel_ids
+msgid "Followers (Channels)"
+msgstr "Seguidores (Canales)"
+
+#. module: hr_payroll_interface
+#: model:ir.model.fields,field_description:hr_payroll_interface.field_hr_payroll_interface__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "Seguidores (Socios)"
+
+#. module: hr_payroll_interface
+#: model:ir.model.fields,field_description:hr_payroll_interface.field_hr_type_interface__formats_ids
+msgid "Formats"
+msgstr "Los formatos"
+
+#. module: hr_payroll_interface
+#: model:ir.model.fields,field_description:hr_payroll_interface.field_hr_type_interface__from_done_ids
+msgid "From Done"
+msgstr "De Hecho"
+
+#. module: hr_payroll_interface
+#: model:ir.model.fields,field_description:hr_payroll_interface.field_hr_type_interface__from_draft_ids
+msgid "From Draft"
+msgstr "De borrador"
+
+#. module: hr_payroll_interface
+#: model:ir.actions.report,name:hr_payroll_interface.action_report_entity_of_pay
+msgid "GENERATION PAYMENT"
+msgstr "GENERACIÓN ENTIDAD"
+
+#. module: hr_payroll_interface
+#: model_terms:ir.ui.view,arch_db:hr_payroll_interface.entity_of_pay_template
+msgid "GENERATION PAYMENT ENTITY"
+msgstr "GENERACIÓN ENTIDAD PAGO"
+
+#. module: hr_payroll_interface
+#: model_terms:ir.ui.view,arch_db:hr_payroll_interface.entity_of_pay_template
+msgid "Grandson"
+msgstr "Neto"
+
+#. module: hr_payroll_interface
+#: model:ir.model,name:hr_payroll_interface.model_hr_payroll_interface
+msgid "Hr Payroll Interface"
+msgstr "Interfaz de nómina"
+
+#. module: hr_payroll_interface
+#: model:ir.model.fields,field_description:hr_payroll_interface.field_hr_payroll_interface__hr_type_interface_id
+msgid "Hr Type Interface"
+msgstr "Tipo de interfaz de Hr"
+
+#. module: hr_payroll_interface
+#: model:ir.model,name:hr_payroll_interface.model_hr_type_interface
+msgid "HrTypeInterface"
+msgstr "HrTypeInterface"
+
+#. module: hr_payroll_interface
+#: model:ir.model.fields,field_description:hr_payroll_interface.field_hr_payroll_interface__id
+#: model:ir.model.fields,field_description:hr_payroll_interface.field_hr_type_interface__id
+#: model:ir.model.fields,field_description:hr_payroll_interface.field_report_hr_payroll_interface_concepts_period_template__id
+#: model_terms:ir.ui.view,arch_db:hr_payroll_interface.entity_of_pay_template
+msgid "ID"
+msgstr "CARNÉ DE IDENTIDAD"
+
+#. module: hr_payroll_interface
+#: model:ir.model.fields,help:hr_payroll_interface.field_hr_payroll_interface__message_unread
+msgid "If checked new messages require your attention."
+msgstr "Si los nuevos mensajes marcados requieren su atención."
+
+#. module: hr_payroll_interface
+#: model:ir.model.fields,help:hr_payroll_interface.field_hr_payroll_interface__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "Si está marcado, los nuevos mensajes requieren su atención."
+
+#. module: hr_payroll_interface
+#: model:ir.model.fields,help:hr_payroll_interface.field_hr_payroll_interface__message_has_error
+msgid "If checked, some messages have a delivery error."
+msgstr "Si está marcado, algunos mensajes tienen un error de entrega."
+
+#. module: hr_payroll_interface
+#: model:ir.model.fields,field_description:hr_payroll_interface.field_hr_payroll_interface__message_is_follower
+msgid "Is Follower"
+msgstr "Es seguidor"
+
+#. module: hr_payroll_interface
+#: model:ir.model.fields,field_description:hr_payroll_interface.field_hr_payroll_interface____last_update
+#: model:ir.model.fields,field_description:hr_payroll_interface.field_hr_type_interface____last_update
+#: model:ir.model.fields,field_description:hr_payroll_interface.field_report_hr_payroll_interface_concepts_period_template____last_update
+msgid "Last Modified on"
+msgstr "Última modificación en"
+
+#. module: hr_payroll_interface
+#: model:ir.model.fields,field_description:hr_payroll_interface.field_hr_payroll_interface__write_uid
+#: model:ir.model.fields,field_description:hr_payroll_interface.field_hr_type_interface__write_uid
+msgid "Last Updated by"
+msgstr "Última actualización por"
+
+#. module: hr_payroll_interface
+#: model:ir.model.fields,field_description:hr_payroll_interface.field_hr_payroll_interface__write_date
+#: model:ir.model.fields,field_description:hr_payroll_interface.field_hr_type_interface__write_date
+msgid "Last Updated on"
+msgstr "Ultima actualizacion en"
+
+#. module: hr_payroll_interface
+#: model:ir.model.fields,field_description:hr_payroll_interface.field_hr_payroll_interface__message_main_attachment_id
+msgid "Main Attachment"
+msgstr "Accesorio principal"
+
+#. module: hr_payroll_interface
+#: model:ir.model.fields,field_description:hr_payroll_interface.field_hr_payroll_interface__message_has_error
+msgid "Message Delivery error"
+msgstr "Error en la entrega del mensaje"
+
+#. module: hr_payroll_interface
+#: model:ir.model.fields,field_description:hr_payroll_interface.field_hr_payroll_interface__message_ids
+msgid "Messages"
+msgstr "Mensajes"
+
+#. module: hr_payroll_interface
+#: model_terms:ir.ui.view,arch_db:hr_payroll_interface.entity_of_pay_template
+msgid "NOMINAGI\n"
+"                                <br/>"
+msgstr "NOMINAGI\n"
+"                                <br/>"
+
+#. module: hr_payroll_interface
+#: model_terms:ir.ui.view,arch_db:hr_payroll_interface.concepts_period_template
+msgid "NOMINAGI\n"
+"                            <br/>"
+msgstr "NOMINAGI\n"
+"                            <br/>"
+
+#. module: hr_payroll_interface
+#: model:ir.model.fields,field_description:hr_payroll_interface.field_hr_payroll_interface__name
+#: model:ir.model.fields,field_description:hr_payroll_interface.field_hr_type_interface__name
+msgid "Name"
+msgstr "Nombre"
+
+#. module: hr_payroll_interface
+#: model:ir.model.fields,field_description:hr_payroll_interface.field_hr_payroll_interface__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "Límite de la próxima actividad"
+
+#. module: hr_payroll_interface
+#: model:ir.model.fields,field_description:hr_payroll_interface.field_hr_payroll_interface__activity_summary
+msgid "Next Activity Summary"
+msgstr "Resumen de la siguiente actividad"
+
+#. module: hr_payroll_interface
+#: model:ir.model.fields,field_description:hr_payroll_interface.field_hr_payroll_interface__activity_type_id
+msgid "Next Activity Type"
+msgstr "Siguiente tipo de actividad"
+
+#. module: hr_payroll_interface
+#: model:ir.model.fields,field_description:hr_payroll_interface.field_hr_payroll_interface__message_needaction_counter
+msgid "Number of Actions"
+msgstr "Número de acciones"
+
+#. module: hr_payroll_interface
+#: model:ir.model.fields,field_description:hr_payroll_interface.field_hr_payroll_interface__message_has_error_counter
+msgid "Number of error"
+msgstr "Numero de error"
+
+#. module: hr_payroll_interface
+#: model:ir.model.fields,help:hr_payroll_interface.field_hr_payroll_interface__message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr "Número de mensajes que requieren una acción."
+
+#. module: hr_payroll_interface
+#: model:ir.model.fields,help:hr_payroll_interface.field_hr_payroll_interface__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "Número de mensajes con error de entrega"
+
+#. module: hr_payroll_interface
+#: model:ir.model.fields,help:hr_payroll_interface.field_hr_payroll_interface__message_unread_counter
+msgid "Number of unread messages"
+msgstr "Número de mensajes no leídos"
+
+#. module: hr_payroll_interface
+#: model_terms:ir.ui.view,arch_db:hr_payroll_interface.entity_of_pay_template
+msgid "Official"
+msgstr "Funcionario"
+
+#. module: hr_payroll_interface
+#: selection:hr.payroll.interface,activity_state:0
+msgid "Overdue"
+msgstr "Atrasado"
+
+#. module: hr_payroll_interface
+#: model_terms:ir.ui.view,arch_db:hr_payroll_interface.concepts_period_template
+msgid "Page: <span class=\"page\"/> of <span class=\"topage\"/>"
+msgstr Página: <span class = \"page\"/> of <span class =\"topage\"/>""
+
+#. module: hr_payroll_interface
+#: model_terms:ir.ui.view,arch_db:hr_payroll_interface.entity_of_pay_template
+msgid "Paid Account"
+msgstr "Cuenta de pago"
+
+#. module: hr_payroll_interface
+#: model_terms:ir.ui.view,arch_db:hr_payroll_interface.entity_of_pay_template
+msgid "Paying Night"
+msgstr "Noche de pago"
+
+#. module: hr_payroll_interface
+#: model:res.groups,name:hr_payroll_interface.group_payroll_administrator
+msgid "Payroll Administrator"
+msgstr "Administrador de Nómina"
+
+#. module: hr_payroll_interface
+#: model:ir.actions.act_window,name:hr_payroll_interface.hr_payroll_interface_action
+#: model:ir.ui.menu,name:hr_payroll_interface.hr_payroll_interface_menu_action
+msgid "Payroll Interface"
+msgstr "Interfaz de nómina"
+
+#. module: hr_payroll_interface
+#: model:ir.model.fields,field_description:hr_payroll_interface.field_hr_payroll_interface__payslip_ids
+msgid "Payslip"
+msgstr "Boleta de pago"
+
+#. module: hr_payroll_interface
+#: selection:hr.payroll.interface,activity_state:0
+msgid "Planned"
+msgstr "Planificado"
+
+#. module: hr_payroll_interface
+#: model_terms:ir.ui.view,arch_db:hr_payroll_interface.concepts_period_template
+msgid "Quantity"
+msgstr "Cantidad"
+
+#. module: hr_payroll_interface
+#: model_terms:ir.ui.view,arch_db:hr_payroll_interface.entity_of_pay_template
+msgid "Reference"
+msgstr "Referencia"
+
+#. module: hr_payroll_interface
+#: model:ir.model.fields,field_description:hr_payroll_interface.field_hr_payroll_interface__activity_user_id
+msgid "Responsible User"
+msgstr "Usuario responsable"
+
+#. module: hr_payroll_interface
+#: model_terms:ir.ui.view,arch_db:hr_payroll_interface.hr_payroll_interface_view_form
+msgid "Send Mail from Done"
+msgstr "Enviar correo desde Hecho"
+
+#. module: hr_payroll_interface
+#: model_terms:ir.ui.view,arch_db:hr_payroll_interface.hr_payroll_interface_view_form
+msgid "Send Mail from Draft"
+msgstr "Enviar correo desde borrador"
+
+#. module: hr_payroll_interface
+#: model:ir.model.fields,field_description:hr_payroll_interface.field_hr_payroll_interface__start_date
+msgid "Start Date"
+msgstr "Fecha de inicio"
+
+#. module: hr_payroll_interface
+#: model:ir.model.fields,field_description:hr_payroll_interface.field_hr_payroll_interface__state
+msgid "State"
+msgstr "Estado"
+
+#. module: hr_payroll_interface
+#: model:ir.model.fields,help:hr_payroll_interface.field_hr_payroll_interface__activity_state
+msgid "Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr "Estado basado en actividades\n"
+"Vencido: la fecha de vencimiento ya se ha pasado\n"
+"Hoy: la fecha de la actividad es hoy\n"
+"Planificado: Actividades futuras".
+
+#. module: hr_payroll_interface
+#: selection:hr.payroll.interface,activity_state:0
+msgid "Today"
+msgstr "Hoy"
+
+#. module: hr_payroll_interface
+#: model_terms:ir.ui.view,arch_db:hr_payroll_interface.entity_of_pay_template
+msgid "Total Inconsistency      0"
+msgstr "Inconsistencia total      0"
+
+#. module: hr_payroll_interface
+#: model:ir.actions.act_window,name:hr_payroll_interface.hr_type_interface_action
+#: model:ir.ui.menu,name:hr_payroll_interface.hr_type_interface_menu_action
+msgid "Type Interface"
+msgstr "Tipo de interfaz"
+
+#. module: hr_payroll_interface
+#: model:ir.model.fields,field_description:hr_payroll_interface.field_hr_payroll_interface__message_unread
+msgid "Unread Messages"
+msgstr "Mensajes no leídos"
+
+#. module: hr_payroll_interface
+#: model:ir.model.fields,field_description:hr_payroll_interface.field_hr_payroll_interface__message_unread_counter
+msgid "Unread Messages Counter"
+msgstr "Contador de mensajes no leídos"
+
+#. module: hr_payroll_interface
+#: model_terms:ir.ui.view,arch_db:hr_payroll_interface.entity_of_pay_template
+msgid "Value"
+msgstr "Valor"
+
+#. module: hr_payroll_interface
+#: model:ir.model.fields,field_description:hr_payroll_interface.field_hr_payroll_interface__website_message_ids
+msgid "Website Messages"
+msgstr "Mensajes del sitio web"
+
+#. module: hr_payroll_interface
+#: model:ir.model.fields,help:hr_payroll_interface.field_hr_payroll_interface__website_message_ids
+msgid "Website communication history"
+msgstr "Historial de comunicación del sitio web"
+
+#. module: hr_payroll_interface
+#: model:ir.model,name:hr_payroll_interface.model_report_hr_payroll_interface_concepts_period_template
+msgid "report.hr_payroll_interface.concepts_period_template"
+msgstr "report.hr_payroll_interface.concepts_period_template"
+
+#. module: hr_payroll_interface
+#: code:addons/hr_payroll_interface/wizard/interfaz_seguridad_social_wizard.py:34
+#: code:addons/werp/hr_payroll_interface/wizard/interfaz_seguridad_social_wizard.py:34
+#, python-format
+msgid "AccountName"
+msgstr "NombreCuenta"
+
+#. module: hr_payroll_interface
+#: code:addons/hr_payroll_interface/wizard/interfaz_seguridad_social_wizard.py:39
+#: code:addons/werp/hr_payroll_interface/wizard/interfaz_seguridad_social_wizard.py:39
+#, python-format
+msgid "Auxiliar"
+msgstr "Auxilios"
+
+#. module: hr_payroll_interface
+#: code:addons/hr_payroll_interface/wizard/interfaz_seguridad_social_wizard.py:35
+#: code:addons/werp/hr_payroll_interface/wizard/interfaz_seguridad_social_wizard.py:35
+#, python-format
+msgid "Base"
+msgstr "Base"
+
+#. module: hr_payroll_interface
+#: code:addons/hr_payroll_interface/wizard/interfaz_seguridad_social_wizard.py:37
+#: code:addons/werp/hr_payroll_interface/wizard/interfaz_seguridad_social_wizard.py:37
+#, python-format
+msgid "CLipro"
+msgstr "CLipro"
+
+#. module: hr_payroll_interface
+#: code:addons/hr_payroll_interface/wizard/interfaz_seguridad_social_wizard.py:36
+#: code:addons/werp/hr_payroll_interface/wizard/interfaz_seguridad_social_wizard.py:36
+#, python-format
+msgid "CostCenter"
+msgstr "CentroCosto"
+
+#. module: hr_payroll_interface
+#: code:addons/hr_payroll_interface/wizard/interfaz_seguridad_social_wizard.py:33
+#: code:addons/werp/hr_payroll_interface/wizard/interfaz_seguridad_social_wizard.py:33
+#, python-format
+msgid "Credit"
+msgstr "credito"
+
+#. module: hr_payroll_interface
+#: code:addons/hr_payroll_interface/wizard/interfaz_seguridad_social_wizard.py:28
+#: code:addons/werp/hr_payroll_interface/wizard/interfaz_seguridad_social_wizard.py:28
+#, python-format
+msgid "Date"
+msgstr "fecha"
+
+#. module: hr_payroll_interface
+#: code:addons/hr_payroll_interface/wizard/interfaz_seguridad_social_wizard.py:32
+#: code:addons/werp/hr_payroll_interface/wizard/interfaz_seguridad_social_wizard.py:32
+#, python-format
+msgid "Debit"
+msgstr "debito"
+
+#. module: hr_payroll_interface
+#: code:addons/hr_payroll_interface/wizard/interfaz_seguridad_social_wizard.py:41
+#: code:addons/werp/hr_payroll_interface/wizard/interfaz_seguridad_social_wizard.py:41
+#, python-format
+msgid "EconomicZone"
+msgstr "ZonaEconomica"
+
+#. module: hr_payroll_interface
+#: code:addons/hr_payroll_interface/wizard/interfaz_seguridad_social_wizard.py:27
+#: code:addons/werp/hr_payroll_interface/wizard/interfaz_seguridad_social_wizard.py:27
+#, python-format
+msgid "Item"
+msgstr "item"
+
+#. module: hr_payroll_interface
+#: code:addons/hr_payroll_interface/wizard/interfaz_seguridad_social_wizard.py:30
+#: code:addons/werp/hr_payroll_interface/wizard/interfaz_seguridad_social_wizard.py:30
+#, python-format
+msgid "Nittercero"
+msgstr "Nittercero"
+
+#. module: hr_payroll_interface
+#: code:addons/hr_payroll_interface/wizard/interfaz_seguridad_social_wizard.py:26
+#: code:addons/werp/hr_payroll_interface/wizard/interfaz_seguridad_social_wizard.py:26
+#, python-format
+msgid "Number"
+msgstr "numero"
+
+#. module: hr_payroll_interface
+#: code:addons/hr_payroll_interface/wizard/interfaz_seguridad_social_wizard.py:29
+#: code:addons/werp/hr_payroll_interface/wizard/interfaz_seguridad_social_wizard.py:29
+#, python-format
+msgid "Numberaccount"
+msgstr "numerocuenta"
+
+#. module: hr_payroll_interface
+#: code:addons/hr_payroll_interface/wizard/interfaz_seguridad_social_wizard.py:40
+#: code:addons/werp/hr_payroll_interface/wizard/interfaz_seguridad_social_wizard.py:40
+#, python-format
+msgid "Salarytype"
+msgstr "tiposalario"
+
+#. module: hr_payroll_interface
+#: code:addons/hr_payroll_interface/wizard/interfaz_seguridad_social_wizard.py:25
+#: code:addons/werp/hr_payroll_interface/wizard/interfaz_seguridad_social_wizard.py:25
+#, python-format
+msgid "Type"
+msgstr "tipo"
+
+#. module: hr_payroll_interface
+#: code:addons/hr_payroll_interface/wizard/interfaz_seguridad_social_wizard.py:31
+#: code:addons/werp/hr_payroll_interface/wizard/interfaz_seguridad_social_wizard.py:31
+#, python-format
+msgid "Cheque"
+msgstr "Cheque"
+
+#. module: hr_payroll_interface
+#: code:addons/hr_payroll_interface/wizard/interfaz_seguridad_social_wizard.py:38
+#: code:addons/werp/hr_payroll_interface/wizard/interfaz_seguridad_social_wizard.py:38
+#: model:ir.model.fields,field_description:hr_payroll_interface.field_hr_payroll_interface__company_id
+#, python-format
+msgid "Company"
+msgstr "Empresa"
+
+#. module: hr_payroll_interface
+#: code:addons/hr_payroll_interface/wizard/interfaz_seguridad_social_wizard.py:42
+#: code:addons/werp/hr_payroll_interface/wizard/interfaz_seguridad_social_wizard.py:42
+#, python-format
+msgid "NCOM"
+msgstr "NCOM"
+
+#. module: hr_payroll_interface
+#: code:addons/hr_payroll_interface/wizard/interfaz_seguridad_social_wizard.py:43
+#: code:addons/werp/hr_payroll_interface/wizard/interfaz_seguridad_social_wizard.py:43
+#, python-format
+msgid "CODEMPRESA"
+msgstr "CODEMPRESA"
+
+#. module: hr_payroll_interface
+#: model_terms:ir.ui.view,arch_db:hr_payroll_interface.interfaz_seguridad_social_wizard_form_view
+msgid "Print"
+msgstr "Impresión"

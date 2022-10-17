@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2019-TODAY WSuite Products <wsuite-products@wsuite.com>
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html). -->
+<odoo>
+
+    <record id="edit_holiday_status_form_inherit" model="ir.ui.view">
+        <field name="name">hr.leave.type.view.form.inherit</field>
+        <field name="model">hr.leave.type</field>
+        <field name="inherit_id"
+               ref="hr_holidays.edit_holiday_status_form"/>
+        <field name="arch" type="xml">
+            <field name="time_type" position="after">
+                <field name="vacation_pay_31"/>
+                <field name="is_sumar_en_nomina"/>
+                <field name="no_count_in_payroll"/>
+                <field name="autocalculate_leave"/>
+                <field name="no_count_rent"/>
+                <field name="exclude_calculate_payslip"/>
+            </field>
+            <xpath expr="//sheet[1]" position="after">
+                <div class="oe_chatter">
+                    <field name="message_follower_ids"
+                           widget="mail_followers"/>
+                    <field name="activity_ids"
+                           widget="mail_activity"/>
+                    <field name="message_ids"
+                           widget="mail_thread"/>
+                </div>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_holiday_status_normal_tree_inherit_autocalculate"
+            model="ir.ui.view">
+        <field name="name">hr.leave.type.view.tree.inherit.autocalculate</field>
+        <field name="model">hr.leave.type</field>
+        <field name="inherit_id"
+               ref="hr_holidays.view_holiday_status_normal_tree"/>
+        <field name="arch" type="xml">
+            <field name="double_validation"
+                   position="after">
+                <field name="autocalculate_leave"/>
+            </field>
+        </field>
+    </record>
+
+</odoo>

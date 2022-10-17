@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="hr_nivel_riesgos_1" model="hr.nivel.riesgos">
+            <field name="name">Riesgo I</field>
+            <field name="tarifa">0.00522</field>
+        </record>
+
+        <record id="hr_nivel_riesgos_2" model="hr.nivel.riesgos">
+            <field name="name">Riesgo II</field>
+            <field name="tarifa">0.01044</field>
+        </record>
+
+        <record id="hr_nivel_riesgos_3" model="hr.nivel.riesgos">
+            <field name="name">Riesgo III</field>
+            <field name="tarifa">0.02436</field>
+        </record>
+
+        <record id="hr_nivel_riesgos_4" model="hr.nivel.riesgos">
+            <field name="name">Riesgo IV</field>
+            <field name="tarifa">0.0435</field>
+        </record>
+
+        <record id="hr_nivel_riesgos_5" model="hr.nivel.riesgos">
+            <field name="name">Riesgo V</field>
+            <field name="tarifa">0.0696</field>
+        </record>
+    </data>
+</odoo>

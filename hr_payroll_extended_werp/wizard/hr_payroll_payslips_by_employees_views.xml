@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_hr_payslip_by_employees_inherited" model="ir.ui.view">
+        <field name="name">hr_payroll_payslip_employees_inherited</field>
+        <field name="model">hr.payslip.employees</field>
+        <field name="inherit_id"
+               ref="hr_payroll.view_hr_payslip_by_employees"/>
+        <field name="arch" type="xml">
+<!--             <xpath expr="//button[@name='compute_sheet']" position="replace">
+                <button icon="fa-cogs" string="Generate" name="compute_sheet" type="object" class="oe_highlight"  />
+            </xpath> -->
+            <xpath expr="//button[@name='compute_sheet']" position="after">
+                <button icon="fa-cogs" string="Generate with Thread"
+                        name="compute_sheet_1" type="object"
+                        class="oe_highlight"/>
+            </xpath>
+            <field name="employee_ids" position="attributes">
+                <attribute name="domain">[('is_required_you', '=', False)]</attribute>
+                <attribute name="context">{'default_is_required_you': False}</attribute>
+            </field>
+        </field>
+    </record>
+
+    <record id="hr_payslip_employees_confirm_wizard" model="ir.ui.view">
+        <field name="name">hr.payslip.employees.confirm.wizard</field>
+        <field name="model">hr.payslip.employees.confirm.wizard</field>
+        <field name="arch" type="xml">
+            <form>
+                <field name="message"/>
+                <footer>
+                    <button string="OK"
+                            class="btn-primary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="other_db_assign_brand_wizard_form" model="ir.ui.view">
+        <field name="name">multi.action.accumulate</field>
+        <field name="model">multi.action.accumulate</field>
+        <field name="arch" type="xml">
+            <form string="Process Multiple Action Accumulate">
+                <group>
+                    <field name="hr_payslip_ids" required="1"/>
+                </group>
+                <footer>
+                    <button name="action_acumulate" type="object"
+                            string="Process Accumulate"
+                            class="oe_right oe_highlight"/>
+                    <button string="Cancel" class="oe_right"
+                            special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_multi_action_accumulate_wizard"
+            model="ir.actions.act_window">
+        <field name="name">Process Action Accumulate</field>
+        <field name="res_model">multi.action.accumulate</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+        <field name="binding_model_id"
+               ref="hr_payroll.model_hr_payslip"/>
+    </record>
+
+</odoo>

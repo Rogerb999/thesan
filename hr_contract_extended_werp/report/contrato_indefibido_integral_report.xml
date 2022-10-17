@@ -1,0 +1,429 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="contrato_indefibido_integral">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="doc">
+                    <t t-call="web.external_layout">
+                        <div class="page" t-foreach="docs" t-as="object" style="page-break-after:always;padding-right:60px;padding-left:60px;">
+                            <div class="oe_structure"/>
+                            <br/>
+                            <h6 align="center"><b>ONTRATO DE TRABAJO A TÉRMINO INDEFINIDO <br/>
+                                                CON PERSONAL DE DIRECCIÓN, MANEJO Y CONFIANZA</b></h6>
+                            <br/>
+                            <t t-set="employee_id" t-value="doc.employee_id"/>
+                            <t t-set="company_id" t-value="doc.company_id"/>
+                            <table class="table table-sm borderless center" style="font-size: 14px;">
+                                <tr>
+                                    <td width="45%"><b>NOMBRE DEL EMPLEADOR</b></td>
+                                    <td width="3%">:</td>
+                                    <td><t t-esc="company_id.name"/></td>
+                                </tr>
+                                <tr>
+                                    <td><b>NOMBRE REPRESENTANTE EMPRESA</b></td>
+                                    <td width="3%">:</td>
+                                    <td><t t-esc="company_id.legal_representative_id.name"/></td>
+                                </tr>
+                                <tr>
+                                    <td><b>C. C.REPRESENTANTE EMPRESA</b></td>
+                                    <td width="3%">:</td>
+                                    <td>
+                                        <t t-esc="company_id.legal_representative_id.identification_id"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><b>DIRECCION DEL EMPLEADOR</b></td>
+                                    <td width="3%">:</td>
+                                    <td><t t-esc="company_id.street"/></td>
+                                </tr>
+                                <tr>
+                                    <td><b>NOMBRE DEL TRABAJADOR</b></td>
+                                    <td width="3%">:</td>
+                                    <td><t t-esc="employee_id.name"/></td>
+                                </tr>
+                                <tr>
+                                    <td><b>C.C. DEL TRABAJADOR</b></td>
+                                    <td width="3%">:</td>
+                                    <td><t t-esc="employee_id.identification_id"/></td>
+                                </tr>
+                                <tr>
+                                    <td><b>DIRECCIÓN DEL TRABAJADOR</b></td>
+                                    <td width="3%">:</td>
+                                    <td>
+                                        <t t-esc="employee_id.address_home_id.street"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><b>FECHA DE INGRESO</b></td>
+                                    <td width="3%">:</td>
+                                    <td><t t-esc="doc.date_start"/></td>
+                                </tr>
+                                <tr>
+                                    <td><b>CARGO</b></td>
+                                    <td width="3%">:</td>
+                                     <td><t t-esc="doc.job_id.name"/></td>
+                                </tr>
+                                <tr>
+                                    <td><b>SALARIO INTEGRA</b></td>
+                                    <td width="3%">:</td>
+                                    <td>
+                                        <t t-esc="'%.2f' % (doc.fix_wage_amount)"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><b>BENEFICIO NO SALARIAL</b></td>
+                                    <td width="3%">:</td>
+                                    <td>
+                                        <t t-esc="'%.2f' % (doc.flex_wage_amount)"/>
+                                    </td>
+                                </tr>
+                            </table>
+                            <table class="table table-sm borderless center" style="font-size: 14px;">
+                                <tr>
+                                    <td colspan="3">
+                                        <b>ESTE BENEFICIO NO SALARIAL SERA DISTRIBUIDO EN LOS SIGUIENTES CONCEPTOS:</b>
+                                    </td>
+                                </tr>
+                                <t t-foreach="doc.flex_wage_ids" t-as="flex_wage_id">
+                                    <tr>
+                                        <td width="45%">
+                                            <b><t t-esc="flex_wage_id.salary_rule_id.name"/></b>
+                                        </td>
+                                        <td width="3%">:</td>
+                                        <td><t t-esc="'%.2f' % (flex_wage_id.amount)"/></td>
+                                    </tr>
+                                </t>
+                            </table>
+                            <br/>
+                            <p class="text-justify" style="font-size: 14px;">
+                                Entre el <b>EMPLEADOR</b> y el <b>TRABAJADOR</b>, de las condiciones indicadas anteriormente, identificados como aparece al pie de sus firmas, se ha celebrado el presente contrato individual de trabajo, el cual se regirá por las siguientes cláusulas: 
+                            </p>
+                            <p class="text-justify" style="font-size: 14px;">
+                                <b>Primera.- Objeto del Contrato:</b> El <b>EMPLEADOR</b> contrata los servicios personales del <b>TRABAJADOR</b> y éste se obliga a:
+                                <br/>
+                                    <ol class="text-justify" style="font-size: 14px;padding-left:65px;">
+                                        <li>Poner al servicio del <b>EMPLEADOR</b> toda su capacidad normal de trabajo, en el desempeño de las funciones propias del cargo relacionado al inicio de éste documento y en las labores anexas y complementarias del mismo, de conformidad con las órdenes, instrucciones, procedimientos y metas que le indique el EMPLEADOR, directamente o a través de sus representantes;</li>
+                                        <li>Prestar sus servicios en forma exclusiva al <b>EMPLEADOR</b>; es decir, a no prestar directa ni indirectamente servicios laborales a otros empleadores, ni a trabajar por cuenta propia en el mismo oficio, durante la vigencia de éste contrato;</li>
+                                        <li>Velar por la conservación y restituir en buen estado, salvo el deterioro por el uso natural, los elementos y útiles que se le entreguen para el desempeño de sus labores;</li>
+                                        <li>Hacer saber al <b>EMPLEADOR</b> de manera oportuna toda información de interés para la Empresa;</li>
+                                        <li>Responder al <b>EMPLEADOR</b> por los perjuicios que le ocasionare la toma de decisiones por causa o con ocasión de funciones que no le hayan sido encomendadas o por cualquier extralimitación en las que le corresponda;</li>
+                                        <li>Cumplir toda otra obligación y prohibición que se desprenda de las labores principales, anexas, conexas y complementarias que según lo anterior y de acuerdo con su cargo incumban al <b>TRABAJADOR</b>;</li>
+                                        <li>Asistir a todas las reuniones que le sean programadas, en los horarios señalados por la Compañía;</li>
+                                        <li>Desempeñar cualquier otra función que se le asigne, relacionada con los negocios del <b>EMPLEADOR</b> y en el lugar que éste señale; </li>
+                                        <li>Laborar dentro del horario que señale el <b>EMPLEADOR;</b></li>
+                                        <li>Acatar y cumplir las órdenes e instrucciones impartidas por el <b>EMPLEADOR</b> o por sus representantes;</li>
+                                        <li>No revelar a terceros, sin autorización expresa y escrita del <b>EMPLEADOR</b>, ninguna información que conozca o llegue a conocer con ocasión del desempeño de sus funciones; </li>
+                                        <li>Utilizar las Herramientas en actividades únicamente de carácter laboral y permitir su revisión sólo y exclusivamente por los técnicos designados por el <b>EMPLEADOR</b>.</li>
+                                    </ol>
+                            </p>
+                            <p class="text-justify" style="font-size: 14px;">
+                                <b>PARÁGRAFO PRIMERO</b>: El <b>TRABAJADOR</b> en desarrollo de las funciones a él asignadas por el <b>EMPLEADOR</b>, prestará sus servicios en forma coetánea a cualquier persona natural o jurídica que por instrucciones determine el <b>EMPLEADOR</b> y en especial a aquellas sociedades filiales, subsidiarias, matrices, subordinadas y demás empresas relacionadas con el <b>EMPLEADOR</b>, sin que ello implique la coexistencia y/o concurrencia de contratos de trabajo o de prestación de servicios, pues para todos los efectos legales, laborales, prestacionales y parafiscales se entiende que el único <b>EMPLEADOR</b> es y será <b><u>SANCHO BBDO</u></b> y, por tanto, los servicios prestados a cualquier otra persona natural o jurídica que indique el <b>EMPLEADOR</b> no implican ni generan concurrencia o coexistencia de contratos.
+                            </p>
+                            <p class="text-justify" style="font-size: 14px;">
+                                <b>PARÁGRAFO SEGUNDO</b>: Teniendo en cuenta las particulares funciones que realiza el <b>TRABAJADOR</b> dentro del giro del negocio del <b>EMPLEADOR</b>, las partes reconocen y aceptan que el <b>TRABAJADOR</b> realiza funciones de dirección, confianza y manejo, con todas las implicaciones que ello conlleva, particularmente las contenidas en el literal a) del artículo 162, el artículo 389 y el numeral 3º del artículo 190 del Código Sustantivo del Trabajo, razón por la cual está excluido de la jornada máxima legal.
+
+                            </p>
+                            <p class="text-justify" style="font-size: 14px;">
+                                <b>Segunda.-Término de Duración</b>: El presente contrato tendrá una duración indefinida, mientras subsistan las causas que le dieron origen y la materia del trabajo.
+                            </p>
+                            <p class="text-justify" style="font-size: 14px;">
+                                <b>Tercera.- Período de Prueba</b>: Las partes convienen en establecer un período de prueba el cual será equivalente a dos (2) meses de conformidad con el artículo 7º de la Ley 50 de 1990 (artículo 78 del Código Sustantivo del Trabajo). Durante el período de prueba, tanto el <b>EMPLEADOR</b>, como el <b>TRABAJADOR</b> podrán dar por terminado el presente contrato en cualquier momento en forma unilateral y sin previo aviso, sin que haya lugar al pago de indemnización alguna a favor de la otra parte.
+                            </p>
+                            <p class="text-justify" style="font-size: 14px;">
+                                <b>Cuarta.- Remuneración</b>: EL <b>EMPLEADOR</b> se obliga a pagar a EL <b>TRABAJADOR</b> como retribución de sus servicios la suma mensual indicada en el encabezado, pagadero en quincenas vencidas en las fechas que señale el <b>EMPLEADOR</b> para estos efectos, a título de salario integral, por la suma  $moneda legal colombiana, discriminados así: (i) Salario: la suma de  $, y; (ii) Factor Prestacional: la suma de $. El salario integral pactado no solamente incluye la remuneración por trabajo ordinario, sino que compensa también de antemano todas las prestaciones sociales, cesantías, primas de servicios legales o extralegales, recargos por trabajo suplementario diurno y nocturno, trabajo en domingo o día festivo, subsidios y suministros en especie y viáticos, con excepción de las vacaciones, las cuales serán remuneradas de conformidad con lo estipulado en el Código Sustantivo del Trabajo.
+
+                            </p>
+                            <p class="text-justify" style="font-size: 14px;">
+                                El salario integral pactado no estará exento de las cotizaciones a la seguridad social, ni de los aportes al Sena, ICBF y Cajas de Compensación Familiar, pero en el caso de estas tres últimas entidades, los aportes se disminuirán en un treinta por ciento (30%).
+                            </p>
+                            <p class="text-justify" style="font-size: 14px;">
+                            Dentro de éste pago se encuentra incluida la remuneración de todos los días del mes, incluyendo los dominicales y festivos de que tratan los capítulos I y II del Título VII del Código Sustantivo del Trabajo. Se aclara y se conviene que en los casos en los que EL <b>TRABAJADOR</b> devengue comisiones o cualquiera otra modalidad de salario variable, el <t t-esc="doc.fix_wage_perc"/>% de dichos ingresos constituye remuneración ordinaria y el <t t-esc="doc.flex_wage_perc"/>% restante está destinado a remunerar el descanso en los días dominicales y festivos.</p>
+                            <p class="text-justify" style="font-size: 14px;">
+                            <b>Quinta.- Beneficios no Salariales</b>: El <b>TRABAJADOR</b> adicionalmente disfrutará de un cupo de BENEFICIOS (no salariales) mensual por la suma máxima de <t t-esc="doc.flex_wage_amount"/> PESOS MONEDA CORRIENTE ($), conformado por los conceptos  que a continuación se indican, los cuales fueron los beneficios elegidos y aceptados por el <b>TRABAJADOR</b>, que manifiesta conocer las características, parámetros y condiciones del reconocimiento de los mismos,  así mismo el <b>TRABAJADOR</b> manifiesta que los beneficios salariales  escogidos se ajustan a sus necesidades y conveniencias económicas y personales.
+                            </p>
+                            <table class="table table-sm borderless center" style="font-size: 14px;">
+                                <t t-foreach="doc.flex_wage_ids" t-as="flex_wage_id">
+                                    <tr>
+                                        <td width="45%"><b><t t-esc="flex_wage_id.salary_rule_id.name"/></b></td>
+                                        <td width="3%">:</td>
+                                        <td><t t-esc="'%.2f' % (flex_wage_id.amount)"/></td>
+                                    </tr>
+                                </t>
+                            </table>
+                            <p class="text-justify" style="font-size: 14px;">
+                                <b>PARÁGRAFO PRIMERO:</b> Las partes reiteran que la totalidad de los beneficios, prerrogativas y en general acreencias en dinero o en especie contenidos en esta cláusula y los pagos que el <b>EMPLEADOR</b> realice a terceros a favor del <b>TRABAJADOR</b>, se consideran como de naturaleza no salarial y, por lo tanto, carecen de incidencia salarial, prestacional, indemnizatoria y parafiscal conforme a lo consagrado en los artículos 15 y 16 de la ley 50 de 1.990 y el artículo 17 de la ley 344 de 1.996. De igual manera, se consideran como no salariales todos aquellos beneficios, prerrogativas y en general acreencias que se reconozcan por mera liberalidad o para facilitar la gestión contratada, tales como bonificaciones ocasionales o participación en utilidades.
+                            </p>
+                            <p class="text-justify" style="font-size: 14px;">
+                                <b>PARÁGRAFO SEGUNDO</b>: Las partes de común acuerdo manifiestan que los BENEFICIOS consagrados en esta cláusula se incrementarán en el mismo porcentaje y periodicidad que la Asignación Salarial Básica.
+                            </p>
+                            <p class="text-justify" style="font-size: 14px;">
+                                <b>PARÁGRAFO TERCERO</b>: La totalidad de los beneficios no salariales y reconocimientos contenidos en esta cláusula, serán imputables o compensables con cualquier valor o suma adicional que deba reconocer el <b>EMPLEADOR</b> al <b>TRABAJADOR</b> de origen convencional, judicial, administrativo y, en general, de naturaleza extralegal. Tal imputabilidad se aplicará igualmente en los casos de aplicación del principio de igualdad contenido en los artículos 13 de la C.P y 143 del CST. De la misma manera, se entiende que todo lo recibido por el <b>TRABAJADOR</b> durante la vigencia de este contrato es imputable a lo que pudiera corresponderle en la eventualidad de una decisión judicial que pudiera afectar total o parcialmente el presente Otrosí.
+                            </p>
+                            <p class="text-justify" style="font-size: 14px;">
+                                <b>PARÁGRAFO CUARTO</b>: La composición, cuantía, características y, en general, condiciones de los beneficios no salariales y reconocimientos contenidos en esta cláusula, podrá ser modificada por el <b>EMPLEADOR</b> en los casos en que se presenten reformas legales, fiscales o laborales.
+                            </p>
+                            <p class="text-justify" style="font-size: 14px;">
+                                <b>PARÁGRAFO QUINTO</b>: Durante el periodo de vacaciones disfrutadas, incapacidades transitorias y licencias de maternidad, se continuarán reconociendo los beneficios indicados en esta cláusula.
+                            </p>
+                            <p class="text-justify" style="font-size: 14px;">
+                                <b>PARAGRAFO SEXTO</b>: EL <b>EMPLEADOR</b> al momento de compensación total o parcial de las vacaciones reconocerá al <b>TRABAJADOR</b> una suma por cada treinta (30) días compensados por concepto de vacaciones, una bonificación adicional  sumada  a las vacaciones equivalente al 53,85 % calculado sobre la ASIGNACION SALARIAL BASICA INTEGRAL o proporcional por fracciones de tiempo inferiores a treinta (30) días.
+                            </p>
+                            <p class="text-justify" style="font-size: 14px;">
+                                <b>PARAGRAFO SEPTIMO</b>: De manera adicional y en los casos de reconocimiento de beneficios extralegales cuya base aprecie la ASIGNACION SALARIAL BASICA INTEGRAL, el <b>EMPLEADOR</b> le reconocerá sobre dichos beneficios extralegales al <b>TRABAJADOR</b> un valor adicional y equivalente al 53,85 % calculado sobre los beneficios extralegales pagados.
+                            </p>
+                            <p class="text-justify" style="font-size: 14px;">
+                                <b>Sexta.- Herramientas de Trabajo</b>: En consideración a las funciones de El <b>TRABAJADOR</b>, el <b>EMPLEADOR</b> le reconocerá al <b>TRABAJADOR</b> como herramienta de trabajo (no salarial) y a título de medios de transporte la suma de $0, en vales de gasolina. Dicha suma, la cual es de carácter no salarial, pretende cubrir los gastos de mantenimiento y combustible en que debe incurrir mensualmente el <b>TRABAJADOR</b> para darle cumplimiento a las funciones asignadas.
+                            </p>
+                            <p class="text-justify" style="font-size: 14px;">
+                                <b>Séptima.- Lugar de la Prestación del Servicio</b>: Las partes acuerdan que el <b>TRABAJADOR</b> prestará sus servicios en las instalaciones de la Compañía ubicadas en la ciudad de Bogotá o en cualquier lugar de la Republica de Colombia. No obstante lo anterior,  el <b>EMPLEADOR</b> y el <b>TRABAJADOR</b> podrán convenir que el trabajo se preste en lugar distinto del inicialmente pactado, siempre que tales traslados no desmejoren las condiciones laborales y/o de remuneración del <b>TRABAJADOR</b>, o impliquen perjuicios para éste. Los gastos que se originen con ocasión del traslado serán cubiertos por el <b>EMPLEADOR</b>, de conformidad con el numeral 8º del artículo 57 del Código Sustantivo del Trabajo. El <b>TRABAJADOR</b> se obliga a aceptar los cambios de oficio que decida el <b>EMPLEADOR</b> dentro de su poder subordinante, siempre que se respeten las condiciones laborales del <b>TRABAJADOR</b> y no se le causen perjuicios y sin que afecte el honor, la dignidad y los derechos mínimos del <b>TRABAJADOR </b>
+                            </p>
+                            <p class="text-justify" style="font-size: 14px;">
+                                <b>Octava.- Propiedad Industrial y Derechos de Autor: A. PROPIEDAD INTELECTUAL</b>: Todos los derechos patrimoniales de las obras y elementos objeto de derechos de propiedad intelectual (entiéndase tanto propiedad industrial como derechos de autor y conexos), en especial obras relacionadas con la industria de la publicidad, el mercadeo y los medios (tales como, pero no limitadas a fotografías, dibujos, música, estrategias de publicidad, estudios de mercado, diseños para páginas web, videos y obras literarias (en adelante, la “<u>Propiedad Intelectual</u>”), que sean, creadas, producidas, desarrolladas, adaptadas, compendiadas, transformadas y/o traducidas, entre otras, por el <b>TRABAJADOR</b> durante la vigencia del Contrato Laboral, son de propiedad exclusiva del <b>EMPLEADOR</b>, sin limitación temporal, territorial o respecto de los medios para su explotación y en general sin limitación alguna. El <b>TRABAJADOR</b> manifiesta y reconoce que la Propiedad Intelectual y especialmente aquella protegida por las normas del derecho de autor, son el resultado de la iniciativa, riesgo, orientación, dirección y encargo laboral del <b>EMPLEADOR</b>, siendo uno de los principales objetos del Contrato Laboral la creación de Propiedad Intelectual. En consecuencia el <b>TRABAJADOR</b> reconoce que no tiene ni puede llegar a tener ningún derecho patrimonial sobre la Propiedad Intelectual. En todo caso y de ser necesario, el <b>TRABAJADOR</b> se obliga para efectos de esta cláusula, a hacer, suscribir, reconocer y entregar, directamente o por interpuesta persona, y a solicitud del <b>EMPLEADOR</b>, cualesquiera actos, escrituras, contratos y documentos, según se requieran, para dar cumplimiento al presente otrosi y/o para trasladar a favor del <b>EMPLEADOR</b> los derechos patrimoniales sobre la Propiedad Intelectual.<b>B. DERECHOS DE AUTOR</b>: Además de lo establecido en la anterior Cláusula A, respecto de la Propiedad Intelectual protegida por las normas del derecho de autor, las Partes pactan contrario a lo establecido en el artículo 23 de la ley 23 de 1982, por lo que la cesión de los derechos patrimoniales de la Propiedad Intelectual se hace durante la vida del <b>TRABAJADOR</b> y ochenta años más. En caso de que la protección legal de los derechos patrimoniales se aumente, el plazo de la cesión se aumentará respectivamente. 
+                            </p>
+                            <p class="text-justify" style="font-size: 14px;">
+                                <b>PARÁGRAFO</b>: El <b>TRABAJADOR</b> por medio del presente contrato <u>solicita y exige</u> de forma indefinida al <b>EMPLEADOR</b>, el anonimato respecto de la Propiedad Intelectual que llegue, entre otras, a crear, producir, desarrollar, adaptar, compendiar, transformar y/o traducir. 
+                            </p>
+                            <p class="text-justify" style="font-size: 14px;">
+                                <b>Novena.- Confidencialidad</b>: El <b>TRABAJADOR</b> se abstendrá, durante la vigencia del presente contrato o con posterioridad a su terminación por cualquier causa de revelar, suministrar, vender, arrendar, publicar, copiar, reproducir, remover, disponer, transferir y en general utilizar directa o indirectamente en favor propio o de otras personas en forma total o parcial, cualquiera que sea su finalidad, información confidencial o privilegiada del <b>EMPLEADOR</b> o de las sociedades filiales, subsidiarias, matrices, subordinadas, relacionadas o empresas, personas naturales, accionistas, clientes o terceros relacionados con éste, a la cual tenga acceso o de la cual tenga conocimiento en desarrollo de su cargo o con ocasión de éste sin que medie autorización previa, expresa y escrita del <b>EMPLEADOR</b> para el efecto.  
+                            </p>
+                            <p class="text-justify" style="font-size: 14px;">
+                                Las Partes declaran que es de carácter confidencial cualquier información, documento o procedimiento del <b>EMPLEADOR</b> o de las sociedades filiales, subsidiarias, matrices, subordinadas, relacionadas o empresas, personas naturales, accionistas, clientes o terceros relacionados con éste o sobre el cual tenga conocimiento el <b>TRABAJADOR</b> en desarrollo de su cargo o con ocasión de éste, que no sea de conocimiento público, especialmente aquella información privilegiada respecto de operaciones, transacciones o negocios, o el valor de los mismos, que resulte sensible para la operación del <b>EMPLEADOR</b> o de terceros. En tal sentido, el <b>TRABAJADOR</b> no sólo se obliga a no dar a conocer la información confidencial que llegue a conocer, sino que se abstendrá de utilizar dicha información para la obtención de un provecho personal o para terceros.
+                            </p>
+                            <p class="text-justify" style="font-size: 14px;">
+                                El <b>TRABAJADOR</b>, a la terminación de su contrato de trabajo por cualquier causa, devolverá inmediatamente al <b>EMPLEADOR</b> cualquier documento, información o elemento que le haya sido entregado para efecto del cumplimiento de sus funciones.
+                            </p>
+                            <p class="text-justify" style="font-size: 14px;">
+                                Las Partes acuerdan expresamente que el incumplimiento de las disposiciones contenidas en la presente cláusula es considerado como una falta grave y en tal sentido justa causa para la terminación del contrato de trabajo de acuerdo con lo dispuesto en el numeral 6 del literal a), Artículo 7 del Decreto Ley 2351 de 1965, en concordancia con el numeral 1 del Artículo 58 del C.S.T. Lo anterior sin perjuicio de las acciones civiles o penales que puedan emprenderse contra el <b>TRABAJADOR</b> por parte del <b>EMPLEADOR</b> o de terceros como consecuencia de dicho incumplimiento.
+                            </p>
+                            <p class="text-justify" style="font-size: 14px;">
+                                Esta cláusula de confidencialidad tendrá vigencia por el término de duración del contrato de trabajo suscrito entre las partes y 2 ( dos ) años más, contados a partir de la terminación del mismo
+                            </p>
+                            <p class="text-justify" style="font-size: 14px;">
+                                <b>Decima.- Acuerdo de Confidencialidad y Manejo de Información</b>: Durante la relación contractual que une a las partes el <b>EMPLEADOR</b>  divulgará y transmitirá al <b>TRABAJADOR</b> cierta información no pública y confidencial que es de dominio y propiedad del <b>EMPLEADOR</b>. y/o de sus clientes (“Información Confidencial”) y dará acceso a software, herramientas de análisis, esquemas de planeación y formatos exclusivos y de propiedad de el <b>EMPLEADOR</b>  únicamente con el propósito de que éste desempeñe las labores para las que ha sido contratado. La Información Confidencial incluirá, entre otros, planes de negocios; información financiera; estrategias de mercadeo; estrategias publicitarias; listas de clientes y proveedores de bienes y servicios; información técnica; información jurídica; procesos internos; manejo de las negociaciones entre el <b>EMPLEADOR</b>  y sus clientes y proveedores de bienes y servicios; el manejo y negociación de medios; políticas de personal tales como son la forma y términos de contratación propia y de otros trabajadores, remuneración, traslados;  y cualquier otra información que se ha declarado como confidencial por el <b>EMPLEADOR</b>  o lo será al momento de su divulgación, la cual podrá o no estar soportada en documentos o ser transmitida oralmente. 
+                            </p>
+                            <p class="text-justify" style="font-size: 14px;">
+                                El <b>TRABAJADOR</b> se obliga a mantener bajo la más estricta confidencialidad la Información Confidencial a la que tenga acceso, las estructuras y diseños de herramientas de análisis, software propios del <b>EMPLEADOR</b>  y los formatos y procesos de planeación estratégica que haya conocido de forma oral, virtual, escrita o de cualquier forma tangible, absteniéndose de divulgarla a terceros de cualquier clase a menos que esté autorizado por este acuerdo, por autorización expresa del <b>EMPLEADOR</b>  u obligado por la ley.  Las Partes acuerdan y se obligan a mantener igualmente en confidencia la existencia del presente acuerdo.
+                            </p>
+                            <p class="text-justify" style="font-size: 14px;">
+                                El <b>TRABAJADOR</b> se obliga a usar la información Confidencial que recibirá única y exclusivamente para desempeñar sus obligaciones como empleado del <b>EMPLEADOR</b>   y para desempeñar las labores propias de su trabajo. Su uso y transferencia a otros empleados y funcionarios del <b>EMPLEADOR</b>, deberá hacerse con exactamente el mismo grado de cuidado con la que le ha sido transmitida,   asegurándose previamente que quien la reciba quede igualmente obligado por un acuerdo de confidencialidad con el <b>EMPLEADOR</b>.
+                            </p>
+                            <p class="text-justify" style="font-size: 14px;">
+                                El <b>TRABAJADOR</b> se obliga a tomar todas las medidas y precauciones razonablemente necesarias para asegurar la confidencialidad de la información Confidencial que ha recibido de parte del <b>EMPLEADOR</b> , incluyendo su obligación de informar el carácter de la misma y su imposibilidad de ser utilizada para propósitos diferentes de los que estén relacionados con el objeto social de SANCHO BBDO y la relación con el cliente cuando aplique, cuando esta sea conocida por terceros en el desarrollo de los trabajos ejecutados según se le hayan asignado.
+                            </p>
+                            <p class="text-justify" style="font-size: 14px;">
+                                El <b>TRABAJADOR</b> declara ser consciente de que tanto la información que recibirá como las herramientas de análisis, los software propios del <b>EMPLEADOR</b>, los formatos de trabajo, los procesos de planeación estratégica son  y deberán permanecer todo el tiempo como propiedad del <b>EMPLEADOR</b>, hasta tanto el <b>EMPLEADOR</b> esté debidamente conformada y registrada, con lo cual será información del <b>EMPLEADOR</b> igualmente. La información o transferencia de la información confidencial que se está haciendo no constituye una renuncia a la propiedad de la misma o los derechos que sobre la misma se tienen.
+                            </p>
+                            <p class="text-justify" style="font-size: 14px;">
+                                El <b>TRABAJADOR</b> entiende que la información que se le está suministrando no tiene una garantía de precisión o complejidad.
+                            </p>
+                            <p class="text-justify" style="font-size: 14px;">
+                                Nada de lo aquí previsto precluirá la obligación del <b>TRABAJADOR</b> de mantener absoluta confidencialidad de la información recibida. En caso que el <b>TRABAJADOR</b> se vea obligado por autoridad competente a hacer divulgación de la información para propósitos puramente legales, entonces el <b>TRABAJADOR</b> lo hará dando prudente notificación (no menos de cinco (5) días calendario al <b>EMPLEADOR</b> de su obligación de hacer tal divulgación). 
+                            </p>
+                            <p class="text-justify" style="font-size: 14px;">
+                                Cualquier información tangible, escrita o visual o de audio que haya recibido o reciba el <b>TRABAJADOR</b> como consecuencia de su vínculo con el <b>EMPLEADOR</b>   o el recibo de la información necesaria para asumir el cargo que allí desempeñará  o directamente de un cliente del <b>EMPLEADOR</b>  con quien tenga contacto, podrá ser solicitada por el <b>EMPLEADOR</b>  en cualquier momento y el <b>TRABAJADOR</b> estará obligado a devolverla en un término de dos (2) días calendario.  El <b>TRABAJADOR</b> estará sujeto a las obligaciones de este contrato desde su suscripción y hasta cinco (5) años después de que su relación laboral con el <b>EMPLEADOR</b>  haya terminado o que se hayan terminado las discusiones de empalme con el <b>EMPLEADOR</b>  sin que las mismas hayan terminado en el mencionado vínculo laboral.
+                            </p>
+                            <p class="text-justify" style="font-size: 14px;">
+                                Que durante el término de vigencia del  presente   acuerdo  de  confidencialidad  se   presume  como  violación  de mi  compromiso  de  confidencialidad  y  por ende un incumplimiento del presente   acuerdo, cualquier utilización o  divulgación de la información  confidencial con la intención de obtener  un provecho  personal, directa o indirectamente, lo cual incluye la utilización de la información confidencial en la realización de trabajos o la prestación de servicios a personas naturales o jurídicas que desarrollen actividades similares o conexas al objeto social del <b>EMPLEADOR</b>  y que puedan considerarse competencia de esta.  Esta presunción se entiende además sin perjuicio de la obligación de exclusividad que tengo adquirida mediante mi contrato de trabajo.
+                            </p>
+                            <p class="text-justify" style="font-size: 14px;">
+                                Que cualquier violación  de una o varias de las obligaciones que adquiero especialmente conforme a este anexo a mi contrato individual de trabajo, y sin perjuicio de las sanciones penales a las que haya lugar, constituye falta grave y en consecuencia justa causa para la terminación de mi relación laboral por parte de la empresa.  El incumplimiento del presente acuerdo de confidencialidad será declarado por la empresa a su entera discreción, y me obliga a pagar a título de pena por el incumplimiento y sin perjuicio de la acción que persiga el incumplimiento de la obligación principal y de la indemnización plena de perjuicios, una suma equivalente a dos (2) veces la asignación mensual que recibe como compensación a su trabajo al <b>EMPLEADOR</b>  Para efectos de hacer efectivo el pago de la pena aquí acordada el presente documento presenta mérito ejecutivo y será exigible sin el procedimiento de la constitución en mora o previo requerimiento privado o judicial.  Autorizo igualmente al <b>EMPLEADOR</b>  descontar, deducir y/o compensar el valor de la pena de los valores que por salario tuviere que cancelar como resultado de mi relación de trabajo.
+                            </p>
+                            <p class="text-justify" style="font-size: 14px;">
+                                <b>Décima primera.- Política Empresarial</b>: El <b>TRABAJADOR</b> declara que ha recibido el documento denominado “Política Empresarial para el Uso de Programas Informáticos”, y que el incumplimiento de las disposiciones contenidas en la misma  es considerado como una falta grave y en tal sentido justa causa para la terminación del contrato de trabajo de acuerdo con lo dispuesto en el numeral 6 del literal a), Artículo 7 del Decreto Ley 2351 de 1965, en concordancia con el numeral 1 del Artículo 58 del C.S.T. Lo anterior sin perjuicio de las acciones civiles o penales que puedan emprenderse contra el <b>TRABAJADOR</b> por parte del <b>EMPLEADOR</b> o de terceros como consecuencia de dicho incumplimiento.
+                            </p>
+                            <p class="text-justify" style="font-size: 14px;">
+                                <b>Décima Segunda.- Hardware Asignado</b>: El <b>EMPLEADOR</b> le ha asignado al <b>TRABAJADOR</b> un computador junto con una serie de equipos y herramientas necesarias para su correcta utilización (en conjunto, las “Herramientas”), las cuales estarán a cargo y bajo la responsabilidad del <b>TRABAJADOR</b>. Las Herramientas solo podrán ser utilizadas para el desempeño de las funciones laborales del <b>TRABAJADOR</b>. 
+                            </p>
+                            <p class="text-justify" style="font-size: 14px;">
+                                <b>Décima. Tercera.- Política de Manejo de Software</b>: El <b>EMPLEADOR</b> le ha asignado al <b>TRABAJADOR</b> ciertos programas de computador (el “Software”) los cuales están o serán instalados en las Herramientas por el <b>EMPLEADOR</b>. El Software solo podrá ser utilizado por el <b>TRABAJADOR</b> para el desempeño de las funciones propias de su cargo. Está completamente prohibido utilizar el Software en diligencias de carácter personal o de índole distinta a la de sus funciones laborales. No podrá el <b>TRABAJADOR</b>, salvo autorización escrita del <b>EMPLEADOR</b>: (i) reproducir total o parcialmente el Software; (ii) instalar programa alguno u obras protegidas por el derecho de autor en las Herramientas; (iii) descargar de Internet, de cualquier red, o de cualquier medio mecánico,  programas de computador y/u obras de cualquier tipo y en cualquier formato; (iv) utilizar sistemas que puedan promover la violación a derechos de propiedad intelectual, por ejemplo para la descarga de obras musicales en formato .mp3 o .wav, entre otros; (iv) intercambiar archivos protegidos por el derecho de la propiedad intelectual. El <b>TRABAJADOR</b> se obliga a notificar al <b>EMPLEADOR</b> cualquier hecho que conozca que pueda constituir uso inadecuado de las Herramientas, el Software y, en general, que sea o pueda ser violatorio de la Política Empresarial para el uso de Programas Informáticos del <b>EMPLEADOR</b>
+                            </p>
+                            <p class="text-justify" style="font-size: 14px;">
+                                <b>PARÁGRAFO:</b> El incumplimiento u omisión de estas políticas constituye falta grave suficiente para terminar el Contrato con justa causa,  por así acordarlo las Partes.
+                            </p>
+                            <p class="text-justify" style="font-size: 14px;">
+                                <b>Décima Cuarta.- Causales de Terminación del Contrato</b>:Los contratantes de común acuerdo califican como graves las siguientes faltas del <b>TRABAJADOR</b> que constituirán justas causas para que el <b>EMPLEADOR</b> pueda dar por terminado unilateralmente en cualquier tiempo el presente contrato de trabajo, además de las establecidas en el literal a) del artículo 7 del Decreto 2351 de 1965, en las disposiciones reglamentarias y en el Reglamento Interno de Trabajo:
+                                <br/>
+                                <ol class="text-justify" style="font-size: 14px;padding-left:65px;">
+                                    <li>El incumplimiento de cualquiera de las obligaciones especiales establecidas por el artículo 58 del C.S.T.,</li>
+                                    <li>La realización de actividades en contravención de órdenes superiores o de reglamento, de carácter culposo, negligente, omisivo o doloso que atenten o incidan negativamente contra los intereses del <b>EMPLEADOR</b> o de terceros, </li>
+                                    <li>El presentarse al trabajo bajo los efectos de bebidas embriagantes, drogas alucinógenas o similares,</li>
+                                    <li>El presentarse o estar dentro de la Empresa portando armas, salvo el caso en que el <b>TRABAJADOR</b> por razón de sus labores esté facultado para ello,</li>
+                                    <li>La no justificación de inasistencia del <b>TRABAJADOR</b> al cumplimiento de sus labores o el abandono de las mismas sin autorización del superior.</li>
+                                    <li>La inasistencia del <b>TRABAJADOR</b> a sus labores durante el día, sin excusa suficiente</li>
+                                    <li>La ocurrencia de cualquier acto de violencia, injuria o irrespeto injustificado por parte del <b>TRABAJADOR</b> hacia sus superiores, empleados de la Empresa o terceros, dentro de las instalaciones de la Empresa o fuera de ellas.</li>
+                                    <li>La extralimitación de funciones que afecten o pongan en peligro los intereses del <b>EMPLEADOR</b>.</li>
+                                    <li>La violación de la reserva de aspectos confidenciales puestos bajo la responsabilidad del <b>TRABAJADOR</b> o conocidos por éste en razón de su cargo, </li>
+                                    <li>La utilización de información privilegiada adquirida en ejecución o con ocasión de sus funciones para la obtención de un provecho personal o para un tercero,</li>
+                                    <li>La realización de actos que en cualquier forma entorpezcan o incidan negativamente en el normal desarrollo de las actividades patronales o en perjuicio de terceros,</li>
+                                    <li>Cualquier acto de negligencia, descuido u omisión en que incurra el <b>TRABAJADOR</b> en el ejercicio de las funciones propias de su cargo.</li>
+                                    <li>La aceptación o solicitud de dádivas o beneficios por parte del <b>TRABAJADOR</b> a clientes y/o proveedores de la Empresa o a terceros, a cambio de tratamientos o servicios especiales.</li>
+                                    <li>La existencia de faltante, descuadre en dinero o la pérdida, el extravío o deterioro de cualquier documento bajo la responsabilidad del <b>TRABAJADOR</b>.</li>
+                                    <li>Sin ser de su competencia, la autorización o ejecución de operaciones que afecten los intereses del <b>EMPLEADOR</b>, o la negociación de bienes y/o mercancías o la negociación en cualquier forma de algún objeto de propiedad del <b>EMPLEADOR</b>.</li>
+                                    <li>La presentación de cuentas de gastos que  no correspondan a la realidad o el reportar como cumplidas tareas no efectuadas.</li>
+                                    <li>La consignación en la solicitud de empleo que se presenta cuando se va a ingresar a la Empresa, de datos falsos o el ocultamiento de información solicitada en el mismo documento.</li>
+                                    <li>La omisión o consignación de datos en forma inexacta en los informes, relaciones, proyectos crediticios, balances, etc., que se presenten a consideración de los superiores, tendientes a obtener una aprobación o decisión que, a juicio del superior, habría sido diferente si los datos se ajustaran a la realidad. Para que se configure esta causal, basta la simple tentativa, no siendo necesario que se haya logrado la ejecución o que de la misma se derive un perjuicio real para la Empresa.</li>
+                                    <li>El solicitar u obtener, de los empleados bajo su mando, concesiones o beneficios valiéndose de su posición.</li>
+                                    <li>El envío, recibo o suministro de información en forma escrita, verbal, magnética o electrónica o en cualquier medio conocido o por conocerse a empleados o terceros sin la debida autorización del dueño de la información.</li>
+                                    <li>La entrega de documentos sin el lleno de las formalidades legales y demás requisitos establecidos por el <b>EMPLEADOR</b> y el no aviso oportuno de estos hechos al inmediato superior.</li>
+                                    <li>El incumplimiento de las políticas, procedimientos y en general instrucciones de la Empresa.</li>
+                                    <li>Las demás que se establezcan en el presente contrato, en la ley y en las políticas internas de la Empresa.</li>
+                                </ol>
+                            </p>
+                            <p class="text-justify" style="font-size: 14px;">
+                                <b>PARÁGRAFO</b>: El <b>TRABAJADOR</b> será responsable de todos los dineros, efectos de comercio, valores, recursos informáticos, documentos e información que reciba, tenga en su poder o maneje por razón de sus funciones, sin poder disponer de ellos en su beneficio personal o  de terceros, y deberá rendir estricta cuenta de ellos y de su manejo al <b>EMPLEADOR</b>, de acuerdo con las políticas/procedimientos que el <b>EMPLEADOR</b> tiene establecidos o establezca sobre el particular.
+                            </p>
+                            <p class="text-justify" style="font-size: 14px;">
+                                <b>Décima Quinta.- Viáticos</b>:De conformidad con lo establecido en el artículo 17 de la Ley 50 de 1990 (artículo 130 del Código Sustantivo del Trabajo), los viáticos que el <b>TRABAJADOR</b> reciba cuando se desplace fuera de su sitio de trabajo, se consideran accidentales y, por tanto, las partes acuerdan expresamente que éstos no son constitutivos de salario o factor del mismo.
+                            </p>
+                            <p class="text-justify" style="font-size: 14px;">
+                                <b>Décima Sexta.- Beneficios no Constitutivos de Salario:</b> Las partes expresamente acuerdan que lo que reciba EL <b>TRABAJADOR</b> o llegare a recibir en el futuro, ya sean beneficios o auxilios habituales y ocasionales, tales como alimentación, habitación o vestuario, primas extralegales de servicios, vacaciones, navidad, semestrales, los seguros médicos de vida y otros, becas de estudio, auxilios educativos, gastos de movilización, bonificaciones ocasionales o anuales o cualquier otra que reciba durante la vigencia del contrato de trabajo, en dinero o en especie, no constituyen salario, de acuerdo a lo estipulado por los artículos 128 y 129 del Código Sustantivo del Trabajo, norma subrogada por los artículos 15 y 16 de la Ley 50 de 1990, y de conformidad con lo dispuesto en el artículo 17 de la Ley 344 de 1996.
+                            </p>
+                            <p class="text-justify" style="font-size: 14px;">
+                                <b>Décima Séptima.- Elementos trabajo</b>: El <b>EMPLEADOR</b> se obliga a proveer los medios de trabajo al <b>TRABAJADOR</b>, dentro de los cuales podrán encontrarse un equipo de cómputo, un teléfono, muebles de oficina y demás elementos necesarios para el desarrollo de sus funciones, propiedad de la Empresa.
+                            </p>
+                            <p class="text-justify" style="font-size: 14px;">
+                                <b>PARÁGRAFO PRIMERO</b>: Las herramientas de trabajo antes citadas se encuentran bajo la custodia y cuidado del <b>TRABAJADOR</b> y su pérdida, daño o destrucción serán responsabilidad del <b>TRABAJADOR</b>; igualmente la pérdida, daño o destrucción de cualquiera de los elementos constituye una falta grave meritoria de la terminación del contrato de trabajo. Adicionalmente, las partes acuerdan que las herramientas sólo podrán ser empleadas para las labores relacionadas con el contrato de trabajo que existe entre las partes y para realizar sus funciones, por lo cual el darle una destinación o uso diferente o indebido por parte del <b>TRABAJADOR</b> a dichos elementos o la inobservancia de su deber de cuidado respecto de los mismos serán considerados falta grave de sus obligaciones, de conformidad con el literal a) numeral 6 del artículo 7 del decreto 2351 de 1965, el cual subrogó el artículo 62 del C.S.T.. El <b>TRABAJADOR</b> autoriza que en caso de pérdida o extravío, daño o destrucción de cualquiera de los elementos por cualquier motivo, le sea deducido o descontado el valor comercial del bien de la sumas que se le adeuden por salarios, prestaciones sociales, vacaciones, intereses de cesantía, pagos de naturaleza extralegal, eventuales indemnizaciones y cualquier otra acreencia a que pueda tener derecho en vigencia del contrato de trabajo o al momento de terminación del contrato de trabajo por cualquier motivo.
+                            </p>
+                            <p class="text-justify" style="font-size: 14px;">
+                                <b>PARÁGRAFO SEGUNDO</b>: Las herramientas de trabajo entregadas al <b>TRABAJADOR</b> pertenecen al <b>EMPLEADOR</b> y por tanto el <b>TRABAJADOR</b> deberá devolverlas cuando se le solicite y en todo caso al momento de terminación de su contrato de trabajo por cualquier causa en perfecto estado, salvo el deterioro normal. En caso de que el <b>TRABAJADOR</b> incumpla su obligación de devolver las herramientas relacionadas al momento de la terminación de su contrato de trabajo, mediante el presente escrito autoriza de manera expresa al <b>EMPLEADOR</b> para que el valor total de las mismas se descuente, deduzca y/o compense del valor de la liquidación final de acreencias laborales a la cual tenga derecho el <b>TRABAJADOR</b> incluyendo el valor de salarios, prestaciones sociales, vacaciones, interés de cesantía, pagos de naturaleza extralegal, eventuales indemnizaciones y cualquier otra acreencia a que pueda tener derecho al momento de terminación del contrato de trabajo por cualquier causa.    
+                            </p>
+                            <p class="text-justify" style="font-size: 14px;">
+                                <b>PARÁGRAFO TERCERO</b>: El suministro de las herramientas de trabajo no constituye salario ni beneficio legal o extralegal alguno, pues son herramientas de trabajo, y en este sentido las Partes reiteran que no constituyen retribución alguna, ni salario en dinero o en especie, ni tendrán incidencia salarial, prestacional, parafiscal o indemnizatoria conforme lo previsto en los artículos 15 y 16 de la ley 50 de 1990 que subrogaron los artículos 128 y 129 del C.S.T. en concordancia con el artículo 17 de la ley 344 de 1996. Por tratarse de herramientas de trabajo que facilita el <b>EMPLEADOR</b> por mera liberalidad, el <b>EMPLEADOR</b> se reserva la facultad de modificar, adicionar o suprimir este suministro sin que constituya ningún tipo de desmejora para el <b>TRABAJADOR</b>, situación que el <b>TRABAJADOR</b> desde ya acepta.
+                            </p>
+                            <p class="text-justify" style="font-size: 14px;">
+                                <b>Décima Octava.- Conocimiento y Actualización de Políticas</b>:  El <b>TRABAJADOR</b> de manera libre y espontánea declara que conoce y entiende la totalidad de las políticas/procedimientos que debe tener en cuenta para la correcta ejecución de sus funciones, los cuales ya han sido dados a conocer al <b>TRABAJADOR</b>.
+                            </p>
+                            <p class="text-justify" style="font-size: 14px;">
+                                <b>PARÁGRAFO PRIMERO</b>: Las partes de común acuerdo disponen que el <b>TRABAJADOR</b> se obliga a cumplir la totalidad de los procedimientos antes mencionados y a actualizar constantemente su conocimiento de las disposiciones contenidas en tales documentos de acuerdo con las modificaciones o adiciones que sean realizadas y así mismo a investigar, enterarse y mantenerse actualizado de otros procedimientos, políticas y normas que se tienen establecidos o se establezcan en el futuro y resulten aplicables a la ejecución de sus funciones.
+                            </p>
+                            <p class="text-justify" style="font-size: 14px;">
+                                <b>PARÁGRAFO SEGUNDO</b>: Las partes de común acuerdo disponen que el <b>TRABAJADOR</b>, en el caso de desempeñarse como jefe o persona que tiene a su cargo otros empleados, se obliga a propender porque sus subordinados se mantengan informados y actualizados sobre las normas, procedimientos y políticas del <b>EMPLEADOR</b>.
+                            </p>
+                            <p class="text-justify" style="font-size: 14px;">
+                                <b>Décima Novena.- Política Empresarial para el uso de Programas Informáticos</b> La duplicación no autorizada o el uso sin licencia de cualquier programa informático es ilegal y puede exponer al <b>TRABAJADOR</b> y AL <b>EMPLEADOR</b> a asumir una responsabilidad civil y penal en virtud de la ley de derechos de autor.
+                            </p>
+                            <p class="text-justify" style="font-size: 14px;">
+                                Para asegurarse de no violar los derechos de autor, usted no deberá copiar ningún programa instalado en su computadora bajo ninguna circunstancia sin la autorización escrita del Director de Sistemas del <b>EMPLEADOR</b>. Del mismo modo, no deberá instalar ningún programa en su computadora sin dicha autorización o la clara verificación de que la empresa posee una licencia que cubre dicha instalación.
+                            </p>
+                            <p class="text-justify" style="font-size: 14px;">
+                                Finalmente, no deberá descargar de Internet programas informáticos no autorizados por el departamento responsable de la empresa.
+                            </p>
+                            <ul type="circle" class="text-justify" style="font-size: 14px;padding-left:65px;">
+                                <li> La empresa no tolerará que un empleado realice copias no autorizadas de programas informáticos.</li><br/>
+                                <li>La empresa no tolerará que un empleado cargue o descargue programas informáticos no autorizados de Internet, incluidos entre otros la descarga de programas informáticos para utilizar sistemas de peer-to-peer (P2P – Ej. Kazaa) que pueden utilizarse para comercializar trabajos protegidos por los derechos de autor.</li><br/>
+                                <li>La empresa no tolerará que un empleado realice intercambios o descargas de archivos digitales de música (MP3, WAV, etc) de los cuales no es el autor o bien no posee los derechos de distribución del mismo.<br/>
+                                “Por regla general los archivos compartidos en MP3 no pagan derechos de autor, por ende su uso es ilegal. Hay excepciones donde determinados archivos son legales, ya que se cancelan sumas a los distribuidores y los autores autorizan su distribución gratuita. Para no violar las leyes y por vacíos legales en Colombia la música debe ser compartidosa en establecimientos autorizados y que paguen los derechos a Sayco – Acimpro. <br/>
+                                <a href="http://derechopublico.udenar.edu.co/Derechos_AUTOR.htm">http://derechopublico.udenar.edu.co/Derechos_AUTOR.htm</a></li><br/>
+                                <li>Si se descubre que un empleado ha copiado programas informáticos en forma ilegal, este puede ser sancionado, suspendido o despedido de la empresa.</li><br/>
+                                <li>Si se descubre que un empleado ha copiado programas informáticos en forma ilegal para dárselos a un tercero, también puede ser sancionado, suspendido o despedido de la empresa.</li><br/>
+                                <li>Si usted desea utilizar programas informáticos autorizados por la empresa en su hogar, debe consultar con el Gerente de Tecnología de <b>GESTION INTEGRAL</b> para asegurarse de que ese uso esté permitido por la licencia del editor.</li>
+                            </ul>
+                            <p class="text-justify" style="font-size: 14px;">
+                                La política será de aplicación estricta para asegurar que ni usted ni la empresa se expongan a graves consecuencias legales. El personal encargado de los sistemas del <b>EMPLEADOR</b> estará revisando su computadora constantemente para realizar un inventario de las instalaciones de programas informáticos y determinar si la empresa posee licencias para cada una de las copias de los programas informáticos instalados.
+                            </p>
+                            <p class="text-justify" style="font-size: 14px;">
+                                Si se encuentran copias sin licencias, estas serán eliminadas y, de ser necesario, reemplazadas por copias con licencia.
+                            </p>
+                            <p class="text-justify" style="font-size: 14px;">
+                                <b>PARAGRAFO</b>: El incumplimiento a la <b>Política Empresarial para el uso de Programas Informáticos</b>, relacionada en la presente clausula,  es considerado como una falta grave y en tal sentido justa causa para la terminación del contrato de trabajo de acuerdo con lo dispuesto en el numeral 6 del literal a), Artículo 7 del Decreto Ley 2351 de 1965, en concordancia con el numeral 1 del Artículo 58 del C.S.T. Lo anterior sin perjuicio de las acciones civiles o penales que puedan emprenderse contra el <b>TRABAJADOR</b> por parte del <b>EMPLEADOR</b> o de terceros como consecuencia de dicho incumplimiento
+                            </p>
+                            <p class="text-justify" style="font-size: 14px;">
+                                <b>Vigésima.- Política Empresarial Vinculada al Uso de Programas Informáticos Personales</b>: El <b>EMPLEADOR</b>  autoriza el uso de programas informáticos de diversas empresas externas. El <b>EMPLEADOR</b>  no es la dueño de estos programas informáticos o la documentación vinculada con ellos y, a menos que cuente con la autorización del creador de programas informáticos, no tiene derecho a reproducirlos excepto con fines de respaldo. Por lo tanto el <b>TRABAJADOR</b> se obliga a acatar las siguientes disposiciones:
+                                <ol class="text-justify" style="font-size: 14px;">
+                                    <li>Los empleados del <b>EMPLEADOR</b>  utilizarán los programas informáticos sólo en virtud de los acuerdos de licencia y no instalarán copias no autorizadas de los programas informáticos comerciales.</li>
+                                    <li>Los empleados del <b>EMPLEADOR</b>  no descargarán ni cargarán programas informáticos no autorizados a través de Internet.</li>
+                                    <li>Los empleados del <b>EMPLEADOR</b>  no realizarán intercambios o descargas de archivos digitales de música (MP3, WAV, etc) de los cuales no es el autor o bien no posee los derechos de distribución del mismo.</li>
+                                    <li>Los empleados del <b>EMPLEADOR</b>  que se enteren de cualquier uso inadecuado que se haga en la empresa de los programas informáticos o la documentación vinculada a estos, deberán notificar al gerente o director del departamento en el que trabajan o al asesor legal del <b>EMPLEADOR</b>.</li>
+                                    <li>Según las leyes vigentes de derechos de autor, las personas involucradas en la reproducción ilegal de programas informáticos pueden estar sujetas a sanciones civiles y penales, incluidas multas y prisión. El <b>EMPLEADOR</b>  no permite la duplicación ilegal de programas informáticos.</li>
+                                    <li>Los empleados del <b>EMPLEADOR</b>  que realicen, adquieran o utilicen copias no autorizadas de programas informáticos estarán sujetos a sanciones disciplinarias internas de acuerdo a las circunstancias. Dichas sanciones pueden incluir suspensiones y despidos justificados.</li>
+                                    <li>Cualquier duda respecto a si un empleado puede copiar o utilizar un determinado programa informático, debe plantearse ante el Director de Sistemas del <b>EMPLEADOR</b>.</li>
+                                </ol>
+                            </p>
+                            <p class="text-justify" style="font-size: 14px;">
+                                <b>PARAGRAFO</b>: El incumplimiento a la <b>Política Empresarial Vinculada al Uso de Programas Informáticos Personales</b>, relacionada en la presente clausula,  es considerado como una falta grave y en tal sentido justa causa para la terminación del contrato de trabajo de acuerdo con lo dispuesto en el numeral 6 del literal a), Artículo 7 del Decreto Ley 2351 de 1965, en concordancia con el numeral 1 del Artículo 58 del C.S.T. Lo anterior sin perjuicio de las acciones civiles o penales que puedan emprenderse contra el <b>TRABAJADOR</b> por parte del <b>EMPLEADOR</b> o de terceros como consecuencia de dicho incumplimiento
+                            </p>
+                            <p class="text-justify" style="font-size: 14px;">
+                                <b>Vigésima Primera.- Autorización de Descuento</b>: El <b>TRABAJADOR</b> autoriza a la Empresa para que a la terminación del presente contrato, de las prestaciones sociales que le correspondan y cualquier suma 
+                            </p>
+                            <p class="text-justify" style="font-size: 14px;">
+                                <b>Vigésima Segunda.- Exámenes médicos</b>: EL <b>TRABAJADOR</b> se someterá a la práctica de los exámenes médicos o sanitarios o pruebas de laboratorio que EL <b>EMPLEADOR</b> exija en cualquier momento y se obliga a suministrar los documentos que con ocasión de la relación laboral ésta le exija
+                            </p>
+                            <p class="text-justify" style="font-size: 14px;">
+                                <b>PARÁGRAFO</b>: En caso de que el <b>TRABAJADOR</b> se niegue a practicar antes mencionados exámenes médicos o pruebas de laboratorio a solicitud del <b>EMPLEADOR</b>, constituye falta grave y será meritoria de la terminación del contrato de trabajo con justa causa.
+                            </p>
+                            <p class="text-justify" style="font-size: 14px;">
+                                <b>Vigésima Tercera.- Modificación de las Condiciones Laborales</b>: El <b>TRABAJADOR</b> acepta desde ahora expresamente todas las modificaciones de sus condiciones laborales determinadas por el <b>EMPLEADOR</b> en ejercicio de su poder subordinante, tales como jornadas de trabajo, el lugar de prestación de servicio, el cargo u oficio y/o funciones y la forma de remuneración, siempre que tales modificaciones no afecten su honor, dignidad o sus derechos mínimos, ni impliquen desmejoras sustanciales o graves perjuicios para él, de conformidad con lo dispuesto por el artículo 23 del C.S.T., modificado por el artículo 1º de la Ley 50 de 1990.
+                            </p>
+                            <p class="text-justify" style="font-size: 14px;">
+                                <b>Vigésima Cuarta.- Normatividad</b>: Las partes, conforme lo aceptan en éste contrato, se someterán a todo lo estatuido en el C.S.T. y demás normas sobre derechos, obligaciones y prohibiciones emanados del contrato de trabajo.
+                            </p>
+                            <p class="text-justify" style="font-size: 14px;">
+                                <b>Vigésima Quinta.- Domicilio</b>: El <b>TRABAJADOR</b> para todos los efectos legales y en especial para la aplicación del parágrafo 1° del artículo 29 de la Ley 789 de 2002, norma que modificó el artículo 65 del C.S.T., se compromete a informar al <b>EMPLEADOR</b> cualquier cambio en su dirección de residencia, teniéndose en todo caso como suya la dirección registrada en éste contrato o la que el <b>TRABAJADOR</b> le haya comunicado por medio escrito al <b>EMPLEADOR</b>. Toda comunicación o notificación que el <b>EMPLEADOR</b> deba hacer al <b>TRABAJADOR</b> por virtud del desarrollo, ejecución o terminación de éste contrato, se considera legal y válida si se hace a la última dirección de residencia que el <b>TRABAJADOR</b> haya registrado o que se le entregue personalmente en las instalaciones de la Empresa, dejando el <b>TRABAJADOR</b> constancia por medio de su firma de haberla recibido.
+                            </p>
+                            <p class="text-justify" style="font-size: 14px;">
+                                <b>Vigésima Sexta-. Efectos</b>: El presente contrato reemplaza en su integridad y deja sin efecto cualquier otro contrato, acuerdo u oferta, verbal o escrito, celebrado entre las partes con anterioridad, pudiendo las partes convenir por escrito modificaciones al mismo, las que formarán parte integrante de este contrato.
+                            </p>
+                            <p class="text-justify" style="font-size: 14px;">
+                                <b>Vigésima Séptima – Datos Personales</b>: EL <b>TRABAJADOR</b> autoriza de manera libre y voluntaria a EL <b>EMPLEADOR</b> a recopilar, utilizar, transferir, almacenar, consultar,  procesar, y en general a dar tratamiento a  la información personal que éste ha suministrado a EL <b>EMPLEADOR</b>, de conformidad con lo dispuesto en el ley 1581 de 2012, la cual se encuentra contenida en las bases de datos y archivo de propiedad de EL <b>EMPLEADOR</b>, para los fines internos que sean necesarios, tales como asuntos relacionados con su documento de identificación, número de identificación, nacionalidad, país de residencia, dirección, teléfono, estado civil, correo electrónico corporativo y personal,  salario, y cuenta bancaria.
+                            </p>
+                            <p class="text-justify" style="font-size: 14px;">
+                                En señal de quedar convenidos, el presente documento se suscribe en dos (2) ejemplares de igual valor y tenor legal, con destino a cada una de las partes, en la ciudad de Bogotá, D.C., el día.
+                            </p>
+                            <br/>
+                            <table class="table table-sm table-borderless center" style="font-size: 14px;">
+                                <tr height="70px;">
+                                    <td width="50%"><b>EL EMPLEADOR</b></td>
+                                    <td><b>EL TRABAJADOR</b></td>
+                                </tr>
+                                <tr>
+                                    <td>---------------------------------------------------<br/><b><t t-esc="company_id.legal_representative_id.name"/></b></td>
+                                    <td>---------------------------------------------------<br/><b><t t-esc="employee_id.name"/></b></td>
+                                </tr>
+                                <tr>
+                                    <td><b>NIT.</b> <t t-esc="company_id.vat"/></td>
+                                    <td><b>
+                                        <t t-set="employee_ident_type" t-value="employee_id.ident_type"/>
+                                        <span t-if="employee_ident_type == 'rut'">RUT</span>
+                                        <span t-elif="employee_ident_type == 'id_document'">Cédula</span>
+                                        <span t-elif="employee_ident_type == 'id_card'">Tarjeta de Identidad</span>
+                                        <span t-elif="employee_ident_type == 'passport'">Pasaporte</span>
+                                        <span t-elif="employee_ident_type == 'foreign_id_card'">Cédula Extranjera</span>
+                                        <span t-elif="employee_ident_type == 'external_id'">ID del Exterior</span>
+                                        <span t-elif="employee_ident_type == 'diplomatic_card'">Carné Diplomatico</span>
+                                        <span t-elif="employee_ident_type == 'residence_document'">Salvoconducto de Permanencia</span>
+                                        <span t-elif="employee_ident_type == 'civil_registration'">Registro Civil</span>
+                                        <span t-elif="employee_ident_type == 'national_citizen_id'">Cédula de ciudadanía</span>
+                                        <t t-esc="employee_id.identification_id"/>
+                                    </b></td>
+                                </tr>
+                                <tr height="70px;">
+                                    <td><b>TESTIGO:</b></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>---------------------------------------------------<br/>
+                                        <b><t t-esc="user.name"/><br/>
+                                        <t t-set="l10n_co_document_type" t-value="user.partner_id.l10n_co_document_type"/>
+                                        <span t-if="l10n_co_document_type == 'rut'">RUT</span>
+                                        <span t-elif="l10n_co_document_type == 'id_document'">Cédula</span>
+                                        <span t-elif="l10n_co_document_type == 'id_card'">Tarjeta de Identidad</span>
+                                        <span t-elif="l10n_co_document_type == 'passport'">Pasaporte</span>
+                                        <span t-elif="l10n_co_document_type == 'foreign_id_card'">Cédula Extranjera</span>
+                                        <span t-elif="l10n_co_document_type == 'external_id'">ID del Exterior</span>
+                                        <span t-elif="l10n_co_document_type == 'diplomatic_card'">Carné Diplomatico</span>
+                                        <span t-elif="l10n_co_document_type == 'residence_document'">Salvoconducto de Permanencia</span>
+                                        <span t-elif="l10n_co_document_type == 'civil_registration'">Registro Civil</span>
+                                        <span t-elif="l10n_co_document_type == 'national_citizen_id'">Cédula de ciudadanía</span>
+                                        <t t-esc="user.partner_id.vat"/><br/>
+                                        Administración de Personal</b></td>
+                                    <td></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+
+    </data>
+</odoo>

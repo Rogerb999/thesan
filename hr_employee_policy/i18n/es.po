@@ -1,0 +1,346 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* hr_employee_policy
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-12-16 05:06+0000\n"
+"PO-Revision-Date: 2019-12-22 16:49-0500\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: es\n"
+"X-Generator: Poedit 1.8.8\n"
+
+#. module: hr_employee_policy
+#: model:mail.template,body_html:hr_employee_policy.email_template_oath_severity
+msgid ""
+"<div style=\"font-size:13px;font-family:&quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;margin: 0px; padding: 0px;\">\n"
+"                    <p style=\"font-size:13px;font-family:&quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;margin: 0px; padding: 0px; font-size: 13px;\"> Bajo la gravedad de juramento manifiesto que la información consignada en el presente documento es verídica, por lo cual, lo datos aquí contenidos corresponden a la realidad y están acordes a mis calidades, estudios, experiencia laboral y aptitudes como trabajador. </p>\n"
+"                    <p style=\"margin:0px 0 1rem 0;font-size:13px;font-family:&quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;\"></p>\n"
+"                </div>\n"
+"            "
+msgstr ""
+"<div style=\"font-size:13px;font-family:&quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;margin: 0px; padding: 0px;\">\n"
+"                    <p style=\"font-size:13px;font-family:&quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;margin: 0px; padding: 0px; font-size: 13px;\"> Bajo la gravedad de juramento manifiesto que la información consignada en el presente documento es verídica, por lo cual, lo datos aquí contenidos corresponden a la realidad y están acordes a mis calidades, estudios, experiencia laboral y aptitudes como trabajador. </p>\n"
+"                    <p style=\"margin:0px 0 1rem 0;font-size:13px;font-family:&quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;\"></p>\n"
+"                </div>\n"
+"            "
+
+#. module: hr_employee_policy
+#: model_terms:ir.ui.view,arch_db:hr_employee_policy.hr_policy_form
+msgid "Add Employee Policy"
+msgstr "Agregar política de empleados"
+
+#. module: hr_employee_policy
+#: model_terms:ir.ui.view,arch_db:hr_employee_policy.view_hr_employee_form_contact_reference_inherit
+msgid "Add Policy"
+msgstr "Agregar políticas"
+
+#. module: hr_employee_policy
+#: model:ir.model.fields,field_description:hr_employee_policy.field_hr_employee_policy__answer_type
+#: model:ir.model.fields,field_description:hr_employee_policy.field_hr_policy__answer_type
+msgid "Answer Type"
+msgstr "Tipo de respuesta"
+
+#. module: hr_employee_policy
+#: selection:contact.reference,relation:0
+msgid "Aunt"
+msgstr "Tía"
+
+#. module: hr_employee_policy
+#: selection:contact.reference,relation:0
+msgid "Bride"
+msgstr "Novia"
+
+#. module: hr_employee_policy
+#: model_terms:ir.ui.view,arch_db:hr_employee_policy.hr_employee_policy_wizard_form
+#: model_terms:ir.ui.view,arch_db:hr_employee_policy.hr_policy_wizard_form
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: hr_employee_policy
+#: model:ir.model.fields,field_description:hr_employee_policy.field_contact_reference__contact
+msgid "Contact"
+msgstr "Contacto"
+
+#. module: hr_employee_policy
+#: model:ir.actions.act_window,name:hr_employee_policy.contact_reference_action
+#: model:ir.model,name:hr_employee_policy.model_contact_reference
+#: model:ir.model.fields,field_description:hr_employee_policy.field_hr_employee__contact_reference_ids
+#: model:ir.ui.menu,name:hr_employee_policy.contact_reference_menu
+#: model_terms:ir.ui.view,arch_db:hr_employee_policy.contact_reference_form
+#: model_terms:ir.ui.view,arch_db:hr_employee_policy.contact_reference_tree
+#: model_terms:ir.ui.view,arch_db:hr_employee_policy.view_hr_employee_form_contact_reference_inherit
+msgid "Contact Reference"
+msgstr "Contacto de referencia"
+
+#. module: hr_employee_policy
+#: selection:contact.reference,relation:0
+msgid "Contractor"
+msgstr "Contratista"
+
+#. module: hr_employee_policy
+#: model:ir.model.fields,field_description:hr_employee_policy.field_hr_policy__policy_for_employee
+msgid "Create default policy for employee?"
+msgstr "¿Crear una política predeterminada para el empleado?"
+
+#. module: hr_employee_policy
+#: model:ir.model.fields,field_description:hr_employee_policy.field_contact_reference__create_uid
+#: model:ir.model.fields,field_description:hr_employee_policy.field_hr_employee_policy__create_uid
+#: model:ir.model.fields,field_description:hr_employee_policy.field_hr_employee_policy_wizard__create_uid
+#: model:ir.model.fields,field_description:hr_employee_policy.field_hr_policy__create_uid
+#: model:ir.model.fields,field_description:hr_employee_policy.field_hr_policy_wizard__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: hr_employee_policy
+#: model:ir.model.fields,field_description:hr_employee_policy.field_contact_reference__create_date
+#: model:ir.model.fields,field_description:hr_employee_policy.field_hr_employee_policy__create_date
+#: model:ir.model.fields,field_description:hr_employee_policy.field_hr_employee_policy_wizard__create_date
+#: model:ir.model.fields,field_description:hr_employee_policy.field_hr_policy__create_date
+#: model:ir.model.fields,field_description:hr_employee_policy.field_hr_policy_wizard__create_date
+msgid "Created on"
+msgstr "Creado el"
+
+#. module: hr_employee_policy
+#: model:ir.model.fields,field_description:hr_employee_policy.field_hr_employee_policy__date
+#: model:ir.model.fields,field_description:hr_employee_policy.field_hr_policy__date
+msgid "Date"
+msgstr "Fecha"
+
+#. module: hr_employee_policy
+#: selection:contact.reference,relation:0
+msgid "Daughter"
+msgstr "Hija"
+
+#. module: hr_employee_policy
+#: model:ir.model.fields,field_description:hr_employee_policy.field_hr_employee_policy__description
+#: model:ir.model.fields,field_description:hr_employee_policy.field_hr_policy__description
+msgid "Description"
+msgstr "Descripción"
+
+#. module: hr_employee_policy
+#: model:ir.model.fields,field_description:hr_employee_policy.field_contact_reference__display_name
+#: model:ir.model.fields,field_description:hr_employee_policy.field_hr_employee_policy__display_name
+#: model:ir.model.fields,field_description:hr_employee_policy.field_hr_employee_policy_wizard__display_name
+#: model:ir.model.fields,field_description:hr_employee_policy.field_hr_policy__display_name
+#: model:ir.model.fields,field_description:hr_employee_policy.field_hr_policy_wizard__display_name
+msgid "Display Name"
+msgstr "Nombre mostrado"
+
+#. module: hr_employee_policy
+#: model:ir.model.fields,field_description:hr_employee_policy.field_contact_reference__employee_id
+#: model:ir.model.fields,field_description:hr_employee_policy.field_hr_employee_policy__employee_id
+msgid "Employee"
+msgstr "Empleado"
+
+#. module: hr_employee_policy
+#: code:addons/hr_employee_policy/models/hr_employee.py:41
+#: model:ir.actions.act_window,name:hr_employee_policy.action_hr_employee_policy_wizard
+#: model_terms:ir.ui.view,arch_db:hr_employee_policy.hr_policy_form
+#, python-format
+msgid "Employee Policy"
+msgstr "Política del empleado"
+
+#. module: hr_employee_policy
+#: model:ir.model.fields,field_description:hr_employee_policy.field_hr_employee_policy_wizard__employee_ids
+msgid "Employees"
+msgstr "Empleados"
+
+#. module: hr_employee_policy
+#: selection:contact.reference,relation:0
+msgid "Friend"
+msgstr "Amigo"
+
+#. module: hr_employee_policy
+#: model_terms:ir.ui.view,arch_db:hr_employee_policy.hr_policy_wizard_form
+msgid "Generate"
+msgstr "Generar"
+
+#. module: hr_employee_policy
+#: model_terms:ir.ui.view,arch_db:hr_employee_policy.hr_employee_policy_wizard_form
+msgid "Generate Policy"
+msgstr "Generar política"
+
+#. module: hr_employee_policy
+#: model:mail.template,report_name:hr_employee_policy.email_template_oath_severity
+#: model:mail.template,subject:hr_employee_policy.email_template_oath_severity
+msgid "Gravedad de Juramento"
+msgstr "Gravedad de Juramento"
+
+#. module: hr_employee_policy
+#: model:ir.model,name:hr_employee_policy.model_hr_employee
+msgid "HR Employee"
+msgstr "HR Empleado"
+
+#. module: hr_employee_policy
+#: code:addons/hr_employee_policy/models/hr_policy.py:27
+#: model:ir.actions.act_window,name:hr_employee_policy.hr_employee_policy_action
+#: model:ir.model,name:hr_employee_policy.model_hr_employee_policy
+#: model:ir.ui.menu,name:hr_employee_policy.hr_employee_policy_menu
+#: model_terms:ir.ui.view,arch_db:hr_employee_policy.hr_employee_policy_form
+#: model_terms:ir.ui.view,arch_db:hr_employee_policy.hr_employee_policy_tree
+#, python-format
+msgid "HR Employee Policy"
+msgstr "HR Política del empleado"
+
+#. module: hr_employee_policy
+#: model:ir.model,name:hr_employee_policy.model_hr_employee_policy_wizard
+#: model_terms:ir.ui.view,arch_db:hr_employee_policy.hr_employee_policy_wizard_form
+msgid "HR Employee Policy Wizard"
+msgstr "HR Asistente de políticas de empleado"
+
+#. module: hr_employee_policy
+#: model:ir.actions.act_window,name:hr_employee_policy.hr_policy_action
+#: model:ir.model,name:hr_employee_policy.model_hr_policy
+#: model:ir.ui.menu,name:hr_employee_policy.hr_policy_menu
+#: model_terms:ir.ui.view,arch_db:hr_employee_policy.hr_policy_form
+#: model_terms:ir.ui.view,arch_db:hr_employee_policy.hr_policy_tree
+msgid "HR Policy"
+msgstr "HR Política"
+
+#. module: hr_employee_policy
+#: model:ir.model,name:hr_employee_policy.model_hr_policy_wizard
+#: model_terms:ir.ui.view,arch_db:hr_employee_policy.hr_policy_wizard_form
+msgid "HR Policy Wizard"
+msgstr "HR Asistente de políticas"
+
+#. module: hr_employee_policy
+#: model:ir.model.fields,field_description:hr_employee_policy.field_contact_reference__id
+#: model:ir.model.fields,field_description:hr_employee_policy.field_hr_employee_policy__id
+#: model:ir.model.fields,field_description:hr_employee_policy.field_hr_employee_policy_wizard__id
+#: model:ir.model.fields,field_description:hr_employee_policy.field_hr_policy__id
+#: model:ir.model.fields,field_description:hr_employee_policy.field_hr_policy_wizard__id
+msgid "ID"
+msgstr "ID"
+
+#. module: hr_employee_policy
+#: model:ir.model.fields,field_description:hr_employee_policy.field_contact_reference____last_update
+#: model:ir.model.fields,field_description:hr_employee_policy.field_hr_employee_policy____last_update
+#: model:ir.model.fields,field_description:hr_employee_policy.field_hr_employee_policy_wizard____last_update
+#: model:ir.model.fields,field_description:hr_employee_policy.field_hr_policy____last_update
+#: model:ir.model.fields,field_description:hr_employee_policy.field_hr_policy_wizard____last_update
+msgid "Last Modified on"
+msgstr "Última modificación en"
+
+#. module: hr_employee_policy
+#: model:ir.model.fields,field_description:hr_employee_policy.field_contact_reference__write_uid
+#: model:ir.model.fields,field_description:hr_employee_policy.field_hr_employee_policy__write_uid
+#: model:ir.model.fields,field_description:hr_employee_policy.field_hr_employee_policy_wizard__write_uid
+#: model:ir.model.fields,field_description:hr_employee_policy.field_hr_policy__write_uid
+#: model:ir.model.fields,field_description:hr_employee_policy.field_hr_policy_wizard__write_uid
+msgid "Last Updated by"
+msgstr "Última actualización por"
+
+#. module: hr_employee_policy
+#: model:ir.model.fields,field_description:hr_employee_policy.field_contact_reference__write_date
+#: model:ir.model.fields,field_description:hr_employee_policy.field_hr_employee_policy__write_date
+#: model:ir.model.fields,field_description:hr_employee_policy.field_hr_employee_policy_wizard__write_date
+#: model:ir.model.fields,field_description:hr_employee_policy.field_hr_policy__write_date
+#: model:ir.model.fields,field_description:hr_employee_policy.field_hr_policy_wizard__write_date
+msgid "Last Updated on"
+msgstr "Última actualización el"
+
+#. module: hr_employee_policy
+#: model:ir.model.fields,field_description:hr_employee_policy.field_hr_employee_policy__name
+#: model:ir.model.fields,field_description:hr_employee_policy.field_hr_policy__name
+msgid "Name"
+msgstr "Nombre"
+
+#. module: hr_employee_policy
+#: selection:hr.employee.policy,answer_type:0 selection:hr.policy,answer_type:0
+msgid "No"
+msgstr "No"
+
+#. module: hr_employee_policy
+#: selection:contact.reference,relation:0
+msgid "Others"
+msgstr "Otros"
+
+#. module: hr_employee_policy
+#: model:ir.model.fields,field_description:hr_employee_policy.field_contact_reference__partner_id
+msgid "Partner"
+msgstr "Empresa"
+
+#. module: hr_employee_policy
+#: model:ir.model.fields,field_description:hr_employee_policy.field_hr_employee__policy_ids
+#: model_terms:ir.ui.view,arch_db:hr_employee_policy.view_hr_employee_form_contact_reference_inherit
+msgid "Policies"
+msgstr "Políticas"
+
+#. module: hr_employee_policy
+#: model:ir.actions.act_window,name:hr_employee_policy.action_hr_policy_wizard
+#: model:ir.model.fields,field_description:hr_employee_policy.field_hr_employee_policy__hr_policy_id
+#: model:ir.model.fields,field_description:hr_employee_policy.field_hr_policy_wizard__policy_ids
+#: model:ir.ui.menu,name:hr_employee_policy.policy_menu
+msgid "Policy"
+msgstr "Política"
+
+#. module: hr_employee_policy
+#: model_terms:ir.ui.view,arch_db:hr_employee_policy.mail_view_email_template_search_policy
+msgid "Policy Model"
+msgstr "Modelo de política"
+
+#. module: hr_employee_policy
+#: selection:contact.reference,relation:0
+msgid "Premium"
+msgstr "primo"
+
+#. module: hr_employee_policy
+#: model:ir.model.fields,field_description:hr_employee_policy.field_hr_employee_policy__check_read
+#: model:ir.model.fields,field_description:hr_employee_policy.field_hr_policy__check_read
+msgid "Read"
+msgstr "Leer"
+
+#. module: hr_employee_policy
+#: model:ir.model.fields,field_description:hr_employee_policy.field_contact_reference__relation
+msgid "Relation"
+msgstr "Relación"
+
+#. module: hr_employee_policy
+#: model_terms:ir.ui.view,arch_db:hr_employee_policy.hr_employee_policy_wizard_form
+msgid "Select Employee for Policy"
+msgstr "Seleccionar empleado para la política"
+
+#. module: hr_employee_policy
+#: model_terms:ir.ui.view,arch_db:hr_employee_policy.hr_policy_wizard_form
+msgid "Select Policy"
+msgstr "Seleccionar política"
+
+#. module: hr_employee_policy
+#: selection:contact.reference,relation:0
+msgid "Shareholder"
+msgstr "Accionista"
+
+#. module: hr_employee_policy
+#: selection:contact.reference,relation:0
+msgid "Sister"
+msgstr "Hermana"
+
+#. module: hr_employee_policy
+#: model:ir.model.fields,field_description:hr_employee_policy.field_hr_employee_policy__template_id
+#: model:ir.model.fields,field_description:hr_employee_policy.field_hr_policy__template_id
+msgid "Template"
+msgstr "Plantilla"
+
+#. module: hr_employee_policy
+#: model:ir.actions.act_window,name:hr_employee_policy.action_email_template_policy
+#: model:ir.ui.menu,name:hr_employee_policy.menu_email_templates_policy
+msgid "Templates"
+msgstr "Plantillas"
+
+#. module: hr_employee_policy
+#: selection:contact.reference,relation:0
+msgid "Wife"
+msgstr "Esposa"
+
+#. module: hr_employee_policy
+#: selection:hr.employee.policy,answer_type:0 selection:hr.policy,answer_type:0
+msgid "Yes"
+msgstr "Si"

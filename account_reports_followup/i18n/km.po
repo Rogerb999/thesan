@@ -1,0 +1,537 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * account_reports_followup
+# 
+# Translators:
+# Sengtha Chay <sengtha@gmail.com>, 2018
+# Chan Nath <channath@gmail.com>, 2018
+# Lux Sok <sok.lux@gmail.com>, 2019
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-01-15 15:18+0000\n"
+"PO-Revision-Date: 2018-08-24 11:36+0000\n"
+"Last-Translator: Lux Sok <sok.lux@gmail.com>, 2019\n"
+"Language-Team: Khmer (https://www.transifex.com/odoo/teams/41243/km/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Language: km\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#. module: account_reports_followup
+#: model:account_followup.followup.line,description:account_reports_followup.demo_followup_line3
+#: model:account_followup.followup.line,description:account_reports_followup.demo_followup_line4
+#: model:account_followup.followup.line,description:account_reports_followup.demo_followup_line5
+msgid ""
+"\n"
+"Dear %(partner_name)s,\n"
+"\n"
+"Despite several reminders, your account is still not settled.\n"
+"\n"
+"Unless full payment is made in next 8 days, then legal action for the recovery of the debt will be taken without further notice.\n"
+"\n"
+"I trust that this action will prove unnecessary and details of due payments is printed below.\n"
+"\n"
+"In case of any queries concerning this matter, do not hesitate to contact our accounting department.\n"
+"\n"
+"Best Regards,\n"
+msgstr ""
+"\n"
+"សូមជំរាបមកដល់ %(partner_name)s,\n"
+"\n"
+"ទោះបីជាមានការរំលឹកជាច្រើនក៏ដោយគណនីរបស់អ្នកនៅតែមិនទាន់ទូទាត់\n"
+"\n"
+"លើកលែងតែការទូទាត់ប្រាក់ពេញលេញត្រូវបានធ្វើឡើងក្នុងរយៈពេល ប្រាំបីថ្ងៃបន្ទាប់មកសកម្មភាពផ្លូវច្បាប់សម្រាប់ការសងបំណុលវិញនឹងត្រូវធ្វើឡើងដោយគ្មានការជូនដំណឹងជាមុនឡើយ។\n"
+"\n"
+"ខ្ញុំជឿជាក់ថាសកម្មភាពនេះនឹងបង្ហាញពីភាពមិនចាំបាច់ហើយព័ត៌មានលំអិតនៃការបង់ប្រាក់ត្រូវបានបោះពុម្ពខាងក្រោម។\n"
+"\n"
+"ក្នុងករណីមានសំណួរទាក់ទងនឹងបញ្ហានេះសូមកុំស្ទាក់ស្ទើរក្នុងការទាក់ទងនាយកដ្ឋានគណនេយ្យរបស់យើង\n"
+"ដោយក្តីគោរព\n"
+
+#. module: account_reports_followup
+#: model:account_followup.followup.line,description:account_reports_followup.demo_followup_line1
+msgid ""
+"\n"
+"Dear %(partner_name)s,\n"
+"\n"
+"Exception made if there was a mistake of ours, it seems that the following amount stays unpaid. Please, take appropriate measures in order to carry out this payment in the next 8 days.\n"
+"\n"
+"Would your payment have been carried out after this mail was sent, please ignore this message. Do not hesitate to contact our accounting department.  \n"
+"\n"
+"Best Regards,\n"
+msgstr ""
+"\n"
+"ជូនចំពោះ %(partner_name)s,\n"
+"\n"
+"ការលើកលែងត្រូវបានធ្វើឡើងប្រសិនបើមានកំហុសរបស់យើងវាហាក់ដូចជាចំនួនដូចខាងក្រោមមិនត្រូវបានបង់។ សូមចាត់វិធានការសមស្របដើម្បីអនុវត្តការទូទាត់ប្រាក់នេះក្នុងរយៈពេល 8 ថ្ងៃបន្ទាប់។\n"
+"តើការទូទាត់របស់អ្នកនឹងត្រូវបានអនុវត្តបន្ទាប់ពីអ៊ីមែលនេះត្រូវបានផ្ញើសូមមិនអើពើនឹងសារនេះ។ កុំស្ទាក់ស្ទើរក្នុងការទាក់ទងនាយកដ្ឋានគណនេយ្យរបស់យើង។\n"
+"\n"
+"ដោយក្តីគោរព\n"
+
+#. module: account_reports_followup
+#: model:account_followup.followup.line,description:account_reports_followup.demo_followup_line2
+msgid ""
+"\n"
+"Dear %(partner_name)s,\n"
+"\n"
+"We are disappointed to see that despite sending a reminder, that your account is now seriously overdue.\n"
+"\n"
+"It is essential that immediate payment is made, otherwise we will have to consider placing a stop on your account which means that we will no longer be able to supply your company with (goods/services).\n"
+"Please, take appropriate measures in order to carry out this payment in the next 8 days.\n"
+"\n"
+"If there is a problem with paying invoice that we are not aware of, do not hesitate to contact our accounting department, so that we can resolve the matter quickly.\n"
+"\n"
+"Details of due payments is printed below.\n"
+"\n"
+"Best Regards,\n"
+msgstr ""
+"\n"
+"ជូនចំពោះ %(partner_name)s,\n"
+"\n"
+"យើងខកចិត្តដែលបានឃើញការផ្ញើសាររំលឹកថាគណនីរបស់អ្នកហួសកំរិតហើយ។\n"
+"\n"
+"វាចាំបាច់ណាស់ដែលការទូទាត់ប្រាក់ភ្លាមៗត្រូវបានធ្វើឡើងបើមិនដូច្នេះទេយើងនឹងត្រូវពិចារណាបញ្ឈប់ការចូលគណនីរបស់អ្នកដែលមានន័យថាយើងនឹងមិនអាចផ្គត់ផ្គង់ក្រុមហ៊ុនរបស់អ្នកជាមួយ (ទំនិញ / សេវាកម្ម) បានទេ។\n"
+"សូមចាត់វិធានការសមស្របដើម្បីអនុវត្តការទូទាត់ប្រាក់នេះក្នុងរយៈពេល 8 ថ្ងៃបន្ទាប់។\n"
+"\n"
+"ប្រសិនបើមានបញ្ហាក្នុងការបង់ប្រាក់វិក័យប័ត្រដែលយើងមិនបានដឹងសូមកុំស្ទាក់ស្ទើរទាក់ទងនាយកដ្ឋានគណនេយ្យរបស់យើងដើម្បីឱ្យយើងអាចដោះស្រាយបញ្ហាបានយ៉ាងឆាប់រហ័ស។\n"
+"\n"
+"ព័ត៌មានលំអិតនៃការទូទាត់សងត្រូវបានបោះពុម្ពខាងក្រោម។\n"
+"\n"
+"ដោយក្តីគោរព,\n"
+
+#. module: account_reports_followup
+#: model_terms:ir.ui.view,arch_db:account_reports_followup.view_account_followup_followup_line_form
+msgid ": Current Date"
+msgstr "កាលបរិច្ចេទ​បច្ចប្បន្ន"
+
+#. module: account_reports_followup
+#: model_terms:ir.ui.view,arch_db:account_reports_followup.view_account_followup_followup_line_form
+msgid ": Partner Name"
+msgstr "ឈ្មោះដៃគូរ"
+
+#. module: account_reports_followup
+#: model_terms:ir.ui.view,arch_db:account_reports_followup.view_account_followup_followup_line_form
+msgid ": User Name"
+msgstr "ឈ្មោះប្រើប្រាស់"
+
+#. module: account_reports_followup
+#: model_terms:ir.ui.view,arch_db:account_reports_followup.view_account_followup_followup_line_form
+msgid ": User's Company Name"
+msgstr "ឈ្មោះក្រុមហ៊ុនប្រើប្រាស់"
+
+#. module: account_reports_followup
+#: model_terms:ir.ui.view,arch_db:account_reports_followup.view_account_followup_followup_kanban
+msgid "<i class=\"fa fa-building\" role=\"img\" aria-label=\"Enterprise\"/>"
+msgstr "<i class=\"fa fa-building\" role=\"img\" aria-label=\"Enterprise\"/>"
+
+#. module: account_reports_followup
+#: model:ir.model,name:account_reports_followup.model_account_followup_followup
+msgid "Account Follow-up"
+msgstr "ការតាមដានរបាយការណ៌គណនី"
+
+#. module: account_reports_followup
+#: model:ir.model.fields,field_description:account_reports_followup.field_account_followup_followup_line__manual_action_note
+msgid "Action To Do"
+msgstr "តាមដានសកម្មភាព"
+
+#. module: account_reports_followup
+#: model_terms:ir.ui.view,arch_db:account_reports_followup.view_account_followup_followup_line_form
+msgid "After"
+msgstr "បន្ទាប់មក"
+
+#. module: account_reports_followup
+#: model:ir.model.fields,field_description:account_reports_followup.field_account_followup_followup_line__manual_action_responsible_id
+msgid "Assign a Responsible"
+msgstr "ការទទួលខុសត្រូវសំ្រាប់ការចុះហត្តលេខា"
+
+#. module: account_reports_followup
+#: model:ir.model.fields,field_description:account_reports_followup.field_account_followup_followup__company_id
+msgid "Company"
+msgstr "ក្រុមហ៊ុន"
+
+#. module: account_reports_followup
+#: model:ir.model.fields,field_description:account_reports_followup.field_account_followup_followup__name
+msgid "Company Name"
+msgstr "ឈ្មោះក្រុមហ៊ុន"
+
+#. module: account_reports_followup
+#: model:ir.model,name:account_reports_followup.model_res_config_settings
+msgid "Config Settings"
+msgstr "កំណត់រចនាសម្ព័ន្ធ"
+
+#. module: account_reports_followup
+#: model:ir.model,name:account_reports_followup.model_res_partner
+msgid "Contact"
+msgstr "ទំនាក់ទំនង"
+
+#. module: account_reports_followup
+#: model:ir.model.fields,field_description:account_reports_followup.field_account_followup_followup__create_uid
+#: model:ir.model.fields,field_description:account_reports_followup.field_account_followup_followup_line__create_uid
+msgid "Created by"
+msgstr "បង្កើតដោយ"
+
+#. module: account_reports_followup
+#: model:ir.model.fields,field_description:account_reports_followup.field_account_followup_followup__create_date
+#: model:ir.model.fields,field_description:account_reports_followup.field_account_followup_followup_line__create_date
+msgid "Created on"
+msgstr "បង្កើតនៅ"
+
+#. module: account_reports_followup
+#: sql_constraint:account_followup.followup.line:0
+msgid "Days of the follow-up levels must be different"
+msgstr "ថ្ងៃនៃកម្រិតតាមដានត្រូវតែខុសគ្នា"
+
+#. module: account_reports_followup
+#: model_terms:ir.actions.act_window,help:account_reports_followup.action_account_followup_definition_form
+msgid "Define follow-up levels and their related actions"
+msgstr "កំណត់កម្រិតតាមដាននិងសកម្មភាពពាក់ព័ន្ធរបស់ពួកគេ"
+
+#. module: account_reports_followup
+#: model:ir.model.fields,field_description:account_reports_followup.field_account_followup_followup__display_name
+#: model:ir.model.fields,field_description:account_reports_followup.field_account_followup_followup_line__display_name
+msgid "Display Name"
+msgstr "ឈ្មោះសំរាប់បង្ហាញ"
+
+#. module: account_reports_followup
+#. openerp-web
+#: code:addons/account_reports_followup/static/src/xml/account_reports_followup_template.xml:19
+#, python-format
+msgid "Done"
+msgstr "រួចរាល"
+
+#. module: account_reports_followup
+#: model:ir.model.fields,field_description:account_reports_followup.field_account_followup_followup_line__delay
+msgid "Due Days"
+msgstr "ថ្ងៃសំរាក"
+
+#. module: account_reports_followup
+#: model:account_followup.followup.line,name:account_reports_followup.demo_followup_line1
+msgid "First reminder email"
+msgstr "អ៊ីមែលរំលឹកដំបូង"
+
+#. module: account_reports_followup
+#: model:ir.model.fields,field_description:account_reports_followup.field_account_followup_followup_line__followup_id
+msgid "Follow Ups"
+msgstr "តាមដាន"
+
+#. module: account_reports_followup
+#: model:ir.model.fields,field_description:account_reports_followup.field_account_followup_followup_line__name
+msgid "Follow-Up Action"
+msgstr "តាមដានលើសកម្មភាព"
+
+#. module: account_reports_followup
+#: model:ir.model.fields,field_description:account_reports_followup.field_account_followup_followup__followup_line_ids
+#: model_terms:ir.ui.view,arch_db:account_reports_followup.view_account_followup_followup_form
+#: model_terms:ir.ui.view,arch_db:account_reports_followup.view_account_followup_followup_tree
+msgid "Follow-up"
+msgstr "តាមដានបន្ត"
+
+#. module: account_reports_followup
+#: model:ir.model,name:account_reports_followup.model_account_followup_followup_line
+msgid "Follow-up Criteria"
+msgstr "លក្ខណៈវិនិច្ឆ័យតាមដាន"
+
+#. module: account_reports_followup
+#: model:ir.model.fields,field_description:account_reports_followup.field_account_move_line__followup_line_id
+msgid "Follow-up Level"
+msgstr "កំរិតនៃការតាមដាន"
+
+#. module: account_reports_followup
+#: model:ir.ui.menu,name:account_reports_followup.account_followup_menu
+#: model_terms:ir.ui.view,arch_db:account_reports_followup.res_config_settings_view_form
+msgid "Follow-up Levels"
+msgstr "កំរិតនៃការតាមដាន"
+
+#. module: account_reports_followup
+#: model:ir.model,name:account_reports_followup.model_account_followup_report
+msgid "Follow-up Report"
+msgstr "របាយការណ៍បន្ត"
+
+#. module: account_reports_followup
+#: model:ir.model.fields,field_description:account_reports_followup.field_res_partner__payment_responsible_id
+#: model:ir.model.fields,field_description:account_reports_followup.field_res_users__payment_responsible_id
+msgid "Follow-up Responsible"
+msgstr "កំរិតការតាមដានដោយមានការទទួលខុសត្រូវ"
+
+#. module: account_reports_followup
+#: model_terms:ir.ui.view,arch_db:account_reports_followup.view_account_followup_followup_line_form
+#: model_terms:ir.ui.view,arch_db:account_reports_followup.view_account_followup_followup_line_tree
+msgid "Follow-up Steps"
+msgstr "ជំហានសម្រាប់ការតាមដាន"
+
+#. module: account_reports_followup
+#: model_terms:ir.actions.act_window,help:account_reports_followup.action_account_followup_definition_form
+msgid ""
+"For each step, specify the actions to be taken and delay in days. It is\n"
+"                possible to use print and e-mail templates to send specific messages to\n"
+"                the customer."
+msgstr ""
+"សម្រាប់ជំហាននីមួយៗបញ្ជាក់អំពីសកម្មភាពដែលត្រូវធ្វើនិងការពន្យាពេលក្នុងរយៈពេលប៉ុន្មានថ្ងៃ។"
+" វា​គឺ​ជា​ការ                 "
+"អាចប្រើពុម្ពបោះពុម្ពនិងអ៊ីម៉ែលដើម្បីផ្ញើសារជាក់លាក់ទៅ                 "
+"អតិថិជន។"
+
+#. module: account_reports_followup
+#: model:ir.model.fields,help:account_reports_followup.field_account_followup_followup_line__sequence
+msgid "Gives the sequence order when displaying a list of follow-up lines."
+msgstr "ផ្តល់លំដាប់លំដាប់នៅពេលបង្ហាញបញ្ជីបន្ទាត់តាមដាន។"
+
+#. module: account_reports_followup
+#: model:ir.model.fields,field_description:account_reports_followup.field_account_followup_followup__id
+#: model:ir.model.fields,field_description:account_reports_followup.field_account_followup_followup_line__id
+msgid "ID"
+msgstr "ID"
+
+#. module: account_reports_followup
+#: model:ir.model,name:account_reports_followup.model_account_move_line
+msgid "Journal Item"
+msgstr "ប្រភេទទិនានុប្បវត្ត"
+
+#. module: account_reports_followup
+#: model:ir.model.fields,field_description:account_reports_followup.field_account_followup_followup____last_update
+#: model:ir.model.fields,field_description:account_reports_followup.field_account_followup_followup_line____last_update
+msgid "Last Modified on"
+msgstr "កាលបរិច្ឆេតកែប្រែចុងក្រោយ"
+
+#. module: account_reports_followup
+#: model:ir.model.fields,field_description:account_reports_followup.field_account_followup_followup__write_uid
+#: model:ir.model.fields,field_description:account_reports_followup.field_account_followup_followup_line__write_uid
+msgid "Last Updated by"
+msgstr "ផ្លាស់ប្តូរចុងក្រោយ"
+
+#. module: account_reports_followup
+#: model:ir.model.fields,field_description:account_reports_followup.field_account_followup_followup__write_date
+#: model:ir.model.fields,field_description:account_reports_followup.field_account_followup_followup_line__write_date
+msgid "Last Updated on"
+msgstr "ផ្លាស់ប្តូរចុងក្រោយ"
+
+#. module: account_reports_followup
+#: model:ir.model.fields,field_description:account_reports_followup.field_account_move_line__followup_date
+msgid "Latest Follow-up"
+msgstr "ការតាមដានចុងក្រោយ"
+
+#. module: account_reports_followup
+#. openerp-web
+#: code:addons/account_reports_followup/static/src/xml/account_reports_followup_template.xml:13
+#: model:ir.model.fields,field_description:account_reports_followup.field_account_followup_followup_line__manual_action
+#: model_terms:ir.ui.view,arch_db:account_reports_followup.view_account_followup_followup_line_form
+#, python-format
+msgid "Manual Action"
+msgstr "សកម្មភាពដោយដៃ"
+
+#. module: account_reports_followup
+#: model:ir.model.fields,field_description:account_reports_followup.field_account_followup_followup_line__manual_action_type_id
+msgid "Manual Action Type"
+msgstr "ប្រភេទនៃសកម្មភាព"
+
+#. module: account_reports_followup
+#: code:addons/account_reports_followup/models/account_followup_report.py:86
+#, python-format
+msgid "Manual action done"
+msgstr "សកម្មភាពដែរបានធ្វើរួចរាល់"
+
+#. module: account_reports_followup
+#. openerp-web
+#: code:addons/account_reports_followup/static/src/xml/account_reports_followup_template.xml:16
+#, python-format
+msgid ""
+"Odoo will remind you to take care of this follow-up on the next reminder "
+"date."
+msgstr "Odoo នឹងរំលឹកអ្នកឱ្យថែរក្សាការតាមដាននេះនៅថ្ងៃរំលឹកបន្ទាប់។"
+
+#. module: account_reports_followup
+#: sql_constraint:account_followup.followup:0
+msgid "Only one follow-up per company is allowed"
+msgstr "ការតាមដានត្រូវបានមើលត្រឹមតែមួយដោយមានការអនុញ្ញាតក្នុងក្រុមហ៊ុន"
+
+#. module: account_reports_followup
+#: model:ir.model.fields,help:account_reports_followup.field_res_partner__payment_responsible_id
+#: model:ir.model.fields,help:account_reports_followup.field_res_users__payment_responsible_id
+msgid ""
+"Optionally you can assign a user to this field, which will make him "
+"responsible for the action."
+msgstr ""
+"ជាជម្រើសអ្នកអាចកំណត់អ្នកប្រើទៅកាន់វាលនេះដែលនឹងធ្វើឱ្យគាត់ទទួលខុសត្រូវចំពោះសកម្មភាព។"
+
+#. module: account_reports_followup
+#: model_terms:ir.ui.view,arch_db:account_reports_followup.account_move_line_partner_tree
+msgid "Partner entries"
+msgstr "ធាតុរបស់ដៃគូ"
+
+#. module: account_reports_followup
+#: model:ir.actions.act_window,name:account_reports_followup.action_account_followup_definition_form
+msgid "Payment Follow-ups"
+msgstr "ការតាមដានការបង់ប្រាក់"
+
+#. module: account_reports_followup
+#: model:ir.model.fields,field_description:account_reports_followup.field_account_followup_followup_line__print_letter
+msgid "Print a Letter"
+msgstr "បោះពុម្ពពេលក្រោយ"
+
+#. module: account_reports_followup
+#. openerp-web
+#: code:addons/account_reports_followup/static/src/xml/account_reports_followup_template.xml:7
+#, python-format
+msgid "Print letter"
+msgstr "បោះពុម្ពសំបុត្រ"
+
+#. module: account_reports_followup
+#: model:ir.model.fields,field_description:account_reports_followup.field_account_followup_followup_line__description
+msgid "Printed Message"
+msgstr "សារសម្រាប់បោះពុម្ព"
+
+#. module: account_reports_followup
+#. openerp-web
+#: code:addons/account_reports_followup/static/src/xml/account_reports_followup_template.xml:16
+#, python-format
+msgid "Remind me later"
+msgstr "រំលឹកខ្ងុំពេលក្រោយ"
+
+#. module: account_reports_followup
+#: model_terms:ir.ui.view,arch_db:account_reports_followup.view_account_followup_filter
+msgid "Search Follow-up"
+msgstr "ស្រាវជ្រាវការតាមដាន"
+
+#. module: account_reports_followup
+#: model:account_followup.followup.line,name:account_reports_followup.demo_followup_line2
+msgid "Second reminder letter and email"
+msgstr "ការបញ្ជក់ពីសំបុត្រ និង​អ៊ីមែល"
+
+#. module: account_reports_followup
+#: model_terms:ir.ui.view,arch_db:account_reports_followup.view_account_followup_followup_line_form
+msgid "Send a Letter or Email"
+msgstr "ការបញ្ជក់ពីសំបុត្រ និង​អ៊ីមែល"
+
+#. module: account_reports_followup
+#: model:ir.model.fields,field_description:account_reports_followup.field_account_followup_followup_line__send_email
+msgid "Send an Email"
+msgstr "ការផ្ងើអ៊ីម៉ែល"
+
+#. module: account_reports_followup
+#. openerp-web
+#: code:addons/account_reports_followup/static/src/xml/account_reports_followup_template.xml:10
+#, python-format
+msgid "Send by email"
+msgstr "ផ្ញើ​តាមរយៈ​អ៊ី​ម៉ែ​ល"
+
+#. module: account_reports_followup
+#: model:ir.model.fields,field_description:account_reports_followup.field_account_followup_followup_line__sequence
+msgid "Sequence"
+msgstr "លំដាប់"
+
+#. module: account_reports_followup
+#: model:ir.model.fields,help:account_reports_followup.field_account_followup_followup_line__delay
+msgid ""
+"The number of days after the due date of the invoice to wait before sending "
+"the reminder.  Could be negative if you want to send a polite alert "
+"beforehand."
+msgstr ""
+"ចំនួនថ្ងៃបន្ទាប់ពីថ្ងៃផុតកំណត់នៃវិក្ក័យប័ត្រត្រូវរង់ចាំមុនពេលផ្ញើការរំលឹក។ "
+"អាចជារឿងអវិជ្ជមានប្រសិនបើអ្នកចង់ផ្ញើការជូនដំណឹងមុន ៗ ។"
+
+#. module: account_reports_followup
+#: model:account_followup.followup.line,name:account_reports_followup.demo_followup_line3
+msgid "Third reminder: phone the customer"
+msgstr "ការរំលឹកទីបី: ទូរស័ព្ទអតិថិជន"
+
+#. module: account_reports_followup
+#: model_terms:ir.ui.view,arch_db:account_reports_followup.view_account_followup_followup_form
+msgid ""
+"To remind customers of paying their invoices, you can\n"
+"                        define different actions depending on how severely\n"
+"                        overdue the customer is. These actions are bundled\n"
+"                        into follow-up levels that are triggered when the due\n"
+"                        date of an invoice has passed a certain\n"
+"                        number of days. If there are other overdue invoices for the \n"
+"                        same customer, the actions of the most \n"
+"                        overdue invoice will be executed."
+msgstr ""
+"ដើម្បីរំលឹកអតិថិជនឱ្យបង់វិក័យប័ត្ររបស់ពួកគេអ្នកអាចធ្វើបាន\n"
+"                        កំណត់សកម្មភាពខុស ៗ គ្នាអាស្រ័យលើរបៀបដែលធ្ងន់ធ្ងរ\n"
+"                        អតិថិជនហួសកាលកំណត់គឺ។ សកម្មភាពទាំងនេះត្រូវបានខ្ចប់\n"
+"                        ចូលទៅក្នុងកម្រិតតាមដានដែលត្រូវបានបង្កឡើងនៅពេលដែលកំណត់\n"
+"                        កាលបរិច្ឆេទនៃវិក្ក័យប័ត្រមួយបានកន្លងផុត\n"
+"                        ចំនួនថ្ងៃ។ ប្រសិនបើមានវិក័យប័ត្រហួសកំណត់ផ្សេងទៀតសម្រាប់\n"
+"                        អតិថិជនដូចគ្នា, សកម្មភាពនៃការបំផុត\n"
+"                        វិក័យប័ត្រហួសកាលកំណត់នឹងត្រូវបានអនុវត្ត។"
+
+#. module: account_reports_followup
+#: model_terms:ir.ui.view,arch_db:account_reports_followup.account_move_line_partner_tree
+msgid "Total credit"
+msgstr "៌ឥណទាសរុប"
+
+#. module: account_reports_followup
+#: model_terms:ir.ui.view,arch_db:account_reports_followup.account_move_line_partner_tree
+msgid "Total debit"
+msgstr "បំណុលសរុប"
+
+#. module: account_reports_followup
+#: model:account_followup.followup.line,name:account_reports_followup.demo_followup_line4
+msgid "Urging reminder email"
+msgstr "ជំរុញឱ្យអ៊ីម៉ែលរំលឹក"
+
+#. module: account_reports_followup
+#: model:account_followup.followup.line,name:account_reports_followup.demo_followup_line5
+msgid "Urging reminder letter"
+msgstr "ការជំរុញអ៊ីម៉ែលរំលឹកពេលក្រោយ"
+
+#. module: account_reports_followup
+#: model:ir.model.fields,help:account_reports_followup.field_account_followup_followup_line__print_letter
+msgid "When processing, it will print a PDF"
+msgstr "ពេលដំណើរការ និងការបោះពុម្ពចេញជា ឯកសារ ភីឌីអេស"
+
+#. module: account_reports_followup
+#: model:ir.model.fields,help:account_reports_followup.field_account_followup_followup_line__send_email
+msgid "When processing, it will send an email"
+msgstr "នៅពេលដំណើរការវានឹងផ្ញើអ៊ីមែល"
+
+#. module: account_reports_followup
+#: model:ir.model.fields,help:account_reports_followup.field_account_followup_followup_line__manual_action
+msgid ""
+"When processing, it will set the manual action to be taken for that "
+"customer. "
+msgstr "នៅពេលដំណើរការវានឹងកំណត់សកម្មភាពដោយដៃដែលត្រូវបានយកសម្រាប់អតិថិជននោះ។"
+
+#. module: account_reports_followup
+#: model_terms:ir.ui.view,arch_db:account_reports_followup.view_account_followup_followup_line_form
+msgid ""
+"Write here the introduction in the letter,\n"
+"                            according to the level of the follow-up. You can\n"
+"                            use the following keywords in the text. Don't\n"
+"                            forget to translate in all languages you installed\n"
+"                            using to top right icon."
+msgstr ""
+"សរសេរនៅទីនេះសេចក្តីណែនាំនៅក្នុងលិខិត,                             "
+"នេះបើយោងតាមកម្រិតនៃការតាមដាន។ អ្នក​អាច                             "
+"ប្រើពាក្យគន្លឹះដូចខាងក្រោមក្នុងអត្ថបទ។ កុំធ្វើ                             "
+"ភ្លេចបកប្រែក្នុងភាសាទាំងអស់ដែលអ្នកបានដំឡើង                             "
+"ប្រើទៅរូបតំណាងខាងស្តាំ។"
+
+#. module: account_reports_followup
+#: code:addons/account_reports_followup/models/account_followup.py:161
+#, python-format
+msgid "You have to define at least one line in the followup levels of %s"
+msgstr "អ្នកត្រូវកំណត់យ៉ាងហោចណាស់មួយជួរនៅក្នុងកម្រិតនៃការតាមដាន%s"
+
+#. module: account_reports_followup
+#: code:addons/account_reports_followup/models/account_followup.py:57
+#, python-format
+msgid ""
+"Your description is invalid, use the right legend or %% if you want to use "
+"the percent character."
+msgstr ""
+"ការរៀបរាប់របស់អ្នក មានសុពលភាព "
+"ប្រើប្រាស់%%ប្រសិនបើអ្នកមិនបានប្រើប្រាស់ភាគរយនៃចំនួនព្យាង្គ"
+
+#. module: account_reports_followup
+#: model_terms:ir.ui.view,arch_db:account_reports_followup.view_account_followup_followup_line_form
+msgid "days overdue, do the following actions:"
+msgstr "ថ្ងៃដែលលើសមិនបានធ្វើសកម្មភាពតាមដាន"
+
+#. module: account_reports_followup
+#: model_terms:ir.ui.view,arch_db:account_reports_followup.view_account_followup_followup_line_form
+msgid "e.g. Call the customer, check if it's paid, ..."
+msgstr "ការហៅអតិថិជនិងការពិនិត្យមើលលើការចំណាយ"

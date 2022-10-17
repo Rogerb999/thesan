@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="contrato_practicas">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="doc">
+                    <t t-call="web.external_layout">
+                        <div class="page" t-foreach="docs" t-as="object" style="page-break-after:always;padding-right:60px;padding-left:60px;">
+                            <div class="oe_structure"/>
+                            <br/>
+                            <h6 align="center"><b>CONVENIO DE PRÁCTICA</b></h6>
+                            <br/>
+                            <t t-set="employee_id" t-value="doc.employee_id"/>
+                            <t t-set="company_id" t-value="doc.company_id"/>
+                            <table class="table table-sm table-bordered center"
+                                   style="font-size: 14px;">
+                                <tr>
+                                    <td width="40%"><b>EMPRESA</b></td>
+                                    <td><t t-esc="company_id.name"/></td>
+                                </tr>
+                                <tr>
+                                    <td width="40%"><b>NIT</b></td>
+                                    <td><t t-esc="company_id.vat"/></td>
+                                </tr>
+                                <tr>
+                                    <td width="40%"><b>DIRECCIÓN</b></td>
+                                    <td><t t-esc="company_id.street"/></td>
+                                </tr>
+                                <tr>
+                                    <td width="40%"><b>EL ESTUDIANTE</b></td>
+                                    <td><t t-esc="employee_id.name"/></td>
+                                </tr>
+                                <tr>
+                                    <td width="40%"><b>DOCUMENTO DE IDENTIDAD</b></td>
+                                    <td><t t-esc="employee_id.identification_id"/></td>
+                                </tr>
+                                <tr>
+                                    <td width="40%"><b>FECHA DE NACIMIENTO</b></td>
+                                    <td><t t-esc="employee_id.birthday"/></td>
+                                </tr>
+                                <tr>
+                                    <td width="40%"><b>DIRECCIÓN</b></td>
+                                    <td><t t-esc="employee_id.address_home_id.street"/></td>
+                                </tr>
+                                <tr>
+                                    <td width="40%"><b>TELÉFONO</b></td>
+                                    <td><t t-esc="employee_id.address_home_id.phone"/></td>
+                                </tr>
+                            </table>
+                            <br/><br/>
+                            <p class="text-justify" style="font-size: 14px;">
+                                <b>Entre los suscritos a saber <t t-esc="company_id.legal_representative_id.name"/>, mayor de edad, identificado como aparece al pie de su firma, quien obra en su calidad de  representante legal de <t t-esc="company_id.name"/>, quien para los efectos del presente Contrato se denominará EMPRESA, y <t t-esc="employee_id.name"/>, identificado(a) con
+                                    <span t-if="employee_ident_type == 'rut'">RUT</span>
+                                    <span t-elif="employee_ident_type == 'id_document'">Cédula</span>
+                                    <span t-elif="employee_ident_type == 'id_card'">Tarjeta de Identidad</span>
+                                    <span t-elif="employee_ident_type == 'passport'">Pasaporte</span>
+                                    <span t-elif="employee_ident_type == 'foreign_id_card'">Cédula Extranjera</span>
+                                    <span t-elif="employee_ident_type == 'external_id'">ID del Exterior</span>
+                                    <span t-elif="employee_ident_type == 'diplomatic_card'">Carné Diplomatico</span>
+                                    <span t-elif="employee_ident_type == 'residence_document'">Salvoconducto de Permanencia</span>
+                                    <span t-elif="employee_ident_type == 'civil_registration'">Registro Civil</span>
+                                    <span t-elif="employee_ident_type == 'national_citizen_id'">Cédula de ciudadanía</span>
+                                    No. <t t-esc="employee_id.identification_id"/> expedida en <t t-esc="employee_id.ident_issuance_city_id.name"/>, quien en adelante se denomina el ESTUDIANTE en desarrollo del convenio de práctica empresarial suscrito entre <t t-esc="company_id.name"/> y <t t-esc="doc.institution_id.name"/> (NOMBRE DE INSTITUCIÓN EDUCATIVA CON CONVENIO INTERINSTITUCIONAL), entidad donde el estudiante actualmente cursa sus estudios, se ha celebrado el presente  de práctica empresarial, regido por el convenio vigente entre LA EMPRESA y LA EMPRESA antes citada y además por las siguientes cláusulas:</b>
+                            </p>
+                            <p class="text-justify" style="font-size: 14px;">
+                                <b>PRIMERA.- OBJETO. LA EMPRESA celebra el presente convenio de práctica empresarial con el ESTUDIANTE con la finalidad de que éste desarrolle en la EMPRESA la práctica empresarial que se encuentra comprendida dentro de su currículo académico de acuerdo con las particulares instrucciones y requerimientos que le realice LA EMPRESA, entidad esta a la cual se encuentra sujeto el ESTUDIANTE durante la ejecución del presente convenio.</b>
+                            </p>
+                            <p class="text-justify" style="font-size: 14px;">
+                                <b>SEGUNDA. -DURACIÓN. El término de duración del convenio será de ____ (__) meses, teniéndose como fecha de inicio del mismo el día _________.  Las partes de común acuerdo podrán dar por terminado el presente convenio en cualquier momento y de forma unilateral sin que por ello haya lugar a pagar a la contraparte indemnización alguna.</b>
+                            </p>
+                            <p class="text-justify" style="font-size: 14px;">
+                                <b>TERCERA.- OBLIGACIONES DEL PRACTICANTE: Son obligaciones del ESTUDIANTE durante la ejecución del presente convenio: </b>
+                            </p>
+                            <p class="text-justify" style="font-size: 14px;">
+                                <b>Poner toda la diligencia y aplicación para lograr el mayor rendimiento en su formación.
+                                Concurrir puntualmente a la EMPRESA desempeñar las funciones propias de su práctica  en vigencia del presente convenio.<br/>
+                                Cumplir con los horarios que ha acordado con la EMPRESA para desarrollar su formación en la fase práctica,  en las actividades que se asigne y que guardan relación con su formación.<br/>
+                                Cumplir con las políticas, procedimientos y reglamentos de la EMPRESA. <br/>
+                                Informar con anticipación las salidas para realizar actividades propias de su actividad académica.<br/>Presentar mensualmente los soportes de afiliación al Sistema de Seguridad Social en Salud, donde se encuentre amparado.<br/>
+                                (Las demás que considere la Compañía siempre y cuando no tengan una connotación de carácter laboral).</b>
+                            </p>
+                            <p class="text-justify" style="font-size: 14px;">
+                                <b>CUARTA.- SEGURIDAD SOCIAL EN SALUD. Durante la totalidad de la vigencia del presente convenio el ESTUDIANTE se obliga a mantener vigente su afiliación al sistema de Seguridad Social en salud, obligación que en caso de ser incumplida podrá ser utilizada por la EMPRESA para ejercer la reclamación de los perjuicios que se llegue a causarle.</b>
+                            </p>
+                            <p class="text-justify" style="font-size: 14px;">
+                                <b>QUINTA: SEGURIDAD SOCIAL EN RIESGOS LABORALES. Durante el término total de duración del presente convenio, FIDUCOLDEX se obligará a afiliar al ESTUDIANTE al Sistema de Seguridad Social en Riesgos Laborales, a mantener vigente su afiliación al mismo y a realizar el pago de los aportes correspondientes sobre la base de cotización equivalente a un (1) salario mínimo legal mensual vigente.</b>
+                            </p>
+                            <p class="text-justify" style="font-size: 14px;">
+                                <b>SEXTA. HORARIO. Se conviene entre las partes que la jornada a cumplir por EL ESTUDIANTE será de ________ () horas semanales . Los horarios que cumpla EL ESTUDIANTE serán compatibles con su actividad académica.</b>
+                            </p>
+                            <p class="text-justify" style="font-size: 14px;">
+                                <b>SÉPTIMA. OBLIGACIONES DE LA EMPRESA. La EMPRESA además de las obligaciones derivadas de la Ley, tendrá las siguientes:</b>
+                            </p>
+                            <p class="text-justify" style="font-size: 14px;">
+                                <b>Realizará un seguimiento al ESTUDIANTE durante su etapa de práctica.<br/>
+                                Dar cumplimiento a las condiciones académicas de la práctica; <br/>
+                                Determinar previamente y en conjunto con la Universidad las actividades a realizar por el ESTUDIANTE.<br/>
+                                Suministrar al ESTUDIANTE los elementos necesarios para el correcto desempeño de las actividades que con ocasión de la práctica le sean asignadas.</b>
+                            </p>
+                            <p class="text-justify" style="font-size: 14px;">
+                                <b>OCTAVA.- TERMINACIÓN. El presente convenio podrá darse por terminado en los siguientes casos: a) Por mutuo acuerdo entre las Partes. b) Por el vencimiento del término de duración del presente contrato. c) La cancelación de la matrícula por parte de la ENTIDAD de acuerdo con el reglamento previsto para los alumnos. d) El bajo rendimiento o las faltas disciplinarias cometidas en los períodos de Formación Profesional Integral en la ENTIDAD o en la EMPRESA, cuando a pesar de los requerimientos de  Empresa o de  ENTIDAD, no se corrijan en un plazo razonable. e) El incumplimiento de las obligaciones previstas para cada una de las Partes. F) La terminación por cualquier causa del Convenio Interinstitucional suscrito entre <t t-esc="company_id.name"/>  y <t t-esc="doc.institution_id.name"/> , el día __ del mes de ____ de ___(FECHA DE SUSCRIPCIÓN DEL CONVENIO INTERINSTITUCIONAL) </b>
+                            </p>
+                            <p class="text-justify" style="font-size: 14px;">
+                                <b>NOVENA. EXCLUSIÓN DE RELACIÓN LABORAL. EL ESTUDIANTE actuará en forma totalmente autónoma e independiente de LA EMPRESA, con plena autonomía técnica y de dirección, por cuanto los servicios que se contratan dejan al ESTUDIANTE en plena libertad para cumplir sus obligaciones y efectuar los estudios, trámites y funciones que se le encomiendan de acuerdo con sus necesidades. En consecuencia, la relación jurídica que se crea mediante la suscripción del presente convenio es de carácter netamente comercial y se regirá por las normas propias del Derecho comercial; así mismo, queda excluido el nacimiento de cualquier tipo de vínculo de carácter laboral. </b>
+                            </p>
+                            <p class="text-justify" style="font-size: 14px;">
+                                <b>DÉCIMA. CONFIDENCIALIDAD. EL ESTUDIANTE se abstendrá de divulgar, publicar o comunicar, directa o indirectamente a terceros la información, documentos, videos, imágenes, grabaciones  o cualquier otro tipo de instrumento al cual tenga acceso durante la ejecución de la práctica o que se encuentre relacionada con la realización o ejecución de este convenio y, en especial con la información relacionada con los negocios y actividades de LA EMPRESA, sin perjuicio de que la información sea o no considerada como confidencial o importante, puesto que ambas partes convienen expresamente que toda información que reciba EL ESTUDIANTE de parte de LA EMPRESA, con ocasión de este convenio se considera importante y confidencial y, por lo tanto, divulgarla o transmitirla a terceros no autorizados puede llegar a causar daño en la conducción de los negocios y actividades de LA EMPRESA, o en su reputación. Por consiguiente, la violación de lo expresado en esta cláusula se considerará grave incumplimiento de este convenio y dará derecho a LA EMPRESA, a terminarlo unilateralmente y con justa causa, sin perjuicio de cualquier otro derecho que pueda tener, conforme a la ley para reclamar las indemnizaciones del caso.</b>
+                            </p>
+                            <p class="text-justify" style="font-size: 14px;">
+                                <b>Las Partes declaran que es de carácter confidencial cualquier información, documento o procedimiento del LA EMPRESA o de las sociedades filiales, subsidiarias, matrices, subordinadas, relacionadas o empresas, personas naturales, accionistas, clientes o terceros relacionados con éste o sobre el cual tenga conocimiento el ESTUDIANTE en desarrollo del presente convenio de práctica o con ocasión de éste, que no sea de conocimiento público, especialmente aquella información privilegiada respecto de operaciones, transacciones o negocios, o el valor de los mismos, que resulte sensible para la operación de LA EMPRESA o de terceros. En tal sentido, el ESTUDIANTE  no sólo se obliga a no dar a conocer la información confidencial que llegue a conocer, sino que se abstendrá de utilizar dicha información para la obtención de un provecho personal o para terceros.</b>
+                            </p>
+                            <p class="text-justify" style="font-size: 14px;">
+                                <b>El ESTUDIANTE, a la terminación de su convenio por cualquier causa, devolverá inmediatamente a LA EMPRESA cualquier documento, información o elemento que le haya sido entregado para efecto del cumplimiento de sus funciones</b>
+                            </p>
+                            <p class="text-justify" style="font-size: 14px;">
+                                <b>DÉCIMA PRIMERA. PROPIEDAD INTELECTUAL. Teniendo en cuenta el objeto del convenio suscrito entre las partes, el LA EMPRESA y el ESTUDIANTE acuerdan que todas las invenciones y trabajos originales de autor (incluyendo descubrimientos, ideas, mejoras, software, hardware o diseños de sistemas, ya sean patentables/registrables o no), concebidos o hechos por el ESTUDIANTE durante la ejecución del presente convenio y que de alguna manera se relacionen con el objeto del mismo, pertenecerán al LA EMPRESA. En consecuencia de lo anterior, el ESTUDIANTE se obliga a informar al LA EMPRESA sobre la existencia de dichas invenciones y/o trabajos originales. El ESTUDIANTE accederá a facilitar el cumplimiento oportuno de las correspondientes formalidades y dará su firma o extenderá los poderes y documentos que eventualmente sean necesarios para el reconocimiento formal de los derechos patrimoniales de autor al LA EMPRESA cuando así se lo solicite el LA EMPRESA, sin que éste quede obligado al pago de compensación adicional alguna. Igualmente convienen las partes que todo lo que cree, invente, descubra, desarrolle o mejore el ESTUDIANTE, con ocasión del presente convenio, pertenece al LA EMPRESA, sin necesidad de autorización alguna, de conformidad con lo dispuesto en el Artículo 539 del Código de Comercio en concordancia con el primer inciso de los Artículos 22, 88, 114 de la Decisión 486 de 2000 de la Comisión de la Comunidad Andina de Naciones. En consecuencia, el LA EMPRESA tendrá el derecho de hacer patentar o registrar a su nombre o a nombre de terceros esos inventos, mejoras, diseños o esquemas, respetándose el derecho del ESTUDIANTE de ser mencionado como inventor o descubridor si así lo desea. </b>
+                            </p>
+                            <p class="text-justify" style="font-size: 14px;">
+                                <b>PARÁGRAFO. En todo caso, las partes reconocen y aceptan, que todas las invenciones y trabajos originales de autor (incluyendo descubrimientos, ideas, mejoras, software, hardware o diseños de sistemas, ya sean patentables/registrables o no), concebidos o hechos por el ESTUDIANTE durante la ejecución del presente convenio, se consideran y acuerdan por las partes necesarios para el ejercicio de las actividades habituales del ESTUDIANTE, por lo que conforme lo establecido en el Artículo 20 de la Ley 23 de 1982, modificado por el Artículo 28 de la Ley 1450 de 2011, los derechos patrimoniales que se deriven de los mismos pertenecerán al LA EMPRESA.”</b>
+                            </p>
+                            <p class="text-justify" style="font-size: 14px;">
+                                <b>DÉCIMA SEGUNDA.- DATOS PERSONALES. EL APRENDIZ autoriza de manera libre y voluntaria a la EMPRESA a recopilar, utilizar, transferir, almacenar, consultar,  procesar, y en general a dar tratamiento a  la información personal que éste ha suministrado la EMPRESA, de conformidad con lo dispuesto en el ley 1581 de 2012 y el Decreto 1377 de 2013, la cual se encuentra contenida en las bases de datos y archivo de propiedad de la EMPRESA, para los fines internos que sean necesarios, tales como asuntos relacionados con su documento de identificación, número de identificación, nacionalidad, país de residencia, dirección, teléfono, estado civil, correo electrónico corporativo y personal, salario, y cuenta bancaria. </b>
+                            </p>
+                            <p class="text-justify" style="font-size: 14px;">
+                                <b>DECIMA TERCERA. - AUXILIO DE ESTUDIO. LA EMPRESA reconocerá al ESTUDIANTE, como un medio para aliviar las cargas propias del desplazamiento y mantenimiento durante la ejecución del presente convenio un auxilio mensual equivalente a $  <t t-esc="doc.wage"/>. El presente auxilio se entrega al ESTUDIANTE con la única finalidad de facilitar su desplazamiento y mantenimiento con ocasión de la ejecución del presente convenio y  de ningún modo constituye salario, prestación social o cualquier otro tipo de pago de carácter laboral.</b>
+                            </p>
+                            <p class="text-justify" style="font-size: 14px;">
+                                <b>DÉCIMA CUARTA. ACCESORIEDAD. El presente convenio se reporta como anexo y accesorio al Convenio Interinstitucional suscrito entre <t t-esc="company_id.name"/> y <t t-esc="doc.institution_id.name"/> , <t t-esc="employee_id.name"/>, el día __ del mes de ____ de ___(FECHA DE SUSCRIPCIÓN DEL CONVENIO INTERINSTITUCIONAL) y hace parte integral del mismo, razón por la cual todas las modificaciones que se reporten en el citado Convenio tendrán efecto inmediato sobre lo aquí estipulado.  </b>
+                            </p>
+                            <p class="text-justify" style="font-size: 14px;">
+                                <b>DECIMA QUINTA. EFECTOS.  El presente convenio reemplaza en su integridad y deja sin efecto cualquiera otro convenio, acuerdo u oferta, verbal o escrita, celebrado entre las partes con anterioridad, pudiendo las partes convenir por escrito modificaciones al mismo, las que formarán parte integrante de este convenio.</b>
+                            </p>
+                            <p class="text-justify" style="font-size: 14px;">
+                                <b>Para constancia de lo anterior, se firma en ________________ a los ________ (___) días del mes de ____ de _____________ (____), en __ (__) ejemplares.  </b>
+                            </p>
+                            <br/>
+                            <table class="table table-sm table-borderless center"
+                                   style="font-size: 14px;">
+                                <tr>
+                                    <td height="100px;"><b>FIRMA EMPRESA</b></td>
+                                </tr>
+                                <tr>
+                                    <td><b>FIRMA ESTUDIANTE</b></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+
+    </data>
+</odoo>

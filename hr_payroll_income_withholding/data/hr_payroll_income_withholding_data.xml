@@ -1,0 +1,133 @@
+<?xml version="1.0"?>
+<odoo>
+    <data noupdate="1">
+
+        <record id="deducciones_subtotal_2" model="hr.deduction.type.rf">
+            <field name="name">Deducciones Subtotal 2</field>
+            <field name="sequence" eval="2"/>
+            <field name="description">Deducciones subtotal 2</field>
+            <field name="max_value" eval="0.0"/>
+            <field name="max_uvt" eval="0.0"/>
+            <field name="max_acumulate" eval="0.0"/>
+        </record>
+
+        <record id="deducciones_subtotal_3" model="hr.deduction.type.rf">
+            <field name="name">Rentas exentas Subtotal 3</field>
+            <field name="sequence" eval="3"/>
+            <field name="description">Rentas exentas</field>
+            <field name="max_value" eval="0.0"/>
+            <field name="max_uvt" eval="0.0"/>
+            <field name="max_acumulate" eval="0.0"/>
+        </record>
+
+
+        <record id="hr_deduction_rf_1" model="hr.deduction.rf">
+            <field name="name">b. Aportes Voluntarios Empleador Fondo de Pensiones (Art 126 -1 E.T.)</field>
+            <field name="active" eval="True"/>
+            <field name="max_uvt" eval="0.0"/>
+            <field name="max_value" eval="0.0"/>
+            <field name="dependent" eval="False"/>
+            <field name="type_id" ref="hr_payroll_income_withholding.deducciones_subtotal_3"/>
+            <field name="max_percentage" eval="0.0"/>
+            <field name="max_acumulate" eval="0.0"/>
+            <field name="description">b. Aportes Voluntarios Empleador Fondo de Pensiones (Art 126 -1 E.T.) </field>
+        </record>
+        <record id="hr_deduction_rf_2" model="hr.deduction.rf">
+            <field name="name">c. Aportes a cuentas AFC (Art 126 - 4 E.T.)</field>
+            <field name="active" eval="True"/>
+            <field name="max_uvt" eval="0.0"/>
+            <field name="max_value" eval="0.0"/>
+            <field name="dependent" eval="False"/>
+            <field name="type_id" ref="hr_payroll_income_withholding.deducciones_subtotal_3"/>
+            <field name="max_percentage" eval="0.0"/>
+            <field name="max_acumulate" eval="0.0"/>
+            <field name="description">c. Aportes a cuentas AFC (Art 126 - 4 E.T.) </field>
+        </record>
+        <record id="hr_deduction_rf_3" model="hr.deduction.rf">
+            <field name="name">1. Pago intereses de vivienda o Costo Financiero Leasing Habitacional. Limite maximo 100 UVT Mensuales UVT Dcto 1625 de 2016. $3.560.700 año 2020</field>
+            <field name="active" eval="True"/>
+            <field name="max_uvt" eval="100.0"/>
+            <field name="max_value" eval="3560700.0"/>
+            <field name="dependent" eval="False"/>
+            <field name="type_id" ref="hr_payroll_income_withholding.deducciones_subtotal_2"/>
+            <field name="max_percentage" eval="0.0"/>
+            <field name="max_acumulate" eval="0.0"/>
+            <field name="description">1. Pago intereses de vivienda o Costo Financiero Leasing Habitacional. Limite maximo 100 UVT Mensuales UVT Dcto 1625 de 2016. $3.560.700 año 2020     </field>
+        </record>
+        <record id="hr_deduction_rf_4" model="hr.deduction.rf">
+            <field name="name">2. Deduccion por dependientes (Ver Art. 387 E.T.) No puede exceder del 10% del ingreso bruto del trabajador y maximo 32 UVT mensuales.  $1139424 año 2020</field>
+            <field name="active" eval="True"/>
+            <field name="max_uvt" eval="32.0"/>
+            <field name="max_value" eval="1139424.0"/>
+            <field name="dependent" eval="True"/>
+            <field name="type_id" ref="hr_payroll_income_withholding.deducciones_subtotal_2"/>
+            <field name="max_percentage" eval="10.0"/>
+            <field name="max_acumulate" eval="0.0"/>
+            <field name="description">2. Deduccion por dependientes (Ver Art. 387 E.T.) No puede exceder del 10% del ingreso bruto del trabajador y maximo 32 UVT mensuales.  $1139424 año 2020     </field>
+        </record>
+        <record id="hr_deduction_rf_5" model="hr.deduction.rf">
+            <field name="name">3. Pagos Por Salud medicina prepagada. No puede Exceder 16 Uvt Mensuales 569712  Año 2020</field>
+            <field name="active" eval="True"/>
+            <field name="max_uvt" eval="16.0"/>
+            <field name="max_value" eval="569712.0"/>
+            <field name="dependent" eval="False"/>
+            <field name="type_id" ref="hr_payroll_income_withholding.deducciones_subtotal_2"/>
+            <field name="max_percentage" eval="0.0"/>
+            <field name="max_acumulate" eval="0.0"/>
+            <field name="description">3. Pagos Por Salud medicina prepagada. No puede Exceder 16 Uvt Mensuales 569712  Año 2020</field>
+        </record>
+        <record id="hr_deduction_rf_6" model="hr.deduction.rf">
+            <field name="active" eval="False"/>
+            <field name="name">1. Pago intereses de vivienda o Costo Financiero Leasing Habitacional. Limite maximo 100 UVT Mensuales UVT Dcto 1625 de 2016. $3427000 año 2019</field>
+            <field name="max_uvt" eval="100.0"/>
+            <field name="max_value" eval="3427000.0"/>
+            <field name="dependent" eval="False"/>
+            <field name="type_id" ref="hr_payroll_income_withholding.deducciones_subtotal_2"/>
+            <field name="max_percentage" eval="0.0"/>
+            <field name="max_acumulate" eval="0.0"/>
+            <field name="description">1. Pago intereses de vivienda o Costo Financiero Leasing Habitacional. Limite maximo 100 UVT Mensuales UVT Dcto 1625 de 2016. $3427000 año 2019       </field>
+        </record>
+        <record id="hr_deduction_rf_7" model="hr.deduction.rf">
+            <field name="active" eval="False"/>
+            <field name="name">2. Deduccion por dependientes (Ver Art. 387 E.T.) No puede exceder del 10% del ingreso bruto del trabajador y maximo 32 UVT mensuales.  $1097000</field>
+            <field name="max_uvt" eval="32.0"/>
+            <field name="max_value" eval="1097000.0"/>
+            <field name="dependent" eval="True"/>
+            <field name="type_id" ref="hr_payroll_income_withholding.deducciones_subtotal_2"/>
+            <field name="max_percentage" eval="10.0"/>
+            <field name="max_acumulate" eval="0.0"/>
+            <field name="description">2. Deduccion por dependientes (Ver Art. 387 E.T.) No puede exceder del 10% del ingreso bruto del trabajador y maximo 32 UVT mensuales.  $1097000      </field>
+        </record>
+        <record id="hr_deduction_rf_8" model="hr.deduction.rf">
+            <field name="active" eval="False"/>
+            <field name="name">3. Pagos Por Salud medicina prepagada. No puede Exceder 16 Uvt Mensuales 548320  Año 2019</field>
+            <field name="max_uvt" eval="16.0"/>
+            <field name="max_value" eval="548320.0"/>
+            <field name="dependent" eval="False"/>
+            <field name="type_id" ref="hr_payroll_income_withholding.deducciones_subtotal_2"/>
+            <field name="max_percentage" eval="0.0"/>
+            <field name="max_acumulate" eval="0.0"/>
+            <field name="description">3. Pagos Por Salud medicina prepagada. No puede Exceder 16 Uvt Mensuales 548320  Año 2019 </field>
+        </record>
+        <record id="hr_deduction_rf_9" model="hr.deduction.rf">
+            <field name="active" eval="False"/>
+            <field name="name">2. Deduccion por dependientes (Ver Art. 387 E.T.)</field>
+            <field name="max_uvt" eval="32.0"/>
+            <field name="max_value" eval="1096640.0"/>
+            <field name="dependent" eval="False"/>
+            <field name="type_id" ref="hr_payroll_income_withholding.deducciones_subtotal_2"/>
+            <field name="max_percentage" eval="10.0"/>
+            <field name="max_acumulate" eval="0.0"/>
+        </record>
+        <record id="hr_deduction_rf_10" model="hr.deduction.rf">
+            <field name="active" eval="False"/>
+            <field name="name">PORRAS GIRAL GLORIA ELENA</field>
+            <field name="max_uvt" eval="0.0"/>
+            <field name="max_value" eval="0.0"/>
+            <field name="dependent" eval="False"/>
+            <field name="max_percentage" eval="0.0"/>
+            <field name="max_acumulate" eval="0.0"/>
+        </record>
+
+    </data>
+</odoo>

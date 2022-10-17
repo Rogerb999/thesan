@@ -1,0 +1,333 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* postulants
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-12-09 03:46+0000\n"
+"PO-Revision-Date: 2019-12-09 22:20-0500\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: es\n"
+"X-Generator: Poedit 1.8.8\n"
+
+#. module: postulants
+#: model:ir.model,name:postulants.model_hr_applicant
+msgid "Applicant"
+msgstr "Candidato"
+
+#. module: postulants
+#: model:ir.model.fields,field_description:postulants.field_res_partner__link
+#: model:ir.model.fields,field_description:postulants.field_res_users__link
+msgid "Applicant's CV Link"
+msgstr "Link Hoja de vida del Candidato"
+
+#. module: postulants
+#: model_terms:ir.ui.view,arch_db:postulants.view_hr_job_form_state
+msgid "Cancel Recruitment"
+msgstr "Contratación en curso"
+
+#. module: postulants
+#: selection:hr.job,state:0
+msgid "Canceled"
+msgstr "Cancelado"
+
+#. module: postulants
+#: model:ir.model,name:postulants.model_res_partner
+#: model:ir.model.fields,field_description:postulants.field_hr_applicant__partner_id
+#: model:ir.model.fields,field_description:postulants.field_hr_cv_employee__partner_id
+msgid "Contact"
+msgstr "Contacto"
+
+#. module: postulants
+#: code:addons/postulants/models/inherited_hr_cv_employee.py:18
+#, python-format
+msgid "Contact Already Exist in the another record."
+msgstr "El contacto ya existe en el otro registro"
+
+#. module: postulants
+#: model:ir.model.fields,field_description:postulants.field_hr_reason_changed__create_uid
+#: model:ir.model.fields,field_description:postulants.field_hr_referred_channel__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: postulants
+#: model:ir.model.fields,field_description:postulants.field_hr_reason_changed__create_date
+#: model:ir.model.fields,field_description:postulants.field_hr_referred_channel__create_date
+msgid "Created on"
+msgstr "Creado el"
+
+#. module: postulants
+#: model:ir.model.fields,field_description:postulants.field_res_partner__hr_cv_employee_id
+#: model:ir.model.fields,field_description:postulants.field_res_users__hr_cv_employee_id
+msgid "Curriculum Vitae"
+msgstr "Hoja de Vida"
+
+#. module: postulants
+#: model:ir.model.fields,field_description:postulants.field_hr_reason_changed__description
+#: model:ir.model.fields,field_description:postulants.field_hr_referred_channel__description
+msgid "Description"
+msgstr "Descripción"
+
+#. module: postulants
+#: model:ir.model.fields,field_description:postulants.field_hr_reason_changed__display_name
+#: model:ir.model.fields,field_description:postulants.field_hr_referred_channel__display_name
+msgid "Display Name"
+msgstr "Nombre"
+
+#. module: postulants
+#: selection:res.partner,state_selection:0
+msgid "Eligible"
+msgstr "Elegible"
+
+#. module: postulants
+#: selection:res.partner,gender:0
+msgid "Female"
+msgstr "Femenino"
+
+#. module: postulants
+#: model:ir.model.fields,field_description:postulants.field_res_partner__first_name
+#: model:ir.model.fields,field_description:postulants.field_res_users__first_name
+msgid "First Name"
+msgstr "Primer Nombre"
+
+#. module: postulants
+#: model:ir.model.fields,field_description:postulants.field_res_partner__gender
+#: model:ir.model.fields,field_description:postulants.field_res_users__gender
+msgid "Gender"
+msgstr "Sexo"
+
+#. module: postulants
+#: model:ir.model,name:postulants.model_hr_cv_employee
+msgid "HR CV Employee"
+msgstr "Hoja de vida del Empleado"
+
+#. module: postulants
+#: model:ir.model,name:postulants.model_hr_employee
+msgid "HR Employee"
+msgstr "Empleado"
+
+#. module: postulants
+#: model:ir.model,name:postulants.model_hr_reason_changed
+msgid "HR Reason Changed"
+msgstr "Razón de cambio"
+
+#. module: postulants
+#: model:ir.actions.act_window,name:postulants.hr_referred_channel_action
+#: model:ir.model,name:postulants.model_hr_referred_channel
+#: model:ir.ui.menu,name:postulants.hr_referred_channel_menu_action
+#: model_terms:ir.ui.view,arch_db:postulants.hr_referred_channel_view_form
+#: model_terms:ir.ui.view,arch_db:postulants.hr_referred_channel_view_tree
+msgid "HR Referred Channel"
+msgstr "Recomendado por"
+
+#. module: postulants
+#: selection:res.partner,state_selection:0
+msgid "Hired"
+msgstr "Contratado"
+
+#. module: postulants
+#: model:ir.model.fields,field_description:postulants.field_res_partner__hr_applicant_ids
+#: model:ir.model.fields,field_description:postulants.field_res_users__hr_applicant_ids
+msgid "Hr Applicant"
+msgstr "Solicitante"
+
+#. module: postulants
+#: model:ir.model.fields,field_description:postulants.field_hr_reason_changed__id
+#: model:ir.model.fields,field_description:postulants.field_hr_referred_channel__id
+msgid "ID"
+msgstr "Documento de Identificación"
+
+#. module: postulants
+#: selection:res.partner,state_selection:0
+msgid "In Process"
+msgstr "En proceso"
+
+#. module: postulants
+#: model:ir.model,name:postulants.model_hr_job
+msgid "Job Position"
+msgstr "Puesto de trabajo"
+
+#. module: postulants
+#: model:ir.model.fields,field_description:postulants.field_hr_reason_changed____last_update
+#: model:ir.model.fields,field_description:postulants.field_hr_referred_channel____last_update
+msgid "Last Modified on"
+msgstr "Última modificación en"
+
+#. module: postulants
+#: model:ir.model.fields,field_description:postulants.field_hr_reason_changed__write_uid
+#: model:ir.model.fields,field_description:postulants.field_hr_referred_channel__write_uid
+msgid "Last Updated by"
+msgstr "Última actualización por"
+
+#. module: postulants
+#: model:ir.model.fields,field_description:postulants.field_hr_reason_changed__write_date
+#: model:ir.model.fields,field_description:postulants.field_hr_referred_channel__write_date
+msgid "Last Updated on"
+msgstr "Última actualización el"
+
+#. module: postulants
+#: model:ir.model.fields,field_description:postulants.field_hr_applicant__is_linkedin
+#: model_terms:ir.ui.view,arch_db:postulants.crm_case_form_view_job_inherit
+msgid "LinkedIn"
+msgstr "LinkedIn"
+
+#. module: postulants
+#: model:ir.model.fields,field_description:postulants.field_hr_applicant__linked_api_key
+msgid "LinkedIn API Key"
+msgstr "Clave API de LinkedIn"
+
+#. module: postulants
+#: model:ir.model.fields,field_description:postulants.field_hr_applicant__linked_password
+msgid "LinkedIn Password"
+msgstr "Contraseña de LinkedIn"
+
+#. module: postulants
+#: model:ir.model.fields,field_description:postulants.field_hr_applicant__linked_return_url
+msgid "LinkedIn Return URL"
+msgstr "URL de LinkedIn"
+
+#. module: postulants
+#: model:ir.model.fields,field_description:postulants.field_hr_applicant__linked_secret_key
+msgid "LinkedIn Secret Key"
+msgstr "Clave secreta de LinkedIn"
+
+#. module: postulants
+#: model:ir.model.fields,field_description:postulants.field_hr_applicant__linked_user
+msgid "LinkedIn User"
+msgstr "Usuario de Linkedln"
+
+#. module: postulants
+#: selection:res.partner,gender:0
+msgid "Male"
+msgstr "Masculino"
+
+#. module: postulants
+#: model:ir.model.fields,field_description:postulants.field_hr_reason_changed__name
+#: model:ir.model.fields,field_description:postulants.field_hr_referred_channel__name
+msgid "Name"
+msgstr "Nombre"
+
+#. module: postulants
+#: selection:res.partner,state_selection:0
+msgid "Not Eligible"
+msgstr "No Elegible"
+
+#. module: postulants
+#: selection:hr.job,state:0
+msgid "Not Recruiting"
+msgstr "No seleccionando"
+
+#. module: postulants
+#: selection:res.partner,gender:0
+msgid "Other"
+msgstr "Otro"
+
+#. module: postulants
+#: selection:hr.job,state:0
+msgid "Pause"
+msgstr "Pausa"
+
+#. module: postulants
+#: model_terms:ir.ui.view,arch_db:postulants.view_hr_job_form_state
+msgid "Pause Recruitment"
+msgstr "Contratación en pausa"
+
+#. module: postulants
+#: code:addons/postulants/models/inherited_res_partner.py:65
+#, python-format
+msgid "Please configure the LinkedIn under Employee -> Configuration -> LinkedIn Data"
+msgstr "Configurar LinkedIn del Empleado -> Configuración -> Datos de LinkedIn"
+
+#. module: postulants
+#: model:ir.actions.act_window,name:postulants.res_partner_action
+#: model:ir.model.fields,field_description:postulants.field_res_partner__postulant
+#: model:ir.model.fields,field_description:postulants.field_res_users__postulant
+#: model:ir.ui.menu,name:postulants.res_partner_menu_action
+msgid "Postulant"
+msgstr "Postulante"
+
+#. module: postulants
+#: model_terms:ir.ui.view,arch_db:postulants.view_partner_form_inherit
+msgid "Postulants"
+msgstr "Postulantes"
+
+#. module: postulants
+#: model:ir.model.fields,field_description:postulants.field_hr_job__hr_reason_changed_id
+msgid "Reason Changed"
+msgstr "Motivo del Cambio"
+
+#. module: postulants
+#: selection:hr.job,state:0
+msgid "Recruitment in Progress"
+msgstr "Contratación en curso"
+
+#. module: postulants
+#: model:ir.model.fields,field_description:postulants.field_res_partner__referred_by_partner_id
+#: model:ir.model.fields,field_description:postulants.field_res_users__referred_by_partner_id
+msgid "Referred By"
+msgstr "Recomendado por"
+
+#. module: postulants
+#: model:ir.model.fields,field_description:postulants.field_hr_applicant__reference
+#: model:ir.model.fields,field_description:postulants.field_res_partner__referred_channel_id
+#: model:ir.model.fields,field_description:postulants.field_res_users__referred_channel_id
+msgid "Referred Channel"
+msgstr "Canal de Referencia"
+
+#. module: postulants
+#: model:ir.model.fields,field_description:postulants.field_res_partner__second_name
+#: model:ir.model.fields,field_description:postulants.field_res_users__second_name
+msgid "Second Name"
+msgstr "Segundo Nombre"
+
+#. module: postulants
+#: model:ir.model.fields,field_description:postulants.field_res_partner__second_surname
+#: model:ir.model.fields,field_description:postulants.field_res_users__second_surname
+msgid "Second Surname"
+msgstr "Segundo apellido"
+
+#. module: postulants
+#: model:ir.model.fields,help:postulants.field_hr_job__state
+msgid "Set whether the recruitment process is open or closed for this job position."
+msgstr "Establecer si el proceso de selección está abierto o cerrado para este puesto de trabajo."
+
+#. module: postulants
+#: model:ir.model.fields,field_description:postulants.field_res_partner__state_selection
+#: model:ir.model.fields,field_description:postulants.field_res_users__state_selection
+msgid "State Selection"
+msgstr "Estado de la Selección"
+
+#. module: postulants
+#: model:ir.model.fields,field_description:postulants.field_hr_job__state
+msgid "Status"
+msgstr "Estado"
+
+#. module: postulants
+#: model:ir.model.fields,field_description:postulants.field_res_partner__surname
+#: model:ir.model.fields,field_description:postulants.field_res_users__surname
+msgid "Surname"
+msgstr "Primer Apellido"
+
+#. module: postulants
+#: model_terms:ir.ui.view,arch_db:postulants.view_partner_form_inherit
+msgid "Sync"
+msgstr "Sincronizar"
+
+#. module: postulants
+#: model_terms:ir.ui.view,arch_db:postulants.crm_case_form_view_job_inherit
+msgid "Sync with LinkedIn"
+msgstr "Sincronizar con LinkedIn"
+
+#. module: postulants
+#: code:addons/postulants/models/inherited_hr_applicant.py:97
+#: code:addons/postulants/models/inherited_res_partner.py:208
+#, python-format
+msgid "There seems a problem in fetch data from the LinkedIn"
+msgstr "Parece haber un problema en la obtención de datos de LinkedIn"

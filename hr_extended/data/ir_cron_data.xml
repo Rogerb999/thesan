@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<odoo>
+
+    <data noupdate="1">
+    <record id="notification_send_cron" model="ir.cron">
+        <field name="name">Send Contract End Date Alert</field>
+        <field name="model_id" ref="model_hr_contract"/>
+        <field name="state">code</field>
+        <field name="code">model.send_contract_ending_notification(45)</field>
+        <field name="interval_number">1</field>
+        <field name="interval_type">days</field>
+        <field name="numbercall">-1</field>
+        <field name="doall" eval="True"/>
+        <field name="nextcall" eval="(DateTime.now() + timedelta(days=1)).strftime('%Y-%m-%d 12:00:00')" />
+        <field name="user_id" ref="base.user_admin"/>
+    </record>
+    </data>
+
+</odoo>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- HR CV Academic Studies Form View -->
+   <record id="hr_cv_academic_studies_view_form" model="ir.ui.view">
+        <field name="name">hr.cv.academic.studies.form</field>
+        <field name="model">hr.cv.academic.studies</field>
+        <field name="arch" type="xml">
+            <form string="HR CV Academic Studies">
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="toggle_active" type="object" class="oe_stat_button" icon="fa-archive">
+                            <field name="active" widget="boolean_button"/>
+                        </button>
+                    </div>
+                    <group colspan="4" col="4">
+                        <field name="name" required="1"/>
+                        <field name="academic_institution_id"/>
+                        <field name="academic_area_id"/>
+                        <field name="level_academic_id"/>
+                        <field name="state"/>
+                        <field name="type_education"/>
+                        <field name="start_date"/>
+                        <field name="end_date"/>
+                        <field name="country_id"/>
+                        <field name="state_id"/>
+                        <field name="city_id"/>
+                        <field name="name_support" readonly="1" force_save="1"/>
+                        <field name="support" filename="name_support"/>
+                        <field name="support_attachment_url"
+                               readonly="1" force_save="1"/>
+                        <field name="description"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- HR CV Academic Studies Tree View -->
+    <record id="hr_cv_academic_studies_view_tree" model="ir.ui.view">
+        <field name="name">hr.cv.academic.studies.list</field>
+        <field name="model">hr.cv.academic.studies</field>
+        <field name="arch" type="xml">
+            <tree string="HR CV Academic Studies">
+                <field name="name"/>
+                <field name="academic_institution_id"/>
+                <field name="level_academic_id"/>
+                <field name="state"/>
+                <field name="type_education"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- HR CV Academic Studies Action -->
+    <record id="hr_cv_academic_studies_action" model="ir.actions.act_window">
+        <field name="name">HR CV Academic Studies</field>
+        <field name="res_model">hr.cv.academic.studies</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- HR CV Academic Studies Menuitem -->
+    <menuitem
+        id="hr_cv_academic_studies_menu_action"
+        name="HR CV Academic Studies"
+        groups="hr.group_hr_user"
+        action="hr_cv_academic_studies_action"
+        parent="hr_employee_extended_werp.hr_curriculum_vitae_menu"/>
+
+</odoo>

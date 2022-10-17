@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2019-TODAY WSuite Products <wsuite-products@wsuite.com>
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html). -->
+<odoo>
+
+    <record id="view_account_form_inherit" model="ir.ui.view">
+        <field name="name">account.form.view.inherit</field>
+        <field name="model">account.account</field>
+        <field name="inherit_id" ref="account.view_account_form"/>
+        <field name="arch" type="xml">
+            <field name="deprecated" position="after">
+                <field name="is_payroll"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="hr_salary_rule_form_inherit_inherit" model="ir.ui.view">
+        <field name="name">hr.salary.rule.form.inherit.inherit</field>
+        <field name="model">hr.salary.rule</field>
+        <field name="inherit_id"
+               ref="hr_payroll_account.hr_salary_rule_form_inherit"/>
+        <field name="arch" type="xml">
+            <field name="account_debit" position="attributes">
+                <attribute name="context">{'default_is_payroll': True}</attribute>
+            </field>
+            <field name="account_credit" position="attributes">
+                <attribute name="context">{'default_is_payroll': True}</attribute>
+            </field>
+        </field>
+    </record>
+
+    <record id="action_account_form" model="ir.actions.act_window">
+        <field name="name">Accounts</field>
+        <field name="res_model">account.account</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="search_view_id" ref="account.view_account_search"/>
+        <field name="view_id" ref="account.view_account_list"/>
+        <field name="domain">[('is_payroll','=', True)]</field>
+        <field name="context">{'default_is_payroll': True}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Add a new account for Payroll
+            </p>
+        </field>
+    </record>
+
+    <menuitem action="action_account_form"
+              id="menu_action_account_form"
+              parent="hr_payroll.menu_hr_payroll_configuration"
+              groups="account.group_account_user"/>
+
+</odoo>

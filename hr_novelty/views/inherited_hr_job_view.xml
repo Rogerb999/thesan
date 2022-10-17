@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2019-TODAY WSuite Products <wsuite-products@wsuite.com>
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html). -->
+<odoo>
+
+    <!-- <record id="hr_job_form_view_inherit_extended" model="ir.ui.view">
+        <field name="name">hr.job.form.view.inherit.extended</field>
+        <field name="model">hr.job</field>
+        <field name="inherit_id"
+               ref="hr_recruitment_extended_werp.hr_job_form_view_inherit_extended"/>
+        <field name="arch" type="xml">
+            <page name="stage_per" position="after">
+                <page string="Novelty Job" name="novelty_job">
+                    <field name="hr_novelty_job_ids" readonly="1"
+                           nolabel="1"/>
+                </page>
+            </page>
+        </field>
+    </record> -->
+
+</odoo>

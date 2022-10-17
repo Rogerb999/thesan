@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2020-TODAY WSuite Products <wsuite-products@wsuite.com>
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html). -->
+<odoo>
+
+    <record id="view_hr_payslip_form_inherit" model="ir.ui.view">
+        <field name="name">view.hr.payslip.form.inherit</field>
+        <field name="model">hr.payslip</field>
+        <field name="inherit_id" ref="hr_payroll.view_hr_payslip_form"/>
+        <field name="arch" type="xml">
+            <field name="credit_note" position="after">
+                <field name="recalc" readonly="1" force_save="1"/>
+            </field>
+            <notebook position="inside">
+                <page string="Contract Termination"
+                      name="contract_termination">
+                    <group>
+                        <field name="recalc_line_id" readonly="1"
+                               force_save="1"/>
+                    </group>
+                </page>
+            </notebook>
+        </field>
+    </record>
+
+    <record id="view_hr_payslip_filter_inherit" model="ir.ui.view">
+        <field name="name">view.hr.payslip.search.inherit</field>
+        <field name="model">hr.payslip</field>
+        <field name="inherit_id" ref="hr_payroll.view_hr_payslip_filter"/>
+        <field name="arch" type="xml">
+            <filter name="done" position="after">
+                <filter string="Not Recalc" name="not_recalc"
+                        domain="[('recalc','=',False)]"/>
+                <filter string="Recalc" name="recalc"
+                        domain="[('recalc','!=',False)]"/>
+            </filter>
+        </field>
+    </record>
+
+    <record id="hr_payroll.action_view_hr_payslip_form" model="ir.actions.act_window">
+        <field name="context">{'search_default_not_recalc':1}</field>
+    </record>
+
+</odoo>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- JCA Details Form View -->
+   <record id="jca_details_view_form" model="ir.ui.view">
+        <field name="name">jca.details.form</field>
+        <field name="model">jca.details</field>
+        <field name="arch" type="xml">
+            <form string="JCA Details">
+                <sheet>
+                    <group colspan="4" col="4">
+                        <field name="name" required="1"/>
+                        <field name="code" required="1"/>
+                        <field name="type_of_level" required="1"/>
+                        <field name="company_id" required="1"/>
+                    </group>
+                    <group>
+                        <field name="description"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- JCA Details Tree View -->
+    <record id="jca_details_view_tree" model="ir.ui.view">
+        <field name="name">jca.details.list</field>
+        <field name="model">jca.details</field>
+        <field name="arch" type="xml">
+            <tree string="JCA Details">
+                <field name="name"/>
+                <field name="code"/>
+                <field name="company_id"/>
+                <field name="type_of_level"/>
+                <field name="description"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_jca_details_search" model="ir.ui.view">
+        <field name="name">jca.details.search</field>
+        <field name="model">jca.details</field>
+        <field name="arch" type="xml">
+            <search string="JCA Details">
+                <field name="name"/>
+                <field name="code"/>
+                <field name="type_of_level"/>
+                <field name="company_id"/>
+                <group string="Group By">
+                    <filter string="Name" name="name"
+                            context="{'group_by':'name'}"/>
+                    <filter string="Code" name="code"
+                            context="{'group_by':'code'}"/>
+                    <filter string="Type of Level" name="type_of_level"
+                            context="{'group_by':'type_of_level'}"/>
+                    <filter string="Company" name="company_id"
+                            context="{'group_by':'company_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <!-- JCA Details Action -->
+    <record id="jca_details_action" model="ir.actions.act_window">
+        <field name="name">JCA Details</field>
+        <field name="res_model">jca.details</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="search_view_id" ref="view_jca_details_search"/>
+    </record>
+
+    <!-- JCA Details Menuitem -->
+    <menuitem
+        id="jca_details_menu_action"
+        name="JCA Details"
+        groups="hr.group_hr_user"
+        action="jca_details_action"
+        parent="hr_recruitment.menu_hr_recruitment_configuration"/>
+
+</odoo>

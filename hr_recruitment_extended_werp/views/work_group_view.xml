@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2019-TODAY WSuite Products <wsuite-products@wsuite.com>
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html). -->
+<odoo>
+
+    <record id="work_group_view_tree" model="ir.ui.view">
+        <field name="name">work.group.view.tree</field>
+        <field name="model">work.group</field>
+        <field name="arch" type="xml">
+            <tree editable="bottom">
+                <field name="name" required="1"/>
+                <field name="description"/>
+                <field name="function_executed_ids"
+                       widget="many2many_tags"
+                       options="{'no_create': True, 'no_create_edit': True, 'no_open': True}"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_work_group_search" model="ir.ui.view">
+        <field name="name">work.group.search</field>
+        <field name="model">work.group</field>
+        <field name="arch" type="xml">
+            <search string="Work Group">
+                <field name="name"/>
+                <group string="Group By">
+                    <filter string="Name" name="name"
+                            context="{'group_by':'name'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="work_group_action" model="ir.actions.act_window">
+        <field name="name">Work Group</field>
+        <field name="res_model">work.group</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree</field>
+        <field name="search_view_id" ref="view_work_group_search"/>
+        <field name="context">{}</field>
+    </record>
+
+    <menuitem
+        id="work_group_menu_action"
+        name="Work Group"
+        action="work_group_action"
+        parent="hr.menu_human_resources_configuration"/>
+
+</odoo>

@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="paperformat_payroll_colombia" model="report.paperformat">
+        <field name="name">Nómina Colombia</field>
+        <field name="default" eval="False"/>
+        <field name="format">custom</field>
+        <field name="page_height">278</field>
+        <field name="page_width">216</field>
+        <field name="orientation">Portrait</field>
+        <field name="margin_top">28</field>
+        <field name="margin_bottom">15</field>
+        <field name="margin_left">7</field>
+        <field name="margin_right">7</field>
+        <field name="header_line" eval="False"/>
+        <field name="header_spacing">35</field>
+        <field name="dpi">100</field>
+    </record>
+
+    <report 
+        id="payroll_new_report" 
+        model="hr.payslip" 
+        string="Colilla Nómina" 
+        paperformat="paperformat_payroll_colombia"
+        report_type="qweb-pdf" 
+        name="hr_payroll_colombia.payroll_detailed_report" 
+        file="hr_payroll_colombia.payroll_detailed_report"
+    />
+
+    <template id="payroll_detailed_report_layout">
+        <t t-call="hr_payroll_colombia.payroll_detailed_report_header"/>
+        <t t-raw="0"/>
+        <tt t-call="hr_payroll_colombia.payroll_detailed_report_footer"/>
+    </template>
+
+    <template id="payroll_detailed_report_header">
+        <div class="header">
+            <style type="text/css">
+                .wid-100 { width: 100%; } 
+                .wid-30 { width: 30%; }
+                .logo { height: 100px; }
+            </style>
+
+            <div class="container">
+                <div class="row" style="padding-top: 50px;">
+                    <table class="wid-100">
+                        <tr>
+                            <td><img t-att-src="b'data:image/png;base64,%s' % o.company_id.logo" class="logo"/></td>
+                            <td class="wid-30">
+                                <h2><b>Comprobante de Nómina</b></h2>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <template id="payroll_detailed_report_footer">
+        <div class="footer">
+            <style type="text/css">
+                .wid-100p { width: 100%; }
+                .txt-grey { color: #595959; }
+                .bort { border-top: 1px solid; }
+            </style>
+            
+            <div class="container">
+                <div class="row">
+                    <hr/>
+                    <table class="wid-100p txt-grey">
+                        <tr>
+                            <td class="text-left bort" style="padding-top: 10px">Correo electrónico: <span t-field="o.company_id.email"/></td>
+                            <td class="text-right bort">Sitio Web: <span t-field="o.company_id.website"/></td>
+                        </tr>
+                        <tr>
+                            <td class="text-center" colspan="2">
+                                <ul class="list-inline" style="">
+                                    <li class="list-inline-item">Página:</li>
+                                    <li class="list-inline-item"><span class="page"/></li>
+                                    <li class="list-inline-item">/</li>
+                                    <li class="list-inline-item"><span class="topage"/></li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <template id="payroll_detailed_report_document">
+        <t t-call="hr_payroll_colombia.payroll_detailed_report_layout">
+            <div class="article">
+                <style type="text/css">
+                    .wid-100p { width: 100%; }
+                    .wid-70p { width: 70% }
+                    .wid-60p { width: 60% }
+                    .wid-40p { width: 40% }
+                    .wid-30p { width: 30% }
+                    .wid-40 { width: 40px; }
+                    .back-grey { background-color: #EDEDED; }
+                    .txt-grey { color: #595959; }
+                    .bor { border: 2px solid #DDDDDD; }
+                    .bort { border-top: 2px solid #DDDDDD; } .borb { border-bottom: 2px solid #DDDDDD; }
+                    .borl { border-left: 2px solid #DDDDDD; } .borr { border-right: 2px solid #DDDDDD; }
+                    .borb-black { border-bottom: 1px solid; }
+                </style>
+                <!-- Encabezado -->
+                <div class="container">
+                    <div class="row">
+                        <h3><b>THESAN RENEWABLE ENERGY S.A.S.</b></h3>
+                    </div>
+                    <div class="row">
+                        <div>
+                            <span t-field="o.company_id.street"/> <br/>
+                            <t t-if="o.company_id.street2"><span t-field="o.company_id.street2"/> <br/></t>
+                            <t t-if="o.company_id.state_id"><span t-field="o.company_id.state_id.name"/> <br/></t>
+                            <t t-if="o.company_id.vat">NIT: <span t-field="o.company_id.vat"/> <br/></t>
+                            <t t-if="o.company_id.phone">Teléfono: <span t-field="o.company_id.phone"/> <br/></t>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Empleado y Empresa -->
+                <div class="container mt32">
+                    <div class="row">
+                        <table class="wid-100p text-center back-grey txt-grey">
+                            <tr>
+                                <td class="wid-50p bort borl borr" style="padding-top: 5px;"><span><b>EMPLEADO</b></span></td>
+                                <td class="wid-50p bort borr"><span><b>PERÍODO DE PAGO</b></span></td>
+                            </tr>
+                            <tr>
+                                <td class="borl borr"><span>Nombre: <span t-field="o.employee_id"/></span></td>
+                                <td class="borl borr"><span>Referencia: <span t-field="o.name"/></span></td>
+                            </tr>
+                            <tr>
+                                <td class="borl borr"><span>No. Identificación: <span t-field="o.employee_id.identification_id"/></span></td>
+                                <td class="borl borr"><span>Fecha desde: <span t-field="o.date_from"/></span></td>
+                            </tr>
+                            <tr>
+                                <td class="borl borr"><span>Designación: <span t-field="o.employee_id.job_id.name"/></span></td>
+                                <td class="borl borr"><span>Fecha hasta: <span t-field="o.date_to"/></span></td>
+                            </tr>
+                            <tr>
+                                <td class="borl borr"><span>Email: <span t-field="o.employee_id.work_email"/></span></td>
+                                <td class="borl borr"><span>Días trabajados: <span t-esc="o.contract_id.get_worked_days(o, o.contract_id)"/></span></td>
+                            </tr>
+                            <tr>
+                                <td class="borl borr borb"></td>
+                                <td class="borl borr borb"><span>Salario base: <span t-field="o.contract_id.wage"/></span></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+                <t t-set="total_deducciones" t-value="abs(o.line_ids.filtered(lambda x: x.code == 'Total_Deducciones').total)"/>
+                <!--<t t-set="total_deducciones" 
+                    t-value="abs(o.line_ids.filtered(lambda x: x.code == 'Total_Deducciones').total) - 
+                        abs(o.line_ids.filtered(lambda x: x.code == 'RetencionF').total) - 
+                            l)"/>-->
+
+                <!-- Resumen del Pago-->
+                <div class="container mt32">
+                    <div class="row">
+                        <div class="col text-center txt-grey">
+                            <h5><b>RESUMEN DEL PAGO</b></h5>
+                        </div>
+                    </div>
+                    <div class="row mt16">
+                        <table class="wid-100p txt-grey">
+                            <tr>
+                                <td class="wid-70p bor" style="padding: 10px 0 5px 5px;"><b>Item</b></td>
+                                <td class="wid-30p bor" style="padding-left: 5px"><b>Valor</b></td>
+                            </tr>
+                            <tr>
+                                <td class="bor" style="padding: 5px 0 5px 5px;">Salario</td>
+                                <td class="bor" style="padding-left: 5px;">
+                                    $ <span t-esc="'{:,.2f}'.format(abs(o.line_ids.filtered(lambda x: x.code == 'Sueldo').total))"/>
+                                </td>
+                            </tr>
+                            <tr t-if="abs(o.line_ids.filtered(lambda x: x.code == 'Recargo').total) > 0">
+                                <td class="bor" style="padding: 5px 0 5px 5px;">Recargo</td>
+                                <td class="bor" style="padding-left: 5px;">
+                                    $ <span t-esc="'{:,.2f}'.format(abs(o.line_ids.filtered(lambda x: x.code == 'Recargo').total))"/>
+                                </td>
+                            </tr>
+                            <tr t-if="abs(o.line_ids.filtered(lambda x: x.code == 'Bonificacion').total) > 0">
+                                <td class="bor" style="padding: 5px 0 5px 5px;">Bonificación</td>
+                                <td class="bor" style="padding-left: 5px;">
+                                    $ <span t-esc="'{:,.2f}'.format(abs(o.line_ids.filtered(lambda x: x.code == 'Bonificacion').total))"/>
+                                </td>
+                            </tr>
+                            <tr t-if="abs(o.line_ids.filtered(lambda x: x.code == 'Aux_Transporte').total) > 0">
+                                <td class="bor" style="padding: 5px 0 5px 5px;">Auxilio de Transporte</td>
+                                <td class="bor" style="padding-left: 5px;">
+                                    $ <span t-esc="'{:,.2f}'.format(abs(o.line_ids.filtered(lambda x: x.code == 'Aux_Transporte').total))"/>
+                                </td>
+                            </tr>
+                            <tr t-if="abs(o.line_ids.filtered(lambda x: x.code == 'EPS').total) > 0">
+                                <td class="bor" style="padding: 5px 0 5px 5px;">Incapacidad Común</td>
+                                <td class="bor" style="padding-left: 5px;">
+                                    $ <span t-esc="'{:,.2f}'.format(abs(o.line_ids.filtered(lambda x: x.code == 'EPS').total))"/>
+                                </td>
+                            </tr>
+                            <tr t-if="abs(o.line_ids.filtered(lambda x: x.code == 'Incapacidad_ARL').total) > 0">
+                                <td class="bor" style="padding: 5px 0 5px 5px;">Incapacidad Laboral</td>
+                                <td class="bor" style="padding-left: 5px;">
+                                    $ <span t-esc="'{:,.2f}'.format(abs(o.line_ids.filtered(lambda x: x.code == 'Incapacidad_ARL').total))"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="bor" style="padding: 5px 0 5px 5px;">Retenciones y deducciones</td>
+                                <td class="bor" style="padding-left: 5px;">( $ <span t-esc="'{:,.2f}'.format(total_deducciones)"/> )</td>
+                            </tr>
+                            <tr>
+                                <td class="back-grey bor" style="padding: 5px 0 5px 5px;"><b>Total neto a pagar al empleado</b></td>
+                                <td class="back-grey bor" style="padding-left: 5px;"><b>$ <span t-esc="'{:,.2f}'.format(abs(o.line_ids.filtered(lambda x: x.code == 'Total_Pagar').total))"/></b></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Retenciones y Deducciones-->
+                <div class="container mt32">
+                    <div class="row">
+                        <div class="col text-center txt-grey" style="width: 60%;">
+                            <h5><b>RETENCIONES Y DEDUCCIONES</b></h5>
+                        </div>
+                    </div>
+                    <div class="row mt16">
+                        <table class="wid-60p txt-grey">
+                            <tr>
+                                <td class="bor" style="padding: 10px 0 5px 5px;"><b>Concepto</b></td>
+                                <td class="bor text-center"><b>%</b></td>
+                                <td class="bor" style="padding-left: 5px;"><b>Valor</b></td>
+                            </tr>
+                            <tr class="back-grey">
+                                <td class="bor" style="padding: 5px 0 5px 5px;"><b>Deducciones</b></td>
+                                <td class="bor" style="padding-left: 5px;"></td>
+                                <td class="bor" style="padding-left: 5px;"><b>( $ <span t-esc="'{:,.2f}'.format(total_deducciones - abs(o.line_ids.filtered(lambda x: x.code == 'RetencionF').total))"/> )</b></td>
+                            </tr>
+                            <tr>
+                                <td class="bor" style="padding: 5px 0 5px 5px;">Salud</td>
+                                <td class="bor" style="padding-left: 5px;">4,00 %</td>
+                                <td class="bor" style="padding-left: 5px;">( $ <span t-esc="'{:,.2f}'.format(abs(o.line_ids.filtered(lambda x: x.code == 'Salud').total))"/> )</td>
+                            </tr>
+                            <tr>
+                                <td class="bor" style="padding: 5px 0 5px 5px;">Pensión</td>
+                                <td class="bor" style="padding-left: 5px;">4,00 %</td>
+                                <td class="bor" style="padding-left: 5px;">( $ <span t-esc="'{:,.2f}'.format(abs(o.line_ids.filtered(lambda x: x.code == 'Pension').total))"/> )</td>
+                            </tr>
+                            <tr t-if="abs(o.line_ids.filtered(lambda x: x.code == 'Ausencia_No_Remunerada').total) > 0">
+                                <td class="bor" style="padding: 5px 0 5px 5px;">Ausencia no Remunerada</td>
+                                <td class="bor" style="padding-left: 5px;"></td>
+                                <td class="bor" style="padding-left: 5px;">( $ <span t-esc="'{:,.2f}'.format(abs(o.line_ids.filtered(lambda x: x.code == 'Ausencia_No_Remunerada').total))"/> )</td>
+                            </tr>
+                            <tr t-if="abs(o.line_ids.filtered(lambda x: x.code == 'Prestamo').total) > 0">
+                                <td class="bor" style="padding: 5px 0 5px 5px;">Prestamo</td>
+                                <td class="bor" style="padding-left: 5px;"></td>
+                                <td class="bor" style="padding-left: 5px;">( $ <span t-esc="'{:,.2f}'.format(abs(o.line_ids.filtered(lambda x: x.code == 'Prestamo').total))"/> )</td>
+                            </tr>
+                            <tr t-if="abs(o.line_ids.filtered(lambda x: x.code == 'FSP').total) > 0">
+                                <td class="bor" style="padding: 5px 0 5px 5px;">Fondo de Solidaridad Pensional</td>
+                                <td class="bor" style="padding-left: 5px;">1,00 %</td>
+                                <td class="bor" style="padding-left: 5px;">( $ <span t-esc="'{:,.2f}'.format(abs(o.line_ids.filtered(lambda x: x.code == 'FSP').total))"/> )</td>
+                            </tr>
+                            <tr t-if="abs(o.line_ids.filtered(lambda x: x.code == 'FSSP').total) > 0">
+                                <td class="bor" style="padding: 5px 0 5px 5px;">Fondo de Subsistema Pensional</td>
+                                <td class="bor" style="padding-left: 5px;"></td>
+                                <td class="bor" style="padding-left: 5px;">( $ <span t-esc="'{:,.2f}'.format(abs(o.line_ids.filtered(lambda x: x.code == 'FSSP').total))"/> )</td>
+                            </tr>
+                            <tr class="back-grey">
+                                <td class="bor" style="padding: 5px 0 5px 5px;"><b>Retenciones</b></td>
+                                <td class="bor" style="padding-left: 5px;"></td>
+                                <td class="bor" style="padding-left: 5px;"><b>( $ <span t-esc="'{:,.2f}'.format(abs(o.line_ids.filtered(lambda x: x.code == 'RetencionF').total))"/> )</b></td>
+                            </tr>
+                            <tr>
+                                <td class="bor" style="padding: 5px 0 5px 5px;">Retención en la fuente</td>
+                                <td class="bor" style="padding-left: 5px;"></td>
+                                <td class="bor" style="padding-left: 5px;">( $ <span t-esc="'{:,.2f}'.format(abs(o.line_ids.filtered(lambda x: x.code == 'RetencionF').total))"/> )</td>
+                            </tr>
+                            <tr class="back-grey">
+                                <td class="bor" style="padding: 5px 0 5px 5px;"><b>Total Retenciones y Deducciones</b></td>
+                                <td class="bor" style="padding-left: 5px;"></td>
+                                <td class="bor" style="padding-left: 5px;"><b>( $ <span t-esc="'{:,.2f}'.format(abs(o.line_ids.filtered(lambda x: x.code == 'Total_Deducciones').total))"/> )</b></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Firmas -->
+                <div class="container mt128">
+                    <div class="row">
+                        <table class="wid-100p txt-grey">
+                            <tr>
+                                <td class="wid-40"></td>
+                                <td class="wid-40p borb-black"></td>
+                                <td class="wid-40"></td>
+                                <td class="wid-40p borb-black"></td>
+                                <td class="wid-40"></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td class="text-center"><span t-field="o.employee_id.name"/></td>
+                                <td></td>
+                                <td class="text-center"><span t-field="o.company_id.name"/></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td class="text-center">CC: <span t-field="o.employee_id.identification_id"/></td>
+                                <td></td>
+                                <td class="text-center">NIT: <span t-field="o.company_id.vat"/></td>
+                                <td></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+
+    <template id="payroll_detailed_report">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="hr_payroll_colombia.payroll_detailed_report_document"/>
+            </t>
+        </t>
+    </template>
+</odoo>

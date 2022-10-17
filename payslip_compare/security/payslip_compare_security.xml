@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="group_payslip_compare_result" model="res.groups">
+        <field name="name">Payslip Comparison</field>
+        <field name="implied_ids" eval="[(4, ref('hr_payroll.group_hr_payroll_manager'))]"/>
+    </record>
+
+</odoo>

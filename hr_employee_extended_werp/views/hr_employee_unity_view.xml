@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2020-TODAY WSuite Products <wsuite-products@wsuite.com>
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html). -->
+<odoo>
+
+    <record id="hr_employee_unity_view_tree" model="ir.ui.view">
+        <field name="name">hr.employee.unity.view.tree</field>
+        <field name="model">hr.employee.unity</field>
+        <field name="arch" type="xml">
+            <tree editable="bottom">
+                <field name="name" required="1"/>
+                <field name="code" required="1"/>
+                <field name="description"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="hr_employee_unity_action" model="ir.actions.act_window">
+        <field name="name">Hr Employee Unity</field>
+        <field name="res_model">hr.employee.unity</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree</field>
+        <field name="context">{}</field>
+    </record>
+
+    <menuitem
+        id="hr_employee_unity_menu_action"
+        name="Hr Employee Unity"
+        action="hr_employee_unity_action"
+        parent="hr.menu_human_resources_configuration"/>
+
+</odoo>

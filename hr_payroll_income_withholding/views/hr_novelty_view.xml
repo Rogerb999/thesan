@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="hr_novelty_event_form_inherite_automatically_wi"
+            model="ir.ui.view">
+        <field name="name">hr.novelty.event.form.inherite.automatically.wi</field>
+        <field name="model">hr.novelty.event</field>
+        <field name="inherit_id" ref="hr_novelty.view_hr_novelty_event_form"/>
+        <field name="arch" type="xml">
+            <page name="details" position="after">
+                <page name="income withholding" string="Income Withholding">
+                    <group col="4">
+                        <field name="income_withholding"/>
+                        <field name="deduction_id"
+                               attrs="{'invisible':[('income_withholding','=',False)]}"/>
+                    </group>
+                </page>
+            </page>
+        </field>
+    </record>
+
+    <record id="hr_novelty_form_inherite_automatically_wi"
+            model="ir.ui.view">
+        <field name="name">hr.novelty.form.inherite.automatically.wi</field>
+        <field name="model">hr.novelty</field>
+        <field name="inherit_id" ref="hr_novelty.view_hr_novelty_form"/>
+        <field name="arch" type="xml">
+            <field name="motivo_talento_id" position="before">
+                <field name="deduction_employee_id"/>
+            </field>
+        </field>
+    </record>
+
+</odoo>

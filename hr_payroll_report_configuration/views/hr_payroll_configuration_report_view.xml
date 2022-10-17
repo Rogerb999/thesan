@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2020-TODAY WSuite Products <wsuite-products@wsuite.com>
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html). -->
+<odoo>
+
+    <record id="hr_payroll_configuration_report_view_tree" model="ir.ui.view">
+        <field name="name">hr.payroll.configuration.report.view.tree</field>
+        <field name="model">hr.payroll.configuration.report</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="code"/>
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="hr_payroll_configuration_report_view_form" model="ir.ui.view">
+        <field name="name">hr.payroll.configuration.report.view.form</field>
+        <field name="model">hr.payroll.configuration.report</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <field name="state" widget="statusbar"
+                           statusbar_visible="draft,done"/>
+                    <button type="object"
+                            name="move_done"
+                            string="Done"
+                            states="draft"/>
+                    <button type="object"
+                            name="move_expired"
+                            string="Expired"
+                            states="draft,done"/>
+                    <button type="object"
+                            name="move_draft"
+                            string="Draft"
+                            states="expired,done"/>
+                </header>
+                <sheet>
+                    <group>
+                        <group colspan="4" col="4">
+                            <field name="name" required="1"/>
+                            <field name="code" required="1"/>
+                            <field name="hr_items_lines_ids"
+                                   options="{'no_create': True, 'no_create_edit': True, 'no_open': True}"
+                                   required="1" widget="many2many_tags"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="hr_payroll_configuration_report_action"
+            model="ir.actions.act_window">
+        <field name="name">Configuration</field>
+        <field name="res_model">hr.payroll.configuration.report</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="context">{}</field>
+    </record>
+
+    <menuitem
+        id="hr_payroll_configuration_report_menu_action"
+        name="Configuration"
+        action="hr_payroll_configuration_report_action"
+        parent="payroll_report_menu"/>
+
+</odoo>

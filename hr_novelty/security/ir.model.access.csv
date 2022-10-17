@@ -1,0 +1,14 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_hr_novelty_manager,hr.novelty manager,model_hr_novelty,hr.group_hr_manager,1,1,1,0
+access_hr_novelty_type_manager,hr.novelty.type manager,model_hr_novelty_type,hr.group_hr_manager,1,1,1,0
+access_hr_novelty_event_manager,hr.novelty.event manager,model_hr_novelty_event,hr_novelty.group_novelty_event,1,1,1,1
+access_hr_novelty_follower_manager,hr.novelty follower manager,model_hr_novelty_stage_followers,hr.group_hr_manager,1,1,1,1
+access_hr_novelty_subtype_manager,hr.novelty.type.subtype manager,model_hr_novelty_type_subtype,hr.group_hr_manager,1,1,1,0
+access_hr_novelty,hr.novelty,model_hr_novelty,hr.group_hr_user,1,1,1,0
+access_hr_novelty_type,hr.novelty.type,model_hr_novelty_type,hr.group_hr_user,1,0,0,0
+access_hr_novelty_event,hr.novelty.event,model_hr_novelty_event,hr.group_hr_user,1,0,0,0
+access_hr_novelty_followers,hr.novelty follower,model_hr_novelty_stage_followers,hr.group_hr_user,1,0,0,0
+access_motivo_talento,motivo.talento,model_motivo_talento,,1,1,1,1
+access_hr_novelty_job,access_hr_novelty_job,model_hr_novelty_job,base.group_user,1,1,1,1
+access_language_level_details,access_language_level_details,model_language_level_details,base.group_user,1,1,1,0
+access_hr_leave_code,access_hr_leave_code,model_hr_leave_code,base.group_user,1,1,1,1

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- HR CV Laboral Experience Form View -->
+   <record id="hr_cv_laboral_experience_form" model="ir.ui.view">
+        <field name="name">hr.cv.laboral.experience.form</field>
+        <field name="model">hr.cv.laboral.experience</field>
+        <field name="arch" type="xml">
+            <form string="HR CV Laboral Experience">
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="toggle_active" type="object" class="oe_stat_button" icon="fa-archive">
+                            <field name="active" widget="boolean_button"/>
+                        </button>
+                    </div>
+                    <group colspan="4" col="4">
+                        <field name="company_id"/>
+                        <field name="experience_area_id"/>
+                        <field name="start_date"/>
+                        <field name="end_date"/>
+                        <field name="ext_job_position_id" string="External Job Position"/>
+                        <field name="position_range"/>
+                        <field name="contract_type_id"/>
+                        <field name="function_summary"/>
+                        <field name="withdrawal_reason"/>
+                        <field name="outstanding_achievements"/>
+                        <field name="wage"/>
+                        <field name="country_id"/>
+                        <field name="state_id"/>
+                        <field name="city_id"/>
+                        <field name="description"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- HR CV Laboral Experience Tree View -->
+    <record id="hr_cv_laboral_experience_view_tree" model="ir.ui.view">
+        <field name="name">hr.cv.laboral.experience.list</field>
+        <field name="model">hr.cv.laboral.experience</field>
+        <field name="arch" type="xml">
+            <tree string="HR CV Laboral Experience">
+                <field name="company_id"/>
+                <field name="experience_area_id"/>
+                <field name="start_date"/>
+                <field name="end_date"/>
+                <field name="ext_job_position_id"/>
+                <field name="position_range"/>
+                <field name="contract_type_id"/>
+                <field name="function_summary"/>
+                <field name="outstanding_achievements"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- HR CV Laboral Experience Action -->
+    <record id="hr_cv_laboral_experience_action" model="ir.actions.act_window">
+        <field name="name">HR CV Laboral Experience</field>
+        <field name="res_model">hr.cv.laboral.experience</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- HR CV Laboral Experience Menuitem -->
+    <menuitem
+        id="hr_cv_laboral_experience_menu_action"
+        name="HR CV Laboral Experience"
+        groups="hr.group_hr_user"
+        action="hr_cv_laboral_experience_action"
+        parent="hr_employee_extended_werp.hr_curriculum_vitae_menu"/>
+
+</odoo>

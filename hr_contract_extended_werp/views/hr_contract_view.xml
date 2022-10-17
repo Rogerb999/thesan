@@ -1,0 +1,141 @@
+<?xml version="1.0"?>
+<odoo>
+
+    <record id="extended_hr_contract_view_form_inherit" model="ir.ui.view">
+        <field name="name">Extended HR Contract Form View</field>
+        <field name="model">hr.contract</field>
+        <field name="inherit_id" ref="hr_contract.hr_contract_view_form"/>
+        <field name="arch" type="xml">
+
+            <!--<xpath expr="//header" position="inside">-->
+                <!--<button name="action_send_contract" string="Send Contract" type="object" states="draft,open,pending" class="btn-primary"/>-->
+            <!--</xpath>-->
+
+            <xpath expr="//button[@name='toggle_active']" position="before">
+                <button name="%(action_reason_change_wizard)d"
+                    class="oe_stat_button"
+                    icon="fa-book"
+                    type="action"
+                    string="Create Subcontract">
+                </button>
+            </xpath>
+            <xpath expr="//field[@name='employee_id']" position="attributes">
+                <attribute name="required">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='department_id']"
+                   position="attributes">
+                <attribute name="required">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='job_id']" position="attributes">
+                <attribute name="required">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='company_id']" position="attributes">
+                <attribute name="required">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='reported_to_secretariat']"
+                   position="after">
+                <field name="subcontract"/>
+                <field name="father_contract_id"
+                       attrs="{'invisible':[('subcontract', '=', False)]}"/>
+            </xpath>
+            <xpath expr="//field[@name='company_id']" position="after">
+                <field name="reason_change_id"/>
+                <field name="signed_contract" filename="datas_fname"/>
+                <field name="datas_fname" invisible="1"/>
+                <field name="speciality_id"/>
+                <field name="institution_id"/>
+                <field name="center_formation_id"/>
+                <field name="contribution_pay"/>
+                <field name="is_required_you"/>
+            </xpath>
+            <xpath expr="//div[@name='wage']" position="after">
+                <field name="currency_id" readonly='0'/>
+            </xpath>
+            <page name="other" position="inside">
+                <group>
+                    <field name="description" nolabel="1"/>
+                </group>
+            </page>
+        </field>
+    </record>
+
+    <record id="extended_hr_contract_view_tree_inherit" model="ir.ui.view">
+        <field name="name">Extended HR Contract Tree View</field>
+        <field name="model">hr.contract</field>
+        <field name="inherit_id" ref="hr_contract.hr_contract_view_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='date_end']" position="after">
+                <field name="subcontract"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="extended_hr_contract_view_search_inherit" model="ir.ui.view">
+        <field name="name">Extended HR Contract Search View</field>
+        <field name="model">hr.contract</field>
+        <field name="inherit_id" ref="hr_contract.hr_contract_view_search"/>
+        <field name="arch" type="xml">
+            <xpath expr="//filter[@name='message_needaction']"
+                   position="before">
+                <separator/>
+                <filter string="SubContract" name="subcontract"
+                        domain="[('subcontract', '=', True)]"/>
+                <filter string="Required You" name="is_required_you"
+                        domain="[('is_required_you', '=', True)]"/>
+                <filter string="Not Required You" name="not_is_required_you"
+                        domain="[('is_required_you', '=', False)]"/>
+                <filter string="Not SubContract" name="notsubcontract"
+                        domain="[('subcontract', '=', False)]"/>
+                <separator/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="hr_contract.action_hr_contract"
+            model="ir.actions.act_window">
+        <field name= "context">{"search_default_not_is_required_you":1,'search_default_current':1, 'search_default_group_by_state': 1}</field>
+    </record>
+
+    <record id="hr_contract_form_inherit" model="ir.ui.view">
+        <field name="name">hr.contract.form.inherit</field>
+        <field name="model">hr.contract</field>
+        <field name="inherit_id"
+               ref="hr_payroll_account.hr_contract_form_inherit"/>
+        <field name="arch" type="xml">
+            <field name="journal_id"
+                   position="attributes">
+                <attribute name="domain">[('is_payroll', '=', True)]</attribute>
+                <attribute name="context">{'default_is_payroll': True}</attribute>
+            </field>
+        </field>
+    </record>
+
+    <record id="action_massive_close" model="ir.actions.server">
+        <field name="name">Massive Expired</field>
+        <field name="model_id"
+               ref="hr_contract.model_hr_contract"/>
+        <field name="binding_model_id"
+               ref="hr_contract.model_hr_contract"/>
+        <field name="state">code</field>
+        <field name="code">
+for rec in records:
+    if rec.state == 'open':
+        rec.write({'state': 'close'})
+        </field>
+    </record>
+
+    <record id="action_massive_draft_open" model="ir.actions.server">
+        <field name="name">Massive New to Running</field>
+        <field name="model_id"
+               ref="hr_contract.model_hr_contract"/>
+        <field name="binding_model_id"
+               ref="hr_contract.model_hr_contract"/>
+        <field name="state">code</field>
+        <field name="code">
+for rec in records:
+    if rec.state == 'draft':
+        rec.write({'state': 'open'})
+        </field>
+    </record>
+
+</odoo>

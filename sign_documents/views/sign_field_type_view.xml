@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<odoo>
+
+    <!-- Sign Field Type tree view-->
+    <record id="sign_field_type_view_tree" model="ir.ui.view">
+        <field name="name">sign.field.type.view.tree</field>
+        <field name="model">sign.field.type</field>
+        <field name="arch" type="xml">
+            <tree string="Sign Field Type">
+                <field name="name"/>
+                <field name="sign_type"/>
+                <field name="height"/>
+                <field name="width"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Sign Field Type from view-->
+    <record id="sign_field_type_view_form" model="ir.ui.view">
+        <field name="name">sign.field.type.view.form</field>
+        <field name="model">sign.field.type</field>
+        <field name="arch" type="xml">
+            <form string="Sign Field Type">
+                <sheet>
+                    <group col="4">
+                        <field name="name"/>
+                        <field name="height"/>
+                        <field name="sign_type"/>
+                        <field name="width"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Sign Field Type Action-->
+    <record model="ir.actions.act_window" id="sign_field_type_action">
+        <field name="name">Field Type</field>
+        <field name="res_model">sign.field.type</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Sign Documents Menu-->
+    <menuitem
+        id="sign_documents_main_menu"
+        name="Sign Document" groups="sign_documents.sign_document_user"/>
+
+    <menuitem id="sign_document_sub_menu_configuration"
+        name="Configuration"
+        parent="sign_documents_main_menu" groups="sign_documents.sign_document_manager" sequence="50"/>
+    <menuitem
+        id="sign_field_type_menu"
+        action="sign_field_type_action"
+        parent="sign_documents.sign_document_sub_menu_configuration"/>
+
+</odoo>

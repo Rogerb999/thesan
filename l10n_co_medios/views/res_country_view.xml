@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+      <record id="view_country_state_tree_medios" model="ir.ui.view">
+            <field name="name">res.country.tree</field>
+            <field name="model">res.country</field>
+            <field name="inherit_id" ref="base.view_country_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='code']" position="after">
+                    <field name="codigo_pais"/>
+                </xpath>
+            </field>
+        </record>
+  </data>
+</odoo>

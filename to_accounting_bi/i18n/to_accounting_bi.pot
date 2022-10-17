@@ -1,0 +1,405 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* to_accounting_bi
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-10-16 07:41+0000\n"
+"PO-Revision-Date: 2018-10-16 07:41+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: to_accounting_bi
+#: model:ir.model.fields,field_description:to_accounting_bi.field_analytic_entries_report__nbr_entries
+msgid "# Entries"
+msgstr ""
+
+#. module: to_accounting_bi
+#: model:ir.model.fields,field_description:to_accounting_bi.field_account_entries_analysis__nbr
+msgid "# of Items"
+msgstr ""
+
+#. module: to_accounting_bi
+#: model_terms:ir.ui.view,arch_db:to_accounting_bi.account_entries_analysis_search
+msgid "Acc.Type"
+msgstr ""
+
+#. module: to_accounting_bi
+#: model:ir.model.fields,field_description:to_accounting_bi.field_account_entries_analysis__account_id
+#: model:ir.model.fields,field_description:to_accounting_bi.field_analytic_entries_report__account_id
+#: model_terms:ir.ui.view,arch_db:to_accounting_bi.view_analytic_entries_report_search
+msgid "Account"
+msgstr ""
+
+#. module: to_accounting_bi
+#: model:ir.model.fields,field_description:to_accounting_bi.field_account_entries_analysis__user_type_id
+msgid "Account Type"
+msgstr ""
+
+#. module: to_accounting_bi
+#: model:ir.model.fields,field_description:to_accounting_bi.field_analytic_entries_report__amount
+msgid "Amount"
+msgstr ""
+
+#. module: to_accounting_bi
+#: model:ir.model.fields,field_description:to_accounting_bi.field_account_entries_analysis__amount_currency
+msgid "Amount Currency"
+msgstr ""
+
+#. module: to_accounting_bi
+#: model:ir.model.fields,field_description:to_accounting_bi.field_account_entries_analysis__analytic_account_id
+msgid "Analytic Account"
+msgstr ""
+
+#. module: to_accounting_bi
+#: model:ir.actions.act_window,name:to_accounting_bi.action_analytic_entries_report
+#: model:ir.ui.menu,name:to_accounting_bi.menu_action_analytic_entries_report
+#: model_terms:ir.ui.view,arch_db:to_accounting_bi.view_account_analytic_entries_search
+#: model_terms:ir.ui.view,arch_db:to_accounting_bi.view_analytic_entries_report_search
+msgid "Analytic Entries Analysis"
+msgstr ""
+
+#. module: to_accounting_bi
+#: model:ir.model,name:to_accounting_bi.model_analytic_entries_report
+msgid "Analytic Entries Statistics"
+msgstr ""
+
+#. module: to_accounting_bi
+#: model:ir.model.fields,field_description:to_accounting_bi.field_account_entries_analysis__balance
+#: model:ir.model.fields,field_description:to_accounting_bi.field_account_treasury_report__balance
+msgid "Balance"
+msgstr ""
+
+#. module: to_accounting_bi
+#: model:ir.model.fields,field_description:to_accounting_bi.field_account_treasury_report__date
+msgid "Beginning of Period Date"
+msgstr ""
+
+#. module: to_accounting_bi
+#: model:ir.model.fields,field_description:to_accounting_bi.field_account_entries_analysis__company_id
+#: model:ir.model.fields,field_description:to_accounting_bi.field_account_treasury_report__company_id
+#: model:ir.model.fields,field_description:to_accounting_bi.field_analytic_entries_report__company_id
+#: model_terms:ir.ui.view,arch_db:to_accounting_bi.account_entries_analysis_search
+#: model_terms:ir.ui.view,arch_db:to_accounting_bi.view_analytic_entries_report_search
+msgid "Company"
+msgstr ""
+
+#. module: to_accounting_bi
+#: model:ir.model.fields,field_description:to_accounting_bi.field_account_entries_analysis__credit
+#: model:ir.model.fields,field_description:to_accounting_bi.field_account_treasury_report__credit
+msgid "Credit"
+msgstr ""
+
+#. module: to_accounting_bi
+#: model:ir.model.fields,field_description:to_accounting_bi.field_account_entries_analysis__currency_id
+#: model:ir.model.fields,field_description:to_accounting_bi.field_analytic_entries_report__currency_id
+msgid "Currency"
+msgstr ""
+
+#. module: to_accounting_bi
+#: model:ir.model.fields,field_description:to_accounting_bi.field_analytic_entries_report__date
+msgid "Date"
+msgstr ""
+
+#. module: to_accounting_bi
+#: model:ir.model.fields,field_description:to_accounting_bi.field_account_entries_analysis__create_date
+msgid "Date Created"
+msgstr ""
+
+#. module: to_accounting_bi
+#: model:ir.model.fields,field_description:to_accounting_bi.field_account_entries_analysis__date_maturity
+msgid "Date Maturity"
+msgstr ""
+
+#. module: to_accounting_bi
+#: model:ir.model.fields,field_description:to_accounting_bi.field_account_entries_analysis__debit
+#: model:ir.model.fields,field_description:to_accounting_bi.field_account_treasury_report__debit
+msgid "Debit"
+msgstr ""
+
+#. module: to_accounting_bi
+#: model:ir.model.fields,field_description:to_accounting_bi.field_analytic_entries_report__name
+msgid "Description"
+msgstr ""
+
+#. module: to_accounting_bi
+#: model:ir.model.fields,field_description:to_accounting_bi.field_account_entries_analysis__display_name
+#: model:ir.model.fields,field_description:to_accounting_bi.field_account_treasury_report__display_name
+#: model:ir.model.fields,field_description:to_accounting_bi.field_analytic_entries_report__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: to_accounting_bi
+#: model:ir.model.fields,field_description:to_accounting_bi.field_account_entries_analysis__date
+msgid "Effective Date"
+msgstr ""
+
+#. module: to_accounting_bi
+#: model:ir.ui.menu,name:to_accounting_bi.account_entries_analysis_menu
+#: model_terms:ir.ui.view,arch_db:to_accounting_bi.account_entries_analysis_graph
+#: model_terms:ir.ui.view,arch_db:to_accounting_bi.account_entries_analysis_pivot
+#: model_terms:ir.ui.view,arch_db:to_accounting_bi.account_entries_analysis_search
+msgid "Entries Analysis"
+msgstr ""
+
+#. module: to_accounting_bi
+#: model_terms:ir.ui.view,arch_db:to_accounting_bi.account_entries_analysis_search
+msgid "Entries Date by Month"
+msgstr ""
+
+#. module: to_accounting_bi
+#: model_terms:ir.ui.view,arch_db:to_accounting_bi.account_entries_analysis_search
+msgid "Entries Month"
+msgstr ""
+
+#. module: to_accounting_bi
+#: model_terms:ir.ui.view,arch_db:to_accounting_bi.account_entries_analysis_search
+msgid "Extended Filters..."
+msgstr ""
+
+#. module: to_accounting_bi
+#: model_terms:ir.actions.act_window,help:to_accounting_bi.action_analytic_entries_report
+msgid "From this view, have an analysis of your different\n"
+"				analytic entries following the analytic account you defined matching\n"
+"				your business need. Use the tool search to analyse information about\n"
+"				analytic entries generated in the system."
+msgstr ""
+
+#. module: to_accounting_bi
+#: model_terms:ir.actions.act_window,help:to_accounting_bi.account_entries_analysis_action_window
+msgid "From this view, have an analysis of your different\n"
+"				financial accounts. The document shows your debit and credit taking\n"
+"				in consideration some criteria you can choose by using the search\n"
+"				tool."
+msgstr ""
+
+#. module: to_accounting_bi
+#: model_terms:ir.actions.act_window,help:to_accounting_bi.action_account_treasury_report_all
+msgid "From this view, have an analysis of your treasury.\n"
+"				It sums the balance of every accounting entries made on liquidity\n"
+"				accounts per period."
+msgstr ""
+
+#. module: to_accounting_bi
+#: model:ir.model.fields,field_description:to_accounting_bi.field_analytic_entries_report__general_account_id
+#: model_terms:ir.ui.view,arch_db:to_accounting_bi.view_analytic_entries_report_search
+msgid "General Account"
+msgstr ""
+
+#. module: to_accounting_bi
+#: model_terms:ir.ui.view,arch_db:to_accounting_bi.account_entries_analysis_search
+#: model_terms:ir.ui.view,arch_db:to_accounting_bi.view_account_treasury_report_search
+#: model_terms:ir.ui.view,arch_db:to_accounting_bi.view_analytic_entries_report_search
+msgid "Group By"
+msgstr ""
+
+#. module: to_accounting_bi
+#: model:ir.model.fields,field_description:to_accounting_bi.field_account_entries_analysis__id
+#: model:ir.model.fields,field_description:to_accounting_bi.field_account_treasury_report__id
+#: model:ir.model.fields,field_description:to_accounting_bi.field_analytic_entries_report__id
+msgid "ID"
+msgstr ""
+
+#. module: to_accounting_bi
+#: model_terms:ir.ui.view,arch_db:to_accounting_bi.account_entries_analysis_search
+msgid "Int.Type"
+msgstr ""
+
+#. module: to_accounting_bi
+#: model:ir.model.fields,field_description:to_accounting_bi.field_account_entries_analysis__journal_id
+#: model:ir.model.fields,field_description:to_accounting_bi.field_account_treasury_report__journal_id
+#: model:ir.model.fields,field_description:to_accounting_bi.field_analytic_entries_report__journal_id
+#: model_terms:ir.ui.view,arch_db:to_accounting_bi.account_entries_analysis_search
+#: model_terms:ir.ui.view,arch_db:to_accounting_bi.view_analytic_entries_report_search
+msgid "Journal"
+msgstr ""
+
+#. module: to_accounting_bi
+#: model:ir.actions.act_window,name:to_accounting_bi.account_entries_analysis_action_window
+msgid "Journal Entries Analysis"
+msgstr ""
+
+#. module: to_accounting_bi
+#: model_terms:ir.ui.view,arch_db:to_accounting_bi.account_entries_analysis_search
+msgid "Journal Entries with period in current year"
+msgstr ""
+
+#. module: to_accounting_bi
+#: model:ir.model.fields,field_description:to_accounting_bi.field_account_entries_analysis__account_move_id
+#: model:ir.model.fields,field_description:to_accounting_bi.field_account_treasury_report__move_id
+msgid "Journal Entry"
+msgstr ""
+
+#. module: to_accounting_bi
+#: model:ir.model.fields,field_description:to_accounting_bi.field_account_treasury_report__account_move_line_id
+msgid "Journal Item"
+msgstr ""
+
+#. module: to_accounting_bi
+#: model:ir.model,name:to_accounting_bi.model_account_entries_analysis
+msgid "Journal Items Analysis"
+msgstr ""
+
+#. module: to_accounting_bi
+#: model:ir.model.fields,field_description:to_accounting_bi.field_account_entries_analysis____last_update
+#: model:ir.model.fields,field_description:to_accounting_bi.field_account_treasury_report____last_update
+#: model:ir.model.fields,field_description:to_accounting_bi.field_analytic_entries_report____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: to_accounting_bi
+#: model_terms:ir.ui.view,arch_db:to_accounting_bi.view_account_treasury_report_search
+#: model_terms:ir.ui.view,arch_db:to_accounting_bi.view_analytic_entries_report_search
+msgid "Month"
+msgstr ""
+
+#. module: to_accounting_bi
+#: model:ir.model.fields,field_description:to_accounting_bi.field_analytic_entries_report__move_id
+msgid "Move"
+msgstr ""
+
+#. module: to_accounting_bi
+#: model_terms:ir.ui.view,arch_db:to_accounting_bi.view_analytic_entries_report_search
+msgid "My Entries"
+msgstr ""
+
+#. module: to_accounting_bi
+#: model:ir.model.fields,field_description:to_accounting_bi.field_account_entries_analysis__partner_id
+#: model:ir.model.fields,field_description:to_accounting_bi.field_account_treasury_report__partner_id
+#: model:ir.model.fields,field_description:to_accounting_bi.field_analytic_entries_report__partner_id
+#: model_terms:ir.ui.view,arch_db:to_accounting_bi.account_entries_analysis_search
+#: model_terms:ir.ui.view,arch_db:to_accounting_bi.view_analytic_entries_report_search
+msgid "Partner"
+msgstr ""
+
+#. module: to_accounting_bi
+#: selection:account.entries.analysis,move_state:0
+#: model_terms:ir.ui.view,arch_db:to_accounting_bi.account_entries_analysis_search
+msgid "Posted"
+msgstr ""
+
+#. module: to_accounting_bi
+#: model:ir.model.fields,field_description:to_accounting_bi.field_account_entries_analysis__product_id
+#: model:ir.model.fields,field_description:to_accounting_bi.field_analytic_entries_report__product_id
+msgid "Product"
+msgstr ""
+
+#. module: to_accounting_bi
+#: model:ir.model.fields,field_description:to_accounting_bi.field_account_entries_analysis__product_uom_id
+#: model:ir.model.fields,field_description:to_accounting_bi.field_analytic_entries_report__product_uom_id
+msgid "Product Unit of Measure"
+msgstr ""
+
+#. module: to_accounting_bi
+#: model:ir.model.fields,field_description:to_accounting_bi.field_account_entries_analysis__quantity
+msgid "Products Quantity"
+msgstr ""
+
+#. module: to_accounting_bi
+#: model_terms:ir.ui.view,arch_db:to_accounting_bi.account_entries_analysis_search
+msgid "Reconciled"
+msgstr ""
+
+#. module: to_accounting_bi
+#: model_terms:ir.ui.view,arch_db:to_accounting_bi.account_entries_analysis_search
+msgid "Reconciled entries"
+msgstr ""
+
+#. module: to_accounting_bi
+#: model:ir.model.fields,field_description:to_accounting_bi.field_account_entries_analysis__full_reconcile_id
+msgid "Reconciliation number"
+msgstr ""
+
+#. module: to_accounting_bi
+#: model:ir.model.fields,field_description:to_accounting_bi.field_account_entries_analysis__ref
+msgid "Reference"
+msgstr ""
+
+#. module: to_accounting_bi
+#: model_terms:ir.ui.view,arch_db:to_accounting_bi.account_entries_analysis_search
+msgid "Show data related to accounting entries that have been posted"
+msgstr ""
+
+#. module: to_accounting_bi
+#: model_terms:ir.ui.view,arch_db:to_accounting_bi.account_entries_analysis_search
+msgid "Show data related to accounting entries that have not been posted"
+msgstr ""
+
+#. module: to_accounting_bi
+#: model:ir.model.fields,field_description:to_accounting_bi.field_account_entries_analysis__move_line_state
+msgid "State of Move Line"
+msgstr ""
+
+#. module: to_accounting_bi
+#: model:ir.model.fields,field_description:to_accounting_bi.field_account_entries_analysis__move_state
+msgid "Status"
+msgstr ""
+
+#. module: to_accounting_bi
+#: model:ir.model.fields,help:to_accounting_bi.field_account_entries_analysis__internal_type
+msgid "The 'Internal Type' is used for features available on different types of accounts: liquidity type is for cash or bank accounts, payable/receivable is for vendor/customer accounts."
+msgstr ""
+
+#. module: to_accounting_bi
+#: model_terms:ir.ui.view,arch_db:to_accounting_bi.account_entries_analysis_search
+msgid "This Year"
+msgstr ""
+
+#. module: to_accounting_bi
+#: model:ir.actions.act_window,name:to_accounting_bi.action_account_treasury_report_all
+#: model:ir.model,name:to_accounting_bi.model_account_treasury_report
+#: model:ir.ui.menu,name:to_accounting_bi.menu_action_account_treasury_report_all
+#: model_terms:ir.ui.view,arch_db:to_accounting_bi.account_treasury_report_pivot
+#: model_terms:ir.ui.view,arch_db:to_accounting_bi.view_account_treasury_report_graph
+#: model_terms:ir.ui.view,arch_db:to_accounting_bi.view_account_treasury_report_search
+#: model_terms:ir.ui.view,arch_db:to_accounting_bi.view_analytic_entries_report_pivot
+msgid "Treasury Analysis"
+msgstr ""
+
+#. module: to_accounting_bi
+#: model:ir.model.fields,field_description:to_accounting_bi.field_account_entries_analysis__internal_type
+msgid "Type"
+msgstr ""
+
+#. module: to_accounting_bi
+#: selection:account.entries.analysis,move_line_state:0
+msgid "Unbalanced"
+msgstr ""
+
+#. module: to_accounting_bi
+#: model:ir.model.fields,field_description:to_accounting_bi.field_analytic_entries_report__unit_amount
+msgid "Unit Amount"
+msgstr ""
+
+#. module: to_accounting_bi
+#: selection:account.entries.analysis,move_state:0
+#: model_terms:ir.ui.view,arch_db:to_accounting_bi.account_entries_analysis_search
+msgid "Unposted"
+msgstr ""
+
+#. module: to_accounting_bi
+#: model_terms:ir.ui.view,arch_db:to_accounting_bi.account_entries_analysis_search
+msgid "Unreconciled"
+msgstr ""
+
+#. module: to_accounting_bi
+#: model_terms:ir.ui.view,arch_db:to_accounting_bi.account_entries_analysis_search
+msgid "Unreconciled entries"
+msgstr ""
+
+#. module: to_accounting_bi
+#: model:ir.model.fields,field_description:to_accounting_bi.field_analytic_entries_report__user_id
+msgid "User"
+msgstr ""
+
+#. module: to_accounting_bi
+#: selection:account.entries.analysis,move_line_state:0
+msgid "Valid"
+msgstr ""
+

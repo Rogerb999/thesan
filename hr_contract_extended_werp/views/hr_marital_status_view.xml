@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<odoo>
+
+    <!-- Marital Status tree view-->
+    <record id="hr_marital_status_tree" model="ir.ui.view">
+        <field name="name">Hr Marital Status Tree</field>
+        <field name="model">hr.marital.status</field>
+        <field name="arch" type="xml">
+            <tree string="Marital Status">
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Marital Status from view-->
+    <record id="hr_marital_status_form" model="ir.ui.view">
+        <field name="name">Hr Marital Status Tree</field>
+        <field name="model">hr.marital.status</field>
+        <field name="arch" type="xml">
+            <form string="Marital Status">
+                <sheet>
+                    <group>
+                        <field name="name" class="oe_inline"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Marital Status Action-->
+    <record model="ir.actions.act_window" id="hr_marital_status_action">
+        <field name="name">Marital Status</field>
+        <field name="res_model">hr.marital.status</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Marital Status Menu-->
+    <menuitem
+        id="hr_marital_status_menu"
+        action="hr_marital_status_action"
+        parent="hr_recruitment.menu_hr_recruitment_configuration"
+        groups="hr.group_hr_user"/>
+
+</odoo>

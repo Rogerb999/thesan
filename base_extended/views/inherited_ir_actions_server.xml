@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2019-TODAY WSuite Products <wsuite-products@wsuite.com>
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html). -->
+<odoo>
+
+    <record id="view_server_action_form_inherit" model="ir.ui.view">
+        <field name="name">view.server.action.form.inherit</field>
+        <field name="model">ir.actions.server</field>
+        <field name="inherit_id" ref="base.view_server_action_form"/>
+        <field name="arch" type="xml">
+            <field name="state" position="after">
+                <field name="permission_sent"
+                       attrs="{'invisible': [('state', '!=', 'email')]}"/>
+            </field>
+        </field>
+    </record>
+
+</odoo>

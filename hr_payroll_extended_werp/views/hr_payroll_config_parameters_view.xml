@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2020-TODAY WSuite Products <wsuite-products@wsuite.com>
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html). -->
+<odoo>
+
+    <record id="hr_payroll_config_parameters_view_tree" model="ir.ui.view">
+        <field name="name">hr.payroll.config.parameters.view.tree</field>
+        <field name="model">hr.payroll.config.parameters</field>
+        <field name="arch" type="xml">
+            <tree editable="bottom">
+                <field name="name" required="1"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="hr_payroll_config_parameters_action"
+            model="ir.actions.act_window">
+        <field name="name">Config Parameters</field>
+        <field name="res_model">hr.payroll.config.parameters</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree</field>
+        <field name="context">{}</field>
+    </record>
+
+    <menuitem
+        id="hr_payroll_config_parameters_menu_action"
+        name="Config Parameters"
+        action="hr_payroll_config_parameters_action"
+        parent="hr_payroll.menu_hr_payroll_configuration"/>
+
+</odoo>

@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<odoo>
+
+    <!-- Add Related Employee in User form view-->
+    <record id="view_users_form_inherit_employee" model="ir.ui.view">
+        <field name="name">res.users.form.inherit.employee</field>
+        <field name="model">res.users</field>
+        <field name="inherit_id" ref="base.view_users_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[hasclass('oe_title')]/group" position="inside">
+                <field name="employee_id"
+                       groups="base.group_no_one"
+                       options="{'no_create': True, 'no_create_edit': True}"/>
+            </xpath>
+            <xpath expr="//div/field[@name='partner_id']" position="replace">
+                <field name="partner_id" required="0"
+                       groups="base.group_no_one"/>
+            </xpath>
+            <xpath expr="//group/field[@name='partner_id']"
+                   position="replace">
+                <field name="partner_id" required="0"
+                       groups="base.group_no_one"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

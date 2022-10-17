@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="pago_nomina_report_view_tree" model="ir.ui.view">
+        <field name="name">pago.nomina.report.view.tree</field>
+        <field name="model">pago.nomina.report</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="year"/>
+                <field name="month"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="pago_nomina_report_view_form" model="ir.ui.view">
+        <field name="name">pago.nomina.report.view.form</field>
+        <field name="model">pago.nomina.report</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="action_generate_report"
+                            string="Generate Report" type="object"/>
+                </header>
+                <sheet>
+                    <group>
+                        <group colspan="4" col="4">
+                            <field name="month"/>
+                            <field name="year"/>
+                            <field name="file" filename="file_name"
+                                   attrs="{'invisible': [('file_name','=',False)]}"/>
+                            <field name="file_sheet" filename="file_sheet_name"
+                                   attrs="{'invisible': [('file_sheet_name','=',False)]}"/>
+                            <field name="file_name" invisible="1"/>
+                            <field name="file_sheet_name" invisible="1"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="pago_nomina_report_action" model="ir.actions.act_window">
+        <field name="name">Pago Nomina</field>
+        <field name="res_model">pago.nomina.report</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem name="Pago Nomina"
+              id="pago_nomina_report_menu"
+              action="pago_nomina_report_action"
+              parent="hr_payroll_report_werp_menu"/>
+
+</odoo>

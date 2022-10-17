@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="action_account_report_cs" model="ir.actions.client">
+            <field name="name">Cash Flow Statement</field>
+            <field name="tag">account_report</field>
+            <field name="context" eval="{'model': 'account.cash.flow.report'}"/>
+        </record>
+
+        <menuitem id="menu_action_account_report_cash_flow"
+                  name="Cash Flow Statement"
+                  action="action_account_report_cs"
+                  parent="account.account_reports_legal_statements_menu"
+                  groups="account.group_account_user"/>
+
+        <function name="_archive_menu"
+                  model="account.financial.html.report"
+                  eval="[ref('account_reports.account_financial_report_cashsummary0')]"/>
+    </data>
+</odoo>

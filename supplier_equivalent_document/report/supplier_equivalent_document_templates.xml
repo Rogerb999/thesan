@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="report_account_move_supplier_equivalent_document">
+   <t t-name="supplier_equivalent_document.report_account_move_supplier_equivalent_document">
+    <t t-call="web.html_container">
+        <t t-call="web.external_layout">
+            <t t-foreach="docs" t-as="doc">
+                <!--<t t-foreach="docs" t-as="doc">-->
+                <!--<br/>-->
+                <!--<div class="article" t-att-data-oe-model="doc and doc._name" t-att-data-oe-id="doc and doc.id" t-att-data-oe-lang="doc and doc.env.context.get('lang')">-->
+                    <br/>
+                    <br/>
+                    <br/>
+                   
+                      
+                    <div class="page">
+                        <table class="table table-sm" border="1" bordercolor="#000000" style="border: 0px solid black;">
+                         
+                            <tbody style="border: 0px solid black;">
+                                <tr style="border: 0px solid black;">
+                                    <td style="border: 0px solid black;">
+                                        <strong>DOCUMENTO SOPORTE EN ADQUISICIONES EFECTUADAS A SUJETOS NO OBLIGADOS A EXPEDIR FACTURA DE VENTA O DOCUMENTO EQUIVALENTE</strong>
+                                    </td>
+                                    <td style="border: 0px solid black;">
+                                        <strong>Numero de resolucion:</strong>
+                                        <span t-field="doc.journal_id.sequence_id.resolution_id.resolution_resolution"/>
+                                        <strong>Fecha:</strong>
+                                        <span t-field="doc.journal_id.sequence_id.resolution_id.resolution_resolution_date"/>
+                                        <strong>Rango de resolucion:</strong>
+                                        <span t-field="doc.journal_id.sequence_id.resolution_id.resolution_prefix"/>
+                                        <span t-field="doc.journal_id.sequence_id.resolution_id.resolution_from"/>
+                                        <strong>hasta</strong>
+                                        <span t-field="doc.journal_id.sequence_id.resolution_id.resolution_prefix"/>
+                                        <span t-field="doc.journal_id.sequence_id.resolution_id.resolution_to"/>
+                                        <strong>valida:</strong>
+                                        <span t-field="doc.journal_id.sequence_id.resolution_id.resolution_date_from"/>
+                                        <strong>hasta</strong>
+                                        <span t-field="doc.journal_id.sequence_id.resolution_id.resolution_date_to"/>
+                                        <strong>representacion grafica impresa por
+                                </strong>
+                                        <strong t-field="doc.company_id.business_name"/>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table >
+                        <t t-foreach="doc.partner_id" t-as="p">
+                            <table class="table table-sm" line-height="100%" width="100%" border="1" cellpadding="0" cellspacing="0" bordercolor="#000000">
+                                <tr>
+                                    <th colspan="2" align="center" style="width: 60%; border: 0px solid black;" >DATOS DEL TERCERO</th>
+                                    <th align="center" style="width: 40%; border: 0px solid black;">NUMERACION CONSECUTIVA</th>
+                                </tr>
+                                <tr>
+                                    <td id="td_tag" valign="middle" align="left" style="width: 10%;">Razón Social:</td>
+                                    <td id="td_val" style="width: 50%;">
+                                        <span t-field="doc.partner_id"/>
+                                    </td>
+                                    <td rowspan="5" style="border: 0px solid black; width: 40%;">
+                                        <h3 align="center">
+                                            <span t-field="doc.number"/>
+                                        </h3>
+                                    </td>
+                                </tr>
+                                <tr >
+                                    <td style="border: 0px solid black;" id="td_tag">NIT:</td>
+                                    <td style="border: 0px solid black;" id="td_val">
+                                        <span t-field="p.vat"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="border: 0px solid black;" id="td_tag">Dirección:</td>
+                                    <td style="border: 0px solid black;" id="td_val">
+                                        <span t-field="p.street"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="border: 0px solid black;" id="td_tag">Ciudad:</td>
+                                    <td style="border: 0px solid black;" id="td_val">
+                                        <span t-field="p.city"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="border: 0px solid black;" id="td_tag">Télefono:</td>
+                                    <td style="border: 0px solid black;" id="td_val">
+                                        <span t-field="p.phone"/>
+                                    </td>
+                                </tr>
+                            </table>
+                        </t>
+                        <!--<br/>-->
+                        <table class="table table-sm" width="100%"  cellpadding="0" cellspacing="0"  style="border: 0px solid black;" >
+                            <tr>
+                                <th border="1" bordercolor="#000000"  colspan="2" align="center" style="width: 60%; border: 1px solid black;">REFERENCIAS</th>
+                                <th border="1" bordercolor="#000000" align="center" style="width: 20%; border: 1px solid black;">FECHA CONTABLE</th>
+                                <th border="1" bordercolor="#000000" align="center" style="width: 20%; border: 1px solid black;">FECHA DOCUMENTO</th>
+                            </tr>
+                            <tr>
+                                <td id="td_tag" valign="middle" align="left" style="width: 10%;">Concepto:</td>
+                                <td id="td_val" style="width: 50%;">
+                                    <t t-esc="doc.reference"/>
+                                </td>
+                                <td align="center" style="width: 20%;">
+                                    <span t-field="doc.date_invoice"/>
+                                </td>
+                                <td align="center" style="width: 20%;">
+                                    <span t-field="doc.date_invoice"/>
+                                </td>
+                            </tr>
+                            <!-- <tr><td id="td_tag" valign="middle" align="left">Moneda:</td><td id="td_val"><t t-esc="doc.currency_id.name"/></td><th colspan="2" align="center" style="background-color:#CBCBCB">REFERENCIA DE FACTURA</th></tr><tr><td id="td_tag" valign="middle" align="left">Tasa de Cambio:</td><td id="td_val"><t t-esc="doc.currency_rate_raw" t-if="not doc.invoice_has_exchange_rate"/><t t-esc="doc.invoice_exchange_rate" t-if="doc.invoice_has_exchange_rate"/></td><td colspan="2" align="center"><t t-esc="doc.ref"/></td></tr> -->
+                        </table>
+                        <!-- <table width="100%" cellpadding="0" cellspacing="0"><tr id="t_letras"><td style="border: 1px solid black;"><t t-set="total_letras" t-value="doc.currency_id.amount_to_text(doc.amount_total)"/><t t-if="doc.currency_id.name == 'COP' and 'Peso' in total_letras and int(doc.amount_total) != 1"><t t-set="total_letras" t-value="total_letras.replace('Peso', 'Pesos')"/></t><t t-if="doc.currency_id.name == 'USD' and 'Dollars' in total_letras"><t t-set="total_letras" t-value="total_letras.replace('Dollars', 'Dolares')"/></t><t t-if="doc.currency_id.name == 'USD' and 'Dollar' in total_letras"><t t-set="total_letras" t-value="total_letras.replace('Dollar', 'Dolar')"/></t><t t-if="doc.currency_id.name in ('USD','EUR') and 'Cents' in total_letras"><t t-set="total_letras" t-value="total_letras.replace('Cents', 'Centavos')"/></t><t t-elif="doc.currency_id.name in ('USD','EUR') and 'Cent' in total_letras"><t t-set="total_letras" t-value="total_letras.replace('Cent', 'Centavo')"/></t><strong>Total en letras: </strong><span t-if="doc.currency_id" t-esc="total_letras.upper()"/></td></tr><tr id="doc_eq"><td align="center" style="background-color:#CBCBCB; border: 1px solid black;"><strong>DOCUMENTO SOPORTE EN ADQUISICIONES EFECTUADAS A SUJETOS NO OBLIGADOS A EXPEDIR FACTURA DE VENTA O DOCUMENTO EQUIVALENTE</strong></td></tr><tr><td colspan="2" align="center" style="border: 1px solid black;"><t t-set="date_range_id" t-value="doc.journal_id.sequence_id.date_range_ids.filtered(lambda x: x.active_resolution)"/><strong>Art 55 de la Resolución 42 del 5 de mayo de 2020</strong><br/>
+                                    Rango: Desde <t t-esc="date_range_id.number_from"/> hasta <t t-esc="date_range_id.number_to"/></td></tr></table> -->
+                        <!--<br/>-->
+                        <table width="100%" cellpadding="0" cellspacing="0">
+                            <tr>
+                                <th colspan="8" style="border: 1px solid black;">DETALLES</th>
+                            </tr>
+                            <tr>
+                                <th style="border: 1px solid black;" align="center">CUENTA</th>
+                                <th style="border: 1px solid black;" align="center">DESCRIPCIÓN</th>
+                                <!--<td style="background-color:#CBCBCB"><strong>IVA</strong></td>-->
+                                <!--<td style="background-color:#CBCBCB"><strong>Cod SAP</strong></td>-->
+                                <th style="border: 1px solid black;" align="center">ORD/CECO</th>
+                                <!--<th style="border: 1px solid black;" align="center">IMP.MON.DOCUMENTO</th>-->
+                                <th style="border: 1px solid black;" align="center">IMP.MON.LOCAL</th>
+                            </tr>
+                            <t t-foreach="doc.invoice_line_ids" t-as="line">
+                                <tr>
+                                    <td style="border-left: 1px solid black; border-right: 1px solid black;">
+                                        <t t-esc="line.account_id.code"/>
+                                    </td>
+                                    <td style="border-left: 1px solid black; border-right: 1px solid black;">
+                                        <t t-esc="line.name"></t>
+                                    </td>
+                                    <td style="border-left: 1px solid black; border-right: 1px solid black;">
+                                        <t t-esc="line.account_analytic_id.name"/>
+                                    </td>
+                                    <td style="border-left: 1px solid black; border-right: 1px solid black;" align="right">
+                                        <t t-esc="line.price_subtotal" />
+                                    </td>
+                                    <!-- <td style="border-left: 1px solid black; border-right: 1px solid black;" align="right"><t t-esc="abs(line.debit-line.credit)" t-options="{'widget': 'monetary', 'display_currency': doc.company_id.currency_id}"/></td>-->
+                                </tr>
+                            </t>
+                        </table>
+                        <div style="border: 1px solid black;">
+                       TOTAL: 
+                        
+                        
+                            <t t-esc="doc.amount_total"/>
+                        </div>
+                        <br></br>
+                       
+                        <table id="rete" width="100%" cellpadding="0" cellspacing="0">
+                            <tr>
+                                <th colspan="6" style="border: 1px solid black;">RETENCIONES PRACTICADAS</th>
+                            </tr>
+                            <tr>
+                                <th style="border: 1px solid black;" align="center">TIPO</th>
+                                <th style="border: 1px solid black;" align="center">INDICADOR</th>
+                                <th style="border: 1px solid black;" align="center">DESCRIPCION</th>
+                                <th style="border: 1px solid black;" align="center">%</th>
+                                <th style="border: 1px solid black;" align="center">BASE</th>
+                                <th style="border: 1px solid black;" align="center">VALOR RETENIDO</th>
+                            </tr>
+                            <t t-set="retenido" t-value="0.0"/>
+                            <t t-foreach="doc.move_line_ids.filtered(lambda t: t.tax_line_id and t.tax_line_id.edi_tax_id.name == 'ReteFuente')" t-as="rline">
+                                <tr>
+                                    <td style="border-left: 1px solid black; border-right: 1px solid black;">
+                                        <t t-esc="rline.tax_line_id.edi_tax_id.name"/>
+                                    </td>
+                                    <td style="border-left: 1px solid black; border-right: 1px solid black;">
+                                        <t t-esc="rline.tax_line_id.edi_tax_id.code"/>
+                                    </td>
+                                    <td style="border-left: 1px solid black; border-right: 1px solid black;">
+                                        <t t-esc="rline.name"/>
+                                    </td>
+                                    <td style="border-left: 1px solid black; border-right: 1px solid black;">
+                                        <t t-esc="rline.tax_line_id.amount"/>
+                                    </td>
+                                    <td style="border-left: 1px solid black; border-right: 1px solid black;" align="right">
+                                        <t t-esc="rline.tax_base_amount" t-options="{'widget': 'monetary', 'display_currency': doc.company_id.currency_id}"/>
+                                    </td>
+                                    <td style="border-left: 1px solid black; border-right: 1px solid black;" align="right">
+                                        <t t-esc="abs(rline.debit-rline.credit)" t-options="{'widget': 'monetary', 'display_currency': doc.company_id.currency_id}"/></td>-->
+                                    </tr>
+                                    <t t-set="retenido" t-value="retenido + abs(rline.debit-rline.credit)"/></t>
+                                <!-- <t t-foreach="doc.line_ids.filtered(lambda t: t.tax_line_id and t.tax_line_id.tax_group_id.tax_group_type_id.type == 'withholding_tax')" t-as="rline"><tr><td style="border-left: 1px solid black; border-right: 1px solid black;"><t t-esc="rline.tax_line_id.tax_group_id.tax_group_type_id.name"/></td><td style="border-left: 1px solid black; border-right: 1px solid black;"><t t-esc="rline.tax_line_id.tax_group_id.tax_group_type_id.code"/></td><td style="border-left: 1px solid black; border-right: 1px solid black;"><t t-esc="rline.name"/></td><td style="border-left: 1px solid black; border-right: 1px solid black;"><t t-esc="rline.tax_line_id.amount"/></td><td style="border-left: 1px solid black; border-right: 1px solid black;" align="right"><t t-esc="rline.tax_base_amount" t-options="{'widget': 'monetary', 'display_currency': doc.company_id.currency_id}"/></td><td style="border-left: 1px solid black; border-right: 1px solid black;" align="right"><t t-esc="abs(rline.debit-rline.credit)" t-options="{'widget': 'monetary', 'display_currency': doc.company_id.currency_id}"/></td></tr><t t-set="retenido" t-value="retenido + abs(rline.debit-rline.credit)"/></t> -->
+                                <!-- <tr><td colspan="5" align="center" style="border: 1px solid black;"><strong>Total Retenido</strong></td><td style="border: 1px solid black;" align="right"><t t-esc="retenido" t-options="{'widget': 'monetary', 'display_currency': doc.company_id.currency_id}"/></td></tr> -->
+                            </table>
+                        </div>
+                    <!--</div>-->
+                </t>
+            </t>
+        </t>
+    </t>
+    </template>
+</odoo>

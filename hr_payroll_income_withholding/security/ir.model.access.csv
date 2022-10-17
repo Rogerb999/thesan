@@ -1,0 +1,17 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_hr_deductions_manager,hr.deductions.rf.employee manager,model_hr_deductions_rf_employee,hr.group_hr_manager,1,1,1,1
+access_hr_deduction_type_manager,hr.deduction.type manager,model_hr_deduction_type_rf,hr.group_hr_manager,1,1,1,0
+access_hr_deduction_rf_manager,hr.deduction.rf manager,model_hr_deduction_rf,hr.group_hr_manager,1,1,1,0
+access_hr_deductions_user,hr.deductions.rf.employee user,model_hr_deductions_rf_employee,hr.group_hr_user,1,1,1,0
+access_hr_deduction_type_user,hr.deduction.type user,model_hr_deduction_type_rf,hr.group_hr_user,1,1,1,0
+access_hr_deduction_rf_user,hr.deduction.rf user,model_hr_deduction_rf,hr.group_hr_user,1,1,1,0
+access_hr_retention_method_rf_user,hr.retention.method.rf user,model_hr_retention_method_rf,hr.group_hr_user,1,1,1,0
+access_hr_value_uvt_rf_manager,hr.value.uvt.rf manager,model_hr_value_uvt_rf,hr.group_hr_manager,1,1,1,1
+access_hr_value_uvt_rf_user,hr.value.uvt.rf user,model_hr_value_uvt_rf,hr.group_hr_user,1,1,1,0
+access_hr_payslip_deductions_rf_user,hr.payslip.deductions.rf user,model_hr_payslip_deductions_rf,hr.group_hr_user,1,1,1,1
+access_hr_value_uvt_range_rf,hr.value.uvt.range.rf user,model_hr_value_uvt_range_rf,hr.group_hr_user,1,1,1,1
+access_hr_value_uvt_input_not_rf,hr.value.uvt.input.not.rf user,model_hr_value_uvt_input_not_rf,hr.group_hr_user,1,1,1,1
+access_hr_value_uvt_input_rf,hr.value.uvt.input.rf user,model_hr_value_uvt_input_rf,hr.group_hr_user,1,1,1,1
+access_hr_payslip_input_not_rf,hr.payslip.input.not.rf user,model_hr_payslip_input_not_rf,hr.group_hr_user,1,1,1,1
+access_hr_payslip_input_rf,hr.payslip.input.rf user,model_hr_payslip_input_rf,hr.group_hr_user,1,1,1,1
+access_hr_deduction_accumulate_rf,hr.deduction.accumulate.rf user,model_hr_deduction_accumulate_rf,hr.group_hr_user,1,1,1,1

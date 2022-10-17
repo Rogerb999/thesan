@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2019-TODAY WSuite Products <wsuite-products@wsuite.com>
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html). -->
+<odoo>
+
+    <report
+        id="action_report_concepts_period"
+        string="CMT - SUMMARY BY CONCEPTS - PERIOD"
+        model="hr.payroll.interface"
+        report_type="qweb-pdf"
+        file="hr_payroll_interface.concepts_period_template"
+        name="hr_payroll_interface.concepts_period_template"
+        print_report_name="'ACUMULADO  %s %s %s' % (object.company_id.name , object.create_date.strftime('%B'), object.create_date.strftime('%Y'))"
+    />
+
+    <report
+        id="action_report_entity_of_pay"
+        string="GENERATION PAYMENT"
+        model="hr.payroll.interface"
+        report_type="qweb-pdf"
+        file="hr_payroll_interface.entity_of_pay_template"
+        name="hr_payroll_interface.entity_of_pay_template"
+        print_report_name="'GENERATION PAYMENT  %s %s %s' % (object.company_id.name , object.create_date.strftime('%B'), object.create_date.strftime('%Y'))"
+    />
+
+</odoo>

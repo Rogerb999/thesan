@@ -1,0 +1,98 @@
+<?xml version="1.0"?>
+<odoo>
+
+    <record id="view_close_event_form" model="ir.ui.view">
+        <field name="name">Close Event Form</field>
+        <field name="model">close.event</field>
+        <field name="arch" type="xml">
+            <form string="Close Event Form">
+                <header>
+                    <button name="action_confirm" type="object"
+                        string="Confirm" states="draft"
+                        attrs="{'invisible': [('state','in',('confirmed'))]}"/>
+                    <field name="state" widget="statusbar"
+                           statusbar_visible="draft"/>
+                </header>
+                <group>
+                    <field name="name"/>
+                    <field name="date_finish"/>
+                    <field name="additional_configuration" invisible="True"/>
+                    <field name="exempt_date_ids"
+                           attrs="{'invisible': [('additional_configuration','=',False)]}"/>
+                </group>
+                <div class="oe_chatter">
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_close_event_tree" model="ir.ui.view">
+        <field name="name">Close Event Tree</field>
+        <field name="model">close.event</field>
+        <field name="arch" type="xml">
+            <tree string="Close Event Tree">
+                <field name="name"/>
+                <field name="date_finish"/>
+                <field name="state"/>                
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_close_event" model="ir.actions.act_window">
+        <field name="name">Close Event</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">close.event</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <record id="view_close_event_date_form" model="ir.ui.view">
+        <field name="name">Close Event Date Form</field>
+        <field name="model">close.event.date</field>
+        <field name="arch" type="xml">
+            <form string="Close Event Form">
+                <group>
+                    <field name="date"/>
+                    <field name="type_id"/>
+                    <field name="subtype_id"/>
+                    <field name="event_id"/>
+                    <field name="state" invisible="True"/>
+                </group>
+                <div class="oe_chatter">
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_close_event_date_tree" model="ir.ui.view">
+        <field name="name">Close Event Date Tree</field>
+        <field name="model">close.event.date</field>
+        <field name="arch" type="xml">
+            <tree string="Close Event Date Tree">
+                <field name="date"/>
+                <field name="type_id"/>
+                <field name="subtype_id"/>
+                <field name="event_id"/>
+                <field name="state" invisible="True"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_close_event_date" model="ir.actions.act_window">
+        <field name="name">Close Event Date</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">close.event.date</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <menuitem id="menu_closes" name="Closes"
+              parent="hr_payroll.menu_hr_payroll_root" sequence="30"/>
+    <menuitem id="menu_notif_event" name="Event" action="action_close_event"
+              parent="menu_closes" sequence="1"/>
+    <menuitem id="menu_notif_config" name="Configuration"
+              parent="menu_closes" sequence="3"/>
+
+</odoo>

@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_hr_group_values,access_hr_group_values,model_hr_group_values,,1,1,1,1
+access_hr_group_rules,access_hr_group_rules,model_hr_group_rules,,1,1,1,1
+access_hr_items_lines,access_hr_items_lines,model_hr_items_lines,,1,1,1,1
+access_hr_payroll_configuration_report,access_hr_payroll_configuration_report,model_hr_payroll_configuration_report,,1,1,1,1

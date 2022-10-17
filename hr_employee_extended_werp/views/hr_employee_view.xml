@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<odoo>
+
+    <record id="view_hr_employee_form_employee_extended_inherit"
+            model="ir.ui.view">
+        <field name="name">hr.employee.form.employee.extended.inherit</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='tz']" position="after">
+                <field name="last_update" readonly="1"/>
+                <field name="update_info" readonly="1"/>
+            </xpath>
+            <xpath expr="//field[@name='parent_id']" position="after">
+                <field name="functional_boss"/>
+            </xpath>
+            <field name="address_home_id" position="attributes">
+                <attribute name="context">
+                    {'show_address': 1, 'default_type': 'private'}
+                </attribute>
+            </field>
+            <xpath expr="//page[@name='hr_settings']" position="after">
+                <page name="parameters_aditional"
+                      string="Parameters Aditional">
+                    <group string="Information" name="information"
+                           colspan="4" col="4">
+                        <field name="Interface_salary_type"/>
+                        <field name="employment_relationship_id"
+                               options="{'no_open':'False', 'no_create': True, 'no_create_edit': True, 'no_quick_create': True}"/>
+                        <field name="code_office"/>
+                        <field name="salary_effective_date"/>
+                        <field name="unity_id"
+                               options="{'no_open':'False', 'no_create': True, 'no_create_edit': True, 'no_quick_create': True}"/>
+                        <field name="zone_id"
+                               options="{'no_open':'False', 'no_create': True, 'no_create_edit': True, 'no_quick_create': True}"/>
+                        <field name="cost_center_id"
+                               options="{'no_open':'False', 'no_create': True, 'no_create_edit': True, 'no_quick_create': True}"/>
+                        <field name="cost_line_id"
+                               options="{'no_open':'False', 'no_create': True, 'no_create_edit': True, 'no_quick_create': True}"/>
+                    </group>
+                </page>
+            </xpath>
+            <field name="name" position="attributes">
+                <attribute name="attrs">{'readonly' : [('name', '!=', False)]}</attribute>
+                <attribute name="force_save">True</attribute>
+            </field>
+        </field>
+    </record>
+
+ 
+
+
+    <menuitem
+        id="report_export_main_menu"
+        name="Report"
+        parent="hr.menu_hr_root"
+    />
+
+    <menuitem
+        id="report_export_menu"
+        name="Report"
+        sequence="1"
+        parent="hr_employee_extended_werp.report_export_main_menu"
+        action="hr_employee_extended_werp.report_employee_wizard_action"
+    />
+
+</odoo>

@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_record_start_stop_timer_employee,access.record.start.stop.timer.employee,model_record_start_stop_timer,base.group_user,1,0,0,0
+access_record_start_stop_timer_portal,access.record.start.stop.timer.portal,model_record_start_stop_timer,base.group_portal,1,0,0,0
+access_record_start_stop_timer_project_user,access.record.start.stop.timer.project.user,model_record_start_stop_timer,group_portal_employee,1,1,1,1
+access_record_start_stop_timer_lines_employee,access.record.start.stop.timer.lines.employee,model_record_start_stop_timer_lines,base.group_user,1,0,0,0
+access_record_start_stop_timer_lines_portal,access.record.start.stop.timer.lines.portal,model_record_start_stop_timer_lines,base.group_portal,1,0,0,0
+access_record_start_stop_timer_lines_portal_employee,access.record.start.stop.timer.lines.portal.employee,model_record_start_stop_timer_lines,group_portal_employee,1,1,1,1

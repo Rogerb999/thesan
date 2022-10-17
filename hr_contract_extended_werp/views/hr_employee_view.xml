@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<odoo>
+
+    <!-- Add Marital Status and Dcoument fields in employee form view-->
+    <record id="view_hr_employee_form_contract_inherit" model="ir.ui.view">
+        <field name="name">hr.employee.form.contract.inherit</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='marital']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <field name="gender" position="after">
+                <field name="marital_status_id"
+                       string="Marital Status" groups="hr.group_hr_user"/>
+            </field>
+            <xpath expr="//field[@name='user_id']" position="after">
+                <button name="create_user" string="Create User" type="object" class="oe_read_only"
+                    attrs="{'invisible':[('user_id', '!=', False)]}"/>
+            </xpath>
+            <xpath expr="//page[@name='hr_settings']" position="after">
+                <page name="hr_documents" string="Documents"
+                      groups="hr.group_hr_user">
+                    <group col="4">
+                        <field name="photos_white_background"/>
+                        <field name="photo_black_white"/>
+                        <field name="photocopy_document_indentity"/>
+                        <field name="photocopy_militar_card"/>
+                    </group>
+                    <group col="4">
+                        <field name="cut_past"/>
+                        <field name="photocopy_of_the_certificate"/>
+                        <field name="format_referencing_last_job"/>
+                        <field name="photocopy_last_job"/>
+                    </group>
+                    <group col="4">
+                        <field name="photocopy_of_the_eps_certificate"/>
+                        <field name="photocopies_pensiones"/>
+                        <field name="photocopy_layoffs"/>
+                        <field name="bank_certification"/>
+                    </group>
+                    <group col="4">
+                        <field name="certificate_income_withholdings"/>
+                        <field name="renta_estado"/>
+                        <field name="format_references"/>
+                        <field name="required_restriction"/>                        
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- Add Marital Status field in employee tree view-->
+    <record id="view_hr_employee_tree_contract_inherit" model="ir.ui.view">
+        <field name="name">hr.employee.tree.contract.inherit</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_tree"/>
+        <field name="arch" type="xml">
+            <field name="parent_id" position="after">
+                <field name="marital_status_id"
+                       string="Marital Status" groups="hr.group_hr_user"/>
+            </field>
+        </field>
+    </record>
+
+</odoo>

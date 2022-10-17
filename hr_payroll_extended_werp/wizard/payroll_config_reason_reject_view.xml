@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2020-TODAY WSuite Products <wsuite-products@wsuite.com>
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html). -->
+<odoo>
+
+    <record id="payroll_config_reason_reject_form" model="ir.ui.view">
+        <field name="name">payroll.config.reason.reject.form</field>
+        <field name="model">payroll.config.reason.reject</field>
+        <field name="arch" type="xml">
+            <form string="payroll.config.reason.reject.form">
+                <group>
+                    <field name="reason_reject" required="1"/>
+                </group>
+                <footer>
+                    <button name="confirm" type="object"
+                            string="Confirm" class="oe_right oe_highlight"/>
+                    <button string="Cancel" class="oe_right"
+                            special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+</odoo>

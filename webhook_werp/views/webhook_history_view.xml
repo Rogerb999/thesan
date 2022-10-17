@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+     <!-- Obejct Confg Form View -->
+        <record id="view_webhook_werp_history_form" model="ir.ui.view">
+            <field name="name">webhook_werp.history.form</field>
+            <field name="model">webhook_werp.history</field>
+            <field name="arch" type="xml">
+                <form string="Object Confg" create="false" edit="false">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="from_emp_id"/>
+                                <field name="to_emp_id"/>
+                                <field name="webhook_werp_type"/>
+                                <field name="reference" options="{'hide_model': True}"/>
+                            </group>
+                            <group>
+                                <field name="email_from"/>
+                                <field name="email_to"/>
+                                <field name="status"/>
+                            </group>
+                            <group>
+                                <field name="create_date"/>
+                            </group>
+                        </group>
+                        <group string="JSON">
+                            <field name="json_data" nolabel="1"/>
+                        </group>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="activity_ids" widget="mail_activity"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_webhook_werp_history_tree" model="ir.ui.view">
+            <field name="name">webhook_werp.history.tree</field>
+            <field name="model">webhook_werp.history</field>
+            <field name="arch" type="xml">
+                <tree string="webhook_werp" create="false" edit="false">
+                    <field name="from_emp_id"/>
+                    <field name="to_emp_id"/>
+                    <field name="status"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_webhook_werp_history_search" model="ir.ui.view">
+            <field name="name">webhook_werp.history.search</field>
+            <field name="model">webhook_werp.history</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="from_emp_id"/>
+                    <field name="to_emp_id"/>
+                    <field name="status"/>
+                </search>
+            </field>
+        </record>
+
+
+        <record id="webhook_werp_history_act" model="ir.actions.act_window">
+            <field name="name">webhook_werp History</field>
+            <field name="res_model">webhook_werp.history</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="view_webhook_werp_history_tree"/>
+        </record>
+
+        <menuitem id="menu_webhook_werp_history_form"
+            parent="base.menu_automation" action="webhook_werp_history_act" sequence="2"/>
+
+</odoo>

@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<odoo>
+
+    <!-- HR Policy tree view-->
+    <record id="hr_policy_tree" model="ir.ui.view">
+        <field name="name">HR Policy Tree</field>
+        <field name="model">hr.policy</field>
+        <field name="arch" type="xml">
+            <tree string="HR Policy">
+                <field name="name"/>
+                <field name="check_read"/>
+                <field name="template_id"/>
+                <field name="date"/>
+                <field name="answer_type"/>
+                <field name="policy_for_employee"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- HR Policy from view-->
+    <record id="hr_policy_form" model="ir.ui.view">
+        <field name="name">HR Policy Form</field>
+        <field name="model">hr.policy</field>
+        <field name="arch" type="xml">
+            <form string="HR Policy">
+                <header>
+                    <button name="%(hr_employee_policy.action_hr_employee_policy_wizard)d"
+                            class="oe_highlight" type='action'
+                            string='Add Employee Policy'/>
+                </header>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button string="Employee Policy"
+                                class="oe_stat_button" icon="fa-user"
+                                name="view_employees_policy" type="object"/>
+                    </div>
+                    <group col="4">
+                        <field name="name"/>
+                        <field name="check_read"/>
+                        <field name="template_id" required="1"
+                               options='{"no_create": True}'/>
+                        <field name="date"/>
+                        <field name="answer_type"/>
+                        <field name="policy_for_employee"/>
+                    </group>
+                    <group>
+                        <field name="description"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- HR Policy Action-->
+    <record model="ir.actions.act_window" id="hr_policy_action">
+        <field name="name">HR Policy</field>
+        <field name="res_model">hr.policy</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- HR Policy Menu-->
+
+    <menuitem
+        id="policy_menu"
+        name="Policy"
+        parent="hr.menu_hr_root"/>
+
+    <menuitem
+        id="hr_policy_menu"
+        action="hr_policy_action"
+        parent="policy_menu"/>
+
+</odoo>

@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="report_medical_certification">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.basic_layout">
+                    <div class="header">
+                        <div class="o_boxed_header">
+                            <div class="row">
+                                <div class="col-4">
+                                    <img t-if="o.employee_id.company_id.logo" t-att-src="image_data_uri(o.employee_id.company_id.logo)" alt="Logo"/>
+                                </div>
+                                <div class="col-4 text-center">
+                                    <span t-field="o.employee_id.company_id" style="font-size: 16px;"/>
+                                    <br/>
+                                    <span t-field="o.employee_id.company_id.vat" style="font-size: 16px;"/>
+                                </div>
+                                <div class="col-4 text-right">
+                                    <span t-field="o.employee_id.company_id"/>
+                                    <br/>
+                                    <span t-field="o.create_date"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="page">
+                        <t t-set="employee_name_pattern"
+                           t-value="('{0} {1} {2} {3}'.format(o.employee_id.address_home_id.first_name or '''''',o.employee_id.address_home_id.second_name or '''''',o.employee_id.address_home_id.surname or '''''',o.employee_id.address_home_id.second_surname or ''''''))"/>
+                        <link href='https://fonts.googleapis.com/css?family=Titillium Web' rel='stylesheet'/>
+                        <style type="text/css">
+                            body {
+                                font-family: 'Titillium Web';
+                            }
+                        </style>
+                        Bogotá, <span t-esc="datetime.datetime.now()"
+                                      t-options='{"widget": "date","format": "dd MMMM yyyy"}'/>
+                        <br/><br/>
+                        <div>
+                        Señores:<br/>
+                        SALUD OCUPACIONAL DE LOS ANDES<br/>
+                        CARRERA 11ª # 97-37<br/>
+                        Ciudad<br/>
+                        </div>
+                        <br/><br/><br/>
+                        Respetados Señores:
+                        <br/><br/><br/>
+                        <span class="text-justify">
+                        Con la presente amablemente solicitamos se sirvan practicar el examen médico ocupacional de retiro al siguiente Empleado:
+                        </span>
+                        <br/><br/>
+                        <strong>
+                        <table width="100%" style="margin-left: 10px;">
+                            <tr>
+                                <td width="20%">Nombre</td>
+                                <td width="10%"
+                                    class="text-right">:</td>
+                                <td width="70%"
+                                    class="text-left"><span style="margin-left: 20px;" t-esc="employee_name_pattern"/></td>
+                            </tr>
+                            <tr>
+                                <td width="20%">Número de cédula</td>
+                                <td width="10%"
+                                    class="text-right">:</td>
+                                <td width="70%"
+                                    class="text-left"><span style="margin-left: 20px;" t-esc="float(o.employee_id.identification_id)" t-options='{"widget": "float", "precision": 0}'/></td>
+                            </tr>
+                            <tr>
+                                <td width="20%">Cargo</td>
+                                <td width="10%"
+                                    class="text-right">:</td>
+                                <td width="70%"
+                                    class="text-left"><span style="margin-left: 20px;" t-esc="o.employee_id.job_id.name"/></td>
+                            </tr>
+                            <tr>
+                                <td width="20%">Compañía</td>
+                                <td width="10%"
+                                    class="text-right">:</td>
+                                <td width="70%"
+                                    class="text-left"><span style="margin-left: 20px;" t-esc="o.employee_id.address_id.name"/></td>
+                            </tr>
+                            <tr>
+                                <td width="20%">Teléfono</td>
+                                <td width="10%"
+                                    class="text-right">:</td>
+                                <td width="70%"
+                                    class="text-left"><span style="margin-left: 20px;">6510651 ext. 2701, 2706, 2709 y 2724</span></td>
+                            </tr>
+                        </table>
+                        </strong>
+                        <br/>
+                        Esta orden es vigente hasta por 3 días hábiles después de la fecha de expedición.
+                        <br/><br/>
+                        <strong>
+                        Agradecemos su atención.
+                        </strong>
+                        <br/><br/><br/><br/>
+                        <div>
+                            Cordialmente,
+                        </div>
+                        <img class="text-left"
+                             t-attf-src="image_data_uri(o.employee_id.company_id.payroll_director_id.sign_digital)" style="max-height: 5cm; max-width: 10cm"/>
+                        <br/><br/><br/>
+                        <div>&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;</div>
+                        <div>
+                            <b>Gerente De Nómina</b>
+                            <br/>
+                            <strong><span t-field="o.employee_id.company_id.payroll_director_id"/></strong>
+                            <br/>
+                            <t t-if="o.employee_id.company_id.street">
+                                DIRECCIÓN <span t-esc="o.employee_id.company_id.street"/>
+                                <br/>
+                            </t>
+                            <span t-esc="o.employee_id.company_id.city"/>, <span t-esc="o.employee_id.company_id.country_id.name"/>
+                            <br/>
+                            <t t-if="o.employee_id.company_id.payroll_director_id.mobile">
+                                CEL. <span t-esc="o.employee_id.company_id.payroll_director_id.mobile"/>
+                                <br/>
+                            </t>
+                            <t t-if="o.employee_id.company_id.phone">
+                                TELEFONO <span t-esc="o.employee_id.company_id.phone"/>
+                                <br/>
+                            </t>
+                        </div>
+                        <div style="margin-left:10px;margin-top:10px;">
+                            c.c. hoja de Vida
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
+</odoo>

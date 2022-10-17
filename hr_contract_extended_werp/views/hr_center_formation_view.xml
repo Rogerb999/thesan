@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<odoo>
+
+    <!-- Center Formation tree view-->
+    <record id="hr_center_formation_tree" model="ir.ui.view">
+        <field name="name">Hr Center Formation Tree</field>
+        <field name="model">hr.center.formation</field>
+        <field name="arch" type="xml">
+            <tree string="Center Formation">
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Center Formation from view-->
+    <record id="hr_center_formation_form" model="ir.ui.view">
+        <field name="name">Hr Center Formation Tree</field>
+        <field name="model">hr.center.formation</field>
+        <field name="arch" type="xml">
+            <form string="Center Formation">
+                <sheet>
+                    <group>
+                        <field name="name" class="oe_inline"/>
+                        <field name="description"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Center Formation Action-->
+    <record model="ir.actions.act_window" id="hr_center_formation_action">
+        <field name="name">Center Formation</field>
+        <field name="res_model">hr.center.formation</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Center Formation Menu-->
+    <menuitem
+        id="hr_center_formation_menu"
+        action="hr_center_formation_action"
+        parent="hr_recruitment.menu_hr_recruitment_configuration"
+        groups="hr.group_hr_user"/>
+
+</odoo>

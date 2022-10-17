@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2020-TODAY WSuite Products <wsuite-products@wsuite.com>
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html). -->
+
+<odoo>
+
+    <record id="add_employees_wizard_form" model="ir.ui.view">
+        <field name="name">add.employees.wizard.form</field>
+        <field name="model">add.employees.wizard</field>
+        <field name="arch" type="xml">
+            <form>
+                <group string="Select Employee">
+                    <field name="employee_ids"
+                           options="{'no_create': True, 'no_create_edit': True}"
+                           nolabel="1"/>
+                </group>
+                <footer>
+                    <button name="generate_employees" type="object"
+                            string="Generate Employees"
+                            class="o_highlight"/>
+                    <button string="Cancel" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_add_employees_wizard"
+            model="ir.actions.act_window">
+        <field name="name">Add Employees</field>
+        <field name="res_model">add.employees.wizard</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+</odoo>

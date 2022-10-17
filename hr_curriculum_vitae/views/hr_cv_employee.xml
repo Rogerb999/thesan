@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- HR CV Employees Form View -->
+   <record id="hr_cv_employee_view_form" model="ir.ui.view">
+        <field name="name">hr.cv.employee.form</field>
+        <field name="model">hr.cv.employee</field>
+        <field name="arch" type="xml">
+            <form string="HR CV Employees">
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="toggle_active" type="object" class="oe_stat_button" icon="fa-archive">
+                            <field name="active" widget="boolean_button"/>
+                        </button>
+                    </div>
+                    <group colspan="4" col="4">
+                        <field name="name" required="1"/>
+                        <field name="employee_id" options="{'no_create': True, 'no_create_edit': True}"/>
+                        <field name="description"/>
+                    </group>
+                    <notebook name="hobby">
+                        <page name="hobby" string="Hobbies">
+                            <field name="hobbies_ids"/>
+                        </page>
+                        <page name="sports" string="Sports">
+                            <field name="sport_ids"/>
+                        </page>
+                        <page name="language" string="Languages">
+                            <field name="language_ids"/>
+                        </page>
+                        <page name="holding" string="Holdings">
+                            <field name="holding_ids"/>
+                        </page>
+                        <page name="family" string="Family Group">
+                            <field name="family_group_ids"/>
+                        </page>
+                        <page name="laboral_exp" string="Laboral Experience">
+                            <field name="laboral_experience_ids"/>
+                        </page>
+                        <page name="academic_studies" string="Academic Studies">
+                            <field name="academic_studies_ids"/>
+                        </page>
+                        <page name="animal_pets" string="Animal Pets">
+                            <field name="animal_pets_ids"/>
+                        </page>
+                        <page name="personal_employee" string="Personal Employees">
+                            <field name="personal_employee_ids"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- HR CV Employees Tree View -->
+    <record id="hr_cv_employee_view_tree" model="ir.ui.view">
+        <field name="name">hr.cv.employee.list</field>
+        <field name="model">hr.cv.employee</field>
+        <field name="arch" type="xml">
+            <tree string="HR CV Employees">
+                <field name="name"/>
+                <field name="employee_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- HR CV Employees Action -->
+    <record id="hr_cv_employee_action" model="ir.actions.act_window">
+        <field name="name">HR CV Employee</field>
+        <field name="res_model">hr.cv.employee</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- HR CV Employees Menuitem -->
+    <menuitem
+        id="hr_cv_employee_menu_action"
+        name="HR CV Employees"
+        groups="hr.group_hr_user"
+        action="hr_cv_employee_action"
+        parent="hr_recruitment.menu_hr_recruitment_root"/>
+
+</odoo>

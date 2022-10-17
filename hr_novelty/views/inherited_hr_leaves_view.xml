@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2019-TODAY WSuite Products <wsuite-products@wsuite.com>
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html). -->
+<odoo>
+
+    <menuitem
+        id="hr_holidays.hr_holidays_menu_manager_payroll"
+        name="Payroll"
+        parent="hr_holidays.menu_hr_holidays_approvals"
+        groups="hr_holidays.group_hr_holidays_manager,hr_holidays.group_hr_holidays_user"
+        sequence="3"/>
+
+</odoo>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+# Copyright 2017 - 2018 Modoolar <info@modoolar.com>
+# License LGPLv3.0 or later (https://www.gnu.org/licenses/lgpl-3.0.en.html).
+-->
+<odoo>
+    <data noupdate="1">
+
+        <record id="hr_payslip_iw_recalc_sequence" model="ir.sequence">
+            <field name="name">Hr Payslip Iw Recalc</field>
+            <field name="code">hr.payslip.iw.recalc.sequence</field>
+            <field name="prefix">REC-</field>
+            <field eval="1" name="number_next"/>
+            <field eval="1" name="number_increment"/>
+            <field name="padding">3</field>
+        </record>
+
+        <record id="hr_recalc_lines_sequence" model="ir.sequence">
+            <field name="name">Hr Recalc Lines</field>
+            <field name="code">hr.recalc.lines.sequence</field>
+            <field name="prefix">RECEMP-</field>
+            <field eval="1" name="number_next"/>
+            <field eval="1" name="number_increment"/>
+            <field name="padding">3</field>
+        </record>
+
+    </data>
+</odoo>

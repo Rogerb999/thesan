@@ -1,0 +1,90 @@
+<?xml version="1.0"?>
+<odoo>
+
+    <record id="paperformat_us_payslip" model="report.paperformat">
+        <field name="name">US Payslip Letter</field>
+        <field name="default" eval="False"/>
+        <field name="format">Letter</field>
+        <field name="page_height">0</field>
+        <field name="page_width">0</field>
+        <field name="orientation">Portrait</field>
+        <field name="margin_top">40</field>
+        <field name="margin_bottom">25</field>
+        <field name="margin_left">7</field>
+        <field name="margin_right">7</field>
+        <field name="header_line" eval="False" />
+        <field name="header_spacing">35</field>
+        <field name="dpi">90</field>
+    </record>
+
+    <record id="hr_payroll.action_report_payslip" model="ir.actions.report">
+        <field name="paperformat_id"
+               ref="hr_payroll_extended_werp.paperformat_us_payslip"/>
+    </record>
+
+    <template id="external_layout_standard_payroll">
+        <div class="header">
+            <div class="row">
+                <div class="col-6">
+                    <img t-if="o.company_id.logo"
+                         t-att-src="image_data_uri(o.company_id.logo)"
+                         style="height: 150px;width: 200px; margin-bottom:-20px;"
+                         alt="Logo"/>
+                </div>
+                <div class="col-6 text-right mb4" style="margin-top:20px;">
+                    <div>
+                        <t t-if="o.company_id">
+                            <span t-field="o.company_id"/>
+                            <br/>
+                        </t>
+                        <t t-if="o.company_id.street">
+                            Calle <span t-esc="o.company_id.street"/>
+                            <br/>
+                        </t>
+                        <t t-if="o.company_id.vat">
+                            NIT: <span t-esc="o.company_id.vat"/>
+                            <br/>
+                        </t>
+                        <t t-if="o.company_id.city">
+                            Teléfono:
+                            <span t-esc="o.company_id.phone"/>
+                            <br/>
+                        </t>
+                        <t t-if="o.company_id.city">
+                            <span t-esc="o.company_id.city"/>
+                        </t>
+                        <t t-if="o.company_id.country_id">
+                            - <span t-field="o.company_id.country_id"/>
+                        </t>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="article o_report_layout_standard"
+             t-att-data-oe-model="o and o._name"
+             t-att-data-oe-id="o and o.id"
+             t-att-data-oe-lang="o and o.env.context.get('lang')">
+            <t t-call="web.address_layout"/>
+            <t t-raw="0"/>
+        </div>
+        <div class="footer o_standard_footer">
+            <center>
+                Correo electrónico: nomina@gestionintegral.com
+            </center>
+            <center>
+                Powered by: W-Suite | www.wsuite.com
+            </center>
+        </div>
+    </template>
+
+    <!-- Public api: layout to t-call from reports -->
+
+    <template id="external_layout_payroll">
+        <t t-if="not o" t-set="o" t-value="doc"/>
+        <t t-call="hr_payroll_extended_werp.external_layout_standard_payroll">
+            <t t-raw="0"/>
+        </t>
+
+    </template>
+
+</odoo>

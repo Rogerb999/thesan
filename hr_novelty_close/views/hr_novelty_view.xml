@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="hr_novelty_form_inherit_novelty_close" model="ir.ui.view">
+        <field name="name">hr.novelty.form.inherit.novelty.close</field>
+        <field name="model">hr.novelty</field>
+        <field name="inherit_id" ref="hr_novelty.view_hr_novelty_form"/>
+        <field name="arch" type="xml">
+            <field name="description" position="after">
+                <field name="after_close"/>
+            </field>
+        </field>
+    </record>
+
+</odoo>

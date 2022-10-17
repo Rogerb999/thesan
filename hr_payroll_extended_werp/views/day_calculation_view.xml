@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="days_calculate_view_tree" model="ir.ui.view">
+        <field name="name">days.calculate.view.tree</field>
+        <field name="model">days.calculate</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="year_from"/>
+                <field name="year_to"/>
+                <field name="quatity_days"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="days_calculate_view_form" model="ir.ui.view">
+        <field name="name">days.calculate.view.form</field>
+        <field name="model">days.calculate</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <label for="name" class="oe_edit_only"/>
+                    <h1>
+                        <field name="name"/>
+                    </h1>
+                    <group>
+                        <field name="year_from"/>
+                        <field name="year_to"/>
+                        <field name="quatity_days"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="days_calculate_action" model="ir.actions.act_window">
+        <field name="name">Days Calculate</field>
+        <field name="res_model">days.calculate</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem
+        id="days_calculate_menu_action"
+        action="days_calculate_action"
+        parent="hr_payroll.menu_hr_payroll_configuration"/>
+
+</odoo>

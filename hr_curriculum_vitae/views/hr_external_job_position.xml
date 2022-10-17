@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- HR External Job Position Form View -->
+   <record id="hr_external_job_position_view_form" model="ir.ui.view">
+        <field name="name">hr.external.job.position.form</field>
+        <field name="model">hr.external.job.position</field>
+        <field name="arch" type="xml">
+            <form string="HR External Job Position">
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="toggle_active" type="object" class="oe_stat_button" icon="fa-archive">
+                            <field name="active" widget="boolean_button"/>
+                        </button>
+                    </div>
+                    <group colspan="4" col="4">
+                        <field name="name" required="1"/>
+                        <field name="description"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- HR External Job Position Tree View -->
+    <record id="hr_external_job_position_view_tree" model="ir.ui.view">
+        <field name="name">hr.external.job.position.list</field>
+        <field name="model">hr.external.job.position</field>
+        <field name="arch" type="xml">
+            <tree string="HR External Job Position">
+                <field name="name"/>
+                <field name="description"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- HR External Job Position Action -->
+    <record id="hr_external_job_position_action" model="ir.actions.act_window">
+        <field name="name">HR External Job Position</field>
+        <field name="res_model">hr.external.job.position</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- HR External Job Position Menuitem -->
+    <menuitem
+        id="hr_external_job_position_menu_action"
+        name="HR External Job Position"
+        groups="hr.group_hr_user"
+        action="hr_external_job_position_action"
+        parent="hr_employee_extended_werp.hr_curriculum_vitae_menu"/>
+
+</odoo>

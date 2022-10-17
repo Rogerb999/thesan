@@ -1,0 +1,165 @@
+<?xml version="1.0"?>
+<odoo>
+    <record id="view_hr_contract_completion_form" model="ir.ui.view">
+        <field name="name">hr_contract_completion.form</field>
+        <field name="model">hr.contract.completion</field>
+        <field name="arch" type="xml">
+            <form string="view_hr_contract_completion_form">
+                    <header>
+                        <button name="action_wait" type="object"
+                                string="Request Approval" states="draft"
+                                class="oe_highlight"/>
+                        <button name="action_approve" type="object"
+                                string="Approve" states="wait"
+                                class="oe_highlight"/>
+                        <button name="action_draft" type="object"
+                                string="Return to Draft" states="wait"
+                                class=""/>
+                        <button name="action_reverse" type="object"
+                                string="Reverse" states="approved"/>
+                        <field name="state" widget="statusbar" clickable="1"/>
+                    </header>
+                    <group col="4" colspan="2">
+                        <field name="employee_id" required="1"
+                               options="{'no_create': True, 'no_create_edit': True}"/>
+                        <field name="date"/>
+                        <field name="withdrawal_reason_id"/>
+                        <field name="unjustified"/>
+                        <field name="transfer_employee"/>
+                        <field name="no_debts_proof"
+                               filename="no_debts_proof_filename"/>
+                        <field name="no_debts_proof_filename"
+                               invisible="1"/>
+                        <field name="reverse_reason"
+                               states="reversed"/>
+                        <field name="novelty_id"/>
+                        <field name="contract_id"
+                               readonly="1" force_save="1"/>
+                        <field name="reference"/>
+                        <field name="description"/>
+                    </group>
+                <group col="4" colspan="2" string="Payslips">
+                    <field name="payslip_ids" nolabel="1"
+                           colspan="4"/>
+                </group>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids"
+                           widget="mail_followers"/>
+                    <field name="activity_ids" widget="mail_activity"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_hr_contract_completion_tree" model="ir.ui.view">
+        <field name="name">hr_contract_completion.tree</field>
+        <field name="model">hr.contract.completion</field>
+        <field name="arch" type="xml">
+            <tree string="">
+                <field name="employee_id"/>
+                <field name="date"/>
+                <field name="withdrawal_reason_id"/>
+                <field name="novelty_id"/>
+                <field name="unjustified"/>
+                <field name="transfer_employee"/>
+                <field name="payslip_ids"/>
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="hr_contract_completion_search" model="ir.ui.view">
+        <field name="name">HR Contract Completion Search</field>
+        <field name="model">hr.contract.completion</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="employee_id"/>
+                <field name="date"/>
+                <field name="withdrawal_reason_id"/>
+                <field name="unjustified"/>
+                <field name="transfer_employee"/>
+                <field name="payslip_ids"/>
+                <field name="state"/>
+                <field name="employee_id"
+                       filter_domain="[('employee_id', 'ilike', self)]"
+                       string="Employee.."/>
+                <filter string="Draft" name="draft"
+                        domain="[('state','=','draft')]"/>
+                <filter string="Wait" name="wait"
+                        domain="[('state','=','wait')]"/>
+                <filter string="Approved" name="approved"
+                        domain="[('state','=','approved')]"/>
+                <filter string="Rejected" name="rejected"
+                        domain="[('state','=','rejected')]"/>
+                <filter string="Paid" name="paid"
+                        domain="[('state','=','paid')]"/>
+                <filter string="Reversed" name="reversed"
+                        domain="[('state','=','reversed')]"/>
+                <group string="Group By">
+                    <filter string="Employee" name="employee_id"
+                            context="{'group_by':'employee_id'}"/>
+                    <filter string="Novelty" name="novelty_id"
+                            context="{'group_by':'novelty_id'}"/>
+                    <filter string="Status" name="state"
+                            context="{'group_by':'state'}"/>
+                    <filter string="Unjustified" name="unjustified"
+                            context="{'group_by':'unjustified'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_conctract_completion" model="ir.actions.act_window">
+        <field name="name">Contract Completion</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">hr.contract.completion</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="contract_completion_withdrawal_reason_form"
+            model="ir.ui.view">
+        <field name="name">Contract Completion Withdrawal Reason Form</field>
+        <field name="model">hr.contract.completion.withdrawal_reason</field>
+        <field name="arch" type="xml">
+            <form string="hr.contract.completion.withdrawal_reason.form">
+                    <group>
+                        <field name="name"/>
+                        <field name="description"/>
+                    </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="contract_completion_withdrawal_reason_tree"
+            model="ir.ui.view">
+        <field name="name">Contract Completion Withdrawal Reason Tree</field>
+        <field name="model">hr.contract.completion.withdrawal_reason</field>
+        <field name="arch" type="xml">
+            <tree string="hr.contract.completion.withdrawal_reason.tree">
+                <field name="name"/>
+                <field name="description"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_withdrawal_reason" model="ir.actions.act_window">
+        <field name="name">Withdrawal Reason</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">hr.contract.completion.withdrawal_reason</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem name="Contract Completion"
+              id="menu_hr_contract_completion"
+              action="action_conctract_completion"
+              parent="hr.menu_hr_root"
+              sequence="9"/>
+
+    <menuitem name="Withdrawal Reason"
+              id="menu_withdrawal_reason"
+              action="action_withdrawal_reason"
+              parent="hr.menu_human_resources_configuration"
+              sequence="8"/>
+
+</odoo>

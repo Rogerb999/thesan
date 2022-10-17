@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <record id="hr_contract_form_inh" model="ir.ui.view">
+            <field name="name">hr.contract.form.inh</field>
+            <field name="model">hr.contract</field>
+            <field name="inherit_id" ref="hr_contract.hr_contract_view_form"/>
+            <field name="arch" type="xml">
+                <field name="struct_id" position="after">
+                    <field name="contract_type"/>
+                </field>
+
+                <field name="resource_calendar_id" position="attributes">
+                    <attribute name="string">Horario de jornada laboral</attribute>
+                </field>
+
+                <field name="resource_calendar_id" position="after">
+                    <field name="porcentaje_comision"/>
+                    <field name="lunch_hours" widget="float_time"/>
+                    <field name="minute_delay_allowed"/>
+                </field>
+
+                <field name="trial_date_end" position="after">
+                    <!--<field name="fecha_pago_cesantias"/>-->
+                    <field name="tipo_trabajador_ti"/>
+                    <field name="sub_tipo_trabajador_ti"/>
+                    <field name="medio_de_pagos"/> 
+                </field>
+
+                <xpath expr="//div[@name='wage']" position="after">
+                    <field name="salario_integral" widget="boolean_toggle"/>
+                    <field name="pagar_auxilio_transporte" widget="boolean_toggle"/>
+                    <field name="actividad_alto_riesgo" widget="boolean_toggle"/>
+                    <field name="allow_extra_hours" widget="boolean_toggle"/>
+                    <field name="pay_dominical" widget="boolean_toggle"/>
+                </xpath>
+
+                <!-- Pestaña Prestaciones Sociales-->
+                <!--<xpath expr="//page[@name='information']" position="after">
+                    <page string="Prestaciones Sociales" name="prestaciones_sociales">
+                        <group>
+                            <group>
+                                <field name="cesantias"/>
+                                <field name="interes_sobre_cesantias"/>
+                                <field name="vacaciones"/>
+                            </group>
+                            <group>
+                                <field name="prima_no1"/>
+                                <field name="prima_no2"/>
+                            </group>
+                        </group>
+                    </page>
+                </xpath>-->
+
+                <field name="schedule_pay" position="after">
+                    <field name="contract_schedule_pay"/>
+                </field>
+            </field>
+        </record>
+    </data>
+</odoo>

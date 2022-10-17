@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="hr_value_uvt_recalc_form_inherite" model="ir.ui.view">
+        <field name="name">hr.value.uvt.rf.recalc.form.inherite</field>
+        <field name="model">hr.value.uvt.rf</field>
+        <field name="inherit_id"
+               ref="hr_payroll_income_withholding.view_hr_value_uvt_rf_form"/>
+        <field name="arch" type="xml">
+            <page name="input_rf" position="after">
+                <page name="recalc" string="Recalc">
+                    <group col="4">
+                        <field name="r_ded_rent_exempt_value"/>
+                        <field name="r_ded_rent_exempt_percetage"/>
+                        <field name="r_rent_exempt_value"/>
+                        <field name="r_rent_exempt_percetage"/>
+                        <field name="r_total_ded_exempt_value"/>
+                        <field name="r_total_ded_exempt_percetage"/>
+                    </group>
+                </page>
+            </page>
+        </field>
+    </record>
+
+</odoo>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- HR Holding Form View -->
+   <record id="hr_holding_view_form" model="ir.ui.view">
+        <field name="name">hr.holding.form</field>
+        <field name="model">hr.holding</field>
+        <field name="arch" type="xml">
+            <form string="HR Holding">
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="toggle_active" type="object" class="oe_stat_button" icon="fa-archive">
+                            <field name="active" widget="boolean_button"/>
+                        </button>
+                    </div>
+                    <group colspan="4" col="4">
+                        <field name="name" required="1"/>
+                        <field name="description"/>
+                        <field name="land_type"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- HR Holding Tree View -->
+    <record id="hr_holding_view_tree" model="ir.ui.view">
+        <field name="name">hr.holding.list</field>
+        <field name="model">hr.holding</field>
+        <field name="arch" type="xml">
+            <tree string="HR Holding">
+                <field name="name"/>
+                <field name="description"/>
+                <field name="land_type"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- HR Holding Action -->
+    <record id="hr_holding_action" model="ir.actions.act_window">
+        <field name="name">HR Holding</field>
+        <field name="res_model">hr.holding</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- HR Holding Menuitem -->
+    <menuitem
+        id="hr_holding_menu_action"
+        name="HR Holding"
+        groups="hr.group_hr_user"
+        action="hr_holding_action"
+        parent="hr_employee_extended_werp.hr_curriculum_vitae_menu"/>
+
+</odoo>

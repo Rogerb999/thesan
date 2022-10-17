@@ -1,0 +1,835 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* hr_extended
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-12-13 04:17+0000\n"
+"PO-Revision-Date: 2019-12-15 14:04-0500\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: es\n"
+"X-Generator: Poedit 1.8.8\n"
+
+#. module: hr_extended
+#: model:mail.template,body_html:hr_extended.email_template_contract_ending_notification
+msgid ""
+"<div style=\"margin: 0px; padding: 0px;\">\n"
+"    <p style=\"text-align: left;\">\n"
+"        <font style=\"font-size: 24px;\"><b>Contract Ending: ${object.name}</b></font>\n"
+"    </p>\n"
+"\n"
+"    <p style=\"text-align: left;\">\n"
+"        <font style=\"font-size: 14px;\">\n"
+"            This Contract is about to End.</font>\n"
+"    </p>\n"
+"</div>\n"
+"            "
+msgstr ""
+"<div style=\"margin: 0px; padding: 0px;\">\n"
+"    <p style=\"text-align: left;\">\n"
+"        <font style=\"font-size: 24px;\"><b>Contract Ending: ${object.name}</b></font>\n"
+"    </p>\n"
+"\n"
+"    <p style=\"text-align: left;\">\n"
+"        <font style=\"font-size: 14px;\">\n"
+"            This Contract is about to End.</font>\n"
+"    </p>\n"
+"</div>\n"
+"            "
+
+#. module: hr_extended
+#: model_terms:ir.ui.view,arch_db:hr_extended.view_hr_contract_form
+msgid "<span>/ month</span>"
+msgstr "<span>/ mes</span>"
+
+#. module: hr_extended
+#: selection:hr.employee,blood_type:0
+msgid "AB+"
+msgstr "AB+"
+
+#. module: hr_extended
+#: selection:hr.employee,blood_type:0
+msgid "AB-"
+msgstr "AB-"
+
+#. module: hr_extended
+#: model:ir.model.fields,field_description:hr_extended.field_hr_employee__afc_id
+msgid "AFC"
+msgstr "AFC"
+
+#. module: hr_extended
+#: model:ir.model.fields,field_description:hr_extended.field_res_partner__is_afp
+#: model:ir.model.fields,field_description:hr_extended.field_res_users__is_afp
+msgid "AFP"
+msgstr "AFP"
+
+#. module: hr_extended
+#: model:ir.model.fields,field_description:hr_extended.field_res_partner__is_afc
+#: model:ir.model.fields,field_description:hr_extended.field_res_users__is_afc
+msgid "AFS"
+msgstr "AFS"
+
+#. module: hr_extended
+#: model:ir.model.fields,field_description:hr_extended.field_hr_employee__arl_id
+#: model:ir.model.fields,field_description:hr_extended.field_res_partner__is_arl
+#: model:ir.model.fields,field_description:hr_extended.field_res_users__is_arl
+msgid "ARL"
+msgstr "ARL"
+
+#. module: hr_extended
+#: model:ir.model.fields,field_description:hr_extended.field_hr_contract__arl_percentage
+#: model:ir.model.fields,field_description:hr_extended.field_hr_employee__arl_percentage
+msgid "ARL Percentage"
+msgstr "Porcentaje ARL"
+
+#. module: hr_extended
+#: model:ir.model.fields,field_description:hr_extended.field_hr_contract_batch__message_needaction
+#: model:ir.model.fields,field_description:hr_extended.field_hr_contract_flex_wage__message_needaction
+msgid "Action Needed"
+msgstr "Acción Necesaria"
+
+#. module: hr_extended
+#: model:ir.model.fields,field_description:hr_extended.field_hr_contract__agency_id
+msgid "Agency"
+msgstr "Agencia"
+
+#. module: hr_extended
+#: model:ir.model.fields,field_description:hr_extended.field_hr_contract_batch__amount
+#: model:ir.model.fields,field_description:hr_extended.field_hr_contract_flex_wage__amount
+msgid "Amount"
+msgstr "Importe"
+
+#. module: hr_extended
+#: selection:hr.employee,type_of_housing:0
+msgid "Arrendada"
+msgstr "Arrendada"
+
+#. module: hr_extended
+#: model:ir.model.fields,field_description:hr_extended.field_hr_contract_batch__message_attachment_count
+#: model:ir.model.fields,field_description:hr_extended.field_hr_contract_flex_wage__message_attachment_count
+msgid "Attachment Count"
+msgstr "Conteo de archivos adjuntos"
+
+#. module: hr_extended
+#: model:ir.actions.act_window,name:hr_extended.act_hr_employee_attachments
+#: model_terms:ir.ui.view,arch_db:hr_extended.view_hr_employee_form
+msgid "Attachments"
+msgstr "Adjuntos"
+
+#. module: hr_extended
+#: model:ir.model.fields,field_description:hr_extended.field_hr_employee__attachments_count
+msgid "Attachments Count"
+msgstr "Conteo de Adjuntos"
+
+#. module: hr_extended
+#: model:ir.ui.menu,name:hr_extended.hr_employee_bank_acc
+msgid "Bank Accounts"
+msgstr "Cuentas Bancarias"
+
+#. module: hr_extended
+#: model:ir.model.fields,field_description:hr_extended.field_hr_employee__blood_type
+msgid "Blood Type"
+msgstr "Tipo de sangre"
+
+#. module: hr_extended
+#: code:addons/hr_extended/models/hr_contract.py:66
+#, python-format
+msgid "By law, the fixed salary can not be less than 60 percent of the total salary."
+msgstr "Por ley, el salario fijo no puede ser inferior al 60 por ciento del salario total."
+
+#. module: hr_extended
+#: selection:res.partner,l10n_co_document_type:0
+msgid "Carné Diplomatico"
+msgstr "Carné Diplomatico"
+
+#. module: hr_extended
+#: model:ir.model.fields,help:hr_extended.field_hr_contract__exclude_from_seniority
+msgid "Check this box if the contract is not included for the seniority calculation"
+msgstr "Marca esta casilla si el contrato no está incluido en el cálculo de antigüedad"
+
+#. module: hr_extended
+#: model:ir.model.fields,field_description:hr_extended.field_hr_employee__class_llibreta_militar
+msgid "Class Llibreta Militar"
+msgstr "Class Llibreta Militar"
+
+#. module: hr_extended
+#: model:ir.model.fields,field_description:hr_extended.field_res_partner__is_compensation_box
+#: model:ir.model.fields,field_description:hr_extended.field_res_users__is_compensation_box
+msgid "Compensation Box"
+msgstr "Caja de compensación"
+
+#. module: hr_extended
+#: model:ir.model,name:hr_extended.model_res_partner
+msgid "Contact"
+msgstr "Contacto"
+
+#. module: hr_extended
+#: model:ir.model.fields,field_description:hr_extended.field_hr_contract_flex_wage__contract_id
+msgid "Contract"
+msgstr "Contrato"
+
+#. module: hr_extended
+#: model:ir.actions.act_window,name:hr_extended.action_contract_batch
+#: model:ir.ui.menu,name:hr_extended.menu_contract_batch
+#: model_terms:ir.ui.view,arch_db:hr_extended.view_contract_batch_form
+#: model_terms:ir.ui.view,arch_db:hr_extended.view_contract_batch_tree
+msgid "Contract Batch"
+msgstr "Lote de Contratos"
+
+#. module: hr_extended
+#: model:ir.model,name:hr_extended.model_hr_contract_batch
+msgid "Contract Batch Processing"
+msgstr "Procesamiento de Contratos por Lote"
+
+#. module: hr_extended
+#: model:mail.template,subject:hr_extended.email_template_contract_ending_notification
+msgid "Contract Ending: ${object.name}"
+msgstr "Final de contrato: ${object.name}"
+
+#. module: hr_extended
+#: model:ir.model,name:hr_extended.model_hr_contract_type
+msgid "Contract Type"
+msgstr "Tipo de contrato"
+
+#. module: hr_extended
+#: model:ir.model.fields,field_description:hr_extended.field_hr_contract_batch__contract_ids
+msgid "Contracts"
+msgstr "Contratos"
+
+#. module: hr_extended
+#: model:ir.model.fields,field_description:hr_extended.field_hr_employee__country_of_birth
+msgid "Country of Birth"
+msgstr "País de Nacimiento"
+
+#. module: hr_extended
+#: model:ir.model.fields,field_description:hr_extended.field_hr_contract_batch__create_uid
+#: model:ir.model.fields,field_description:hr_extended.field_hr_contract_flex_wage__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: hr_extended
+#: model:ir.model.fields,field_description:hr_extended.field_hr_contract_batch__create_date
+#: model:ir.model.fields,field_description:hr_extended.field_hr_contract_flex_wage__create_date
+msgid "Created on"
+msgstr "Creado el"
+
+#. module: hr_extended
+#: selection:res.partner,l10n_co_document_type:0
+msgid "Cédula"
+msgstr "Cédula"
+
+#. module: hr_extended
+#: selection:res.partner,l10n_co_document_type:0
+msgid "Cédula Extranjera"
+msgstr "Cédula Extranjera"
+
+#. module: hr_extended
+#: selection:res.partner,l10n_co_document_type:0
+msgid "Cédula de ciudadanía"
+msgstr "Cédula de ciudadanía"
+
+#. module: hr_extended
+#: model:ir.model.fields,field_description:hr_extended.field_hr_contract_batch__date
+msgid "Date"
+msgstr "Fecha"
+
+#. module: hr_extended
+#: model:ir.model.fields,field_description:hr_extended.field_hr_contract__date_end_required
+#: model:ir.model.fields,field_description:hr_extended.field_hr_contract_type__date_end_required
+msgid "Date End Required"
+msgstr "Fecha Fin Requerida"
+
+#. module: hr_extended
+#: model:ir.model.fields,field_description:hr_extended.field_hr_employee__birthday
+msgid "Date of Birth"
+msgstr "Fecha de nacimiento"
+
+#. module: hr_extended
+#: model:ir.model.fields,field_description:hr_extended.field_res_users__birthdate
+msgid "Date of birth"
+msgstr "Date of birth"
+
+#. module: hr_extended
+#: model:ir.model.fields,field_description:hr_extended.field_hr_contract__flex_wage_ids
+msgid "Detailed Flex Wage"
+msgstr "Salario Flexible Detallado"
+
+#. module: hr_extended
+#: model:ir.model.fields,field_description:hr_extended.field_hr_contract_batch__display_name
+#: model:ir.model.fields,field_description:hr_extended.field_hr_contract_flex_wage__display_name
+msgid "Display Name"
+msgstr "Nombre mostrado"
+
+#. module: hr_extended
+#: model_terms:ir.ui.view,arch_db:hr_extended.view_company_form_inherit
+#: model_terms:ir.ui.view,arch_db:hr_extended.view_partner_form_inherit
+msgid "Document Number"
+msgstr "Número de documento"
+
+#. module: hr_extended
+#: model:ir.model.fields,field_description:hr_extended.field_hr_employee__ident_type
+#: model:ir.model.fields,field_description:hr_extended.field_res_partner__l10n_co_document_type
+#: model:ir.model.fields,field_description:hr_extended.field_res_users__l10n_co_document_type
+msgid "Document Type"
+msgstr "Tipo de Documento"
+
+#. module: hr_extended
+#: selection:hr.contract.batch,state:0
+msgid "Done"
+msgstr "Hecho"
+
+#. module: hr_extended
+#: selection:hr.contract.batch,state:0
+msgid "Draft"
+msgstr "Borrador"
+
+#. module: hr_extended
+#: model:ir.model.fields,field_description:hr_extended.field_hr_employee__eps_id
+#: model:ir.model.fields,field_description:hr_extended.field_res_partner__is_eps
+#: model:ir.model.fields,field_description:hr_extended.field_res_users__is_eps
+msgid "EPS"
+msgstr "EPS"
+
+#. module: hr_extended
+#: model:ir.model.fields,field_description:hr_extended.field_hr_employee__emergency_contact
+msgid "Emergency Contact"
+msgstr "Contacto de emergencia"
+
+#. module: hr_extended
+#: model:ir.model,name:hr_extended.model_hr_contract
+msgid "Employee Contract"
+msgstr "Contrato de empleado"
+
+#. module: hr_extended
+#: model:ir.model.fields,field_description:hr_extended.field_hr_employee__entry_date
+msgid "Entry Date"
+msgstr "Fecha de Ingreso"
+
+#. module: hr_extended
+#: model:ir.model.fields,field_description:hr_extended.field_hr_contract__exclude_from_seniority
+msgid "Exclude From Seniority"
+msgstr "Excluir de Antigüedad"
+
+#. module: hr_extended
+#: selection:hr.employee,type_of_housing:0
+msgid "Familiar"
+msgstr "Familiar"
+
+#. module: hr_extended
+#: selection:res.partner,l10n_co_document_type:0
+msgid "Fideicomiso"
+msgstr "Fideicomiso"
+
+#. module: hr_extended
+#: model:ir.model.fields,field_description:hr_extended.field_res_partner__file_cv
+#: model:ir.model.fields,field_description:hr_extended.field_res_users__file_cv
+msgid "File"
+msgstr "Archivo"
+
+#. module: hr_extended
+#: model:ir.model.fields,field_description:hr_extended.field_res_partner__file_cv_name
+#: model:ir.model.fields,field_description:hr_extended.field_res_users__file_cv_name
+msgid "File CV Name"
+msgstr "Nombre del CV del archivo"
+
+#. module: hr_extended
+#: model:ir.model.fields,field_description:hr_extended.field_res_partner__file_cv_size
+#: model:ir.model.fields,field_description:hr_extended.field_res_users__file_cv_size
+msgid "File CV Size"
+msgstr "Tamaño del CV del archivo"
+
+#. module: hr_extended
+#: model_terms:ir.ui.view,arch_db:hr_extended.view_partner_form_inherit
+msgid "File Details"
+msgstr "detalles del archivo"
+
+#. module: hr_extended
+#: selection:hr.contract.batch,wage_field:0
+msgid "Fix Wage"
+msgstr "Salarío Fijo"
+
+#. module: hr_extended
+#: model:ir.model.fields,field_description:hr_extended.field_hr_contract__fix_wage_amount
+msgid "Fix Wage Amount"
+msgstr "Monto de Salario Fijo"
+
+#. module: hr_extended
+#: model:ir.model.fields,field_description:hr_extended.field_hr_contract__fix_wage_perc
+msgid "Fix Wage Percentage"
+msgstr "Porcentaje de Salario Fijo"
+
+#. module: hr_extended
+#: model:ir.model.fields,field_description:hr_extended.field_hr_contract_flex_wage__fixed
+msgid "Fixed"
+msgstr "Fijo"
+
+#. module: hr_extended
+#: selection:hr.contract.batch,wage_field:0
+msgid "Flex Wage"
+msgstr "Salario Flexible"
+
+#. module: hr_extended
+#: model:ir.model.fields,field_description:hr_extended.field_hr_contract__flex_wage_amount
+msgid "Flex Wage Amount"
+msgstr "Monto de Salario Flexible"
+
+#. module: hr_extended
+#: model_terms:ir.ui.view,arch_db:hr_extended.view_hr_contract_form
+msgid "Flex Wage Detailed"
+msgstr "Salario Flexible Detallado"
+
+#. module: hr_extended
+#: model:ir.actions.act_window,name:hr_extended.action_hr_contract_flex_wage
+#: model:ir.model,name:hr_extended.model_hr_contract_flex_wage
+msgid "Flex Wage Detailed List"
+msgstr "Lista Detallada del Salario Flexible"
+
+#. module: hr_extended
+#: model:ir.ui.menu,name:hr_extended.menu_flex_wage
+msgid "Flex Wage Details"
+msgstr "Detalles de salarios flexibles"
+
+#. module: hr_extended
+#: model_terms:ir.ui.view,arch_db:hr_extended.hr_contract_flex_wage_form
+msgid "Flex Wage Form"
+msgstr "Formulario de salario flexible"
+
+#. module: hr_extended
+#: model:ir.model.fields,field_description:hr_extended.field_hr_contract__flex_wage_perc
+msgid "Flex Wage Percentage"
+msgstr "Porcentaje de Salario Flexible"
+
+#. module: hr_extended
+#: code:addons/hr_extended/models/hr_contract.py:76
+#, python-format
+msgid "Flex Wage Percentage must be between 0 and 100."
+msgstr "El porcentaje de salario flexible debe estar entre 0 y 100."
+
+#. module: hr_extended
+#: model_terms:ir.ui.view,arch_db:hr_extended.hr_contract_flex_wage_tree
+#: model_terms:ir.ui.view,arch_db:hr_extended.view_hr_contract_form
+msgid "Flex Wage Tree"
+msgstr "Lista de Salario Flexible"
+
+#. module: hr_extended
+#: model:ir.model.fields,field_description:hr_extended.field_hr_contract_batch__message_follower_ids
+#: model:ir.model.fields,field_description:hr_extended.field_hr_contract_flex_wage__message_follower_ids
+msgid "Followers"
+msgstr "Seguidores"
+
+#. module: hr_extended
+#: model:ir.model.fields,field_description:hr_extended.field_hr_contract_batch__message_channel_ids
+#: model:ir.model.fields,field_description:hr_extended.field_hr_contract_flex_wage__message_channel_ids
+msgid "Followers (Channels)"
+msgstr "Seguidores (Canales)"
+
+#. module: hr_extended
+#: model:ir.model.fields,field_description:hr_extended.field_hr_contract_batch__message_partner_ids
+#: model:ir.model.fields,field_description:hr_extended.field_hr_contract_flex_wage__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "Seguidores (Empresas)"
+
+#. module: hr_extended
+#: model:ir.model.fields,field_description:hr_extended.field_hr_employee__found_layoffs_id
+#: model:ir.model.fields,field_description:hr_extended.field_res_partner__is_found_layoffs
+#: model:ir.model.fields,field_description:hr_extended.field_res_users__is_found_layoffs
+msgid "Found Layoffs"
+msgstr "Fondo de Cesantias"
+
+#. module: hr_extended
+#: model_terms:ir.ui.view,arch_db:hr_extended.view_hr_employee_form
+msgid "Funds"
+msgstr "Fondos"
+
+#. module: hr_extended
+#: model:ir.model,name:hr_extended.model_hr_employee
+msgid "HR Employee"
+msgstr "HR Empleado"
+
+#. module: hr_extended
+#: model:ir.model.fields,field_description:hr_extended.field_hr_contract_batch__id
+#: model:ir.model.fields,field_description:hr_extended.field_hr_contract_flex_wage__id
+msgid "ID"
+msgstr "ID"
+
+#. module: hr_extended
+#: selection:res.partner,l10n_co_document_type:0
+msgid "ID del Exterior"
+msgstr "ID del Exterior"
+
+#. module: hr_extended
+#: model:ir.model.fields,field_description:hr_extended.field_hr_employee__ident_issuance_city_id
+msgid "Identification Issuance City"
+msgstr "Ciudad de Emisión de Identificación"
+
+#. module: hr_extended
+#: model:ir.model.fields,field_description:hr_extended.field_hr_employee__ident_issuance_date
+msgid "Identification Issuance Date"
+msgstr "Fecha de Emisión de Identificación"
+
+#. module: hr_extended
+#: model:ir.model.fields,field_description:hr_extended.field_hr_employee__identification_id
+msgid "Identification No"
+msgstr "Nº identificación"
+
+#. module: hr_extended
+#: model:ir.model.fields,help:hr_extended.field_hr_contract_batch__message_unread
+#: model:ir.model.fields,help:hr_extended.field_hr_contract_flex_wage__message_unread
+msgid "If checked new messages require your attention."
+msgstr "Si está marcado, hay nuevos mensajes que requieren su atención"
+
+#. module: hr_extended
+#: model:ir.model.fields,help:hr_extended.field_hr_contract_batch__message_needaction
+#: model:ir.model.fields,help:hr_extended.field_hr_contract_flex_wage__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "Si está marcado, hay nuevos mensajes que requieren su atención."
+
+#. module: hr_extended
+#: model:ir.model.fields,help:hr_extended.field_hr_contract_batch__message_has_error
+#: model:ir.model.fields,help:hr_extended.field_hr_contract_flex_wage__message_has_error
+msgid "If checked, some messages have a delivery error."
+msgstr "Si se encuentra marcado, algunos mensajes tienen error de envío."
+
+#. module: hr_extended
+#: model:ir.model.fields,help:hr_extended.field_hr_employee__ident_type
+#: model:ir.model.fields,help:hr_extended.field_res_partner__l10n_co_document_type
+#: model:ir.model.fields,help:hr_extended.field_res_users__l10n_co_document_type
+msgid "Indicates to what document the information in here belongs to."
+msgstr "Indica a cual documento pertenece la información"
+
+#. module: hr_extended
+#: model:ir.model.fields,field_description:hr_extended.field_hr_contract_batch__message_is_follower
+#: model:ir.model.fields,field_description:hr_extended.field_hr_contract_flex_wage__message_is_follower
+msgid "Is Follower"
+msgstr "Es un seguidor"
+
+#. module: hr_extended
+#: model:ir.model.fields,field_description:hr_extended.field_res_partner__function
+#: model:ir.model.fields,field_description:hr_extended.field_res_users__function
+msgid "Job"
+msgstr "Trabajo"
+
+#. module: hr_extended
+#: model:ir.model.fields,field_description:hr_extended.field_hr_contract_batch____last_update
+#: model:ir.model.fields,field_description:hr_extended.field_hr_contract_flex_wage____last_update
+msgid "Last Modified on"
+msgstr "Última modificación en"
+
+#. module: hr_extended
+#: model:ir.model.fields,field_description:hr_extended.field_hr_contract_batch__write_uid
+#: model:ir.model.fields,field_description:hr_extended.field_hr_contract_flex_wage__write_uid
+msgid "Last Updated by"
+msgstr "Última actualización por"
+
+#. module: hr_extended
+#: model:ir.model.fields,field_description:hr_extended.field_hr_contract_batch__write_date
+#: model:ir.model.fields,field_description:hr_extended.field_hr_contract_flex_wage__write_date
+msgid "Last Updated on"
+msgstr "Última actualización el"
+
+#. module: hr_extended
+#: model:ir.model.fields,field_description:hr_extended.field_res_partner__linked_return_url
+#: model:ir.model.fields,field_description:hr_extended.field_res_users__linked_return_url
+msgid "Linked Return Url"
+msgstr "URL de retorno vinculada"
+
+#. module: hr_extended
+#: model:ir.model.fields,field_description:hr_extended.field_hr_contract_batch__message_main_attachment_id
+#: model:ir.model.fields,field_description:hr_extended.field_hr_contract_flex_wage__message_main_attachment_id
+msgid "Main Attachment"
+msgstr "Adjuntos principales"
+
+#. module: hr_extended
+#: model:ir.model.fields,field_description:hr_extended.field_hr_employee__medic_exam_attach
+msgid "Medica Exam Attachment"
+msgstr "Examen Médico Adjunto"
+
+#. module: hr_extended
+#: model:ir.model.fields,field_description:hr_extended.field_hr_contract_batch__message_has_error
+#: model:ir.model.fields,field_description:hr_extended.field_hr_contract_flex_wage__message_has_error
+msgid "Message Delivery error"
+msgstr "Error de Envío de Mensaje"
+
+#. module: hr_extended
+#: model:ir.model.fields,field_description:hr_extended.field_hr_contract_batch__message_ids
+#: model:ir.model.fields,field_description:hr_extended.field_hr_contract_flex_wage__message_ids
+msgid "Messages"
+msgstr "Mensajes"
+
+#. module: hr_extended
+#: model:ir.model.fields,field_description:hr_extended.field_res_partner__mobile_country_code
+#: model:ir.model.fields,field_description:hr_extended.field_res_users__mobile_country_code
+msgid "Mobile Country Code"
+msgstr "Código de país móvil"
+
+#. module: hr_extended
+#: selection:res.partner,l10n_co_document_type:0
+msgid "N.I.T."
+msgstr "N.I.T."
+
+#. module: hr_extended
+#: model:ir.model.fields,field_description:hr_extended.field_hr_contract_batch__name
+msgid "Name"
+msgstr "Nombre"
+
+#. module: hr_extended
+#: model:ir.model.fields,field_description:hr_extended.field_hr_employee__country_id
+msgid "Nationality (Country)"
+msgstr "Nacionalidad (País)"
+
+#. module: hr_extended
+#: selection:res.partner,l10n_co_document_type:0
+msgid "Nit Extranjería"
+msgstr "Nit Extranjería"
+
+#. module: hr_extended
+#: selection:res.partner,l10n_co_document_type:0
+msgid "Nit persona natural"
+msgstr "Nit persona natural"
+
+#. module: hr_extended
+#: model:ir.model.fields,field_description:hr_extended.field_hr_contract_batch__message_needaction_counter
+#: model:ir.model.fields,field_description:hr_extended.field_hr_contract_flex_wage__message_needaction_counter
+msgid "Number of Actions"
+msgstr "Número de acciones"
+
+#. module: hr_extended
+#: model:ir.model.fields,field_description:hr_extended.field_hr_employee__number_of_llibreta_militar
+msgid "Number of Llibreta Militar"
+msgstr "Number of Llibreta Militar"
+
+#. module: hr_extended
+#: model:ir.model.fields,field_description:hr_extended.field_hr_contract_batch__message_has_error_counter
+#: model:ir.model.fields,field_description:hr_extended.field_hr_contract_flex_wage__message_has_error_counter
+msgid "Number of error"
+msgstr "Número de error"
+
+#. module: hr_extended
+#: model:ir.model.fields,help:hr_extended.field_hr_contract_batch__message_needaction_counter
+#: model:ir.model.fields,help:hr_extended.field_hr_contract_flex_wage__message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr "Número de mensajes que requieren una acción"
+
+#. module: hr_extended
+#: model:ir.model.fields,help:hr_extended.field_hr_contract_batch__message_has_error_counter
+#: model:ir.model.fields,help:hr_extended.field_hr_contract_flex_wage__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "Número de mensajes con error de envío"
+
+#. module: hr_extended
+#: model:ir.model.fields,help:hr_extended.field_hr_contract_batch__message_unread_counter
+#: model:ir.model.fields,help:hr_extended.field_hr_contract_flex_wage__message_unread_counter
+msgid "Number of unread messages"
+msgstr "Número de mensajes no leidos"
+
+#. module: hr_extended
+#: model:ir.model.fields,field_description:hr_extended.field_hr_contract__parent_company_id
+msgid "Parent Company"
+msgstr "Compañía matriz"
+
+#. module: hr_extended
+#: selection:res.partner,l10n_co_document_type:0
+msgid "Pasaporte"
+msgstr "Pasaporte"
+
+#. module: hr_extended
+#: model:ir.model.fields,field_description:hr_extended.field_hr_employee__pension_fund_id
+msgid "Pension Fund"
+msgstr "Fondo de Pensiones"
+
+#. module: hr_extended
+#: model:ir.model.fields,field_description:hr_extended.field_hr_contract_flex_wage__percentage
+msgid "Percentage"
+msgstr "Porcentaje"
+
+#. module: hr_extended
+#: model:ir.model.fields,field_description:hr_extended.field_hr_employee__permit_expire
+msgid "Permit Expire"
+msgstr "Expiración de Permiso"
+
+#. module: hr_extended
+#: model:ir.model.fields,field_description:hr_extended.field_res_partner__phone_country_code
+#: model:ir.model.fields,field_description:hr_extended.field_res_users__phone_country_code
+msgid "Phone Country Code"
+msgstr "Código de país del teléfono"
+
+#. module: hr_extended
+#: model:ir.model.fields,field_description:hr_extended.field_hr_employee__place_of_birth_id
+msgid "Place of Birth"
+msgstr "Lugar de nacimiento"
+
+#. module: hr_extended
+#: model_terms:ir.ui.view,arch_db:hr_extended.view_contract_batch_form
+msgid "Process"
+msgstr "Procesar"
+
+#. module: hr_extended
+#: selection:hr.employee,type_of_housing:0
+msgid "Propia"
+msgstr "Propia"
+
+#. module: hr_extended
+#: selection:res.partner,l10n_co_document_type:0
+msgid "RUT"
+msgstr "RUT"
+
+#. module: hr_extended
+#: code:addons/hr_extended/models/partner.py:80
+#, python-format
+msgid "Record update issues"
+msgstr "Grabar problemas de actualización"
+
+#. module: hr_extended
+#: selection:res.partner,l10n_co_document_type:0
+msgid "Registro Civil"
+msgstr "Registro Civil"
+
+#. module: hr_extended
+#: model:ir.model.fields,field_description:hr_extended.field_hr_contract_flex_wage__salary_rule_id
+msgid "Salary Rule"
+msgstr "Regla Salarial"
+
+#. module: hr_extended
+#: selection:res.partner,l10n_co_document_type:0
+msgid "Salvoconducto de Permanencia"
+msgstr "Salvoconducto de Permanencia"
+
+#. module: hr_extended
+#: model:ir.actions.server,name:hr_extended.notification_send_cron_ir_actions_server
+#: model:ir.cron,cron_name:hr_extended.notification_send_cron
+#: model:ir.cron,name:hr_extended.notification_send_cron
+msgid "Send Contract End Date Alert"
+msgstr "Enviar Alerta de Fin de Contrato"
+
+#. module: hr_extended
+#: model:ir.model.fields,field_description:hr_extended.field_hr_employee__seniority
+#: model_terms:ir.ui.view,arch_db:hr_extended.view_hr_employee_form
+msgid "Seniority"
+msgstr "Antigüedad"
+
+#. module: hr_extended
+#: selection:res.partner,l10n_co_document_type:0
+msgid "Sociedad extranjera sin N.I.T. En Colombia"
+msgstr "Sociedad extranjera sin N.I.T. En Colombia"
+
+#. module: hr_extended
+#: model:ir.model.fields,field_description:hr_extended.field_hr_contract_batch__state
+msgid "State"
+msgstr "Estado"
+
+#. module: hr_extended
+#: model:ir.model.fields,field_description:hr_extended.field_hr_employee__state_of_birth_id
+msgid "State of Birth"
+msgstr "Estado de nacimiento"
+
+#. module: hr_extended
+#: model:ir.model.fields,field_description:hr_extended.field_hr_employee__stratum
+msgid "Stratum"
+msgstr "Estrato"
+
+#. module: hr_extended
+#: selection:res.partner,l10n_co_document_type:0
+msgid "Tarjeta de Identidad"
+msgstr "Tarjeta de Identidad"
+
+#. module: hr_extended
+#: model:ir.model.fields,help:hr_extended.field_hr_employee__identification_id
+msgid "The Tax Identification Number. Complete it if the contact is subjected to government taxes. Used in some legal statements."
+msgstr "Número de Identificación Fiscal. Complete si el contacto está sujeto a impuestos. Usando en circunstancias legales"
+
+#. module: hr_extended
+#: code:addons/hr_extended/models/partner.py:84
+#, python-format
+msgid "There seems a problem in the database:- "
+msgstr "Parece que hay un problema en la base de datos: -"
+
+#. module: hr_extended
+#: model_terms:ir.ui.view,arch_db:hr_extended.view_hr_contract_form
+msgid "Total Amount"
+msgstr "Importe total"
+
+#. module: hr_extended
+#: model:ir.model.fields,field_description:hr_extended.field_hr_contract__total_perc
+#: model_terms:ir.ui.view,arch_db:hr_extended.view_hr_contract_form
+msgid "Total Percentage"
+msgstr "Porcentaje Total"
+
+#. module: hr_extended
+#: code:addons/hr_extended/models/hr_contract.py:109
+#, python-format
+msgid "Total percentage must be 100.00."
+msgstr "El porcentaje total debe ser de 100.00."
+
+#. module: hr_extended
+#: model:ir.model.fields,field_description:hr_extended.field_hr_employee__type_of_housing
+msgid "Type of Housing"
+msgstr "Tipo de vivienda"
+
+#. module: hr_extended
+#: model:ir.model.fields,field_description:hr_extended.field_res_partner__attachment_url
+#: model:ir.model.fields,field_description:hr_extended.field_res_users__attachment_url
+msgid "URL"
+msgstr "URL"
+
+#. module: hr_extended
+#: model:ir.model.fields,field_description:hr_extended.field_hr_employee__unemployment_fund_id
+msgid "Unemployment Fund"
+msgstr "Fondo de Desempleo"
+
+#. module: hr_extended
+#: model:ir.model.fields,field_description:hr_extended.field_hr_contract_batch__message_unread
+#: model:ir.model.fields,field_description:hr_extended.field_hr_contract_flex_wage__message_unread
+msgid "Unread Messages"
+msgstr "Mensajes por leer"
+
+#. module: hr_extended
+#: model:ir.model.fields,field_description:hr_extended.field_hr_contract_batch__message_unread_counter
+#: model:ir.model.fields,field_description:hr_extended.field_hr_contract_flex_wage__message_unread_counter
+msgid "Unread Messages Counter"
+msgstr "Contador de mensajes sin leer"
+
+#. module: hr_extended
+#: model:ir.model,name:hr_extended.model_res_users
+msgid "Users"
+msgstr "Usuarios"
+
+#. module: hr_extended
+#: model:ir.model.fields,field_description:hr_extended.field_hr_employee__voluntary_contribution_id
+#: model:ir.model.fields,field_description:hr_extended.field_res_partner__is_voluntary_contribution
+#: model:ir.model.fields,field_description:hr_extended.field_res_users__is_voluntary_contribution
+msgid "Voluntary Contribution"
+msgstr "Contribución voluntaria"
+
+#. module: hr_extended
+#: model:ir.model.fields,field_description:hr_extended.field_hr_contract_batch__wage_field
+msgid "Wage Field"
+msgstr "Campo de Salario"
+
+#. module: hr_extended
+#: model:ir.model.fields,field_description:hr_extended.field_hr_contract_batch__website_message_ids
+#: model:ir.model.fields,field_description:hr_extended.field_hr_contract_flex_wage__website_message_ids
+msgid "Website Messages"
+msgstr "Mensajes del sitio web"
+
+#. module: hr_extended
+#: model:ir.model.fields,help:hr_extended.field_hr_contract_batch__website_message_ids
+#: model:ir.model.fields,help:hr_extended.field_hr_contract_flex_wage__website_message_ids
+msgid "Website communication history"
+msgstr "Historial de comunicaciones del sitio web"
+
+#. module: hr_extended
+#: model:ir.model.fields,field_description:hr_extended.field_res_users__you_websocket_token
+msgid "You Websocket Token"
+msgstr "Tu token Websocket"
+
+#. module: hr_extended
+#: model:ir.model.fields,help:hr_extended.field_hr_contract_flex_wage__fixed
+msgid "is this rule fixed (it can't be modified)"
+msgstr "¿Esta regla es fija? (No puede ser modificada)"

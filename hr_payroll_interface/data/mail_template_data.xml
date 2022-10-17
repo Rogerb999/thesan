@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2019-TODAY WSuite Products <wsuite-products@wsuite.com>
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html). -->
+<odoo>
+
+    <record id="email_template_concepts_period" model="mail.template">
+        <field name="name">CMT - SUMMARY BY CONCEPTS - PERIOD</field>
+        <field name="model_id"
+               ref="hr_payroll_interface.model_hr_payroll_interface"/>
+        <field name="email_from">${user.email_formatted |safe}</field>
+        <field name="subject">CMT - SUMMARY BY CONCEPTS - PERIOD</field>
+        <field name="body_html" type="html">
+            <div style="margin: 0px; padding: 0px;">
+                <p style="margin: 0px; padding: 0px; font-size: 13px;">
+                    Here is in attachment there is CMT - SUMMARY BY CONCEPTS - PERIOD
+                    <br/>
+                    Best regards,<br/>
+                    % if user and user.signature:
+                    ${user.signature | safe}
+                    % endif
+                </p>
+            </div>
+        </field>
+        <field name="lang">${user.partner_id.lang}</field>
+        <field name="user_signature" eval="False"/>
+        <field name="auto_delete" eval="True"/>
+    </record>
+
+</odoo>

@@ -1,0 +1,93 @@
+<?xml version="1.0"?>
+<odoo>
+
+    <!-- HR Employee Policy tree view-->
+    <record id="hr_employee_policy_tree" model="ir.ui.view">
+        <field name="name">HR Employee Policy Tree</field>
+        <field name="model">hr.employee.policy</field>
+        <field name="arch" type="xml">
+            <tree string="HR Employee Policy">
+                <field name="name"/>
+                <field name="hr_policy_id"/>
+                <field name="employee_id"/>
+                <field name="template_id"/>
+                <field name="check_read"/>
+                <field name="answer_type"/>
+                <field name="date"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- HR Employee Policy from view-->
+    <record id="hr_employee_policy_form" model="ir.ui.view">
+        <field name="name">HR Employee Policy Form</field>
+        <field name="model">hr.employee.policy</field>
+        <field name="arch" type="xml">
+            <form string="HR Employee Policy">
+                <sheet>
+                    <div class="oe_title">
+                        <label for="name" class="oe_edit_only" />
+                        <h1>
+                            <field name="name" />
+                        </h1>
+                    </div>
+                    <group col="4">
+                        <field name="employee_id"
+                               options="{'no_create': True, 'no_create_edit': True}"/>
+                        <field name="check_read"/>
+                        <field name="hr_policy_id"/>
+                        <field name="template_id" required="1"/>
+                        <field name="date"/>
+                        <field name="answer_type"/>
+                        <field name="description"/>
+                        <field name="additional_note"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- HR Employee Policy Action-->
+    <record model="ir.actions.act_window" id="hr_employee_policy_action">
+        <field name="name">HR Employee Policy</field>
+        <field name="res_model">hr.employee.policy</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- HR Employee Policy Menu-->
+    <menuitem
+        id="hr_employee_policy_menu"
+        action="hr_employee_policy_action"
+        parent="hr_employee_policy.policy_menu"/>
+
+    <record id="mail_view_email_template_search_policy" model="ir.ui.view">
+           <field name="name">email.template.search.policy</field>
+           <field name="model">mail.template</field>
+           <field name="inherit_id" ref="mail.view_email_template_search"/>
+           <field name="arch" type="xml">
+               <xpath expr="//field[@name='model_id']" position="after">
+                   <filter string="Policy Model"
+                           domain="[('model_id.model', '=', 'hr.policy')]"
+                           name="policy_model"/>
+               </xpath>
+           </field>
+        </record>
+
+    <record model="ir.actions.act_window" id="action_email_template_policy">
+        <field name="name">Templates</field>
+        <field name="res_model">mail.template</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">form,tree</field>
+        <field name="context">{'search_default_policy_model':1}</field>
+        <field name="view_id" ref="mail.email_template_tree" />
+        <field name="search_view_id"
+               ref="mail_view_email_template_search_policy"/>
+    </record>
+
+    <menuitem id="menu_email_templates_policy"
+              parent="hr_employee_policy.policy_menu"
+              action="action_email_template_policy"
+              sequence="20"/>
+
+</odoo>

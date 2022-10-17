@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="payslip_compare_result_view_tree" model="ir.ui.view">
+        <field name="name">payslip.compare.result.view.tree</field>
+        <field name="model">payslip.compare.result</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="payslip_name"/>
+                <field name="employee_id"/>
+                <field name="rule_name"/>
+                <field name="difference"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_payslip_compare_result_filter" model="ir.ui.view">
+        <field name="name">view.payslip.compare.result.filter</field>
+        <field name="model">payslip.compare.result</field>
+        <field name="arch" type="xml">
+            <search string="Search Employee Payslip">
+                <group expand="0" string="Group By">
+                    <filter string="Employee" name="employee_payslip_diff" context="{'group_by':'employee_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+</odoo>

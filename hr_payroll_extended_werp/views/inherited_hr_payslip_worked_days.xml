@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2020-TODAY WSuite Products <wsuite-products@wsuite.com>
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html). -->
+<odoo>
+
+    <record id="view_hr_payslip_worked_days_tree" model="ir.ui.view">
+        <field name="name">hr.payslip.worked_days.tree.view</field>
+        <field name="model">hr.payslip.worked_days</field>
+        <field name="arch" type="xml">
+            <tree create="false" edit="false"
+                  delete="false" duplicate="false">
+                <field name="name"/>
+                <field name="payslip_id"/>
+                <field name="sequence"/>
+                <field name="code"/>
+                <field name="number_of_days"/>
+                <field name="number_of_hours"/>
+                <field name="employee_id"/>
+                <field name="contract_id"/>
+                <field name="description"/>
+            </tree>
+        </field>
+    </record>
+
+     <record id="view_hr_payslip_worked_days_search" model="ir.ui.view">
+        <field name="name">hr.payslip.worked_days.search.view</field>
+        <field name="model">hr.payslip.worked_days</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="payslip_id"/>
+                <field name="sequence"/>
+                <field name="code"/>
+                <field name="number_of_days"/>
+                <field name="number_of_hours"/>
+                <field name="employee_id"/>
+                <field name="contract_id"/>
+                <filter string="Description" name="name"
+                        context="{'group_by':'name'}"/>
+                <filter string="Sequence" name="sequence"
+                        context="{'group_by':'sequence'}"/>
+                <filter string="Code" name="code"
+                        context="{'group_by':'code'}"/>
+                <filter string="Number of Days" name="number_of_days"
+                        context="{'group_by':'number_of_days'}"/>
+                <filter string="Number of Hours" name="number_of_hours"
+                        context="{'group_by':'number_of_hours'}"/>
+                <filter string="Pay Slip" name="payslip_id"
+                        context="{'group_by':'payslip_id'}"/>
+                <filter string="Contract" name="contract_id"
+                        context="{'group_by':'contract_id'}"/>
+                <filter string="Employee" name="employee_id"
+                        context="{'group_by':'employee_id'}"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="hr_payslip_worked_days_action" model="ir.actions.act_window">
+        <field name="name">Payslip Worked Days</field>
+        <field name="res_model">hr.payslip.worked_days</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree</field>
+        <field name="search_view_id"
+               ref="view_hr_payslip_worked_days_search"/>
+        <field name="context">{}</field>
+    </record>
+
+    <menuitem
+        id="hr_payslip_worked_days_menu_action"
+        name="Payslip Worked Days"
+        action="hr_payslip_worked_days_action"
+        parent="hr_payroll.menu_hr_payroll_root"/>
+
+</odoo>

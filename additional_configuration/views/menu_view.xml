@@ -1,0 +1,132 @@
+<?xml version="1.0"?>
+<odoo>
+
+    <record model="ir.ui.menu" id="hr_recruitment.menu_hr_recruitment_root">
+        <field eval="[(4,ref('additional_configuration.group_you'))]" name="groups_id"/>
+    </record>
+
+    <record model="ir.ui.menu" id="hr_employee_extended_werp.hr_curriculum_vitae_menu">
+        <field eval="[(4,ref('additional_configuration.group_you'))]" name="groups_id"/>
+    </record>
+
+    <record model="ir.ui.menu" id="hr_curriculum_vitae.hr_cv_employee_menu_action">
+        <field eval="[(4,ref('additional_configuration.group_you'))]" name="groups_id"/>
+    </record>
+
+    <record model="ir.ui.menu" id="hr_curriculum_vitae.hr_category_hobbies_menu_action">
+        <field eval="[(4,ref('additional_configuration.group_you'))]" name="groups_id"/>
+    </record>
+
+    <record model="ir.ui.menu" id="hr_curriculum_vitae.hr_cv_family_employee_menu_action">
+        <field eval="[(4,ref('additional_configuration.group_you'))]" name="groups_id"/>
+    </record>
+
+    <record model="ir.ui.menu" id="hr_curriculum_vitae.hr_academic_area_menu_action">
+        <field eval="[(4,ref('additional_configuration.group_you'))]" name="groups_id"/>
+    </record>
+
+    <record model="ir.ui.menu" id="hr_recruitment_extended_werp.reason_disqualification_menu_action">
+        <field eval="[(4,ref('additional_configuration.group_you'))]" name="groups_id"/>
+    </record>
+
+    <record model="ir.ui.menu" id="hr_curriculum_vitae.hr_competition_language_menu_action">
+        <field eval="[(4,ref('additional_configuration.group_you'))]" name="groups_id"/>
+    </record>
+
+    <record model="ir.ui.menu" id="hr_curriculum_vitae.hr_type_contract_menu_action">
+        <field eval="[(4,ref('additional_configuration.group_you'))]" name="groups_id"/>
+    </record>
+
+    <record model="ir.ui.menu" id="hr_curriculum_vitae.hr_experience_area_menu_action">
+        <field eval="[(4,ref('additional_configuration.group_you'))]" name="groups_id"/>
+    </record>
+
+    <record model="ir.ui.menu" id="hr_curriculum_vitae.hr_cv_personal_employee_type_menu_action">
+        <field eval="[(4,ref('additional_configuration.group_you'))]" name="groups_id"/>
+    </record>
+
+    <record model="ir.ui.menu" id="hr_curriculum_vitae.hr_holding_menu_action">
+        <field eval="[(4,ref('additional_configuration.group_you'))]" name="groups_id"/>
+    </record>
+
+    <record model="ir.ui.menu" id="hr_curriculum_vitae.hr_cv_sports_employee_menu_action">
+        <field eval="[(4,ref('additional_configuration.group_you'))]" name="groups_id"/>
+    </record>
+
+    <record model="ir.ui.menu" id="hr_curriculum_vitae.hr_cv_pets_menu_action">
+        <field eval="[(4,ref('additional_configuration.group_you'))]" name="groups_id"/>
+    </record>
+
+    <record model="ir.ui.menu" id="hr_curriculum_vitae.hr_family_relationship_menu_action">
+        <field eval="[(4,ref('additional_configuration.group_you'))]" name="groups_id"/>
+    </record>
+
+    <record model="ir.ui.menu" id="hr_curriculum_vitae.hr_cv_language_employee_menu_action">
+        <field eval="[(4,ref('additional_configuration.group_you'))]" name="groups_id"/>
+    </record>
+
+    <record model="ir.ui.menu" id="hr_curriculum_vitae.hr_type_contract_menu_action">
+        <field eval="[(4,ref('additional_configuration.group_you'))]" name="groups_id"/>
+    </record>
+
+    <record model="ir.ui.menu" id="hr_curriculum_vitae.hr_cv_holding_employee_menu_action">
+        <field eval="[(4,ref('additional_configuration.group_you'))]" name="groups_id"/>
+    </record>
+
+    <record model="ir.ui.menu" id="hr_curriculum_vitae.hr_external_job_position_menu_action">
+        <field eval="[(4,ref('additional_configuration.group_you'))]" name="groups_id"/>
+    </record>
+
+    <record model="ir.ui.menu" id="hr_curriculum_vitae.hr_competition_language_menu_action">
+        <field eval="[(4,ref('additional_configuration.group_you'))]" name="groups_id"/>
+    </record>
+
+    <record model="ir.ui.menu" id="hr_curriculum_vitae.hr_cv_laboral_experience_menu_action">
+        <field eval="[(4,ref('additional_configuration.group_you'))]" name="groups_id"/>
+    </record>
+
+    <record model="ir.ui.menu" id="hr_curriculum_vitae.hr_sports_menu_action">
+        <field eval="[(4,ref('additional_configuration.group_you'))]" name="groups_id"/>
+    </record>
+
+    <record model="ir.ui.menu" id="hr_curriculum_vitae.hr_language_menu_action">
+        <field eval="[(4,ref('additional_configuration.group_you'))]" name="groups_id"/>
+    </record>
+
+    <record model="ir.ui.menu" id="hr_curriculum_vitae.hr_academic_level_menu_action">
+        <field eval="[(4,ref('additional_configuration.group_you'))]" name="groups_id"/>
+    </record>
+
+    <record model="ir.ui.menu" id="hr_curriculum_vitae.hr_academic_institution_menu_action">
+        <field eval="[(4,ref('additional_configuration.group_you'))]" name="groups_id"/>
+    </record>
+
+    <record model="ir.ui.menu" id="hr_curriculum_vitae.hr_cv_personal_reference_employee_menu_action">
+        <field eval="[(4,ref('additional_configuration.group_you'))]" name="groups_id"/>
+    </record>
+
+    <record model="ir.ui.menu" id="hr_curriculum_vitae.hr_occupations_menu_action">
+        <field eval="[(4,ref('additional_configuration.group_you'))]" name="groups_id"/>
+    </record>
+
+    <record model="ir.ui.menu" id="hr_curriculum_vitae.hr_cv_hobbies_employee_menu_action">
+        <field eval="[(4,ref('additional_configuration.group_you'))]" name="groups_id"/>
+    </record>
+
+    <record model="ir.ui.menu" id="hr_curriculum_vitae.hr_competition_level_language_menu_action">
+        <field eval="[(4,ref('additional_configuration.group_you'))]" name="groups_id"/>
+    </record>
+
+    <record model="ir.ui.menu" id="hr_contract_extended_werp.hr_center_formation_menu">
+        <field eval="[(4,ref('additional_configuration.group_you'))]" name="groups_id"/>
+    </record>
+
+	<record model="ir.ui.menu" id="hr_curriculum_vitae.hr_hobbies_menu_action">
+        <field eval="[(4,ref('additional_configuration.group_you'))]" name="groups_id"/>
+    </record>
+
+	<record model="ir.ui.menu" id="hr.menu_human_resources_configuration">
+        <field eval="[(4,ref('additional_configuration.group_you'))]" name="groups_id"/>
+    </record>
+
+</odoo>

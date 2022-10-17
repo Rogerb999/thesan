@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="assets_common" inherit_id="web.assets_common">
+            <xpath expr="script[last()]" position="after">
+                <script type="text/javascript" src="/sign_documents/static/src/js/pdf_iframe_signature.js"></script>
+            </xpath>
+        </template>
+
+        <template id="assets_backend" name="sign_document assets" inherit_id="web.assets_backend">
+            <xpath expr="." position="inside">
+                <script type="text/javascript" src="/sign_documents/static/src/js/sign_documents.js"></script>
+            </xpath>
+            <xpath expr="link[last()]" position="after">
+                <link rel="stylesheet" type="text/scss" href="/sign_documents/static/src/scss/sign_documents.scss"/>
+            </xpath>
+        </template>
+
+        <template id="sign_by_mail" name="Sign the document">
+            <div t-ignore="true" class="text-center">
+                <a t-att-href="url"><i class="fa fa-arrow-right"/> Click to sign the document</a>
+            </div>
+        </template>
+
+    </data>
+</odoo>

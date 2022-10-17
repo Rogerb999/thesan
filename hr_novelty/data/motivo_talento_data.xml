@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2019-TODAY WSuite Products <wsuite-products@wsuite.com>
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html). -->
+<odoo>
+    <data noupdate="1">
+
+        <record id="motivo_talento_1" model="motivo.talento">
+            <field name="name">Bajo desempeño</field>
+        </record>
+        <record id="motivo_talento_2" model="motivo.talento">
+            <field name="name">Balance Vida / Trabajo</field>
+        </record>
+        <record id="motivo_talento_3" model="motivo.talento">
+            <field name="name">Cambio de visión y estructura</field>
+        </record>
+        <record id="motivo_talento_4" model="motivo.talento">
+            <field name="name">
+                Finalización contrato (Termino Fijo/Aprendizaje)
+            </field>
+        </record>
+        <record id="motivo_talento_5" model="motivo.talento">
+            <field name="name">Mal clima de trabajo</field>
+        </record>
+        <record id="motivo_talento_6" model="motivo.talento">
+            <field name="name">Mala relación con el Jefe</field>
+        </record>
+        <record id="motivo_talento_7" model="motivo.talento">
+            <field name="name">
+                Me fui a trabajar a un sector completamente diferente / Cliente
+            </field>
+        </record>
+        <record id="motivo_talento_8" model="motivo.talento">
+            <field name="name">Me voy a independizar</field>
+        </record>
+        <record id="motivo_talento_9" model="motivo.talento">
+            <field name="name">Me voy a de viaje o a es tudiar</field>
+        </record>
+        <record id="motivo_talento_10" model="motivo.talento">
+            <field name="name">No tengo oportunidad de aprendizaje</field>
+        </record>
+        <record id="motivo_talento_11" model="motivo.talento">
+            <field name="name">
+                No tengo para donde crecer ni moverme / Ascenso
+            </field>
+        </record>
+        <record id="motivo_talento_12" model="motivo.talento">
+            <field name="name">Otro</field>
+        </record>
+        <record id="motivo_talento_13" model="motivo.talento">
+            <field name="name">Proceso disciplinario</field>
+        </record>
+        <record id="motivo_talento_14" model="motivo.talento">
+            <field name="name">Restructuración de la compañía</field>
+        </record>
+        <record id="motivo_talento_15" model="motivo.talento">
+            <field name="name">Retiro de la cuenta</field>
+        </record>
+        <record id="motivo_talento_16" model="motivo.talento">
+            <field name="name">Una oferta laboral representativa</field>
+        </record>
+
+    </data>
+</odoo>

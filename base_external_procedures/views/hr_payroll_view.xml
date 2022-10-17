@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_hr_payslip_inherit_form_bep" model="ir.ui.view">
+        <field name="name">Payslip Inherit BEP</field>
+        <field name="model">hr.payslip</field>
+        <field name="inherit_id" ref="hr_payroll_extended_werp.view_hr_payslip_inherit_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//button[@name='action_payslip_calculate_retention']" position="after">
+                <button string="Execute" name="action_execute" type="object"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_hr_payroll_hr_payslip_run_form_bep" model="ir.ui.view">
+        <field name="name">Payslip Run Inherit BEP</field>
+        <field name="model">hr.payslip.run</field>
+        <field name="inherit_id" ref="hr_payroll.hr_payslip_run_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//button[@name='draft_payslip_run']" position="after">
+                <button string="Execute" name="action_execute" type="object"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

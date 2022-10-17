@@ -1,0 +1,331 @@
+<?xml version="1.0"?>
+<odoo>
+    <data noupdate="1">
+
+        <record id="hr_leave_type_1" model="hr.leave.type">
+            <field name="name">Vacaciones</field>
+            <field name="unpaid" eval="False"/>
+            <field name="request_unit">day</field>
+            <field name="Sequence" eval="100"/>
+            <field name="time_type">leave</field>
+            <field name="vacation_pay_31" eval="True"/>
+            <field name="is_sumar_en_nomina" eval="False"/>
+            <field name="no_count_in_payroll" eval="False"/>
+            <field name="autocalculate_leave" eval="True"/>
+            <field name="no_count_rent" eval="False"/>
+            <field name="exclude_calculate_payslip" eval="False"/>
+            <field name="double_validation" eval="False"/>
+            <field name="allocation_type">fixed</field>
+            <field name="validity_start">2019-01-01</field>
+            <field name="color_name">red</field>
+        </record>
+        <record id="hr_leave_type_2" model="hr.leave.type">
+            <field name="name">Incapacidad</field>
+            <field name="unpaid" eval="False"/>
+            <field name="request_unit">day</field>
+            <field name="Sequence" eval="100"/>
+            <field name="time_type">leave</field>
+            <field name="vacation_pay_31" eval="False"/>
+            <field name="is_sumar_en_nomina" eval="False"/>
+            <field name="no_count_in_payroll" eval="False"/>
+            <field name="autocalculate_leave" eval="False"/>
+            <field name="no_count_rent" eval="False"/>
+            <field name="exclude_calculate_payslip" eval="False"/>
+            <field name="double_validation" eval="False"/>
+            <field name="allocation_type">no</field>
+            <field name="validity_start">2019-01-01</field>
+            <field name="color_name">red</field>
+        </record>
+        <record id="hr_leave_type_3" model="hr.leave.type">
+            <field name="name">Licencia_de_Maternidad</field>
+            <field name="unpaid" eval="False"/>
+            <field name="request_unit">day</field>
+            <field name="Sequence" eval="100"/>
+            <field name="time_type">leave</field>
+            <field name="vacation_pay_31" eval="False"/>
+            <field name="is_sumar_en_nomina" eval="False"/>
+            <field name="no_count_in_payroll" eval="False"/>
+            <field name="autocalculate_leave" eval="False"/>
+            <field name="no_count_rent" eval="False"/>
+            <field name="exclude_calculate_payslip" eval="False"/>
+            <field name="double_validation" eval="False"/>
+            <field name="allocation_type">no</field>
+            <field name="validity_start">2019-01-01</field>
+            <field name="color_name">red</field>
+        </record>
+        <record id="hr_leave_type_4" model="hr.leave.type">
+            <field name="name">Licencia_Por_Luto</field>
+            <field name="unpaid" eval="False"/>
+            <field name="request_unit">day</field>
+            <field name="Sequence" eval="100"/>
+            <field name="time_type">leave</field>
+            <field name="vacation_pay_31" eval="False"/>
+            <field name="is_sumar_en_nomina" eval="False"/>
+            <field name="no_count_in_payroll" eval="False"/>
+            <field name="autocalculate_leave" eval="False"/>
+            <field name="no_count_rent" eval="False"/>
+            <field name="exclude_calculate_payslip" eval="False"/>
+            <field name="double_validation" eval="False"/>
+            <field name="allocation_type">no</field>
+            <field name="validity_start">2019-01-01</field>
+            <field name="color_name">red</field>
+        </record>
+        <record id="hr_leave_type_5" model="hr.leave.type">
+            <field name="name">Licencia_de_Paternidad</field>
+            <field name="unpaid" eval="False"/>
+            <field name="request_unit">day</field>
+            <field name="Sequence" eval="100"/>
+            <field name="time_type">leave</field>
+            <field name="vacation_pay_31" eval="False"/>
+            <field name="is_sumar_en_nomina" eval="False"/>
+            <field name="no_count_in_payroll" eval="False"/>
+            <field name="autocalculate_leave" eval="False"/>
+            <field name="no_count_rent" eval="False"/>
+            <field name="exclude_calculate_payslip" eval="False"/>
+            <field name="double_validation" eval="False"/>
+            <field name="allocation_type">no</field>
+            <field name="validity_start">2019-01-01</field>
+            <field name="color_name">red</field>
+        </record>
+        <record id="hr_leave_type_6" model="hr.leave.type">
+            <field name="name">Licencia_Remunerada</field>
+            <field name="unpaid" eval="False"/>
+            <field name="request_unit">day</field>
+            <field name="Sequence" eval="100"/>
+            <field name="time_type">leave</field>
+            <field name="vacation_pay_31" eval="False"/>
+            <field name="is_sumar_en_nomina" eval="False"/>
+            <field name="no_count_in_payroll" eval="False"/>
+            <field name="autocalculate_leave" eval="False"/>
+            <field name="no_count_rent" eval="False"/>
+            <field name="exclude_calculate_payslip" eval="False"/>
+            <field name="double_validation" eval="False"/>
+            <field name="allocation_type">no</field>
+            <field name="validity_start">2019-01-01</field>
+            <field name="color_name">red</field>
+        </record>
+        <record id="hr_leave_type_7" model="hr.leave.type">
+            <field name="name">LicenciaNoRemunerada</field>
+            <field name="unpaid" eval="True"/>
+            <field name="request_unit">day</field>
+            <field name="Sequence" eval="100"/>
+            <field name="time_type">leave</field>
+            <field name="vacation_pay_31" eval="False"/>
+            <field name="is_sumar_en_nomina" eval="False"/>
+            <field name="no_count_in_payroll" eval="False"/>
+            <field name="autocalculate_leave" eval="False"/>
+            <field name="no_count_rent" eval="True"/>
+            <field name="exclude_calculate_payslip" eval="False"/>
+            <field name="double_validation" eval="False"/>
+            <field name="allocation_type">no</field>
+            <field name="validity_start">2019-01-01</field>
+            <field name="color_name">red</field>
+        </record>
+        <record id="hr_leave_type_8" model="hr.leave.type">
+            <field name="name">PermisoFamiliar</field>
+            <field name="unpaid" eval="False"/>
+            <field name="request_unit">day</field>
+            <field name="Sequence" eval="100"/>
+            <field name="time_type">leave</field>
+            <field name="vacation_pay_31" eval="False"/>
+            <field name="is_sumar_en_nomina" eval="False"/>
+            <field name="no_count_in_payroll" eval="True"/>
+            <field name="autocalculate_leave" eval="False"/>
+            <field name="no_count_rent" eval="False"/>
+            <field name="exclude_calculate_payslip" eval="False"/>
+            <field name="double_validation" eval="False"/>
+            <field name="allocation_type">no</field>
+            <field name="validity_start">2019-01-01</field>
+            <field name="color_name">red</field>
+        </record>
+        <record id="hr_leave_type_9" model="hr.leave.type">
+            <field name="name">PermisoEducativo</field>
+            <field name="unpaid" eval="False"/>
+            <field name="request_unit">day</field>
+            <field name="Sequence" eval="100"/>
+            <field name="time_type">leave</field>
+            <field name="vacation_pay_31" eval="False"/>
+            <field name="is_sumar_en_nomina" eval="False"/>
+            <field name="no_count_in_payroll" eval="True"/>
+            <field name="autocalculate_leave" eval="False"/>
+            <field name="no_count_rent" eval="False"/>
+            <field name="exclude_calculate_payslip" eval="False"/>
+            <field name="double_validation" eval="False"/>
+            <field name="allocation_type">no</field>
+            <field name="validity_start">2019-01-01</field>
+            <field name="color_name">red</field>
+        </record>
+        <record id="hr_leave_type_10" model="hr.leave.type">
+            <field name="name">PermisoPersonal</field>
+            <field name="unpaid" eval="False"/>
+            <field name="request_unit">day</field>
+            <field name="Sequence" eval="100"/>
+            <field name="time_type">leave</field>
+            <field name="vacation_pay_31" eval="False"/>
+            <field name="is_sumar_en_nomina" eval="False"/>
+            <field name="no_count_in_payroll" eval="True"/>
+            <field name="autocalculate_leave" eval="False"/>
+            <field name="no_count_rent" eval="False"/>
+            <field name="exclude_calculate_payslip" eval="False"/>
+            <field name="double_validation" eval="False"/>
+            <field name="allocation_type">no</field>
+            <field name="validity_start">2019-01-01</field>
+            <field name="color_name">red</field>
+        </record>
+        <record id="hr_leave_type_11" model="hr.leave.type">
+            <field name="name">Hora_Extra_Diurna</field>
+            <field name="unpaid" eval="False"/>
+            <field name="request_unit">hour</field>
+            <field name="Sequence" eval="100"/>
+            <field name="time_type">leave</field>
+            <field name="vacation_pay_31" eval="False"/>
+            <field name="is_sumar_en_nomina" eval="True"/>
+            <field name="no_count_in_payroll" eval="False"/>
+            <field name="autocalculate_leave" eval="False"/>
+            <field name="no_count_rent" eval="False"/>
+            <field name="exclude_calculate_payslip" eval="False"/>
+            <field name="double_validation" eval="False"/>
+            <field name="allocation_type">no</field>
+            <field name="validity_start">2019-01-01</field>
+            <field name="color_name">red</field>
+        </record>
+        <record id="hr_leave_type_12" model="hr.leave.type">
+            <field name="name">Hora_Extra_Diurna</field>
+            <field name="unpaid" eval="False"/>
+            <field name="request_unit">hour</field>
+            <field name="Sequence" eval="100"/>
+            <field name="time_type">leave</field>
+            <field name="vacation_pay_31" eval="False"/>
+            <field name="is_sumar_en_nomina" eval="True"/>
+            <field name="no_count_in_payroll" eval="False"/>
+            <field name="autocalculate_leave" eval="False"/>
+            <field name="no_count_rent" eval="False"/>
+            <field name="exclude_calculate_payslip" eval="False"/>
+            <field name="double_validation" eval="False"/>
+            <field name="allocation_type">no</field>
+            <field name="validity_start">2019-01-01</field>
+            <field name="color_name">red</field>
+        </record>
+        <record id="hr_leave_type_13" model="hr.leave.type">
+            <field name="name">Hora_Extra_Nocturna</field>
+            <field name="unpaid" eval="False"/>
+            <field name="request_unit">hour</field>
+            <field name="Sequence" eval="100"/>
+            <field name="time_type">leave</field>
+            <field name="vacation_pay_31" eval="False"/>
+            <field name="is_sumar_en_nomina" eval="True"/>
+            <field name="no_count_in_payroll" eval="False"/>
+            <field name="autocalculate_leave" eval="False"/>
+            <field name="no_count_rent" eval="False"/>
+            <field name="exclude_calculate_payslip" eval="False"/>
+            <field name="double_validation" eval="False"/>
+            <field name="allocation_type">no</field>
+            <field name="validity_start">2019-01-01</field>
+            <field name="color_name">red</field>
+        </record>
+        <record id="hr_leave_type_14" model="hr.leave.type">
+            <field name="name">Hora_Extra_Nocturna_Festiva</field>
+            <field name="unpaid" eval="False"/>
+            <field name="request_unit">hour</field>
+            <field name="Sequence" eval="100"/>
+            <field name="time_type">leave</field>
+            <field name="vacation_pay_31" eval="False"/>
+            <field name="is_sumar_en_nomina" eval="True"/>
+            <field name="no_count_in_payroll" eval="False"/>
+            <field name="autocalculate_leave" eval="False"/>
+            <field name="no_count_rent" eval="False"/>
+            <field name="exclude_calculate_payslip" eval="False"/>
+            <field name="double_validation" eval="False"/>
+            <field name="allocation_type">no</field>
+            <field name="validity_start">2019-01-01</field>
+            <field name="color_name">red</field>
+        </record>
+        <record id="hr_leave_type_15" model="hr.leave.type">
+            <field name="name">Recargo_Nocturno</field>
+            <field name="unpaid" eval="False"/>
+            <field name="request_unit">hour</field>
+            <field name="Sequence" eval="100"/>
+            <field name="time_type">leave</field>
+            <field name="vacation_pay_31" eval="False"/>
+            <field name="is_sumar_en_nomina" eval="True"/>
+            <field name="no_count_in_payroll" eval="False"/>
+            <field name="autocalculate_leave" eval="False"/>
+            <field name="no_count_rent" eval="False"/>
+            <field name="exclude_calculate_payslip" eval="False"/>
+            <field name="double_validation" eval="False"/>
+            <field name="allocation_type">no</field>
+            <field name="validity_start">2019-01-01</field>
+            <field name="color_name">red</field>
+        </record>
+        <record id="hr_leave_type_16" model="hr.leave.type">
+            <field name="name">Suspension</field>
+            <field name="unpaid" eval="False"/>
+            <field name="request_unit">day</field>
+            <field name="Sequence" eval="100"/>
+            <field name="time_type">leave</field>
+            <field name="vacation_pay_31" eval="False"/>
+            <field name="is_sumar_en_nomina" eval="False"/>
+            <field name="no_count_in_payroll" eval="False"/>
+            <field name="autocalculate_leave" eval="False"/>
+            <field name="no_count_rent" eval="True"/>
+            <field name="exclude_calculate_payslip" eval="False"/>
+            <field name="double_validation" eval="False"/>
+            <field name="allocation_type">no</field>
+            <field name="validity_start">2019-01-01</field>
+            <field name="color_name">red</field>
+        </record>
+        <record id="hr_leave_type_17" model="hr.leave.type">
+            <field name="name">Vacaciones_en_dinero</field>
+            <field name="unpaid" eval="False"/>
+            <field name="request_unit">day</field>
+            <field name="Sequence" eval="100"/>
+            <field name="time_type">leave</field>
+            <field name="vacation_pay_31" eval="True"/>
+            <field name="is_sumar_en_nomina" eval="True"/>
+            <field name="no_count_in_payroll" eval="False"/>
+            <field name="autocalculate_leave" eval="True"/>
+            <field name="no_count_rent" eval="False"/>
+            <field name="exclude_calculate_payslip" eval="False"/>
+            <field name="double_validation" eval="False"/>
+            <field name="allocation_type">no</field>
+            <field name="validity_start">2019-01-01</field>
+            <field name="color_name">red</field>
+        </record>
+        <record id="hr_leave_type_18" model="hr.leave.type">
+            <field name="name">Dominical_Laborado_Con_Compensatorio</field>
+            <field name="unpaid" eval="False"/>
+            <field name="request_unit">hour</field>
+            <field name="Sequence" eval="100"/>
+            <field name="time_type">leave</field>
+            <field name="vacation_pay_31" eval="False"/>
+            <field name="is_sumar_en_nomina" eval="True"/>
+            <field name="no_count_in_payroll" eval="False"/>
+            <field name="autocalculate_leave" eval="False"/>
+            <field name="no_count_rent" eval="False"/>
+            <field name="exclude_calculate_payslip" eval="False"/>
+            <field name="double_validation" eval="False"/>
+            <field name="allocation_type">no</field>
+            <field name="validity_start">2019-01-01</field>
+            <field name="color_name">red</field>
+        </record>
+        <record id="hr_leave_type_19" model="hr.leave.type">
+            <field name="name">Calamidad Doméstica</field>
+            <field name="unpaid" eval="False"/>
+            <field name="request_unit">day</field>
+            <field name="Sequence" eval="100"/>
+            <field name="time_type">leave</field>
+            <field name="vacation_pay_31" eval="False"/>
+            <field name="is_sumar_en_nomina" eval="False"/>
+            <field name="no_count_in_payroll" eval="False"/>
+            <field name="autocalculate_leave" eval="False"/>
+            <field name="no_count_rent" eval="False"/>
+            <field name="exclude_calculate_payslip" eval="False"/>
+            <field name="double_validation" eval="False"/>
+            <field name="allocation_type">no</field>
+            <field name="validity_start">2019-01-01</field>
+            <field name="color_name">red</field>
+        </record>
+
+
+    </data>
+</odoo>

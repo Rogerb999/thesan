@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2019-TODAY WSuite Products <wsuite-products@wsuite.com>
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html). -->
+<odoo>
+
+    <record id="hr_conf_acumulated_view_tree" model="ir.ui.view">
+        <field name="name">hr.conf.acumulated.view.tree</field>
+        <field name="model">hr.conf.acumulated</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="hr_conf_acumulated_view_form" model="ir.ui.view">
+        <field name="name">hr.conf.acumulated.view.form</field>
+        <field name="model">hr.conf.acumulated</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button class="oe_stat_button" type="object"
+                                name="toggle_active" icon="fa-archive">
+                            <field name="active" widget="boolean_button"
+                                   options='{"terminology": "archive"}'/>
+                        </button>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="name" required="1"/>
+                        </group>
+                    </group>
+                    <group string="Add Rules">
+                        <field name="rules_add_ids"
+                               context="{'default_sign':'plus'}"
+                               nolabel="1">
+                            <tree editable="bottom">
+                                <field name="sign" readonly="1"/>
+                                <field name="rule_id" required="1"/>
+                            </tree>
+                        </field>
+                    </group>
+                    <group string="Subtract Rules">
+                        <field name="rules_substract_ids"
+                               context="{'default_sign':'minus'}"
+                               nolabel="1">
+                            <tree editable="bottom">
+                                <field name="sign" readonly="1"/>
+                                <field name="rule_id" required="1"/>
+                            </tree>
+                        </field>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="hr_conf_acumulated_view_search" model="ir.ui.view">
+        <field name="name">hr.conf.acumulated.view.search</field>
+        <field name="model">hr.conf.acumulated</field>
+        <field name="arch" type="xml">
+            <search string="Acumulated Configuration">
+                <filter string="Archive" name="archive"
+                        domain="[('active', '=', False)]"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="hr_conf_acumulated_action" model="ir.actions.act_window">
+        <field name="name">Acumulated Configuration</field>
+        <field name="res_model">hr.conf.acumulated</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem
+        id="hr_conf_acumulated_menu_action"
+        name="Acumulated Configuration"
+        action="hr_conf_acumulated_action"
+        parent="hr_payroll.menu_hr_payroll_configuration"/>
+
+</odoo>

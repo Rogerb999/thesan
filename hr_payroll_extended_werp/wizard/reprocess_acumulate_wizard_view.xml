@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2020-TODAY WSuite Products <wsuite-products@wsuite.com>
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html). -->
+
+<odoo>
+
+    <record id="reprocess_acumulate_wizard_form" model="ir.ui.view">
+        <field name="name">reprocess.acumulate.wizard.form</field>
+        <field name="model">reprocess.acumulate.wizard</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <group>
+                        <field name="option" required="1"/>
+                    </group>
+                    <group>
+                        <field name="sequence"
+                               attrs="{'invisible': [('option', '!=', 'better')],'required': [('option', '=', 'better')]}"/>
+                        <field name="hr_salary_rule_ids"
+                               widget="many2many_tags"
+                               attrs="{'invisible': [('option', '!=', 'rules')],'required': [('option', '=', 'rules')]}"
+                               options="{'no_open':'False', 'no_create': True, 'no_create_edit': True, 'no_quick_create': True}"/>
+                    </group>
+                </group>
+                <footer>
+                    <button name="confirm" type="object" string="Confirm"
+                            class="oe_right oe_highlight"/>
+                    <button string="Cancel" class="oe_right"
+                            special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="reprocess_acumulate_wizard_action"
+            model="ir.actions.act_window">
+        <field name="name">Reprocess Acumulate</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">reprocess.acumulate.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+</odoo>

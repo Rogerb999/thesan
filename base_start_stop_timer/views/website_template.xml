@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <template id="portal_timeset" name="website_date" inherit_id="website.assets_frontend">
+       <xpath expr="." position="inside">
+         <script type="text/javascript" src="/base_start_stop_timer/static/src/js/start_stop_timer.js"></script>
+         <script type="text/javascript" src="/base_start_stop_timer/static/src/js/helpdesk_signature.js"/>
+       </xpath>
+    </template>
+    
+    <template id="portal_customer_signature" name="Portal Customer Signature">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="modal fade" id="draw_sign" role="dialog" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <form id="property_getinquiry" method="POST" class="modal-content">
+                            <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                            <div class="modal-body">
+                                <div t-att-class="'ticket_signature'" t-att-data-res-model="record_model" t-att-data-res-id="record.id">
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <span t-if="record.signature" t-field="record.signature" t-options='{"widget": "image"}'/>
+                <div class="clearfix"/>
+                <a id="get_sign" class="btn btn-sm btn-primary" data-placement="top"
+                    data-html="true" data-toggle="modal"
+                    data-target="#draw_sign" >Draw Signature </a>
+             </div>
+        </div>
+    </template>
+    
+    <template id="portal_time_recording" name="Portal Time Recording">
+        <div class="container" groups="base.group_user,base_start_stop_timer.group_portal_employee">
+            <div class="row">
+<!--                <div class="col-md-12">-->
+                    <t t-set="start_stop_ids" t-value="record.start_stop_ids.sorted(reverse=True)"/>
+
+                     <div class="col-sm-6 alert alert-info" style="margin:0;padding:5px;">
+                        <p>
+                            <strong >Start DateTime</strong>
+                            <span class="pull-right" t-if="start_stop_ids" t-field="start_stop_ids[0].start_time"/>
+                        </p>
+                        <p>
+                            <strong>Stop DateTime</strong>
+                            <span class="pull-right" t-if="start_stop_ids" t-field="start_stop_ids[0].stop_timer" />
+                        </p>
+                        <p>
+                            <strong>Status</strong>
+                            <span class="pull-right" t-if="start_stop_ids and start_stop_ids[0].start_time and not start_stop_ids[0].stop_timer and not record.last_pause_time">
+                                In Progress
+                            </span> 
+                            <span class="pull-right" t-if="record.last_pause_time">
+                                Paused
+                            </span> 
+                            <span class="pull-right" t-if="start_stop_ids and start_stop_ids[0].stop_timer">
+                                Stopped
+                            </span> 
+                        </p>
+                        <p>
+                            <strong>Total Duration</strong>
+                            <span class="pull-right"><span t-field="record.total_duration" t-options='{"widget": "float_time"}'/></span> 
+                        </p>
+                     </div>
+                     
+                     <div class="col-sm-6 alert alert-success" style="margin:0;padding:5px;">
+                        <p>
+                            <strong >Start Time</strong>
+                            <span class="pull-right" t-if="start_stop_ids" t-field="start_stop_ids[0].start_time" t-options="{'time_only': True}"/>
+                        </p>
+                        <p>
+                            <strong>Pause Time</strong>
+                            <span class="pull-right" t-field="record.last_pause_time" t-options="{'time_only': True}"/>
+                        </p>
+                        <p>
+                            <strong>Stop Time</strong>
+                            <span class="pull-right" t-if="start_stop_ids" t-field="start_stop_ids[0].stop_timer" t-options="{'time_only': True}"/>
+                        </p>
+                        <p>
+                            <strong>Duration</strong>
+<!--                                <span class="pull-right" t-field="start_stop_ids[0].duration_str" /-->
+                            <span class="pull-right" t-if="start_stop_ids"><span t-field="start_stop_ids[0].total_duration" t-options='{"widget": "float_time"}'/></span>
+                        </p>
+                     </div>
+                     
+
+<!--                </div>-->
+            </div>
+            
+            <div class="row">
+<!--                <div class="col-md-12">-->
+                    <t t-set="start_stop_ids" t-value="record.start_stop_ids.sorted(reverse=True)"/>
+
+                    <div class="col-sm-6 alert alert-info" style="margin:0;padding:5px;">
+                        <a class="btn btn-primary btn-sm time_record"
+                            t-if="not start_stop_ids or start_stop_ids[0].stop_timer"
+                            data-record_type="start"
+                            t-att-data-record_id="record.id"
+                            t-att-data-record_model="record_model"
+                            href="#">Start</a>
+                        <a class="btn btn-sm btn-primary time_record"
+                            t-if="start_stop_ids and not start_stop_ids[0].stop_timer and not record.last_pause_time"
+                            data-record_type="pause" 
+                            t-att-data-record_id="record.id"
+                            t-att-data-record_model="record_model"> Pause</a>
+                        <a class="btn btn-primary btn-sm time_record"
+                            t-if="record.last_pause_time and not start_stop_ids[0].stop_timer"
+                            data-record_type="restart"
+                            t-att-data-record_id="record.id"
+                            t-att-data-record_model="record_model">Resume</a>
+                        <a class="btn btn-danger btn-sm time_record"
+                            t-if="start_stop_ids and not start_stop_ids[0].stop_timer"
+                            data-record_type="stop"
+                            t-att-data-record_id="record.id"
+                            t-att-data-record_model="record_model">Stop</a>
+                         <span class="pull-right" t-if="start_stop_ids and start_stop_ids[0].start_time and not start_stop_ids[0].stop_timer and not record.last_pause_time">
+                             <i class="fa fa-spinner fa-spin fa-2x fa-fw" aria-hidden="true"/>
+                          </span>
+                          <span class="pull-right" t-if="not (start_stop_ids and start_stop_ids[0].start_time and not start_stop_ids[0].stop_timer and not record.last_pause_time)">
+                             <i class="fa fa-spinner  fa-2x fa-fw" aria-hidden="true"/>
+                          </span>
+                     </div>
+
+<!--                </div>-->
+            </div>
+        </div>
+    </template>
+
+</odoo>

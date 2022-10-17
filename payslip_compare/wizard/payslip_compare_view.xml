@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="payslip_compare_form_view" model="ir.ui.view">
+        <field name="name">payslip.compare.form.view</field>
+        <field name="model">payslip.compare</field>
+        <field name="arch" type="xml">
+            <form string="Payslip Compare">
+                <group>
+                    <field name="employee_ids"/>
+                    <label for="first_month" string="Comparison between"/>
+                    <div>
+                        <field name="first_month" class="oe_inline"/> - <field name="second_month" class="oe_inline"/>
+                    </div>
+                </group>
+                <footer>
+                    <button string='Compare' name="compare_payslip_total" type="object" class="btn-primary"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <act_window
+            id="action_payslip_compare"
+            name="Payslip Compare"
+            res_model="payslip.compare"
+            src_model="payslip.compare"
+            view_mode="form"
+            multi="True"
+            target="new"
+            key2="client_action_multi"
+    />
+
+    <menuitem id="menu_payslip_compare" action="action_payslip_compare"
+              name="Payslip Compare" parent="hr_payroll.menu_hr_payroll_root"
+              sequence="90" groups="payslip_compare.group_payslip_compare_result"/>
+
+</odoo>

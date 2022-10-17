@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Sign Request Process Wizard -->
+        <record id="sign_request_process_wizard_view" model="ir.ui.view">
+            <field name="name">Sign Request Process Wizard Form</field>
+            <field name="model">sign.request.process</field>
+            <field name="arch" type="xml">
+                <form string="Sign Request Process">
+                    <group>
+                        <field name="email_to"/>
+                        <field name="subject"/>
+                        <field name="message"/>
+                        <field name="template_id" invisible="1"/>
+                        <field name="file_name" required="1"/>
+                    </group>
+                    <footer>
+                        <button string="Send Request" name="action_send_request" type="object" default_focus="1" class="btn-primary"/>
+                        <button string="Cancel" class="btn-secondary" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_sign_request_process_wizard" model="ir.actions.act_window">
+            <field name="name">Sign Request Process</field>
+            <field name="res_model">sign.request.process</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="sign_request_process_wizard_view"/>
+            <field name="target">new</field>
+        </record>
+
+    </data>
+</odoo>

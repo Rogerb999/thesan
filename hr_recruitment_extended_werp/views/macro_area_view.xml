@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2019-TODAY WSuite Products <wsuite-products@wsuite.com>
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html). -->
+<odoo>
+
+    <record id="macro_area_view_tree" model="ir.ui.view">
+        <field name="name">macro.area.view.tree</field>
+        <field name="model">macro.area</field>
+        <field name="arch" type="xml">
+            <tree editable="bottom">
+                <field name="name" required="1"/>
+                <field name="description"/>
+                <field name="work_group_ids"
+                       widget="many2many_tags"
+                       options="{'no_create': True, 'no_create_edit': True, 'no_open': True}"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_macro_area_search" model="ir.ui.view">
+        <field name="name">macro.area.search</field>
+        <field name="model">macro.area</field>
+        <field name="arch" type="xml">
+            <search string="Macro Area">
+                <field name="name"/>
+                <group string="Group By">
+                    <filter string="Name" name="name"
+                            context="{'group_by':'name'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="macro_area_action" model="ir.actions.act_window">
+        <field name="name">Macro Area</field>
+        <field name="res_model">macro.area</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree</field>
+        <field name="search_view_id" ref="view_macro_area_search"/>
+        <field name="context">{}</field>
+    </record>
+
+    <menuitem
+        id="macro_area_menu_action"
+        name="Macro Area"
+        action="macro_area_action"
+        parent="hr.menu_human_resources_configuration"/>
+
+</odoo>

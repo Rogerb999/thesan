@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Types Of Charges Form View -->
+   <record id="types_of_charges_view_form" model="ir.ui.view">
+        <field name="name">types.of.charges.form</field>
+        <field name="model">types.of.charges</field>
+        <field name="arch" type="xml">
+            <form string="Types Of Charges">
+                <sheet>
+                    <group colspan="4" col="4">
+                        <field name="name" required="1"/>
+                        <field name="nivel"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Types Of Charges Tree View -->
+    <record id="types_of_charges_view_tree" model="ir.ui.view">
+        <field name="name">types.of.charges.tree</field>
+        <field name="model">types.of.charges</field>
+        <field name="arch" type="xml">
+            <tree string="Types Of Charges">
+                <field name="name"/>
+                <field name="nivel"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_types_of_charges_search" model="ir.ui.view">
+        <field name="name">types.of.charges.search</field>
+        <field name="model">types.of.charges</field>
+        <field name="arch" type="xml">
+            <search string="Types of Charges">
+                <field name="name"/>
+                <field name="nivel"/>
+                <group string="Group By">
+                    <filter string="Name" name="name"
+                            context="{'group_by':'name'}"/>
+                    <filter string="Nivel" name="nivel"
+                            context="{'group_by':'nivel'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <!-- Types Of Charges Action -->
+    <record id="types_of_charges_action" model="ir.actions.act_window">
+        <field name="name">Types Of Charges</field>
+        <field name="res_model">types.of.charges</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="search_view_id" ref="view_types_of_charges_search"/>
+    </record>
+
+    <!-- Types Of Charges Menuitem -->
+    <menuitem
+        id="types_of_charges_menu_action"
+        name="Types Of Charges"
+        groups="hr.group_hr_user"
+        action="types_of_charges_action"
+        parent="hr_recruitment.menu_hr_recruitment_configuration"/>
+
+</odoo>

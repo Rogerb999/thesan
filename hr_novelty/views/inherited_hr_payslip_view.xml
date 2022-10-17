@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2019-TODAY WSuite Products <wsuite-products@wsuite.com>
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html). -->
+<odoo>
+
+    <menuitem
+        id="hr_holidays.hr_holidays_menu_manager_payroll"
+        name="Payroll"
+        parent="hr_holidays.menu_hr_holidays_approvals"
+        groups="hr_holidays.group_hr_holidays_manager,hr_holidays.group_hr_holidays_user"
+        sequence="3"/>
+
+    <menuitem
+        action="hr_payroll.action_view_hr_payslip_form"
+        id="hr_payroll.menu_department_tree"
+        parent="hr_payroll.menu_hr_payroll_root"
+        groups="hr_payroll.group_hr_payroll_user"/>
+
+    <menuitem action="hr_payroll.action_hr_payslip_run_tree"
+              id="hr_payroll.menu_hr_payslip_run"
+              parent="hr_payroll.menu_hr_payroll_root"/>
+
+    <menuitem id="hr_payroll.menu_hr_payroll_root"
+              name="Payroll"
+              sequence="45"
+              web_icon="hr_payroll,static/description/icon.png"
+              groups="hr_payroll.group_hr_payroll_manager,hr_payroll.group_hr_payroll_user"/>
+
+</odoo>

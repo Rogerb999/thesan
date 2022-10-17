@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- <menuitem action="base_address_city.action_res_city_tree" id="menu_action_city_form" parent="hr.menu_human_resources_configuration" groups="hr.group_hr_manager" sequence="50"/> -->
+
+</odoo>

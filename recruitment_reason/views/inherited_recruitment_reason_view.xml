@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Inherited Job Form View to add Recruitment Reasons -->
+    <record id="hr_job_view_form_inherit" model="ir.ui.view">
+        <field name="name">hr.job.form.recruitment.reason</field>
+        <field name="model">hr.job</field>
+        <field name="inherit_id" ref="hr.view_hr_job_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='no_of_recruitment']" position="before">
+                <field name="recruitment_reason_id"/>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- Inherited Simple Job Form View to add Recruitment Reasons -->
+    <record id="hr_job_simple_form_inherit" model="ir.ui.view">
+        <field name="name">hr.job.simple.form.recruitment.reason</field>
+        <field name="model">hr.job</field>
+        <field name="inherit_id" ref="hr_recruitment.hr_job_simple_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='name']" position="after">
+                <field name="recruitment_reason_id"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

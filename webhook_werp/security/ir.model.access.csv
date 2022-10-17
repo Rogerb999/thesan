@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_webhook_werp,access_webhook_werp,model_webhook_werp,,1,1,1,1
+access_webhook_werp_history,access_webhook_werp_history,model_webhook_werp_history,,1,1,1,0
+access_object_fields_confg,access_object_fields_confg,model_object_fields_confg,,1,1,1,1
+access_object_confg,access_object_confg,model_object_confg,,1,1,1,1

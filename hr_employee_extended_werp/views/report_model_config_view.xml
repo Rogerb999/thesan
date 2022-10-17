@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_report_model_config_form" model="ir.ui.view">
+        <field name="name">report.model.config.form</field>
+        <field name="model">report.model.config</field>
+        <field name="arch" type="xml">
+            <form string="Report Model Config">
+                <sheet>
+                    <label for="name" class="oe_edit_only"/>
+                    <h1>
+                        <field name="name"/>
+                    </h1>
+                    <group>
+                        <field name="model_id" required="1"
+                               options="{'no_create_edit': True}"/>
+                    </group>
+                    <notebook>
+                        <page string="Fields">
+                            <field name="field_ids" nolabel="1"
+                                   domain="[('model_id', '=', model_id)]">
+                                <tree>
+                                    <field name="name"/>
+                                    <field name="field_description"/>
+                                    <field name="ttype"/>
+                                    <field name="relation"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page string="Sub Fields">
+                            <field name="sub_model_field_ids" nolabel="1">
+                                <tree editable="bottom">
+                                    <field name="field_id"
+                                           domain="[('ttype','in',['many2one', 'one2many', 'many2many']), ('model_id', '=', parent.model_id)]"
+                                           required="1"/>
+                                    <field name="model_name"/>
+                                    <field name="sub_field_ids"
+                                           domain="[('model','=', model_name)]"
+                                           widget="many2many_tags"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_report_model_config_tree" model="ir.ui.view">
+        <field name="name">report.model.config.tree</field>
+        <field name="model">report.model.config</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="model_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_report_model_config_search" model="ir.ui.view">
+        <field name="name">report.model.config.search</field>
+        <field name="model">report.model.config</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="model_id"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="report_model_config_act" model="ir.actions.act_window">
+        <field name="name">Model / Fields Configuration</field>
+        <field name="res_model">report.model.config</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="view_report_model_config_tree"/>
+    </record>
+
+    <menuitem id="menu_report_model_config_form"
+        parent="hr_employee_extended_werp.report_export_main_menu"
+        action="report_model_config_act" sequence="2"/>
+
+</odoo>

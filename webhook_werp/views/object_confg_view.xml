@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+     <!-- Obejct Confg Form View -->
+        <record id="view_object_confg_form" model="ir.ui.view">
+            <field name="name">object.confg.form</field>
+            <field name="model">object.confg</field>
+            <field name="arch" type="xml">
+                <form string="Object Confg">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name" required="1"/>
+                                <field name="url"/>
+                            </group>
+                            <group>
+                                <field name="object_id" required="1"/>
+                                <field name="sequence"/>
+                            </group>
+                        </group>
+                        <group string="Fields">
+                            <field name="field_ids" nolabel="1">
+                                <tree editable="bottom">
+                                    <field name="field_id" domain="[('model_id', '=', parent.object_id)]" required="1"/>
+                                    <field name="model_name"/>
+                                    <field name="is_notification"/>
+                                    <field name="is_relation" invisible="1"/>
+                                    <field name="sub_field_ids" nolabel="1" options="{'no_create': True, 'no_create_edit': True}" widget="many2many_tags" domain="[('model', '=', model_name)]"/>
+                                </tree>
+                            </field>
+                        </group>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="activity_ids" widget="mail_activity"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_object_confg_tree" model="ir.ui.view">
+            <field name="name">object.confg.tree</field>
+            <field name="model">object.confg</field>
+            <field name="arch" type="xml">
+                <tree string="webhook_werp">
+                    <field name="sequence" widget="handle"/>
+                    <field name="name"/>
+                    <field name="object_id"/>
+                    <field name="url"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_object_confg_search" model="ir.ui.view">
+            <field name="name">object.confg.search</field>
+            <field name="model">object.confg</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name"/>
+                    <field name="object_id"/>
+                </search>
+            </field>
+        </record>
+
+
+        <record id="object_confg_act" model="ir.actions.act_window">
+            <field name="name">webhook_werp Obejct Confg</field>
+            <field name="res_model">object.confg</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="view_object_confg_tree"/>
+        </record>
+
+        <menuitem id="menu_object_confg_form"
+            parent="base.menu_automation" action="object_confg_act" sequence="2"/>
+
+</odoo>

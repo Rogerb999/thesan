@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_hr_marital_status_all,access_hr_marital_status_all,model_hr_marital_status,,1,0,0,0
+access_hr_marital_status,access_hr_marital_status,model_hr_marital_status,base.group_user,1,1,1,1
+access_hr_contract_reason_change_all,access_hr_contract_reason_change_all,model_hr_contract_reason_change,,1,0,0,0
+access_hr_contract_reason_change_user,access_hr_contract_reason_change_user,model_hr_contract_reason_change,base.group_user,1,1,1,1
+access_hr_center_formation,access_hr_center_formation,model_hr_center_formation,base.group_user,1,1,1,1

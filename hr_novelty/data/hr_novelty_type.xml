@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2020-TODAY WSuite Products <wsuite-products@wsuite.com>
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html). -->
+<odoo>
+    <data noupdate="1">
+
+        <record id="novelty_type_TIE" model="hr.novelty.type">
+            <field name="name">Tiempo</field>
+        </record>
+        <record id="novelty_type_ECO" model="hr.novelty.type">
+            <field name="name">Económica</field>
+        </record>
+        <record id="novelty_type_PRO" model="hr.novelty.type">
+            <field name="name">Procedimiento</field>
+        </record>
+
+    </data>
+</odoo>

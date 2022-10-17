@@ -1,0 +1,217 @@
+<?xml version="1.0"?>
+<odoo>
+    <template id="report_payslip_inherited"
+              inherit_id="hr_payroll.report_payslip">
+        <t t-call="web.external_layout"
+           position="attributes">
+            <attribute name="t-call">hr_payroll_extended_werp.external_layout_payroll</attribute>
+        </t>
+        <xpath expr="//h2" position="before">
+            <br/><br/>
+        </xpath>
+        <xpath expr="//h2" position="replace">
+            <table width="100%">
+                <tr>
+                    <td width="30%">
+                        Nómina
+                    </td>
+                    <td align="right" width="70%">
+                        <b>
+                            From: <span t-esc="o.date_from.strftime('%b %d %Y')"/>
+                            To: <span t-esc="o.date_to.strftime('%b %d %Y')"/>
+                        </b>
+                    </td>
+                </tr>
+            </table>
+        </xpath>
+        <xpath expr="//table[2]" position="before">
+            <br/>
+            <table style="background-color:#F5F5F5;border-radius: 10px;padding: 15px;"
+                   width="100%">
+                <tr>
+                    <td width="70%" style="padding: 15px;">
+                        <h4>
+                            <span t-field="o.employee_id"/>
+                        </h4>
+                        <h4>
+                            <span t-field="o.employee_id.job_id"/>
+                        </h4>
+                        <t t-if="o.employee_id.ident_type and o.employee_id.identification_id">
+                            <span t-field="o.employee_id.ident_type"/> : 
+                            <span t-field="o.employee_id.identification_id"/>
+                        </t>
+                        <br/>
+                        <span t-esc="o.employee_id.work_email"/>
+                        <br/>
+                        <t t-if="o.employee_id.macro_area_id">
+                            Centro de Costos: <span t-esc="o.employee_id.macro_area_id.name"/>
+                        </t>
+                    </td>
+                    <td width="30%" style="padding: 15px;" align="right">
+                        <b>
+                            Net Wage: <span t-field="o.contract_id.wage"
+                                        t-options="{'widget': 'monetary', 'display_currency': o.company_id.currency_id}"/>
+                        </b>
+                        <br/>
+                        Fix Wage: <span t-field="o.contract_id.fix_wage_amount"
+                                        t-options="{'widget': 'monetary', 'display_currency': o.company_id.currency_id}"/>
+                        <br/>
+                        Flex Wage: <span t-field="o.contract_id.flex_wage_amount"
+                                        t-options="{'widget': 'monetary', 'display_currency': o.company_id.currency_id}"/>
+                        <br/>
+                        Reference: <span t-esc="o.number"/>
+                    </td>
+                </tr>
+            </table>
+            <br/><br/><br/>
+            Descripción de la Nómina
+            <br/><br/>
+        </xpath>
+        <xpath expr="//table[hasclass('table-bordered')]" position="replace"/>
+        <xpath expr="//thead" position="replace">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Días</th>
+                    <th>Base</th>
+                    <th>Accrual</th>
+                    <th>Deductions</th>
+                </tr>
+            </thead>
+        </xpath>
+        <xpath expr="//tbody" position="replace">
+            <tbody>
+                <tr t-foreach="o.line_ids.filtered(lambda line: line.salary_rule_id.print_payslip)"
+                    t-as="line">
+                    <td>
+                        <t t-if="line.name in ['SALARIO BRUTO', 'TOTAL DEDUCCIONES', 'SALARIO NETO']">
+                            <b>
+                                <span t-field="line.name"/>
+                            </b>
+                        </t>
+                        <t t-if="not line.name in ['SALARIO BRUTO', 'TOTAL DEDUCCIONES', 'SALARIO NETO']">
+                            <span t-field="line.name"/>
+                        </t>
+                    </td>
+                    <!--td>
+                        <span t-field="line.name"/>
+                    </td-->
+                    <td align="right">
+                        <t t-if="line.name in ['SALARIO BRUTO', 'TOTAL DEDUCCIONES', 'SALARIO NETO']">
+                            <b>
+                                <t t-esc="line.days"/>
+                            </b>
+                        </t>
+                        <t t-if="not line.name in ['SALARIO BRUTO', 'TOTAL DEDUCCIONES', 'SALARIO NETO']">
+                            <t t-esc="line.days"/>
+                        </t>
+                    </td>
+                    <td align="right">
+                        <t t-if="line.name in ['SALARIO BRUTO', 'TOTAL DEDUCCIONES', 'SALARIO NETO']">
+                            <b>
+                                <t t-esc="line.base"/>
+                            </b>
+                        </t>
+                        <t t-if="not line.name in ['SALARIO BRUTO', 'TOTAL DEDUCCIONES', 'SALARIO NETO']">
+                            <t t-esc="line.base"/>
+                        </t>
+                    </td>
+                    <t t-if="line.total>=0">
+                        <td align="right">
+                            <t t-if="line.name in ['SALARIO BRUTO', 'TOTAL DEDUCCIONES', 'SALARIO NETO']">
+                                <b>
+                                    <t t-esc="line.total"
+                                      t-options='{"widget": "monetary", "display_currency": o.company_id.currency_id}'/>
+                                </b>
+                            </t>
+                            <t t-if="not line.name in ['SALARIO BRUTO', 'TOTAL DEDUCCIONES', 'SALARIO NETO']">
+                                <t t-esc="line.total"
+                                   t-options='{"widget": "monetary", "display_currency": o.company_id.currency_id}'/>
+                            </t>
+                        </td>
+                        <td>
+                            &#160;
+                        </td>
+                    </t>
+                    <t t-if="not line.total>=0">
+                        <td>
+                            &#160;
+                        </td>
+                        <td align="right">
+                            <t t-if="line.name in ['SALARIO BRUTO', 'TOTAL DEDUCCIONES', 'SALARIO NETO']">
+                                <b>
+                                    <t t-esc="line.total"
+                                      t-options='{"widget": "monetary", "display_currency": o.company_id.currency_id}'/>
+                                </b>
+                            </t>
+                            <t t-if="not line.name in ['SALARIO BRUTO', 'TOTAL DEDUCCIONES', 'SALARIO NETO']">
+                                <t t-esc="line.total"
+                                   t-options='{"widget": "monetary", "display_currency": o.company_id.currency_id}'/>
+                            </t>
+                        </td>
+                    </t>
+                </tr>
+            </tbody>
+        </xpath>
+        <xpath expr="//p[1]" position="replace"/>
+        <xpath expr="//p[hasclass('text-right')]" position="before">
+            <br/>
+            <table width="100%">
+                <tr>
+                    <td width="50%">Entidades</td>
+                    <td width="50%" align="right">
+                        Método de retención: 
+                        <span t-esc="o.employee_id.retention_method_id.name"/>  |  
+                        <b>
+                            <span t-field="o.employee_id.withholding_2"/>
+                        </b>
+                    </td>
+                </tr>
+            </table>
+            <br/><br/>
+            <table width="100%">
+                <tr>
+                    <td width="50%">
+                        <b>Banco:</b> 
+                        <span t-esc="o.employee_id.bank_account_id.bank_id.name"/>
+                    </td>
+                    <td width="50%" align="right">
+                        <b>Número:</b> 
+                        <span t-esc="o.employee_id.bank_account_id.acc_number"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="50%">
+                        <b>EPS:</b> 
+                        <span t-esc="o.employee_id.eps_id.name"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="50%">
+                        <b>Fondo de pensiones:</b> 
+                        <span t-field="o.pension_fund_id"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="50%">
+                        <b>ARL:</b> 
+                        <span t-esc="o.arl_id.name"/>
+                    </td>
+                </tr>
+            </table>
+        </xpath>
+        <xpath expr="//p[hasclass('text-right')]" position="replace"/>
+    </template>
+
+    <template id="report_payslipdetails_inherited"
+              inherit_id="hr_payroll.report_payslipdetails">
+        <xpath expr="//table[hasclass('table-bordered')]"
+               position="inside">
+            <tr>
+                <td><strong>NET WAGE</strong></td>
+                <td><span t-field="o.total_amount"/></td>
+            </tr>
+        </xpath>
+    </template>
+
+</odoo>

@@ -1,0 +1,1174 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* hr_payroll_income_withholding
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-12-09 12:17+0000\n"
+"PO-Revision-Date: 2019-12-12 23:04-0500\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: es\n"
+"X-Generator: Poedit 1.8.8\n"
+
+#. module: hr_payroll_income_withholding
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_deduction_accumulate_rf__accumulate
+msgid "Accumulate Deduction"
+msgstr "Deducción acumulada"
+
+#. module: hr_payroll_income_withholding
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_employee__deductions_accumulate_ids
+#: model_terms:ir.ui.view,arch_db:hr_payroll_income_withholding.view_hr_employee_rf_form
+msgid "Accumulate Deductions"
+msgstr "Acumular deducciones"
+
+#. module: hr_payroll_income_withholding
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_deduction_accumulate_rf__message_needaction
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_deduction_rf__message_needaction
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_deduction_type_rf__message_needaction
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_deductions_rf_employee__message_needaction
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_payslip_deductions_rf__message_needaction
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_payslip_input_not_rf__message_needaction
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_payslip_input_rf__message_needaction
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_retention_method_rf__message_needaction
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_value_uvt_input_not_rf__message_needaction
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_value_uvt_input_rf__message_needaction
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_value_uvt_range_rf__message_needaction
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_value_uvt_rf__message_needaction
+msgid "Action Needed"
+msgstr "Acción Necesaria"
+
+#. module: hr_payroll_income_withholding
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_deduction_rf__active
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_deduction_type_rf__active
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_deductions_rf_employee__active
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_value_uvt_rf__status
+msgid "Active"
+msgstr "Activo"
+
+#. module: hr_payroll_income_withholding
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_deduction_accumulate_rf__activity_ids
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_deduction_rf__activity_ids
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_deduction_type_rf__activity_ids
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_deductions_rf_employee__activity_ids
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_payslip_deductions_rf__activity_ids
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_payslip_input_not_rf__activity_ids
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_payslip_input_rf__activity_ids
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_retention_method_rf__activity_ids
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_value_uvt_input_not_rf__activity_ids
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_value_uvt_input_rf__activity_ids
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_value_uvt_range_rf__activity_ids
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_value_uvt_rf__activity_ids
+msgid "Activities"
+msgstr "Actividades"
+
+#. module: hr_payroll_income_withholding
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_deduction_accumulate_rf__activity_state
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_deduction_rf__activity_state
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_deduction_type_rf__activity_state
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_deductions_rf_employee__activity_state
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_payslip_deductions_rf__activity_state
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_payslip_input_not_rf__activity_state
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_payslip_input_rf__activity_state
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_retention_method_rf__activity_state
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_value_uvt_input_not_rf__activity_state
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_value_uvt_input_rf__activity_state
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_value_uvt_range_rf__activity_state
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_value_uvt_rf__activity_state
+msgid "Activity State"
+msgstr "Estado de la actividad"
+
+#. module: hr_payroll_income_withholding
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_deduction_accumulate_rf__message_attachment_count
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_deduction_rf__message_attachment_count
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_deduction_type_rf__message_attachment_count
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_deductions_rf_employee__message_attachment_count
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_payslip_deductions_rf__message_attachment_count
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_payslip_input_not_rf__message_attachment_count
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_payslip_input_rf__message_attachment_count
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_retention_method_rf__message_attachment_count
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_value_uvt_input_not_rf__message_attachment_count
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_value_uvt_input_rf__message_attachment_count
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_value_uvt_range_rf__message_attachment_count
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_value_uvt_rf__message_attachment_count
+msgid "Attachment Count"
+msgstr "Conteo de archivos adjuntos"
+
+#. module: hr_payroll_income_withholding
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_payslip__base_income_retention
+#: model_terms:ir.ui.view,arch_db:hr_payroll_income_withholding.view_hr_payslip_rf_form
+msgid "Base Income Retention"
+msgstr "Base Retención de ingresos"
+
+#. module: hr_payroll_income_withholding
+#: model_terms:ir.ui.view,arch_db:hr_payroll_income_withholding.view_hr_employee_rf_form
+msgid "Calculate Accumulate"
+msgstr "Calcular acumular"
+
+#. module: hr_payroll_income_withholding
+#: model:ir.actions.server,name:hr_payroll_income_withholding.check_deduction_type_state_ir_actions_server
+#: model:ir.cron,cron_name:hr_payroll_income_withholding.check_deduction_type_state
+#: model:ir.cron,name:hr_payroll_income_withholding.check_deduction_type_state
+msgid "Check End Date"
+msgstr "Comprobar fecha de finalización"
+
+#. module: hr_payroll_income_withholding
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_payslip_line__code_sara
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_salary_rule__code_sara
+msgid "Code Sara"
+msgstr "Código sara"
+
+#. module: hr_payroll_income_withholding
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_deduction_accumulate_rf__create_uid
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_deduction_rf__create_uid
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_deduction_type_rf__create_uid
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_deductions_rf_employee__create_uid
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_payslip_deductions_rf__create_uid
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_payslip_input_not_rf__create_uid
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_payslip_input_rf__create_uid
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_retention_method_rf__create_uid
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_value_uvt_input_not_rf__create_uid
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_value_uvt_input_rf__create_uid
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_value_uvt_range_rf__create_uid
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_value_uvt_rf__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: hr_payroll_income_withholding
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_deduction_accumulate_rf__create_date
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_deduction_rf__create_date
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_deduction_type_rf__create_date
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_deductions_rf_employee__create_date
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_payslip_deductions_rf__create_date
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_payslip_input_not_rf__create_date
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_payslip_input_rf__create_date
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_retention_method_rf__create_date
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_value_uvt_input_not_rf__create_date
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_value_uvt_input_rf__create_date
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_value_uvt_range_rf__create_date
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_value_uvt_rf__create_date
+msgid "Created on"
+msgstr "Creado el"
+
+#. module: hr_payroll_income_withholding
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_deduction_type_rf__date_inactive
+msgid "Date Inactive"
+msgstr "Fecha inactiva"
+
+#. module: hr_payroll_income_withholding
+#: model:ir.actions.act_window,name:hr_payroll_income_withholding.action_hr_deduction
+#: model:ir.model,name:hr_payroll_income_withholding.model_hr_deduction_rf
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_deductions_rf_employee__hr_deduction_id
+msgid "Deduction"
+msgstr "Deducción"
+
+#. module: hr_payroll_income_withholding
+#: model:ir.model,name:hr_payroll_income_withholding.model_hr_deduction_accumulate_rf
+msgid "Deduction Accumulate"
+msgstr "La deducción se acumula"
+
+#. module: hr_payroll_income_withholding
+#: model:ir.actions.act_window,name:hr_payroll_income_withholding.action_hr_deduction_type
+#: model:ir.model,name:hr_payroll_income_withholding.model_hr_deduction_type_rf
+#: model:ir.ui.menu,name:hr_payroll_income_withholding.menu_hr_deduction_type
+msgid "Deduction Type"
+msgstr "Tipo de deducción"
+
+#. module: hr_payroll_income_withholding
+#: model:ir.actions.act_window,name:hr_payroll_income_withholding.action_hr_payslip_deductions_rf
+msgid "Deduction payslip"
+msgstr "Boleta de pago de deducción"
+
+#. module: hr_payroll_income_withholding
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_employee__deductions_ids
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_payslip__ps_deductions_ids
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_payslip_deductions_rf__hr_deductions_rf_employee_id
+#: model:ir.ui.menu,name:hr_payroll_income_withholding.menu_hr_deductions
+#: model_terms:ir.ui.view,arch_db:hr_payroll_income_withholding.view_hr_deduction_form
+#: model_terms:ir.ui.view,arch_db:hr_payroll_income_withholding.view_hr_deduction_tree
+#: model_terms:ir.ui.view,arch_db:hr_payroll_income_withholding.view_hr_employee_rf_form
+#: model_terms:ir.ui.view,arch_db:hr_payroll_income_withholding.view_hr_payslip_rf_form
+msgid "Deductions"
+msgstr "Deducciones"
+
+#. module: hr_payroll_income_withholding
+#: model:ir.actions.act_window,name:hr_payroll_income_withholding.action_hr_deduction_accumulate_employee
+#: model:ir.ui.menu,name:hr_payroll_income_withholding.menu_hr_deductions_accumulate_Employee
+#: model_terms:ir.ui.view,arch_db:hr_payroll_income_withholding.view_hr_deductions_accumulate_employee_form
+#: model_terms:ir.ui.view,arch_db:hr_payroll_income_withholding.view_hr_deductions_accumulate_employee_tree
+msgid "Deductions Accumulate Employee"
+msgstr "Deducciones Acumulan Empleado"
+
+#. module: hr_payroll_income_withholding
+#: model:ir.actions.act_window,name:hr_payroll_income_withholding.action_hr_deduction_employee
+#: model:ir.model,name:hr_payroll_income_withholding.model_hr_deductions_rf_employee
+#: model:ir.ui.menu,name:hr_payroll_income_withholding.menu_hr_deductions_Employee
+#: model_terms:ir.ui.view,arch_db:hr_payroll_income_withholding.view_hr_deductions_employee_form
+#: model_terms:ir.ui.view,arch_db:hr_payroll_income_withholding.view_hr_deductions_employee_tree
+msgid "Deductions Employee"
+msgstr "Deducciones Empleado"
+
+#. module: hr_payroll_income_withholding
+#: model_terms:ir.ui.view,arch_db:hr_payroll_income_withholding.view_hr_deduction_type_form
+#: model_terms:ir.ui.view,arch_db:hr_payroll_income_withholding.view_hr_deduction_type_tree
+msgid "Deductions Type"
+msgstr "Tipo de deducciones"
+
+#. module: hr_payroll_income_withholding
+#: model_terms:ir.ui.view,arch_db:hr_payroll_income_withholding.view_hr_payslip_deductions_rf_form
+#: model_terms:ir.ui.view,arch_db:hr_payroll_income_withholding.view_hr_payslip_deductions_rf_tree
+msgid "Deductions payslip"
+msgstr "Deducciones de la nomina"
+
+#. module: hr_payroll_income_withholding
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_employee__is_dependientes
+msgid "Dependientes"
+msgstr "Dependientes"
+
+#. module: hr_payroll_income_withholding
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_deduction_rf__description
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_deduction_type_rf__description
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_retention_method_rf__description
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_value_uvt_range_rf__description
+msgid "Description"
+msgstr "Descripción"
+
+#. module: hr_payroll_income_withholding
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_deduction_accumulate_rf__display_name
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_deduction_rf__display_name
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_deduction_type_rf__display_name
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_deductions_rf_employee__display_name
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_payslip_deductions_rf__display_name
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_payslip_input_not_rf__display_name
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_payslip_input_rf__display_name
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_retention_method_rf__display_name
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_value_uvt_input_not_rf__display_name
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_value_uvt_input_rf__display_name
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_value_uvt_range_rf__display_name
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_value_uvt_rf__display_name
+msgid "Display Name"
+msgstr "Nombre mostrado"
+
+#. module: hr_payroll_income_withholding
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_deduction_accumulate_rf__employee_id
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_deductions_rf_employee__employee_id
+msgid "Employee"
+msgstr "Empleado"
+
+#. module: hr_payroll_income_withholding
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_deduction_type_rf__end_date
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_deductions_rf_employee__end_date
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_value_uvt_rf__end_date
+msgid "End Date"
+msgstr "Fecha finalización"
+
+#. module: hr_payroll_income_withholding
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_payslip__ps_exempt_income_ids
+#: model_terms:ir.ui.view,arch_db:hr_payroll_income_withholding.view_hr_payslip_rf_form
+msgid "Exempt Income"
+msgstr "Ingresos exentos"
+
+#. module: hr_payroll_income_withholding
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_deduction_accumulate_rf__message_follower_ids
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_deduction_rf__message_follower_ids
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_deduction_type_rf__message_follower_ids
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_deductions_rf_employee__message_follower_ids
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_payslip_deductions_rf__message_follower_ids
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_payslip_input_not_rf__message_follower_ids
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_payslip_input_rf__message_follower_ids
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_retention_method_rf__message_follower_ids
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_value_uvt_input_not_rf__message_follower_ids
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_value_uvt_input_rf__message_follower_ids
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_value_uvt_range_rf__message_follower_ids
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_value_uvt_rf__message_follower_ids
+msgid "Followers"
+msgstr "Seguidores"
+
+#. module: hr_payroll_income_withholding
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_deduction_accumulate_rf__message_channel_ids
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_deduction_rf__message_channel_ids
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_deduction_type_rf__message_channel_ids
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_deductions_rf_employee__message_channel_ids
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_payslip_deductions_rf__message_channel_ids
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_payslip_input_not_rf__message_channel_ids
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_payslip_input_rf__message_channel_ids
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_retention_method_rf__message_channel_ids
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_value_uvt_input_not_rf__message_channel_ids
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_value_uvt_input_rf__message_channel_ids
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_value_uvt_range_rf__message_channel_ids
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_value_uvt_rf__message_channel_ids
+msgid "Followers (Channels)"
+msgstr "Seguidores (Canales)"
+
+#. module: hr_payroll_income_withholding
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_deduction_accumulate_rf__message_partner_ids
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_deduction_rf__message_partner_ids
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_deduction_type_rf__message_partner_ids
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_deductions_rf_employee__message_partner_ids
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_payslip_deductions_rf__message_partner_ids
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_payslip_input_not_rf__message_partner_ids
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_payslip_input_rf__message_partner_ids
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_retention_method_rf__message_partner_ids
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_value_uvt_input_not_rf__message_partner_ids
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_value_uvt_input_rf__message_partner_ids
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_value_uvt_range_rf__message_partner_ids
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_value_uvt_rf__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "Seguidores (Empresas)"
+
+#. module: hr_payroll_income_withholding
+#: model:ir.model,name:hr_payroll_income_withholding.model_hr_employee
+msgid "HR Employee"
+msgstr "HR Empleado"
+
+#. module: hr_payroll_income_withholding
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_deduction_accumulate_rf__id
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_deduction_rf__id
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_deduction_type_rf__id
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_deductions_rf_employee__id
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_payslip_deductions_rf__id
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_payslip_input_not_rf__id
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_payslip_input_rf__id
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_retention_method_rf__id
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_value_uvt_input_not_rf__id
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_value_uvt_input_rf__id
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_value_uvt_range_rf__id
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_value_uvt_rf__id
+msgid "ID"
+msgstr "ID"
+
+#. module: hr_payroll_income_withholding
+#: model:ir.model.fields,help:hr_payroll_income_withholding.field_hr_deduction_accumulate_rf__message_unread
+#: model:ir.model.fields,help:hr_payroll_income_withholding.field_hr_deduction_rf__message_unread
+#: model:ir.model.fields,help:hr_payroll_income_withholding.field_hr_deduction_type_rf__message_unread
+#: model:ir.model.fields,help:hr_payroll_income_withholding.field_hr_deductions_rf_employee__message_unread
+#: model:ir.model.fields,help:hr_payroll_income_withholding.field_hr_payslip_deductions_rf__message_unread
+#: model:ir.model.fields,help:hr_payroll_income_withholding.field_hr_payslip_input_not_rf__message_unread
+#: model:ir.model.fields,help:hr_payroll_income_withholding.field_hr_payslip_input_rf__message_unread
+#: model:ir.model.fields,help:hr_payroll_income_withholding.field_hr_retention_method_rf__message_unread
+#: model:ir.model.fields,help:hr_payroll_income_withholding.field_hr_value_uvt_input_not_rf__message_unread
+#: model:ir.model.fields,help:hr_payroll_income_withholding.field_hr_value_uvt_input_rf__message_unread
+#: model:ir.model.fields,help:hr_payroll_income_withholding.field_hr_value_uvt_range_rf__message_unread
+#: model:ir.model.fields,help:hr_payroll_income_withholding.field_hr_value_uvt_rf__message_unread
+msgid "If checked new messages require your attention."
+msgstr "Si está marcado, hay nuevos mensajes que requieren su atención"
+
+#. module: hr_payroll_income_withholding
+#: model:ir.model.fields,help:hr_payroll_income_withholding.field_hr_deduction_accumulate_rf__message_needaction
+#: model:ir.model.fields,help:hr_payroll_income_withholding.field_hr_deduction_rf__message_needaction
+#: model:ir.model.fields,help:hr_payroll_income_withholding.field_hr_deduction_type_rf__message_needaction
+#: model:ir.model.fields,help:hr_payroll_income_withholding.field_hr_deductions_rf_employee__message_needaction
+#: model:ir.model.fields,help:hr_payroll_income_withholding.field_hr_payslip_deductions_rf__message_needaction
+#: model:ir.model.fields,help:hr_payroll_income_withholding.field_hr_payslip_input_not_rf__message_needaction
+#: model:ir.model.fields,help:hr_payroll_income_withholding.field_hr_payslip_input_rf__message_needaction
+#: model:ir.model.fields,help:hr_payroll_income_withholding.field_hr_retention_method_rf__message_needaction
+#: model:ir.model.fields,help:hr_payroll_income_withholding.field_hr_value_uvt_input_not_rf__message_needaction
+#: model:ir.model.fields,help:hr_payroll_income_withholding.field_hr_value_uvt_input_rf__message_needaction
+#: model:ir.model.fields,help:hr_payroll_income_withholding.field_hr_value_uvt_range_rf__message_needaction
+#: model:ir.model.fields,help:hr_payroll_income_withholding.field_hr_value_uvt_rf__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "Si está marcado, hay nuevos mensajes que requieren su atención."
+
+#. module: hr_payroll_income_withholding
+#: model:ir.model.fields,help:hr_payroll_income_withholding.field_hr_deduction_accumulate_rf__message_has_error
+#: model:ir.model.fields,help:hr_payroll_income_withholding.field_hr_deduction_rf__message_has_error
+#: model:ir.model.fields,help:hr_payroll_income_withholding.field_hr_deduction_type_rf__message_has_error
+#: model:ir.model.fields,help:hr_payroll_income_withholding.field_hr_deductions_rf_employee__message_has_error
+#: model:ir.model.fields,help:hr_payroll_income_withholding.field_hr_payslip_deductions_rf__message_has_error
+#: model:ir.model.fields,help:hr_payroll_income_withholding.field_hr_payslip_input_not_rf__message_has_error
+#: model:ir.model.fields,help:hr_payroll_income_withholding.field_hr_payslip_input_rf__message_has_error
+#: model:ir.model.fields,help:hr_payroll_income_withholding.field_hr_retention_method_rf__message_has_error
+#: model:ir.model.fields,help:hr_payroll_income_withholding.field_hr_value_uvt_input_not_rf__message_has_error
+#: model:ir.model.fields,help:hr_payroll_income_withholding.field_hr_value_uvt_input_rf__message_has_error
+#: model:ir.model.fields,help:hr_payroll_income_withholding.field_hr_value_uvt_range_rf__message_has_error
+#: model:ir.model.fields,help:hr_payroll_income_withholding.field_hr_value_uvt_rf__message_has_error
+msgid "If checked, some messages have a delivery error."
+msgstr "Si se encuentra marcado, algunos mensajes tienen error de envío."
+
+#. module: hr_payroll_income_withholding
+#: model:ir.model.fields,help:hr_payroll_income_withholding.field_hr_deduction_rf__active
+#: model:ir.model.fields,help:hr_payroll_income_withholding.field_hr_value_uvt_rf__status
+msgid "If its checked, indicates that is active for date."
+msgstr "Si está marcado, indica que está activo para la fecha."
+
+#. module: hr_payroll_income_withholding
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_payslip__income_represented_uvt
+#: model_terms:ir.ui.view,arch_db:hr_payroll_income_withholding.view_hr_payslip_rf_form
+msgid "Income Represented UVT"
+msgstr "Ingresos representados UVT"
+
+#. module: hr_payroll_income_withholding
+#: model_terms:ir.ui.view,arch_db:hr_payroll_income_withholding.view_hr_payslip_rf_form
+msgid "Input Income"
+msgstr "Ingresos de entrada"
+
+#. module: hr_payroll_income_withholding
+#: model_terms:ir.ui.view,arch_db:hr_payroll_income_withholding.view_hr_payslip_input_not_rf_form
+msgid "Input Not Payslip"
+msgstr "Entrada no recibo de sueldo"
+
+#. module: hr_payroll_income_withholding
+#: model:ir.actions.act_window,name:hr_payroll_income_withholding.action_hr_payslip_input_not_rf
+#: model:ir.actions.act_window,name:hr_payroll_income_withholding.action_hr_value_uvt_input_not_rf
+#: model:ir.model,name:hr_payroll_income_withholding.model_hr_value_uvt_input_not_rf
+#: model_terms:ir.ui.view,arch_db:hr_payroll_income_withholding.view_hr_payslip_input_not_rf_tree
+#: model_terms:ir.ui.view,arch_db:hr_payroll_income_withholding.view_hr_value_uvt_input_not_rf_tree
+#: model_terms:ir.ui.view,arch_db:hr_payroll_income_withholding.view_hr_value_uvt_rf_form
+msgid "Input Not RF"
+msgstr "Entrada no RF"
+
+#. module: hr_payroll_income_withholding
+#: model_terms:ir.ui.view,arch_db:hr_payroll_income_withholding.view_hr_payslip_input_rf_form
+msgid "Input Payslip"
+msgstr "Boleta de entrada"
+
+#. module: hr_payroll_income_withholding
+#: model:ir.actions.act_window,name:hr_payroll_income_withholding.action_hr_payslip_input_rf
+#: model:ir.actions.act_window,name:hr_payroll_income_withholding.action_hr_value_uvt_input_rf
+#: model:ir.model,name:hr_payroll_income_withholding.model_hr_value_uvt_input_rf
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_payslip__ps_input_rf_ids
+#: model_terms:ir.ui.view,arch_db:hr_payroll_income_withholding.view_hr_payslip_input_rf_tree
+#: model_terms:ir.ui.view,arch_db:hr_payroll_income_withholding.view_hr_payslip_rf_form
+#: model_terms:ir.ui.view,arch_db:hr_payroll_income_withholding.view_hr_value_uvt_input_not_rf_form
+#: model_terms:ir.ui.view,arch_db:hr_payroll_income_withholding.view_hr_value_uvt_input_rf_tree
+#: model_terms:ir.ui.view,arch_db:hr_payroll_income_withholding.view_hr_value_uvt_rf_form
+msgid "Input RF"
+msgstr "RF de entrada"
+
+#. module: hr_payroll_income_withholding
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_payslip__ps_input_no_rf_ids
+#: model_terms:ir.ui.view,arch_db:hr_payroll_income_withholding.view_hr_payslip_rf_form
+msgid "Input no RF"
+msgstr "Entrada no RF"
+
+#. module: hr_payroll_income_withholding
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_payslip__inputs_rent
+msgid "Inputs Rent"
+msgstr "Alquiler de insumos"
+
+#. module: hr_payroll_income_withholding
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_deduction_accumulate_rf__message_is_follower
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_deduction_rf__message_is_follower
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_deduction_type_rf__message_is_follower
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_deductions_rf_employee__message_is_follower
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_payslip_deductions_rf__message_is_follower
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_payslip_input_not_rf__message_is_follower
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_payslip_input_rf__message_is_follower
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_retention_method_rf__message_is_follower
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_value_uvt_input_not_rf__message_is_follower
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_value_uvt_input_rf__message_is_follower
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_value_uvt_range_rf__message_is_follower
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_value_uvt_rf__message_is_follower
+msgid "Is Follower"
+msgstr "Es un seguidor"
+
+#. module: hr_payroll_income_withholding
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_deduction_accumulate_rf____last_update
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_deduction_rf____last_update
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_deduction_type_rf____last_update
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_deductions_rf_employee____last_update
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_payslip_deductions_rf____last_update
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_payslip_input_not_rf____last_update
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_payslip_input_rf____last_update
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_retention_method_rf____last_update
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_value_uvt_input_not_rf____last_update
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_value_uvt_input_rf____last_update
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_value_uvt_range_rf____last_update
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_value_uvt_rf____last_update
+msgid "Last Modified on"
+msgstr "Última modificación en"
+
+#. module: hr_payroll_income_withholding
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_deduction_accumulate_rf__write_uid
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_deduction_rf__write_uid
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_deduction_type_rf__write_uid
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_deductions_rf_employee__write_uid
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_payslip_deductions_rf__write_uid
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_payslip_input_not_rf__write_uid
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_payslip_input_rf__write_uid
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_retention_method_rf__write_uid
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_value_uvt_input_not_rf__write_uid
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_value_uvt_input_rf__write_uid
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_value_uvt_range_rf__write_uid
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_value_uvt_rf__write_uid
+msgid "Last Updated by"
+msgstr "Última actualización por"
+
+#. module: hr_payroll_income_withholding
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_deduction_accumulate_rf__write_date
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_deduction_rf__write_date
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_deduction_type_rf__write_date
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_deductions_rf_employee__write_date
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_payslip_deductions_rf__write_date
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_payslip_input_not_rf__write_date
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_payslip_input_rf__write_date
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_retention_method_rf__write_date
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_value_uvt_input_not_rf__write_date
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_value_uvt_input_rf__write_date
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_value_uvt_range_rf__write_date
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_value_uvt_rf__write_date
+msgid "Last Updated on"
+msgstr "Última actualización el"
+
+#. module: hr_payroll_income_withholding
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_deduction_accumulate_rf__message_main_attachment_id
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_deduction_rf__message_main_attachment_id
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_deduction_type_rf__message_main_attachment_id
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_deductions_rf_employee__message_main_attachment_id
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_payslip_deductions_rf__message_main_attachment_id
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_payslip_input_not_rf__message_main_attachment_id
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_payslip_input_rf__message_main_attachment_id
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_retention_method_rf__message_main_attachment_id
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_value_uvt_input_not_rf__message_main_attachment_id
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_value_uvt_input_rf__message_main_attachment_id
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_value_uvt_range_rf__message_main_attachment_id
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_value_uvt_rf__message_main_attachment_id
+msgid "Main Attachment"
+msgstr "Adjuntos principales"
+
+#. module: hr_payroll_income_withholding
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_value_uvt_range_rf__marginal_rate
+msgid "Marginal Rate"
+msgstr "Tasa marginal"
+
+#. module: hr_payroll_income_withholding
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_deduction_rf__max_acumulate
+msgid "Maximum Acumulate"
+msgstr "Máxima acumulación"
+
+#. module: hr_payroll_income_withholding
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_deduction_rf__max_percentage
+msgid "Maximum Percentage"
+msgstr "Porcentaje maximo"
+
+#. module: hr_payroll_income_withholding
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_deduction_rf__max_uvt
+msgid "Maximum UVT"
+msgstr "Máximo UVT"
+
+#. module: hr_payroll_income_withholding
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_deduction_rf__max_value
+msgid "Maximum Value"
+msgstr "Valor máximo"
+
+#. module: hr_payroll_income_withholding
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_value_uvt_rf__max_uvt_deduction_renting_exempt
+msgid "Maximun UVT Deduction Renting Exempt"
+msgstr "Exento de alquiler de deducción máxima de UVT"
+
+#. module: hr_payroll_income_withholding
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_value_uvt_rf__max_value_renting_exempt
+msgid "Maximun Value Rent Excent"
+msgstr "Exceso de renta de valor máximo"
+
+#. module: hr_payroll_income_withholding
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_deduction_accumulate_rf__message_has_error
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_deduction_rf__message_has_error
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_deduction_type_rf__message_has_error
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_deductions_rf_employee__message_has_error
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_payslip_deductions_rf__message_has_error
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_payslip_input_not_rf__message_has_error
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_payslip_input_rf__message_has_error
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_retention_method_rf__message_has_error
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_value_uvt_input_not_rf__message_has_error
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_value_uvt_input_rf__message_has_error
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_value_uvt_range_rf__message_has_error
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_value_uvt_rf__message_has_error
+msgid "Message Delivery error"
+msgstr "Error de Envío de Mensaje"
+
+#. module: hr_payroll_income_withholding
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_deduction_accumulate_rf__message_ids
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_deduction_rf__message_ids
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_deduction_type_rf__message_ids
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_deductions_rf_employee__message_ids
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_payslip_deductions_rf__message_ids
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_payslip_input_not_rf__message_ids
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_payslip_input_rf__message_ids
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_retention_method_rf__message_ids
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_value_uvt_input_not_rf__message_ids
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_value_uvt_input_rf__message_ids
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_value_uvt_range_rf__message_ids
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_value_uvt_rf__message_ids
+msgid "Messages"
+msgstr "Mensajes"
+
+#. module: hr_payroll_income_withholding
+#: model_terms:ir.ui.view,arch_db:hr_payroll_income_withholding.view_hr_retention_method_rf_form
+msgid "Method RF"
+msgstr "Método RF"
+
+#. module: hr_payroll_income_withholding
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_deduction_accumulate_rf__name
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_deduction_rf__name
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_deduction_type_rf__name
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_deductions_rf_employee__name
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_payslip_input_not_rf__name
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_payslip_input_rf__name
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_retention_method_rf__name
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_value_uvt_input_not_rf__name
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_value_uvt_input_rf__name
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_value_uvt_rf__name
+msgid "Name"
+msgstr "Nombre"
+
+#. module: hr_payroll_income_withholding
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_deduction_accumulate_rf__activity_date_deadline
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_deduction_rf__activity_date_deadline
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_deduction_type_rf__activity_date_deadline
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_deductions_rf_employee__activity_date_deadline
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_payslip_deductions_rf__activity_date_deadline
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_payslip_input_not_rf__activity_date_deadline
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_payslip_input_rf__activity_date_deadline
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_retention_method_rf__activity_date_deadline
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_value_uvt_input_not_rf__activity_date_deadline
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_value_uvt_input_rf__activity_date_deadline
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_value_uvt_range_rf__activity_date_deadline
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_value_uvt_rf__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "Siguiente plazo de actividad"
+
+#. module: hr_payroll_income_withholding
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_deduction_accumulate_rf__activity_summary
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_deduction_rf__activity_summary
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_deduction_type_rf__activity_summary
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_deductions_rf_employee__activity_summary
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_payslip_deductions_rf__activity_summary
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_payslip_input_not_rf__activity_summary
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_payslip_input_rf__activity_summary
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_retention_method_rf__activity_summary
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_value_uvt_input_not_rf__activity_summary
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_value_uvt_input_rf__activity_summary
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_value_uvt_range_rf__activity_summary
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_value_uvt_rf__activity_summary
+msgid "Next Activity Summary"
+msgstr "Resumen de la siguiente actividad"
+
+#. module: hr_payroll_income_withholding
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_deduction_accumulate_rf__activity_type_id
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_deduction_rf__activity_type_id
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_deduction_type_rf__activity_type_id
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_deductions_rf_employee__activity_type_id
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_payslip_deductions_rf__activity_type_id
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_payslip_input_not_rf__activity_type_id
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_payslip_input_rf__activity_type_id
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_retention_method_rf__activity_type_id
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_value_uvt_input_not_rf__activity_type_id
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_value_uvt_input_rf__activity_type_id
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_value_uvt_range_rf__activity_type_id
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_value_uvt_rf__activity_type_id
+msgid "Next Activity Type"
+msgstr "Siguiente tipo de actividad"
+
+#. module: hr_payroll_income_withholding
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_deduction_accumulate_rf__message_needaction_counter
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_deduction_rf__message_needaction_counter
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_deduction_type_rf__message_needaction_counter
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_deductions_rf_employee__message_needaction_counter
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_payslip_deductions_rf__message_needaction_counter
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_payslip_input_not_rf__message_needaction_counter
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_payslip_input_rf__message_needaction_counter
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_retention_method_rf__message_needaction_counter
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_value_uvt_input_not_rf__message_needaction_counter
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_value_uvt_input_rf__message_needaction_counter
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_value_uvt_range_rf__message_needaction_counter
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_value_uvt_rf__message_needaction_counter
+msgid "Number of Actions"
+msgstr "Número de acciones"
+
+#. module: hr_payroll_income_withholding
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_deduction_accumulate_rf__message_has_error_counter
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_deduction_rf__message_has_error_counter
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_deduction_type_rf__message_has_error_counter
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_deductions_rf_employee__message_has_error_counter
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_payslip_deductions_rf__message_has_error_counter
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_payslip_input_not_rf__message_has_error_counter
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_payslip_input_rf__message_has_error_counter
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_retention_method_rf__message_has_error_counter
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_value_uvt_input_not_rf__message_has_error_counter
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_value_uvt_input_rf__message_has_error_counter
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_value_uvt_range_rf__message_has_error_counter
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_value_uvt_rf__message_has_error_counter
+msgid "Number of error"
+msgstr "Número de error"
+
+#. module: hr_payroll_income_withholding
+#: model:ir.model.fields,help:hr_payroll_income_withholding.field_hr_deduction_accumulate_rf__message_needaction_counter
+#: model:ir.model.fields,help:hr_payroll_income_withholding.field_hr_deduction_rf__message_needaction_counter
+#: model:ir.model.fields,help:hr_payroll_income_withholding.field_hr_deduction_type_rf__message_needaction_counter
+#: model:ir.model.fields,help:hr_payroll_income_withholding.field_hr_deductions_rf_employee__message_needaction_counter
+#: model:ir.model.fields,help:hr_payroll_income_withholding.field_hr_payslip_deductions_rf__message_needaction_counter
+#: model:ir.model.fields,help:hr_payroll_income_withholding.field_hr_payslip_input_not_rf__message_needaction_counter
+#: model:ir.model.fields,help:hr_payroll_income_withholding.field_hr_payslip_input_rf__message_needaction_counter
+#: model:ir.model.fields,help:hr_payroll_income_withholding.field_hr_retention_method_rf__message_needaction_counter
+#: model:ir.model.fields,help:hr_payroll_income_withholding.field_hr_value_uvt_input_not_rf__message_needaction_counter
+#: model:ir.model.fields,help:hr_payroll_income_withholding.field_hr_value_uvt_input_rf__message_needaction_counter
+#: model:ir.model.fields,help:hr_payroll_income_withholding.field_hr_value_uvt_range_rf__message_needaction_counter
+#: model:ir.model.fields,help:hr_payroll_income_withholding.field_hr_value_uvt_rf__message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr "Número de mensajes que requieren una acción"
+
+#. module: hr_payroll_income_withholding
+#: model:ir.model.fields,help:hr_payroll_income_withholding.field_hr_deduction_accumulate_rf__message_has_error_counter
+#: model:ir.model.fields,help:hr_payroll_income_withholding.field_hr_deduction_rf__message_has_error_counter
+#: model:ir.model.fields,help:hr_payroll_income_withholding.field_hr_deduction_type_rf__message_has_error_counter
+#: model:ir.model.fields,help:hr_payroll_income_withholding.field_hr_deductions_rf_employee__message_has_error_counter
+#: model:ir.model.fields,help:hr_payroll_income_withholding.field_hr_payslip_deductions_rf__message_has_error_counter
+#: model:ir.model.fields,help:hr_payroll_income_withholding.field_hr_payslip_input_not_rf__message_has_error_counter
+#: model:ir.model.fields,help:hr_payroll_income_withholding.field_hr_payslip_input_rf__message_has_error_counter
+#: model:ir.model.fields,help:hr_payroll_income_withholding.field_hr_retention_method_rf__message_has_error_counter
+#: model:ir.model.fields,help:hr_payroll_income_withholding.field_hr_value_uvt_input_not_rf__message_has_error_counter
+#: model:ir.model.fields,help:hr_payroll_income_withholding.field_hr_value_uvt_input_rf__message_has_error_counter
+#: model:ir.model.fields,help:hr_payroll_income_withholding.field_hr_value_uvt_range_rf__message_has_error_counter
+#: model:ir.model.fields,help:hr_payroll_income_withholding.field_hr_value_uvt_rf__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "Número de mensajes con error de envío"
+
+#. module: hr_payroll_income_withholding
+#: model:ir.model.fields,help:hr_payroll_income_withholding.field_hr_deduction_accumulate_rf__message_unread_counter
+#: model:ir.model.fields,help:hr_payroll_income_withholding.field_hr_deduction_rf__message_unread_counter
+#: model:ir.model.fields,help:hr_payroll_income_withholding.field_hr_deduction_type_rf__message_unread_counter
+#: model:ir.model.fields,help:hr_payroll_income_withholding.field_hr_deductions_rf_employee__message_unread_counter
+#: model:ir.model.fields,help:hr_payroll_income_withholding.field_hr_payslip_deductions_rf__message_unread_counter
+#: model:ir.model.fields,help:hr_payroll_income_withholding.field_hr_payslip_input_not_rf__message_unread_counter
+#: model:ir.model.fields,help:hr_payroll_income_withholding.field_hr_payslip_input_rf__message_unread_counter
+#: model:ir.model.fields,help:hr_payroll_income_withholding.field_hr_retention_method_rf__message_unread_counter
+#: model:ir.model.fields,help:hr_payroll_income_withholding.field_hr_value_uvt_input_not_rf__message_unread_counter
+#: model:ir.model.fields,help:hr_payroll_income_withholding.field_hr_value_uvt_input_rf__message_unread_counter
+#: model:ir.model.fields,help:hr_payroll_income_withholding.field_hr_value_uvt_range_rf__message_unread_counter
+#: model:ir.model.fields,help:hr_payroll_income_withholding.field_hr_value_uvt_rf__message_unread_counter
+msgid "Number of unread messages"
+msgstr "Número de mensajes no leidos"
+
+#. module: hr_payroll_income_withholding
+#: selection:hr.deduction.accumulate.rf,activity_state:0
+#: selection:hr.deduction.rf,activity_state:0
+#: selection:hr.deduction.type.rf,activity_state:0
+#: selection:hr.deductions.rf.employee,activity_state:0
+#: selection:hr.payslip.deductions.rf,activity_state:0
+#: selection:hr.payslip.input.not.rf,activity_state:0
+#: selection:hr.payslip.input.rf,activity_state:0
+#: selection:hr.retention.method.rf,activity_state:0
+#: selection:hr.value.uvt.input.not.rf,activity_state:0
+#: selection:hr.value.uvt.input.rf,activity_state:0
+#: selection:hr.value.uvt.range.rf,activity_state:0
+#: selection:hr.value.uvt.rf,activity_state:0
+msgid "Overdue"
+msgstr "Atrasado"
+
+#. module: hr_payroll_income_withholding
+#: model:ir.model,name:hr_payroll_income_withholding.model_hr_payslip
+msgid "Pay Slip"
+msgstr "Nómina"
+
+#. module: hr_payroll_income_withholding
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_payslip_deductions_rf__hr_payslip_id
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_payslip_input_not_rf__hr_payslip_id
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_payslip_input_rf__hr_payslip_id
+msgid "Payslip"
+msgstr "Recibo de sueldo"
+
+#. module: hr_payroll_income_withholding
+#: model:ir.model,name:hr_payroll_income_withholding.model_hr_payslip_deductions_rf
+msgid "Payslip Deductions RF"
+msgstr "Deducciones de recibo de sueldo RF"
+
+#. module: hr_payroll_income_withholding
+#: model:ir.model,name:hr_payroll_income_withholding.model_hr_payslip_input_not_rf
+msgid "Payslip Input Not RF"
+msgstr "Entrada de recibo de sueldo no RF"
+
+#. module: hr_payroll_income_withholding
+#: model:ir.model,name:hr_payroll_income_withholding.model_hr_payslip_input_rf
+msgid "Payslip Input RF"
+msgstr "Entrada de recibo de pago RF"
+
+#. module: hr_payroll_income_withholding
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_value_uvt_rf__percentage_renting_exempt
+msgid "Percentage Rent Excent"
+msgstr "Porcentaje exento de Renta"
+
+#. module: hr_payroll_income_withholding
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_payslip__percentage_renting_calculate
+msgid "Percentage Renting Calculate"
+msgstr "Calcular Porcentaje de alquiler"
+
+#. module: hr_payroll_income_withholding
+#: model_terms:ir.ui.view,arch_db:hr_payroll_income_withholding.view_hr_payslip_rf_form
+msgid "Percentage Retention"
+msgstr "Porcentaje de retencion"
+
+#. module: hr_payroll_income_withholding
+#: selection:hr.deduction.accumulate.rf,activity_state:0
+#: selection:hr.deduction.rf,activity_state:0
+#: selection:hr.deduction.type.rf,activity_state:0
+#: selection:hr.deductions.rf.employee,activity_state:0
+#: selection:hr.payslip.deductions.rf,activity_state:0
+#: selection:hr.payslip.input.not.rf,activity_state:0
+#: selection:hr.payslip.input.rf,activity_state:0
+#: selection:hr.retention.method.rf,activity_state:0
+#: selection:hr.value.uvt.input.not.rf,activity_state:0
+#: selection:hr.value.uvt.input.rf,activity_state:0
+#: selection:hr.value.uvt.range.rf,activity_state:0
+#: selection:hr.value.uvt.rf,activity_state:0
+msgid "Planned"
+msgstr "Planificado"
+
+#. module: hr_payroll_income_withholding
+#: model_terms:ir.ui.view,arch_db:hr_payroll_income_withholding.view_hr_value_uvt_rf_form
+msgid "Range Rentention"
+msgstr "Rango de retención"
+
+#. module: hr_payroll_income_withholding
+#: model:ir.actions.act_window,name:hr_payroll_income_withholding.action_hr_value_uvt_range_rf
+#: model_terms:ir.ui.view,arch_db:hr_payroll_income_withholding.view_hr_value_uvt_range_rf_form
+#: model_terms:ir.ui.view,arch_db:hr_payroll_income_withholding.view_hr_value_uvt_range_rf_tree
+msgid "Range UVT"
+msgstr "Rango UVT"
+
+#. module: hr_payroll_income_withholding
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_value_uvt_rf__range_retention_ids
+msgid "Range UVT Value"
+msgstr "Rango de valor UVT"
+
+#. module: hr_payroll_income_withholding
+#: model_terms:ir.ui.view,arch_db:hr_payroll_income_withholding.view_hr_value_uvt_rf_form
+msgid "Range Value UVT"
+msgstr "Rango de valor UVT"
+
+#. module: hr_payroll_income_withholding
+#: model:ir.model,name:hr_payroll_income_withholding.model_hr_value_uvt_range_rf
+msgid "Range calculate UVT"
+msgstr "Rango a calcular UVT"
+
+#. module: hr_payroll_income_withholding
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_payslip__ps_renting_additional_ids
+#: model_terms:ir.ui.view,arch_db:hr_payroll_income_withholding.view_hr_payslip_rf_form
+msgid "Renting Additional"
+msgstr "Renta adicional"
+
+#. module: hr_payroll_income_withholding
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_deduction_accumulate_rf__activity_user_id
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_deduction_rf__activity_user_id
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_deduction_type_rf__activity_user_id
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_deductions_rf_employee__activity_user_id
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_payslip_deductions_rf__activity_user_id
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_payslip_input_not_rf__activity_user_id
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_payslip_input_rf__activity_user_id
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_retention_method_rf__activity_user_id
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_value_uvt_input_not_rf__activity_user_id
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_value_uvt_input_rf__activity_user_id
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_value_uvt_range_rf__activity_user_id
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_value_uvt_rf__activity_user_id
+msgid "Responsible User"
+msgstr "Usuario responsable"
+
+#. module: hr_payroll_income_withholding
+#: model:ir.model,name:hr_payroll_income_withholding.model_hr_retention_method_rf
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_employee__retention_method_id
+msgid "Retention Method"
+msgstr "Metodo de retencion"
+
+#. module: hr_payroll_income_withholding
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_employee__withholding_2
+msgid "Retention Method 2"
+msgstr "metodo de retencion 2"
+
+#. module: hr_payroll_income_withholding
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_payslip_input_not_rf__rule_id
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_payslip_input_rf__rule_id
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_value_uvt_input_not_rf__rule_id
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_value_uvt_input_rf__rule_id
+msgid "Rule"
+msgstr "Regla"
+
+#. module: hr_payroll_income_withholding
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_value_uvt_rf__rule_ids
+msgid "Rules Input Not RF"
+msgstr "Reglas de entrada no RF"
+
+#. module: hr_payroll_income_withholding
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_value_uvt_rf__irf_rule_ids
+msgid "Rules Input RF"
+msgstr "Reglas de entrada RF"
+
+#. module: hr_payroll_income_withholding
+#: model:ir.model,name:hr_payroll_income_withholding.model_hr_salary_rule
+msgid "Salary Rule"
+msgstr "Regla Salarial"
+
+#. module: hr_payroll_income_withholding
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_deduction_type_rf__sequence
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_payslip_deductions_rf__sequence
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_payslip_input_not_rf__sequence
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_payslip_input_rf__sequence
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_value_uvt_input_not_rf__sequence
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_value_uvt_input_rf__sequence
+msgid "Sequence"
+msgstr "Secuencia"
+
+#. module: hr_payroll_income_withholding
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_deductions_rf_employee__start_date
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_value_uvt_rf__start_date
+msgid "Start Date"
+msgstr "Fecha de inicio"
+
+#. module: hr_payroll_income_withholding
+#: model:ir.model.fields,help:hr_payroll_income_withholding.field_hr_deduction_accumulate_rf__activity_state
+#: model:ir.model.fields,help:hr_payroll_income_withholding.field_hr_deduction_rf__activity_state
+#: model:ir.model.fields,help:hr_payroll_income_withholding.field_hr_deduction_type_rf__activity_state
+#: model:ir.model.fields,help:hr_payroll_income_withholding.field_hr_deductions_rf_employee__activity_state
+#: model:ir.model.fields,help:hr_payroll_income_withholding.field_hr_payslip_deductions_rf__activity_state
+#: model:ir.model.fields,help:hr_payroll_income_withholding.field_hr_payslip_input_not_rf__activity_state
+#: model:ir.model.fields,help:hr_payroll_income_withholding.field_hr_payslip_input_rf__activity_state
+#: model:ir.model.fields,help:hr_payroll_income_withholding.field_hr_retention_method_rf__activity_state
+#: model:ir.model.fields,help:hr_payroll_income_withholding.field_hr_value_uvt_input_not_rf__activity_state
+#: model:ir.model.fields,help:hr_payroll_income_withholding.field_hr_value_uvt_input_rf__activity_state
+#: model:ir.model.fields,help:hr_payroll_income_withholding.field_hr_value_uvt_range_rf__activity_state
+#: model:ir.model.fields,help:hr_payroll_income_withholding.field_hr_value_uvt_rf__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"Estado basado en actividades\n"
+"Vencida: la fecha tope ya ha pasado\n"
+"Hoy: La fecha tope es hoy\n"
+"Planificada: futuras actividades."
+
+#. module: hr_payroll_income_withholding
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_payslip__subtotal_1
+msgid "Subtotal 1"
+msgstr "Subtotal 1"
+
+#. module: hr_payroll_income_withholding
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_payslip__subtotal_2
+msgid "Subtotal 2"
+msgstr "Subtotal 2"
+
+#. module: hr_payroll_income_withholding
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_payslip__subtotal_3
+msgid "Subtotal 3"
+msgstr "Subtotal 3"
+
+#. module: hr_payroll_income_withholding
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_payslip__subtotal_4
+msgid "Subtotal 4"
+msgstr "Subtotal 4"
+
+#. module: hr_payroll_income_withholding
+#: model:ir.model.fields,help:hr_payroll_income_withholding.field_hr_employee__deductions_accumulate_ids
+msgid "The accumulate of deductions for year"
+msgstr "El acumulado de deducciones por año"
+
+#. module: hr_payroll_income_withholding
+#: model:ir.model.fields,help:hr_payroll_income_withholding.field_hr_payslip__ps_input_no_rf_ids
+msgid "The list of Inputs not rf for employee"
+msgstr "La lista de entradas no rf para empleado"
+
+#. module: hr_payroll_income_withholding
+#: model:ir.model.fields,help:hr_payroll_income_withholding.field_hr_payslip__ps_input_rf_ids
+msgid "The list of Inputs rf for employee"
+msgstr "La lista de entradas rf para empleado"
+
+#. module: hr_payroll_income_withholding
+#: model:ir.model.fields,help:hr_payroll_income_withholding.field_hr_employee__deductions_ids
+#: model:ir.model.fields,help:hr_payroll_income_withholding.field_hr_payslip__ps_deductions_ids
+#: model:ir.model.fields,help:hr_payroll_income_withholding.field_hr_payslip__ps_renting_additional_ids
+msgid "The list of deductions for employee"
+msgstr "La lista de deducciones por empleado"
+
+#. module: hr_payroll_income_withholding
+#: model:ir.model.fields,help:hr_payroll_income_withholding.field_hr_payslip__ps_exempt_income_ids
+msgid "The list of exempt income"
+msgstr "La lista de ingresos exentos"
+
+#. module: hr_payroll_income_withholding
+#: selection:hr.deduction.accumulate.rf,activity_state:0
+#: selection:hr.deduction.rf,activity_state:0
+#: selection:hr.deduction.type.rf,activity_state:0
+#: selection:hr.deductions.rf.employee,activity_state:0
+#: selection:hr.payslip.deductions.rf,activity_state:0
+#: selection:hr.payslip.input.not.rf,activity_state:0
+#: selection:hr.payslip.input.rf,activity_state:0
+#: selection:hr.retention.method.rf,activity_state:0
+#: selection:hr.value.uvt.input.not.rf,activity_state:0
+#: selection:hr.value.uvt.input.rf,activity_state:0
+#: selection:hr.value.uvt.range.rf,activity_state:0
+#: selection:hr.value.uvt.rf,activity_state:0
+msgid "Today"
+msgstr "Hoy"
+
+#. module: hr_payroll_income_withholding
+#: model_terms:ir.ui.view,arch_db:hr_payroll_income_withholding.view_hr_payslip_rf_form
+msgid "Total Deductions Renting"
+msgstr "Alquiler de deducciones totales"
+
+#. module: hr_payroll_income_withholding
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_payslip__total_deductions_renting
+msgid "Total Deductions and exempt renting"
+msgstr "Deducciones totales y renta exenta"
+
+#. module: hr_payroll_income_withholding
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_payslip__total_retention_income
+#: model_terms:ir.ui.view,arch_db:hr_payroll_income_withholding.view_hr_payslip_rf_form
+msgid "Total Retention Income"
+msgstr "Retencion Total ingresos"
+
+#. module: hr_payroll_income_withholding
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_payslip__total_renting_excempt
+msgid "Total renting excempt"
+msgstr "Alquiler total exento"
+
+#. module: hr_payroll_income_withholding
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_deduction_rf__type_id
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_deductions_rf_employee__hr_deduction_type_id
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_payslip_deductions_rf__hr_deduction_type_id
+msgid "Type"
+msgstr "Tipo"
+
+#. module: hr_payroll_income_withholding
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_value_uvt_range_rf__uvt_additional
+msgid "UVT Additional"
+msgstr "UVT adicional"
+
+#. module: hr_payroll_income_withholding
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_value_uvt_range_rf__uvt_discount
+msgid "UVT Discount"
+msgstr "UVT Descontada"
+
+#. module: hr_payroll_income_withholding
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_deduction_accumulate_rf__message_unread
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_deduction_rf__message_unread
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_deduction_type_rf__message_unread
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_deductions_rf_employee__message_unread
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_payslip_deductions_rf__message_unread
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_payslip_input_not_rf__message_unread
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_payslip_input_rf__message_unread
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_retention_method_rf__message_unread
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_value_uvt_input_not_rf__message_unread
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_value_uvt_input_rf__message_unread
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_value_uvt_range_rf__message_unread
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_value_uvt_rf__message_unread
+msgid "Unread Messages"
+msgstr "Mensajes por leer"
+
+#. module: hr_payroll_income_withholding
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_deduction_accumulate_rf__message_unread_counter
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_deduction_rf__message_unread_counter
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_deduction_type_rf__message_unread_counter
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_deductions_rf_employee__message_unread_counter
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_payslip_deductions_rf__message_unread_counter
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_payslip_input_not_rf__message_unread_counter
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_payslip_input_rf__message_unread_counter
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_retention_method_rf__message_unread_counter
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_value_uvt_input_not_rf__message_unread_counter
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_value_uvt_input_rf__message_unread_counter
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_value_uvt_range_rf__message_unread_counter
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_value_uvt_rf__message_unread_counter
+msgid "Unread Messages Counter"
+msgstr "Contador de mensajes sin leer"
+
+#. module: hr_payroll_income_withholding
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_deductions_rf_employee__value
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_value_uvt_rf__value
+msgid "Value"
+msgstr "Valor"
+
+#. module: hr_payroll_income_withholding
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_payslip_deductions_rf__value_reference
+msgid "Value Reference"
+msgstr "Referencia del valor"
+
+#. module: hr_payroll_income_withholding
+#: model:ir.actions.act_window,name:hr_payroll_income_withholding.action_hr_value_uvt_rf
+#: model:ir.model,name:hr_payroll_income_withholding.model_hr_value_uvt_rf
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_value_uvt_input_not_rf__hr_uvtvalue_id
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_value_uvt_input_rf__hr_uvtvalue_id
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_value_uvt_range_rf__hr_uvtvalue_id
+msgid "Value UVT"
+msgstr "Valor de UVT"
+
+#. module: hr_payroll_income_withholding
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_value_uvt_range_rf__value_uvt_max
+msgid "Value UVT Max"
+msgstr "Valor Max UVT"
+
+#. module: hr_payroll_income_withholding
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_payslip_deductions_rf__value_final
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_payslip_input_not_rf__value_final
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_payslip_input_rf__value_final
+msgid "Value final"
+msgstr "Valor Final"
+
+#. module: hr_payroll_income_withholding
+#: model:ir.ui.menu,name:hr_payroll_income_withholding.menu_hr_value_uvt_rf
+#: model_terms:ir.ui.view,arch_db:hr_payroll_income_withholding.view_hr_value_uvt_rf_form
+#: model_terms:ir.ui.view,arch_db:hr_payroll_income_withholding.view_hr_value_uvt_rf_tree
+msgid "Values UVT"
+msgstr "Valores UVT"
+
+#. module: hr_payroll_income_withholding
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_deduction_accumulate_rf__website_message_ids
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_deduction_rf__website_message_ids
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_deduction_type_rf__website_message_ids
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_deductions_rf_employee__website_message_ids
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_payslip_deductions_rf__website_message_ids
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_payslip_input_not_rf__website_message_ids
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_payslip_input_rf__website_message_ids
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_retention_method_rf__website_message_ids
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_value_uvt_input_not_rf__website_message_ids
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_value_uvt_input_rf__website_message_ids
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_value_uvt_range_rf__website_message_ids
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_value_uvt_rf__website_message_ids
+msgid "Website Messages"
+msgstr "Mensajes del sitio web"
+
+#. module: hr_payroll_income_withholding
+#: model:ir.model.fields,help:hr_payroll_income_withholding.field_hr_deduction_accumulate_rf__website_message_ids
+#: model:ir.model.fields,help:hr_payroll_income_withholding.field_hr_deduction_rf__website_message_ids
+#: model:ir.model.fields,help:hr_payroll_income_withholding.field_hr_deduction_type_rf__website_message_ids
+#: model:ir.model.fields,help:hr_payroll_income_withholding.field_hr_deductions_rf_employee__website_message_ids
+#: model:ir.model.fields,help:hr_payroll_income_withholding.field_hr_payslip_deductions_rf__website_message_ids
+#: model:ir.model.fields,help:hr_payroll_income_withholding.field_hr_payslip_input_not_rf__website_message_ids
+#: model:ir.model.fields,help:hr_payroll_income_withholding.field_hr_payslip_input_rf__website_message_ids
+#: model:ir.model.fields,help:hr_payroll_income_withholding.field_hr_retention_method_rf__website_message_ids
+#: model:ir.model.fields,help:hr_payroll_income_withholding.field_hr_value_uvt_input_not_rf__website_message_ids
+#: model:ir.model.fields,help:hr_payroll_income_withholding.field_hr_value_uvt_input_rf__website_message_ids
+#: model:ir.model.fields,help:hr_payroll_income_withholding.field_hr_value_uvt_range_rf__website_message_ids
+#: model:ir.model.fields,help:hr_payroll_income_withholding.field_hr_value_uvt_rf__website_message_ids
+msgid "Website communication history"
+msgstr "Historial de comunicaciones del sitio web"
+
+#. module: hr_payroll_income_withholding
+#: model_terms:ir.ui.view,arch_db:hr_payroll_income_withholding.view_hr_employee_rf_form
+#: model_terms:ir.ui.view,arch_db:hr_payroll_income_withholding.view_hr_payslip_rf_form
+msgid "Withholding Income"
+msgstr "Retenciones de ingresos"
+
+#. module: hr_payroll_income_withholding
+#: model_terms:ir.ui.view,arch_db:hr_payroll_income_withholding.view_hr_retention_method_rf_tree
+msgid "Withholding Method"
+msgstr "Método de retención"
+
+#. module: hr_payroll_income_withholding
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_deduction_accumulate_rf__year
+msgid "Year"
+msgstr "Año"
+
+#. module: hr_payroll_income_withholding
+#: model:ir.model.fields,field_description:hr_payroll_income_withholding.field_hr_payslip__calculate_renting_exempt
+msgid "calculate renting exempt renting"
+msgstr "Carcular la renta exenta"
+
+#. module: hr_payroll_income_withholding
+#: model:ir.actions.act_window,name:hr_payroll_income_withholding.action_hr_retention_method_rf
+msgid "withholding_method"
+msgstr "método de retención"

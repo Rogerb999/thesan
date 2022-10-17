@@ -1,0 +1,329 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* hr_employee_extended_werp
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-12-09 12:20+0000\n"
+"PO-Revision-Date: 2019-12-15 16:26-0500\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: es\n"
+"X-Generator: Poedit 1.8.8\n"
+
+#. module: hr_employee_extended_werp
+#: model:ir.model.fields,field_description:hr_employee_extended_werp.field_animal_pet__age
+msgid "Age in Years"
+msgstr "Edad en años"
+
+#. module: hr_employee_extended_werp
+#: model:ir.actions.act_window,name:hr_employee_extended_werp.animal_pet_action
+#: model:ir.model,name:hr_employee_extended_werp.model_animal_pet
+#: model:ir.ui.menu,name:hr_employee_extended_werp.animal_pet_menu_action
+#: model_terms:ir.ui.view,arch_db:hr_employee_extended_werp.animal_pet_view_form
+#: model_terms:ir.ui.view,arch_db:hr_employee_extended_werp.animal_pet_view_tree
+msgid "Animal Pet"
+msgstr "Animal mascota"
+
+#. module: hr_employee_extended_werp
+#: model:ir.actions.act_window,name:hr_employee_extended_werp.animal_race_action
+#: model:ir.model,name:hr_employee_extended_werp.model_animal_race
+#: model:ir.model.fields,field_description:hr_employee_extended_werp.field_animal_pet__animal_race_id
+#: model:ir.ui.menu,name:hr_employee_extended_werp.animal_race_menu_action
+#: model_terms:ir.ui.view,arch_db:hr_employee_extended_werp.animal_race_view_form
+#: model_terms:ir.ui.view,arch_db:hr_employee_extended_werp.animal_race_view_tree
+msgid "Animal Race"
+msgstr "Raza animal"
+
+#. module: hr_employee_extended_werp
+#: model:ir.actions.act_window,name:hr_employee_extended_werp.animal_type_action
+#: model:ir.model,name:hr_employee_extended_werp.model_animal_type
+#: model:ir.model.fields,field_description:hr_employee_extended_werp.field_animal_pet__animal_type_id
+#: model:ir.model.fields,field_description:hr_employee_extended_werp.field_animal_race__animal_type_id
+#: model:ir.ui.menu,name:hr_employee_extended_werp.animal_type_menu_action
+#: model_terms:ir.ui.view,arch_db:hr_employee_extended_werp.animal_type_view_form
+#: model_terms:ir.ui.view,arch_db:hr_employee_extended_werp.animal_type_view_tree
+msgid "Animal Type"
+msgstr "Tipo de animal"
+
+#. module: hr_employee_extended_werp
+#: selection:report.employee.wizard,report_type:0
+msgid "CSV"
+msgstr "CSV"
+
+#. module: hr_employee_extended_werp
+#: model_terms:ir.ui.view,arch_db:hr_employee_extended_werp.report_employee_wizard_view
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: hr_employee_extended_werp
+#: model:ir.actions.server,name:hr_employee_extended_werp.autovacuum_job_ir_actions_server
+#: model:ir.cron,cron_name:hr_employee_extended_werp.autovacuum_job
+#: model:ir.cron,name:hr_employee_extended_werp.autovacuum_job
+msgid "Check update status of employee"
+msgstr "Verificar el estado de actualización del empleado"
+
+#. module: hr_employee_extended_werp
+#: model:ir.model,name:hr_employee_extended_werp.model_res_config_settings
+msgid "Config Settings"
+msgstr "Opciones de Configuración"
+
+#. module: hr_employee_extended_werp
+#: model:ir.model.fields,field_description:hr_employee_extended_werp.field_report_employee_wizard__contact_ids
+msgid "Contacts"
+msgstr "Contactos"
+
+#. module: hr_employee_extended_werp
+#: model:ir.model.fields,field_description:hr_employee_extended_werp.field_animal_pet__create_uid
+#: model:ir.model.fields,field_description:hr_employee_extended_werp.field_animal_race__create_uid
+#: model:ir.model.fields,field_description:hr_employee_extended_werp.field_animal_type__create_uid
+#: model:ir.model.fields,field_description:hr_employee_extended_werp.field_report_employee_wizard__create_uid
+#: model:ir.model.fields,field_description:hr_employee_extended_werp.field_report_model_config__create_uid
+#: model:ir.model.fields,field_description:hr_employee_extended_werp.field_report_sub_model_field_config__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: hr_employee_extended_werp
+#: model:ir.model.fields,field_description:hr_employee_extended_werp.field_animal_pet__create_date
+#: model:ir.model.fields,field_description:hr_employee_extended_werp.field_animal_race__create_date
+#: model:ir.model.fields,field_description:hr_employee_extended_werp.field_animal_type__create_date
+#: model:ir.model.fields,field_description:hr_employee_extended_werp.field_report_employee_wizard__create_date
+#: model:ir.model.fields,field_description:hr_employee_extended_werp.field_report_model_config__create_date
+#: model:ir.model.fields,field_description:hr_employee_extended_werp.field_report_sub_model_field_config__create_date
+msgid "Created on"
+msgstr "Creado el"
+
+#. module: hr_employee_extended_werp
+#: model:ir.model.fields,field_description:hr_employee_extended_werp.field_animal_pet__dob
+msgid "Date of birth"
+msgstr "Fecha de nacimiento"
+
+#. module: hr_employee_extended_werp
+#: model:ir.model.fields,field_description:hr_employee_extended_werp.field_animal_race__description
+#: model:ir.model.fields,field_description:hr_employee_extended_werp.field_animal_type__description
+msgid "Description"
+msgstr "Descripción"
+
+#. module: hr_employee_extended_werp
+#: model:ir.model.fields,field_description:hr_employee_extended_werp.field_animal_pet__display_name
+#: model:ir.model.fields,field_description:hr_employee_extended_werp.field_animal_race__display_name
+#: model:ir.model.fields,field_description:hr_employee_extended_werp.field_animal_type__display_name
+#: model:ir.model.fields,field_description:hr_employee_extended_werp.field_report_employee_wizard__display_name
+#: model:ir.model.fields,field_description:hr_employee_extended_werp.field_report_model_config__display_name
+#: model:ir.model.fields,field_description:hr_employee_extended_werp.field_report_sub_model_field_config__display_name
+msgid "Display Name"
+msgstr "Nombre mostrado"
+
+#. module: hr_employee_extended_werp
+#: model_terms:ir.ui.view,arch_db:hr_employee_extended_werp.res_config_settings_view_form_hr
+msgid "Employee update status Cron."
+msgstr "Estado de actualización del empleado Cron"
+
+#. module: hr_employee_extended_werp
+#: model:ir.model.fields,field_description:hr_employee_extended_werp.field_report_employee_wizard__employee_ids
+msgid "Employees"
+msgstr "Empleados"
+
+#. module: hr_employee_extended_werp
+#: model_terms:ir.ui.view,arch_db:hr_employee_extended_werp.report_employee_wizard_view
+msgid "Export Data"
+msgstr "Exportar datos"
+
+#. module: hr_employee_extended_werp
+#: model:ir.model.fields,field_description:hr_employee_extended_werp.field_report_sub_model_field_config__field_id
+msgid "Field"
+msgstr "Campo"
+
+#. module: hr_employee_extended_werp
+#: model:ir.model.fields,field_description:hr_employee_extended_werp.field_report_employee_wizard__field_ids
+#: model:ir.model.fields,field_description:hr_employee_extended_werp.field_report_model_config__field_ids
+#: model_terms:ir.ui.view,arch_db:hr_employee_extended_werp.view_report_model_config_form
+msgid "Fields"
+msgstr "Campos"
+
+#. module: hr_employee_extended_werp
+#: model:ir.model.fields,help:hr_employee_extended_werp.field_report_sub_model_field_config__model_name
+msgid "For relationship fields, the technical name of the target model"
+msgstr "Para campos de relación, el nombre técnico del modelo destino"
+
+#. module: hr_employee_extended_werp
+#: model:ir.ui.menu,name:hr_employee_extended_werp.hr_curriculum_vitae_menu
+msgid "HR Curriculum Vitae"
+msgstr "HR FResumen Hoja de Vida"
+
+#. module: hr_employee_extended_werp
+#: model:ir.model,name:hr_employee_extended_werp.model_hr_employee
+msgid "HR Employee"
+msgstr "HR Empleado"
+
+#. module: hr_employee_extended_werp
+#: model:ir.model.fields,field_description:hr_employee_extended_werp.field_animal_pet__id
+#: model:ir.model.fields,field_description:hr_employee_extended_werp.field_animal_race__id
+#: model:ir.model.fields,field_description:hr_employee_extended_werp.field_animal_type__id
+#: model:ir.model.fields,field_description:hr_employee_extended_werp.field_report_employee_wizard__id
+#: model:ir.model.fields,field_description:hr_employee_extended_werp.field_report_model_config__id
+#: model:ir.model.fields,field_description:hr_employee_extended_werp.field_report_sub_model_field_config__id
+msgid "ID"
+msgstr "ID"
+
+#. module: hr_employee_extended_werp
+#: model:ir.model.fields,field_description:hr_employee_extended_werp.field_animal_pet____last_update
+#: model:ir.model.fields,field_description:hr_employee_extended_werp.field_animal_race____last_update
+#: model:ir.model.fields,field_description:hr_employee_extended_werp.field_animal_type____last_update
+#: model:ir.model.fields,field_description:hr_employee_extended_werp.field_report_employee_wizard____last_update
+#: model:ir.model.fields,field_description:hr_employee_extended_werp.field_report_model_config____last_update
+#: model:ir.model.fields,field_description:hr_employee_extended_werp.field_report_sub_model_field_config____last_update
+msgid "Last Modified on"
+msgstr "Última modificación en"
+
+#. module: hr_employee_extended_werp
+#: model:ir.model.fields,field_description:hr_employee_extended_werp.field_hr_employee__last_update
+msgid "Last Updated"
+msgstr "Última actualización"
+
+#. module: hr_employee_extended_werp
+#: model:ir.model.fields,field_description:hr_employee_extended_werp.field_animal_pet__write_uid
+#: model:ir.model.fields,field_description:hr_employee_extended_werp.field_animal_race__write_uid
+#: model:ir.model.fields,field_description:hr_employee_extended_werp.field_animal_type__write_uid
+#: model:ir.model.fields,field_description:hr_employee_extended_werp.field_report_employee_wizard__write_uid
+#: model:ir.model.fields,field_description:hr_employee_extended_werp.field_report_model_config__write_uid
+#: model:ir.model.fields,field_description:hr_employee_extended_werp.field_report_sub_model_field_config__write_uid
+msgid "Last Updated by"
+msgstr "Última actualización por"
+
+#. module: hr_employee_extended_werp
+#: model:ir.model.fields,field_description:hr_employee_extended_werp.field_animal_pet__write_date
+#: model:ir.model.fields,field_description:hr_employee_extended_werp.field_animal_race__write_date
+#: model:ir.model.fields,field_description:hr_employee_extended_werp.field_animal_type__write_date
+#: model:ir.model.fields,field_description:hr_employee_extended_werp.field_report_employee_wizard__write_date
+#: model:ir.model.fields,field_description:hr_employee_extended_werp.field_report_model_config__write_date
+#: model:ir.model.fields,field_description:hr_employee_extended_werp.field_report_sub_model_field_config__write_date
+msgid "Last Updated on"
+msgstr "Última actualización el"
+
+#. module: hr_employee_extended_werp
+#: model:ir.model.fields,field_description:hr_employee_extended_werp.field_report_employee_wizard__model_id
+#: model:ir.model.fields,field_description:hr_employee_extended_werp.field_report_model_config__model_id
+#: model:ir.model.fields,field_description:hr_employee_extended_werp.field_report_sub_model_field_config__model_id
+msgid "Model"
+msgstr "Modelo"
+
+#. module: hr_employee_extended_werp
+#: model:ir.actions.act_window,name:hr_employee_extended_werp.report_model_config_act
+#: model:ir.ui.menu,name:hr_employee_extended_werp.menu_report_model_config_form
+msgid "Model / Fields Configuration"
+msgstr "Configuración de modelo / campos"
+
+#. module: hr_employee_extended_werp
+#: model:ir.model.fields,field_description:hr_employee_extended_werp.field_report_employee_wizard__model_name
+#: model:ir.model.fields,field_description:hr_employee_extended_werp.field_report_sub_model_field_config__model_name
+msgid "Model Name"
+msgstr "Nombre del modelo"
+
+#. module: hr_employee_extended_werp
+#: model_terms:ir.ui.view,arch_db:hr_employee_extended_werp.res_config_settings_view_form_hr
+msgid "Month"
+msgstr "Mes"
+
+#. module: hr_employee_extended_werp
+#: model:ir.model.fields,field_description:hr_employee_extended_werp.field_res_config_settings__month
+msgid "Months"
+msgstr "Meses"
+
+#. module: hr_employee_extended_werp
+#: model:ir.model.fields,field_description:hr_employee_extended_werp.field_animal_pet__name
+#: model:ir.model.fields,field_description:hr_employee_extended_werp.field_animal_race__name
+#: model:ir.model.fields,field_description:hr_employee_extended_werp.field_animal_type__name
+#: model:ir.model.fields,field_description:hr_employee_extended_werp.field_report_model_config__name
+msgid "Name"
+msgstr "Nombre"
+
+#. module: hr_employee_extended_werp
+#: model:ir.model.fields,field_description:hr_employee_extended_werp.field_report_employee_wizard__original_model_id
+msgid "Original Model"
+msgstr "Modelo original"
+
+#. module: hr_employee_extended_werp
+#: code:addons/hr_employee_extended_werp/wizard/report_employee_wizard.py:48
+#, python-format
+msgid "Please select any Contacts!"
+msgstr "Por favor seleccione cualquier Contactos!"
+
+#. module: hr_employee_extended_werp
+#: code:addons/hr_employee_extended_werp/wizard/report_employee_wizard.py:46
+#, python-format
+msgid "Please select any Employees!"
+msgstr "Por favor, seleccione cualquier empleado!"
+
+#. module: hr_employee_extended_werp
+#: code:addons/hr_employee_extended_werp/wizard/report_employee_wizard.py:44
+#, python-format
+msgid "Please select any Fields!"
+msgstr "Por favor, seleccione cualquier campo!"
+
+#. module: hr_employee_extended_werp
+#: code:addons/hr_employee_extended_werp/models/hr_employee.py:60
+#, python-format
+msgid "Record update issues"
+msgstr "Grabar problemas de actualización"
+
+#. module: hr_employee_extended_werp
+#: model:ir.ui.menu,name:hr_employee_extended_werp.report_export_main_menu
+#: model:ir.ui.menu,name:hr_employee_extended_werp.report_export_menu
+msgid "Report"
+msgstr "Reporte"
+
+#. module: hr_employee_extended_werp
+#: model:ir.actions.act_window,name:hr_employee_extended_werp.report_employee_wizard_action
+#: model:ir.model,name:hr_employee_extended_werp.model_report_employee_wizard
+#: model_terms:ir.ui.view,arch_db:hr_employee_extended_werp.report_employee_wizard_view
+msgid "Report Employee Wizard"
+msgstr "\\Asistente de informe del empleado"
+
+#. module: hr_employee_extended_werp
+#: model_terms:ir.ui.view,arch_db:hr_employee_extended_werp.view_report_model_config_form
+msgid "Report Model Config"
+msgstr "Informe de configuración del modelo"
+
+#. module: hr_employee_extended_werp
+#: model:ir.model.fields,field_description:hr_employee_extended_werp.field_report_employee_wizard__report_type
+msgid "Report Type"
+msgstr "Tipo de informe"
+
+#. module: hr_employee_extended_werp
+#: model:ir.model.fields,field_description:hr_employee_extended_werp.field_report_sub_model_field_config__sub_field_ids
+msgid "Sub Field"
+msgstr "Subcampo"
+
+#. module: hr_employee_extended_werp
+#: model:ir.model.fields,field_description:hr_employee_extended_werp.field_report_model_config__sub_model_field_ids
+#: model_terms:ir.ui.view,arch_db:hr_employee_extended_werp.view_report_model_config_form
+msgid "Sub Fields"
+msgstr "Subcampos"
+
+#. module: hr_employee_extended_werp
+#: code:addons/hr_employee_extended_werp/models/hr_employee.py:64
+#, python-format
+msgid "There seems a problem in the database:- "
+msgstr "Parece que hay un problema en la base de datos: -"
+
+#. module: hr_employee_extended_werp
+#: model:ir.model.fields,field_description:hr_employee_extended_werp.field_hr_employee__update_info
+msgid "Update Info?"
+msgstr "¿Actualizar información?"
+
+#. module: hr_employee_extended_werp
+#: model:ir.model,name:hr_employee_extended_werp.model_report_model_config
+msgid "report.model.config"
+msgstr "report.model.config"
+
+#. module: hr_employee_extended_werp
+#: model:ir.model,name:hr_employee_extended_werp.model_report_sub_model_field_config
+msgid "report.sub.model.field.config"
+msgstr "report.sub.model.field.config"

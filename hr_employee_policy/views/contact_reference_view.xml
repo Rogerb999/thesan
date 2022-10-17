@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<odoo>
+
+    <!-- Contact Reference tree view-->
+    <record id="contact_reference_tree" model="ir.ui.view">
+        <field name="name">Contact Reference Tree</field>
+        <field name="model">contact.reference</field>
+        <field name="arch" type="xml">
+            <tree string="Contact Reference">
+                <field name="contact"/>
+                <field name="partner_id"/>
+                <field name="relation"/>
+                <field name="employee_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Contact Reference from view-->
+    <record id="contact_reference_form" model="ir.ui.view">
+        <field name="name">Contact Reference Tree</field>
+        <field name="model">contact.reference</field>
+        <field name="arch" type="xml">
+            <form string="Contact Reference">
+                <sheet>
+                    <group col="4">
+                        <field name="contact"/>
+                        <field name="partner_id"/>
+                        <field name="relation"/>
+                        <field name="employee_id"
+                               options="{'no_create': True, 'no_create_edit': True}"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Contact Reference Action-->
+    <record model="ir.actions.act_window"
+            id="contact_reference_action">
+        <field name="name">Contact Reference</field>
+        <field name="res_model">contact.reference</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Contact Reference Menu-->
+    <menuitem
+        id="contact_reference_menu"
+        action="contact_reference_action"
+        parent="hr.menu_human_resources_configuration"/>
+
+</odoo>

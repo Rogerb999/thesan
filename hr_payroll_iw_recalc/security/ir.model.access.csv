@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_hr_payslip_iw_recalc,access_hr_payslip_iw_recalc,model_hr_payslip_iw_recalc,base.group_user,1,1,1,1
+access_hr_recalc_lines,access_hr_recalc_lines,model_hr_recalc_lines,base.group_user,1,1,1,1
+access_hr_rec_input_rf,access_hr_rec_input_rf,model_hr_rec_input_rf,base.group_user,1,1,1,1
+access_hr_rec_input_not_rf,access_hr_rec_input_not_rf,model_hr_rec_input_not_rf,base.group_user,1,1,1,1
+access_hr_rec_deductions_rf,access_hr_rec_deductions_rf,model_hr_rec_deductions_rf,base.group_user,1,1,1,1

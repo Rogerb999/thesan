@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="0">
+        <record id="resource_calendar_minute" model="resource.calendar">
+            <field name="name">Minuto</field>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="hours_per_day">8</field>
+            <field name="attendance_ids" 
+                eval="[
+                    (0, 0, {'name': 'Lunes', 'dayofweek': '0', 'hour_from': 8, 'hour_to': 17, 'day_period': 'morning'}),
+                ]"
+            />
+        </record>
+
+        <record id="resource_calendar_hour" model="resource.calendar">
+            <field name="name">Hora</field>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="hours_per_day">8</field>
+            <field name="attendance_ids" 
+                eval="[
+                    (0, 0, {'name': 'Lunes', 'dayofweek': '0', 'hour_from': 8, 'hour_to': 17, 'day_period': 'morning'}),
+                ]"
+            />
+        </record>
+
+        <record id="resource_calendar_halfday" model="resource.calendar">
+            <field name="name">Medio Día</field>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="hours_per_day">8</field>
+            <field name="attendance_ids" 
+                eval="[
+                    (0, 0, {'name': 'Lunes', 'dayofweek': '0', 'hour_from': 8, 'hour_to': 17, 'day_period': 'morning'}),
+                ]"
+            />
+        </record>
+
+        <record id="resource_calendar_day" model="resource.calendar">
+            <field name="name">Día</field>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="hours_per_day">8</field>
+            <field name="attendance_ids" 
+                eval="[
+                    (0, 0, {'name': 'Lunes', 'dayofweek': '0', 'hour_from': 8, 'hour_to': 17, 'day_period': 'morning'}),
+                ]"
+            />
+        </record>
+
+        <record id="resource_calendar_three_days" model="resource.calendar">
+            <field name="name">3 Días</field>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="hours_per_day">8</field>
+            <field name="attendance_ids" 
+                eval="[
+                    (0, 0, {'name': 'Lunes', 'dayofweek': '0', 'hour_from': 8, 'hour_to': 17, 'day_period': 'morning'}),
+                    (0, 0, {'name': 'Martes', 'dayofweek': '1', 'hour_from': 8, 'hour_to': 17, 'day_period': 'morning'}),
+                    (0, 0, {'name': 'Miércoles', 'dayofweek': '2', 'hour_from': 8, 'hour_to': 17, 'day_period': 'morning'}),
+                ]"
+            />
+        </record>
+
+        <record id="resource_calendar_custom" model="resource.calendar">
+            <field name="name">Semanal 40 Hrs</field>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="hours_per_day">8</field>
+            <field name="attendance_ids" 
+                eval="[
+                    (0, 0, {'name': 'Lunes', 'dayofweek': '0', 'hour_from': 8, 'hour_to': 17, 'day_period': 'morning'}),
+                    (0, 0, {'name': 'Martes', 'dayofweek': '1', 'hour_from': 8, 'hour_to': 17, 'day_period': 'morning'}),
+                    (0, 0, {'name': 'Miércoles', 'dayofweek': '2', 'hour_from': 8, 'hour_to': 17, 'day_period': 'morning'}),
+                    (0, 0, {'name': 'Jueves', 'dayofweek': '3', 'hour_from': 8, 'hour_to': 17, 'day_period': 'morning'}),
+                    (0, 0, {'name': 'Viernes', 'dayofweek': '4', 'hour_from': 8, 'hour_to': 17, 'day_period': 'morning'}),
+                ]"
+            />
+        </record>
+
+        <record id="resource_calendar_week_48" model="resource.calendar">
+            <field name="name">Semanal 48 Hrs</field>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="hours_per_day">8</field>
+            <field name="attendance_ids" 
+                eval="[
+                    (0, 0, {'name': 'Lunes', 'dayofweek': '0', 'hour_from': 8, 'hour_to': 17, 'day_period': 'morning'}),
+                    (0, 0, {'name': 'Martes', 'dayofweek': '1', 'hour_from': 8, 'hour_to': 17, 'day_period': 'morning'}),
+                    (0, 0, {'name': 'Miércoles', 'dayofweek': '2', 'hour_from': 8, 'hour_to': 17, 'day_period': 'morning'}),
+                    (0, 0, {'name': 'Jueves', 'dayofweek': '3', 'hour_from': 8, 'hour_to': 17, 'day_period': 'morning'}),
+                    (0, 0, {'name': 'Viernes', 'dayofweek': '4', 'hour_from': 8, 'hour_to': 17, 'day_period': 'morning'}),
+                    (0, 0, {'name': 'Sábado', 'dayofweek': '5', 'hour_from': 8, 'hour_to': 17, 'day_period': 'morning'}),
+                ]"
+            />
+        </record>
+    </data>
+</odoo>

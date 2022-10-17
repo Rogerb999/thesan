@@ -1,0 +1,903 @@
+<?xml version="1.0"?>
+<odoo>
+
+    <record model="ir.ui.view" id="view_hr_deductions_employee_form">
+        <field name="name">hr.deductions.employee.form</field>
+        <field name="model">hr.deductions.rf.employee</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Deductions Employee">
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="toggle_active" type="object"
+                                class="oe_stat_button" icon="fa-archive">
+                            <field name="active" widget="boolean_button"
+                                   options='{"terminology": "archive"}'/>
+                        </button>
+                    </div>
+                    <group col="2" colspan="2">
+                        <field name="name"/>
+                    </group>
+                    <group col="4" colspan="2">
+                        <field name="hr_deduction_type_id"/>
+                        <field name="hr_deduction_id"
+                               domain="[('type_id','=',[hr_deduction_type_id])]"/>
+                        <field name="value"/>
+                        <field name="employee_id"
+                               options="{'no_create': True, 'no_create_edit': True}"/>
+                        <field name="date_end"/>
+                        <field name="obtain_plines"/>
+                        <field name="rule_id"
+                               attrs="{'invisible':[('obtain_plines','!=',True)]}"/>
+                        <field name="description"/>
+    	       	    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids"
+                           widget="mail_followers"/>
+                    <field name="activity_ids"
+                           widget="mail_activity"/>
+                    <field name="message_ids"
+                           widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_hr_deductions_employee_tree">
+        <field name="name">hr.deductions.employee.tree</field>
+        <field name="model">hr.deductions.rf.employee</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="Deductions Employee">
+                <field name="name"/>
+                <field name="hr_deduction_type_id"/>
+                <field name="hr_deduction_id"/>
+                <field name="value"/>
+                <field name="start_date"/>
+                <field name="end_date"/>
+                <field name="date_end"/>
+                <field name="employee_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_hr_deductions_employee_search" model="ir.ui.view">
+        <field name="name">view.hr.deductions.employee.search</field>
+        <field name="model">hr.deductions.rf.employee</field>
+        <field name="arch" type="xml">
+            <search string="Hr Novelty">
+                <field name="date_end"/>
+                <group string="Group By">
+                    <filter string="Date End" name="grp_date_end"
+                            context="{'group_by':'date_end'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_hr_deduction_employee">
+        <field name="name">Deductions Employee</field>
+        <field name="res_model">hr.deductions.rf.employee</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="search_view_id"
+               ref="view_hr_deductions_employee_search"/>
+    </record>
+
+    <menuitem name="Deductions Employee"
+              id="menu_hr_deductions_Employee"
+              action="action_hr_deduction_employee"
+              parent="hr.menu_human_resources_configuration"
+              sequence="40"/>
+
+    <record model="ir.ui.view"
+            id="view_hr_deductions_accumulate_employee_form">
+        <field name="name">hr.deductions.accumulate.rf.form</field>
+        <field name="model">hr.deduction.accumulate.rf</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Deductions Accumulate Employee">
+                <sheet>
+                    <group col="2" colspan="2">
+                        <field name="name"/>
+                    </group>
+                    <group col="4" colspan="2">
+                        <field name="year"/>
+                        <field name="employee_id"
+                               options="{'no_create': True, 'no_create_edit': True}"/>
+                        <field name="accumulate"/>
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids"
+                           widget="mail_followers"/>
+                    <field name="activity_ids"
+                           widget="mail_activity"/>
+                    <field name="message_ids"
+                           widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view"
+            id="view_hr_deductions_accumulate_employee_tree">
+        <field name="name">hr.deduction.accumulate.rf.tree</field>
+        <field name="model">hr.deduction.accumulate.rf</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="Deductions Accumulate Employee">
+                <field name="name"/>
+                <field name="year"/>
+                <field name="employee_id"/>
+                <field name="accumulate"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window"
+            id="action_hr_deduction_accumulate_employee">
+        <field name="name">Deductions Accumulate Employee</field>
+        <field name="res_model">hr.deduction.accumulate.rf</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem name="Deductions Accumulate Employee"
+              id="menu_hr_deductions_accumulate_Employee"
+              action="action_hr_deduction_accumulate_employee"
+              parent="hr.menu_human_resources_configuration"
+              sequence="40"/>
+
+
+    <record model="ir.ui.view" id="view_hr_deduction_form">
+        <field name="name">hr.deduction.form</field>
+        <field name="model">hr.deduction.rf</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Deductions">
+                <sheet>
+                    <group col="4" colspan="2">
+                        <field name="active"/>
+                        <div/>
+                        <field name="name"/>
+                        <field name="type_id"/>
+                        <field name="max_uvt"/>
+                        <field name="max_percentage"/>
+                        <field name="max_value"/>
+                        <field name="max_acumulate"/>
+                        <field name="dependent"/>
+                        <field name="description"/>
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids"
+                           widget="mail_followers"/>
+                    <field name="activity_ids" widget="mail_activity"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_hr_deduction_tree">
+        <field name="name">hr.deduction.tree</field>
+        <field name="model">hr.deduction.rf</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="Deductions">
+                <field name="name"/>
+                <field name="type_id"/>
+                <field name="max_uvt"/>
+                <field name="max_percentage"/> 
+                <field name="max_value"/>
+                <field name="max_acumulate"/>
+                <field name="description"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_hr_deduction">
+        <field name="name">Deduction</field>
+        <field name="res_model">hr.deduction.rf</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+      
+    <menuitem name="Deductions"
+              id="menu_hr_deductions"
+              action="action_hr_deduction"
+              parent="hr.menu_human_resources_configuration"
+              sequence="41"/>
+
+
+    <record model="ir.ui.view" id="view_hr_deduction_type_form">
+        <field name="name">hr.deduction.type.form</field>
+        <field name="model">hr.deduction.type.rf</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Deductions Type">
+                <sheet>
+                    <group col="4" colspan="2">
+                        <field name="name"/>
+                        <field name="active"/>
+                        <field name="end_date"/>
+                        <field name="date_inactive"
+                               force_save="1"/>
+                        <field name="sequence"/>
+                        <field name="create_date"/>
+                        <field name="description"/>
+                        <field name="max_uvt"/>
+                        <field name="max_value"/>
+                        <field name="max_acumulate"/>
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids"
+                           widget="mail_followers"/>
+                    <field name="activity_ids" widget="mail_activity"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_hr_deduction_type_tree">
+        <field name="name">hr.deduction.type.tree</field>
+        <field name="model">hr.deduction.type.rf</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="Deductions Type">
+                <field name="name"/>
+                <field name="description"/>
+                <field name="sequence"/>
+                <field name="create_date"/>
+                <field name="end_date"/>
+                <field name="date_inactive"/>
+                <field name="max_uvt"/>
+                <field name="max_value"/>
+                <field name="max_acumulate"/>
+                <field name="active"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_hr_deduction_type">
+        <field name="name">Deduction Type</field>
+        <field name="res_model">hr.deduction.type.rf</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem name="Deduction Type"
+              id="menu_hr_deduction_type"
+              action="action_hr_deduction_type"
+              parent="hr.menu_human_resources_configuration"
+              sequence="42"/>
+
+
+    <record model="ir.ui.view" id="view_hr_value_uvt_rf_form">
+        <field name="name">hr.value.uvt.form</field>
+        <field name="model">hr.value.uvt.rf</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Values UVT">
+                <sheet>
+                    <group col="4" colspan="2">
+                        <field name="name"/>
+                        <field name="status"
+                               widget="boolean_toggle"/>
+                        <field name="value"/>
+                    </group>
+                    <group col="4" colspan="2">
+                        <field name="start_date"/>
+                        <field name="end_date"/>
+                    </group>
+                    <group col="4" colspan="2">
+                        <field name="percentage_renting_exempt"/>
+                        <field name="max_value_renting_exempt"/>
+                        <field name="max_uvt_deduction_renting_exempt"/>
+                        <field name="percentage_max_deduction"/>
+                    </group>
+                    <notebook>
+                        <page name="range_valueuvt" string="Range Value UVT">
+                            <field name="range_retention_ids">
+                                <tree string="Range Rentention"
+                                      editable="bottom">
+                                    <field name="value_uvt_max"/>
+                                    <field name="uvt_discount"/>
+                                    <field name="marginal_rate"/>
+                                    <field name="uvt_additional"/>
+                                    <field name="description"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page name="input_not_rf" string="Input Not RF">
+                            <field name="rule_ids">
+                                <tree string="Input Not RF"
+                                      editable="bottom">
+                                    <field name="name"/>
+                                    <field name="rule_id"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page name="input_rf" string="Input RF">
+                            <field name="irf_rule_ids">
+                                <tree string="Input RF"
+                                      editable="bottom">
+                                    <field name="name"/>
+                                    <field name="rule_id"/>
+                                    <field name="exempt_rm_id"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids"
+                           widget="mail_followers"/>
+                    <field name="activity_ids" widget="mail_activity"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+
+    <record model="ir.ui.view" id="view_hr_value_uvt_rf_tree">
+        <field name="name">hr.value.uvt.tree</field>
+        <field name="model">hr.value.uvt.rf</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="Values UVT">
+                <field name="name"/>
+                <field name="value"/>
+                <field name="start_date"/>
+                <field name="end_date"/>
+                <field name="status"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_hr_value_uvt_rf_search" model="ir.ui.view">
+        <field name="name">hr.value.uvt.rf.search</field>
+        <field name="model">hr.value.uvt.rf</field>
+        <field name="arch" type="xml">
+            <search string="Value UVT">
+                <field name="name"/>
+                <field name="start_date"/>
+                <field name="end_date"/>
+                <group string="Group By">
+                    <filter string="Name" name="name"
+                            context="{'group_by':'name'}"/>
+                    <filter string="Start Date" name="start_date"
+                            context="{'group_by':'start_date'}"/>
+                    <filter string="End Date" name="end_date"
+                            context="{'group_by':'end_date'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_hr_value_uvt_rf">
+        <field name="name">Value UVT</field>
+        <field name="res_model">hr.value.uvt.rf</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="search_view_id" ref="view_hr_value_uvt_rf_search"/>
+    </record>
+
+    <menuitem name="Values UVT"
+              id="menu_hr_value_uvt_rf"
+              action="action_hr_value_uvt_rf"
+              parent="hr_payroll.menu_hr_payroll_configuration"
+              sequence="50"/>
+
+
+    <record id="view_hr_employee_rf_form" model="ir.ui.view">
+        <field name="name">hr.employee.rf.form</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='hr_settings']" position="after">
+                <page name="withholding_income"
+                      string="Withholding Income">
+                    <group col="4" colspan="2">
+                        <field name="retention_method_id"/>
+                        <field name="withholding_2"/>
+                        <field name="is_dependientes"/>
+                    </group>
+                    <field name="deductions_ids">
+                        <tree string="Deductions">
+                            <field name="name"/>
+                            <field name="hr_deduction_type_id"/>
+                            <field name="hr_deduction_id"/>
+                            <field name="value"/>
+                            <field name="date_end"/>
+                        </tree>
+                    </field>
+                    <button string="Calculate Accumulate"
+                            name="calculate_accumulate" type="object"/>
+                    <field name="deductions_accumulate_ids">
+                        <tree string="Accumulate Deductions">
+                            <field name="name"/>
+                            <field name="year"/>
+                            <field name="accumulate"/>
+                        </tree>
+                    </field>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_hr_salary_rule_extended_form" model="ir.ui.view">
+        <field name="name">hr.salary.rule.extended.form</field>
+        <field name="model">hr.salary.rule</field>
+        <field name="inherit_id" ref="hr_payroll.hr_salary_rule_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='code']" position="after">
+                <field name="code_sara"/>
+            </xpath>
+        </field>
+    </record>
+
+
+   <record id="view_hr_payslip_rf_form" model="ir.ui.view">
+        <field name="name">Payslip Form rf</field>
+        <field name="model">hr.payslip</field>
+        <field name="inherit_id" ref="hr_payroll.view_hr_payslip_form"/>
+        <field name="arch" type="xml">
+            <notebook position="inside">
+                <page name="withholding_income" string="Withholding Income">
+                    <separator string="Percentage Retention" colspan="2"/>
+                    <field name="percentage_renting_calculate"/>
+                    <separator string="Input Income" colspan="4"/>
+                    <field name="ps_input_rf_ids"
+                           attrs="{'readonly':[('state', '!=', 'draft')]}">
+                        <tree string="Input RF">
+                            <field name="name"/>
+                            <field name="rule_id"/>
+                            <field name="sequence"/>
+                            <field name="value_final"/>
+                        </tree>
+                    </field>
+                    <group col="4" colspan="2">
+                        <field name="inputs_rent"/>
+                    </group>
+                    <separator string="Exempt Income" colspan="4"/>
+                    <field name="ps_input_no_rf_ids"
+                           attrs="{'readonly':[('state', '!=', 'draft')]}">
+                        <tree string="Input no RF">
+                            <field name="name"/>
+                            <field name="rule_id"/>
+                            <field name="sequence"/>
+                            <field name="value_final"/>
+                        </tree>
+                    </field>
+                    <group>
+                        <field name="sum_input_no_rf"/>
+                    </group>
+                    <group col="4" colspan="2">
+                        <field name="subtotal_1"/>
+                    </group>
+                    <separator string="Deductions" colspan="4"/>
+                    <field name="ps_deductions_ids"
+                           attrs="{'readonly':[('state', '!=', 'draft')]}">
+                        <tree string="Deductions">
+                            <field name="hr_deductions_rf_employee_id"/>
+                            <field name="hr_deduction_type_id"/>
+                            <field name="sequence"/>
+                            <field name="value_reference"/>
+                            <field name="value_final"/>
+                        </tree>
+                    </field>
+                    <group col="4" colspan="2">
+                        <field name="sum_deductions"/>
+                    </group>
+                    <group col="4" colspan="2">
+                        <field name="subtotal_2"/>
+                    </group>
+                    <separator string="Renting Additional" colspan="4"/>
+                    <field name="ps_renting_additional_ids"
+                           attrs="{'readonly':[('state', '!=', 'draft')]}">
+                        <tree string="Renting Additional">
+                            <field name="hr_deductions_rf_employee_id"/>
+                            <field name="hr_deduction_type_id"/>
+                            <field name="sequence"/>
+                            <field name="value_reference"/>
+                            <field name="value_final"/>
+                        </tree>
+                    </field>
+                    <group col="4" colspan="2">
+                        <field name="sum_rent_add"/>
+                    </group>
+                    <group col="4" colspan="2">
+                        <field name="total_renting_excempt"/>
+                    </group>
+                    <group col="4" colspan="2">
+                        <field name="subtotal_3"/>
+                        <field name="subtotal_3_cont"/>
+                    </group>
+                    <group col="4" colspan="2">
+                        <field name="calculate_renting_exempt"/>
+                        <field name="calculate_renting_exempt_cont"/>
+                    </group>
+                    <group col="4" colspan="2">
+                        <field name="subtotal_4"/>
+                        <field name="subtotal_4_cont"/>
+                    </group>
+                    <separator string="Total Deductions Renting"
+                               colspan="4"/>
+                    <group col="4" colspan="2">
+                        <field name="total_deductions_renting"/>
+                        <field name="total_deductions_renting_cont"/>
+                    </group>
+                    <separator string="Total Base Retention"/>
+                    <group col="4" colspan="2">
+                        <field name="total_base_retention"/>
+                    </group>
+                    <separator string="Base Income Retention" colspan="4"/>
+                    <group col="4" colspan="2">
+                        <field name="base_income_retention"/>
+                        <field name="base_income_retention_cont"/>
+                    </group>
+                    <separator string="Income Represented UVT" colspan="4"/>
+                    <group col="4" colspan="2">
+                        <field name="income_represented_uvt"/>
+                        <field name="income_represented_uvt_cont"/>
+                    </group>
+                    <separator string="Total Retention Income" colspan="4"/>
+                    <group col="4" colspan="2">
+                        <field name="total_retention_income"/>
+                        <field name="total_retention_income_cont"/>
+                    </group>
+                </page>
+            </notebook>
+
+        </field>
+    </record>
+
+
+    <record model="ir.ui.view" id="view_hr_payslip_deductions_rf_form">
+        <field name="name">hr.payslip.deductions.rf.form</field>
+        <field name="model">hr.payslip.deductions.rf</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Deductions payslip">
+                <sheet>
+                    <group col="4" colspan="2">
+                        <field name="hr_deductions_rf_employee_id"/>
+                        <field name="hr_deduction_type_id"/>
+                        <field name="sequence"/>
+                        <field name="value_reference"/>
+                        <field name="value_final"/>
+                        <field name="description"/>
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids"
+                           widget="mail_followers"/>
+                    <field name="activity_ids" widget="mail_activity"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_hr_payslip_deductions_rf_tree">
+        <field name="name">hr.payslip.deductions.rf.tree</field>
+        <field name="model">hr.payslip.deductions.rf</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="Deductions payslip">
+                <field name="hr_deductions_rf_employee_id"/>
+                <field name="hr_deduction_type_id"/>
+                <field name="sequence"/>
+                <field name="value_reference"/>
+                <field name="value_final"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window"
+            id="action_hr_payslip_deductions_rf">
+        <field name="name">Deduction payslip</field>
+        <field name="res_model">hr.payslip.deductions.rf</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.ui.view" id="view_hr_payslip_input_not_rf_form">
+        <field name="name">hr.payslip.input.not.rf.form</field>
+        <field name="model">hr.payslip.input.not.rf</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Input Not Payslip">
+                <sheet>
+                    <group col="4" colspan="2">
+                        <field name="name"/>
+                        <field name="rule_id"/>
+                        <field name="sequence"/>
+                        <field name="value_final"/>
+                        <field name="description"/>
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids"
+                           widget="mail_followers"/>
+                    <field name="activity_ids" widget="mail_activity"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_hr_payslip_input_not_rf_tree">
+        <field name="name">hr.payslip.input.not.rf.tree</field>
+        <field name="model">hr.payslip.input.not.rf</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="Input Not RF">
+                <field name="name"/>
+                <field name="rule_id"/>
+                <field name="sequence"/>
+                <field name="value_final"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_hr_payslip_input_not_rf">
+        <field name="name">Input Not RF</field>
+        <field name="res_model">hr.payslip.input.not.rf</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.ui.view" id="view_hr_payslip_input_rf_form">
+        <field name="name">hr.payslip.input.rf.form</field>
+        <field name="model">hr.payslip.input.rf</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Input Payslip">
+                <sheet>
+                    <group col="4" colspan="2">
+                        <field name="name"/>
+                        <field name="rule_id"/>
+                        <field name="sequence"/>
+                        <field name="value_final"/>
+                        <field name="description"/>
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids"
+                           widget="mail_followers"/>
+                    <field name="activity_ids" widget="mail_activity"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_hr_payslip_input_rf_tree">
+        <field name="name">hr.payslip.input.rf.tree</field>
+        <field name="model">hr.payslip.input.rf</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="Input RF">
+                <field name="name"/>
+                <field name="rule_id"/>
+                <field name="sequence"/>
+                <field name="value_final"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_hr_payslip_input_rf">
+        <field name="name">Input RF</field>
+        <field name="res_model">hr.payslip.input.rf</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.ui.view" id="view_hr_value_uvt_range_rf_form">
+        <field name="name">hr.value.uvt.range.rf.form</field>
+        <field name="model">hr.value.uvt.range.rf</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Range UVT">
+                <sheet>
+                    <group col="4" colspan="2">
+                        <field name="value_uvt_max"/>
+                        <field name="uvt_discount"/>
+                        <field name="marginal_rate"/>
+                        <field name="uvt_additional"/>
+                        <field name="description"/>
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids"
+                           widget="mail_followers"/>
+                    <field name="activity_ids" widget="mail_activity"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_hr_value_uvt_range_rf_tree">
+        <field name="name">hr.value.uvt.range.rf.tree</field>
+        <field name="model">hr.value.uvt.range.rf</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="Range UVT">
+                <field name="value_uvt_max"/>
+                <field name="uvt_discount"/>
+                <field name="marginal_rate"/>
+                <field name="uvt_additional"/>
+                <field name="description"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_hr_value_uvt_range_rf">
+        <field name="name">Range UVT</field>
+        <field name="res_model">hr.value.uvt.range.rf</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem name="Range UVT"
+              id="menu_hr_value_uvt_range_rf"
+              action="action_hr_value_uvt_range_rf"
+              parent="hr_payroll.menu_hr_payroll_configuration"
+              sequence="51"/>
+
+    <record model="ir.ui.view" id="view_hr_value_uvt_input_not_rf_form">
+        <field name="name">hr.value.uvt.input.not.rf.form</field>
+        <field name="model">hr.value.uvt.input.not.rf</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Input Not RF">
+                <sheet>
+                    <group col="4" colspan="2">
+                        <field name="name"/>
+                        <field name="rule_id"/>
+                        <field name="sequence"/>
+                        <field name="hr_uvtvalue_id"/>
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids"
+                           widget="mail_followers"/>
+                    <field name="activity_ids" widget="mail_activity"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_hr_value_uvt_input_not_rf_tree">
+        <field name="name">hr.value.uvt.input.not.rf.tree</field>
+        <field name="model">hr.value.uvt.input.not.rf</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="Input Not RF">
+                <field name="name"/>
+                <field name="rule_id"/>
+                <field name="sequence"/>
+                <field name="hr_uvtvalue_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window"
+            id="action_hr_value_uvt_input_not_rf">
+        <field name="name">Input Not RF</field>
+        <field name="res_model">hr.value.uvt.input.not.rf</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem name="Input Not RF"
+              id="menu_hr_value_uvt_input_not_rf"
+              action="action_hr_value_uvt_input_not_rf"
+              parent="hr_payroll.menu_hr_payroll_configuration"
+              sequence="52"/>
+
+    <record model="ir.ui.view" id="view_hr_value_uvt_input_not_rf_form">
+        <field name="name">hr.value.uvt.input.rf.form</field>
+        <field name="model">hr.value.uvt.input.rf</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Input RF">
+                <sheet>
+                    <group col="4" colspan="2">
+                        <field name="name"/>
+                        <field name="rule_id"/>
+                        <field name="sequence"/>
+                        <field name="hr_uvtvalue_id"/>
+                        <field name="exempt_rm_id"/>
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids"
+                           widget="mail_followers"/>
+                    <field name="activity_ids" widget="mail_activity"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_hr_value_uvt_input_rf_tree">
+        <field name="name">hr.value.uvt.input.rf.tree</field>
+        <field name="model">hr.value.uvt.input.rf</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="Input RF">
+                <field name="name"/>
+                <field name="rule_id"/>
+                <field name="sequence"/>
+                <field name="hr_uvtvalue_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window"
+            id="action_hr_value_uvt_input_rf">
+        <field name="name">Input RF</field>
+        <field name="res_model">hr.value.uvt.input.rf</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem name="Input RF"
+              id="menu_hr_value_uvt_input_rf"
+              action="action_hr_value_uvt_input_rf"
+              parent="hr_payroll.menu_hr_payroll_configuration"
+              sequence="53"/>
+
+    <record model="ir.ui.view" id="view_hr_retention_method_rf_form">
+        <field name="name">hr_retention_method_rf_form</field>
+        <field name="model">hr.retention.method.rf</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Method RF">
+                <sheet>
+                    <group col="4" colspan="2">
+                        <field name="name"/>
+                        <field name="description"/>
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids"
+                           widget="mail_followers"/>
+                    <field name="activity_ids" widget="mail_activity"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_hr_retention_method_rf_tree">
+        <field name="name">hr_retention_method_rf_tree</field>
+        <field name="model">hr.retention.method.rf</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="Withholding Method">
+                <field name="name"/>
+                <field name="description"/>
+            </tree>
+        </field>            
+    </record>
+
+    <record model="ir.actions.act_window"
+            id="action_hr_retention_method_rf">
+        <field name="name">withholding_method</field>
+        <field name="res_model">hr.retention.method.rf</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+</odoo>

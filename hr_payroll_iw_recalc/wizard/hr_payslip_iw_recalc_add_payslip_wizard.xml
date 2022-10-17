@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2020-TODAY WSuite Products <wsuite-products@wsuite.com>
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html). -->
+
+<odoo>
+
+    <record id="hr_payslip_iw_recalc_add_payslip_wizard_form"
+            model="ir.ui.view">
+        <field name="name">hr.payslip.iw.recalc.add.payslip.wizard.form</field>
+        <field name="model">hr.payslip.iw.recalc.add.payslip.wizard</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <group colspan="4" col="4">
+                        <field name="date_start"/>
+                        <field name="date_end"/>
+                        <field name="employee_ids"
+                               readonly="1" force_save="1"
+                               widget="many2many_tags"/>
+                    </group>
+                </group>
+                <footer>
+                    <button name="create_payslips" type="object" string="Accept"
+                            class="o_highlight"/>
+                    <button string="Cancel" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_hr_payslip_iw_recalc_add_payslip_wizard"
+            model="ir.actions.act_window">
+        <field name="name">Create Payslip</field>
+        <field name="res_model">hr.payslip.iw.recalc.add.payslip.wizard</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+</odoo>

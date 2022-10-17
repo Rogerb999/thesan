@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="contract_fijo">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="doc">
+                    <t t-call="web.external_layout">
+                        <div class="page" t-foreach="docs" t-as="object" style="page-break-after:always;padding-right:60px;padding-left:60px;">
+                            <div class="oe_structure"/>
+                            <br/>
+                            <h6 align="center"><b>CONTRATO DE TRABAJO A TÉRMINO FIJO</b></h6>
+                            <br/>
+                            <t t-set="employee_id" t-value="doc.employee_id"/>
+                            <t t-set="company_id" t-value="doc.company_id"/>
+                            <table class="table table-sm borderless center"
+                                   style="font-size: 14px;">
+                                <tr>
+                                    <td width="45%"><b>NOMBRE DEL EMPLEADOR</b></td>
+                                    <td width="3%">:</td>
+                                    <td><t t-esc="company_id.name"/></td>
+                                </tr>
+                                <tr>
+                                    <td><b>NOMBRE REPRESENTANTE EMPRESA</b></td>
+                                    <td width="3%">:</td>
+                                    <td>
+                                        <t t-esc="company_id.legal_representative_id.name"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><b>C. C.REPRESENTANTE EMPRESA</b></td>
+                                    <td width="3%">:</td>
+                                    <td>
+                                        <t t-esc="company_id.legal_representative_id.identification_id"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><b>DIRECCION DEL EMPLEADOR</b></td>
+                                    <td width="3%">:</td>
+                                    <td><t t-esc="company_id.street"/></td>
+                                </tr>
+                                <tr>
+                                    <td><b>NOMBRE DEL TRABAJADOR</b></td>
+                                    <td width="3%">:</td>
+                                    <td><t t-esc="employee_id.name"/></td>
+                                </tr>
+                                <tr>
+                                    <td><b>C.C. DEL TRABAJADOR</b></td>
+                                    <td width="3%">:</td>
+                                    <td><t t-esc="employee_id.identification_id"/></td>
+                                </tr>
+                                <tr>
+                                    <td><b>DIRECCIÓN DEL TRABAJADOR</b></td>
+                                    <td width="3%">:</td>
+                                    <td>
+                                        <t t-esc="employee_id.address_home_id.street"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><b>FECHA DE INGRESO</b></td>
+                                    <td width="3%">:</td>
+                                    <td><t t-esc="doc.date_start"/></td>
+                                </tr>
+                                <tr>
+                                    <td><b>CARGO</b></td>
+                                    <td width="3%">:</td>
+                                    <td><t t-esc="doc.job_id.name"/></td>
+                                </tr>
+                                <tr>
+                                    <td><b>SALARIO BASICO</b></td>
+                                    <td width="3%">:</td>
+                                    <td>
+                                        <t t-esc="'%.2f' % (doc.fix_wage_amount)"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><b>BENEFICIO NO SALARIAL</b></td>
+                                    <td width="3%">:</td>
+                                    <td><t t-esc="'%.2f' % (doc.flex_wage_amount)"/></td>
+                                </tr>
+                            </table>
+                            <table class="table table-sm borderless center"
+                                   style="font-size: 14px;">
+                                <tr>
+                                    <td colspan="3">
+                                        <b>ESTE BENEFICIO NO SALARIAL SERA DISTRIBUIDO EN LOS SIGUIENTES CONCEPTOS:</b>
+                                    </td>
+                                </tr>
+                                <t t-foreach="doc.flex_wage_ids" t-as="flex_wage_id">
+                                    <tr>
+                                        <td width="45%">
+                                            <b><t t-esc="flex_wage_id.salary_rule_id.name"/></b>
+                                        </td>
+                                        <td width="3%">:</td>
+                                        <td>
+                                            <t t-esc="'%.2f' % (flex_wage_id.amount)"/>
+                                        </td>
+                                    </tr>
+                                </t>
+                            </table>
+                            <br/>
+                            <p class="text-justify" style="font-size: 14px;">
+                                Entre el <b>EMPLEADOR</b> y el <b>TRABAJADOR</b>, de las condiciones indicadas anteriormente, identificados como aparece al pie de sus firmas, se ha celebrado el presente contrato individual de trabajo, el cual se regirá por las siguientes cláusulas: 
+                            </p>
+                            <p class="text-justify" style="font-size: 14px;">
+                                <b>PRIMERA. OBJETO.</b> EL EMPLEADOR contrata los servicios personales de EL TRABAJADOR, y éste se obliga a: a) Colocar al servicio de EL EMPLEADOR toda su capacidad normal de trabajo en el desempeño de las funciones propias del cargo de, en las labores anexas y complementarias del mismo, de conformidad con las órdenes e instrucciones que le imparta EL EMPLEADOR, directamente o a través de sus representantes, y referidas a la forma, tiempo y condiciones del servicio, empleando para ello la diligencia que su tarea exija; b)  No prestar directa ni indirectamente servicios laborales a otros empleadores ni a trabajar por cuenta propia en el mismo oficio contratado, durante la vigencia de este contrato; c) Guardar absoluta reserva sobre los hechos, documentos físicos y/o electrónicos, informaciones y, en general, sobre todos los asuntos y materias que lleguen a su conocimiento por causa o con ocasión del presente contrato de trabajo d) EL TRABAJADOR ingresa, en las condiciones que este contrato determina, al servicio exclusivo del EMPLEADOR en desempeño de las funciones del cargo mencionado, en virtud de lo cual se obliga, además de sus funciones previstas en el manual o descripción del cargo y en especial  las que le asigne el EMPLEADOR, siempre que el cambio no signifique desmejora en la remuneración del TRABAJADOR, con sumo cuidado y diligencia y conforme a las órdenes e instrucciones del EMPLEADOR;  e) No atender durante las horas de trabajo, ocupaciones distintas de las que EL EMPLEADOR le encomiende y abstenerse de trabajar por cuenta propia en el mismo oficio y de prestar directa o indirectamente servicios laborados a otros empleadores o de forma independiente; f) Conservar las herramientas y útiles de trabajo y conservarlas en buen estado y entregar al EMPLEADOR las claves para acceso a los documentos. g) Conservar completa armonía y comprensión con los clientes, con sus superiores y compañeros de trabajo en sus relaciones personales y laborales. h) Abstenerse totalmente de: 1- Retener dineros; 2- Hacer efectivo cheques recibidos para o a nombre del empleador; 3- Autorizar o ejecutar operaciones que afecten los intereses del empleador; 4- Negociar bienes o mercancías del empleador en provecho propio; 5- Retirar o permitir retirar, sin autorización para ello, elementos, máquinas, útiles o mercancía, de las instalaciones donde labora, de propiedad del empleador; 6- Desarrollar actitudes nocivas que puedan afectar los intereses del empleador o su reputación; 7- Presentar cuentas de gastos no realizados o sobre facturados.  i) Operar los equipos de acuerdo con las instrucciones técnicas, informar de cualquier anomalía a EL EMPLEADOR; j) Las demás obligaciones consagradas en el Artículo 58 del Código Sustantivo del Trabajo y en este contrato de trabajo y k) Cumplir con las responsabilidades y competencias del Cargo.
+                            </p>
+                            <p class="text-justify" style="font-size: 14px;">
+                                <b>PARÁGRAFO:</b> EL TRABAJADOR en desarrollo de las funciones a él asignadas por el EMPLEADOR, prestará sus servicios en forma coetánea a cualquier persona natural o jurídica que por instrucciones determine el EMPLEADOR y en especial a aquellas sociedades filiales, subsidiarias, matrices, subordinadas y demás empresas relacionadas con el EMPLEADOR, sin que ello implique la coexistencia de contratos de trabajo o de prestación de servicios, pues para todos los efectos legales, laborales, prestacionales y parafiscales se entiende que el único empleador es y será y, por tanto, los servicios prestados a cualquier otra persona natural o jurídica que indique el EMPLEADOR no implican ni generan concurrencia o coexistencia de contratos.
+
+                            </p>
+                            <p class="text-justify" style="font-size: 14px;">
+                                <b>SEGUNDA. DURACIÓN DEL CONTRATO. DURACIÓN DEL CONTRATO.</b> El término inicial de duración del presente contrato será de <b>MESES</b> .Si antes de la fecha de vencimiento de este término, ninguna de las partes avisare por escrito a la otra su determinación de no prorrogar el contrato con antelación no inferior a (30) días, éste se entenderá prorrogado por un período igual al inicialmente pactado, y así sucesivamente, de conformidad con lo dispuesto en el Art. 46 del C.S.T., modificado por el Art. 3 de la Ley 50/90.
+
+                            </p>
+                            <p class="text-justify" style="font-size: 14px;">
+                                <b>TERCERA. PERIODO DE PRUEBA.</b> En consideración a lo estipulado por el artículo 78 inciso primero del Código Sustantivo del Trabajo, la quinta parte del presente contrato se considerará como periodo de prueba y por consiguiente, cualquiera de las partes podrá darlo por terminado unilateralmente, en cualquier momento durante dicho período y sin previo aviso, sin que se cause el pago de indemnización alguna. En caso de prórrogas del presente contrato, se entenderá que no hay nuevo período de prueba.
+                            </p>
+                            <p class="text-justify" style="font-size: 14px;">
+                                <b>CUARTA. REMUNERACIÓN.</b> El <b>EMPLEADOR</b> se obliga a pagar al <b>TRABAJADOR</b> como retribución de sus servicios la suma mensual indicada en el encabezado, pagadero en quincenas vencidas en las fechas que señale el <b>EMPLEADOR</b> para estos efectos. Dentro de éste pago se encuentra incluida la remuneración de todos los días del mes, incluyendo los dominicales y festivos de que tratan los capítulos I y II del Título VII del Código Sustantivo del Trabajo. Se aclara y se conviene que en los casos en los que el <b>TRABAJADOR</b> devengue comisiones o cualquiera otra modalidad de salario variable, el <t t-esc="doc.fix_wage_perc"/>% de dichos ingresos constituye remuneración ordinaria y el <t t-esc="doc.flex_wage_perc"/>% restante está destinado a remunerar el descanso en los días dominicales y festivos.
+                            </p>
+                            <p class="text-justify" style="font-size: 14px;">
+                                <b>QUINTA.- Beneficios no Salariales:</b> El <b>TRABAJADOR</b> adicionalmente disfrutará de un cupo de BENEFICIOS (no salariales) mensual por la suma máxima de <t t-esc="doc.flex_wage_amount"/> PESOS MONEDA CORRIENTE ($), conformado por los conceptos  que a continuación se indican, los cuales fueron los beneficios elegidos y aceptados por el <b>TRABAJADOR</b>, que manifiesta conocer las características, parámetros y condiciones del reconocimiento de los mismos,  así mismo el <b>TRABAJADOR</b> manifiesta que los beneficios salariales  escogidos se ajustan a sus necesidades y conveniencias económicas y personales.
+                            </p>
+
+                            <table class="table table-sm borderless center" style="font-size: 14px;">
+                                <t t-foreach="doc.flex_wage_ids" t-as="flex_wage_id">
+                                    <tr>
+                                        <td width="45%">
+                                            <b><t t-esc="flex_wage_id.salary_rule_id.name"/></b>
+                                        </td>
+                                        <td width="3%">:</td>
+                                        <td><t t-esc="'%.2f' % (flex_wage_id.amount)"/></td>
+                                    </tr>
+                                </t>
+                            </table>
+                            <p class="text-justify" style="font-size: 14px;">
+                                <b>PARÁGRAFO PRIMERO:</b> Las partes reiteran que la totalidad de los beneficios, prerrogativas y en general acreencias en dinero o en especie contenidos en esta cláusula y los pagos que el <b>EMPLEADOR</b> realice a terceros a favor del <b>TRABAJADOR</b>, se consideran como de naturaleza no salarial y, por lo tanto, carecen de incidencia salarial, prestacional, indemnizatoria y parafiscal conforme a lo consagrado en los artículos 15 y 16 de la ley 50 de 1.990 y el artículo 17 de la ley 344 de 1.996. De igual manera, se consideran como no salariales todos aquellos beneficios, prerrogativas y en general acreencias que se reconozcan por mera liberalidad o para facilitar la gestión contratada, tales como bonificaciones ocasionales o participación en utilidades.
+
+                            </p>
+                            <p class="text-justify" style="font-size: 14px;">
+                                <b>PARÁGRAFO SEGUNDO:</b> Las partes de común acuerdo manifiestan que los BENEFICIOS consagrados en esta cláusula se incrementarán en el mismo porcentaje y periodicidad que la Asignación Salarial Básica.
+
+                            </p>
+                            <p class="text-justify" style="font-size: 14px;">
+                                <b>PARÁGRAFO TERCERO:</b> La totalidad de los beneficios no salariales y reconocimientos contenidos en esta cláusula, serán imputables o compensables con cualquier valor o suma adicional que deba reconocer el <b>EMPLEADOR</b> al <b>TRABAJADOR</b> de origen convencional, judicial, administrativo y, en general, de naturaleza extralegal. Tal imputabilidad se aplicará igualmente en los casos de aplicación del principio de igualdad contenido en los artículos 13 de la C.P y 143 del CST. De la misma manera, se entiende que todo lo recibido por el <b>TRABAJADOR</b> durante la vigencia de este contrato es imputable a lo que pudiera corresponderle en la eventualidad de una decisión judicial que pudiera afectar total o parcialmente el presente Otrosí.
+
+                            </p>
+                            <p class="text-justify" style="font-size: 14px;">
+                                <b>PARÁGRAFO CUARTO:</b> La composición, cuantía, características y, en general, condiciones de los beneficios no salariales y reconocimientos contenidos en esta cláusula, podrá ser modificada por el <b>EMPLEADOR</b> en los casos en que se presenten reformas legales, fiscales o laborales
+                            </p>
+                            <p class="text-justify" style="font-size: 14px;">
+                                <b>PARÁGRAFO QUINTO:</b> Durante el periodo de vacaciones disfrutadas, incapacidades transitorias y licencias de maternidad, se continuarán reconociendo <b>SEXTA. JORNADA DE TRABAJO.</b> EL TRABAJADOR se obliga a laborar la jornada máxima legal, salvo estipulación expresa y escrita en contrario, en los turnos y dentro de las horas señaladas por el EMPLEADOR, quien podrá realizar ajustes o cambios de horario cuando así lo estime conveniente. Por el acuerdo expreso o tácito de las partes, podrán repartirse total o parcialmente las horas de la jornada ordinaria con base en lo dispuesto por el Artículo 164 del C.S.T. modificado por el Artículo 23 de la Ley 50 de 1990, teniendo en cuenta que los tiempos de descanso entre las secciones de la jornada no se computan dentro de las mismas, según el Artículo 167 Ibídem.
+                            </p>
+                            <p class="text-justify" style="font-size: 14px;">
+                                <b>SÉPTIMA: EXCLUSIÓN DE JORNADA MÁXIMA LEGAL.</b> Cuando a consecuencia o por razón de éste contrato, al TRABAJADOR le correspondan o se le asignen funciones o actividades de dirección, confianza o manejo, continuas, eventuales o intermitentes, o de simple vigilancia, o se presente alguna de las situaciones especiales previstas en los Decretos 13 de 1967 y 995 de 1968, quedará excluido de la regulación sobre la jornada máxima legal y el EMPLEADOR exento de la obligación de hacer pagos adicionales por concepto de horas extras.
+                            </p>
+                            <p class="text-justify" style="font-size: 14px;">
+                                <b>OCTAVA. CONFIDENCIALIDAD.</b> El TRABAJADOR se abstendrá, durante la vigencia del presente contrato o con posterioridad a su terminación por cualquier causa de revelar, suministrar, vender, arrendar, publicar, copiar, reproducir, remover, disponer, transferir y en general utilizar directa o indirectamente en favor propio o de otras personas en forma total o parcial, cualquiera que sea su finalidad, información confidencial o privilegiada del EMPLEADOR o de las sociedades filiales, subsidiarias, matrices, subordinadas, relacionadas o empresas, personas naturales, accionistas, clientes o terceros relacionados con éste, a la cual tenga acceso o de la cual tenga conocimiento en desarrollo de su cargo o con ocasión de éste sin que medie autorización previa, expresa y escrita del EMPLEADOR para el efecto. 
+                            </p>
+                            <p class="text-justify" style="font-size: 14px;">
+                                Las Partes declaran que es de carácter confidencial cualquier información, documento o procedimiento del EMPLEADOR o de las sociedades filiales, subsidiarias, matrices, subordinadas, relacionadas o empresas, personas naturales, accionistas, clientes o terceros relacionados con éste o sobre el cual tenga conocimiento el TRABAJADOR en desarrollo de su cargo o con ocasión de éste, que no sea de conocimiento público, especialmente aquella información privilegiada respecto de operaciones, transacciones o negocios, o el valor de los mismos, que resulte sensible para la operación del EMPLEADOR o de terceros. En tal sentido, el TRABAJADOR no sólo se obliga a no dar a conocer la información confidencial que llegue a conocer, sino que se abstendrá de utilizar dicha información para la obtención de un provecho personal o para terceros.
+                            </p>
+                            <p class="text-justify" style="font-size: 14px;">
+                                El TRABAJADOR, a la terminación de su contrato de trabajo por cualquier causa, devolverá inmediatamente al EMPLEADOR cualquier documento, información o elemento que le haya sido entregado para efecto del cumplimiento de sus funciones. 
+                            </p>
+                            <p class="text-justify" style="font-size: 14px;">
+                                Las Partes acuerdan expresamente que el incumplimiento de las disposiciones contenidas en la presente cláusula es considerado como una falta grave y en tal sentido justa causa para la terminación del contrato de trabajo de acuerdo con lo dispuesto en el numeral 6 del literal a), Artículo 7 del Decreto Ley 2351 de 1965, en concordancia con el numeral 1 del Artículo 58 del C.S.T. Lo anterior sin perjuicio de las acciones civiles o penales que puedan emprenderse contra el TRABAJADOR por parte del EMPLEADOR o de terceros como consecuencia de dicho incumplimiento.
+                            </p>
+                            <p class="text-justify" style="font-size: 14px;">
+                                <b>NOVENA. OBLIGACIONES DEL EMPLEADOR.</b> EL EMPLEADOR se obliga a cumplir puntualmente sus obligaciones legales y contractuales.
+                            </p>
+                            <p class="text-justify" style="font-size: 14px;">
+                                <b>DÉCIMA. TERMINACIÓN UNILATERAL.</b> Son justas causas para dar por terminado unilateralmente  este  contrato,  por  cualquiera de  las partes, las enumeradas en el Art. 62 del C.S.T., modificado por el Art. 7º del Decreto 2351/65 y además, por parte de EL EMPLEADOR, las faltas que para el efecto se califiquen como graves en reglamentos, manuales, instructivos y demás documentos que contengan reglamentaciones, órdenes, instrucciones o prohibiciones de carácter general o particular, pactos, convenciones colectivas, laudos arbitrales y las que expresamente convengan calificar así en escritos que formarán parte integral del presente contrato. Expresamente se califican en este acto como faltas graves las siguientes: a) La violación a las obligaciones contenidas en la cláusula primera de este contrato.<br/>
+                                <b>UNDÉCIMA. CONTENIDO DEL CONTRATO.</b> Al presente contrato se entienden incorporadas todas las disposiciones del Reglamento Interno de Trabajo de EL EMPLEADOR, y demás normas laborales establecidas por EL EMPLEADOR y la Ley, las cuales EL TRABAJADOR declara conocer a satisfacción. 
+                            </p>
+                            <p class="text-justify" style="font-size: 14px;">
+                                <b>DÉCIMA SEGUNDA. PROPIEDAD INTELECTUAL.</b> Teniendo en cuenta el objeto del contrato de trabajo suscrito entre las partes, el EMPLEADOR y el TRABAJADOR acuerdan que todas las invenciones y trabajos originales de autor (incluyendo descubrimientos, ideas, mejoras, software, hardware o diseños de sistemas, ya sean patentables/registrables o no), concebidos o hechos por el TRABAJADOR durante la ejecución del presente contrato y que de alguna manera se relacionen con el objeto del mismo, pertenecerán al EMPLEADOR. En consecuencia de lo anterior, el TRABAJADOR se obliga a informar al EMPLEADOR sobre la existencia de dichas invenciones y/o trabajos originales. El TRABAJADOR accederá a facilitar el cumplimiento oportuno de las correspondientes formalidades y dará su firma o extenderá los poderes y documentos que eventualmente sean necesarios para el reconocimiento formal de los derechos patrimoniales de autor al EMPLEADOR cuando así se lo solicite el EMPLEADOR, sin que éste quede obligado al pago de compensación adicional alguna. Igualmente convienen las partes que todo lo que cree, invente, descubra, desarrolle o mejore el TRABAJADOR, con ocasión del presente contrato, pertenece al EMPLEADOR, sin necesidad de autorización alguna, de conformidad con lo dispuesto en el Artículo 539 del Código de Comercio en concordancia con el primer inciso de los Artículos 22, 88, 114 de la Decisión 486 de 2000 de la Comisión de la Comunidad Andina de Naciones. En consecuencia, el EMPLEADOR tendrá el derecho de hacer patentar o registrar a su nombre o a nombre de terceros esos inventos, mejoras, diseños o esquemas, respetándose el derecho del TRABAJADOR de ser mencionado como inventor o descubridor si así lo desea.<br/> 
+                                <b>PARÁGRAFO PRIMERO:</b> Teniendo en cuenta lo dispuesto en la Ley 23 de 1982 y en la Decisión 486 de 2000 de la Comunidad Andina de Naciones y así mismo lo dispuesto en el numeral 1° del Artículo 132 del Código Sustantivo del Trabajo, las Partes acuerdan que la remuneración salarial reconocida por el EMPLEADOR como contraprestación de los servicios prestados por el TRABAJADOR, incluye y contiene la remuneración por la transferencia de los derechos de autor y derechos de propiedad intelectual mencionados, toda vez que los objetos sobre los cuales recaen los derechos de propiedad intelectual son desarrollados por el TRABAJADOR en virtud de su contrato de trabajo, razón por la cual en virtud de la transferencia de los derechos antes mencionados no se causa compensación adicional alguna a favor del TRABAJADOR.<br/> 
+                                <b>PARÁGRAFO SEGUNDO:</b> En todo caso, las partes reconocen y aceptan, que todas las invenciones y trabajos originales de autor (incluyendo descubrimientos, ideas, mejoras, software, hardware o diseños de sistemas, ya sean patentables/registrables o no), concebidos o hechos por el TRABAJADOR durante la ejecución del presente contrato, se consideran y acuerdan por las partes necesarios para el ejercicio de las actividades habituales del TRABAJADOR, por lo que conforme lo establecido en el Artículo 20 de la Ley 23 de 1982, modificado por el Artículo 28 de la Ley 1450 de 2011, los derechos patrimoniales que se deriven de los mismos pertenecerán al EMPLEADOR.”
+                            </p>
+                            <p class="text-justify" style="font-size: 14px;">
+                                <b>DÉCIMA TERCERA: MEDIOS DE TRABAJO.</b> El EMPLEADOR se obliga a proveer los medios de trabajo al TRABAJADOR, dentro de los cuales podrán encontrarse un equipo de cómputo, un teléfono, muebles de oficina y demás elementos necesarios para el desarrollo de sus funciones, propiedad de la Institución.<br/> 
+                                <b>PARÁGRAFO PRIMERO:</b>  Las herramientas de trabajo antes citadas se encuentran bajo la custodia y cuidado del TRABAJADOR y su pérdida, daño o destrucción serán responsabilidad del TRABAJADOR; igualmente la pérdida, daño o destrucción de cualquiera de los elementos constituye una falta grave meritoria de la terminación del contrato de trabajo. Adicionalmente, las partes acuerdan que las herramientas sólo podrán ser empleadas para las labores relacionadas con el contrato de trabajo que existe entre las partes y para realizar sus funciones, por lo cual el darle una destinación o uso diferente o indebido por parte del TRABAJADOR a dichos elementos o la inobservancia de su deber de cuidado respecto de los mismos serán considerados falta grave de sus obligaciones, de conformidad con el literal a) numeral 6 del Artículo 7 del decreto 2351 de 1965, el cual subrogó el Artículo 62 del C.S.T.. El TRABAJADOR autoriza que en caso de pérdida o extravío, daño o destrucción de cualquiera de los elementos por cualquier motivo, le sea deducido o descontado el valor comercial del bien de la sumas que se le adeuden por salarios, prestaciones sociales, vacaciones, intereses de cesantía, pagos de naturaleza extralegal, eventuales indemnizaciones y cualquier otra acreencia a que pueda tener derecho en vigencia del contrato de trabajo o al momento de terminación del contrato de trabajo por cualquier motivo.<br/> 
+                                <b>PARÁGRAFO SEGUNDO:</b> Las herramientas de trabajo entregadas al TRABAJADOR pertenecen al EMPLEADOR y por tanto el TRABAJADOR deberá devolverlas cuando se le solicite y en todo caso al momento de terminación de su contrato de trabajo por cualquier causa. En caso de que el TRABAJADOR incumpla su obligación de devolver las herramientas relacionadas al momento de la terminación de su contrato de trabajo, mediante el presente escrito autoriza de manera expresa al EMPLEADOR para que el valor total de las mismas se descuente, deduzca y/o compense del valor de la liquidación final de acreencias laborales a la cual tenga derecho el TRABAJADOR incluyendo el valor de salarios, prestaciones sociales, vacaciones, interés de cesantía, pagos de naturaleza extralegal, eventuales indemnizaciones y cualquier otra acreencia a que pueda tener derecho al momento de terminación del contrato de trabajo por cualquier causa.<br/> 
+                                <b>PARÁGRAFO TERCERO:</b>  El suministro de las herramientas de trabajo no constituye salario ni beneficio legal o extralegal alguno, pues son herramientas de trabajo, y en este sentido las Partes reiteran que no constituyen retribución alguna, ni salario en dinero o en especie, ni tendrán incidencia salarial, prestacional, parafiscal o indemnizatoria conforme lo previsto en los Artículos 15 y 16 de la ley 50 de 1990 que subrogaron los Artículos 128 y 129 del C.S.T. en concordancia con el Artículo 17 de la ley 344 de 1996. Por tratarse de herramientas de trabajo que facilita el EMPLEADOR por mera liberalidad, el EMPLEADOR se reserva la facultad de modificar, adicionar o suprimir este suministro sin que constituya ningún tipo de desmejora para el TRABAJADOR, situación que el TRABAJADOR desde ya acepta.
+                            </p>
+                            <p class="text-justify" style="font-size: 14px;">
+                                <b>DÉCIMA CUARTA. AUTORIZACIÓN DE DESCUENTO.</b> El TRABAJADOR autoriza a la Institución para que a la terminación del presente contrato, de las prestaciones sociales que le correspondan y cualquier suma adicional a su favor, deduzca el valor de las obligaciones o valores a su cargo y a favor de la institución por cualquier concepto.<br/> 
+                                <b>PARÁGRAFO:</b> El TRABAJADOR acepta desde ahora que si a la finalización del presente contrato de trabajo al EMPLEADOR se le presentaren circunstancias que le impidieren efectuar oportunamente la liquidación del contrato, el EMPLEADOR dispondrá de quince (15) días hábiles contados desde la aludida terminación, para tales efectos.<br/> 
+                                <b>DÉCIMA QUINTA. EXÁMENES MÉDICOS.</b>  EL TRABAJADOR se someterá a la práctica de los exámenes médicos o sanitarios o pruebas de laboratorio que EL EMPLEADOR exija en cualquier momento y se obliga a suministrar los documentos que con ocasión de la relación laboral ésta le exija.<br/> 
+                                <b>PARÁGRAFO:</b> En caso de que el TRABAJADOR se niegue a practicar los exámenes  médicos o pruebas de laboratorio antes mencionados, a solicitud de EL EMPLEADOR, éste comportamiento constituirá falta grave y será meritorio de la terminación unilateral del contrato de trabajo con justa causa por parte de EL EMPLEADOR.
+                            </p>
+                            <p class="text-justify" style="font-size: 14px;">
+                                <b>DÉCIMA SEXTA: DATOS PERSONALES.</b> EL TRABAJADOR autoriza de manera libre y voluntaria a EL EMPLEADOR a recopilar, utilizar, transferir, almacenar, consultar,  procesar, y en general a dar tratamiento a  la información personal que éste ha suministrado a EL EMPLEADOR, de conformidad con lo dispuesto en el ley 1581 de 2012 y el Decreto Reglamentario 1377 de 2013 , la cual se encuentra contenida en las bases de datos y archivo de propiedad de EL EMPLEADOR, para los fines internos que sean necesarios, tales como asuntos relacionados con su documento de identificación, número de identificación, nacionalidad, país de residencia, dirección, teléfono, estado civil, correo electrónico corporativo y personal, salario, y cuenta bancaria
+                            </p>
+                            <p class="text-justify" style="font-size: 14px;">
+                                <b>DÉCIMA SÉPTIMA. MODIFICACIÓN DE LAS CONDICIONES LABORALES.</b> EL TRABAJADOR acepta desde ahora expresamente todas las modificaciones de sus condiciones laborales determinadas por EL EMPLEADOR en ejercicio de su poder subordinante, tales como el horario de trabajo, el lugar de prestación del servicio y el cargo u oficio y/o funciones, siempre que tales modificaciones no afecten su honor, dignidad o sus derechos mínimos, ni impliquen desmejoras sustanciales o graves perjuicios para él, de conformidad con lo dispuesto por el Art. 23 del C.S.T. modificado por el Art. 1º de la ley 50/90. Los gastos que se originen por el traslado de lugar de prestación del servicio de EL TRABAJADOR serán cubiertos por EL EMPLEADOR, de conformidad con el numeral 8º del Art. 57 del C.S.T. 
+                            </p>
+                            <p class="text-justify" style="font-size: 14px;">
+                                <b>DÉCIMA OCTAVA. DIRECCIÓN DEL TRABAJADOR.</b> EL TRABAJADOR para todos los efectos legales, y en especial para la aplicación del parágrafo 1 del Art. 29 de la ley 789/02, norma que Modificó el Art. 65 del C.S.T., se compromete a informar por escrito y de manera inmediata a EL EMPLEADOR cualquier cambio en su dirección de residencia, teniéndose en todo caso como suya, la última dirección registrada en su hoja de vida. 
+                            </p>
+                            <p class="text-justify" style="font-size: 14px;">
+                                <b>DÉCIMA NOVENA: CONOCIMIENTO Y ACTUALIZACIÓN DE POLÍTICAS.</b> El TRABAJADOR de manera libre y espontánea declara que conoce y entiende la totalidad de las políticas y procedimientos que debe tener en cuenta para la correcta ejecución de sus funciones, los cuales ya han sido dados a conocer al TRABAJADOR.<br/> 
+                                <b>PARÁGRAFO PRIMERO:</b> Las Partes de común acuerdo disponen que el TRABAJADOR se obliga a cumplir la totalidad de las políticas y procedimientos antes mencionados y a actualizar constantemente su conocimiento de las disposiciones contenidas en tales documentos de acuerdo con las modificaciones o adiciones que sean realizadas y así mismo a investigar, enterarse y mantenerse actualizado de otros procedimientos, políticas y normas que se tienen establecidos o se establezcan en el futuro y resulten aplicables a la ejecución de sus funciones. <br/> 
+                                <b>PARÁGRAFO SEGUNDO:</b> Las Partes de común acuerdo disponen que el TRABAJADOR, en el caso de desempeñarse como jefe o persona que tiene a su cargo otros empleados, se obliga a propender porque sus subordinados se mantengan informados y actualizados sobre las normas, procedimientos y políticas del EMPLEADOR.
+                            </p>
+                            <p class="text-justify" style="font-size: 14px;">
+                                <b>VIGESIMA. NORMATIVIDAD.</b> Las Partes, conforme lo aceptan en este contrato, se someterán a todo lo estatuido en el C.S.T. y demás normas sobre derechos, obligaciones y prohibiciones emanados del contrato de trabajo.   
+                            </p>
+                            <p class="text-justify" style="font-size: 14px;">
+                                <b>VIGESIMA PRIMERA. EFECTOS.</b>  El presente contrato reemplaza en su integridad y deja sin efecto cualquier otro contrato, verbal o escrito, celebrado entre las partes con anterioridad, pudiendo las partes convenir por escrito modificaciones al mismo, que formen parte integral del presente contrato.
+                            </p>
+                            <p class="text-justify" style="font-size: 14px;">
+                                En señal de quedar convenidos, el presente documento se suscribe en dos (2) ejemplares de igual valor y tenor legal, con destino a cada una de las partes, en la ciudad de Bogotá, D.C., el día
+                            </p>
+                            <br/>
+                            <table class="table table-sm table-borderless center" style="font-size: 14px;">
+                                <tr height="70px;">
+                                    <td width="50%"><b>EL EMPLEADOR</b></td>
+                                    <td><b>EL TRABAJADOR</b></td>
+                                </tr>
+                                <tr>
+                                    <td>---------------------------------------------------<br/><b><t t-esc="company_id.legal_representative_id.name"/></b></td>
+                                    <td>---------------------------------------------------<br/><b><t t-esc="employee_id.name"/></b></td>
+                                </tr>
+                                <tr>
+                                    <td><b>NIT.</b> <t t-esc="company_id.vat"/></td>
+                                    <td><b>
+                                        <t t-set="employee_ident_type" t-value="employee_id.ident_type"/>
+                                        <span t-if="employee_ident_type == 'rut'">RUT</span>
+                                        <span t-elif="employee_ident_type == 'id_document'">Cédula</span>
+                                        <span t-elif="employee_ident_type == 'id_card'">Tarjeta de Identidad</span>
+                                        <span t-elif="employee_ident_type == 'passport'">Pasaporte</span>
+                                        <span t-elif="employee_ident_type == 'foreign_id_card'">Cédula Extranjera</span>
+                                        <span t-elif="employee_ident_type == 'external_id'">ID del Exterior</span>
+                                        <span t-elif="employee_ident_type == 'diplomatic_card'">Carné Diplomatico</span>
+                                        <span t-elif="employee_ident_type == 'residence_document'">Salvoconducto de Permanencia</span>
+                                        <span t-elif="employee_ident_type == 'civil_registration'">Registro Civil</span>
+                                        <span t-elif="employee_ident_type == 'national_citizen_id'">Cédula de ciudadanía</span>
+                                        <t t-esc="employee_id.identification_id"/>
+                                    </b></td>
+                                </tr>
+                                <tr><td></td><td></td></tr>
+                                <tr height="70px;">
+                                    <td><b>TESTIGO:</b></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>---------------------------------------------------<br/>
+                                        <b><t t-esc="user.name"/><br/>
+                                        <t t-set="l10n_co_document_type" t-value="user.partner_id.l10n_co_document_type"/>
+                                        <span t-if="l10n_co_document_type == 'rut'">RUT</span>
+                                        <span t-elif="l10n_co_document_type == 'id_document'">Cédula</span>
+                                        <span t-elif="l10n_co_document_type == 'id_card'">Tarjeta de Identidad</span>
+                                        <span t-elif="l10n_co_document_type == 'passport'">Pasaporte</span>
+                                        <span t-elif="l10n_co_document_type == 'foreign_id_card'">Cédula Extranjera</span>
+                                        <span t-elif="l10n_co_document_type == 'external_id'">ID del Exterior</span>
+                                        <span t-elif="l10n_co_document_type == 'diplomatic_card'">Carné Diplomatico</span>
+                                        <span t-elif="l10n_co_document_type == 'residence_document'">Salvoconducto de Permanencia</span>
+                                        <span t-elif="l10n_co_document_type == 'civil_registration'">Registro Civil</span>
+                                        <span t-elif="l10n_co_document_type == 'national_citizen_id'">Cédula de ciudadanía</span>
+                                        <t t-esc="user.partner_id.vat"/><br/>
+                                        Administración de Personal</b></td>
+                                    <td></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+
+    </data>
+</odoo>

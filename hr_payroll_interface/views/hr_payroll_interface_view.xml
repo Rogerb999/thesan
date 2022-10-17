@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2019-TODAY WSuite Products <wsuite-products@wsuite.com>
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html). -->
+<odoo>
+
+    <record id="hr_payroll_interface_view_tree" model="ir.ui.view">
+        <field name="name">hr.payroll.interface.view.tree</field>
+        <field name="model">hr.payroll.interface</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="hr_type_interface_id"/>
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="hr_payroll_interface_view_form" model="ir.ui.view">
+        <field name="name">hr.payroll.interface.view.form</field>
+        <field name="model">hr.payroll.interface</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="action_done" type="object" string="Done"
+                            states="draft"
+                            class="oe_highlight"/>
+                    <button name="action_cancel" type="object"
+                            string="Cancel" states="draft"/>
+                    <button name="action_draft" type="object"
+                            string="Draft" states="cancel"
+                            class="oe_highlight"/>
+                    <button name="send_mail_from_draft_done" type="object"
+                            string="Send Mail from Draft"
+                            context="{'draft_button': True, 'done_button': False}"/>
+                    <button name="send_mail_from_draft_done" type="object"
+                            string="Send Mail from Done"
+                            context="{'draft_button': False, 'done_button': True}"
+                            states="done"/>
+                    <field name="state" widget="statusbar"
+                           statusbar_visible="draft,done"/>
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" readonly="1"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group colspan="4" col="4">
+                            <field name="start_date"
+                                   required="1"/>
+                            <field name="end_date"
+                                   required="1"/>
+                            <field name="hr_type_interface_id"
+                                   options="{'no_create': True, 'no_create_edit': True}"
+                                   required="1"/>
+                            <field name="company_id" invisible="1"/>
+                        </group>
+                    </group>
+                    <group>
+                        <field name="payslip_ids" nolabel="1"/>
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids"
+                           widget="mail_followers" groups="base.group_user"/>
+                    <field name="activity_ids" widget="mail_activity"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record id="hr_payroll_interface_action" model="ir.actions.act_window">
+        <field name="name">Payroll Interface</field>
+        <field name="res_model">hr.payroll.interface</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem
+        id="hr_payroll_interface_menu_action"
+        name="Payroll Interface"
+        action="hr_payroll_interface_action"
+        parent="hr_payroll.menu_hr_payroll_root"
+        groups="hr_payroll.group_hr_payroll_manager"/>
+
+</odoo>

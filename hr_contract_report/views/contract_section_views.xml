@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record model="ir.ui.view" id="contract_section_view_tree">
+        <field name="name">contract.section.tree</field>
+        <field name="model">contract.section</field>
+        <field name="arch" type="xml">
+            <tree string="Contract Section">
+                <field name="sequence" widget="handle"/>
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="contract_section_view_form">
+        <field name="name">contract.section.tree</field>
+        <field name="model">contract.section</field>
+        <field name="arch" type="xml">
+            <form string="Contract Section">
+                <sheet>
+                    <group col="4"> 
+                        <field name="name"/>
+                        <field name="sequence"/>
+                    </group>
+                    <group>
+                        <field name="description"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    
+    <record model="ir.actions.act_window" id="contract_section_action">
+        <field name="name">Contract Sections</field>
+        <field name="res_model">contract.section</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem
+        id="contract_section_menu"
+        action="contract_section_action"
+        parent="hr.menu_human_resources_configuration"
+        groups="hr.group_hr_user"/>
+
+</odoo>

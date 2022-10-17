@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2019-TODAY WSuite Products <wsuite-products@wsuite.com>
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html). -->
+<odoo>
+
+    <record id="hr_contract_termination_form_inherit" model="ir.ui.view">
+        <field name="name">res.company.termination.form</field>
+        <field name="model">res.company</field>
+        <field name="inherit_id" ref="base.view_company_form"/>
+        <field name="arch" type="xml">
+            <field name="currency_id" position="after">
+                <field name="payroll_director_id"/>
+            </field>
+        </field>
+    </record>
+
+</odoo>

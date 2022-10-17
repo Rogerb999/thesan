@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2019-TODAY WSuite Products <wsuite-products@wsuite.com>
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html). -->
+<odoo>
+    <template id="entity_of_pay_template">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.basic_layout">
+                    <div class="header">
+                        <center>
+                            <h4><span t-field="o.company_id"/></h4>
+                            <span t-esc="o.company_id.vat"/>
+                        </center>
+                        <div class="col-xs-12 col-md-6 text-right" style="font-size:50%">
+                                NOMINAGI
+                                <br/>
+                                <span t-esc="context_timestamp(datetime.datetime.now()).strftime('%Y-%m-%d %H:%M')"/>
+                        </div>
+                        <div style="border:1px solid black;">
+                            <center><b>
+                                <h5>GENERATION PAYMENT ENTITY</h5>
+                            </b></center>
+                        </div>
+                        <div style="font-size:50%">
+                            &#160;
+                        </div>
+                        <div class="col-xs-12" style="border:1px solid black;">
+                            <center>
+                                <t t-if="o.company_id.partner_id.bank_ids">
+                                    <t t-esc="o.company_id.partner_id.bank_ids[0].bank_id.name"/>
+                                </t>
+                            </center>
+                            <table width="100%">
+                                <tr>
+                                    <td><b>&#160;&#160;Entity</b></td>
+                                    <td>
+                                        <t t-if="o.company_id.partner_id.bank_ids">
+                                            <t t-esc="o.company_id.partner_id.bank_ids[0].bank_id.bic"/>
+                                        </t>
+                                    </td>
+                                    <td><b>NIT</b></td>
+                                    <td>
+                                        <t t-if="o.company_id.partner_id.bank_ids">
+                                            <t t-esc="o.company_id.partner_id.bank_ids[0].acc_number"/>
+                                        </t>
+                                    </td>
+                                    <td><b>Corte</b></td>
+                                    <td><span t-field="o.start_date"/></td>
+                                </tr>
+                                <tr>
+                                    <td><b>&#160;&#160;Address</b></td>
+                                    <td>
+                                        <t t-if="o.company_id.partner_id.bank_ids">
+                                            <t t-esc="o.company_id.partner_id.bank_ids[0].bank_id.street"/>
+                                        </t>
+                                    </td>
+                                    <td><b>Department</b></td>
+                                    <td>
+                                        <t t-if="o.company_id.partner_id.bank_ids">
+                                            <t t-esc="o.company_id.partner_id.bank_ids[0].bank_id.state.name"/>
+                                        </t>
+                                    </td>
+                                    <td><b>Date</b></td>
+                                    <td><span t-field="o.end_date"/></td>
+                                </tr>
+                                <tr>
+                                    <td><b>&#160;&#160;Phone</b></td>
+                                    <td>
+                                        <t t-if="o.company_id.partner_id.bank_ids">
+                                            <t t-esc="o.company_id.partner_id.bank_ids[0].bank_id.phone"/>
+                                        </t>
+                                    </td>
+                                    <td><b>Fax</b></td>
+                                    <td>
+                                        <t t-if="o.company_id.partner_id.bank_ids">
+                                            <t t-esc="o.company_id.partner_id.bank_ids[0].bank_id.phone"/>
+                                        </t>
+                                    </td>
+                                    <td><b>Date</b></td>
+                                    <td><span t-field="o.end_date"/></td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div style="font-size:10%">
+                            &#160;
+                        </div>
+                        <div style="border:1px solid black;">
+                            <div style="font-size:10%">
+                                &#160;
+                            </div>
+                            <table width="100%">
+                                <tr>
+                                    <td><b>&#160;&#160;Sucursal</b></td>
+                                    <td>
+                                        <t t-if="o.company_id.partner_id.bank_ids">
+                                            <t t-esc="o.company_id.partner_id.bank_ids[0].bank_id.city"/>
+                                        </t>
+                                    </td>
+                                </tr>
+                            </table>
+                            <div style="font-size:10%">
+                                &#160;
+                            </div>
+                            <center>
+                                <table width="99%">
+                                    <tr style="background-color:#A9A9A9;">
+                                        <td width="14%">ID</td>
+                                        <td width="14%">Official</td>
+                                        <td width="14%">Grandson</td>
+                                        <td width="14%">Paying Night</td>
+                                        <td width="14%">Value</td>
+                                        <td width="14%">Paid Account</td>
+                                        <td width="14%">Reference</td>
+                                    </tr>
+                                </table>
+                            </center>
+                        </div>
+                        <div class="col-xs-12 text-right"
+                             style="font-size:5%">
+                            &#160;
+                        </div>
+                    </div>
+                    <div class="page">
+                        <br/><br/><br/><br/><br/><br/>
+                        <t t-set="total_1" t-value="0"/>
+                        <t t-set="total_2" t-value="0"/>
+                        <t t-set="total_3" t-value="0"/>
+                        <t t-set="total_4" t-value="0"/>
+                        <div class="col-xs-12">
+                            <table width="100%" style="font-size:75%">
+                                <t t-foreach="o.payslip_ids" t-as="line">
+                                    <tr>
+                                        <td width="14%">
+                                            <t t-if="line.employee_id.identification_id">
+                                                <t t-esc="line.employee_id.identification_id"/>
+                                            </t>
+                                            <t t-if="not line.employee_id.identification_id">
+                                                &#160;
+                                            </t>
+                                        </td>
+                                        <td width="14%">
+                                            <t t-if="line.employee_id.name">
+                                                <t t-esc="line.employee_id.name"/>
+                                            </t>
+                                            <t t-if="not line.employee_id.name">
+                                                &#160;
+                                            </t>
+                                        </td>
+                                        <td width="14%">
+                                            <t t-set="total_line" t-value="0"/>
+                                            <t t-if="line.line_ids">
+                                                <t t-foreach="line.line_ids"
+                                                   t-as="line_id">
+                                                    <t t-set="total_line"
+                                                       t-value="total_line + line_id.total"/>
+                                                </t>
+                                            </t>
+                                            <t t-esc="total_line"/>
+                                            <t t-set="total_1" t-value="total_1 + total_line"/>
+                                        </td>
+                                        <td width="14%">0</td>
+                                        <td width="14%">0</td>
+                                        <td width="14%">0</td>
+                                        <td width="14%">0</td>
+                                    </tr>
+                                </t>
+                            </table>
+                        </div>
+                        <div class="col-xs-12 text-right" style="font-size:50%">
+                            &#160;
+                        </div>
+                        <div style="border:1px solid black;">
+                            <table width="100%">
+                                <tr>
+                                    <td colspan="2" width="28%">
+                                        <b>&#160;&#160;Total Records</b>&#160;&#160;&#160;<t t-esc="len(o.payslip_ids.ids)"/>
+                                        <br/>
+                                        <hr color="black" style="height:2px;margin-left: 3.35em;margin-right: 3.35em"/>
+                                    </td>
+                                    <td width="14%">
+                                        <t t-esc="total_1"/>
+                                        <br/>
+                                        <hr color="black" style="height:2px"/>
+                                    </td>
+                                    <td width="14%">
+                                        <t t-esc="total_2"/>
+                                        <br/>
+                                        <hr color="black" style="height:2px"/>
+                                    </td>
+                                    <td width="14%">
+                                        <t t-esc="total_3"/>
+                                        <br/>
+                                        <hr color="black" style="height:2px"/>
+                                    </td>
+                                    <td colspan="2" width="28%">
+                                        <t t-esc="total_4"/>
+                                        <br/>
+                                        <hr color="black"
+                                            style="height:2px;margin-right: 6.35em"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="7">
+                                        &#160;&#160;Total Inconsistency&#160;&#160;&#160;&#160;&#160;&#160;0
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="footer">
+                        <div class="col-xs-9 text-center">
+                            <t t-if="page == topage">
+                                <center>
+                                    <table width="60%">
+                                        <tr>
+                                            <td>
+                                                <b>Totales</b>
+                                            </td>
+                                            <td>
+                                                <t t-esc="total_1"/>
+                                            </td>
+                                            <td>
+                                                <t t-esc="total_2"/>
+                                            </td>
+                                            <td>
+                                                <t t-esc="total_3"/>
+                                            </td>
+                                            <td>
+                                                <t t-esc="total_4"/>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </center>
+                            </t>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>

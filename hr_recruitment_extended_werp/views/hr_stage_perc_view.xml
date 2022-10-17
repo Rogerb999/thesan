@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- HR Stage Percentage Form View -->
+   <record id="hr_stage_perc_view_form" model="ir.ui.view">
+        <field name="name">hr.stage.perc.form</field>
+        <field name="model">hr.stage.perc</field>
+        <field name="arch" type="xml">
+            <form string="HR Stage Percentage">
+                <sheet>
+                    <group colspan="4" col="4">
+                        <field name="stage_id"/>
+                        <field name="percentage"/>
+                        <field name="state"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- HR Stage Percentage Tree View -->
+    <record id="hr_stage_perc_view_tree" model="ir.ui.view">
+        <field name="name">hr.stage.perc.list</field>
+        <field name="model">hr.stage.perc</field>
+        <field name="arch" type="xml">
+            <tree string="HR Stage Percentage">
+                <field name="stage_id"/>
+                <field name="state"/>
+                <field name="percentage"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_hr_stage_perc_search" model="ir.ui.view">
+        <field name="name">hr.stage.perc.search</field>
+        <field name="model">hr.stage.perc</field>
+        <field name="arch" type="xml">
+            <search string="HR Stage Percentage">
+                <field name="stage_id"/>
+                <field name="state"/>
+                <field name="percentage"/>
+                <group string="Group By">
+                    <filter string="Stage" name="stage_id"
+                            context="{'group_by':'stage_id'}"/>
+                    <filter string="State" name="state"
+                            context="{'group_by':'state'}"/>
+                    <filter string="Percentage" name="percentage"
+                            context="{'group_by':'percentage'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <!-- HR Stage Percentage Action -->
+    <record id="hr_stage_perc_action" model="ir.actions.act_window">
+        <field name="name">HR Stage Percentage</field>
+        <field name="res_model">hr.stage.perc</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="search_view_id" ref="view_hr_stage_perc_search"/>
+    </record>
+
+    <!-- HR Stage Percentage Menuitem -->
+    <menuitem
+        id="hr_stage_perc_menu_action"
+        name="HR Stage Percentage"
+        groups="hr.group_hr_user"
+        action="hr_stage_perc_action"
+        parent="hr_recruitment.menu_hr_recruitment_configuration"/>
+
+</odoo>

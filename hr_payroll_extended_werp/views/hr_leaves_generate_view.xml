@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2019-TODAY WSuite Products <wsuite-products@wsuite.com>
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html). -->
+<odoo>
+
+    <record id="hr_leaves_generate_view_tree" model="ir.ui.view">
+        <field name="name">hr.leaves.generate.view.tree</field>
+        <field name="model">hr.leaves.generate</field>
+        <field name="arch" type="xml">
+            <tree editable="bottom">
+                <field name="leave_id"
+                       options="{'no_create': True, 'no_create_edit': True}"
+                       required="1"
+                       domain="[('valid', '=', True),('request_unit', '=', 'day')]"/>
+                <field name="days" required="1"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="hr_leaves_generate_action" model="ir.actions.act_window">
+        <field name="name">Leaves Generate</field>
+        <field name="res_model">hr.leaves.generate</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree</field>
+    </record>
+
+    <menuitem
+        id="hr_leaves_generate_menu_action"
+        name="Leaves Generate"
+        action="hr_leaves_generate_action"
+        parent="hr_payroll.menu_hr_payroll_configuration"/>
+
+</odoo>

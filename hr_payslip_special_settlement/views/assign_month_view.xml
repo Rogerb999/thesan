@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2019-TODAY WSuite Products <wsuite-products@wsuite.com>
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html). -->
+<odoo>
+
+    <record id="assign_month_view_tree" model="ir.ui.view">
+        <field name="name">assign.month.view.tree</field>
+        <field name="model">assign.month</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="start_day"/>
+                <field name="end_day"/>
+                <field name="start_month"/>
+                <field name="end_month"/>
+                <field name="days_assign"/>
+                <field name="type_settlement_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="assign_month_view_form" model="ir.ui.view">
+        <field name="name">assign.month.view.form</field>
+        <field name="model">assign.month</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button class="oe_stat_button" type="object" name="toggle_active" icon="fa-archive">
+                            <field name="active" widget="boolean_button" options='{"terminology": "archive"}'/>
+                        </button>
+                    </div>
+                    <group>
+                        <group colspan="4" col="4">
+                            <field name="name" required="1"/>
+                            <field name="start_day"/>
+                            <field name="end_day"/>
+                            <field name="start_month"/>
+                            <field name="end_month"/>
+                            <field name="days_assign"/>
+                            <field name="type_settlement_id"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_assign_month_search" model="ir.ui.view">
+        <field name="name">assign.month.search</field>
+        <field name="model">assign.month</field>
+        <field name="arch" type="xml">
+            <search string="Search Assign Month">
+                <field name="name"/>
+                <field name="start_day"/>
+                <field name="end_day"/>
+                <field name="start_month"/>
+                <field name="end_month"/>
+                <field name="days_assign"/>
+                <field name="type_settlement_id"/>
+                <group expand="0" string="Group By">
+                    <filter string="Name" name="name"
+                            context="{'group_by':'name'}"/>
+                    <filter string="Start Day" name="start_day"
+                            context="{'group_by':'start_day'}"/>
+                    <filter string="End Day" name="end_day"
+                            context="{'group_by':'end_day'}"/>
+                    <filter string="Start Month" name="start_month"
+                            context="{'group_by':'start_month'}"/>
+                    <filter string="End Month" name="end_month"
+                            context="{'group_by':'end_month'}"/>
+                    <filter string="Days Assign" name="days_assign"
+                            context="{'group_by':'days_assign'}"/>
+                    <filter string="Settlement" name="type_settlement_id"
+                            context="{'group_by':'type_settlement_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="assign_month_action" model="ir.actions.act_window">
+        <field name="name">Assign Month</field>
+        <field name="res_model">assign.month</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="context">{}</field>
+        <field name="search_view_id" ref="view_assign_month_search"/>
+    </record>
+
+    <menuitem
+        id="assign_month_menu_action"
+        name="Assign Month"
+        action="assign_month_action"
+        parent="hr_payroll.menu_hr_payroll_configuration"/>
+
+</odoo>

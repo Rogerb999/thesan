@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_account_entries_analysis_manager,account.entries.analysis manager,model_account_entries_analysis,account.group_account_manager,1,1,1,1
+access_account_entries_analysis_user,account.entries.analysis user,model_account_entries_analysis,account.group_account_user,0,0,0,0
+access_account_treasury_report_manager,account.treasury.report manager,model_account_treasury_report,account.group_account_manager,1,1,1,1
+access_account_treasury_report_user,account.treasury.report user,model_account_treasury_report,account.group_account_user,0,0,0,0
+access_account_analytic_entries_report_manager,analytic.entries.report manager,model_analytic_entries_report,account.group_account_manager,1,1,1,1
+access_account_analytic_entries_report_user,analytic.entries.report user,model_analytic_entries_report,account.group_account_user,0,0,0,0

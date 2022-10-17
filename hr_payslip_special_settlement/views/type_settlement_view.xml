@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="type_settlement_view_tree" model="ir.ui.view">
+        <field name="name">type.settlement.tree.view</field>
+        <field name="model">type.settlement</field>
+        <field name="arch" type="xml">
+            <tree string="">
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="type_settlement_view_form" model="ir.ui.view">
+        <field name="name">type.settlement.form.view</field>
+        <field name="model">type.settlement</field>
+        <field name="arch" type="xml">
+            <form string="Settlement">
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="toggle_active" type="object" groups="hr.group_hr_user" class="oe_stat_button" icon="fa-archive">
+                            <field name="active" widget="boolean_button" options="{&quot;terminology&quot;: &quot;archive&quot;}"/>
+                        </button>
+                    </div>
+                    <group>
+                        <field name="name"/>
+                        <field name="pay_type"/>
+                    </group>
+                    <group>
+                        <group>
+                            <field name="start_day"/>
+                            <field name="start_month"/>
+                        </group>
+                        <group>
+                            <field name="end_day"/>
+                            <field name="end_month"/>
+                        </group>
+                    </group>
+                    <group>
+                        <field name="assign_month_ids">
+                            <tree editable="bottom">
+                                <field name="start_day"/>
+                                <field name="start_month"/>
+                                <field name="end_day"/>
+                                <field name="end_month"/>
+                                <field name="days_assign"/>
+                            </tree>
+                        </field>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_type_settlement_search" model="ir.ui.view">
+        <field name="name">type.settlement.search</field>
+        <field name="model">type.settlement</field>
+        <field name="arch" type="xml">
+            <search string="Settlement">
+                <field name="name"/>
+                <field name="pay_type"/>
+                <group string="Group By">
+                    <filter string="Name" name="name"
+                            context="{'group_by':'name'}"/>
+                    <filter string="Type" name="pay_type"
+                            context="{'group_by':'pay_type'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="type_settlement_action" model="ir.actions.act_window">
+        <field name="name">Settlement</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">type.settlement</field>
+        <field name="view_mode">tree,form</field>
+        <field name="search_view_id" ref="view_type_settlement_search"/>
+        <field name="help" type="html">
+          <p class="oe_view_nocontent_create">
+            <!-- Add Text Here -->
+          </p><p>
+            <!-- More details about what a user can do with this object will be OK -->
+          </p>
+        </field>
+    </record>
+
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem id="type_settlement_menu_root" name="Settlement" parent="hr_payroll.menu_hr_payroll_configuration" action="type_settlement_action" sequence="100"/>
+</odoo>
+
+

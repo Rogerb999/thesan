@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="report_confidentiality_agreement">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.basic_layout">
+                    <div class="header">
+                        <div class="o_boxed_header">
+                            <div class="row">
+                                <div class="col-4">
+                                    <img t-if="o.employee_id.company_id.logo" t-att-src="image_data_uri(o.employee_id.company_id.logo)" alt="Logo"/>
+                                </div>
+                                <div class="col-4 text-center">
+                                    <span t-field="o.employee_id.company_id" style="font-size: 16px;"/>
+                                    <br/>
+                                    <span t-field="o.employee_id.company_id.vat" style="font-size: 16px;"/>
+                                </div>
+                                <div class="col-4 text-right">
+                                    <span t-field="o.employee_id.company_id"/>
+                                    <br/>
+                                    <span t-field="o.create_date"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="page">
+                        <t t-set="employee_name_pattern" t-value="('{0} {1} {2} {3}'.format(o.employee_id.address_home_id.first_name or '''''',o.employee_id.address_home_id.second_name or '''''',o.employee_id.address_home_id.surname or '''''',o.employee_id.address_home_id.second_surname or ''''''))"/>
+                        <link href='https://fonts.googleapis.com/css?family=Titillium Web' rel='stylesheet'/>
+                        <style type="text/css">
+                            body {
+                                font-family: 'Titillium Web';
+                            }
+                        </style>
+                        <h5 align="center"><b>ACUERDO DE CONFIDENCIALIDAD</b></h5>
+                        <div class="text-justify">
+                        El presente ACUERDO (el “ACUERDO de Confidencialidad”) se suscribe el <span t-esc="datetime.datetime.now()" t-options='{"widget": "date","format": "dd MMMM yyyy"}'/> entre: </div> <br/>
+                        <div class="text-justify">
+                            (i) Sucursal constituida bajo las leyes de la república de Colombia (en adelante “) representada por 
+                        <strong><span t-field="o.employee_id.company_id.payroll_director_id"/></strong>
+                        , identificado con la cédula de ciudadanía número 
+                        <strong><span t-field="o.employee_id.company_id.payroll_director_id.vat"/></strong> ,
+                        por un parte y por la otra, (ii), 
+                        <strong><t t-esc="employee_name_pattern"/></strong> identificado (a) con 
+                        <strong><span t-field="o.employee_id.ident_type"/></strong> número
+                        <strong><span t-esc="float(o.employee_id.identification_id)"
+                                      t-options='{"widget": "float", "precision": 0}'/></strong> ,
+                        (en adelante el “Receptor”) Cada uno individualmente como una
+                        “Parte” y conjuntamente como las “Partes”.</div>
+                        <br/>
+                        <div class="text-justify">
+                        Las Partes acuerdan celebrar el presente ACUERDO de Confidencialidad previos los siguientes considerandos que hacen parte integral del presente ACUERDO de Confidencialidad.</div>
+                        <br/><br/>
+                        CONSIDERANDOS<br/><br/>
+                        <div class="text-justify"
+                             style="margin-left:40px;">
+                        1. Que  es una empresa de prestación de toda clase de servicios y venta de toda clase de productos, servicios, marcas, dentro de los campos de mercadeo y de las relaciones públicas destinadas a promover toda clase de productos, servicios, marcas nombres comerciales y eventos de personas naturales y jurídicas,  estratégicas que (i) maneja con absoluta reserva y confidencialidad todos y cada uno de los asuntos que le son encomendados por sus clientes; (ii) tiene la obligación legal de manejar con absoluta reserva y confidencialidad todos y cada uno de los asuntos que le son encomendados por sus clientes; (ii) tiene en su información confidencial, know-how y propiedad intelectual, algunas de sus principales activos.
+                        </div>
+                        <br/><br/>
+                        <div class="text-justify"
+                             style="margin-left:40px;">
+                        2. Que el Receptor laboró en <strong><span t-esc="o.employee_id.address_id.name"/></strong> desde el <strong><span t-field="o.employee_id.entry_date" t-options='{"format": "dd MMMM yyyy"}'/></strong> , hasta el <strong><span t-field="o.date" t-options='{"format": "dd MMMM yyyy"}'/></strong> y ocupó el cargo de <strong><span t-esc="o.employee_id.job_id.name"/></strong>., en dicho cargo tuvo acceso a información confidencial y altamente privilegiada, know how, lista de clientes y proveedores de <strong><span t-esc="o.employee_id.address_id.name"/></strong> , así como tuvo contacto con clientes y proveedores de <strong><span t-esc="o.employee_id.address_id.name"/></strong> y conoció información altamente estratégica y valiosa para <strong><span t-esc="o.employee_id.address_id.name"/></strong> la cual debe mantenerse como totalmente reservada.<br/><br/>
+                        3. Que, como consecuencia del motivo de <t t-if="o.novelty_id and o.novelty_id.event_id and o.novelty_id.event_id.name in ['Terminación de contrato/Aprendiz Productiva','Terminación de contrato/Pensión','Terminación de contrato/Con Justa Causa','Terminación de contrato/Sin Justa Causa','Terminación de contrato/Renuncia Voluntaria','Terminación de contrato/Mutuo Acuerdo','Terminación de contrato/Periodo de Prueba','Terminación de contrato/Aprendiz Lectiva']"><span t-field="o.novelty_id.event_id"/></t> en el día <strong><span t-field="o.date" t-options='{"format": "dd MMMM yyyy"}'/></strong> y declara a paz y salvo a por todo y cualquier concepto relacionado con erogaciones laborales.<br/><br/>
+                        4. Que, como consecuencia del <strong>RETIRO DE LA EMPRESA</strong> en el día <strong><span t-field="o.date" t-options='{"format": "dd MMMM yyyy"}'/></strong>, las Partes quieren regular el manejo confidencial y reservado que el Receptor debe darle a toda la información, know how y propiedad intelectual que recibió, conoció, tuvo acceso, creo, desarrollo, ejecutó, copió, etc. de <strong><span t-esc="o.employee_id.address_id.name"/></strong>, sus empleados, directos, clientes y/o proveedores y en general de cualquier persona (en adelante los “Comunicadores”).</div>
+                        <br/><br/>
+                        <strong>LAS PARTES ACUERDAN</strong><br/><br/>
+                        <div class="text-justify" style="margin-left:40px;">
+
+                        1. Objeto. Por medio del ACUERDO de Confidencialidad el Receptor reconoce, acepta y acuerda que es absoluta y totalmente confidencial, reservada y privilegiada toda la información, know how, propiedad intelectual, metodologías, listados de clientes y proveedores, bases de datos, obras, datos financieros, etc. sin importar su extensión, forma de comunicación, contenido y/o medio o formato en el que le fue presentada por los Comunicadores (en adelante la “Información Confidencial”).
+
+                        <br/><br/>
+
+                        La Información Confidencial incluye pero no se limita al listado de clientes, estrategias de mercadeo, secretos de operación, información suministrada por los clientes, campañas de expectativas, conceptos creativos, promociones, campañas de comunicación, know-how, derechos de propiedad intelectual y en general cualquier información que haya sido entregada por los Comunicadores al Receptor, ya sea por escrito o verbalmente, o la que el Receptor conoció, a menos que la misma sea de público conocimiento. En desarrollo de la obligación de guardar la confidencialidad de la Información Confidencial, el Receptor se compromete a: (i) no revelar a terceros, por ningún medio escrito o verbal, la Información Confidencial sino hasta que la misma pierda el carácter de confidencialidad (a través de medios ajustados a la Ley); (ii) no obtener copias, por ningún medio de la Información Confidencial para utilizarla con propósitos distintos a la prestación de los Servicios; (iii) no utilizar la Información Confidencial para ningún fin; y (iv) a tomar todas las medidas conducentes para evitar el uso inadecuado de la Información Confidencial o su filtración.
+
+                        <br/><br/>
+
+                        2. Utilización de la Información Confidencial. El Receptor acuerda que la Información Confidencial no podrá ser usada por el Receptor, quien iniciará labores con un competidor directo de <strong><span t-esc="o.employee_id.address_id.name"/></strong>
+
+                        <br/><br/>
+
+                        3. Obligaciones del Receptor. El Receptor se obliga a: (i) no revelar a terceros parte o la totalidad de la Información Confidencial y a hacer que (a) sus socios, directores, contratistas, consultores, administradores, contratistas y empleados; y (b) sus filiales, subsidiarias y afiliadas, se abstengan de revelar, divulgar, exhibir, mostrar o comunicar a terceros la Información Confidencial, sin autorización previa, expresa y escrita de <strong><span t-esc="o.employee_id.address_id.name"/></strong>, salvo cuando se trate de Información Confidencial que deba ser suministrada a las autoridades administrativas o judiciales, en cumplimiento de un deber u obligación legal o en cumplimiento de una orden judicial o administrativa emanada de una autoridad competente; (ii) no utilizar en beneficio propio o de un tercero la Información Confidencial sin autorización previa, expresa y escrita  de <strong><span t-esc="o.employee_id.address_id.name"/></strong>; (iii) coadyuvar a <strong><span t-esc="o.employee_id.address_id.name"/></strong> para exigir judicial o extrajudicialmente la cesación de toda utilización fraudulenta de la Información Confidencial; (iv) hacer, suscribir, reconocer y entregar, directamente o por interpuesta persona, y a solicitud de <strong><span t-esc="o.employee_id.address_id.name"/></strong>, cualesquiera actos, escrituras, cesiones, documentos y traspasos, según se necesiten, para cumplir y llevar a cabo los términos del presente ACUERDO de Confidencialidad; y (vii) eliminar totalmente de sus archivos (físicos o digitales) la Información Confidencial a la firma del presente ACUERDO. 
+
+                        <br/><br/>
+
+                        4. Manejo Requerimientos Autoridad Competente. Cuando el Receptor deba suministrar todo o parte de la Información Confidencial a las autoridades administrativas o judiciales en cumplimiento de un deber u obligación legal, o en cumplimiento de una orden judicial o administrativa emanada de una autoridad competente, el Receptor comunicará previamente y por escrito a <strong><span t-esc="o.employee_id.address_id.name"/></strong> la existencia del deber legal o de la orden judicial o administrativa de revelar o entregar la información, con el fin de que <strong><span t-esc="o.employee_id.address_id.name"/></strong> pueda tomar las medidas que considere adecuadas para proteger la Información Confidencial.
+
+                        <br/><br/>
+
+                        5. Duración. El ACUERDO de Confidencialidad tendrá vigencia hasta que la Información Confidencial pase a ser del dominio público, en el entendido que cuando parte de la Información Confidencial pase a ser de dominio público, el ACUERDO de Confidencialidad seguirá cobijando la parte que no es de dominio público.
+
+                        <br/><br/>
+
+                        6. Sanciones e Indemnizaciones. El Receptor indemnizará a <strong><span t-esc="o.employee_id.address_id.name"/></strong>por los daños y perjuicios que <strong><span t-esc="o.employee_id.address_id.name"/></strong> sufra como consecuencia de la violación por parte del Receptor de los compromisos adquiridos mediante el ACUERDO de Confidencialidad, ya sea por sus filiales, subsidiarias y afiliadas, o los socios, directores, contratistas, consultores, administradores o empleados o empleadores del Receptor.
+
+                        <br/><br/>
+
+                        En el evento en que el Receptor viole los compromisos establecidos en el ACUERDO de Confidencialidad, el Receptor deberá pagar a <strong><span t-esc="o.employee_id.address_id.name"/></strong> a título de pena (la “Penalidad”) la suma de US$ 10,000. liquidados a pesos colombianos a la tasa representativa del mercado a la fecha de pago. El Receptor deberá pagar el valor de la Penalidad dentro de los tres (3) días siguientes a la fecha en que la violación del ACUERDO de Confidencialidad sea notificada al Receptor por  La Penalidad tendrá un carácter de multa y no indemnizatorio, y por lo tanto, su pago por parte del Receptor no afectará el derecho de <strong><span t-esc="o.employee_id.address_id.name"/></strong> de cobrar los daños y perjuicios que hubiere sufrido como consecuencia de la violación de los compromisos establecidos en este ACUERDO de Confidencialidad por parte del Receptor, o el ejercicio por parte de <strong><span t-esc="o.employee_id.address_id.name"/></strong> de cualquier otro derecho consagrado en la ley o este ACUERDO de Confidencialidad. El presente ACUERDO de Confidencialidad presta mérito ejecutivo por sí mismo y el Receptor renuncia al derecho de ser requerido en mora.
+
+                        <br/><br/>
+
+                        7. Derechos de Autor y Propiedad Industrial. El Receptor reconoce que todos y cada uno de los bienes sujetos a derechos de autor (obras artísticas, científicas y literarias especialmente pero no limitadas aquellas relacionadas con publicidad, mercadeo y comunicaciones estratégicas) y propiedad industrial que creo individual o conjuntamente durante la vigencia de sus ACUERDO laboral y en ejecución de las labores contratadas, son bienes de titularidad exclusiva de <strong><span t-esc="o.employee_id.address_id.name"/></strong>, sin limitación de tiempo, territorio, medios, modos o formas de uso y en general sin limitación alguna. Hasta donde se aplicable por Ley, todas las obras (obras artísticas, científicas y literarias especialmente pero no limitadas aquellas relacionadas con publicidad, mercadeo y comunicaciones estratégicas) tuvieron y tendrán todos los efectos de la obra por encargo del artículo 20 de la Ley 23 de 1982. En consecuencia, por medio del ACUERDO de Confidencialidad, el Receptor reitera que cede o cedió a   todos y cada uno de los derechos patrimoniales de autor que tenga o pueda llegar a tener por las obras que creo en ejecución de los servicios contratados. Así mismo, el Receptor reitera que cedió (y de ser necesarios vuelve a ceder) a <strong><span t-esc="o.employee_id.address_id.name"/></strong> todos los derechos de propiedad industrial que haya generado en desarrollo de su labor como empleado de <strong><span t-esc="o.employee_id.address_id.name"/></strong>
+
+                        <br/><br/>
+
+                        La cesión de derechos patrimoniales de autor que se regula por medio del ACUERDO de Confidencialidad se hace sin restricción territorial, temporal y en general sin restricción de ningún tipo y comprende todos los derechos patrimoniales que recaigan o puedan recaer sobre todas las obras (obras artísticas, científicas y literarias especialmente pero no limitadas aquellas relacionadas con publicidad, mercadeo y comunicaciones estratégicas) creadas en desarrollo del ACUERDO laborar, incluyendo pero no limitados a, el derecho de edición, adaptación, remuneración, distribución, comercialización, traducción, divulgación, comunicación pública, interpretación pública, radiodifusión, alquiler, arreglo, mercadeo, parodia, puesta a disposición, publicación y reproducción en medios escritos, análogos, digitales o en cualquier medio o tecnología conocida o por conocerse.
+
+                        <br/><br/>
+
+                        Las Partes por medio del ACUERDO de Confidencialidad han decidido pactar de manera contraria a lo establecido en el Artículo 23 de la Ley 23 de 1982, señalando que la cesión de los derechos patrimoniales de autor será por la vida del Receptor y ochenta años más después de su muerte. En caso de que la PORVENIR legal de los derechos patrimoniales de autor se aumente, el plazo de cesión se aumentará respectivamente y de forma automática.
+
+                        <br/><br/>
+
+                        Por medio del ACUERDO de Confidencialidad, el Receptor solicita a <strong><span t-esc="o.employee_id.address_id.name"/></strong> el anonimato respecto de todas las obras que el Receptor creo individualmente o con terceros en desarrollo del ACUERDO laboral. En caso de que por algún motivo el Receptor reivindique la paternidad de las obras, podrá hacer exigible al Receptor, a título de multa, la sanción establecida en la cláusula 6 anterior, la cual deberá ser pagada previo a cualquier reivindicación de paternidad.
+
+                        <br/><br/>
+
+                        8. El Receptor reconoce que todos y cada uno los conceptos creativos, materiales creativos, estrategias, planes y obra artísticas, científicas y literarias de   (los “Materiales”), así como la Información Confidencial que se ha dado a conocer en el desarrollo del ACUERDO laboral, son obras protegidas por el derecho de autor y/o el derecho de la propiedad industrial, y que los Materiales y/o la Información Confidencial, aun cuando en algunos eventos pueden ser consideradas como simples “ideas”, no lo son, pues son obras protegidas por el derecho de autor y/o el derecho de la propiedad industrial y además se les dará el tratamiento de información confidencial y privilegiada. En todo caso, de ser consideradas las mismas como simples “ideas”, las Partes acuerdan que el conocimiento que pudo llegar a tener de los Materiales y/o la Información Confidencial el Receptor, se da como consecuencia de la divulgación que le hace <strong><span t-esc="o.employee_id.address_id.name"/></strong> o los Comunicadores, por lo que el Receptor no podrá usarla, explotarla, comercializará o aprovecharse de ella para ningún fin. Por lo tanto, las Partes acuerdan darle a los Materiales el tratamiento de información privilegiada y totalmente privada y confidencial, por lo que el Receptor no podrá utilizar los Materiales de manera alguna, incluso para la obtención de obras derivadas, sin el consentimiento previo y escrito de <strong><span t-esc="o.employee_id.address_id.name"/></strong>
+
+                        <br/><br/>
+
+                        9. Declaraciones del Receptor. Por medio del ACUERDO de Confidencialidad el Receptor hace las siguientes declaraciones, cuya inexactitud sea parcial o total, se entenderá como un incumplimiento del ACUERDO de Confidencialidad: (i) que reconoce y reconocerá la titularidad de <strong><span t-esc="o.employee_id.address_id.name"/></strong> de todos los derechos patrimoniales de autor que se ceden por medio del ACUERDO de Confidencialidad; (i) que no tiene ningún tipo de acuerdo, ACUERDO, o similar que le impida obligarse en los términos del ACUERDO de Confidencialidad; (iii) que cuenta con todas las autorizaciones de terceros que sean necesarias para suscribir el ACUERDO de Confidencialidad y obligarse en los términos que en él se establecen; (iv) que la firma y ejecución del ACUERDO de Confidencialidad no vulnera ningún derecho de terceros ni desconoce obligaciones legales o contractuales a las que terceros o el Receptor se encuentran sujetos.
+
+                        <br/><br/>
+
+                        10. Ley Aplicable. Diferencias. El ACUERDO de Confidencialidad se regirá por las leyes de la República de Colombia. Toda diferencia que surja entre las Partes en relación con el ACUERDO de Confidencialidad será sometida a la decisión de un tribunal de arbitramento, que se sujetará al reglamento del Centro de Arbitraje y Conciliación de la Cámara de Comercio de Bogotá, de acuerdo con las siguientes reglas: (i) el tribunal estará integrado por un (1) árbitro designado por el Centro de Arbitraje y Conciliación de la Cámara de Comercio de Bogotá, a solicitud de cualquiera de las Partes, mediante sorteo entre los árbitros inscritos en sus listas. Los árbitros sesionarán y fallarán en Bogotá y en Derecho.
+
+                        <br/><br/>
+
+                        11. Varios. 
+
+                        <br/><br/>
+
+                        (i) Nulidad Parcial: Las Partes convienen que la ilegalidad, nulidad, ineficacia o cualquier sanción jurídica similar que afecte la validez o aplicación de una cualquiera de las disposiciones del ACUERDO de Confidencialidad no afectará la validez o aplicación de las demás disposiciones del mismo. En todo caso, en el evento de producirse una cualquiera de las sanciones jurídicas a que se ha hecho referencia, las Partes se comprometen en buena fe a encontrar mecanismos que permitan, en la medida de lo posible y de acuerdo con las normas aplicables, cumplir con las finalidades inicialmente buscadas mediante la cláusula o disposición que hubiere sido afectada en su validez o aplicación. 
+
+                        <br/><br/>
+
+                        (ii) No Desistimiento: Salvo que en el ACUERDO de Confidencialidad se disponga expresamente lo contrario, las Partes convienen en que el dejar de ejercer, o la demora en el ejercicio de un derecho, facultad o privilegio de una de las Partes no se interpretará como un desistimiento ni como un consentimiento a la modificación de los términos del ACUERDO de Confidencialidad.
+
+                        <br/><br/>
+
+                        (iii) Integridad del ACUERDO de Confidencialidad: El ACUERDO de Confidencialidad contiene en su integridad las estipulaciones entre las Partes sobre la materia objeto del mismo y deja sin efecto cualquier otro acuerdo anterior sobre el mismo asunto.
+
+                        <br/><br/>
+
+                        (iv) Modificaciones: Todas las modificaciones, adiciones, y aclaraciones que se hagan al ACUERDO de Confidencialidad sólo serán válidas cuando consten por escrito y estén debidamente firmadas por representantes debidamente autorizados de las Partes.
+
+                        <br/><br/>
+
+                        (v) Títulos: Los títulos de cada una de las secciones y párrafos del ACUERDO de Confidencialidad son para efectos de referencia únicamente y no se utilizarán para interpretar ninguna de las estipulaciones del ACUERDO de Confidencialidad.
+
+                        <br/><br/>
+
+                        (vi) Paz y Salvo: El Receptor declara a <span t-field="o.env.user.company_id"/> a paz y salvo por todo y cualquier concepto relacionado con sus erogaciones salariales, las cuales recibió a plena satisfacción y de acuerdo con la normatividad vigente.
+
+                        <br/><br/><br/>
+
+                        <img class="text-left"
+                         t-attf-src="image_data_uri(o.employee_id.company_id.payroll_director_id.sign_digital)"
+                         style="max-height: 5cm; max-width: 10cm"/>
+
+                        <br/><br/>
+                    </div>
+
+                    <strong>
+                    <table width="100%" style="margin-left: 10px;">
+                    <tr>
+                        <td width="50%">Empresa</td>
+                        <td width="50%">El Receptor</td>
+                        <br/><br/>
+                    </tr>
+                    <tr><td>&#160;</td><td>&#160;</td></tr>
+                    <tr><td>&#160;</td><td>&#160;</td></tr>
+                    <tr><td>&#160;</td><td>&#160;</td></tr>
+                    <tr>
+                        <td>&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;</td>
+                        <td>&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;</td></tr>
+                    <tr>
+                        <td width="50%"><span t-esc="o.employee_id.company_id.payroll_director_id.name"/></td>
+                        <td width="50%"><span t-esc="employee_name_pattern"/></td>
+                    </tr>
+                    <tr>
+                        <td width="50%"><span t-field="o.employee_id.company_id.payroll_director_id.vat"/></td>
+                        <td width="50%"><span t-esc="float(o.employee_id.identification_id)" t-options='{"widget": "float", "precision": 0}'/></td>
+                    </tr>
+                    <tr>
+                        <td width="50%">Representante Empresa</td>
+                        <td width="50%">Ex empleado</td>
+                    </tr>
+                    </table>
+                    </strong>
+
+                    <br/>
+                    <div style="margin-left: 10px;">c.c. hoja de Vida</div>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
+</odoo>

@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<odoo>
+
+    <record id="view_hr_employee_form_novelty_inherit" model="ir.ui.view">
+        <field name="name">hr.employee.form.novelty.inherit</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[hasclass('oe_button_box')]" position="inside">
+                <button name="view_novelty_records" type="object"
+                        class="oe_stat_button" icon="fa-list-alt"
+                        attrs="{'invisible': [('total_remaining_approve_novelty', '=', 0)]}">
+                    <field name="total_remaining_approve_novelty"
+                           widget="statinfo" string="Novelty(s)"/>
+                </button>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_hr_contract_employee_form" model="ir.ui.view">
+        <field name="name">hr.contract.employe.form.inherit</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr_contract.hr_hr_employee_view_form2"/>
+        <field name="arch" type="xml">
+            <button icon="fa-book" position="attributes">
+                <attribute name="groups">hr.group_hr_manager
+                </attribute>
+            </button>
+        </field>
+    </record>
+
+</odoo>

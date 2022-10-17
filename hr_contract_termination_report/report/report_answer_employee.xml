@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="report_answer_employee">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.basic_layout">
+                    <div class="header">
+                        <div class="o_boxed_header">
+                            <div class="row">
+                                <div class="col-4">
+                                    <img t-if="o.employee_id.company_id.logo" t-att-src="image_data_uri(o.employee_id.company_id.logo)" alt="Logo"/>
+                                </div>
+                                <div class="col-4 text-center">
+                                    <span t-field="o.employee_id.company_id" style="font-size: 16px;"/>
+                                    <br/>
+                                    <span t-field="o.employee_id.company_id.vat" style="font-size: 16px;"/>
+                                </div>
+                                <div class="col-4 text-right">
+                                    <span t-field="o.employee_id.company_id"/>
+                                    <br/>
+                                    <span t-field="o.create_date"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="page">
+                        <t t-set="employee_name_pattern"
+                           t-value="('{0} {1} {2} {3}'.format(o.employee_id.address_home_id.first_name or '''''',o.employee_id.address_home_id.second_name or '''''',o.employee_id.address_home_id.surname or '''''',o.employee_id.address_home_id.second_surname or ''''''))"/>
+                        <link href='https://fonts.googleapis.com/css?family=Titillium Web' rel='stylesheet'/>
+                        <style type="text/css">
+                            body {
+                                font-family: 'Titillium Web';
+                            }
+                        </style>
+                        Bogotá, <span t-esc="datetime.datetime.now()"
+                                      t-options='{"widget": "date","format": "dd MMMM yyyy"}'/>
+                        <br/><br/><br/>
+                        Señor (a):<br/>
+                        <strong><span t-esc="employee_name_pattern"/></strong><br/>
+                        Ciudad
+                        <br/><br/><br/>
+                        Respetado (a) señor (a):
+                        <br/><br/>
+                        <div class="text-justify">
+                        En atención a su comunicación, informando su voluntad de retirarse de la compañía, me permito manifestarle que <strong><span t-esc="o.employee_id.company_id.name"/></strong> ha decidido aceptar su
+                        renuncia al cargo de <strong><span t-esc="o.employee_id.job_id.name"/></strong> a partir del <strong><span t-field="o.date"
+                                                 t-options='{"format": "dd MMMM yyyy"}'/></strong> .
+                        </div>
+                        <br/><br/>
+                        <div class="text-justify">
+                        La liquidación y respectivo pago de las prestaciones sociales a que tiene derecho, al igual que la orden para el examen médico de retiro, estarán a su disposición en el área de Gestión Humana.
+                        </div>
+                        <br/><br/>
+                        Le deseamos muchos éxitos.
+                        <br/><br/><br/>
+                        <div>
+                            Cordialmente,
+                        </div>
+                        <img class="text-left"
+                             t-attf-src="image_data_uri(o.employee_id.company_id.payroll_director_id.sign_digital)"
+                             style="max-height: 5cm; max-width: 10cm"/>
+                        <br/><br/><br/>
+                        <div>&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;&#175;</div>
+                        <div>
+                            <strong><span t-field="o.employee_id.company_id.payroll_director_id"/></strong>
+                            <br/>
+                            <b>Gerente De Nómina</b>
+                            <br/>
+                            <t t-if="o.employee_id.company_id.street">
+                                DIRECCIÓN <span t-esc="o.employee_id.company_id.street"/>
+                                <br/>
+                            </t>
+                            <span t-esc="o.employee_id.company_id.city"/>, <span t-esc="o.employee_id.company_id.country_id.name"/>
+                            <br/>
+                            <t t-if="o.employee_id.company_id.payroll_director_id.mobile">
+                                CEL. <span t-esc="o.employee_id.company_id.payroll_director_id.mobile"/>
+                                <br/>
+                            </t>
+                            <t t-if="o.employee_id.company_id.phone">
+                                TELEFONO <span t-esc="o.employee_id.company_id.phone"/>
+                                <br/>
+                            </t>
+                        </div>
+                        <div style="margin-left:10px;margin-top:10px;">
+                            c.c. hoja de Vida
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
+</odoo>

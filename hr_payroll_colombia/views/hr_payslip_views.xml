@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="hr_payslip_form_inh" model="ir.ui.view">
+        <field name="name">hr.payslip.form.inh</field>
+        <field name="model">hr.payslip</field>
+        <field name="inherit_id" ref="hr_payroll.view_hr_payslip_form"/>
+        <field name="arch" type="xml">
+            <field name="name" position="after">
+                <field name="febrary_month" invisible="1"/>
+                <field name="contract_schedule_pay" attrs="{'readonly': [('febrary_month', '=', False)]}"/>
+                <field name="pay_days" attrs="{'invisible': [('febrary_month', '!=', True)]}" widget="boolean_toggle"/>
+            </field>
+        </field>
+    </record>
+</odoo>

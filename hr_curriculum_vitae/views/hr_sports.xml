@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- HR Sports Form View -->
+   <record id="hr_sports_view_form" model="ir.ui.view">
+        <field name="name">hr.sports.form</field>
+        <field name="model">hr.sports</field>
+        <field name="arch" type="xml">
+            <form string="HR Sports">
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="toggle_active" type="object" class="oe_stat_button" icon="fa-archive">
+                            <field name="active" widget="boolean_button"/>
+                        </button>
+                    </div>
+                    <group colspan="4" col="4">
+                        <field name="name" required="1"/>
+                        <field name="description"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- HR Sports Tree View -->
+    <record id="hr_sports_view_tree" model="ir.ui.view">
+        <field name="name">hr.sports.list</field>
+        <field name="model">hr.sports</field>
+        <field name="arch" type="xml">
+            <tree string="HR Sports">
+                <field name="name"/>
+                <field name="description"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- HR Sports Action -->
+    <record id="hr_sports_action" model="ir.actions.act_window">
+        <field name="name">HR Sports</field>
+        <field name="res_model">hr.sports</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- HR Sports Menuitem -->
+    <menuitem
+        id="hr_sports_menu_action"
+        name="HR Sports"
+        groups="hr.group_hr_user"
+        action="hr_sports_action"
+        parent="hr_employee_extended_werp.hr_curriculum_vitae_menu"/>
+
+</odoo>

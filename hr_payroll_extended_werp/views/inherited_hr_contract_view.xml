@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2019-TODAY WSuite Products <wsuite-products@wsuite.com>
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html). -->
+<odoo>
+
+    <record id="hr_contract_view_form_inherit" model="ir.ui.view">
+        <field name="name">hr.contract.view.form.inherit</field>
+        <field name="model">hr.contract</field>
+        <field name="inherit_id"
+               ref="hr_contract.hr_contract_view_form"/>
+        <field name="arch" type="xml">
+            <field name="job_id" position="after">
+                <field name="leave_generate_id"
+                       options="{'no_create': True, 'no_create_edit': True}"/>
+                <field name="identification_id"/>
+                <field name="identification_id_fill" invisible="1"
+                       force_save="1"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="hr_contract_view_search_inherit" model="ir.ui.view">
+        <field name="name">hr.contract.view.search.inherit</field>
+        <field name="model">hr.contract</field>
+        <field name="inherit_id"
+               ref="hr_contract.hr_contract_view_search"/>
+        <field name="arch" type="xml">
+            <xpath expr="//filter[@name='job']" position="after">
+                <filter string="Identification No" name="identification_id"
+                        context="{'group_by':'identification_id'}"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

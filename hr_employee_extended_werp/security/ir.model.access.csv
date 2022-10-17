@@ -1,0 +1,14 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_animal_type_hr_user,animal.type.hr.user,model_animal_type,hr.group_hr_user,1,1,1,1
+access_animal_race_hr_user,animal.race.hr.user,model_animal_race,hr.group_hr_user,1,1,1,1
+access_animal_pet_hr_user,animal.pet.hr.user,model_animal_pet,hr.group_hr_user,1,1,1,1
+access_report_model_config,report.model.config,model_report_model_config,hr.group_hr_user,1,1,1,1
+access_report_sub_model_field_config,report.sub.model.field.config,model_report_sub_model_field_config,hr.group_hr_user,1,1,1,1
+access_hr_employment_relationship,access_hr_employment_relationship,model_hr_employment_relationship,base.group_user,1,1,1,1
+access_hr_employee_unity,access_hr_employee_unity,model_hr_employee_unity,base.group_user,1,1,1,1
+access_hr_employee_zone,access_hr_employee_zone,model_hr_employee_zone,base.group_user,1,1,1,1
+access_hr_cost_center,access_hr_cost_center,model_hr_cost_center,base.group_user,1,1,1,1
+access_hr_cost_line,access_hr_cost_line,model_hr_cost_line,base.group_user,1,1,1,1
+access_hr_arl_level,access_hr_arl_level,model_hr_arl_level,base.group_user,1,1,1,1
+access_hr_arl,access_hr_arl,model_hr_arl,base.group_user,1,1,1,1
+access_hr_cotract_type,access_hr_cotract_type,model_hr_cotract_type,base.group_user,1,1,1,1

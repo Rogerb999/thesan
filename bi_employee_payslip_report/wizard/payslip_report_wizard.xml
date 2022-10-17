@@ -1,0 +1,34 @@
+<odoo>
+    <data>
+
+        <record id="emp_payslip_report_form_view" model="ir.ui.view">
+            <field name="name">emp.payslip.report.form</field>
+            <field name="model">emp.payslip.report</field>
+            <field name="arch" type="xml">
+                <form string="Payslip Report">
+                   <sheet>
+                    <group>
+                        <group>
+                            <field name="file_type" widget="radio" options="{'horizontal': true}" attrs="{'invisible':[('file','!=',False)],'required':[('file','=',False)] }"/>
+                            <field name="file"  filename="file_name" readonly="1" attrs="{'invisible':[('file','=',False)]}"/>
+                            <field name="file_name" invisible="1" />
+                        </group>
+                    </group>
+                    <footer>
+                        <button name="employee_payslip_xls" string="Export Report" type="object" class="btn-primary" attrs="{'invisible':[('file','!=',False)]}"/>
+                        <button string="Cancel" class="btn-secondary" special="cancel"/>
+                    </footer>
+                </sheet>
+                </form>
+            </field>
+        </record>
+
+
+        <act_window id="action_print_report_pdf_xls"
+            multi="True"
+            key2="client_action_multi" name="Payslip Report"
+            res_model="emp.payslip.report" src_model="hr.payslip"
+            view_mode="form" target="new" view_type="form" />
+
+    </data>
+</odoo>

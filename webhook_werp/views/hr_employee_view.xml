@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<odoo>
+
+    <record id="view_hr_employee_form_webhook_werp_inherit" model="ir.ui.view">
+        <field name="name">hr.employee.form.webhook_werp.inherit</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//group[@name='active_group']" position="after">
+                <group string="Approval Limit" groups="base.group_no_one">
+                    <label for="approval_limit"/>
+                    <div>
+                        <field name="approval_limit" class="oe_inline"/>
+                    </div>
+                </group>
+            </xpath>
+            <page name="hr_settings" position="inside">
+                <group string="Response Message" groups="base.group_system">
+                    <field name="response_message"/>
+                    <field name="response_time"/>
+                </group>
+            </page>
+        </field>
+    </record>
+
+</odoo>

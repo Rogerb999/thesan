@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="apprenticeship_contract">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="doc">
+                    <t t-call="web.external_layout">
+                        <div class="page" t-foreach="docs"
+                             t-as="object"
+                             style="page-break-after:always;padding-right:60px;padding-left:60px;">
+                            <div class="oe_structure"/>
+                            <br/>
+                            <h6 align="center"><b>CONTRATO DE APRENDIZAJE</b></h6>
+                            <br/>
+                            <t t-set="employee_id"
+                               t-value="doc.employee_id"/>
+                            <t t-set="company_id"
+                               t-value="doc.company_id"/>
+                            <t t-set="employee_ident_type"
+                               t-value="employee_id.ident_type"/>
+                            <table class="table table-sm table-bordered center"
+                                   style="font-size: 14px;">
+                                <tr>
+                                    <td width="40%"><b>EMPRESA</b></td>
+                                    <td>
+                                        <t t-esc="company_id.name"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><b>NIT</b></td>
+                                    <td><t t-esc="company_id.vat"/></td>
+                                </tr>
+                                <tr>
+                                    <td><b>DIRECCION</b></td>
+                                    <td><t t-esc="company_id.street"/></td>
+                                </tr>
+                                <tr>
+                                    <td><b>TELEFONO</b></td>
+                                    <td><t t-esc="company_id.phone"/></td>
+                                </tr>
+                                <tr>
+                                    <td><b>REPRESENTANTE LEGAL</b></td>
+                                    <td>
+                                        <t t-esc="company_id.legal_representative_id.name"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>CARGO</td>
+                                    <td><t t-esc="doc.job_id.name"/></td>
+                                </tr>
+                                <tr>
+                                    <td>CEDULA  NO.</td>
+                                    <td>
+                                        <t t-esc="employee_id.identification_id"/>
+                                    </td>
+                                </tr>
+                            </table>
+                            <table class="table table-sm table-bordered center"
+                                   style="font-size: 14px;">
+                                <tr>
+                                    <td width="40%">
+                                        <b>NOMBRE APRENDIZ</b>
+                                    </td>
+                                    <td><t t-esc="employee_id.name"/></td>
+                                </tr>
+                                <tr>
+                                    <td><b>CEDULA O TARJETA IDENTIDAD</b></td>
+                                    <td>
+                                        <span t-if="employee_ident_type == 'rut'">RUT</span>
+                                        <span t-elif="employee_ident_type == 'id_document'">Cédula</span>
+                                        <span t-elif="employee_ident_type == 'id_card'">Tarjeta de Identidad</span>
+                                        <span t-elif="employee_ident_type == 'passport'">Pasaporte</span>
+                                        <span t-elif="employee_ident_type == 'foreign_id_card'">Cédula Extranjera</span>
+                                        <span t-elif="employee_ident_type == 'external_id'">ID del Exterior</span>
+                                        <span t-elif="employee_ident_type == 'diplomatic_card'">Carné Diplomatico</span>
+                                        <span t-elif="employee_ident_type == 'residence_document'">Salvoconducto de Permanencia</span>
+                                        <span t-elif="employee_ident_type == 'civil_registration'">Registro Civil</span>
+                                        <span t-elif="employee_ident_type == 'national_citizen_id'">Cédula de ciudadanía</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><b>FECHA NACIMIENTO</b></td>
+                                    <td><t t-esc="employee_id.birthday"/></td>
+                                </tr>
+                                <tr>
+                                    <td><b>DIRECCION</b></td>
+                                    <td>
+                                        <t t-esc="employee_id.address_home_id.street"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><b>TELEFONO</b></td>
+                                    <td>
+                                        <t t-esc="employee_id.address_home_id.phone"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><b>CORREO ELECTRONICO</b></td>
+                                    <td>
+                                        <t t-esc="employee_id.address_home_id.email"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><b>FECHA INICIACIÓN CONTRATO</b></td>
+                                    <td><t t-esc="doc.date_start"/></td>
+                                </tr>
+                                <tr>
+                                    <td><b>FECHA TERMINACIÓN CONTRATO</b></td>
+                                    <td><t t-esc="doc.date_end"/></td>
+                                </tr>
+                                <tr>
+                                    <td><b>ESPECIALIDAD O CURSO</b></td>
+                                    <td><t t-esc="doc.speciality_id.name"/></td>
+                                </tr>
+                                <tr>
+                                    <td><b>EPS DEL APRENDIZ</b></td>
+                                    <td><t t-esc="employee_id.eps_id.name"/></td>
+                                </tr>
+                                <tr>
+                                    <td><b>ARL DEL APRENDIZ</b></td>
+                                    <td><t t-esc="employee_id.arl_id.name"/></td>
+                                </tr>
+                                <tr>
+                                    <td><b>Prepaid Medicine DEL APRENDIZ</b></td>
+                                    <td>
+                                        <t t-esc="employee_id.prepaid_medicine_id.name"/>
+                                    </td>
+                                </tr>
+                            </table>
+                            <table class="table table-sm table-bordered center"
+                                   style="font-size: 14px;">
+                                <tr>
+                                    <td width="40%"><b>INSTITUCIÓN DE FORMACION:</b></td>
+                                    <td>
+                                        <t t-esc="doc.institution_id.name"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><b>SI ES SENA CENTRO DE FORMACION</b></td>
+                                    <td>
+                                        <t t-esc="doc.center_formation_id.name"/>
+                                    </td>
+                                </tr>
+                            </table>
+                            <br/>
+                            <h4 align="center">CLÁUSULAS</h4>
+                            <p class="text-justify"
+                               style="font-size: 14px;">
+                                <t t-set="ident_type"
+                                   t-value="company_id.legal_representative_id.ident_type"/>
+                                Entre los suscritos a saber <t t-esc="company_id.legal_representative_id.name"/>, identificado con la
+                                <span t-if="ident_type == 'rut'">RUT</span>
+                                <span t-elif="ident_type == 'id_document'">Cédula</span>
+                                <span t-elif="ident_type == 'id_card'">Tarjeta de Identidad</span>
+                                <span t-elif="ident_type == 'passport'">Pasaporte</span>
+                                <span t-elif="ident_type == 'foreign_id_card'">Cédula Extranjera</span>
+                                <span t-elif="ident_type == 'external_id'">ID del Exterior</span>
+                                <span t-elif="ident_type == 'diplomatic_card'">Carné Diplomatico</span>
+                                <span t-elif="ident_type == 'residence_document'">Salvoconducto de Permanencia</span>
+                                <span t-elif="ident_type == 'civil_registration'">Registro Civil</span>
+                                <span t-elif="ident_type == 'national_citizen_id'">Cédula de ciudadanía</span> No. <t t-esc="company_id.legal_representative_id.identification_id"/> de actuando como Representante Legal de la Empresa quien para los efectos del presente Contrato se denominará EMPRESA <t t-esc="employee_id.name"/> y identificado con
+                                <span t-if="employee_ident_type == 'rut'">RUT</span>
+                                <span t-elif="employee_ident_type == 'id_document'">Cédula</span>
+                                <span t-elif="employee_ident_type == 'id_card'">Tarjeta de Identidad</span>
+                                <span t-elif="employee_ident_type == 'passport'">Pasaporte</span>
+                                <span t-elif="employee_ident_type == 'foreign_id_card'">Cédula Extranjera</span>
+                                <span t-elif="employee_ident_type == 'external_id'">ID del Exterior</span>
+                                <span t-elif="employee_ident_type == 'diplomatic_card'">Carné Diplomatico</span>
+                                <span t-elif="employee_ident_type == 'residence_document'">Salvoconducto de Permanencia</span>
+                                <span t-elif="employee_ident_type == 'civil_registration'">Registro Civil</span>
+                                <span t-elif="employee_ident_type == 'national_citizen_id'">Cédula de ciudadanía</span>
+                                 No <t t-esc="employee_id.identification_id"/>, quien para los efectos del presente contrato se denominará el APRENDIZ, se suscribe el presente Contrato de Aprendizaje, conforme a lo preceptuado por la Ley 789 de 2002 y de acuerdo a las siguientes cláusulas:
+                            </p>
+                            <p class="text-justify" style="font-size: 14px;">
+                                PRIMERA.- Objeto. El presente contrato tiene como objeto garantizar al APRENDIZ la formación profesional integral en la especialidad de, la cual se impartirá en su etapa lectiva por el   (Centro de Formación Profesional  (o por la Institución Educativa donde el aprendiz adelanta sus estudios) mientras su etapa práctica se desarrollará en la EMPRESA. SEGUNDA. El contrato tiene un término de duración de 6 meses, comprendidos entre el fecha de iniciación del Contrato; y el fecha de terminación del mismo. (No podrá excederse el término máximo de dos años contenido en el Artículo 30 de la Ley 789/02) y previa revisión de la normatividad para cada una de las modalidades de patrocinio TERCERA.- Obligaciones.  1) POR PARTE DE LA EMPRESA.- En virtud del presente contrato la EMPRESA deberá: a) Facilitar al APRENDIZ los medios para que tanto en las fases Lectiva y Práctica, reciba Formación Profesional Integral, metódica y completa en la ocupación u oficio materia del presente contrato.  b) Diligenciar y reportar al respectivo Centro de Formación Profesional Integral del SENA (o por la Institución Educativa donde el aprendiz adelanta sus estudios) las evaluaciones y certificaciones del APRENDIZ en su fase práctica del aprendizaje.  C) Reconocer mensualmente al APRENDIZ, por concepto de apoyo económico para el aprendizaje, durante la etapa lectiva, en la FUNDACION UNIVERSITARIA PANAMERICANA el equivalente al 50% de 1 s.m.l.v. y durante la etapa práctica de su formación el equivalente al 100% de 1 s.m.l.v. y/o al 100% cuando la tasa de desempleo promedio del año inmediatamente anterior sea de un solo digito, para la vigencia 2015 este apoyo será del 100%. (Artículo 30 de la Ley 789 de 2002 y Decreto 451 de 2008) <b>PARAGRAFO</b>.- Este apoyo de sostenimiento no constituye salario en forma alguna, ni podrá  ser regulado a través de convenios o contratos colectivos o fallos arbítrales que recaigan sobre estos últimos.  d) Afiliar al APRENDIZ, durante la etapa práctica de su formación, a la Aseguradora de Riesgos Laborales  de conformidad con lo dispuesto por el artículo 30 de la Ley 789 de 2002.   E) Afiliar al APRENDIZ y efectuar, durante las fases lectiva y práctica de la formación, el pago mensual del aporte al régimen de Seguridad Social correspondiente al APRENDIZ en conforme al régimen de trabajadores independientes, tal y como lo establece el Artículo 30 de la Ley 789 de 2002. Los pagos a la seguridad social (A.R.L. y E.P.S.) están a cargo en su totalidad por el empleador f) Dar al aprendiz la dotación de seguridad industrial, cuando el desarrollo de la etapa práctica así lo requiera, para la protección contra accidentes y enfermedades profesionales. 2) POR PARTE DEL APRENDIZ.- Por su parte se compromete en virtud del presente contrato a:  a) Concurrir puntualmente a las clases durante los periodos de enseñanza para así recibir la Formación Profesional Integral a que se refiere el presente Contrato, someterse a los reglamentos y normas establecidas por el respectivo Centro de Formación del SENA ( o de la Institución Educativa  donde el aprendiz adelante sus estudios), y poner toda diligencia y aplicación para lograr el mayor rendimiento en su Formación.  B) <u>Concurrir puntualmente al lugar asignado por la Empresa para desarrollar su formación en la fase práctica, durante el periodo establecido para el mismo</u>, en las actividades que se le encomiende y que guarde relación con la Formación, cumpliendo con las indicaciones que le señale la EMPRESA.  En  todo caso la intensidad horaria que debe cumplir el APRENDIZ durante la etapa práctica en la EMPRESA, <u>no podrá exceder de 8 horas diarias y 48 horas Semanales</u>.(según el acuerdo 000023 de 2.005) c) Proporcionar la información necesaria para que el Empleador lo afilie como trabajador aprendiz al sistema de seguridad social en salud en la E.P.S., que elija. CUARTA.- Supervisión.  La EMPRESA podrá supervisar al APRENDIZ en el respectivo Centro de Formación del SENA (o en el Centro Educativo donde estuviere adelantando los estudios el aprendiz), la asistencia, como el rendimiento académico, a efectos de verificar y asegurar la real y efectiva utilización del tiempo en la etapa lectiva por parte de este.  El SENA supervisará al APRENDIZ  en la EMPRESA para que sus actividades en cada periodo práctico correspondan al programa de la especialidad para la cual se está formando. QUINTA.- Suspensión.  El presente contrato se podrá suspender temporalmente en los siguientes casos: a) Licencia de maternidad. b) Incapacidades debidamente certificadas. c) Caso fortuito o fuerza mayor debidamente certificado o constatado d) Vacaciones por parte del empleador, siempre y cuando el aprendiz se encuentre desarrollando la etapa práctica. Parágrafo 1º. Esta suspensión debe constar por escrito. Parágrafo 2º Durante la suspensión el contrato se encuentra vigente, por lo tanto, la relación de aprendizaje está vigente para las partes (Empresa y Aprendiz). SEXTA.- Terminación.  El presente contrato podrá darse por terminado en los siguientes casos: a) Por mutuo acuerdo entre las partes.  B) Por el vencimiento del termino de duración del presente Contrato.  C) La cancelación de la matrícula por parte del SENA de acuerdo con el reglamento previsto para los alumnos.  D) El bajo rendimiento o las faltas disciplinarias cometidas en los periodos de Formación Profesional Integral en el SENA o en la EMPRESA, cuando a pesar de los requerimientos de la Empresa o del SENA, no se corrijan en un plazo razonable.  Cuando la decisión la tome la Empresa, esta deberá obtener previo concepto favorable del SENA.  E) El incumplimiento de las obligaciones  previstas para cada una de las partes. SEPTIMA.- Relación Laboral.  El presente Contrato no implica relación laboral alguna entre las partes, y se regirá en todas sus partes por el artículo 30 y s.s.  de la ley 789 de 2002.  Declaración Juramentada.  El APRENDIZ declara bajo la gravedad de juramento que no se encuentra ni ha estado vinculado con la EMPRESA o con otras EMPRESAS en una relación de aprendizaje.  Así mismo, declara que no se encuentra ni ha estado vinculado mediante una relación laboral con la EMPRESA. OCTAVA.- El presente contrato de aprendizaje rige a partir fecha de iniciación del Contrato; y termina el fecha prevista como terminación de la etapa productiva que se describe en la cláusula segunda de este contrato.   Para efectos de lo anterior, firman  las partes el.
+                            </p>
+                            <br/>
+                            <table class="table table-sm table-borderless center"
+                                   style="font-size: 14px;">
+                                <tr height="70px;">
+                                    <td><b>LA EMPRESA</b></td>
+                                    <td></td>
+                                    <td><b>EL APRENDIZ</b></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><b>NIT: <t t-esc="company_id.vat"/></b></td>
+                                    <td></td>
+                                    <td><b>
+                                        <span t-if="employee_ident_type == 'rut'">RUT</span>
+                                        <span t-elif="employee_ident_type == 'id_document'">Cédula</span>
+                                        <span t-elif="employee_ident_type == 'id_card'">Tarjeta de Identidad</span>
+                                        <span t-elif="employee_ident_type == 'passport'">Pasaporte</span>
+                                        <span t-elif="employee_ident_type == 'foreign_id_card'">Cédula Extranjera</span>
+                                        <span t-elif="employee_ident_type == 'external_id'">ID del Exterior</span>
+                                        <span t-elif="employee_ident_type == 'diplomatic_card'">Carné Diplomatico</span>
+                                        <span t-elif="employee_ident_type == 'residence_document'">Salvoconducto de Permanencia</span>
+                                        <span t-elif="employee_ident_type == 'civil_registration'">Registro Civil</span>
+                                        <span t-elif="employee_ident_type == 'national_citizen_id'">Cédula de ciudadanía</span>
+                                        <t t-esc="employee_id.identification_id"/></b>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+
+    </data>
+</odoo>

@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Resource Fee Form View -->
+   <record id="resources_fee_view_form" model="ir.ui.view">
+        <field name="name">resources.fee.form</field>
+        <field name="model">resources.fee</field>
+        <field name="arch" type="xml">
+            <form string="Resource Fee">
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="toggle_active" type="object" class="oe_stat_button" icon="fa-archive">
+                            <field name="active" widget="boolean_button" options='{"terminology": "archive"}'/>
+                        </button>
+                    </div>
+                    <group colspan="4" col="4">
+                        <field name="name" required="1"/>
+                        <field name="partner_id"/>
+                        <field name="start_date"/>
+                        <field name="end_date"/>
+                        <field name="payment_term"/>
+                        <field name="contract_id" domain="[('partner_id', '=', partner_id)]"/>
+                        <field name="payment_last"/>
+                    </group>
+                    <group string="Resource Fee Lines">
+                        <field name="resources_fee_line_ids" nolabel="1">
+                            <tree editable="bottom">
+                                <field name="job_id"/>
+                                <field name="percentage"/>
+                                <field name="hour"/>
+                                <field name="currency_id"/>
+                                <field name="wage" widget="monetary"/>
+                            </tree>
+                            <form string="Resource Fee Line">
+                                <sheet>
+                                    <group>
+                                        <label for="percentage" string="Percentage"/>
+                                        <div name="percentage">
+                                            <field name="percentage" class="oe_inline"/> %%
+                                        </div>
+                                        <label for="wage"/>
+                                        <div name="wage">
+                                             <field name="wage" widget='monetary'/>
+                                        </div>
+                                        <field name="job_id"/>
+                                    </group>
+                                </sheet>
+                            </form>
+                        </field>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Resource Fee Tree View -->
+    <record id="resources_fee_view_tree" model="ir.ui.view">
+        <field name="name">resources.fee.list</field>
+        <field name="model">resources.fee</field>
+        <field name="arch" type="xml">
+            <tree string="Resource Fee">
+                <field name="name"/>
+                <field name="partner_id"/>
+                <field name="start_date"/>
+                <field name="end_date"/>
+                <field name="payment_term"/>
+                <field name="contract_id"/>
+                <field name="payment_last"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="resources_fee_view_search" model="ir.ui.view">
+        <field name="name">resources.fee</field>
+        <field name="model">resources.fee</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name" filter_domain="[('name', 'ilike', self)]" string="Name.."/>
+                <field name="partner_id" filter_domain="[('partner_id', 'ilike', self)]" string="Customer Name.."/>
+                <filter string="Active" name="active" domain="[('active','=', True)]"/>
+                <filter string="Inactive" name="Inactive" domain="[('active','=', False)]"/>
+                <group string="Group By">
+                  <filter string="Customer" name="partner_id" context="{'group_by':'partner_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <!-- Resource Fee Action -->
+    <record id="resources_fee_action" model="ir.actions.act_window">
+        <field name="name">Resource Fee</field>
+        <field name="res_model">resources.fee</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Resource Fee Menuitem -->
+    <menuitem
+        action="resources_fee_action"
+        id="resources_fee_menu"
+        parent="account.account_account_menu"/>
+
+
+    <!-- Resource Fee Contract Form View -->
+   <record id="resources_fee_contract_view_form" model="ir.ui.view">
+        <field name="name">resources.fee.contract.form</field>
+        <field name="model">resources.fee.contract</field>
+        <field name="arch" type="xml">
+            <form string="Resource Fee Contract">
+                <sheet>
+                    <group colspan="4" col="4">
+                        <field name="name" required="1"/>
+                        <field name="partner_id"/>
+                        <field name="start_date"/>
+                        <field name="end_date"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Resource Fee Contract Tree View -->
+    <record id="resources_fee_contract_view_tree" model="ir.ui.view">
+        <field name="name">resources.fee.contract.list</field>
+        <field name="model">resources.fee.contract</field>
+        <field name="arch" type="xml">
+            <tree string="Resource Fee Contract">
+                <field name="name"/>
+                <field name="partner_id"/>
+                <field name="start_date"/>
+                <field name="end_date"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="resources_fee_contract_view_search" model="ir.ui.view">
+        <field name="name">resources.fee.contract.search</field>
+        <field name="model">resources.fee.contract</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name" filter_domain="[('name', 'ilike', self)]" string="Name.."/>
+                <field name="partner_id" filter_domain="[('partner_id', 'ilike', self)]" string="Customer Name.."/>
+                <group string="Group By">
+                  <filter string="Customer" name="partner_id" context="{'group_by':'partner_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <!-- Resource Fee Action -->
+    <record id="resources_fee_contract_action" model="ir.actions.act_window">
+        <field name="name">Resource Fee Contract</field>
+        <field name="res_model">resources.fee.contract</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Resource Fee Menuitem -->
+    <menuitem
+        action="resources_fee_contract_action"
+        id="resources_fee_contract_menu"
+        parent="account.account_account_menu"/>
+
+</odoo>

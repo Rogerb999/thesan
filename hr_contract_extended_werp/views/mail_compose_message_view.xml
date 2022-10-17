@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record model="ir.ui.view"
+            id="email_compose_message_wizard_form_contract_extended">
+        <field name="name">mail.compose.message.form.contract.extended</field>
+        <field name="model">mail.compose.message</field>
+        <field name="inherit_id"
+               ref="mail.email_compose_message_wizard_form" />
+        <field name="priority">1000</field>
+        <field name="mode">primary</field>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='template_id']"
+                   position="attributes">
+                <attribute name="string">Selection Format</attribute>
+            </xpath>
+        </field>
+    </record>
+</odoo>

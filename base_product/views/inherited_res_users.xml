@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_users_form_inherit" model="ir.ui.view">
+        <field name="name">res.users.form.view.inherit</field>
+        <field name="model">res.users</field>
+        <field name="inherit_id" ref="base.view_users_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook" position="inside">
+                <page name="charge" string="Charge">
+                    <group colspan="4" col="4">
+                        <field name="is_bp"/>
+                        <field name="is_daf"/>
+                        <field name="is_adaf"/>
+                        <field name="is_vp"/>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_users_search_inherit" model="ir.ui.view">
+        <field name="name">res.users.search.view.inherit</field>
+        <field name="model">res.users</field>
+        <field name="inherit_id" ref="base.view_users_search"/>
+        <field name="arch" type="xml">
+            <filter name="Inactive" position="after">
+                <filter name="is_bp" string="BP"
+                        domain="[('is_bp','!=',False)]"/>
+                <filter name="is_daf" string="DAF"
+                        domain="[('is_daf','!=',False)]"/>
+                <filter name="is_adaf" string="ADAF"
+                        domain="[('is_adaf','!=',False)]"/>
+                <filter name="is_vp" string="VP"
+                        domain="[('is_vp','!=',False)]"/>
+            </filter>
+        </field>
+    </record>
+
+</odoo>

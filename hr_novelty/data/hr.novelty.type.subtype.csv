@@ -1,0 +1,6 @@
+id,name,type_id/id
+novelty_subtype_AUS,Ausencia,novelty_type_TIE
+novelty_subtype_FIJ,Fija,novelty_type_ECO
+novelty_subtype_OCA,Ocasional,novelty_type_ECO
+novelty_subtype_PRO,Procedimiento,novelty_type_PRO
+novelty_subtype_TERM_CONTR,Terminación de Contrato,novelty_type_PRO

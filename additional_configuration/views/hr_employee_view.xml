@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<odoo>
+
+    <record id="view_hr_employee_form_you_base_inherit" model="ir.ui.view">
+        <field name="name">hr.employee.form.you.inherit</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='personal_information']" position="attributes">
+                <attribute name="groups">hr.group_hr_user,additional_configuration.group_you</attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_hr_employee_form_inherit" model="ir.ui.view">
+        <field name="name">view.hr.employee.form.inherit</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr_extended.view_hr_employee_form"/>
+        <field name="arch" type="xml">
+            <field name="country_of_birth" position="attributes">
+                <attribute name="groups">hr.group_hr_user,additional_configuration.group_you</attribute>
+            </field>
+        </field>
+    </record>
+
+    <record id="view_hr_employee_form_you_contract_inherit" model="ir.ui.view">
+        <field name="name">hr.employee.form.you.inherit</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr_contract_extended_werp.view_hr_employee_form_contract_inherit"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='marital_status_id']" position="attributes">
+                <attribute name="groups">hr.group_hr_user,additional_configuration.group_you</attribute>
+            </xpath>
+
+            <xpath expr="//page[@name='hr_documents']" position="attributes">
+                <attribute name="groups">hr.group_hr_user,additional_configuration.group_you</attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_hr_employee_tree_you_contract_inherit" model="ir.ui.view">
+        <field name="name">hr.employee.tree.you.inherit</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr_contract_extended_werp.view_hr_employee_tree_contract_inherit"/>
+        <field name="arch" type="xml">
+
+            <xpath expr="//field[@name='marital_status_id']" position="attributes">
+                <attribute name="groups">hr.group_hr_user,additional_configuration.group_you</attribute>
+            </xpath>
+
+        </field>
+    </record>
+
+</odoo>

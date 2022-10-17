@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- HR Category Hobbies Form View -->
+   <record id="hr_category_hobbies_view_form" model="ir.ui.view">
+        <field name="name">hr.category.hobbies.form</field>
+        <field name="model">hr.category.hobbies</field>
+        <field name="arch" type="xml">
+            <form string="HR Category Hobbies">
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button class="oe_stat_button" type="object" name="toggle_active" icon="fa-archive">
+                            <field name="active" widget="boolean_button" options='{"terminology": "archive"}'/>
+                        </button>
+                    </div>
+                    <group colspan="4" col="4">
+                        <field name="name" required="1"/>
+                        <field name="description"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- HR Category Hobbies Tree View -->
+    <record id="hr_category_hobbies_view_tree" model="ir.ui.view">
+        <field name="name">hr.category.hobbies.list</field>
+        <field name="model">hr.category.hobbies</field>
+        <field name="arch" type="xml">
+            <tree string="HR Category Hobbies">
+                <field name="name"/>
+                <field name="description"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- HR Category Hobbies Action -->
+    <record id="hr_category_hobbies_action" model="ir.actions.act_window">
+        <field name="name">HR Category Hobbies</field>
+        <field name="res_model">hr.category.hobbies</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- HR Category Hobbies Menuitem -->
+    <menuitem
+        id="hr_category_hobbies_menu_action"
+        name="HR Category Hobbies"
+        groups="hr.group_hr_user"
+        action="hr_category_hobbies_action"
+        parent="hr_employee_extended_werp.hr_curriculum_vitae_menu"/>
+
+</odoo>

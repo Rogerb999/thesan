@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+     <!-- Search Sub Fields Configuration Form View -->
+        <record id="view_search_sub_fields_config_form" model="ir.ui.view">
+            <field name="name">search.sub.fields.config.form</field>
+            <field name="model">search.sub.fields.config</field>
+            <field name="arch" type="xml">
+                <form string="Search Sub Fields Configuration">
+                    <sheet>
+                        <div class="oe_button_box" name="button_box">
+                            <button class="oe_stat_button" type="object" name="toggle_active" icon="fa-archive">
+                                <field name="active" widget="boolean_button" options='{"terminology": "archive"}'/>
+                            </button>
+                        </div>
+                        <div class="oe_title" attrs="{'invisible':[('name', '=', False)]}">
+                            <label for="name" string="Name" class="oe_edit_only"/>
+                            <h1><field name="name" required="1" nolabel="1"/></h1>
+                        </div>
+                        <group>
+                            <field name="model_id" required="1" class="oe_inline"/>
+                            <field name="field_ids" widget="many2many_tags" domain="[('model_id', '=', model_id)]"/>
+                        </group>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="activity_ids" widget="mail_activity"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_search_sub_fields_config_tree" model="ir.ui.view">
+            <field name="name">search.sub.fields.config.tree</field>
+            <field name="model">search.sub.fields.config</field>
+            <field name="arch" type="xml">
+                <tree string="Search Sub Fields Configuration">
+                    <field name="model_id"/>
+                    <field name="field_ids"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_search_sub_fields_config_search" model="ir.ui.view">
+            <field name="name">search.sub.fields.config.search</field>
+            <field name="model">search.sub.fields.config</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="model_id"/>
+                </search>
+            </field>
+        </record>
+
+        <record id="search_sub_fields_config_act" model="ir.actions.act_window">
+            <field name="name">Sub Fields Configuration</field>
+            <field name="res_model">search.sub.fields.config</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="view_search_sub_fields_config_tree"/>
+        </record>
+
+        <menuitem id="menu_search_sub_fields_config_form"
+            parent="base_extended.menu_extra_search" action="search_sub_fields_config_act" sequence="2"/>
+
+</odoo>
