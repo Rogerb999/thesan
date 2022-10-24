@@ -19,10 +19,7 @@
                 <field name="is_eps"/>
                 <field name="is_arl"/>
             </field>
-            <field name="employee_id" position="attributes">
-                <attribute name="domain">[('is_required_you', '=', False)]</attribute>
-                <attribute name="context">{'default_is_required_you': False}</attribute>
-            </field>
+           
         </field>
     </record>
 

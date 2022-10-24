@@ -16,8 +16,7 @@
                         class="oe_highlight"/>
             </xpath>
             <field name="employee_ids" position="attributes">
-                <attribute name="domain">[('is_required_you', '=', False)]</attribute>
-                <attribute name="context">{'default_is_required_you': False}</attribute>
+         
             </field>
         </field>
     </record>
