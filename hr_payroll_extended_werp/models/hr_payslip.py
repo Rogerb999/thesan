@@ -74,7 +74,7 @@ class HrPayslip(models.Model):
         super(HrPayslip, self).compute_sheet()
         self.compute_sheet_rf()
         res = super(HrPayslip, self).compute_sheet()
-        self.message_post("The Calculate All Process Completed!")
+       # self.message_post("The Calculate All Process Completed!")
         return res
 
     @api.multi
@@ -96,12 +96,12 @@ class HrPayslip(models.Model):
             progress_action=threading.get_ident(
             )).compute_sheet_all_thread_extended, args=())
         threaded_calculation.start()
-        self.message_post(
-            subject="Calculate All .",
-            body=_(
-                "The Calculate All is generating in this moment "
-                "please wait Process:- %s Date:- %s" % (
-                    threading.get_ident(), fields.Date.today())))
+        # self.message_post(
+        #     subject="Calculate All .",
+        #     body=_(
+        #         "The Calculate All is generating in this moment "
+        #         "please wait Process:- %s Date:- %s" % (
+        #             threading.get_ident(), fields.Date.today())))
 
     @api.multi
     def action_payslip_done(self):
@@ -311,7 +311,7 @@ class HrPayslip(models.Model):
     def action_payslip_review_parameters_thread(self):
         for rec in self:
             rec.onchange_employee()
-        self.message_post("The Calculate Parameters Process Completed!")
+        #self.message_post("The Calculate Parameters Process Completed!")
         return True
 
     @api.multi
@@ -334,12 +334,12 @@ class HrPayslip(models.Model):
                 progress_action=threading.get_ident(
                 )).action_payslip_review_parameters_thread_extended, args=())
         threaded_calculation.start()
-        self.message_post(
-            subject="Calculate All",
-            body=_(
-                "The Calculate Parameters is generating in this moment "
-                "please wait Process:- %s Date:- %s" % (
-                    threading.get_ident(), fields.Date.today())))
+        # self.message_post(
+        #     subject="Calculate All",
+        #     body=_(
+        #         "The Calculate Parameters is generating in this moment "
+        #         "please wait Process:- %s Date:- %s" % (
+        #             threading.get_ident(), fields.Date.today())))
 
     @api.multi
     def action_payslip_caluculate_sheet(self):
@@ -350,7 +350,7 @@ class HrPayslip(models.Model):
                 "===action_payslip_caluculate_sheet==%s==%s===>",
                 rec, rec.name)
         # self.process_status = str(self.process_status + "Nómina Calculada")
-        self.message_post("The Calculate payroll Process Completed!")
+        #self.message_post("The Calculate payroll Process Completed!")
         return True
 
     # @api.multi
@@ -390,7 +390,7 @@ class HrPayslip(models.Model):
                 rec, rec.name)
         # self.process_status = str(self.process_status +
         # "Retención Calculada")
-        self.message_post("The Calculate RF Process Completed!")
+        #self.message_post("The Calculate RF Process Completed!")
         return True
 
     # @api.multi
@@ -439,9 +439,9 @@ class HrPayslip(models.Model):
             return {'type': 'ir.actions.act_window_close'}
         except Exception as error:
             _logger.info(error)
-            self.message_post(
-                subject="Compute Sheet process.",
-                body=_("The process Compute Sheet is not Completed"))
+            # self.message_post(
+            #     subject="Compute Sheet process.",
+            #     body=_("The process Compute Sheet is not Completed"))
 
     @api.multi
     def compute_sheet(self):
@@ -549,12 +549,12 @@ class HrPayslipRun(models.Model):
             progress_action=threading.get_ident(
             )).compute_action_payslip_done_thread, args=())
         thread.start()
-        self.message_post(
-            subject="Payslip Done Process...",
-            body=_(
-                "The Payslip Done process is generating in this moment "
-                "please wait Process:- %s Date:- %s" % (
-                    threading.get_ident(), fields.Date.today())))
+        # self.message_post(
+        #     subject="Payslip Done Process...",
+        #     body=_(
+        #         "The Payslip Done process is generating in this moment "
+        #         "please wait Process:- %s Date:- %s" % (
+        #             threading.get_ident(), fields.Date.today())))
         return {'type': 'ir.actions.act_window_close'}
 
     @api.multi
@@ -579,7 +579,7 @@ class HrPayslipRun(models.Model):
                     line.action_payslip_done()
                     line.action_acumulate()
             rec.write({'state': 'acumulate'})
-            self.message_post("The Payslip process completed!")
+           # self.message_post("The Payslip process completed!")
 
     @api.multi
     def action_payslip_cancel(self):
@@ -595,12 +595,12 @@ class HrPayslipRun(models.Model):
             progress_action=threading.get_ident(
             )).compute_action_accumulate_thread, args=())
         thread.start()
-        self.message_post(
-            subject="Accumulate Process...",
-            body=_(
-                "The Accumulate process is generating in this moment "
-                "please wait Process:- %s Date:- %s" % (
-                    threading.get_ident(), fields.Date.today())))
+        # self.message_post(
+        #     subject="Accumulate Process...",
+        #     body=_(
+        #         "The Accumulate process is generating in this moment "
+        #         "please wait Process:- %s Date:- %s" % (
+        #             threading.get_ident(), fields.Date.today())))
         return {'type': 'ir.actions.act_window_close'}
 
     @api.multi
@@ -624,7 +624,7 @@ class HrPayslipRun(models.Model):
                     _logger.info("action_accumulate Line ====%s>>", line)
                     line.action_acumulate()
             rec.write({'state': 'acumulate'})
-            self.message_post("Accumulate Process Completed!")
+            #self.message_post("Accumulate Process Completed!")
 
     @api.multi
     def action_payslip_draft(self):
@@ -678,13 +678,13 @@ class HrPayslipRun(models.Model):
             progress_action=threading.get_ident(
             )).action_payslip_calculate_retention_thread_extended, args=())
         threaded_calculation.start()
-        self.message_post(
-            subject="Calculate RF/Withholding Income.",
-            body=_(
-                "The Calculate RF/Withholding Income "
-                "is generating in this moment "
-                "please wait Process:- %s Date:- %s" % (
-                    threading.get_ident(), fields.Date.today())))
+        # self.message_post(
+        #     subject="Calculate RF/Withholding Income.",
+        #     body=_(
+        #         "The Calculate RF/Withholding Income "
+        #         "is generating in this moment "
+        #         "please wait Process:- %s Date:- %s" % (
+        #             threading.get_ident(), fields.Date.today())))
 
     @api.multi
     def action_payslip_caluculate_sheet_thread(self):
@@ -697,7 +697,7 @@ class HrPayslipRun(models.Model):
                         "=action_payslip_caluculate_sheet_thread==%s==%s=>",
                         aux, line.employee_id.name)
                     line.action_payslip_caluculate_sheet()
-            rec.message_post("The Calculate payroll Process Completed!")
+           # rec.message_post("The Calculate payroll Process Completed!")
 
     @api.multi
     def action_payslip_caluculate_sheet_thread_extended(self):
@@ -718,12 +718,12 @@ class HrPayslipRun(models.Model):
             progress_action=threading.get_ident(
             )).action_payslip_caluculate_sheet_thread_extended, args=())
         threaded_calculation.start()
-        self.message_post(
-            subject="Calculate payroll.",
-            body=_(
-                "The Calculate payroll is generating in this moment "
-                "please wait Process:- %s Date:- %s" % (
-                    threading.get_ident(), fields.Date.today())))
+        # self.message_post(
+        #     subject="Calculate payroll.",
+        #     body=_(
+        #         "The Calculate payroll is generating in this moment "
+        #         "please wait Process:- %s Date:- %s" % (
+        #             threading.get_ident(), fields.Date.today())))
 
     @api.multi
     def create_attachment_payslips(self):

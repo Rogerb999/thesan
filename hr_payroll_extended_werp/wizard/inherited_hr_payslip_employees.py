@@ -28,12 +28,12 @@ class HrPayslipEmployees(models.TransientModel):
         thread.start()
         active_id = self.env.context.get('active_id')
         hr_payslip_run_id = self.env['hr.payslip.run'].browse(active_id)
-        hr_payslip_run_id.message_post(
-            subject="Compute Sheet Process.",
-            body=_(
-                "The Compute Sheet process is generating in this moment "
-                "please wait Process:- %s Date:- %s" % (
-                    threading.get_ident(), fields.Date.today())))
+        # hr_payslip_run_id.message_post(
+        #     subject="Compute Sheet Process.",
+        #     body=_(
+        #         "The Compute Sheet process is generating in this moment "
+        #         "please wait Process:- %s Date:- %s" % (
+        #             threading.get_ident(), fields.Date.today())))
         res = {
             'name': _('Confirm'),
             'type': 'ir.actions.act_window',

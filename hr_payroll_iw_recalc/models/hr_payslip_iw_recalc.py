@@ -76,9 +76,9 @@ class HrPayslipIwRecalc(models.Model):
         for rec in self:
             for calc_id in rec.calc_ids:
                 calc_id.compute_sheet_rf_thread()
-            rec.message_post(
-                subject="Compute Sheet RF process generate correctly.",
-                body=_("Compute Sheet RF process generate correctly"))
+            # rec.message_post(
+            #     subject="Compute Sheet RF process generate correctly.",
+            #     body=_("Compute Sheet RF process generate correctly"))
 
 
 class HrRecalcLines(models.Model):
@@ -635,12 +635,12 @@ class HrRecalcLines(models.Model):
         threaded_calculation = threading.Thread(
             target=self.compute_sheet_rfs, args=())
         threaded_calculation.start()
-        self.hr_payslip_iw_recalc_id.message_post(
-            subject="Compute Sheet RF process start.",
-            body=_(
-                "Compute Sheet RF Process:- %s Date:- %s Employee:- %s" % (
-                    threading.get_ident(), fields.Date.today(),
-                    self.employee_id.name)))
+        # self.hr_payslip_iw_recalc_id.message_post(
+        #     subject="Compute Sheet RF process start.",
+        #     body=_(
+        #         "Compute Sheet RF Process:- %s Date:- %s Employee:- %s" % (
+        #             threading.get_ident(), fields.Date.today(),
+        #             self.employee_id.name)))
         return {'type': 'ir.actions.act_window_close'}
 
 
